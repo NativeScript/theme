@@ -1,0 +1,4 @@
+Button {
+  color: $btn-color;
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-radius);
+}

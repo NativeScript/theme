@@ -1,0 +1,8 @@
+﻿@import 'scss/core';
+
+.main-page {
+
+  Button {
+    @include button-size(15, 15, 40, $btn-radius);
+  }
+}

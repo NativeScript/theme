@@ -1,0 +1,6 @@
+*.css
+*.js
+*.map
+platforms
+node_modules
+lib

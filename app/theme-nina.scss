@@ -1,0 +1,8 @@
+@import 'scss/themes/nina';
+
+.main-page {
+
+  Button {
+    @include button-size(10, 10, 25, $btn-radius);
+  }
+}

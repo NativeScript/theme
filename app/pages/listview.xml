@@ -1,0 +1,21 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+  <Page.actionBar>
+    <ActionBar title="ListView" icon="">
+      <NavigationButton text="Back" icon="" tap="" />
+      <ActionBar.actionItems>
+        <ActionItem icon="" text="Right" tap="" ios.position="right" />
+      </ActionBar.actionItems>
+    </ActionBar>
+  </Page.actionBar>
+  <StackLayout>
+    <ListView items="{{ items }}">
+      <ListView.itemTemplate>
+        <StackLayout>
+          <Label text="{{ label }}" textWrap="true" />
+            
+        </StackLayout>
+      </ListView.itemTemplate>
+    </ListView>
+    
+  </StackLayout>
+</Page>

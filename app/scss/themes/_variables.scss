@@ -1,0 +1,24 @@
+// Colors
+$primary: #528100;
+$complimentary: #7C3FE8;
+$gray: #888;
+$white: white;
+
+// Skin
+$background: $primary;
+$text-color: $gray;
+
+// Buttons
+$btn-color: $complimentary;
+$btn-font-size: 18;
+$btn-radius: 5;
+$btn-padding-x: 20;
+$btn-padding-y: 20;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-rounded:            true !default;
+$enable-shadows:            false !default;
+$enable-gradients:          false !default;
+$enable-transitions:        false !default;
