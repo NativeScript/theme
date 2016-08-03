@@ -1,5 +1,6 @@
 *.css
 *.js
+!hooks/before-prepare/*.js
 *.map
 platforms
 node_modules
