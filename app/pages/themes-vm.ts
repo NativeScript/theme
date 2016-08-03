@@ -1,5 +1,6 @@
 import {Observable} from 'data/observable';
 import {topmost} from 'ui/frame';
+import {knownFolders} from 'file-system';
 var themes = require('nativescript-themes');
 
 export class ThemesModel extends Observable {
@@ -14,12 +15,14 @@ export class ThemesModel extends Observable {
   public switchTheme() {
     this._toggled = !this._toggled;
 
+    let appPath = knownFolders.currentApp().path + '/';
+    
     if (this._toggled) {
       this.set('btnText', 'Nina');
-      themes.applyTheme('app.css');
+      themes.applyTheme(`${appPath}app.css`);
     } else {
       this.set('btnText', 'Default');
-      themes.applyTheme('nina-theme.css');
+      themes.applyTheme(`${appPath}nina-theme.css`);
     }
 
   }

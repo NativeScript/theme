@@ -8,7 +8,7 @@
     </ActionBar>
   </Page.actionBar>
   <StackLayout>
-    <ListView items="{{ items }}">
+    <ListView items="{{ sampleItems }}">
       <ListView.itemTemplate>
         <StackLayout>
           <Label text="{{ label }}" textWrap="true" />
