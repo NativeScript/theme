@@ -9,7 +9,7 @@ export class ThemesModel extends Observable {
 
   constructor() {
     super();
-    this.set('btnText', 'Default');
+    this.set('btnText', 'Nina');
   }
 
   public switchTheme() {
@@ -18,11 +18,12 @@ export class ThemesModel extends Observable {
     let appPath = knownFolders.currentApp().path + '/';
     
     if (this._toggled) {
+      this.set('btnText', 'Default');
+      themes.applyTheme(`${appPath}theme-nina.css`);
+      
+    } else {
       this.set('btnText', 'Nina');
       themes.applyTheme(`${appPath}app.css`);
-    } else {
-      this.set('btnText', 'Default');
-      themes.applyTheme(`${appPath}nina-theme.css`);
     }
 
   }

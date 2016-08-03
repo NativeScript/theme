@@ -8,7 +8,7 @@
     </ActionBar>
   </Page.actionBar>
   <StackLayout>
-    <Button text="{{ 'Change Theme (' + btnText + ')'}}" tap="{{ switchTheme }}" />
+    <Button text="{{ 'Change Theme to ' + btnText}}" tap="{{ switchTheme }}" />
     <Label text="TO DO :)" textWrap="true" />
   </StackLayout>
 </Page>
