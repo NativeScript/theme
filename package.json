@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "nativescript-dev-typescript": "^0.3.2",
+    "node-sass": "^3.8.0",
     "typescript": "^1.8.10"
   }
 }
