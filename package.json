@@ -10,7 +10,7 @@
     }
   },
   "dependencies": {
-    "nativescript-themes": "^1.0.1",
+    "nativescript-themes": "^1.1.0",
     "tns-core-modules": "next"
   },
   "devDependencies": {
