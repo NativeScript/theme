@@ -2,13 +2,11 @@
 .btn-primary {
   color: $white;
   background-color: $primary;
-  @include button-base($btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius);
+  @include button-base($primary, $btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius,1);
 }
 
 .btn-outline-primary {
   color: $primary;
   background-color: transparent;
-  border-width: 1;
-  border-color: $primary;
-  @include button-base($btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius);
+  @include button-base($primary, $btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius,1);
 }

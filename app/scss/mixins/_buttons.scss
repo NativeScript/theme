@@ -1,7 +1,10 @@
 // Button sizes
 
-@mixin button-base($padding-y, $padding-x,$margin-y, $margin-x, $font-size, $border-radius){
- @include button-size($padding-y, $padding-x, $font-size, $border-radius);
+@mixin button-base($color, $padding-y, $padding-x,$margin-y, $margin-x, $font-size, $border-radius, $border-width){
+  border-width: $border-width;
+  border-color: $color;
+  text-transform: capitalize;
+  @include button-size($padding-y, $padding-x, $font-size, $border-radius);
   @include button-margin($margin-y,$margin-x);
 }
 
@@ -10,7 +13,6 @@
   font-size: $font-size;
   @include border-radius($border-radius);
 }
-
 
 @mixin button-margin($margin-y, $margin-x) {
   margin: $margin-y $margin-x $margin-y $margin-x;
