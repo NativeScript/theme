@@ -1,4 +1,12 @@
-Button {
-  color: $btn-color;
-  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-radius);
+
+.btn-primary {
+  color: $white;
+  background-color: $primary;
+  @include button-base($primary, $btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius,1);
+}
+
+.btn-outline-primary {
+  color: $primary;
+  background-color: transparent;
+  @include button-base($primary, $btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius,1);
 }
