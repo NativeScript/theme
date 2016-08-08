@@ -20,12 +20,12 @@ export class ThemesModel extends Observable {
 
   public applyLight() {
     this.set('labelText', 'Light');
-    themes.applyTheme(this.getPath('light'));
+    themes.applyTheme(this.getPath('core.light'));
   }
 
   public applyDark() {
     this.set('labelText', 'Dark');
-    themes.applyTheme(this.getPath('dark'));
+    themes.applyTheme(this.getPath('core.dark'));
   }
 
   private getPath(name: string) {
