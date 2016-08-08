@@ -9,12 +9,15 @@ function convert(logger, projectDir, options) {
 		
     // Customized by Nathan Walker 
     // Allows normal SASS imports to work as expected
-		var sassFilesPath = path.join(projectDir, 'app/*.scss');
+		var sassFilesPath = path.join(projectDir, 'app/**/*.scss');
     var sassImportPath = path.join(projectDir, 'app/');
     console.log("SASS Import Path", sassImportPath);
     
-		var sassFiles = glob.sync(sassFilesPath).filter(function(fileName){
-			return fileName.indexOf("App_Resources") === -1;
+    var sassFiles = glob.sync(sassFilesPath).filter(function (filePath) {
+      var path = filePath;
+      var parts = path.split('/');
+      var filename = parts[parts.length - 1];
+			return path.indexOf("App_Resources") === -1 && filename.indexOf("_") !== 0;
 		});
     
     if(sassFiles.length === 0){
