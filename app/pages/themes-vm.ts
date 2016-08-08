@@ -31,13 +31,6 @@ export class ThemesModel extends Observable {
   private getPath(name: string) {
     let appPath = knownFolders.currentApp().path + '/';
     let platform = '';
-    // if (name !== 'app') {
-    //   if (isIOS) {
-    //     platform = '.ios';
-    //   } else {
-    //     platform = '.android';
-    //   }
-    // }
     return `${appPath}${name}${platform}.css`;
   }
 }
