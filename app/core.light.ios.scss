@@ -1,16 +1,12 @@
-﻿/*!
+/*!
  * NativeScript Theme v0.1.0 (https://nativescript.org)
  * Copyright 2016-2016 The Theme Authors
  * Copyright 2016-2016 Telerik
  * Licensed under MIT (https://github.com/NativeScript/theme/blob/master/LICENSE)
  */
  
-/**
- * Base style (un-themed)
- */
-@import 'scss/variables';
-@import 'scss/index';
+@import 'scss/themes/core/light';
+@import 'scss/themes/core/platforms/index.ios';
 
 // demo app
 @import 'demo';
-

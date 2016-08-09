@@ -8,8 +8,8 @@
     </ActionBar>
   </Page.actionBar>
   <StackLayout>
-      <Button text="Button" tap="" cssClass="btn-primary" />
-      <Button text="Button" tap="" cssClass="btn-outline-primary" />
+      <Button text="Button" tap="" cssClass="btn btn-primary" />
+      <Button text="Button" tap="" cssClass="btn btn-outline-primary" />
 
   </StackLayout>
 </Page>
