@@ -2,6 +2,6 @@
 *.js
 !hooks/before-prepare/*.js
 *.map
-platforms
+/platforms
 node_modules
 lib
