@@ -4,10 +4,10 @@ Home of the core NativeScript theme, currently **under active development**.
 
 ## Setup
 
-Clone this repo, and then use the `tns emulate` or `tns run` command to launch the demo app on your device or emulator of choice.
+Clone this repo, and then use the `tns run` command to launch the demo app on your device or emulator of choice.
 
 ```
-tns emulate ios
+tns run ios
 
 // or
 
