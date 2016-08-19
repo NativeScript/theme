@@ -6,7 +6,7 @@
   "nativescript": {
     "id": "org.nativescript.theme",
     "tns-ios": {
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "tns-android": {
       "version": "2.2.0"
@@ -17,7 +17,11 @@
     "tns-core-modules": "next"
   },
   "devDependencies": {
+    "babel-traverse": "6.13.0",
+    "babel-types": "6.13.0",
+    "babylon": "6.9.0",
     "glob": "^7.0.5",
+    "lazy": "1.0.11",
     "nativescript-dev-typescript": "^0.3.2",
     "node-sass": "^3.8.0",
     "typescript": "^1.8.10"

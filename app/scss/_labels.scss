@@ -1,3 +1,49 @@
-Label {
-  color: $text-color;
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.body,
+.body2,
+.footnote {
+  font-weight: normal;
+}
+
+.h1,
+.h2 {
+  color:$primary;
+}
+
+.h3,
+.h4,
+.h5,
+.body,
+.body2,
+.footnote {
+  color: $secondary;
+}
+
+.h1 {
+  font-size: 32;
+}
+.h2 {
+  font-size: 22;
+}
+.h3 {
+  font-size: 15;
+}
+.h4 {
+  font-size: 12;
+}
+.h5 {
+  font-size: 11;
+}
+.body {
+  font-size:14;
+}
+.body2 {
+  font-size:17;
+}
+.footnote {
+  font-size: 13;
 }

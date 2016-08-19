@@ -1,8 +1,14 @@
-ActionBar {
-  background-color:$background;
-  color: $white;
-}
+.action-bar {
+  color:$secondary;
 
-ActionItem {
-  color: $white;
+  .action-title {
+    color:$primary;
+    font-weight: bold;
+    font-size:17;
+  }
+
+  .action-item {
+    color: $secondary;
+    font-weight: normal;
+  }
 }

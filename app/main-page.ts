@@ -13,7 +13,7 @@ export function navigatingTo(args: EventData) {
   if (isIOS) {
     let controller = topmost().ios.controller;
     let navigationBar = controller.navigationBar;
-    navigationBar.barStyle = 1;
+    navigationBar.barStyle = 0;
   }
 
   if (isAndroid && device.sdkVersion >= "21") {
