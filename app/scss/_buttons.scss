@@ -1,12 +1,33 @@
+.btn{
+  color: $btn-color;
+  background-color: transparent;
+  &:highlighted{
+    color: $white;
+    opacity: 0.5;
+    background-color:$btn-color-secondary;
+  }
+  @include button-base($btn-color, $btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius,0);
+
+}
 
 .btn-primary {
   color: $white;
-  background-color: $primary;
-  @include button-base($primary, $btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius,1);
+  background-color: $btn-color;
+  border-color: $btn-color;
+  &:highlighted{
+    border-color:$btn-color-secondary;
+  }
 }
 
-.btn-outline-primary {
-  color: $primary;
+.btn-outline {
+  color: $btn-color;
   background-color: transparent;
-  @include button-base($primary, $btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius,1);
+  border-color: $btn-color;
+
+}
+
+.btn[isEnabled=false]{
+  color:$btn-color-disabled;
+  background-color: $grey;
+  border-color: $grey;
 }
