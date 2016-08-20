@@ -15,7 +15,9 @@
     </ActionBar>
   </Page.actionBar>
   <StackLayout>
-      <Button text="Button" tap="" class="btn btn-primary" />
-      <Button text="Button" tap="" class="btn btn-outline-primary" />
+      <Button text="btn" tap="" class="btn" />
+      <Button text="btn btn-primary" tap="" class="btn btn-primary" />
+      <Button text="btn btn-outline" tap="" class="btn btn-primary btn-outline" />
+      <Button text="btn isEnabled=false" tap="" isEnabled="false" class="btn btn-primary btn-disabled" />
   </StackLayout>
 </Page>

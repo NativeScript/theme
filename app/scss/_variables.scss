@@ -2,6 +2,7 @@
 $black: #000;
 $white: #fff;
 $base: $white;
+$grey: #e0e0e0;
 $primary: lighten($black, 13%);//rgba(0,0,0,.87);
 $secondary: lighten($black, 46%);
 $disabled: lighten($black, 62%);
@@ -13,6 +14,8 @@ $text-color: $primary;
 
 // Buttons
 $btn-color: $accent;
+$btn-color-secondary: #01a0ec;
+$btn-color-disabled: #a4a4a4;
 $btn-font-size: 18;
 $btn-radius: 0;
 $btn-padding-x: 10;
