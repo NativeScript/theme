@@ -1,9 +1,16 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
   <Page.actionBar>
-    <ActionBar title="Themes" icon="">
+    <ActionBar class="action-bar">
       <NavigationButton text="Back" icon="" tap="" />
+      <StackLayout class="action-title">
+        <Label text="Themes"/>
+      </StackLayout>
       <ActionBar.actionItems>
-        <ActionItem icon="" text="Right" tap="" ios.position="right" />
+        <ActionItem ios.position="right">
+          <ActionItem.actionView>
+            <Button text="Right" class="action-item" />
+          </ActionItem.actionView>
+        </ActionItem>
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>

@@ -1,14 +1,26 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
   <Page.actionBar>
-      <ActionBar title="NativeScript Themes" icon="">
-          <ActionBar.actionItems>
-              <ActionItem icon="" text="Left" tap="" ios.position="left" />
-              <ActionItem icon="" text="Right" tap="" ios.position="right" />
-          </ActionBar.actionItems>
-      </ActionBar>
+    <ActionBar class="action-bar">
+      <StackLayout class="action-title">
+        <Label text="NativeScript Themes"/>
+      </StackLayout>
+      <ActionBar.actionItems>
+        <ActionItem>
+          <ActionItem.actionView>
+            <Button text="Left" class="action-item" />
+          </ActionItem.actionView>
+        </ActionItem>
+        <ActionItem ios.position="right">
+          <ActionItem.actionView>
+            <Button text="Right" class="action-item" />
+          </ActionItem.actionView>
+        </ActionItem>
+      </ActionBar.actionItems>
+    </ActionBar>
   </Page.actionBar>
   <StackLayout class="main-page">
     <Button text="Basics" tap="{{ viewBasics }}" />
+    <Button text="Buttons" tap="{{ viewButtons }}" />
     <Button text="ListView" tap="{{ viewListView }}" />
     <Button text="SideDrawer" tap="{{ viewSideDrawer }}" />
     <Button text="Themes" tap="{{ viewThemes }}" />

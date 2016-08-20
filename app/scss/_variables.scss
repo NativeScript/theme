@@ -1,15 +1,18 @@
 // Colors
-$primary: #2B33FF;
-$complimentary: #4E75E2;
-$gray: #333;
-$white: white;
+$black: #000;
+$white: #fff;
+$base: $white;
+$primary: lighten($black, 13%);//rgba(0,0,0,.87);
+$secondary: lighten($black, 46%);
+$disabled: lighten($black, 62%);
+$accent: #30bcff;
 
 // Skin
-$background: $primary;
-$text-color: $gray;
+$background: $base;
+$text-color: $primary;
 
 // Buttons
-$btn-color: $complimentary;
+$btn-color: $accent;
 $btn-font-size: 18;
 $btn-radius: 0;
 $btn-padding-x: 10;

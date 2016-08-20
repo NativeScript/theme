@@ -1,15 +1,51 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
   <Page.actionBar>
-    <ActionBar title="Basics" icon="">
+    <ActionBar class="action-bar">
       <NavigationButton text="Back" icon="" tap="" />
+      <StackLayout class="action-title">
+        <Label text="Basics"/>
+      </StackLayout>
       <ActionBar.actionItems>
-        <ActionItem icon="" text="Right" tap="" ios.position="right" />
+        <ActionItem ios.position="right">
+          <ActionItem.actionView>
+            <Button text="Right" class="action-item" />
+          </ActionItem.actionView>
+        </ActionItem>
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-  <StackLayout>
-      <Button text="Button" tap="" cssClass="btn btn-primary" />
-      <Button text="Button" tap="" cssClass="btn btn-outline-primary" />
-
+  <StackLayout class="p-20">
+    <GridLayout rows="auto" columns="*,*" class="h1 m-5 w-full">
+      <Label text="Class: h1" row="0" col="0" />
+      <Label text="Heading" row="0" col="1" class="right" />
+    </GridLayout>
+    <GridLayout rows="auto" columns="*,*" class="h2 m-5 w-full">
+      <Label text="Class: h2" row="0" col="0" />
+      <Label text="Heading" row="0" col="1" class="right" />
+    </GridLayout>
+    <GridLayout rows="auto" columns="*,*" class="h3 m-5 w-full">
+      <Label text="Class: h3" row="0" col="0" />
+      <Label text="Heading" row="0" col="1" class="right" />
+    </GridLayout>
+    <GridLayout rows="auto" columns="*,*" class="h4 m-5 w-full">
+      <Label text="Class: h4" row="0" col="0" />
+      <Label text="Heading" row="0" col="1" class="right" />
+    </GridLayout>
+    <GridLayout rows="auto" columns="*,*" class="h5 m-5 w-full">
+      <Label text="Class: h5" row="0" col="0" />
+      <Label text="Heading" row="0" col="1" class="right" />
+    </GridLayout>
+    <GridLayout rows="auto" columns="*,*" class="body m-5 w-full">
+      <Label text="Class: body" row="0" col="0" />
+      <Label text="Body" row="0" col="1" class="right" />
+    </GridLayout>
+    <GridLayout rows="auto" columns="*,*" class="body2 m-5 w-full">
+      <Label text="Class: body2" row="0" col="0" />
+      <Label text="Body 2" row="0" col="1" class="right" />
+    </GridLayout>
+    <GridLayout rows="auto" columns="*,*" class="footnote m-5 w-full">
+      <Label text="Class: footnote" row="0" col="0" />
+      <Label text="Footnote" row="0" col="1" class="right" />
+    </GridLayout>
   </StackLayout>
 </Page>
