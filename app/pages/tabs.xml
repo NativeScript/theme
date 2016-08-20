@@ -1,0 +1,36 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+  <Page.actionBar>
+    <ActionBar class="action-bar">
+      <NavigationButton text="Back" icon="" tap="" />
+      <StackLayout class="action-title">
+        <Label text="Tabs"/>
+      </StackLayout>
+      <ActionBar.actionItems>
+        <ActionItem ios.position="right">
+          <ActionItem.actionView>
+            <Button text="Right" class="action-item" />
+          </ActionItem.actionView>
+        </ActionItem>
+      </ActionBar.actionItems>
+    </ActionBar>
+  </Page.actionBar>
+  <TabView>
+   <TabView.items>
+     <TabViewItem title="Tab 1">
+       <TabViewItem.view>
+          <Label text="Label in Tab1" class="h1" />
+       </TabViewItem.view>
+     </TabViewItem>
+     <TabViewItem title="Tab 2">
+       <TabViewItem.view>
+          <Label text="Label in Tab2" class="h1" />
+       </TabViewItem.view>
+     </TabViewItem>
+      <TabViewItem title="Tab 3">
+        <TabViewItem.view>
+          <Label text="Label in Tab3" class="h1" />
+        </TabViewItem.view>
+      </TabViewItem>
+   </TabView.items>
+ </TabView>
+</Page>

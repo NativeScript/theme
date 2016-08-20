@@ -3,7 +3,7 @@ import { Page } from "ui/page";
 import {Observable} from 'data/observable';
 import {topmost} from 'ui/frame';
 
-export class SwitchesModel extends Observable {
+export class SegmentModel extends Observable {
 
   constructor() {
     super();
@@ -12,5 +12,5 @@ export class SwitchesModel extends Observable {
 
 export function navigatingTo(args: EventData) {
     var page = <Page>args.object;
-    page.bindingContext = new SwitchesModel();
+    page.bindingContext = new SegmentModel();
 }
