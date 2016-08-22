@@ -8,16 +8,24 @@
       <ActionBar.actionItems>
         <ActionItem ios.position="right">
           <ActionItem.actionView>
-            <Button text="Right" class="action-item" />
+            <Button text="Right" class="action-item btn" />
           </ActionItem.actionView>
         </ActionItem>
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-  <StackLayout>
-      <Button text="btn" tap="" class="btn" />
-      <Button text="btn btn-primary" tap="" class="btn btn-primary" />
-      <Button text="btn btn-outline" tap="" class="btn btn-primary btn-outline" />
-      <Button text="btn isEnabled=false" tap="" isEnabled="false" class="btn btn-primary btn-disabled" />
-  </StackLayout>
+  <ScrollView>
+    <StackLayout>
+        <Button text="btn" tap="" class="btn" />
+        <Button text="btn btn-primary" tap="" class="btn btn-primary" />
+        <Button text="btn btn-outline" tap="" class="btn btn-primary btn-outline" />
+        <Button text="btn btn-primary btn-rounded-sm" tap="" class="btn btn-primary btn-rounded-sm" />
+        <Button text="btn btn-outline btn-rounded-sm" tap="" class="btn btn-outline btn-rounded-sm" />
+        <Button text="btn btn-primary btn-rounded-lg" tap="" class="btn btn-primary btn-rounded-lg" />
+        <Button text="btn btn-outline btn-rounded-lg" tap="" class="btn btn-outline btn-rounded-lg" />
+        <Button text="btn isEnabled=false" tap="" isEnabled="false" class="btn btn-primary" />
+        <Button text="btn isEnabled=false btn-rounded-sm" tap="" isEnabled="false" class="btn btn-primary btn-rounded-sm" />
+        <Button text="btn isEnabled=false btn-rounded-lg" tap="" isEnabled="false" class="btn btn-primary btn-rounded-lg" />
+    </StackLayout>
+  </ScrollView>
 </Page>
