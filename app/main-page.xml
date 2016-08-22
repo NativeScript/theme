@@ -18,12 +18,23 @@
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-  <StackLayout class="main-page">
-    <Button text="Basics" tap="{{ viewBasics }}" />
-    <Button text="Buttons" tap="{{ viewButtons }}" />
-    <Button text="ListView" tap="{{ viewListView }}" />
-    <Button text="SideDrawer" tap="{{ viewSideDrawer }}" />
-    <Button text="Themes" tap="{{ viewThemes }}" />
-    
-  </StackLayout>
+  <ScrollView>
+    <StackLayout class="main-page">
+      <Button text="Basics" tap="{{ viewBasics }}" />
+      <Button text="Buttons" tap="{{ viewButtons }}" />
+      <Button text="Forms" tap="{{ viewForms }}" />
+      <Button text="Searchbars" tap="{{ viewSearch }}" />
+      <Button text="Sliders" tap="{{ viewSliders }}" />
+      <Button text="Switches" tap="{{ viewSwitches }}" />
+      <Button text="Progress & Activity" tap="{{ viewProgress }}" />
+      <Button text="Tabs" tap="{{ viewTabs }}" />
+      <Button text="SegmentedBar" tap="{{ viewSegmentBar }}" />
+      <Button text="Dialogs" tap="{{ viewDialogs }}" />
+      <Button text="ListView" tap="{{ viewListView }}" />
+      <Button text="SideDrawer" tap="{{ viewSideDrawer }}" />
+      <Button text="Themes" tap="{{ viewThemes }}" />
+      
+    </StackLayout>
+      
+  </ScrollView>
 </Page>

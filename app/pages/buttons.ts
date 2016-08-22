@@ -1,6 +1,14 @@
 import { EventData } from "data/observable";
 import { Page } from "ui/page";
-import { ButtonsModel } from "./buttons-vm";
+import {Observable} from 'data/observable';
+import {topmost} from 'ui/frame';
+
+export class ButtonsModel extends Observable {
+
+  constructor() {
+    super();
+  }
+}
 
 export function navigatingTo(args: EventData) {
     var page = <Page>args.object;

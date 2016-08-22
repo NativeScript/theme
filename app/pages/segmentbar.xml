@@ -3,7 +3,7 @@
     <ActionBar class="action-bar">
       <NavigationButton text="Back" icon="" tap="" />
       <StackLayout class="action-title">
-        <Label text="Buttons"/>
+        <Label text="SegmentedBar"/>
       </StackLayout>
       <ActionBar.actionItems>
         <ActionItem ios.position="right">
@@ -15,9 +15,12 @@
     </ActionBar>
   </Page.actionBar>
   <StackLayout>
-      <Button text="btn" tap="" class="btn" />
-      <Button text="btn btn-primary" tap="" class="btn btn-primary" />
-      <Button text="btn btn-outline" tap="" class="btn btn-primary btn-outline" />
-      <Button text="btn isEnabled=false" tap="" isEnabled="false" class="btn btn-primary btn-disabled" />
+    <SegmentedBar>
+      <SegmentedBar.items>
+        <SegmentedBarItem title="First" />
+        <SegmentedBarItem title="Second" />
+        <SegmentedBarItem title="Third" />    
+      </SegmentedBar.items>
+    </SegmentedBar>
   </StackLayout>
 </Page>

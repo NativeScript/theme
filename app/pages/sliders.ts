@@ -3,20 +3,14 @@ import { Page } from "ui/page";
 import {Observable} from 'data/observable';
 import {topmost} from 'ui/frame';
 
-export class ListViewModel extends Observable {
-  public sampleItems: Array<any>;
+export class SlidersModel extends Observable {
 
   constructor() {
     super();
-    this.set('sampleItems', [
-      {
-        label: 'TO DO :)'
-      }
-    ]);
   }
 }
 
 export function navigatingTo(args: EventData) {
     var page = <Page>args.object;
-    page.bindingContext = new ListViewModel();
+    page.bindingContext = new SlidersModel();
 }
