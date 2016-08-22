@@ -1,6 +1,9 @@
 .btn{
   color: $btn-color;
   background-color: transparent;
+  min-height: 36;
+  min-width: 64;
+  font-size: 15;
   &:highlighted{
     color: $white;
     opacity: 0.5;
@@ -30,4 +33,12 @@
   color:$btn-color-disabled;
   background-color: $grey;
   border-color: $grey;
+}
+
+.btn-rounded-sm{
+  border-radius: 5;
+}
+
+.btn-rounded-lg{
+  border-radius: 23;
 }
