@@ -1,0 +1,26 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+  <Page.actionBar>
+    <ActionBar class="action-bar">
+      <NavigationButton text="Back" icon="" tap="" />
+      <StackLayout class="action-title">
+        <Label text="SegmentedBar"/>
+      </StackLayout>
+      <ActionBar.actionItems>
+        <ActionItem ios.position="right">
+          <ActionItem.actionView>
+            <Button text="Right" class="action-item" />
+          </ActionItem.actionView>
+        </ActionItem>
+      </ActionBar.actionItems>
+    </ActionBar>
+  </Page.actionBar>
+  <StackLayout>
+    <SegmentedBar>
+      <SegmentedBar.items>
+        <SegmentedBarItem title="First" />
+        <SegmentedBarItem title="Second" />
+        <SegmentedBarItem title="Third" />    
+      </SegmentedBar.items>
+    </SegmentedBar>
+  </StackLayout>
+</Page>

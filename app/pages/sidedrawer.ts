@@ -1,6 +1,14 @@
 import { EventData } from "data/observable";
 import { Page } from "ui/page";
-import { SideDrawerModel } from "./sidedrawer-vm";
+import {Observable} from 'data/observable';
+import {topmost} from 'ui/frame';
+
+export class SideDrawerModel extends Observable {
+
+  constructor() {
+    super();
+  }
+}
 
 export function navigatingTo(args: EventData) {
     var page = <Page>args.object;
