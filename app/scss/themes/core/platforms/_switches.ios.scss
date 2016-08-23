@@ -1,0 +1,7 @@
+.switch{
+	margin:8 15;
+	background-color: $accent;
+	&[checked=true]{
+		color:$grey;
+	}
+}
