@@ -15,6 +15,9 @@
     </ActionBar>
   </Page.actionBar>
   <StackLayout>
-      <Switch class="switch" />
+    <Switch checked="true" class="switch" id="checked"/>
+    <Switch checked="false" id="unChecked" class="switch" enabled="true"/>
+    <Switch isEnabled="false" checked="true" class="switch" id="checkedDisabled"/>
+    <Switch isEnabled="false" class="switch" id="unCheckedDisabled"/>
   </StackLayout>
 </Page>
