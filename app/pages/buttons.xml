@@ -8,14 +8,14 @@
       <ActionBar.actionItems>
         <ActionItem ios.position="right">
           <ActionItem.actionView>
-            <Button text="Right" class="action-item btn" />
+            <Button text="Right" class="action-item" />
           </ActionItem.actionView>
         </ActionItem>
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
   <ScrollView>
-    <StackLayout>
+    <StackLayout class="demo-full">
         <Button text="btn" tap="" class="btn" />
         <Button text="btn btn-primary" tap="" class="btn btn-primary" />
         <Button text="btn btn-outline" tap="" class="btn btn-primary btn-outline" />

@@ -14,7 +14,7 @@
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-  <StackLayout>
+  <StackLayout class="demo-full">
       <Button text="Show Alert" tap="{{showAlert}}" class="btn" />
       
   </StackLayout>

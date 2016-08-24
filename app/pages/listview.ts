@@ -10,7 +10,10 @@ export class ListViewModel extends Observable {
     super();
     this.set('sampleItems', [
       {
-        label: 'TO DO :)'
+        title: 'Single-line item'
+      },
+      {
+        title: 'Single-line item 2'
       }
     ]);
   }

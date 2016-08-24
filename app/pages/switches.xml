@@ -14,10 +14,10 @@
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-  <StackLayout>
+  <StackLayout class="demo-full">
     <Switch checked="true" class="switch" id="checked"/>
-    <Switch checked="false" id="unChecked" class="switch" enabled="true"/>
-    <Switch isEnabled="false" checked="true" class="switch" id="checkedDisabled"/>
+    <Switch checked="false" class="switch" enabled="true" id="unChecked" />
+    <Switch checked="true" class="switch" isEnabled="false" id="checkedDisabled"/>
     <Switch isEnabled="false" class="switch" id="unCheckedDisabled"/>
   </StackLayout>
 </Page>

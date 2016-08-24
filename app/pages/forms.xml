@@ -14,7 +14,7 @@
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-  <StackLayout>
+  <StackLayout class="demo-full">
       <TextField hint="Input text" />
       <TextView hint="Input text for multiline field" editable="true" />    
   </StackLayout>

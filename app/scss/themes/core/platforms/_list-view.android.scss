@@ -1,34 +1,10 @@
 .list-view {
-  height: 48;
-  padding: 0 16 0 16;
-  .thumb {
-    width: 40;
-    margin: 0 16 0 0;
-    stretch:fill;
-    padding: auto;
-  }
-  .thumb-circle {
-    width: 40;
-    stretch:fill;
-    margin: 0 16 0 0;
-    border-radius: 20;
-    border-width: 1;
-    border-color: transparent;
-    padding: auto;
-  }
-  .thumb-round {
-    width: 40;
-    stretch:fill;
-    margin: 0 16 0 0;
-    border-radius: 5;
-    border-width: 1;
-    border-color: transparent;
-    padding: auto;
-  }
-  .title {
-    height: auto;
-    color: $black;
-    vertical-align: center;
-    padding: auto;
+  .item {
+    .thumb-circle {
+      border-radius: 20;
+    }
+    .thumb-round {
+      border-radius: 5;  
+    }
   }
 }

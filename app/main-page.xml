@@ -7,32 +7,32 @@
       <ActionBar.actionItems>
         <ActionItem>
           <ActionItem.actionView>
-            <Button text="Left" class="action-item btn" />
+            <Button text="Left" class="action-item" />
           </ActionItem.actionView>
         </ActionItem>
         <ActionItem ios.position="right">
           <ActionItem.actionView>
-            <Button text="Right" class="action-item btn" />
+            <Button text="Right" class="action-item" />
           </ActionItem.actionView>
         </ActionItem>
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
   <ScrollView>
-    <StackLayout class="main-page">
-      <Button text="Basics" tap="{{ viewBasics }}" class="btn" />
-      <Button text="Buttons" tap="{{ viewButtons }}" class="btn" />
-      <Button text="Forms" tap="{{ viewForms }}" class="btn" />
-      <Button text="Searchbars" tap="{{ viewSearch }}" class="btn" />
-      <Button text="Sliders" tap="{{ viewSliders }}" class="btn" />
-      <Button text="Switches" tap="{{ viewSwitches }}" class="btn" />
-      <Button text="Progress & Activity" tap="{{ viewProgress }}" class="btn" />
-      <Button text="Tabs" tap="{{ viewTabs }}" class="btn" />
-      <Button text="SegmentedBar" tap="{{ viewSegmentBar }}" class="btn" />
-      <Button text="Dialogs" tap="{{ viewDialogs }}" class="btn"/>
-      <Button text="ListView" tap="{{ viewListView }}" class="btn" />
-      <Button text="SideDrawer" tap="{{ viewSideDrawer }}" class="btn" />
-      <Button text="Themes" tap="{{ viewThemes }}" class="btn" />
+    <StackLayout class="demo-full">
+      <Button text="Basics" tap="{{ viewBasics }}" class="btn btn-demo" />
+      <Button text="Buttons" tap="{{ viewButtons }}" class="btn btn-demo" />
+      <Button text="Forms" tap="{{ viewForms }}" class="btn btn-demo" />
+      <Button text="Searchbars" tap="{{ viewSearch }}" class="btn btn-demo" />
+      <Button text="Sliders" tap="{{ viewSliders }}" class="btn btn-demo" />
+      <Button text="Switches" tap="{{ viewSwitches }}" class="btn btn-demo" />
+      <Button text="Progress & Activity" tap="{{ viewProgress }}" class="btn btn-demo" />
+      <Button text="Tabs" tap="{{ viewTabs }}" class="btn btn-demo" />
+      <Button text="SegmentedBar" tap="{{ viewSegmentBar }}" class="btn btn-demo" />
+      <Button text="Dialogs" tap="{{ viewDialogs }}" class="btn btn-demo"/>
+      <Button text="ListView" tap="{{ viewListView }}" class="btn btn-demo" />
+      <Button text="SideDrawer" tap="{{ viewSideDrawer }}" class="btn btn-demo" />
+      <Button text="Themes" tap="{{ viewThemes }}" class="btn btn-demo" />
 
     </StackLayout>
 
