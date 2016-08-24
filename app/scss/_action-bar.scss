@@ -1,14 +1,13 @@
 .action-bar {
-  color:$secondary;
+  color:$primary;
 
   .action-title {
-    color:$primary;
     font-weight: bold;
     font-size:17;
   }
 
   .action-item {
-    color: $secondary;
     font-weight: normal;
+    color:$primary;
   }
 }

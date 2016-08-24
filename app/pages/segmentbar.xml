@@ -14,12 +14,12 @@
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-  <StackLayout>
+  <StackLayout class="demo-full">
     <SegmentedBar>
       <SegmentedBar.items>
         <SegmentedBarItem title="First" />
         <SegmentedBarItem title="Second" />
-        <SegmentedBarItem title="Third" />    
+        <SegmentedBarItem title="Third" />
       </SegmentedBar.items>
     </SegmentedBar>
   </StackLayout>

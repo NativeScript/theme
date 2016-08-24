@@ -14,7 +14,7 @@
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-  <StackLayout>
+  <StackLayout class="demo-full">
       <Slider minValue="1" maxValue="100" value="50" />
        
   </StackLayout>

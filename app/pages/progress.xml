@@ -14,7 +14,7 @@
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-  <StackLayout>
+  <StackLayout class="demo-full">
     <Progress value="50" maxValue="100" />
     <ActivityIndicator busy="true" />
   </StackLayout>
