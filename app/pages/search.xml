@@ -16,6 +16,6 @@
   </Page.actionBar>
   <StackLayout>
     <SearchBar hint="Search" />
-    
+
   </StackLayout>
 </Page>
