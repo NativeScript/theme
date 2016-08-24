@@ -1,50 +1,53 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
-    <Page.actionBar>
-        <ActionBar class="action-bar">
-            <NavigationButton text="Back" icon="" tap=""/>
-            <StackLayout class="action-title">
-                <Label text="ListView"/>
-            </StackLayout>
-            <ActionBar.actionItems>
-                <ActionItem ios.position="right">
-                    <ActionItem.actionView>
-                        <Button text="Right" class="action-item"/>
-                    </ActionItem.actionView>
-                </ActionItem>
-            </ActionBar.actionItems>
-        </ActionBar>
-    </Page.actionBar>
-    <StackLayout>
-        <ListView items="{{ sampleItems }}">
-            <ListView.itemTemplate>
-                <GridLayout class="list-view" columns="auto,auto">
-                    <Image col="0" class="list-view thumb"
-                           src="http://img.lum.dolimg.com/v1/images/open-uri20150608-27674-1jdbpa8_be64ca1b.png"/>
-                    <Label col="1" class="list-view title" text="Single-line item"/>
-                </GridLayout>
-            </ListView.itemTemplate>
-        </ListView>
+  <Page.actionBar>
+      <ActionBar class="action-bar">
+          <NavigationButton text="Back" icon="" tap=""/>
+          <StackLayout class="action-title">
+              <Label text="ListView"/>
+          </StackLayout>
+          <ActionBar.actionItems>
+              <ActionItem ios.position="right">
+                  <ActionItem.actionView>
+                      <Button text="Right" class="action-item"/>
+                  </ActionItem.actionView>
+              </ActionItem>
+          </ActionBar.actionItems>
+      </ActionBar>
+  </Page.actionBar>
+  <ScrollView>
+    <StackLayout class="demo-full">
+      <Label text="Thumbnail" class="h2 m-5" /> 
+      <ListView items="{{ sampleItems }}" class="list-view">
+        <ListView.itemTemplate>
+          <GridLayout class="item" rows="auto" columns="auto,*">
+            <Image row="0" col="0" class="thumb"
+                    src="http://img.lum.dolimg.com/v1/images/open-uri20150608-27674-1jdbpa8_be64ca1b.png"/>
+            <Label row="0" col="1" class="title" text="{{title}}"/>
+          </GridLayout>
+        </ListView.itemTemplate>
+      </ListView>
 
-        <ListView items="{{ sampleItems }}">
-            <ListView.itemTemplate>
-                <GridLayout class="list-view" columns="auto,auto">
-                    <Image col="0" class="list-view thumb-circle"
-                           src="http://img.cinemablend.com/cb/4/f/1/7/5/2/4f1752e6112cd3e633b5c4f6c838aa5975b0a5340f4c65df332d43fa848773bc.jpg"/>
-                    <Label col="1" class="list-view title" text="Single-line item"/>
-                </GridLayout>
-            </ListView.itemTemplate>
-        </ListView>
+      <Label text="Thumbnail Circle" class="h2 m-5" />
+      <ListView items="{{ sampleItems }}" class="list-view">
+        <ListView.itemTemplate>
+          <GridLayout class="item" rows="auto" columns="auto,*">
+            <Image row="0" col="0" class="thumb thumb-circle"
+                    src="http://img.cinemablend.com/cb/4/f/1/7/5/2/4f1752e6112cd3e633b5c4f6c838aa5975b0a5340f4c65df332d43fa848773bc.jpg"/>
+            <Label row="0" col="1" class="title" text="{{title}}"/>
+          </GridLayout>
+        </ListView.itemTemplate>
+      </ListView>
 
-
-        <ListView items="{{ sampleItems }}">
-            <ListView.itemTemplate>
-                <GridLayout class="list-view" columns="auto,*">
-                    <Image class="list-view thumb-round"
-                           src="http://vignette3.wikia.nocookie.net/dragonball/images/c/cb/CDGDZZfVAAI6_K4.jpg"/>
-                    <Label class="list-view title" col="1" text="Single-line item"/>
-                </GridLayout>
-            </ListView.itemTemplate>
-        </ListView>
-
+      <Label text="Thumbnail Round" class="h2 m-5" />
+      <ListView items="{{ sampleItems }}" class="list-view">
+        <ListView.itemTemplate>
+          <GridLayout class="item" rows="auto" columns="auto,*">
+            <Image row="0" col="0" class="thumb thumb-round"
+                    src="http://vignette3.wikia.nocookie.net/dragonball/images/c/cb/CDGDZZfVAAI6_K4.jpg"/>
+            <Label row="0" col="1" class="title" text="{{title}}"/>
+          </GridLayout>
+        </ListView.itemTemplate>
+      </ListView>  
     </StackLayout>
+  </ScrollView>
 </Page>

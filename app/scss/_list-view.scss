@@ -1,3 +1,27 @@
-.listview {
-  color: $text-color;
+.list-view {
+
+  .item {
+    height:48;
+    padding: 0 16 0 16;
+
+    .thumb {
+      width:40;
+      height:40;
+      stretch:fill;
+      margin: 0 16 0 0;
+    }
+    .thumb-circle {
+      border-width: 1;
+      border-color: transparent;
+    }
+    .thumb-round {
+      border-width: 1;
+      border-color: transparent;
+    }
+    .title {
+      height: 100%;
+      color: $black;
+      vertical-align: center;
+    }
+  }
 }

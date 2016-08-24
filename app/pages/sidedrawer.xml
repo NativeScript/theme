@@ -14,8 +14,7 @@
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-
-  <StackLayout>
+  <StackLayout class="demo-full">
     <Label text="TO DO :)" textWrap="true" />
      
   </StackLayout>

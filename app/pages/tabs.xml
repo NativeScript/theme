@@ -14,7 +14,7 @@
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-  <TabView>
+  <TabView class="demo-full">
    <TabView.items>
      <TabViewItem title="Tab 1">
        <TabViewItem.view>

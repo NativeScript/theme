@@ -14,10 +14,10 @@
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-  <StackLayout class="main-page themes">
-    <Label text="{{ 'Active: ' + labelText }}" textWrap="true" />
-    <Button text="Apply Default" tap="{{ applyDefault }}" />
-    <Button text="Apply Light" tap="{{ applyLight }}" />
-    <Button text="Apply Dark" tap="{{ applyDark }}" />
+  <StackLayout class="demo-full themes">
+    <Label text="{{ 'Active: ' + labelText }}" textWrap="true" class="h2" />
+    <Button text="Apply Default" tap="{{ applyDefault }}" class="btn" />
+    <Button text="Apply Light" tap="{{ applyLight }}" class="btn" />
+    <Button text="Apply Dark" tap="{{ applyDark }}" class="btn" />
   </StackLayout>
 </Page>

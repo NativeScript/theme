@@ -14,7 +14,7 @@
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-  <StackLayout>
+  <StackLayout class="demo-full">
     <SearchBar hint="Search" />
 
   </StackLayout>
