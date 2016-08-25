@@ -48,6 +48,21 @@
           </GridLayout>
         </ListView.itemTemplate>
       </ListView>  
+
+
+      <Label text="Multi-Line Thumbnail Round" class="h2 m-5" />
+      <ListView items="{{ sampleItemsMulti }}" class="list-view">
+        <ListView.itemTemplate>
+          <GridLayout class="item multi-line" rows="auto,auto,auto" columns="auto,*">
+            <Image row="0" col="0" rowSpan="3" class="thumb thumb-round"
+                    src="http://vignette3.wikia.nocookie.net/dragonball/images/c/cb/CDGDZZfVAAI6_K4.jpg"/>
+            <Label row="0" col="1" class="title" text="{{title}}"/>
+            <Label row="1" col="1" class="body" text="{{body}}"/>
+            <Label row="2" col="1" class="footnote" text="{{footnote}}"/>
+          </GridLayout>
+        </ListView.itemTemplate>
+      </ListView>  
+
     </StackLayout>
   </ScrollView>
 </Page>
