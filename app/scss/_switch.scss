@@ -1,0 +1,13 @@
+.switch{
+  &[checked=true]{
+    background-color: $accent;
+  }
+  &[checked=true][isEnabled=false]{
+    background-color: $grey;
+    color: $grey;
+  }
+  &[isEnabled=false]{
+    background-color: $grey;
+    color: $grey;
+  }
+}
