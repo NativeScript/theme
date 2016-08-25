@@ -1,4 +1,6 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+  xmlns:drawer="nativescript-telerik-ui/sidedrawer"
+  navigatingTo="navigatingTo">
   <Page.actionBar>
     <ActionBar class="action-bar">
       <NavigationButton text="Back" icon="" tap="" />
@@ -14,8 +16,20 @@
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-  <StackLayout class="demo-full">
-    <Label text="TO DO :)" textWrap="true" />
-     
-  </StackLayout>
+
+  <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
+
+  <drawer:RadSideDrawer.drawerTransition>
+    <drawer:RevealTransition/>
+  </drawer:RadSideDrawer.drawerTransition>
+
+    <drawer:RadSideDrawer.drawerContent>
+
+
+    </drawer:RadSideDrawer.drawerContent>
+
+    <drawer:RadSideDrawer.mainContent>
+
+    </drawer:RadSideDrawer.mainContent>
+  </drawer:RadSideDrawer>
 </Page>
