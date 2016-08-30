@@ -18,18 +18,36 @@
   </Page.actionBar>
 
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
-
-  <drawer:RadSideDrawer.drawerTransition>
-    <drawer:RevealTransition/>
-  </drawer:RadSideDrawer.drawerTransition>
-
-    <drawer:RadSideDrawer.drawerContent>
-
-
+      <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
+      <StackLayout cssClass="mainContent">
+            <Label text="Side Drawer Example" />
+      </StackLayout>
+    </drawer:RadSideDrawer.mainContent>
+    <drawer:RadSideDrawer.drawerContent >
+      <StackLayout class="sidedrawer-left">
+        <StackLayout class="sidedrawer-header">
+            <Image src="" stretch ="none" class="sidedrawer-header-image"/>
+            <Label text="name@gmail.com" textWrap="true" class="sidedrawer-header-brand" />
+        </StackLayout>
+          <StackLayout class="sidedrawer-content">
+          <StackLayout class="sidedrawer-list-item" >
+            <Label text="{{'fa-inbox' | fonticon }}" class="fa sidedrawer-list-item-icon" /><Button class="sidedrawer-list-item-text" text="Inbox" tap="" />
+          </StackLayout>
+          <StackLayout class="sidedrawer-list-item sidedrawer-list-item-selected">
+            <Label text="{{'fa-cloud' | fonticon }}" class="fa sidedrawer-list-item-icon" /><Button class="sidedrawer-list-item-text" text="Outbox" tap="" />
+          </StackLayout>
+          <StackLayout class="sidedrawer-list-item">
+            <Label text="{{'fa-trash' | fonticon }}" class="fa sidedrawer-list-item-icon" /><Button class="sidedrawer-list-item-text" text="Trash" tap="" />
+          </StackLayout>
+          <StackLayout class="sidedrawer-list-item">
+            <Label text="{{'fa-archive' | fonticon }}" class="fa sidedrawer-list-item-icon" /><Label class="sidedrawer-list-item-text" text="Label" tap="" />
+          </StackLayout>
+            <StackLayout class="sidedrawer-list-item">
+            <Button class="sidedrawer-list-item-text"  text="Spam" tap="" />
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
     </drawer:RadSideDrawer.drawerContent>
 
-    <drawer:RadSideDrawer.mainContent>
-
-    </drawer:RadSideDrawer.mainContent>
   </drawer:RadSideDrawer>
 </Page>

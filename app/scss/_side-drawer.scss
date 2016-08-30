@@ -1,0 +1,50 @@
+.sidedrawer-left{
+	background-color: $charcoal;
+}
+.sidedrawer-header{
+	height: 148;
+	background-color: $accent;
+	width: 100%;
+	padding:16 16 0 16;;
+}
+.sidedrawer-header-image{
+	margin-bottom:36;
+	height: 64;
+	width: 64;
+	background-color: $grey;
+	horizontal-align:left;
+	border-radius: 32;
+}
+.sidedrawer-header-brand{
+	color: $grey;
+	font-size: 14;
+}
+.sidedrawer-list-item{
+	height: 48;
+	horizontal-align:left;
+	width: 100%;
+	orientation:horizontal;
+	color:$btn-color-disabled;
+}
+.sidedrawer-list-item-icon{
+	width:24;
+	margin:0 16 0 16;
+	horizontal-align:left;
+	font-size: 20;
+	height: 48;
+	vertical-align:center;
+}
+.sidedrawer-list-item-text{
+	horizontal-align:left;
+	padding-left: 16;
+	text-align: left;
+	font-size: 15;
+	background-color: transparent;
+	border-width: 0.1;
+	width: 80%;
+	vertical-align:center;
+}
+.sidedrawer-list-item-selected{
+	color:$accent;
+	background-color: #2b2b2b;
+}
