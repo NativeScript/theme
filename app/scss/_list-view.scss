@@ -1,13 +1,26 @@
 .list-view {
 
   .item {
-    height:48;
+    height: 48;
     padding: 0 16 0 16;
-
+    &.multi-line {
+      padding-top: 16;
+      padding-bottom: 16;
+      .title {
+        vertical-align: bottom;
+        padding-top: 8;
+      }
+      .body {
+        color: $grey;
+      }
+      .footnote {
+        color: $grey;
+      }
+    }
     .thumb {
-      width:40;
-      height:40;
-      stretch:fill;
+      width: 40;
+      height: 40;
+      stretch: fill;
       margin: 0 16 0 0;
     }
     .thumb-circle {

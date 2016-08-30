@@ -4,10 +4,5 @@
 	background-color: $grey;
 	&[checked=true]{
 		color: $accent;
-		background-color: $accent;
-	}
-	&[checked=true][isEnabled=false]{
-		color: $grey;
-		background-color: $grey;
 	}
 }
