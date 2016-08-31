@@ -1,2 +1,11 @@
-﻿import * as app from 'application';
-app.start({ moduleName: "main-page" });
+﻿import * as application from 'application';
+import {TNSFontIcon, fonticon} from 'nativescript-fonticon';
+
+TNSFontIcon.debug = true;
+TNSFontIcon.paths = {
+  'fa': 'font-awesome.css'
+};
+TNSFontIcon.loadCss();
+
+application.resources['fonticon'] = fonticon;
+application.start({ moduleName: 'main-page' });
