@@ -1,43 +1,82 @@
-.sidedrawer-left{
+.sidedrawer-left, .sidedrawer-center{
 	background-color: $charcoal;
 }
 .sidedrawer-header{
 	height: 148;
 	background-color: $accent;
 	width: 100%;
+}
+.sidedrawer-left .sidedrawer-header{
 	padding:16 16 0 16;;
 }
+.sidedrawer-center .sidedrawer-header{
+	padding:20 15 0 15;;
+}
+
+
 .sidedrawer-header-image{
-	margin-bottom:36;
+	background-color: $grey;
+}
+.sidedrawer-left .sidedrawer-header-image{
 	height: 64;
 	width: 64;
-	background-color: $grey;
-	horizontal-align:left;
 	border-radius: 32;
+	horizontal-align:left;
+	margin-bottom:36;
 }
+.sidedrawer-center .sidedrawer-header-image{
+	height: 74;
+	width: 74;
+	border-radius: 37;
+	horizontal-align:center;
+	margin-bottom:24;
+}
+
 .sidedrawer-header-brand{
 	color: $grey;
+}
+.sidedrawer-left  .sidedrawer-header-brand{
+	horizontal-align:left;
 	font-size: 14;
 }
+.sidedrawer-center .sidedrawer-header-brand{
+	horizontal-align:center;
+	font-size: 15;
+}
+
+
+
 .sidedrawer-list-item{
 	height: 48;
 	horizontal-align:left;
 	width: 100%;
 	orientation:horizontal;
 	color:$btn-color-disabled;
+
+	&.sidedrawer-list-item-selected{
+		color:$accent;
+		background-color: #2b2b2b;
+	}
 }
+
+
 .sidedrawer-list-item-icon{
 	width:24;
-	margin:0 16 0 16;
 	horizontal-align:left;
 	font-size: 20;
 	height: 48;
 	vertical-align:center;
-
 }
+.sidedrawer-left .sidedrawer-list-item-icon{
+	margin:0 16 0 16;
+}
+.sidedrawer-center .sidedrawer-list-item-icon{
+	margin:0 0 0 15;
+}
+
+
 .sidedrawer-list-item-text{
 	horizontal-align:left;
-	padding-left: 16;
 	text-align: left;
 	font-size: 15;
 	background-color: transparent;
@@ -45,7 +84,9 @@
 	width: 80%;
 	vertical-align:center;
 }
-.sidedrawer-list-item-selected{
-	color:$accent;
-	background-color: #2b2b2b;
+.sidedrawer-left .sidedrawer-list-item-text{
+	padding-left: 16;
+}
+.sidedrawer-center .sidedrawer-list-item-text{
+	padding-left: 15;
 }
