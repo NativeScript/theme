@@ -33,7 +33,7 @@
           <StackLayout class="sidedrawer-list-item" >
             <Label text="{{'fa-inbox' | fonticon }}" class="fa sidedrawer-list-item-icon" /><Button class="sidedrawer-list-item-text" text="Inbox" tap="" />
           </StackLayout>
-          <StackLayout class="sidedrawer-list-item sidedrawer-list-item-selected">
+          <StackLayout class="sidedrawer-list-item active">
             <Label text="{{'fa-cloud' | fonticon }}" class="fa sidedrawer-list-item-icon" /><Button class="sidedrawer-list-item-text" text="Outbox" tap="" />
           </StackLayout>
           <StackLayout class="sidedrawer-list-item">
