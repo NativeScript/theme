@@ -1,13 +1,9 @@
 import { EventData } from "data/observable";
 import { Page } from "ui/page";
-import {Observable} from 'data/observable';
-import {topmost} from 'ui/frame';
+import { BaseModel } from './base';
 
-export class SideDrawerModel extends Observable {
+export class SideDrawerModel extends BaseModel {
 
-  constructor() {
-    super();
-  }
 }
 
 export function navigatingTo(args: EventData) {

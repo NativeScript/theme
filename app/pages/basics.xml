@@ -1,7 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
   <Page.actionBar>
     <ActionBar class="action-bar">
-      <NavigationButton text="Back" android.systemIcon="ic_menu_back" tap="" />
+      <NavigationButton text="Back" android.systemIcon="ic_menu_back" tap="{{goBack}}" />
       <StackLayout class="action-title">
         <Label text="Basics"/>
       </StackLayout>
@@ -48,6 +48,36 @@
         <Label text="Class: footnote" row="0" col="0" />
         <Label text="Footnote" row="0" col="1" class="right" />
       </GridLayout>
-    </StackLayout>      
+      <StackLayout class="demo-full m-t-10">  
+        <Label text="Text" class="h2" />
+        <StackLayout class="divider m-b-2"></StackLayout>
+        <Label text="Note: text-transform is not working." textWrap="true" class="t-14 c-grey-d-20 m-b-5" />
+        
+        <GridLayout rows="auto" columns="*,*" class="text-lowercase m-t-5 w-full">
+          <Label text="text-lowercase" row="0" col="0" />
+          <Label text="Lowercase" row="0" col="1" class="right" />
+        </GridLayout>
+        <GridLayout rows="auto" columns="*,*" class="text-uppercase m-t-5 w-full">
+          <Label text="text-lowercase" row="0" col="0" />
+          <Label text="Uppercase" row="0" col="1" class="right text-uppercase" />
+        </GridLayout>
+        <GridLayout rows="auto" columns="*,*" class="text-capitalize m-t-5 w-full">
+          <Label text="text-capitalize" row="0" col="0" />
+          <Label text="Capitalize" row="0" col="1" class="right" />
+        </GridLayout>
+        <GridLayout rows="auto" columns="*,*" class="font-weight-normal m-t-5 w-full">
+          <Label text="font-weight-normal" row="0" col="0" />
+          <Label text="Normal Weight" row="0" col="1" class="right" />
+        </GridLayout>
+        <GridLayout rows="auto" columns="*,*" class="font-weight-bold m-t-5 w-full">
+          <Label text="font-weight-bold" row="0" col="0" />
+          <Label text="Bold" row="0" col="1" class="right" />
+        </GridLayout>
+        <GridLayout rows="auto" columns="*,*" class="font-italic m-t-5 w-full">
+          <Label text="font-italic" row="0" col="0" />
+          <Label text="Italic" row="0" col="1" class="right" />
+        </GridLayout>
+      </StackLayout>
+    </StackLayout>    
   </ScrollView>
 </Page>
