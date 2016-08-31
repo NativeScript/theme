@@ -19,7 +19,7 @@
 
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
       <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
-      <StackLayout cssClass="mainContent">
+      <StackLayout class="mainContent">
             <Label text="Side Drawer Example" />
       </StackLayout>
     </drawer:RadSideDrawer.mainContent>
