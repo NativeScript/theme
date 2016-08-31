@@ -51,7 +51,7 @@
 	orientation:horizontal;
 	color:$btn-color-disabled;
 
-	&.sidedrawer-list-item-selected{
+	&.active{
 		color:$accent;
 		background-color: #2b2b2b;
 	}
