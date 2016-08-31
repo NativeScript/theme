@@ -15,7 +15,7 @@
     </ActionBar>
   </Page.actionBar>
   <StackLayout class="demo-full">
-      <Slider minValue="1" maxValue="100" value="50" />
-       
+      <Slider minValue="1" maxValue="100" value="50" class="slider" />
+      <Slider minValue="1" maxValue="100" value="50" class="slider" isEnabled="false" />
   </StackLayout>
 </Page>
