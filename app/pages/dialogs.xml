@@ -1,7 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
   <Page.actionBar>
     <ActionBar class="action-bar">
-      <NavigationButton text="Back" icon="" tap="" />
+      <NavigationButton text="Back" android.systemIcon="ic_menu_back" tap="{{goBack}}" />
       <StackLayout class="action-title">
         <Label text="Dialogs"/>
       </StackLayout>

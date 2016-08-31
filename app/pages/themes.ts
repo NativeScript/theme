@@ -1,12 +1,11 @@
 import { EventData } from "data/observable";
 import { Page } from "ui/page";
-import {Observable} from 'data/observable';
-import {topmost} from 'ui/frame';
-import {knownFolders} from 'file-system';
-import {isIOS, isAndroid} from 'platform';
+import { BaseModel } from './base';
+import { knownFolders } from 'file-system';
+import { isIOS, isAndroid } from 'platform';
 var themes = require('nativescript-themes');
 
-export class ThemesModel extends Observable {
+export class ThemesModel extends BaseModel {
   public labelText: string;
   private _toggled: boolean = false;
 

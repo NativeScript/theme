@@ -1,11 +1,14 @@
+// Mixins
+@import 'mixins/index';
+
 // Utilities
-@import 'mixins';
+@import 'utilities/index';
 
 // Core CSS
 @import 'action-bar';
 @import 'buttons';
+@import 'forms';
 @import 'labels';
-@import 'layouts';
 @import 'list-view';
 @import 'segmented-bar';
 @import 'slider';

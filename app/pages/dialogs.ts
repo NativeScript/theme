@@ -1,17 +1,12 @@
 import { EventData } from "data/observable";
 import { Page } from "ui/page";
-import {Observable} from 'data/observable';
-import {topmost} from 'ui/frame';
+import { BaseModel } from './base';
 import * as dialogs from 'ui/dialogs';
 
-class DialogsModel extends Observable {
-
-  constructor() {
-    super();
-  }
+export class DialogsModel extends BaseModel {
 
   public showAlert() {
-    dialogs.alert('Alert message.');
+    dialogs.alert('Sample alert.');
   }
 }
 

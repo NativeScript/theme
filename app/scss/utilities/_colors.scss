@@ -1,0 +1,23 @@
+// Color classes
+$colors: (
+  'grey': (
+    color: $grey
+  ),
+  'grey-d-20': (
+    color: darken($grey, 20%)
+  )
+) !default;
+// TODO: expand on the above
+// lighter could be: `grey-l-20`, etc.
+
+/**
+ * Color classes
+ * The following creates this pattern:
+ * .c-grey{color:#e0e0e0}.c-grey-d-20{color:#adadad}
+**/
+@each $color, $names in $colors {
+  $c:   map-get($names, color);
+
+  .c-#{$color} { color: $c; } 
+  .c-bg-#{$color} { background-color: $c; } 
+}
