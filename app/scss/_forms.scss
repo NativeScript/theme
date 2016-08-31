@@ -1,0 +1,23 @@
+.form {
+  .input {
+    padding: 16 8 16 8;
+    // border-bottom: 1; // Not possible atm
+    // border-width: 1;
+    // border-color: $grey;
+  }
+
+  .input-field {
+    padding: 16 8 16 8;
+
+    .input {
+      padding: 0;
+      margin: 0 0 8 0;
+    }
+
+    .border {
+      background-color: $grey;
+      height: 1;
+      width: 100%;
+    }
+  }
+}
