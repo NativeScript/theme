@@ -1,0 +1,64 @@
+/* Alignment */
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+
+// Transformation
+
+.text-lowercase      { text-transform: lowercase; }
+.text-uppercase      { text-transform: uppercase; }
+.text-capitalize     { text-transform: capitalize; }
+
+// Weight and italics
+
+.font-weight-normal  { font-weight: normal; }
+.font-weight-bold    { font-weight: bold; }
+.font-italic         { font-style: italic; }
+
+// Size
+
+$font-size:   10 !default;
+$font-sizes: (
+  10: (
+    size: $font-size
+  ),
+  12: (
+    size: $font-size + 2
+  ),
+  14: (
+    size: $font-size + 4
+  ),
+  15: (
+    size: $font-size + 5
+  ),
+  16: (
+    size: $font-size + 6
+  ),
+  17: (
+    size: $font-size + 7
+  ),
+  18: (
+    size: $font-size + 8
+  ),
+  19: (
+    size: $font-size + 9
+  ),
+  20: (
+    size: $font-size + 20
+  )
+) !default;
+
+/**
+ * Font size
+ * The following creates this pattern:
+ * .t-10{font-size:10}
+ * From 10, 12, 14, 15, 16, 17, 18, 19, 20
+**/
+@each $size, $sizes in $font-sizes {
+  $s:   map-get($sizes, size);
+
+  .t-#{$size} { font-size: $s; } 
+}

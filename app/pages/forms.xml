@@ -1,7 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
   <Page.actionBar>
     <ActionBar class="action-bar">
-      <NavigationButton text="Back" icon="" tap="" />
+      <NavigationButton text="Back" android.systemIcon="ic_menu_back" tap="{{goBack}}" />
       <StackLayout class="action-title">
         <Label text="Forms"/>
       </StackLayout>
@@ -14,8 +14,10 @@
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-  <StackLayout class="demo-full">
-      <TextField hint="Input text" />
-      <TextView hint="Input text for multiline field" editable="true" />    
+  <StackLayout class="demo-full form">
+    <StackLayout class="input-field">
+      <TextField hint="Input text" class="input" />
+      <StackLayout class="border"></StackLayout>  
+    </StackLayout>  
   </StackLayout>
 </Page>
