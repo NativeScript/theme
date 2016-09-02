@@ -1,0 +1,55 @@
+ <StackLayout class="sidedrawer-left" loaded="onLoad">
+        <StackLayout class="sidedrawer-header">
+            <Image src="~/sidedrawer/N.png" tap="{{ viewHome }}" class="sidedrawer-header-image"/>
+            <Label text="NativeScript Theme Project" textWrap="true" class="sidedrawer-header-brand" />
+        </StackLayout>
+        <ScrollView>
+          <StackLayout class="sidedrawer-content">
+			<StackLayout class="sidedrawer-list-item" >
+              <Button text="Home" tap="{{ viewHome }}" class="sidedrawer-list-item-text" />
+            </StackLayout>
+            <StackLayout class="sidedrawer-list-item" >
+              <Button text="Basics" tap="{{ viewBasics }}" class="sidedrawer-list-item-text" />
+            </StackLayout>
+            <StackLayout class="sidedrawer-list-item" >
+              <Button text="Buttons" tap="{{ viewButtons }}" class="sidedrawer-list-item-text" />
+            </StackLayout>
+            <StackLayout class="sidedrawer-list-item" >
+              <Button text="Buttons Active" tap="{{ viewButtonsActive }}" class="sidedrawer-list-item-text" />
+            </StackLayout>
+            <StackLayout class="sidedrawer-list-item" >
+              <Button text="Forms" tap="{{ viewForms }}" class="sidedrawer-list-item-text" />
+            </StackLayout>
+            <StackLayout class="sidedrawer-list-item" >
+              <Button text="Searchbars" tap="{{ viewSearch }}" class="sidedrawer-list-item-text" />
+            </StackLayout>
+            <StackLayout class="sidedrawer-list-item" >
+              <Button text="Sliders" tap="{{ viewSliders }}" class="sidedrawer-list-item-text" />
+            </StackLayout>
+            <StackLayout class="sidedrawer-list-item" >
+              <Button text="Switches" tap="{{ viewSwitches }}" class="sidedrawer-list-item-text" />
+            </StackLayout>
+            <StackLayout class="sidedrawer-list-item" >
+              <Button text="Progress & Activity" tap="{{ viewProgress }}" class="sidedrawer-list-item-text" />
+            </StackLayout>
+            <StackLayout class="sidedrawer-list-item" >
+              <Button text="Tabs" tap="{{ viewTabs }}" class="sidedrawer-list-item-text" />
+            </StackLayout>
+            <StackLayout class="sidedrawer-list-item" >
+              <Button text="SegmentedBar" tap="{{ viewSegmentBar }}" class="sidedrawer-list-item-text" />
+            </StackLayout>
+            <StackLayout class="sidedrawer-list-item" >
+              <Button text="Dialogs" tap="{{ viewDialogs }}" class="sidedrawer-list-item-text"/>
+            </StackLayout>
+            <StackLayout class="sidedrawer-list-item" >
+              <Button text="ListView" tap="{{ viewListView }}" class="sidedrawer-list-item-text" />
+            </StackLayout>
+            <StackLayout class="sidedrawer-list-item" >
+              <Button text="SideDrawer" tap="{{ viewSideDrawer }}" class="sidedrawer-list-item-text" />
+            </StackLayout>
+            <StackLayout class="sidedrawer-list-item" >
+              <Button text="Themes" tap="{{ viewThemes }}" class="sidedrawer-list-item-text" />
+            </StackLayout>
+          </StackLayout>
+        </ScrollView>
+      </StackLayout>

@@ -5,8 +5,8 @@ import { BaseModel } from './base';
 export class ListViewModel extends BaseModel {
   public sampleItems: Array<any>;
   public sampleItemsMulti: Array<any>;
-  constructor() {
-    super();
+  constructor(page:Page) {
+    super(page);
     this.set('sampleItems', [
       {
         title: 'Single-line item'
@@ -32,5 +32,5 @@ export class ListViewModel extends BaseModel {
 
 export function navigatingTo(args: EventData) {
     var page = <Page>args.object;
-    page.bindingContext = new ListViewModel();
+    page.bindingContext = new ListViewModel(page);
 }
