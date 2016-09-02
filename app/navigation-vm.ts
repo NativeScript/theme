@@ -49,6 +49,14 @@ export class NavigationViewModel extends BaseModel {
 		topmost().navigate(navigationEntry);
 	}
 
+	public viewLogin() {
+		let navigationEntry = {
+			moduleName: 'pages/login-landing',
+			clearHistory: true
+		};
+		topmost().navigate(navigationEntry);
+	}	
+
 	public viewSliders() {
 		let navigationEntry = {
 			moduleName: 'pages/sliders',
@@ -108,14 +116,6 @@ export class NavigationViewModel extends BaseModel {
 	public viewListView() {
 		let navigationEntry = {
 			moduleName: 'pages/listview',
-			clearHistory: true
-		};
-		topmost().navigate(navigationEntry);
-	}
-
-	public viewSideDrawer() {
-		let navigationEntry = {
-			moduleName: 'pages/sidedrawer',
 			clearHistory: true
 		};
 		topmost().navigate(navigationEntry);
