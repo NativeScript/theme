@@ -8,7 +8,9 @@ import { BaseModel } from './base';
 var interval;
 
 export class ProgressModel extends BaseModel {
-
+  constructor(page:Page) {
+    super(page);
+  }
 }
 
 export function navigatingTo(args: EventData) {
