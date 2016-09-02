@@ -63,7 +63,7 @@
       </ScrollView>
     </drawer:RadSideDrawer.mainContent>
     <drawer:RadSideDrawer.drawerContent>
-        <sidedrawer:sidedrawer></sidedrawer:sidedrawer>
+        <sidedrawer:sidedrawer activeComponent='list'></sidedrawer:sidedrawer>
     </drawer:RadSideDrawer.drawerContent>
   </drawer:RadSideDrawer>
 </Page>
