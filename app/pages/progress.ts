@@ -3,18 +3,19 @@ import { Page } from "ui/page";
 import { Progress } from "ui/progress";
 import {Observable} from 'data/observable';
 import {topmost} from 'ui/frame';
+import { BaseModel } from './base';
 
 var interval;
 
-export class ProgressModel extends Observable {
-  constructor() {
-    super();
+export class ProgressModel extends BaseModel {
+  constructor(page:Page) {
+    super(page);
   }
 }
 
 export function navigatingTo(args: EventData) {
     var page = <Page>args.object;
-    page.bindingContext = new ProgressModel();
+    page.bindingContext = new ProgressModel(page);
 
     var progress = <Progress>page.getViewById("progress");
 
