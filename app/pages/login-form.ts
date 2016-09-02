@@ -1,20 +1,17 @@
 import { EventData } from "data/observable";
 import { Page } from "ui/page";
-import {Observable} from 'data/observable';
+import { BaseModel } from './base';
 import * as frameModule from 'ui/frame';
 import {Color} from "color";
 import {topmost} from 'ui/frame';
 
-export class ProgressModel extends Observable {
+export class ProgressModel extends BaseModel {
 
-  constructor() {
-    super();
-  }
 }
 
 export function navigatingTo(args: EventData) {
     var page = <Page>args.object;
-    page.bindingContext = new ProgressModel();
+    page.bindingContext = new ProgressModel(page);
 }
 
 export function loaded(args){

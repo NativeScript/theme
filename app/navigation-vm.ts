@@ -5,10 +5,6 @@ import { Page } from "ui/page";
 
 export class NavigationViewModel extends BaseModel {
 
-	constructor(page:Page) {
-		super(page);
-	}
-
 	public viewHome() {
 		let navigationEntry = {
 			moduleName: 'main-page',

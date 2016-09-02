@@ -57,7 +57,7 @@
               </GridLayout>
               <GridLayout rows="auto" columns="*,*" class="m-t-5 w-full">
                 <Label text="text-capitalize" row="0" col="0" />
-                <Label text="Capitalize" row="0" col="1" class="right text-capitalize" />
+                <Label text="capitalize" row="0" col="1" class="right text-capitalize" />
               </GridLayout>
               <GridLayout rows="auto" columns="*,*" class="font-weight-normal m-t-5 w-full">
                 <Label text="font-weight-normal" row="0" col="0" />

@@ -1,7 +1,7 @@
 ﻿import * as application from 'application';
 import {TNSFontIcon, fonticon} from 'nativescript-fonticon';
 
-TNSFontIcon.debug = true;
+TNSFontIcon.debug = false;
 TNSFontIcon.paths = {
   'fa': 'font-awesome.css'
 };
