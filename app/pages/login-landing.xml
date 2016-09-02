@@ -1,0 +1,20 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" id="login-background" style="background-image:url('~/images/login-bg.jpg');">
+
+
+<GridLayout rows="auto, auto, auto" columns="*" class="login-wrap">
+
+    <StackLayout class="logo-wrap">
+        <Label text="FRESH" textWrap="true" class="login-logo" row="0" col="0" />
+        <Label text="Lorem ipsum dolor set, neque adsa elmond faucabis" class="login-logo-sub" textWrap="true" />            
+    </StackLayout>
+            
+    <StackLayout row="1" col="0">        
+        <Button text="Sign in" class="btn btn-primary btn-rounded-lg" tap="signIn" />
+        <Button text="Create account" class="btn btn-rounded-lg btn-outline" tap="" />  
+    </StackLayout>
+ 
+    <Label row="2" col="0" text="Go Back" class="go-back" textWrap="true" tap="goBack" />
+
+</GridLayout>
+  
+</Page>
