@@ -15,5 +15,5 @@ export class TabsModel extends BaseModel {
 
 export function navigatingTo(args: EventData) {
     var page = <Page>args.object;
-    page.bindingContext = new TabsModel();
+    page.bindingContext = new TabsModel(page);
 }
