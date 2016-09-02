@@ -4,11 +4,11 @@ import * as app from 'application';
 import { isIOS, isAndroid, device } from 'platform';
 import { topmost } from 'ui/frame';
 import { Color } from 'color';
-import { ThemeDemo } from "./main-view-model";
+import { NavigationViewModel } from './navigation-vm';
 
 export function navigatingTo(args: EventData) {
   var page = <Page>args.object;
-  page.bindingContext = new ThemeDemo(page);
+  page.bindingContext = new NavigationViewModel();
 
   if (isIOS) {
     let controller = topmost().ios.controller;
