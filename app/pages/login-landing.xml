@@ -1,4 +1,4 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" id="login-background" style="background-image:url('~/images/login-bg.jpg');">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" id="login-background" style="background-image:url('~/images/login-bg-light.jpg');">
 
 
 <GridLayout rows="auto, auto, auto" columns="*" class="login-wrap">
@@ -12,7 +12,7 @@
         <Button text="Sign in" class="btn btn-primary btn-rounded-lg" tap="signIn" />
         <Button text="Create account" class="btn btn-rounded-lg btn-outline" tap="" />  
     </StackLayout>
-
+ 
     <Label row="2" col="0" text="Go Back" class="go-back" textWrap="true" tap="goBack" />
 
 </GridLayout>

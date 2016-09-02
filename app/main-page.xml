@@ -27,7 +27,7 @@
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-<<<<<<< HEAD
+
   <ScrollView>
     <StackLayout class="demo-full">
       <Button text="Basics" tap="{{ viewBasics }}" class="btn btn-demo" />
@@ -49,7 +49,7 @@
     </StackLayout>
 
   </ScrollView>
-=======
+
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
       <drawer:RadSideDrawer.mainContent showOverNavigation="true">
         <ScrollView>
@@ -75,5 +75,5 @@
             <sidedrawer:sidedrawer></sidedrawer:sidedrawer>
     </drawer:RadSideDrawer.drawerContent>
   </drawer:RadSideDrawer>
->>>>>>> NativeScript/master
+
 </Page>
