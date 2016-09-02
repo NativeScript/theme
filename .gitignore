@@ -1,4 +1,5 @@
 *.css
+!font-awesome.css
 *.js
 *.map
 /platforms
