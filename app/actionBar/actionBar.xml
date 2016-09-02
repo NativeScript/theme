@@ -1,0 +1,21 @@
+<ActionBar class="action-bar" loaded="onLoad">
+	<StackLayout class="action-title">
+		<Label id="actionBarTitle"/>
+	</StackLayout>
+	<ActionBar.actionItems>
+	<iOS>
+	<ActionItem position="left">
+		<ActionItem.actionView>
+		<Label text="{{'fa-bars' | fonticon }}" class="fa action-item" tap="{{ toggleSideDrawer }} " />
+		</ActionItem.actionView>
+	</ActionItem>
+	</iOS>
+	<ActionItem>
+	</ActionItem>
+	<ActionItem ios.position="right">
+		<ActionItem.actionView>
+		<Button text="Right" class="action-item" />
+		</ActionItem.actionView>
+	</ActionItem>
+	</ActionBar.actionItems>
+</ActionBar>
