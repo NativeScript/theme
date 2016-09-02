@@ -7,6 +7,13 @@
         <Label text="Buttons Active"/>
       </StackLayout>
       <ActionBar.actionItems>
+        <iOS>
+        <ActionItem position="left">
+          <ActionItem.actionView>
+            <Label text="{{'fa-bars' | fonticon }}" class="fa action-item" tap="{{ toggleSideDrawer }} " />
+          </ActionItem.actionView>
+        </ActionItem>
+        </iOS>
         <ActionItem ios.position="right">
           <ActionItem.actionView>
             <Button text="Right" class="action-item" />

@@ -8,5 +8,5 @@ export class SlidersModel extends BaseModel {
 
 export function navigatingTo(args: EventData) {
     var page = <Page>args.object;
-    page.bindingContext = new SlidersModel();
+    page.bindingContext = new BaseModel(page);
 }

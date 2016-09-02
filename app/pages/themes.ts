@@ -9,8 +9,8 @@ export class ThemesModel extends BaseModel {
   public labelText: string;
   private _toggled: boolean = false;
 
-  constructor() {
-    super();
+  constructor(page:Page) {
+    super(page);
     this.set('labelText', 'Default');
   }
 
@@ -38,5 +38,5 @@ export class ThemesModel extends BaseModel {
 
 export function navigatingTo(args: EventData) {
     var page = <Page>args.object;
-    page.bindingContext = new ThemesModel();
+    page.bindingContext = new ThemesModel(page);
 }

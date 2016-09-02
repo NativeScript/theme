@@ -4,14 +4,20 @@
   navigatingTo="navigatingTo">
   <Page.actionBar>
     <ActionBar class="action-bar">
-      <StackLayout class="action-title">
-        <Label text="NativeScript Themes"/>
+      <StackLayout orientation="horizontal">
+        <StackLayout class="action-title">
+          <Label text="NativeScript Themes"/>
+        </StackLayout>
       </StackLayout>
       <ActionBar.actionItems>
-        <ActionItem>
+        <iOS>
+        <ActionItem position="left">
           <ActionItem.actionView>
-            <Button text="Left" class="action-item" />
+            <Label text="{{'fa-bars' | fonticon }}" class="fa action-item" tap="{{ toggleSideDrawer }} " />
           </ActionItem.actionView>
+        </ActionItem>
+        </iOS>
+        <ActionItem>
         </ActionItem>
         <ActionItem ios.position="right">
           <ActionItem.actionView>
