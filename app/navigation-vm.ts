@@ -113,14 +113,6 @@ export class NavigationViewModel extends BaseModel {
 		topmost().navigate(navigationEntry);
 	}
 
-	public viewSideDrawer() {
-		let navigationEntry = {
-			moduleName: 'pages/sidedrawer',
-			clearHistory: true
-		};
-		topmost().navigate(navigationEntry);
-	}
-
 	public viewThemes() {
 		let navigationEntry = {
 			moduleName: 'pages/themes',

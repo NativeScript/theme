@@ -22,7 +22,6 @@
             <Button text="SegmentedBar" tap="{{ viewSegmentBar }}" class="btn btn-demo" />
             <Button text="Dialogs" tap="{{ viewDialogs }}" class="btn btn-demo"/>
             <Button text="ListView" tap="{{ viewListView }}" class="btn btn-demo" />
-            <Button text="SideDrawer" tap="{{ viewSideDrawer }}" class="btn btn-demo" />
             <Button text="Themes" tap="{{ viewThemes }}" class="btn btn-demo" />
           </StackLayout>
         </ScrollView>
