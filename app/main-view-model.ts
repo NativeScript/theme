@@ -1,10 +1,12 @@
 import {Observable} from 'data/observable';
 import {topmost} from 'ui/frame';
+import { BaseModel } from './pages/base'
+import { Page } from "ui/page";
 
-export class ThemeDemo extends Observable {
+export class ThemeDemo extends BaseModel {
 
-  constructor() {
-    super();
+  constructor(page: Page) {
+    super(page);
   }
 
   public viewBasics() {

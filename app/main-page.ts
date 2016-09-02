@@ -8,8 +8,8 @@ import { ThemeDemo } from "./main-view-model";
 
 export function navigatingTo(args: EventData) {
   var page = <Page>args.object;
-  page.bindingContext = new ThemeDemo();
-  
+  page.bindingContext = new ThemeDemo(page);
+
   if (isIOS) {
     let controller = topmost().ios.controller;
     let navigationBar = controller.navigationBar;
