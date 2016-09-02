@@ -19,6 +19,14 @@ export class ThemeDemo extends Observable {
     topmost().navigate('pages/buttons-active');
   }
 
+  public viewLogin(){
+    topmost().navigate({
+        moduleName: "pages/login-landing",
+        clearHistory: true,
+        animated: false
+    });   
+  }
+
   public viewForms() {
     topmost().navigate('pages/forms');
   }
