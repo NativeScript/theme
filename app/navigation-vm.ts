@@ -49,6 +49,14 @@ export class NavigationViewModel extends BaseModel {
 		topmost().navigate(navigationEntry);
 	}
 
+	public viewLogin() {
+		let navigationEntry = {
+			moduleName: 'pages/login-landing',
+			clearHistory: true
+		};
+		topmost().navigate(navigationEntry);
+	}	
+
 	public viewSliders() {
 		let navigationEntry = {
 			moduleName: 'pages/sliders',
