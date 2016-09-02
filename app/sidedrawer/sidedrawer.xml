@@ -5,49 +5,46 @@
         </StackLayout>
         <ScrollView>
           <StackLayout class="sidedrawer-content">
-			<StackLayout class="sidedrawer-list-item" >
+			      <StackLayout class="{{ isHomeActive() }}" >
               <Button text="Home" tap="{{ viewHome }}" class="sidedrawer-list-item-text" />
             </StackLayout>
-            <StackLayout class="sidedrawer-list-item" >
+            <StackLayout class="{{ isBasicsActive() }}" >
               <Button text="Basics" tap="{{ viewBasics }}" class="sidedrawer-list-item-text" />
             </StackLayout>
-            <StackLayout class="sidedrawer-list-item" >
-              <Button text="Buttons" tap="{{ viewButtons }}" class="sidedrawer-list-item-text" />
+            <StackLayout class="{{ isButtonsActive() }}"  >
+              <Button text="Buttons" tap="{{ viewButtons }}" class="sidedrawer-list-item-text " />
             </StackLayout>
-            <StackLayout class="sidedrawer-list-item" >
-              <Button text="Buttons Active" tap="{{ viewButtonsActive }}" class="sidedrawer-list-item-text" />
+            <StackLayout class="{{ isButtonsActiveActive() }}" >
+              <Button text="Buttons" tap="{{ viewButtonsisActive() }}" class="sidedrawer-list-item-text" />
             </StackLayout>
-            <StackLayout class="sidedrawer-list-item" >
+            <StackLayout class="{{ isFormsActive() }}" >
               <Button text="Forms" tap="{{ viewForms }}" class="sidedrawer-list-item-text" />
             </StackLayout>
-            <StackLayout class="sidedrawer-list-item" >
-              <Button text="Searchbars" tap="{{ viewSearch }}" class="sidedrawer-list-item-text" />
+            <StackLayout class="{{ isSearchActive() }}" >
+              <Button text="Search Bars" tap="{{ viewSearch }}" class="sidedrawer-list-item-text" />
             </StackLayout>
-            <StackLayout class="sidedrawer-list-item" >
+            <StackLayout class="{{ isSlidersActive() }}" >
               <Button text="Sliders" tap="{{ viewSliders }}" class="sidedrawer-list-item-text" />
             </StackLayout>
-            <StackLayout class="sidedrawer-list-item" >
+            <StackLayout class="{{ isSwitchesActive() }}" >
               <Button text="Switches" tap="{{ viewSwitches }}" class="sidedrawer-list-item-text" />
             </StackLayout>
-            <StackLayout class="sidedrawer-list-item" >
+            <StackLayout class="{{ isProgressActive() }}" >
               <Button text="Progress & Activity" tap="{{ viewProgress }}" class="sidedrawer-list-item-text" />
             </StackLayout>
-            <StackLayout class="sidedrawer-list-item" >
+            <StackLayout class="{{ isTabsActive() }}" >
               <Button text="Tabs" tap="{{ viewTabs }}" class="sidedrawer-list-item-text" />
             </StackLayout>
-            <StackLayout class="sidedrawer-list-item" >
+            <StackLayout class="{{ isSegmentActive() }}" >
               <Button text="SegmentedBar" tap="{{ viewSegmentBar }}" class="sidedrawer-list-item-text" />
             </StackLayout>
-            <StackLayout class="sidedrawer-list-item" >
+            <StackLayout class="{{ isDialogsActive() }}" >
               <Button text="Dialogs" tap="{{ viewDialogs }}" class="sidedrawer-list-item-text"/>
             </StackLayout>
-            <StackLayout class="sidedrawer-list-item" >
+            <StackLayout class="{{ isListActive() }}" >
               <Button text="ListView" tap="{{ viewListView }}" class="sidedrawer-list-item-text" />
             </StackLayout>
-            <StackLayout class="sidedrawer-list-item" >
-              <Button text="SideDrawer" tap="{{ viewSideDrawer }}" class="sidedrawer-list-item-text" />
-            </StackLayout>
-            <StackLayout class="sidedrawer-list-item" >
+            <StackLayout class="{{ isThemesActive() }}" >
               <Button text="Themes" tap="{{ viewThemes }}" class="sidedrawer-list-item-text" />
             </StackLayout>
           </StackLayout>
