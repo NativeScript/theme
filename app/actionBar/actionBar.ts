@@ -15,6 +15,4 @@ export function onLoad(args: EventData) {
 	let actionBarTitle = <Label>page.getViewById("actionBarTitle");
 
 	actionBarTitle.text = page.ActionBarTitle;
-
-	page.bindingContext = new NavigationViewModel(page);
 }
