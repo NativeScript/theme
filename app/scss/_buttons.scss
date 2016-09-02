@@ -4,7 +4,7 @@
   min-height: 36;
   min-width: 64;
   font-size: 15;
-  &:highlighted{
+  &.btn-active:highlighted{
     color: $white;
     opacity: 0.5;
     background-color:$btn-color-secondary;
@@ -17,7 +17,7 @@
   color: $white;
   background-color: $btn-color;
   border-color: $btn-color;
-  &:highlighted{
+  &.btn-active:highlighted{
     border-color:$btn-color-secondary;
   }
 }

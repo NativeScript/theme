@@ -15,6 +15,10 @@ export class ThemeDemo extends Observable {
     topmost().navigate('pages/buttons');
   }
 
+  public viewButtonsActive() {
+    topmost().navigate('pages/buttons-active');
+  }
+
   public viewForms() {
     topmost().navigate('pages/forms');
   }
