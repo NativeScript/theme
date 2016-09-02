@@ -13,7 +13,7 @@
         <iOS>
         <ActionItem position="left">
           <ActionItem.actionView>
-            <Label text="{{'fa-bars' | fonticon }}" class="fa action-item" tap="{{ toggleSideDrawer }} " />
+            <Button text="{{'fa-bars' | fonticon }}" class="fa action-item" tap="{{ toggleSideDrawer }} " />
           </ActionItem.actionView>
         </ActionItem>
         </iOS>
