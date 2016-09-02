@@ -6,5 +6,5 @@ import { NavigationViewModel } from '../navigation-vm';
 
 export function onLoad(args: EventData) {
 	let page = <Page>args.object;
-	page.bindingContext = new NavigationViewModel();
+	page.bindingContext = new NavigationViewModel(page);
 }

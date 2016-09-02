@@ -8,7 +8,7 @@ import { NavigationViewModel } from './navigation-vm';
 
 export function navigatingTo(args: EventData) {
   var page = <Page>args.object;
-  page.bindingContext = new NavigationViewModel();
+  page.bindingContext = new NavigationViewModel(page);
 
   if (isIOS) {
     let controller = topmost().ios.controller;
