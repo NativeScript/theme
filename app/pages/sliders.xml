@@ -1,4 +1,7 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+  xmlns:drawer="nativescript-telerik-ui/sidedrawer"
+  xmlns:sidedrawer="/sidedrawer"
+  navigatingTo="navigatingTo">
   <Page.actionBar>
     <ActionBar class="action-bar">
       <NavigationButton text="Back" android.systemIcon="ic_menu_back" tap="{{goBack}}" />
@@ -14,8 +17,15 @@
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-  <StackLayout class="demo-full">
-      <Slider minValue="1" maxValue="100" value="50" class="slider" />
-      <Slider minValue="1" maxValue="100" value="50" class="slider" isEnabled="false" />
-  </StackLayout>
+  <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
+    <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
+      <StackLayout class="demo-full">
+          <Slider minValue="1" maxValue="100" value="50" class="slider" />
+          <Slider minValue="1" maxValue="100" value="50" class="slider" isEnabled="false" />
+      </StackLayout>
+    </drawer:RadSideDrawer.mainContent>
+    <drawer:RadSideDrawer.drawerContent>
+        <sidedrawer:sidedrawer></sidedrawer:sidedrawer>
+    </drawer:RadSideDrawer.drawerContent>
+  </drawer:RadSideDrawer>
 </Page>
