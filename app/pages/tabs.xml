@@ -14,23 +14,43 @@
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
-  <TabView class="demo-full">
+  <TabView class="tab-view" selectedColor="#30bcff" tabsBackgroundColor="#f9f9f9">
    <TabView.items>
-     <TabViewItem title="Tab 1">
+    <!-- ITEMS -->
+     <TabViewItem title="NO. ONE">
        <TabViewItem.view>
-          <Label text="Label in Tab1" class="h1" />
+          <StackLayout>
+            <Label text="Tab 1 Content" class="h1" />    
+            <StackLayout>
+                <Label text="{{ tab1 }}" textWrap="true" />
+            </StackLayout>
+          </StackLayout>
        </TabViewItem.view>
      </TabViewItem>
-     <TabViewItem title="Tab 2">
-       <TabViewItem.view>
-          <Label text="Label in Tab2" class="h1" />
-       </TabViewItem.view>
+     
+     <TabViewItem title="Item Two">
+      <TabViewItem.view>
+        <StackLayout>
+              <Label text="Tab 2 Content" class="h1" />
+              <StackLayout>
+                <Label text="{{ tab2 }}" textWrap="true" />
+            </StackLayout>    
+          </StackLayout>
+        </TabViewItem.view>
      </TabViewItem>
-      <TabViewItem title="Tab 3">
+
+      <TabViewItem title="The Third">
         <TabViewItem.view>
-          <Label text="Label in Tab3" class="h1" />
+          <StackLayout>
+            <Label text="Tab 3 Content" class="h1" />
+            <StackLayout>
+                <Label text="{{ tab3 }}" textWrap="true" />
+            </StackLayout>
+          </StackLayout>  
         </TabViewItem.view>
       </TabViewItem>
+
+      <!-- END ITEMS -->
    </TabView.items>
  </TabView>
 </Page>
