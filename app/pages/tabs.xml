@@ -19,6 +19,7 @@
       </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
+<<<<<<< HEAD
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
     <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
       <TabView class="demo-full">
@@ -45,4 +46,45 @@
         <sidedrawer:sidedrawer></sidedrawer:sidedrawer>
     </drawer:RadSideDrawer.drawerContent>
   </drawer:RadSideDrawer>
+=======
+  <TabView class="tab-view" selectedColor="#30bcff" tabsBackgroundColor="#f9f9f9">
+   <TabView.items>
+    <!-- ITEMS -->
+     <TabViewItem title="NO. ONE">
+       <TabViewItem.view>
+          <StackLayout>
+            <Label text="Tab 1 Content" class="h1" />    
+            <StackLayout>
+                <Label text="{{ tab1 }}" textWrap="true" />
+            </StackLayout>
+          </StackLayout>
+       </TabViewItem.view>
+     </TabViewItem>
+     
+     <TabViewItem title="Item Two">
+      <TabViewItem.view>
+        <StackLayout>
+              <Label text="Tab 2 Content" class="h1" />
+              <StackLayout>
+                <Label text="{{ tab2 }}" textWrap="true" />
+            </StackLayout>    
+          </StackLayout>
+        </TabViewItem.view>
+     </TabViewItem>
+
+      <TabViewItem title="The Third">
+        <TabViewItem.view>
+          <StackLayout>
+            <Label text="Tab 3 Content" class="h1" />
+            <StackLayout>
+                <Label text="{{ tab3 }}" textWrap="true" />
+            </StackLayout>
+          </StackLayout>  
+        </TabViewItem.view>
+      </TabViewItem>
+
+      <!-- END ITEMS -->
+   </TabView.items>
+ </TabView>
+>>>>>>> NativeScript/master
 </Page>
