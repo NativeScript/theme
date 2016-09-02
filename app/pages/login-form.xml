@@ -1,4 +1,4 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" id="login-background" style="background-image:url('~/images/login-bg-light.jpg');">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" id="login-background" style="background-image:url('~/images/login-bg.jpg');">
 
 
 <GridLayout rows="auto, auto, auto" columns="*"  class="login-wrap">
