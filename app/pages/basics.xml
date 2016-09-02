@@ -45,19 +45,19 @@
             <StackLayout class="demo-full m-t-10">
               <Label text="Text" class="h2" />
               <StackLayout class="divider m-b-2"></StackLayout>
-              <Label text="Note: text-transform is not working." textWrap="true" class="t-14 c-grey-d-20 m-b-5" />
+              <!--<Label text="Note: text-transform is not working." textWrap="true" class="t-14 c-grey-d-20 m-b-5" />-->
 
               <GridLayout rows="auto" columns="*,*" class="text-lowercase m-t-5 w-full">
                 <Label text="text-lowercase" row="0" col="0" />
                 <Label text="Lowercase" row="0" col="1" class="right" />
               </GridLayout>
-              <GridLayout rows="auto" columns="*,*" class="text-uppercase m-t-5 w-full">
-                <Label text="text-lowercase" row="0" col="0" />
+              <GridLayout rows="auto" columns="*,*" class="m-t-5 w-full">
+                <Label text="text-uppercase" row="0" col="0" />
                 <Label text="Uppercase" row="0" col="1" class="right text-uppercase" />
               </GridLayout>
-              <GridLayout rows="auto" columns="*,*" class="text-capitalize m-t-5 w-full">
+              <GridLayout rows="auto" columns="*,*" class="m-t-5 w-full">
                 <Label text="text-capitalize" row="0" col="0" />
-                <Label text="Capitalize" row="0" col="1" class="right" />
+                <Label text="Capitalize" row="0" col="1" class="right text-capitalize" />
               </GridLayout>
               <GridLayout rows="auto" columns="*,*" class="font-weight-normal m-t-5 w-full">
                 <Label text="font-weight-normal" row="0" col="0" />
