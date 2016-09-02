@@ -1,23 +1,10 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
   xmlns:drawer="nativescript-telerik-ui/sidedrawer"
   xmlns:sidedrawer="/sidedrawer"
+  xmlns:actionBar="/actionBar"
   navigatingTo="navigatingTo">
   <Page.actionBar>
-    <ActionBar class="action-bar">
-      <NavigationButton text="Back" android.systemIcon="ic_menu_back" tap="{{goBack}}" />
-      <StackLayout class="action-title">
-        <Label text="Themes"/>
-      </StackLayout>
-      <ActionBar.actionItems>
-        <iOS>
-          <ActionItem position="left">
-            <ActionItem.actionView>
-              <Label text="{{'fa-bars' | fonticon }}" class="fa action-item" tap="{{ toggleSideDrawer }} " />
-            </ActionItem.actionView>
-          </ActionItem>
-        </iOS>
-      </ActionBar.actionItems>
-    </ActionBar>
+    <actionBar:actionBar ActionBarTitle="Themes" ></actionBar:actionBar>
   </Page.actionBar>
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
     <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
