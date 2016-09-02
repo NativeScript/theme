@@ -22,6 +22,7 @@
     <StackLayout class="demo-full">
       <Button text="Basics" tap="{{ viewBasics }}" class="btn btn-demo" />
       <Button text="Buttons" tap="{{ viewButtons }}" class="btn btn-demo" />
+      <Button text="Buttons Active" tap="{{ viewButtonsActive }}" class="btn btn-demo" />
       <Button text="Forms" tap="{{ viewForms }}" class="btn btn-demo" />
       <Button text="Searchbars" tap="{{ viewSearch }}" class="btn btn-demo" />
       <Button text="Sliders" tap="{{ viewSliders }}" class="btn btn-demo" />
