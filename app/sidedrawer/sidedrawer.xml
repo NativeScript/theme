@@ -15,7 +15,7 @@
               <Button text="Buttons" tap="{{ viewButtons }}" class="sidedrawer-list-item-text " />
             </StackLayout>
             <StackLayout class="{{ isButtonsActiveActive() }}" >
-              <Button text="Buttons" tap="{{ viewButtonsisActive() }}" class="sidedrawer-list-item-text" />
+              <Button text="Buttons Active" tap="{{ viewButtonsActive }}" class="sidedrawer-list-item-text" />
             </StackLayout>
             <StackLayout class="{{ isFormsActive() }}" >
               <Button text="Forms" tap="{{ viewForms }}" class="sidedrawer-list-item-text" />
