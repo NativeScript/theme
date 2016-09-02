@@ -10,9 +10,9 @@
             
     <StackLayout row="1" col="0" class="login-wrapper">        
         <TextField hint="username" />
-        <StackLayout class="hr" />
+        <StackLayout class="hr" android:visibility="collapsed" />
         <TextField hint="password"  secure="true" />
-        <StackLayout class="hr" />    
+        <StackLayout class="hr" android:visibility="collapsed" />    
         <Button text="Sign in" class="btn btn-primary btn-rounded-lg" tap="" />                            
     </StackLayout>            
 
