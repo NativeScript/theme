@@ -13,7 +13,7 @@
         <StackLayout class="hr" />
         <TextField hint="password"  secure="true" />
         <StackLayout class="hr" />    
-        <Button text="Sign in" class="btn btn-primary" tap="" />                            
+        <Button text="Sign in" class="btn btn-primary btn-rounded-lg" tap="" />                            
     </StackLayout>            
 
     <Label row="2" col="0" text="Go Back" class="go-back" textWrap="true" tap="goBack" />    
