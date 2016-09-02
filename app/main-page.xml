@@ -6,6 +6,29 @@
   <Page.actionBar>
     <actionBar:actionBar ActionBarTitle="NativeScript Themes" ></actionBar:actionBar>
   </Page.actionBar>
+
+  <ScrollView>
+    <StackLayout class="demo-full">
+      <Button text="Basics" tap="{{ viewBasics }}" class="btn btn-demo" />
+      <Button text="Buttons" tap="{{ viewButtons }}" class="btn btn-demo" />
+      <Button text="Buttons Active" tap="{{ viewButtonsActive }}" class="btn btn-demo" />
+      <Button text="Forms" tap="{{ viewForms }}" class="btn btn-demo" />
+      <Button text="Login" tap="{{ viewLogin }}" class="btn btn-demo" />
+      <Button text="Searchbars" tap="{{ viewSearch }}" class="btn btn-demo" />
+      <Button text="Sliders" tap="{{ viewSliders }}" class="btn btn-demo" />
+      <Button text="Switches" tap="{{ viewSwitches }}" class="btn btn-demo" />
+      <Button text="Progress & Activity" tap="{{ viewProgress }}" class="btn btn-demo" />
+      <Button text="Tabs" tap="{{ viewTabs }}" class="btn btn-demo" />
+      <Button text="SegmentedBar" tap="{{ viewSegmentBar }}" class="btn btn-demo" />
+      <Button text="Dialogs" tap="{{ viewDialogs }}" class="btn btn-demo"/>
+      <Button text="ListView" tap="{{ viewListView }}" class="btn btn-demo" />
+      <Button text="SideDrawer" tap="{{ viewSideDrawer }}" class="btn btn-demo" />
+      <Button text="Themes" tap="{{ viewThemes }}" class="btn btn-demo" />
+
+    </StackLayout>
+
+  </ScrollView>
+
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
       <drawer:RadSideDrawer.mainContent showOverNavigation="true">
         <ScrollView>
@@ -14,6 +37,7 @@
             <Button text="Buttons" tap="{{ viewButtons }}" class="btn btn-demo" />
             <Button text="Buttons Active" tap="{{ viewButtonsActive }}" class="btn btn-demo" />
             <Button text="Forms" tap="{{ viewForms }}" class="btn btn-demo" />
+            <Button text="Login" tap="{{ viewLogin }}" class="btn btn-demo" />
             <Button text="Searchbars" tap="{{ viewSearch }}" class="btn btn-demo" />
             <Button text="Sliders" tap="{{ viewSliders }}" class="btn btn-demo" />
             <Button text="Switches" tap="{{ viewSwitches }}" class="btn btn-demo" />
@@ -31,4 +55,5 @@
             <sidedrawer:sidedrawer></sidedrawer:sidedrawer>
     </drawer:RadSideDrawer.drawerContent>
   </drawer:RadSideDrawer>
+
 </Page>
