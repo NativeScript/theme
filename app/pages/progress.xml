@@ -1,10 +1,12 @@
+<<<<<<< HEAD
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
   xmlns:drawer="nativescript-telerik-ui/sidedrawer"
   xmlns:sidedrawer="/sidedrawer"
-  navigatingTo="navigatingTo">
+  navigatingTo="navigatingTo"
+  navigatingFrom="navigatingFrom">
   <Page.actionBar>
     <ActionBar class="action-bar">
-      <NavigationButton text="Back" android.systemIcon="ic_menu_back" tap="{{goBack}}" />
+      <NavigationButton text="Back" icon="" tap="" />
       <StackLayout class="action-title">
         <Label text="Progress & Activity"/>
       </StackLayout>
@@ -20,8 +22,10 @@
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
     <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
       <StackLayout class="demo-full">
-        <Progress value="50" maxValue="100" />
-        <ActivityIndicator busy="true" />
+        <GridLayout rows="auto ,*" columns="">
+          <Progress id="progress" row="0" value="50" maxValue="100" class="progress" />
+          <ActivityIndicator row="1" busy="true" class="activity-indicator" />
+        </GridLayout>
       </StackLayout>
     </drawer:RadSideDrawer.mainContent>
     <drawer:RadSideDrawer.drawerContent>
