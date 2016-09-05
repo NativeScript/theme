@@ -1,8 +1,13 @@
 {
-  "description": "NativeScript Application",
-  "license": "SEE LICENSE IN <your-license-filename>",
-  "readme": "NativeScript Application",
-  "repository": "<fill-your-repository-here>",
+  "name": "nativescript-theme-core",
+  "version": "0.0.1",
+  "description": "Telerik NativeScript Core Theme",
+  "homepage": "https://www.nativescript.org",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NativeScript/theme"
+  },
   "nativescript": {
     "id": "org.nativescript.theme",
     "tns-ios": {
