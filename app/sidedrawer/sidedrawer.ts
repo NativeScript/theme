@@ -18,7 +18,7 @@ export class SideDrawerViewModel extends NavigationViewModel {
 	private activeItem = 'sidedrawer-list-item active';
 	private inactiveItem = 'sidedrawer-list-item';
 
-	constructor(private page: Page, private activeComponent: string) {
+	constructor(public page: Page, private activeComponent: string) {
 		super(page);
 	}
 	public isHomeActive() {
