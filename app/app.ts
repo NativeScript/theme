@@ -1,5 +1,6 @@
 ﻿import * as application from 'application';
 import {TNSFontIcon, fonticon} from 'nativescript-fonticon';
+require( "nativescript-dom" );
 
 TNSFontIcon.debug = false;
 TNSFontIcon.paths = {
