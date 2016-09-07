@@ -11,7 +11,7 @@ export class FormsModel extends BaseModel {
     super(page);
     this._textField = textField;
     console.log(this._textField);
-  } 
+  }
 
   public keyType(e:any) {
     console.log(e);
@@ -28,12 +28,7 @@ export class FormsModel extends BaseModel {
 }
 
 export function navigatingTo(args: EventData) {
-<<<<<<< HEAD
-    var page = <Page>args.object;
-    page.bindingContext = new BaseModel(page);
-=======
   let page = <Page>args.object;
   let textField = <TextField>page.getViewById("textField");
   page.bindingContext = new FormsModel(page, textField);
->>>>>>> NativeScript/master
 }
