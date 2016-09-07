@@ -9,6 +9,7 @@ $primary: lighten($black, 13%);//rgba(0,0,0,.87);
 $secondary: lighten($black, 46%);
 $disabled: lighten($black, 62%);
 $accent: #30bcff;
+$error: #d50000;
 
 // Skin
 $background: $base;
@@ -33,17 +34,3 @@ $enable-rounded:            false !default;
 $enable-shadows:            false !default;
 $enable-gradients:          false !default;
 $enable-transitions:        false !default;
-
-// ## BOOTSTRAP ##
-// Utilities
-.img-rounded{
-    border-radius: 5;
-}
-
-.img-circle{
-    border-radius: 20;
-}
-
-.img-thumbnail{
-    border-radius: 0;
-}

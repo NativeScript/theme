@@ -72,6 +72,19 @@
                 <Label text="Italic" row="0" col="1" class="right" />
               </GridLayout>
             </StackLayout>
+            
+            <!-- UTILITIES -->
+            <StackLayout class="demo-full m-t-10">
+                <Label text="Utilities" class="h2" />
+                <StackLayout class="hr-light m-b-2"></StackLayout>
+                <Label text=".pull-left" class="pull-left" />
+                <Label text=".pull-right" class="pull-right" />
+                <Label text=".m-x-auto" class="m-x-auto" />
+                <Label text=".text-primary" class="text-primary " />
+                <Label text=".text-muted" class="text-muted" />
+                <Label text=".bg-primary" class="bg-primary" />
+                <Label text=".bg-danger" class="bg-danger" />
+            </StackLayout>
           </StackLayout>
         </ScrollView>
     </drawer:RadSideDrawer.mainContent>
