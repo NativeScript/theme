@@ -5,7 +5,7 @@
         </StackLayout>
         <ScrollView>
           <StackLayout class="sidedrawer-content">
-			      <GridLayout class="{{ isHomeActive() }}" tap="{{ viewHome }}" rows="auto" columns="auto,*">
+            <GridLayout class="{{ isHomeActive() }}" tap="{{ viewHome }}" rows="auto" columns="auto,*">
               <Label text="{{'fa-home' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
               <Label text="Home" class="sidedrawer-list-item-text" row="0" col="1" />
             </GridLayout>
