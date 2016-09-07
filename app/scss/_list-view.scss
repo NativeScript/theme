@@ -1,40 +1,27 @@
-.list-view {
+.list-group{
+  .list-group-item {
+    color: $primary;
+    padding: 20;
+    font-size: 16;
 
-  .item {
-    height: 48;
-    padding: 0 16 0 16;
-    &.multi-line {
-      padding-top: 16;
-      padding-bottom: 16;
-      .title {
-        vertical-align: bottom;
-        padding-top: 8;
-      }
-      .body {
-        color: $grey;
-      }
-      .footnote {
-        color: $grey;
-      }
-    }
-    .thumb {
+    .thumb{
+      stretch: fill;
       width: 40;
       height: 40;
-      stretch: fill;
-      margin: 0 16 0 0;
+      margin-right: 10;
     }
-    .thumb-circle {
-      border-width: 1;
-      border-color: transparent;
+
+    &.active{
+      background-color: $grey;
     }
-    .thumb-round {
-      border-width: 1;
-      border-color: transparent;
+
+    .list-group-item-heading{
+      
     }
-    .title {
-      height: 100%;
-      color: $black;
-      vertical-align: center;
+
+    .list-group-item-text{
+      color: $secondary;
+      font-size: 14;
     }
   }
 }
