@@ -81,6 +81,7 @@
                 <Label text=".pull-right" class="pull-right" />
                 <Label text=".m-x-auto" class="m-x-auto" />
                 <Label text=".text-primary" class="text-primary " />
+                <Label text=".text-danger" class="text-danger " />
                 <Label text=".text-muted" class="text-muted" />
                 <Label text=".bg-primary" class="bg-primary" />
                 <Label text=".bg-danger" class="bg-danger" />
