@@ -5,48 +5,62 @@
         </StackLayout>
         <ScrollView>
           <StackLayout class="sidedrawer-content">
-			      <StackLayout class="{{ isHomeActive() }}" >
-              <Button text="Home" tap="{{ viewHome }}" class="sidedrawer-list-item-text" />
-            </StackLayout>
-            <StackLayout class="{{ isBasicsActive() }}" >
-              <Button text="Basics" tap="{{ viewBasics }}" class="sidedrawer-list-item-text" />
-            </StackLayout>
-            <StackLayout class="{{ isButtonsActive() }}"  >
-              <Button text="Buttons" tap="{{ viewButtons }}" class="sidedrawer-list-item-text " />
-            </StackLayout>
-            <StackLayout class="{{ isButtonsActiveActive() }}" >
-              <Button text="Buttons Active" tap="{{ viewButtonsActive }}" class="sidedrawer-list-item-text" />
-            </StackLayout>
-            <StackLayout class="{{ isFormsActive() }}" >
-              <Button text="Forms" tap="{{ viewForms }}" class="sidedrawer-list-item-text" />
-            </StackLayout>
-            <StackLayout class="{{ isSearchActive() }}" >
-              <Button text="Search Bars" tap="{{ viewSearch }}" class="sidedrawer-list-item-text" />
-            </StackLayout>
-            <StackLayout class="{{ isSlidersActive() }}" >
-              <Button text="Sliders" tap="{{ viewSliders }}" class="sidedrawer-list-item-text" />
-            </StackLayout>
-            <StackLayout class="{{ isSwitchesActive() }}" >
-              <Button text="Switches" tap="{{ viewSwitches }}" class="sidedrawer-list-item-text" />
-            </StackLayout>
-            <StackLayout class="{{ isProgressActive() }}" >
-              <Button text="Progress & Activity" tap="{{ viewProgress }}" class="sidedrawer-list-item-text" />
-            </StackLayout>
-            <StackLayout class="{{ isTabsActive() }}" >
-              <Button text="Tabs" tap="{{ viewTabs }}" class="sidedrawer-list-item-text" />
-            </StackLayout>
-            <StackLayout class="{{ isSegmentActive() }}" >
-              <Button text="SegmentedBar" tap="{{ viewSegmentBar }}" class="sidedrawer-list-item-text" />
-            </StackLayout>
-            <StackLayout class="{{ isDialogsActive() }}" >
-              <Button text="Dialogs" tap="{{ viewDialogs }}" class="sidedrawer-list-item-text"/>
-            </StackLayout>
-            <StackLayout class="{{ isListActive() }}" >
-              <Button text="ListView" tap="{{ viewListView }}" class="sidedrawer-list-item-text" />
-            </StackLayout>
-            <StackLayout class="{{ isThemesActive() }}" >
-              <Button text="Themes" tap="{{ viewThemes }}" class="sidedrawer-list-item-text" />
-            </StackLayout>
+			      <GridLayout class="{{ isHomeActive() }}" rows="auto" columns="auto,*">
+              <Label text="{{'fa-home' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+              <Button text="Home" class="sidedrawer-list-item-text" row="0" col="1" tap="{{ viewHome }}" />
+            </GridLayout>
+            <GridLayout class="{{ isBasicsActive() }}" rows="auto" columns="auto,*">
+              <Label text="{{'fa-font' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+              <Button text="Basics" class="sidedrawer-list-item-text" row="0" col="1" tap="{{ viewBasics }}" />
+            </GridLayout>
+            <GridLayout class="{{ isButtonsActive() }}" rows="auto" columns="auto,*">
+              <Label text="{{'fa-square' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+              <Button text="Buttons" tap="{{ viewButtons }}" class="sidedrawer-list-item-text" row="0" col="1" />
+            </GridLayout>
+            <GridLayout class="{{ isButtonsActiveActive() }}" rows="auto" columns="auto,*">
+              <Label text="{{'fa-square-o' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+              <Button text="Buttons Active" tap="{{ viewButtonsActive }}" class="sidedrawer-list-item-text" row="0" col="1" />
+            </GridLayout>
+            <GridLayout class="{{ isFormsActive() }}" rows="auto" columns="auto,*">
+              <Label text="{{'fa-i-cursor' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+              <Button text="Forms" tap="{{ viewForms }}" class="sidedrawer-list-item-text" row="0" col="1" />
+            </GridLayout>
+            <GridLayout class="{{ isSearchActive() }}" rows="auto" columns="auto,*">
+              <Label text="{{'fa-search' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+              <Button text="Search Bars" tap="{{ viewSearch }}" class="sidedrawer-list-item-text" row="0" col="1" />
+            </GridLayout>
+            <GridLayout class="{{ isSlidersActive() }}" rows="auto" columns="auto,*">
+              <Label text="{{'fa-sliders' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+              <Button text="Sliders" tap="{{ viewSliders }}" class="sidedrawer-list-item-text" row="0" col="1" />
+            </GridLayout>
+            <GridLayout class="{{ isSwitchesActive() }}" rows="auto" columns="auto,*">
+              <Label text="{{'fa-toggle-on' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+              <Button text="Switches" tap="{{ viewSwitches }}" class="sidedrawer-list-item-text" row="0" col="1" />
+            </GridLayout>
+            <GridLayout class="{{ isProgressActive() }}" rows="auto" columns="auto,*">
+              <Label text="{{'fa-spinner' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+              <Button text="Progress & Activity" tap="{{ viewProgress }}" class="sidedrawer-list-item-text" row="0" col="1" />
+            </GridLayout>
+            <GridLayout class="{{ isTabsActive() }}" rows="auto" columns="auto,*">
+              <Label text="{{'fa-road' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+              <Button text="Tabs" tap="{{ viewTabs }}" class="sidedrawer-list-item-text" row="0" col="1" />
+            </GridLayout>
+            <GridLayout class="{{ isSegmentActive() }}" rows="auto" columns="auto,*">
+              <Label text="{{'fa-columns' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+              <Button text="SegmentedBar" tap="{{ viewSegmentBar }}" class="sidedrawer-list-item-text" row="0" col="1" />
+            </GridLayout>
+            <GridLayout class="{{ isDialogsActive() }}" rows="auto" columns="auto,*">
+              <Label text="{{'fa-newspaper-o' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+              <Button text="Dialogs" tap="{{ viewDialogs }}" class="sidedrawer-list-item-text" row="0" col="1"/>
+            </GridLayout>
+            <GridLayout class="{{ isListActive() }}" rows="auto" columns="auto,*">
+              <Label text="{{'fa-list' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+              <Button text="ListView" tap="{{ viewListView }}" class="sidedrawer-list-item-text" row="0" col="1" />
+            </GridLayout>
+            <GridLayout class="{{ isThemesActive() }}" rows="auto" columns="auto,*">
+              <Label text="{{'fa-paint-brush' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+              <Button text="Themes" tap="{{ viewThemes }}" class="sidedrawer-list-item-text" row="0" col="1" />
+            </GridLayout>
           </StackLayout>
         </ScrollView>
       </StackLayout>

@@ -51,18 +51,23 @@
 	orientation:horizontal;
 	color:$btn-color-disabled;
 
+  .sidedrawer-list-item-icon {
+    width:24;
+    text-align:center;
+    font-size: 20;
+    height: 48;
+    vertical-align:center;
+    color:$btn-color-disabled;
+  }
+
 	&.active{
 		color:$accent;
 		background-color: #2b2b2b;
-	}
-}
 
-.sidedrawer-list-item-icon{
-	width:24;
-	horizontal-align:left;
-	font-size: 20;
-	height: 48;
-	vertical-align:center;
+    .sidedrawer-list-item-icon {
+      color: $white;
+    }
+	}
 }
 .sidedrawer-left .sidedrawer-list-item-icon{
 	margin:0 16 0 16;

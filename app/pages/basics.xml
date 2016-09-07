@@ -44,8 +44,13 @@
             </GridLayout>
             <StackLayout class="demo-full m-t-10">
               <Label text="Text" class="h2" />
+<<<<<<< HEAD
               <StackLayout class="divider m-b-2"></StackLayout>
               <Label text="Note: text-transform is not working." textWrap="true" class="t-14 c-grey-d-20 m-b-5" />
+=======
+              <StackLayout class="hr-light m-b-2"></StackLayout>
+              <!--<Label text="Note: text-transform is not working." textWrap="true" class="t-14 c-grey-d-20 m-b-5" />-->
+>>>>>>> NativeScript/master
 
               <GridLayout rows="auto" columns="*,*" class="text-lowercase m-t-5 w-full">
                 <Label text="text-lowercase" row="0" col="0" />

@@ -81,9 +81,15 @@ $spacers: (
 }
 
 /* Dividers */
-.divider {
-  background-color:$grey;
-  height:1;
-  width:100%;
-  margin: 10 0;
+
+.hr-light {
+  height: 1;
+  background-color: $grey;
+  width: 100%;
+}
+
+.hr-dark {
+  height: 1;
+  background-color: $charcoal;
+  width: 100%;
 }
