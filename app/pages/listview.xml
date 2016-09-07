@@ -16,9 +16,9 @@
                 <TabViewItem.view>
                     <ListView items="{{ sampleItems }}" class="list-group">
                         <ListView.itemTemplate>
-                          <GridLayout class="list-group-item" rows="*" columns="auto, *">
-                            <Label row="0" col="1" class="title" text="{{ title }}"/>
-                          </GridLayout>
+                          <StackLayout>
+                              <Label class="list-group-item" text="{{ title }}"/>  
+                          </StackLayout>
                         </ListView.itemTemplate>
                       </ListView>
                 </TabViewItem.view>
