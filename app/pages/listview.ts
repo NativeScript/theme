@@ -2,31 +2,33 @@ import { EventData } from "data/observable";
 import { Page } from "ui/page";
 import { BaseModel } from './base';
 
+class DemoItem {
+  constructor(title: string){
+    this.title = title;
+  }
+
+  public title: string;
+  public content: string = 'Secondary line text lorem ipsum dapibus, neque id cursus faucibus';
+  public image: string = "~/images/Thumb1.jpg";
+  public imagealt: string = "~/images/Thumb3.jpg";
+}
+
+//Alt images
+//http://vignette3.wikia.nocookie.net/dragonball/images/c/cb/CDGDZZfVAAI6_K4.jpg
+//http://vignette3.wikia.nocookie.net/dragonball/images/c/cb/CDGDZZfVAAI6_K4.jpg
+
 export class ListViewModel extends BaseModel {
-  public sampleItems: Array<any>;
+  public sampleItems: Array<DemoItem>;
   public sampleItemsMulti: Array<any>;
   constructor(page:Page) {
     super(page);
-    this.set('sampleItems', [
-      {
-        title: 'Single-line item'
-      },
-      {
-        title: 'Single-line item 2'
-      }
-    ]);
-    this.set('sampleItemsMulti', [
-      {
-        title: 'Multi-line item',
-        body:'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
-      footnote:'the readable content of a page when looking at its layout'
-    },
-      {
-        title: 'Multi-line item 2',
-        body:'It is a long established fact that a reader will be distracted by',
-        footnote:'the readable content of a page when looking at its layout'
-      }
-    ]);
+
+    var items = new Array<DemoItem>();
+    for(let i=0; i < 50; i++){
+      items.push(new DemoItem("Content Item " + i));
+    }
+
+    this.set("sampleItems", items);
   }
 }
 

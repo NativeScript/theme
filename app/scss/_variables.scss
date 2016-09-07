@@ -33,3 +33,17 @@ $enable-rounded:            false !default;
 $enable-shadows:            false !default;
 $enable-gradients:          false !default;
 $enable-transitions:        false !default;
+
+// ## BOOTSTRAP ##
+// Utilities
+.img-rounded{
+    border-radius: 5;
+}
+
+.img-circle{
+    border-radius: 20;
+}
+
+.img-thumbnail{
+    //Not supported in design?
+}

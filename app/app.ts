@@ -9,4 +9,5 @@ TNSFontIcon.paths = {
 TNSFontIcon.loadCss();
 
 application.resources['fonticon'] = fonticon;
-application.start({ moduleName: 'main-page' });
+//application.start({ moduleName: 'main-page' });
+application.start({ moduleName: './pages/listview' });
