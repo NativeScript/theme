@@ -8,5 +8,5 @@ export class SearchModel extends BaseModel {
 
 export function navigatingTo(args: EventData) {
     var page = <Page>args.object;
-    page.bindingContext = new SearchModel(page);
+    page.bindingContext = new BaseModel(page);
 }

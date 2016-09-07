@@ -8,5 +8,5 @@ export class SegmentModel extends BaseModel {
 
 export function navigatingTo(args: EventData) {
     var page = <Page>args.object;
-    page.bindingContext = new SegmentModel(page);
+    page.bindingContext = new BaseModel(page);
 }

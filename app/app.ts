@@ -2,7 +2,7 @@
 import {TNSFontIcon, fonticon} from 'nativescript-fonticon';
 require( "nativescript-dom" );
 
-TNSFontIcon.debug = false;
+TNSFontIcon.debug = true;
 TNSFontIcon.paths = {
   'fa': 'font-awesome.css'
 };

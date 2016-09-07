@@ -9,5 +9,5 @@ export class BasicsModel extends BaseModel {
 
 export function navigatingTo(args: EventData) {
     var page = <Page>args.object;
-    page.bindingContext = new BasicsModel(page);
+    page.bindingContext = new BaseModel(page);
 }

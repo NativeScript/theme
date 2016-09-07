@@ -8,5 +8,5 @@ export class SwitchesModel extends BaseModel {
 
 export function navigatingTo(args: EventData) {
     var page = <Page>args.object;
-    page.bindingContext = new SwitchesModel(page);
+    page.bindingContext = new BaseModel(page);
 }

@@ -11,7 +11,7 @@ export class FormsModel extends BaseModel {
     super(page);
     this._textField = textField;
     console.log(this._textField);
-  } 
+  }
 
   public keyType(e:any) {
     console.log(e);
