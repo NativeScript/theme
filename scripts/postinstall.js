@@ -1,7 +1,7 @@
 /*************************************************************************************
  * Licensed under the APACHE license
  *
- * Version 0.0.1                                      Nathan@master-technology.com
+ * Version 0.0.2                                         Nathan@master-technology.com
  ************************************************************************************/
 "use strict";
 
@@ -39,9 +39,22 @@ copyFolder(cwd+"css", appDir+"css");
 
 // Update our main app.css to import the light theme
 if (fs.existsSync(appDir+"app.css")) {
+    var BOM='';
     var cssData = fs.readFileSync(appDir + "app.css").toString();
+
+    // Strip the BOM at the beginning of the file
+    if (cssData.charCodeAt(0) === 0xFEFF) {
+        // Newer NodeJS
+        BOM = String.fromCharCode(0xFEFF);
+        cssData = cssData.slice(1);
+    } else if (cssData[0] === 0xEF && cssData[1] === 0xBB && cssData[2] === 0xBF) {
+        // Older NodeJS
+        BOM = String.fromCharCode(0xEF) + String.fromCharCode(0xBB) + String.fromCharCode(0xBF);
+        cssData = cssData.slice(3);
+    }
+
     if (cssData.indexOf("@import '~/css/core.") === -1) {
-        cssData = "@import '~/css/core.light.css'; \r\n\r\n" + cssData;
+        cssData = BOM + "@import '~/css/core.light.css'; \r\n\r\n" + cssData;
         fs.writeFileSync(appDir + "app.css", cssData);
     }
 }
@@ -72,19 +85,15 @@ if (hasSCSS) {
  * @param dest (string) - Destination folder
  */
 function copyFolder(src, dest) {
-  try {
     var files = fs.readdirSync(src);
-    files.forEach(function (file) {
-      var curPath = src + "/" + file;
-      if (fs.lstatSync(curPath).isDirectory()) { // check to see if we need to recurse
-        copyFolder(curPath, dest + "/" + file);
-      } else { // copy file
-        copyFile(src, dest, file);
-      }
+    files.forEach(function(file){
+        var curPath = src + "/" + file;
+        if(fs.lstatSync(curPath).isDirectory()) { // check to see if we need to recurse
+            copyFolder(curPath, dest + "/" + file);
+        } else { // copy file
+            copyFile(src, dest, file);
+        }
     });
-  } catch (err) {
-    console.log('Skipping ' + src + ' copy.');
-  }
 }
 
 /**
