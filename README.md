@@ -40,9 +40,9 @@ npm publish
 :---: |:---: |:---: |:---: |:---: |:---: |
 [NathanWalker](https://github.com/NathanWalker) |[TheOriginalJosh](https://github.com/TheOriginalJosh) |[triniwiz](https://github.com/triniwiz) |[sitefinitysteve](https://github.com/sitefinitysteve) |[tjvantoll](https://github.com/tjvantoll) |[firescript](https://github.com/firescript) |
 
-[<img alt="valentinstoychev" src="https://avatars.githubusercontent.com/u/4980822?v=3&s=117" width="117">](https://github.com/valentinstoychev) |[<img alt="enchev" src="https://avatars.githubusercontent.com/u/5804953?v=3&s=117" width="117">](https://github.com/enchev) |
-:---: |:---: |
-[valentinstoychev](https://github.com/valentinstoychev) |[enchev](https://github.com/enchev) |
+[<img alt="valentinstoychev" src="https://avatars.githubusercontent.com/u/4980822?v=3&s=117" width="117">](https://github.com/valentinstoychev) |[<img alt="enchev" src="https://avatars.githubusercontent.com/u/5804953?v=3&s=117" width="117">](https://github.com/enchev) |[<img alt="NathanaelA" src="https://avatars0.githubusercontent.com/u/850871?v=3&s=117" width="117">](https://github.com/NathanaelA) |
+:---: |:---: |:---: |
+[valentinstoychev](https://github.com/valentinstoychev) |[enchev](https://github.com/enchev) |[NathanaelA](https://github.com/NathanaelA) |
 
 ## LICENSE
 

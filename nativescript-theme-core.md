@@ -4,7 +4,7 @@ Core NativeScript theme including a light (default) and dark option for iOS and 
 
 ## Install
 
-`npm install nativescript-theme-core --save-dev`
+`npm install nativescript-theme-core --save`
 
 ## Documentation
 
