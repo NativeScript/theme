@@ -1,7 +1,7 @@
 /*************************************************************************************
  * Licensed under the APACHE license
  *
- * Version 0.0.2                                         Nathan@master-technology.com
+ * Version 0.0.3                                         Nathan@master-technology.com
  ************************************************************************************/
 "use strict";
 
@@ -62,7 +62,7 @@ if (fs.existsSync(appDir+"app.css")) {
 // ------------------------------------------------------
 // Handle the FONTS files
 // ------------------------------------------------------
-copyFolder(cwd+"fonts", appDir+"fonts");
+copyFolder(cwd + "fonts", appDir + "fonts");
 
 // ------------------------------------------------------
 // Handle the SCSS files
@@ -85,6 +85,9 @@ if (hasSCSS) {
  * @param dest (string) - Destination folder
  */
 function copyFolder(src, dest) {
+    // No source Folder exists, can't copy it!
+    if (!fs.existsSync(src)) { return false; }
+
     var files = fs.readdirSync(src);
     files.forEach(function(file){
         var curPath = src + "/" + file;
@@ -94,6 +97,7 @@ function copyFolder(src, dest) {
             copyFile(src, dest, file);
         }
     });
+    return true;
 }
 
 /**
