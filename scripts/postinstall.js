@@ -72,15 +72,19 @@ if (hasSCSS) {
  * @param dest (string) - Destination folder
  */
 function copyFolder(src, dest) {
+  try {
     var files = fs.readdirSync(src);
-    files.forEach(function(file){
-        var curPath = src + "/" + file;
-        if(fs.lstatSync(curPath).isDirectory()) { // check to see if we need to recurse
-            copyFolder(curPath, dest + "/" + file);
-        } else { // copy file
-            copyFile(src, dest, file);
-        }
+    files.forEach(function (file) {
+      var curPath = src + "/" + file;
+      if (fs.lstatSync(curPath).isDirectory()) { // check to see if we need to recurse
+        copyFolder(curPath, dest + "/" + file);
+      } else { // copy file
+        copyFile(src, dest, file);
+      }
     });
+  } catch (err) {
+    console.log('Skipping ' + src + ' copy.');
+  }
 }
 
 /**
