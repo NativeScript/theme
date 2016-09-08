@@ -5,5 +5,7 @@
 /platforms
 node_modules
 lib
+!scripts/builder.js
+!scripts/postinstall.js
 .vscode
 .idea
