@@ -8,7 +8,7 @@ Core NativeScript theme including a light (default) and dark option for iOS and 
 
 ## Documentation
 
-https://github.com/NativeScript/theme/wiki/Class-Names
+https://github.com/NativeScript/theme/wiki/Documentation
 
 ## License
 
