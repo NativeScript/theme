@@ -1,10 +1,21 @@
-.list-view {
-  .item {
-    .thumb-circle {
-      border-radius: 19;
+.list-group{
+  .list-group-item {
+
+
+    .thumb{
+
     }
-    .thumb-round {
-      border-radius: 4;
+
+    &.active{
+
+    }
+
+    .list-group-item-heading{
+      margin-bottom: 5;
+    }
+
+    .list-group-item-text{
+
     }
   }
 }

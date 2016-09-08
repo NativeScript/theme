@@ -10,57 +10,49 @@
 
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
     <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
-      <ScrollView>
-        <StackLayout class="demo-full">
-          <Label text="Thumbnail" class="h2 m-5" />
-          <ListView items="{{ sampleItems }}" class="list-view">
-            <ListView.itemTemplate>
-              <GridLayout class="item" rows="auto" columns="auto,*">
-                <Image row="0" col="0" class="thumb"
-                        src="http://img.lum.dolimg.com/v1/images/open-uri20150608-27674-1jdbpa8_be64ca1b.png"/>
-                <Label row="0" col="1" class="title" text="{{title}}"/>
-              </GridLayout>
-            </ListView.itemTemplate>
-          </ListView>
+    <TabView id="tabViewContainer" class="tab-view">
+        <TabView.items>
+            <TabViewItem title="Simple">
+                <TabViewItem.view>
+                    <ListView items="{{ sampleItems }}" class="list-group">
+                        <ListView.itemTemplate>
+                          <StackLayout>
+                              <Label class="list-group-item" text="{{ title }}"/>  
+                          </StackLayout>
+                        </ListView.itemTemplate>
+                      </ListView>
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="Thumbs">
+                <TabViewItem.view>
+                  <ListView items="{{ sampleItems }}" class="list-group">
+                    <ListView.itemTemplate>
+                      <GridLayout class="list-group-item" rows="*" columns="auto, *">
+                        <Image row="0" col="0" src="{{ image }}" class="thumb img-circle" />
+                        <Label row="0" col="1" text="{{ title }}"/>
+                      </GridLayout>
+                    </ListView.itemTemplate>
+                  </ListView>
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="Multi-line">
+            <TabViewItem.view>
+                <ListView items="{{ sampleItems }}" class="list-group">
+                  <ListView.itemTemplate>
+                    <GridLayout class="list-group-item" rows="auto" columns="auto, *">
+                        <Image row="0" col="0" src="{{ imagealt }}" class="thumb img-rounded" />
+                        <StackLayout row="0" col="1" >
+                          <Label text="{{ title }}" class="list-group-item-heading" />
+                          <Label text="{{ content }}" textWrap="true"  class="list-group-item-text" />
+                        </StackLayout>
+                      </GridLayout>
+                  </ListView.itemTemplate>
+                </ListView>
+            </TabViewItem.view>
+          </TabViewItem>
+        </TabView.items>
 
-          <Label text="Thumbnail Circle" class="h2 m-5" />
-          <ListView items="{{ sampleItems }}" class="list-view">
-            <ListView.itemTemplate>
-              <GridLayout class="item" rows="auto" columns="auto,*">
-                <Image row="0" col="0" class="thumb thumb-circle"
-                        src="http://img.cinemablend.com/cb/4/f/1/7/5/2/4f1752e6112cd3e633b5c4f6c838aa5975b0a5340f4c65df332d43fa848773bc.jpg"/>
-                <Label row="0" col="1" class="title" text="{{title}}"/>
-              </GridLayout>
-            </ListView.itemTemplate>
-          </ListView>
-
-          <Label text="Thumbnail Round" class="h2 m-5" />
-          <ListView items="{{ sampleItems }}" class="list-view">
-            <ListView.itemTemplate>
-              <GridLayout class="item" rows="auto" columns="auto,*">
-                <Image row="0" col="0" class="thumb thumb-round"
-                        src="http://vignette3.wikia.nocookie.net/dragonball/images/c/cb/CDGDZZfVAAI6_K4.jpg"/>
-                <Label row="0" col="1" class="title" text="{{title}}"/>
-              </GridLayout>
-            </ListView.itemTemplate>
-          </ListView>
-
-
-          <Label text="Multi-Line Thumbnail Round" class="h2 m-5" />
-          <ListView items="{{ sampleItemsMulti }}" class="list-view">
-            <ListView.itemTemplate>
-              <GridLayout class="item multi-line" rows="auto,auto,auto" columns="auto,*">
-                <Image row="0" col="0" rowSpan="3" class="thumb thumb-round"
-                        src="http://vignette3.wikia.nocookie.net/dragonball/images/c/cb/CDGDZZfVAAI6_K4.jpg"/>
-                <Label row="0" col="1" class="title" text="{{title}}"/>
-                <Label row="1" col="1" class="body" text="{{body}}"/>
-                <Label row="2" col="1" class="footnote" text="{{footnote}}"/>
-              </GridLayout>
-            </ListView.itemTemplate>
-          </ListView>
-
-        </StackLayout>
-      </ScrollView>
+    </TabView>
     </drawer:RadSideDrawer.mainContent>
     <drawer:RadSideDrawer.drawerContent>
         <sidedrawer:sidedrawer activeComponent='list'></sidedrawer:sidedrawer>
