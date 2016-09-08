@@ -5,6 +5,7 @@
 /platforms
 node_modules
 lib
+/nativescript-theme-core
 !scripts/builder.js
 !scripts/postinstall.js
 .vscode
