@@ -9,11 +9,11 @@
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
     <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
       <StackLayout class="demo-full">
-        <SegmentedBar>
+        <SegmentedBar class="segmented-bar">
           <SegmentedBar.items>
-            <SegmentedBarItem title="First" />
-            <SegmentedBarItem title="Second" />
-            <SegmentedBarItem title="Third" />
+            <SegmentedBarItem title="No. one" />
+            <SegmentedBarItem title="Item two" />
+            <SegmentedBarItem title="The third" />
           </SegmentedBar.items>
         </SegmentedBar>
       </StackLayout>
