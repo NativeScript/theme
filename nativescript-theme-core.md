@@ -21,5 +21,5 @@ By default we will automatically add an import of the **light** theme in your `a
  
 ## SCSS Support
 
-If your project is using SCSS, then we will create a SCSS folder with the same Light and Dark theme in SCSS format, you can import them from `SCSS folder
-If you are not using SCSS we won't bother installing this folder.  If you decide to use SCSS at a later point just install the 'nativescript-dev-sass' project and reinstall this theme and we will automatically detect the SASS support. 
+If your project is using SCSS, then we will create a `scss` folder with the same light and dark theme in `scss` format. You can then import from the `scss` folder.
+If you are not using SCSS, we won't bother installing this folder. If you decide to use SCSS at a later point just install the [nativescript-dev-sass](https://github.com/toddanglin/nativescript-dev-sass) project and reinstall this theme and we will automatically detect the SASS support. 
