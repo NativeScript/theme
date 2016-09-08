@@ -36,4 +36,14 @@ npm publish
 
 ## Awesome Contributors
 
+[<img alt="NathanWalker" src="https://avatars.githubusercontent.com/u/457187?v=3&s=117" width="117">](https://github.com/NathanWalker) |[<img alt="TheOriginalJosh" src="https://avatars.githubusercontent.com/u/1486275?v=3&s=117" width="117">](https://github.com/TheOriginalJosh) |[<img alt="triniwiz" src="https://avatars.githubusercontent.com/u/6695919?v=3&s=117" width="117">](https://github.com/triniwiz) |[<img alt="sitefinitysteve" src="https://avatars.githubusercontent.com/u/1542376?v=3&s=117" width="117">](https://github.com/sitefinitysteve) |[<img alt="tjvantoll" src="https://avatars.githubusercontent.com/u/544280?v=3&s=117" width="117">](https://github.com/tjvantoll) |[<img alt="firescript" src="https://avatars.githubusercontent.com/u/1789978?v=3&s=117" width="117">](https://github.com/firescript) |
+:---: |:---: |:---: |:---: |:---: |:---: |
+[NathanWalker](https://github.com/NathanWalker) |[TheOriginalJosh](https://github.com/TheOriginalJosh) |[triniwiz](https://github.com/triniwiz) |[sitefinitysteve](https://github.com/sitefinitysteve) |[tjvantoll](https://github.com/tjvantoll) |[firescript](https://github.com/firescript) |
 
+[<img alt="valentinstoychev" src="https://avatars.githubusercontent.com/u/4980822?v=3&s=117" width="117">](https://github.com/valentinstoychev) |[<img alt="enchev" src="https://avatars.githubusercontent.com/u/5804953?v=3&s=117" width="117">](https://github.com/enchev) |
+:---: |:---: |
+[valentinstoychev](https://github.com/valentinstoychev) |[enchev](https://github.com/enchev) |
+
+## LICENSE
+
+Apache 2.0
