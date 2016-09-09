@@ -2,6 +2,17 @@
 
 Home of the core NativeScript theme, currently **under active development**.
 
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [Publishing](#publishing)
+- [Contributors](#contributors)
+
+## Screenshots
+
+![](screenshots/ios-1.png)
+![](screenshots/ios-2.png)
+![](screenshots/ios-3.png)
+
 ## Contributing
 
 Clone this repo, and then use the `tns run` command to launch the demo app on your device or emulator of choice.
