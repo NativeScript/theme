@@ -5,7 +5,8 @@ Home of the core NativeScript theme, currently **under active development**.
 - [Screenshots](#screenshots)
 - [Contributing](#contributing)
 - [Publishing](#publishing)
-- [Contributors](#contributors)
+- [Contributors](#awesome-contributors)
+- [License](#license)
 
 ## Screenshots
 
@@ -25,8 +26,7 @@ tns run ios
 tns run android
 ```
 
-## Toggle Theme
-* Run the demo, scroll down to "Themes" at the bottom, toggle away
+If you’d like to toggle the color scheme from light to dark, open the sidedrawer, scroll down to "Themes" at the bottom, and toggle away.
 
 ## Publishing
 
