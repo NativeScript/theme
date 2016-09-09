@@ -13,6 +13,10 @@ Home of the core NativeScript theme, currently **under active development**.
 ![](screenshots/ios-1.png)
 ![](screenshots/ios-2.png)
 ![](screenshots/ios-3.png)
+<br>
+![](screenshots/android-1.png)
+![](screenshots/android-2.png)
+![](screenshots/android-3.png)
 
 ## Contributing
 
