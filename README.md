@@ -1,4 +1,6 @@
 # NativeScript Theme: Core
+[![npm](https://img.shields.io/npm/v/nativescript-theme-core.svg)](https://www.npmjs.com/package/nativescript-theme-core)
+[![npm](https://img.shields.io/npm/dt/nativescript-theme-core.svg?label=npm%20downloads)](https://www.npmjs.com/package/nativescript-theme-core)
 
 Home of the core NativeScript theme, currently **under active development**.
 
