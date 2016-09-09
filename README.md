@@ -1,6 +1,6 @@
 # NativeScript Theme: Core
 
-Home of the core NativeScript theme, currently **under active development**.
+Home of the core NativeScript theme, currently **under active development**. Want to get started? Check out the [documentation on this repo’s Wiki](https://github.com/NativeScript/theme/wiki/Documentation).
 
 - [Screenshots 📸](#screenshots)
 - [Contributing 🍺](#contributing)
