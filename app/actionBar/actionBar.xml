@@ -10,12 +10,5 @@
 		</ActionItem.actionView>
 	</ActionItem>
 	</iOS>
-	<ActionItem>
-	</ActionItem>
-	<ActionItem ios.position="right">
-		<ActionItem.actionView>
-		<Button text="Right" class="action-item" />
-		</ActionItem.actionView>
-	</ActionItem>
 	</ActionBar.actionItems>
 </ActionBar>
