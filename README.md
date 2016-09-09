@@ -2,11 +2,11 @@
 
 Home of the core NativeScript theme, currently **under active development**.
 
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [Publishing](#publishing)
-- [Contributors](#awesome-contributors)
-- [License](#license)
+- [Screenshots 📸](#screenshots)
+- [Contributing 🍺](#contributing)
+- [Publishing 📚](#publishing)
+- [Contributors 💖](#awesome-contributors)
+- [License 📋](#license)
 
 ## Screenshots
 
