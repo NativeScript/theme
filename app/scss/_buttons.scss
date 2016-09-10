@@ -3,11 +3,9 @@
   background-color: transparent;
   min-height: 36;
   min-width: 64;
-  font-size: 15;
   &.btn-active:highlighted{
     color: $white;
-    opacity: 0.5;
-    background-color:$btn-color-secondary;
+    background-color:$btn-colo-outline-highlighted;
   }
   @include button-base($btn-color, $btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius,0);
 
@@ -19,6 +17,7 @@
   border-color: $btn-color;
   &.btn-active:highlighted{
     border-color:$btn-color-secondary;
+    background-color:$btn-color-secondary;
   }
 }
 
@@ -26,17 +25,15 @@
   color: $btn-color;
   background-color: transparent;
   border-color: $btn-color;
-
+  &.btn-active:highlighted{
+      background-color:$btn-colo-outline-highlighted;
+  }
 }
 
 .btn[isEnabled=false]{
   color:$btn-color-disabled;
   background-color: $grey;
   border-color: $grey;
-}
-
-.btn-rounded-sm{
-  border-radius: 5;
 }
 
 .btn-rounded-lg{
