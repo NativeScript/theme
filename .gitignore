@@ -10,3 +10,4 @@ lib
 !scripts/postinstall.js
 .vscode
 .idea
+.DS_Store

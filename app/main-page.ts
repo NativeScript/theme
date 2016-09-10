@@ -16,9 +16,4 @@ export function navigatingTo(args: EventData) {
     let navigationBar = controller.navigationBar;
     navigationBar.barStyle = 0;
   }
-
-  if (isAndroid && device.sdkVersion >= "21") {
-    let window = app.android.startActivity.getWindow();
-    window.setStatusBarColor(new Color("#fff").android);
-  }
 }

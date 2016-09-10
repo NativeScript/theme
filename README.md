@@ -1,6 +1,22 @@
 # NativeScript Theme: Core
 
-Home of the core NativeScript theme, currently **under active development**.
+Home of the core NativeScript theme, currently **under active development**. Want to get started? Check out the [documentation on this repo’s Wiki](https://github.com/NativeScript/theme/wiki/Documentation).
+
+- [Screenshots 📸](#screenshots)
+- [Contributing 🍺](#contributing)
+- [Publishing 📚](#publishing)
+- [Contributors 💖](#awesome-contributors)
+- [License 📋](#license)
+
+## Screenshots
+
+![](screenshots/ios-1.png)
+![](screenshots/ios-2.png)
+![](screenshots/ios-3.png)
+<br>
+![](screenshots/android-1.png)
+![](screenshots/android-2.png)
+![](screenshots/android-3.png)
 
 ## Contributing
 
@@ -14,8 +30,7 @@ tns run ios
 tns run android
 ```
 
-## Toggle Theme
-* Run the demo, scroll down to "Themes" at the bottom, toggle away
+If you’d like to toggle the color scheme from light to dark, open the sidedrawer, scroll down to "Themes" at the bottom, and toggle away.
 
 ## Publishing
 
