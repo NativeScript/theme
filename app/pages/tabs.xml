@@ -11,7 +11,7 @@
  <TabView class="tab-view" selectedColor="#30bcff" tabsBackgroundColor="#f9f9f9">
    <TabView.items>
     <!-- ITEMS -->
-     <TabViewItem title="NO. ONE">
+     <TabViewItem title="One">
        <TabViewItem.view>
           <StackLayout class="p-20">
             <Label text="Tab 1 Content" class="h1" />
@@ -22,7 +22,7 @@
        </TabViewItem.view>
      </TabViewItem>
 
-     <TabViewItem title="Item Two">
+     <TabViewItem title="Two">
       <TabViewItem.view>
         <StackLayout class="p-20">
               <Label text="Tab 2 Content" class="h1" />
@@ -33,7 +33,7 @@
         </TabViewItem.view>
      </TabViewItem>
 
-      <TabViewItem title="The Third">
+      <TabViewItem title="Three">
         <TabViewItem.view>
           <StackLayout class="p-20">
             <Label text="Tab 3 Content" class="h1" />
