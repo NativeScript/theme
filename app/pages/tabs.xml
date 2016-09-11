@@ -13,7 +13,7 @@
     <!-- ITEMS -->
      <TabViewItem title="NO. ONE">
        <TabViewItem.view>
-          <StackLayout>
+          <StackLayout class="p-20">
             <Label text="Tab 1 Content" class="h1" />
             <StackLayout>
                 <Label text="{{ tab1 }}" textWrap="true" />
@@ -24,7 +24,7 @@
 
      <TabViewItem title="Item Two">
       <TabViewItem.view>
-        <StackLayout>
+        <StackLayout class="p-20">
               <Label text="Tab 2 Content" class="h1" />
               <StackLayout>
                 <Label text="{{ tab2 }}" textWrap="true" />
@@ -35,7 +35,7 @@
 
       <TabViewItem title="The Third">
         <TabViewItem.view>
-          <StackLayout>
+          <StackLayout class="p-20">
             <Label text="Tab 3 Content" class="h1" />
             <StackLayout>
                 <Label text="{{ tab3 }}" textWrap="true" />
