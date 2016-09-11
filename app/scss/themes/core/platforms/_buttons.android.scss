@@ -1,8 +1,11 @@
 .btn{
-	text-transform: capitalize;
 	border-width: 1;
+	font-family: 'Roboto Medium';
+	font-size: 14;
 }
-
+.btn-rounded-sm{
+  border-radius: 2;
+}
 .btn-rounded-lg{
   border-radius: 40;
 }
