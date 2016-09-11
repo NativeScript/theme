@@ -50,6 +50,12 @@ $font-sizes: (
     size: $font-size + 9
   ),
   20: (
+    size: $font-size + 10
+  ),
+  25: (
+    size: $font-size + 15
+  ),
+  30: (
     size: $font-size + 20
   )
 ) !default;
