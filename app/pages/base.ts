@@ -21,4 +21,10 @@ export class BaseModel extends Observable {
     let sideDrawer = <RadSideDrawer>this.page.getViewById('sideDrawer');
     sideDrawer.toggleDrawerState();
   }
+
+  public openModal() {
+    this.page.showModal('pages/modal', 'Custom ActionBar', () => {
+
+    });
+  }
 }

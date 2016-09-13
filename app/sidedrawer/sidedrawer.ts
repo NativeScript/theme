@@ -8,6 +8,15 @@ export interface ISideDrawerState extends Page {
 	activeComponent: string;
 }
 
+export function isActive(value: string): string {
+  let activeItem = 'sidedrawer-list-item active';
+	let inactiveItem = 'sidedrawer-list-item';
+  if (value === SideDrawerViewModel.activeComponent) {
+    return activeItem;
+  }
+  return inactiveItem;
+}
+
 
 export function onLoad(args: EventData) {
 	let page = <ISideDrawerState>args.object;
@@ -15,11 +24,13 @@ export function onLoad(args: EventData) {
 }
 
 export class SideDrawerViewModel extends NavigationViewModel {
+  public static activeComponent: string;
 	private activeItem = 'sidedrawer-list-item active';
 	private inactiveItem = 'sidedrawer-list-item';
 
 	constructor(public page: Page, private activeComponent: string) {
-		super(page);
+    super(page);
+    SideDrawerViewModel.activeComponent = activeComponent;
 	}
 	public isHomeActive() {
 		if (this.activeComponent == 'home') {

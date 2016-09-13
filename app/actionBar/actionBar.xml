@@ -13,5 +13,6 @@
 				</ActionItem.actionView>
 			</ActionItem>
 		</iOS>
+    <ActionItem tap="{{ openModal }}" text="Modal" class="action-item" ios.position="right" />
 	</ActionBar.actionItems>
 </ActionBar>

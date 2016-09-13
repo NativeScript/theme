@@ -12,35 +12,35 @@
           <StackLayout class="demo-full p-20">
             <GridLayout rows="auto" columns="*,*" class="h1 m-5 w-full">
               <Label text="Class: h1" row="0" col="0" />
-              <Label text="Heading" row="0" col="1" class="right" />
+              <Label text="Heading" row="0" col="1" class="text-right" />
             </GridLayout>
             <GridLayout rows="auto" columns="*,*" class="h2 m-5 w-full">
               <Label text="Class: h2" row="0" col="0" />
-              <Label text="Heading" row="0" col="1" class="right" />
+              <Label text="Heading" row="0" col="1" class="text-right" />
             </GridLayout>
             <GridLayout rows="auto" columns="*,*" class="h3 m-5 w-full">
               <Label text="Class: h3" row="0" col="0" />
-              <Label text="Heading" row="0" col="1" class="right" />
+              <Label text="Heading" row="0" col="1" class="text-right" />
             </GridLayout>
             <GridLayout rows="auto" columns="*,*" class="h4 m-5 w-full">
               <Label text="Class: h4" row="0" col="0" />
-              <Label text="Heading" row="0" col="1" class="right" />
+              <Label text="Heading" row="0" col="1" class="text-right" />
             </GridLayout>
             <GridLayout rows="auto" columns="*,*" class="h5 m-5 w-full">
               <Label text="Class: h5" row="0" col="0" />
-              <Label text="Heading" row="0" col="1" class="right" />
+              <Label text="Heading" row="0" col="1" class="text-right" />
             </GridLayout>
             <GridLayout rows="auto" columns="*,*" class="body m-5 w-full">
               <Label text="Class: body" row="0" col="0" />
-              <Label text="Body" row="0" col="1" class="right" />
+              <Label text="Body" row="0" col="1" class="text-right" />
             </GridLayout>
             <GridLayout rows="auto" columns="*,*" class="body2 m-5 w-full">
               <Label text="Class: body2" row="0" col="0" />
-              <Label text="Body 2" row="0" col="1" class="right" />
+              <Label text="Body 2" row="0" col="1" class="text-right" />
             </GridLayout>
             <GridLayout rows="auto" columns="*,*" class="footnote m-5 w-full">
               <Label text="Class: footnote" row="0" col="0" />
-              <Label text="Footnote" row="0" col="1" class="right" />
+              <Label text="Footnote" row="0" col="1" class="text-right" />
             </GridLayout>
             <StackLayout class="demo-full m-t-10">
               <Label text="Text" class="h2" />
@@ -49,27 +49,27 @@
 
               <GridLayout rows="auto" columns="*,*" class="text-lowercase m-t-5 w-full">
                 <Label text="text-lowercase" row="0" col="0" />
-                <Label text="Lowercase" row="0" col="1" class="right" />
+                <Label text="Lowercase" row="0" col="1" class="text-right" />
               </GridLayout>
               <GridLayout rows="auto" columns="*,*" class="m-t-5 w-full">
                 <Label text="text-uppercase" row="0" col="0" />
-                <Label text="Uppercase" row="0" col="1" class="right text-uppercase" />
+                <Label text="Uppercase" row="0" col="1" class="text-right text-uppercase" />
               </GridLayout>
               <GridLayout rows="auto" columns="*,*" class="m-t-5 w-full">
                 <Label text="text-capitalize" row="0" col="0" />
-                <Label text="capitalize" row="0" col="1" class="right text-capitalize" />
+                <Label text="capitalize" row="0" col="1" class="text-right text-capitalize" />
               </GridLayout>
               <GridLayout rows="auto" columns="*,*" class="font-weight-normal m-t-5 w-full">
                 <Label text="font-weight-normal" row="0" col="0" />
-                <Label text="Normal Weight" row="0" col="1" class="right" />
+                <Label text="Normal Weight" row="0" col="1" class="text-right" />
               </GridLayout>
               <GridLayout rows="auto" columns="*,*" class="font-weight-bold m-t-5 w-full">
                 <Label text="font-weight-bold" row="0" col="0" />
-                <Label text="Bold" row="0" col="1" class="right" />
+                <Label text="Bold" row="0" col="1" class="text-right" />
               </GridLayout>
               <GridLayout rows="auto" columns="*,*" class="font-italic m-t-5 w-full">
                 <Label text="font-italic" row="0" col="0" />
-                <Label text="Italic" row="0" col="1" class="right" />
+                <Label text="Italic" row="0" col="1" class="text-right" />
               </GridLayout>
             </StackLayout>
             
