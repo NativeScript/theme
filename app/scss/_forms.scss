@@ -4,9 +4,6 @@
     padding: 16 8 16 8;
     background-color: transparent;
 
-    .input:highlighted{
-        border-color: $btn-color;
-    }
     &.input-border {
       border-width:1;
       border-color:$grey;
