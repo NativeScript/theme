@@ -20,7 +20,9 @@
   "dependencies": {
     "nativescript-dom": "^1.0.6",
     "nativescript-fonticon": "^1.1.0",
-    "nativescript-themes": "^1.1.0"
+    "nativescript-telerik-ui": "^1.3.1",
+    "nativescript-themes": "^1.1.0",
+    "tns-core-modules": "^2.2.1"
   },
   "devDependencies": {
     "babel-traverse": "6.13.0",
@@ -30,9 +32,7 @@
     "lazy": "1.0.11",
     "nativescript-dev-sass": "^0.2.0",
     "nativescript-dev-typescript": "^0.3.2",
-    "nativescript-telerik-ui": "^1.3.1",
-    "typescript": "^1.8.10",
-    "tns-core-modules": "^2.2.1"
+    "typescript": "^1.8.10"
   },
   "scripts": {
     "builder": "node scripts/builder.js"
