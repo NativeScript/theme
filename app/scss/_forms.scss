@@ -1,20 +1,21 @@
 .form {
+  padding:0 15 0 15;
   .input {
     padding: 16 8 16 8;
     background-color: transparent;
-    // border-bottom: 1; // Not possible atm
-    // border-width: 1;
-    // border-color: $grey;
 
+    .input:highlighted{
+        border-color: $btn-color;
+    }
     &.input-border {
-      border-width:2;
+      border-width:1;
       border-color:$grey;
       border-radius: 2;
       padding:16;
     }
 
     &.input-rounded {
-      border-width:2;
+      border-width:1;
       border-color:$grey;
       border-radius: 28;
       padding:16;
