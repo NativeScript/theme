@@ -1,9 +1,12 @@
 /* Alignment */
-.left {
+.text-left {
   text-align: left;
 }
-.right {
+.text-right {
   text-align: right;
+}
+.text-center {
+  text-align: center;
 }
 
 // Transformation
@@ -47,6 +50,12 @@ $font-sizes: (
     size: $font-size + 9
   ),
   20: (
+    size: $font-size + 10
+  ),
+  25: (
+    size: $font-size + 15
+  ),
+  30: (
     size: $font-size + 20
   )
 ) !default;

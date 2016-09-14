@@ -11,7 +11,6 @@ interface ICustomActionBar extends Page{
 
 export function onLoad(args: EventData) {
 	let page = <ICustomActionBar>args.object;
-	let actionBarTitle = <Label>page.getViewById("actionBarTitle");
-
-	actionBarTitle.text = page.ActionBarTitle;
+  let actionBarTitle = <Label>page.getViewById("actionBarTitle");
+  actionBarTitle.text = page.ActionBarTitle;
 }
