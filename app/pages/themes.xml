@@ -13,6 +13,8 @@
         <Button text="Apply Default" tap="{{ applyDefault }}" class="btn" />
         <Button text="Apply Light" tap="{{ applyLight }}" class="btn" />
         <Button text="Apply Dark" tap="{{ applyDark }}" class="btn" />
+        <Button text="Apply Custom" tap="{{ applyCustom }}" class="btn" />
+        <Button text="Apply Bootstrap" tap="{{ applyBootstrap }}" class="btn" />
       </StackLayout>
     </drawer:RadSideDrawer.mainContent>
     <drawer:RadSideDrawer.drawerContent>
