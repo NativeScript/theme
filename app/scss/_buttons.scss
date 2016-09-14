@@ -5,7 +5,7 @@
   min-width: 64;
   &.btn-active:highlighted{
     color: $white;
-    background-color:$btn-colo-outline-highlighted;
+    background-color:$btn-color-outline-highlighted;
   }
   @include button-base($btn-color, $btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius,0);
 
@@ -26,7 +26,7 @@
   background-color: transparent;
   border-color: $btn-color;
   &.btn-active:highlighted{
-      background-color:$btn-colo-outline-highlighted;
+      background-color:$btn-color-outline-highlighted;
   }
 }
 
