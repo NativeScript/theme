@@ -2,7 +2,7 @@
 [![npm](https://img.shields.io/npm/v/nativescript-theme-core.svg)](https://www.npmjs.com/package/nativescript-theme-core)
 [![npm](https://img.shields.io/npm/dt/nativescript-theme-core.svg?label=npm%20downloads)](https://www.npmjs.com/package/nativescript-theme-core)
 
-Home of the core NativeScript theme, currently **under active development**. Want to get started? Check out the [documentation on this repo’s Wiki](https://github.com/NativeScript/theme/wiki/Documentation).
+Home of the core NativeScript theme, currently **under active development**. Want to get started? Check out the [theme’s documentation on the official NativeScript docs site](http://docs.nativescript.org/ui/theme).
 
 - [Screenshots 📸](#screenshots)
 - [Contributing 🍺](#contributing)
