@@ -33,6 +33,7 @@
     "lazy": "1.0.11",
     "nativescript-dev-sass": "^0.3.0",
     "nativescript-dev-typescript": "^0.3.2",
+    "node-sass": "^3.10.0",
     "typescript": "^1.8.10"
   },
   "scripts": {
