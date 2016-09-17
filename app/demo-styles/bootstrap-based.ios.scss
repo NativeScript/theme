@@ -8,15 +8,11 @@
 // Variables form bootstrap v4 dependency
 @import 'bootstrap/scss/variables';
 // Import bootstrap-map patial to apply variable mapping
-@import 'scss/bootstrap-map';
+@import 'bootstrap-map';
 
-/**
- * Base style (un-themed)
- */
-@import 'scss/variables';
-@import 'scss/index';
-@import 'scss/themes/core/platforms/index.ios';
+// Import light theme
+@import 'core.light.ios.scss';
 
 // demo app
-@import 'demo';
+@import 'demo-styles/demo';
 

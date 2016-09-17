@@ -80,10 +80,7 @@ function copyFonts() {
 function copySCSS() {
     var sassFilesPath =  './app/**/*.scss';
     var sassFiles = glob.sync(sassFilesPath).filter(function (filePath) {
-        var path = filePath;
-        var parts = path.split('/');
-        var filename = parts[parts.length - 1];
-        return path.indexOf("App_Resources") === -1 && filename.indexOf('app.') !== 0 && filename.indexOf('_demo') === -1;
+        return filePath.indexOf("App_Resources") === -1 && filePath.indexOf('demo-styles') === -1;
     });
 
     for (var i=0;i<sassFiles.length;i++) {
