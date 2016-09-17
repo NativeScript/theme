@@ -5,5 +5,12 @@
  * Licensed under MIT (https://github.com/NativeScript/theme/blob/master/LICENSE)
  */
  
-@import 'scss/themes/core/dark';
-@import 'scss/themes/core/platforms/index.ios';
+// Theme variables cusomizations
+@import 'demo-styles/custom';
+
+// Import light theme
+@import 'core.light.android.scss';
+
+// demo app
+@import 'demo-styles/demo';
+

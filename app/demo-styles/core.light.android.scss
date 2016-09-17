@@ -4,17 +4,8 @@
  * Copyright 2016-2016 Telerik
  * Licensed under MIT (https://github.com/NativeScript/theme/blob/master/LICENSE)
  */
- 
-// Theme variables cusomizations
-@import 'custom';
 
-/**
- * Base style (un-themed)
- */
-@import 'scss/variables';
-@import 'scss/index';
-@import 'scss/themes/core/platforms/index.ios';
+@import 'core.light.android.scss';
 
 // demo app
-@import 'demo';
-
+@import 'demo-styles/demo';

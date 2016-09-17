@@ -5,6 +5,8 @@ import { knownFolders } from 'file-system';
 import { isIOS, isAndroid } from 'platform';
 var themes = require('nativescript-themes');
 
+const stylesFolder = "demo-styles/";
+
 export class ThemesModel extends BaseModel {
   public labelText: string;
   private _toggled: boolean = false;
@@ -42,7 +44,7 @@ export class ThemesModel extends BaseModel {
   private getPath(name: string) {
     let appPath = knownFolders.currentApp().path + '/';
     let platform = '';
-    return `${appPath}${name}${platform}.css`;
+    return `${appPath}${stylesFolder}${name}${platform}.css`;
   }
 }
 

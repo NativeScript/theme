@@ -4,6 +4,14 @@
  * Copyright 2016-2016 Telerik
  * Licensed under MIT (https://github.com/NativeScript/theme/blob/master/LICENSE)
  */
- 
-@import 'scss/themes/core/dark';
-@import 'scss/themes/core/platforms/index.ios';
+
+/**
+ * Base style (un-themed)
+ */
+@import 'scss/variables';
+@import 'scss/index';
+@import 'scss/themes/core/platforms/index.android';
+
+// demo app
+@import 'demo-styles/demo';
+
