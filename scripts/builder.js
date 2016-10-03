@@ -1,7 +1,7 @@
 /*************************************************************************************
  * Licensed under the APACHE license
  *
- * Version 0.0.1                                      Nathan@master-technology.com
+ * Version 0.0.5                                      Nathan@master-technology.com
  ************************************************************************************/
 "use strict";
 
@@ -16,7 +16,7 @@ if (fs.existsSync('nativescript-theme-core')) {
 }
 fs.mkdirSync("nativescript-theme-core");
 fs.mkdirSync("nativescript-theme-core/css");
-fs.mkdirSync("nativescript-theme-core/scss");
+fs.mkdirSync("nativescript-theme-core/theme-core-scss");
 fs.mkdirSync("nativescript-theme-core/fonts");
 fs.mkdirSync("nativescript-theme-core/scripts");
 
@@ -84,7 +84,7 @@ function copySCSS() {
     });
 
     for (var i=0;i<sassFiles.length;i++) {
-        var out = sassFiles[i].replace('./app/', './nativescript-theme-core/scss/');
+        var out = sassFiles[i].replace('./app/', './nativescript-theme-core/');
 
         var paths = sassFiles[i].split('/');
         // eliminate the ['.' and 'app']
@@ -92,7 +92,7 @@ function copySCSS() {
         paths.shift();
 
         if (paths.length > 1) {
-            var path = './nativescript-theme-core/scss';
+            var path = './nativescript-theme-core';
             for (var j=0;j<paths.length-1;j++) {
                 path +=  '/' + paths[j];
                 if (!fs.existsSync(path)) {
