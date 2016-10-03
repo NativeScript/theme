@@ -22,7 +22,7 @@ var appDir = primaryDir + 'app/';
 try {
     var data = require(primaryDir + "package.json");
 
-    if (data && data.devDependencies && data.devDependencies['nativescript-dev-sass']) {
+    if (data && (data.devDependencies && data.devDependencies['nativescript-dev-sass']) || (data.dependencies && data.dependencies['nativescript-dev-sass']) ) {
         hasSCSS = true;
     }
 } catch (err) {

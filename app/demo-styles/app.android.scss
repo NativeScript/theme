@@ -8,9 +8,9 @@
 /**
  * Base style (un-themed)
  */
-@import 'scss/variables';
-@import 'scss/index';
-@import 'scss/themes/core/platforms/index.android';
+@import 'includes/variables';
+@import 'includes/index';
+@import 'includes/themes/core/platforms/index.android';
 
 // demo app
 @import 'demo-styles/demo';
