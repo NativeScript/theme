@@ -31,7 +31,7 @@
 
         <TextField hint="Input rounded" class="input input-rounded m-b-10" />
 
-        <TextField hint="Input border Disabled" class="input input-rounded m-b-10" isEnabled="false" />
+        <TextField hint="Input border Disabled" class="input input-border m-b-10" isEnabled="false" />
 
         <TextField hint="Input rounded Disabled" class="input input-rounded m-b-10" isEnabled="false" />
 
