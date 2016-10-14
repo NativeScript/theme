@@ -5,13 +5,12 @@
  * Licensed under MIT (https://github.com/NativeScript/theme/blob/master/LICENSE)
  */
  
-/**
- * Base style (un-themed)
- */
-@import 'scss/variables';
-@import 'scss/index';
-@import 'scss/themes/core/platforms/index.android';
+// Theme variables cusomizations
+@import 'demo-styles/custom';
+
+// Import light theme
+@import 'core.light.ios.scss';
 
 // demo app
-@import 'demo';
+@import 'demo-styles/demo';
 

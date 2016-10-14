@@ -1,7 +1,7 @@
 /*************************************************************************************
  * Licensed under the APACHE license
  *
- * Version 0.0.3                                         Nathan@master-technology.com
+ * Version 0.0.5                                         Nathan@master-technology.com
  ************************************************************************************/
 "use strict";
 
@@ -22,7 +22,7 @@ var appDir = primaryDir + 'app/';
 try {
     var data = require(primaryDir + "package.json");
 
-    if (data && data.devDependencies && data.devDependencies['nativescript-dev-sass']) {
+    if (data && (data.devDependencies && data.devDependencies['nativescript-dev-sass']) || (data.dependencies && data.dependencies['nativescript-dev-sass']) ) {
         hasSCSS = true;
     }
 } catch (err) {
@@ -69,7 +69,12 @@ copyFolder(cwd + "fonts", appDir + "fonts");
 // ------------------------------------------------------
 
 if (hasSCSS) {
-    copyFolder(cwd+"scss", appDir+"scss");
+    copyFolder(cwd+"theme-core-scss", appDir+"theme-core-scss");
+	copyFile(cwd, appDir, "_bootstrap-map.scss");
+	copyFile(cwd, appDir, "core.dark.android.scss");
+	copyFile(cwd, appDir, "core.dark.ios.scss");
+	copyFile(cwd, appDir, "core.light.android.scss");
+	copyFile(cwd, appDir, "core.light.ios.scss");
 }
 
 

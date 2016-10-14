@@ -8,7 +8,7 @@
   </Page.actionBar>
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
     <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
-      <StackLayout class="demo-full form m-10">
+      <StackLayout class="demo-full form">
 
         <StackLayout class="input-field">
           <TextField id="textField" hint="Input text" class="input" returnKeyType="{{keyType}}" returnPress="{{returnPress}}" />
@@ -30,6 +30,11 @@
         <TextField hint="Input border" class="input input-border m-b-10" />
 
         <TextField hint="Input rounded" class="input input-rounded m-b-10" />
+
+        <TextField hint="Input border Disabled" class="input input-border m-b-10" isEnabled="false" />
+
+        <TextField hint="Input rounded Disabled" class="input input-rounded m-b-10" isEnabled="false" />
+
 
       </StackLayout>
     </drawer:RadSideDrawer.mainContent>

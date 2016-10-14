@@ -1,0 +1,33 @@
+// Map NS theme variables to variables form the boothstrap v4 theme
+
+// Colors
+$black: #000 !default;
+$white: #fff !default;
+$base: $white !default;
+$grey: #e0e0e0 !default;
+$grey-background: #bababa !default;
+$charcoal:#303030 !default;
+
+$primary: lighten($black, 13%) !default;//rgba(0,0,0,.87);
+$secondary: lighten($black, 46%) !default;
+$disabled: $text-muted !default;
+
+$accent: $brand-primary !default;
+$error: $brand-danger !default;
+
+// Skin
+$background: $base !default;
+$text-color: $primary !default;
+
+// Buttons
+$btn-color: $btn-primary-bg !default;
+$btn-color-secondary: lighten($btn-primary-bg, 20%) !default;
+$btn-color-outline-highlighted: lighten($btn-color-secondary, 20%) !default;
+$btn-color-disabled: $btn-link-disabled-color !default;
+
+// $btn-font-size: 18 !default;
+// $btn-radius: 0 !default;
+// $btn-padding-x: 10 !default;
+// $btn-padding-y: 10 !default;
+// $btn-margin-x:	16 !default;
+// $btn-margin-y:	8 !default;

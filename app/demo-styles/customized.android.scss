@@ -4,6 +4,13 @@
  * Copyright 2016-2016 Telerik
  * Licensed under MIT (https://github.com/NativeScript/theme/blob/master/LICENSE)
  */
+ 
+// Theme variables cusomizations
+@import 'demo-styles/custom';
 
-@import 'theme-core-scss/themes/core/light';
-@import 'theme-core-scss/themes/core/platforms/index.android';
+// Import light theme
+@import 'core.light.android.scss';
+
+// demo app
+@import 'demo-styles/demo';
+

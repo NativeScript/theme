@@ -1,10 +1,9 @@
 // Core variables and mixins
+@import 'variables_light';
 @import '../../variables';
-@import 'variables_dark';
 
 // Core CSS
 @import '../../index';
 
 // Custom Theme Overrides
-@import 'action-bar.dark';
 @import 'buttons';
