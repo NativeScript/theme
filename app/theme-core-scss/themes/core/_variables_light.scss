@@ -4,3 +4,14 @@ $primary: lighten(#000, 13%) !default;
 $secondary: lighten(#000, 46%) !default;
 $disabled: lighten(#000, 62%) !default;
 $accent: #30bcff !default;
+
+//side-drawer
+$item-color-android : #737373;
+$item-active-background:$accent;
+$item-active-color:#fff;
+$item-active-icon-color:#fff;
+$item-color-ios:#949494;
+$image-background: #e0e0e0;
+$side-drawer-header-background:#fafafa;
+$side-drawer-header-brand:#737373;
+$side-drawer-background: #fafafa;
