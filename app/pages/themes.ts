@@ -13,8 +13,9 @@ export class ThemesModel extends BaseModel {
 
   constructor(page: Page) {
     super(page);
-    let active = themes.getAppliedTheme(this.getPath('app'));
+    let active = themes.getAppliedTheme(this.getPath('app.css'));
     this.label = this.getThemeName(active);
+    themes.applyTheme(active);
   }
 
   public set label(value: string) {
@@ -22,45 +23,45 @@ export class ThemesModel extends BaseModel {
   }
 
   public applyDefault() {
-    let style = 'app';
+    let style = 'app.css';
     this.label = this.getThemeName(style);
     themes.applyTheme(this.getPath(style));
   }
 
   public applyLight() {
-    let style = 'core.light';
+    let style = 'core.light.css';
     this.label = this.getThemeName(style);
     themes.applyTheme(this.getPath(style));
   }
 
   public applyDark() {
-    let style = 'core.dark';
+    let style = 'core.dark.css';
     this.label = this.getThemeName(style);
     themes.applyTheme(this.getPath(style));
   }
 
   public applyCustom() {
-    let style = 'customized';
+    let style = 'customized.css';
     this.label = this.getThemeName(style);
     themes.applyTheme(this.getPath(style));
   }
 
   public applyBootstrap() {
-    let style = 'bootstrap-based';
+    let style = 'bootstrap-based.css';
     this.label = this.getThemeName(style);
     themes.applyTheme(this.getPath(style));
   }
 
   private getThemeName(cssPath: string): string {
-    if (!cssPath || cssPath.indexOf('app') > -1) {
+    if (!cssPath || cssPath.indexOf('app.css') > -1) {
       return 'Default';
-    } else if (cssPath.indexOf('core.light') > -1) {
+    } else if (cssPath.indexOf('core.light.css') > -1) {
       return 'Light';
-    } else if (cssPath.indexOf('core.dark') > -1) {
+    } else if (cssPath.indexOf('core.dark.css') > -1) {
       return 'Dark';
-    } else if (cssPath.indexOf('customized') > -1) {
+    } else if (cssPath.indexOf('customized.css') > -1) {
       return 'Custom';
-    } else if (cssPath.indexOf('bootstrap-based') > -1) {
+    } else if (cssPath.indexOf('bootstrap-based.css') > -1) {
       return 'Bootstrap';
     }
   }
@@ -68,7 +69,7 @@ export class ThemesModel extends BaseModel {
   private getPath(name: string) {
     let appPath = knownFolders.currentApp().path + '/';
     let platform = '';
-    return `${appPath}${stylesFolder}${name}${platform}.css`;
+    return `${appPath}${stylesFolder}${name}${platform}`;
   }
 }
 

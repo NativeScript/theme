@@ -15,6 +15,9 @@
 $spacer:   5 !default;
 $spacer-x: $spacer !default;
 $spacer-y: $spacer !default;
+$spacer-alt:   4 !default;
+$spacer-x-alt: $spacer-alt !default;
+$spacer-y-alt: $spacer-alt !default;
 $spacers: (
   0: (
     x: 0,
@@ -24,25 +27,49 @@ $spacers: (
     x: 2,
     y: 2
   ),
+  4: (
+    x: $spacer-x-alt,
+    y: $spacer-y-alt
+  ),
   5: (
     x: $spacer-x,
     y: $spacer-y
+  ),
+  8: (
+    x: $spacer-x-alt * 2,
+    y: $spacer-y-alt * 2
   ),
   10: (
     x: ($spacer-x * 2),
     y: ($spacer-y * 2)
   ),
+  12: (
+    x: $spacer-x-alt * 3,
+    y: $spacer-y-alt * 3
+  ),
   15: (
     x: ($spacer-x * 3),
     y: ($spacer-y * 3)
+  ),
+  16: (
+    x: $spacer-x-alt * 4,
+    y: $spacer-y-alt * 4
   ),
   20: (
     x: ($spacer-x * 4),
     y: ($spacer-y * 4)
   ),
+  24: (
+    x: $spacer-x-alt * 6,
+    y: $spacer-y-alt * 6
+  ),
   25: (
     x: ($spacer-x * 5),
     y: ($spacer-y * 5)
+  ),
+  28: (
+    x: $spacer-x-alt * 7,
+    y: $spacer-y-alt * 7
   ),
   30: (
     x: ($spacer-x * 6),
