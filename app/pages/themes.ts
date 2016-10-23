@@ -13,32 +13,56 @@ export class ThemesModel extends BaseModel {
 
   constructor(page: Page) {
     super(page);
-    this.set('labelText', 'Default');
+    let active = themes.getAppliedTheme(this.getPath('app'));
+    this.label = this.getThemeName(active);
+  }
+
+  public set label(value: string) {
+    this.set('labelText', value);
   }
 
   public applyDefault() {
-    this.set('labelText', 'Default');
-    themes.applyTheme(this.getPath('app'));
+    let style = 'app';
+    this.label = this.getThemeName(style);
+    themes.applyTheme(this.getPath(style));
   }
 
   public applyLight() {
-    this.set('labelText', 'Light');
-    themes.applyTheme(this.getPath('core.light'));
+    let style = 'core.light';
+    this.label = this.getThemeName(style);
+    themes.applyTheme(this.getPath(style));
   }
 
   public applyDark() {
-    this.set('labelText', 'Dark');
-    themes.applyTheme(this.getPath('core.dark'));
+    let style = 'core.dark';
+    this.label = this.getThemeName(style);
+    themes.applyTheme(this.getPath(style));
   }
 
   public applyCustom() {
-    this.set('labelText', 'Custom');
-    themes.applyTheme(this.getPath('customized'));
+    let style = 'customized';
+    this.label = this.getThemeName(style);
+    themes.applyTheme(this.getPath(style));
   }
 
   public applyBootstrap() {
-    this.set('labelText', 'Bootstrap');
-    themes.applyTheme(this.getPath('bootstrap-based'));
+    let style = 'bootstrap-based';
+    this.label = this.getThemeName(style);
+    themes.applyTheme(this.getPath(style));
+  }
+
+  private getThemeName(cssPath: string): string {
+    if (!cssPath || cssPath.indexOf('app') > -1) {
+      return 'Default';
+    } else if (cssPath.indexOf('core.light') > -1) {
+      return 'Light';
+    } else if (cssPath.indexOf('core.dark') > -1) {
+      return 'Dark';
+    } else if (cssPath.indexOf('customized') > -1) {
+      return 'Custom';
+    } else if (cssPath.indexOf('bootstrap-based') > -1) {
+      return 'Bootstrap';
+    }
   }
 
   private getPath(name: string) {

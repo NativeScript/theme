@@ -12,7 +12,7 @@
 }
 
 .btn-primary {
-  color: $white;
+  color: $btn-color-inverse;
   background-color: $btn-color;
   border-color: $btn-color;
   &.btn-active:highlighted{
