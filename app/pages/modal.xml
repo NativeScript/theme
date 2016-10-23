@@ -2,7 +2,7 @@
   loaded="onLoaded"
   shownModally="onShownModally">
   <StackLayout>
-    <GridLayout rows="auto" columns="100,*,100" class="action-bar m-10">
+    <GridLayout rows="auto" columns="100,*,100" class="action-bar p-10">
       <Button text="Close" tap="{{close}}" row="0" col="0" class="action-item text-left" />
       <Label text="{{title}}" textWrap="true" col="1" class="action-title text-center" /> 
     </GridLayout>
