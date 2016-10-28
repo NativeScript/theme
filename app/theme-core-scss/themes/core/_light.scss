@@ -1,9 +1,6 @@
 // Core variables and mixins
-@import 'variables_light';
 @import '../../variables';
+@import 'variables_light';
 
 // Core CSS
 @import '../../index';
-
-// Custom Theme Overrides
-@import 'buttons';

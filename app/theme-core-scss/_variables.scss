@@ -17,6 +17,7 @@ $text-color: $primary !default;
 
 // Buttons
 $btn-color: $accent !default;
+$btn-color-inverse: $white !default;
 $btn-color-secondary: #01a0ec !default;
 $btn-color-outline-highlighted: #c0ebff !default;
 $btn-color-disabled: #a4a4a4 !default;
@@ -27,6 +28,10 @@ $btn-padding-y: 10 !default;
 $btn-margin-x:	16 !default;
 $btn-margin-y:	8 !default;
 
+// Headings
+$headings-margin-bottom: 4 !default;
+$headings-font-weight: normal !default;
+$headings-color: inherit !default;
 
 // Options
 //
@@ -35,3 +40,13 @@ $enable-rounded:            false !default;
 $enable-shadows:            false !default;
 $enable-gradients:          false !default;
 $enable-transitions:        false !default;
+
+$item-color-android : #a0a0a0;
+$item-color-ios:#848484;
+$item-active-background:#2b2b2b;
+$item-active-color:$accent;
+$item-active-icon-color:#fff;
+$image-background: #e0e0e0;
+$side-drawer-header-background: $accent;
+$side-drawer-header-brand: #fff;
+$side-drawer-background: $charcoal;

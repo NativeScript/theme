@@ -13,38 +13,63 @@ export class ThemesModel extends BaseModel {
 
   constructor(page: Page) {
     super(page);
-    this.set('labelText', 'Default');
+    let active = themes.getAppliedTheme(this.getPath('app.css'));
+    this.label = this.getThemeName(active);
+    themes.applyTheme(active);
+  }
+
+  public set label(value: string) {
+    this.set('labelText', value);
   }
 
   public applyDefault() {
-    this.set('labelText', 'Default');
-    themes.applyTheme(this.getPath('app'));
+    let style = 'app.css';
+    this.label = this.getThemeName(style);
+    themes.applyTheme(this.getPath(style));
   }
 
   public applyLight() {
-    this.set('labelText', 'Light');
-    themes.applyTheme(this.getPath('core.light'));
+    let style = 'core.light.css';
+    this.label = this.getThemeName(style);
+    themes.applyTheme(this.getPath(style));
   }
 
   public applyDark() {
-    this.set('labelText', 'Dark');
-    themes.applyTheme(this.getPath('core.dark'));
+    let style = 'core.dark.css';
+    this.label = this.getThemeName(style);
+    themes.applyTheme(this.getPath(style));
   }
 
   public applyCustom() {
-    this.set('labelText', 'Custom');
-    themes.applyTheme(this.getPath('customized'));
+    let style = 'customized.css';
+    this.label = this.getThemeName(style);
+    themes.applyTheme(this.getPath(style));
   }
 
   public applyBootstrap() {
-    this.set('labelText', 'Bootstrap');
-    themes.applyTheme(this.getPath('bootstrap-based'));
+    let style = 'bootstrap-based.css';
+    this.label = this.getThemeName(style);
+    themes.applyTheme(this.getPath(style));
+  }
+
+  private getThemeName(cssPath: string): string {
+    if (!cssPath || cssPath.indexOf('app.css') > -1) {
+      return 'Default';
+    } else if (cssPath.indexOf('core.light.css') > -1) {
+      return 'Light';
+    } else if (cssPath.indexOf('core.dark.css') > -1) {
+      return 'Dark';
+    } else if (cssPath.indexOf('customized.css') > -1) {
+      return 'Custom';
+    } else if (cssPath.indexOf('bootstrap-based.css') > -1) {
+      return 'Bootstrap';
+    }
   }
 
   private getPath(name: string) {
     let appPath = knownFolders.currentApp().path + '/';
     let platform = '';
-    return `${appPath}${stylesFolder}${name}${platform}.css`;
+    return `${appPath}${stylesFolder}${name}${platform}`;
   }
 }
 

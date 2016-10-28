@@ -1,28 +1,28 @@
 // Cusotmized Color Variables
 
 // Colors
-$black: #000 !default;
-$white: #fff !default;
-$base: $white !default;
-$grey: #e0e0e0 !default;
-$grey-background: #bababa !default;
-$charcoal:#303030 !default;
-$primary: lighten($black, 13%) !default;//rgba(0,0,0,.87);
-$secondary: lighten($black, 46%) !default;
-$disabled: lighten($black, 62%) !default;
+$black: #000;
+$white: #fff;
+$base: $white;
+$grey: #e0e0e0;
+$grey-background: #bababa;
+$charcoal:#303030;
+$primary: lighten($black, 13%);//rgba(0,0,0,.87);
+$secondary: lighten($black, 46%);
+$disabled: lighten($black, 62%);
 
-$accent: #09A52F !default;
-$error: #F74E2F !default;
+$accent: #09A52F;
+$error: #F74E2F;
 
 // Skin
-$background: #F0EED2 !default;
-$text-color: $primary !default;
+$background: #F0EED2;
+$text-color: $primary;
 
 // Buttons
-$btn-color: $accent !default;
-$btn-color-secondary: #0FC572 !default;
-$btn-color-outline-highlighted: #0AC16E !default;
-$btn-color-disabled: #CCC4C9 !default;
+$btn-color: $accent;
+$btn-color-secondary: #0FC572;
+$btn-color-outline-highlighted: #0AC16E;
+$btn-color-disabled: #CCC4C9;
 // $btn-font-size: 18 !default;
 // $btn-radius: 0 !default;
 // $btn-padding-x: 10 !default;

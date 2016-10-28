@@ -2,5 +2,9 @@
 	font-family: 'SF UI Text Regular';
 	.input{
 		font-size: 15;
+
+    &.input-rounded {
+      border-radius: 27;
+    }
 	}
 }

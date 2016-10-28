@@ -1,10 +1,10 @@
 .sidedrawer-left, .sidedrawer-center{
-	background-color: $charcoal;
+	background-color: $side-drawer-background;
 }
 
 .sidedrawer-header{
 	height: 148;
-	background-color: $accent;
+	background-color: $side-drawer-header-background;
 	width: 100%;
 }
 .sidedrawer-left .sidedrawer-header{
@@ -15,7 +15,7 @@
 }
 
 .sidedrawer-header-image{
-	background-color: $grey;
+	background-color: $image-background;
 }
 .sidedrawer-left .sidedrawer-header-image{
 	height: 64;
@@ -33,7 +33,7 @@
 }
 
 .sidedrawer-header-brand{
-	color: $grey;
+	color: $side-drawer-header-brand;
 }
 .sidedrawer-left  .sidedrawer-header-brand{
 	horizontal-align:left;
@@ -49,7 +49,6 @@
 	horizontal-align:left;
 	width: 100%;
 	orientation:horizontal;
-	color:$btn-color-disabled;
 
   .sidedrawer-list-item-icon {
     width:24;
@@ -57,16 +56,15 @@
     font-size: 20;
     height: 48;
     vertical-align:center;
-    color:$btn-color-disabled;
   }
 
 	&.active{
-		color:$accent;
-		background-color: #2b2b2b;
+		color:$item-active-color;
+		background-color: $item-active-background;
 
-    .sidedrawer-list-item-icon {
-      color: $white;
-    }
+		.sidedrawer-list-item-icon {
+		color: $item-active-icon-color;
+		}
 	}
 }
 .sidedrawer-left .sidedrawer-list-item-icon{

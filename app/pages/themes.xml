@@ -9,12 +9,12 @@
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
     <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
       <StackLayout class="demo-full themes">
-        <Label text="{{ 'Active: ' + labelText }}" textWrap="true" class="h2" />
-        <Button text="Apply Default" tap="{{ applyDefault }}" class="btn" />
-        <Button text="Apply Light" tap="{{ applyLight }}" class="btn" />
-        <Button text="Apply Dark" tap="{{ applyDark }}" class="btn" />
-        <Button text="Apply Custom" tap="{{ applyCustom }}" class="btn" />
-        <Button text="Apply Bootstrap" tap="{{ applyBootstrap }}" class="btn" />
+        <Label text="{{ 'Active: ' + labelText }}" textWrap="true" class="h2 text-center m-10" />
+        <Button text="Apply Default" tap="{{ applyDefault }}" class="btn btn-outline" />
+        <Button text="Apply Light" tap="{{ applyLight }}" class="btn btn-outline" />
+        <Button text="Apply Dark" tap="{{ applyDark }}" class="btn btn-outline" />
+        <Button text="Apply Custom" tap="{{ applyCustom }}" class="btn btn-outline" />
+        <Button text="Apply Bootstrap" tap="{{ applyBootstrap }}" class="btn btn-outline" />
       </StackLayout>
     </drawer:RadSideDrawer.mainContent>
     <drawer:RadSideDrawer.drawerContent>

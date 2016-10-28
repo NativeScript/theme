@@ -4,12 +4,19 @@
  * Copyright 2016-2016 Telerik
  * Licensed under MIT (https://github.com/NativeScript/theme/blob/master/LICENSE)
  */
- 
+
+// Core variables and mixins
+@import 'theme-core-scss/variables';
+@import 'theme-core-scss/themes/core/variables_dark';
+
 // Theme variables cusomizations
 @import 'demo-styles/custom';
 
-// Import light theme
-@import 'core.light.android.scss';
+// Core CSS
+@import 'theme-core-scss/index';
+
+// Platform adjustments
+@import 'theme-core-scss/themes/core/platforms/index.android';
 
 // demo app
 @import 'demo-styles/demo';

@@ -122,7 +122,7 @@ function createCSSFromSCSS() {
         var path = filePath;
         var parts = path.split('/');
         var filename = parts[parts.length - 1];
-        return path.indexOf("App_Resources") === -1 && filename.indexOf("_") !== 0 && filename.indexOf('app.') !== 0;
+        return path.indexOf("App_Resources") === -1 && path.indexOf('demo-styles') === -1 && filename.indexOf("_") !== 0 && filename.indexOf('app.') !== 0;
     });
 
 
