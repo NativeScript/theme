@@ -10,6 +10,7 @@
     "url": "https://github.com/NativeScript/theme"
   },
   "scripts": {
-    "postinstall": "node scripts/postinstall.js"
+    "postinstall": "node scripts/postinstall.js",
+	"uninstall": "node scripts/uninstall.js"
   }
 }

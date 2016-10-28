@@ -38,6 +38,9 @@ copyFile("./nativescript-theme-core.json", "./nativescript-theme-core/package.js
 // Copy our Post Install Script
 copyFile("./scripts/postinstall.js", "./nativescript-theme-core/scripts/postinstall.js");
 
+// Copy our Un-install 
+copyFile("./scripts/uninstall.js", "./nativescript-theme-core/scripts/uninstall.js");
+
 // Copy our Readme
 copyFile("./nativescript-theme-core.md", "./nativescript-theme-core/readme.md");
 
