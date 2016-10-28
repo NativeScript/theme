@@ -1,14 +1,17 @@
 /*************************************************************************************
  * Licensed under the APACHE license
  *
- * Version 0.0.5                                         Nathan@master-technology.com
+ * Version 0.0.6                                         Nathan@master-technology.com
  ************************************************************************************/
 "use strict";
 
 // Simple require statements, built into node
 var fs = require('fs');
 var path = require('path');
+var os = require('os');
 
+// Check for the Buggy TNS Behavior...
+checkIfTNSBug();
 
 // Do we have detect SCSS support
 var hasSCSS = false;
@@ -130,4 +133,24 @@ function mkRecursiveDirectories(path) {
         if (fs.existsSync(newPath)) { continue; }
         fs.mkdirSync(newPath);
     }
+}
+
+/**
+ * Check for The TNS double install buggy behavior...
+ */
+function checkIfTNSBug() {
+	var cwd = process.cwd();
+	if (cwd.indexOf(os.tmpdir()) === 0) {
+		process.exit(0);
+	}
+
+	var env = process.env["TMP"];
+	if (env && process.argv[1].indexOf(env) === 0) {
+		process.exit(0);	
+	}
+
+	env = process.env["TEMP"];
+	if (env && process.argv[1].indexOf(env) === 0) {
+		process.exit(0);	
+	}
 }
