@@ -115,6 +115,14 @@ function copySCSS() {
  */
 function createCSSFromSCSS() {
 
+    var packageFile = './package.json';
+    var packageJSON = {};
+  
+    if (fs.existsSync(packageFile)) {
+        packageJSON = require(packageFile);
+    } 
+    var version = packageJSON ? packageJSON.version : null;
+    
     var sassFilesPath = './app/**/*.scss';
     var sassImportPaths = [
         './app/',
@@ -134,7 +142,7 @@ function createCSSFromSCSS() {
         if (sassFiles[i].indexOf('/core.') === -1) {
             continue;
         }
-        parseSass(sassFiles[i], sassImportPaths);
+        parseSass(sassFiles[i], sassImportPaths, version);
     }
 }
 
@@ -143,7 +151,7 @@ function createCSSFromSCSS() {
  * @param sassFile - File to load
  * @param importPaths - Other import paths
  */
-function parseSass(sassFile, importPaths) {
+function parseSass(sassFile, importPaths, version) {
     var sassFileContent = fs.readFileSync(sassFile, { encoding: 'utf8'});
     var outputFile = 'nativescript-theme-core/css';
     var offset = sassFile.lastIndexOf('/');
@@ -156,6 +164,11 @@ function parseSass(sassFile, importPaths) {
         outFile: cssFilePath,
         outputStyle: 'compressed'
     });
+    if (version) {
+        // correct version tag
+        var name = 'NativeScript Theme v';
+        output.replace(name, name + version);
+    }
     fs.writeFileSync(cssFilePath, output.css, 'utf8');
 }
 
