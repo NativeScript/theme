@@ -21,7 +21,9 @@ fs.mkdirSync("nativescript-theme-core/fonts");
 fs.mkdirSync("nativescript-theme-core/scripts");
 
 
-console.log("Building the Deployment files...");
+var version = getVersion();
+var versionPlaceholder = "__VERSION__";
+console.log("Building the Deployment files for v" + version + "...");
 
 // Create CSS from SCSS
 createCSSFromSCSS();
@@ -104,7 +106,14 @@ function copySCSS() {
             }
         }
 
-        fs.writeFileSync(out, fs.readFileSync(sassFiles[i]));
+        if (sassFiles[i].indexOf('./app/core.') > -1) {
+            // print correct version on main files
+            var scss = fs.readFileSync(sassFiles[i], { encoding: 'utf8' });
+            scss = printVersion(scss);
+            fs.writeFileSync(out, scss, 'utf8');
+        } else {
+            fs.writeFileSync(out, fs.readFileSync(sassFiles[i]));
+        }      
     }
 }
 
@@ -114,14 +123,6 @@ function copySCSS() {
  * Create all the CSS from SCSS files
  */
 function createCSSFromSCSS() {
-
-    var packageFile = './package.json';
-    var packageJSON = {};
-  
-    if (fs.existsSync(packageFile)) {
-        packageJSON = require(packageFile);
-    } 
-    var version = packageJSON ? packageJSON.version : null;
     
     var sassFilesPath = './app/**/*.scss';
     var sassImportPaths = [
@@ -142,7 +143,7 @@ function createCSSFromSCSS() {
         if (sassFiles[i].indexOf('/core.') === -1) {
             continue;
         }
-        parseSass(sassFiles[i], sassImportPaths, version);
+        parseSass(sassFiles[i], sassImportPaths);
     }
 }
 
@@ -151,25 +152,37 @@ function createCSSFromSCSS() {
  * @param sassFile - File to load
  * @param importPaths - Other import paths
  */
-function parseSass(sassFile, importPaths, version) {
+function parseSass(sassFile, importPaths) {
     var sassFileContent = fs.readFileSync(sassFile, { encoding: 'utf8'});
     var outputFile = 'nativescript-theme-core/css';
     var offset = sassFile.lastIndexOf('/');
     outputFile += sassFile.substring(offset);
     var cssFilePath = outputFile.replace('.scss', '.css');
 
-    var output = sass.renderSync({
+    // var output = sass.renderSync({
+    var output = sass.render({
         data: sassFileContent,
         includePaths: importPaths,
         outFile: cssFilePath,
         outputStyle: 'compressed'
+    }, function (error, result) {
+        if (error) {
+            console.log(error.status);
+            console.log(error.column);
+            console.log(error.message);
+            console.log(error.line);
+        } else {
+            var css = result.css.toString();
+            // correct version tag
+            css = printVersion(css);
+            // uncomment to debug builds
+            // console.log(css);
+            fs.writeFileSync(cssFilePath, css, 'utf8');
+
+            // if build stats are ever desired            
+            // console.log(result.stats);
+        }
     });
-    if (version) {
-        // correct version tag
-        var name = 'NativeScript Theme v';
-        output.replace(name, name + version);
-    }
-    fs.writeFileSync(cssFilePath, output.css, 'utf8');
 }
 
 // ----------------------------------------------------------------------
@@ -201,4 +214,19 @@ function deleteFolderRecursive(path) {
  */
 function copyFile(src, dest) {
     fs.writeFileSync(dest, fs.readFileSync(src));
+}
+
+/**
+ * Print correct version
+ */
+function printVersion(css) {
+    return css.replace(versionPlaceholder, 'v' + version);
+}
+
+/**
+ * Get version from package
+ */
+function getVersion() {
+    var packageJSON = require('../package.json');
+    return packageJSON ? packageJSON.version : null;
 }
