@@ -1,7 +1,7 @@
 /*************************************************************************************
  * Licensed under the APACHE license
  *
- * Version 0.0.6                                         Nathan@master-technology.com
+ * Version 0.0.7                                         Nathan@master-technology.com
  ************************************************************************************/
 "use strict";
 
@@ -139,18 +139,29 @@ function mkRecursiveDirectories(path) {
  * Check for The TNS double install buggy behavior...
  */
 function checkIfTNSBug() {
+	// Generic Node Temp folder
 	var cwd = process.cwd();
 	if (cwd.indexOf(os.tmpdir()) === 0) {
 		process.exit(0);
 	}
 
+	// Windows & Linux
 	var env = process.env["TMP"];
 	if (env && process.argv[1].indexOf(env) === 0) {
 		process.exit(0);	
 	}
 
+	// Windows & Linux
 	env = process.env["TEMP"];
 	if (env && process.argv[1].indexOf(env) === 0) {
 		process.exit(0);	
 	}
+	
+	// Mac Directory
+	env = process.env["TMPDIR"];
+	if (env && (process.argv[1].indexOf(env) === 0 || process.argv[1].indexOf("/private"+env) === 0)) {
+		process.exit(0);
+	}
+	
+	
 }
