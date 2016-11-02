@@ -40,7 +40,7 @@ copyFile("./nativescript-theme-core.json", "./nativescript-theme-core/package.js
 // Copy our Post Install Script
 copyFile("./scripts/postinstall.js", "./nativescript-theme-core/scripts/postinstall.js");
 
-// Copy our Un-install 
+// Copy our Un-install
 copyFile("./scripts/uninstall.js", "./nativescript-theme-core/scripts/uninstall.js");
 
 // Copy our Readme
@@ -113,7 +113,7 @@ function copySCSS() {
             fs.writeFileSync(out, scss, 'utf8');
         } else {
             fs.writeFileSync(out, fs.readFileSync(sassFiles[i]));
-        }      
+        }
     }
 }
 
@@ -123,7 +123,7 @@ function copySCSS() {
  * Create all the CSS from SCSS files
  */
 function createCSSFromSCSS() {
-    
+
     var sassFilesPath = './app/**/*.scss';
     var sassImportPaths = [
         './app/',
@@ -179,7 +179,7 @@ function parseSass(sassFile, importPaths) {
             // console.log(css);
             fs.writeFileSync(cssFilePath, css, 'utf8');
 
-            // if build stats are ever desired            
+            // if build stats are ever desired
             // console.log(result.stats);
         }
     });

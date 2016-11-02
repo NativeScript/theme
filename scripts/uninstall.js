@@ -38,23 +38,22 @@ deleteFolder(cwd+"css", appDir+"css");
 
 // Update our main app.css to delete the import the theme
 if (fs.existsSync(appDir+"app.css")) {
-    var BOM='';
     var cssData = fs.readFileSync(appDir + "app.css").toString();
-	
 
-	// Search for only our themes
-	var idx = cssData.indexOf("@import '~/css/core.light.css';");
-	if (idx === -1) {
-		idx = cssData.indexOf("@import '~/css/core.dark.css';");
-	}
-	
+
+    // Search for only our themes
+    var idx = cssData.indexOf("@import '~/css/core.light.css';");
+    if (idx === -1) {
+        idx = cssData.indexOf("@import '~/css/core.dark.css';");
+    }
+
     if (idx !== -1) {
-		var idxOffset = cssData.indexOf(";", idx)+1;
-		if (idx === 0) {		
-		  cssData = cssData.substring(idxOffset, cssData.length);	
-		} else {
-		  cssData = cssData.substring(0, idx)+cssData.substring(idxOffset, cssData.length);
-		}		
+        var idxOffset = cssData.indexOf(";", idx)+1;
+        if (idx === 0) {
+          cssData = cssData.substring(idxOffset, cssData.length);
+        } else {
+          cssData = cssData.substring(0, idx)+cssData.substring(idxOffset, cssData.length);
+        }
         fs.writeFileSync(appDir + "app.css", cssData.trim());
     }
 }
@@ -69,19 +68,19 @@ deleteFolder(cwd+"fonts", appDir+"fonts");
 // ------------------------------------------------------
 
 if (hasSCSS) {
-	var extraFiles=["_bootstrap-map.scss", "core.dark.android.scss", "core.dark.ios.scss", "core.light.android.scss", "core.light.ios.scss"];
-	deleteFolder(cwd+"theme-core-scss", appDir+"theme-core-scss");
-	
-	for (var i=0;i<extraFiles.length;i++) {
-		if (fs.existsSync(appDir+extraFiles[i])) {
-			try {
-				fs.unlinkSync(appDir+extraFiles[i]);
-			} catch (err) {
-				console.log("Unable to uninstall ", appDir + extraFiles[i]);
-			}
-		}
-	}
-	
+    var extraFiles=["_bootstrap-map.scss", "core.dark.android.scss", "core.dark.ios.scss", "core.light.android.scss", "core.light.ios.scss"];
+    deleteFolder(cwd+"theme-core-scss", appDir+"theme-core-scss");
+
+    for (var i=0;i<extraFiles.length;i++) {
+        if (fs.existsSync(appDir+extraFiles[i])) {
+            try {
+                fs.unlinkSync(appDir+extraFiles[i]);
+            } catch (err) {
+                console.log("Unable to uninstall ", appDir + extraFiles[i]);
+            }
+        }
+    }
+
 }
 
 
@@ -95,10 +94,10 @@ if (hasSCSS) {
  * @param dest (string) - Destination folder
  */
 function deleteFolder(src, dest) {
-	
+
     // No source/dest Folder exists, don't delete it!
     if (!fs.existsSync(src)) { return false; }
-	if (!fs.existsSync(dest)) { return false; }
+    if (!fs.existsSync(dest)) { return false; }
 
     var files = fs.readdirSync(src);
     files.forEach(function(file){
@@ -106,20 +105,20 @@ function deleteFolder(src, dest) {
         if(fs.lstatSync(curPath).isDirectory()) { // check to see if we need to recurse
             deleteFolder(curPath, dest + "/" + file);
         } else if (fs.existsSync(dest +"/"+file)) {
-			try {
-				fs.unlinkSync(dest+"/"+file);
-			} catch (err) {
-				console.log("Unable to uninstall ", dest+"/"+file);
-			}
-		}		           
+            try {
+                fs.unlinkSync(dest+"/"+file);
+            } catch (err) {
+                console.log("Unable to uninstall ", dest+"/"+file);
+            }
+        }
     });
-	
-	// Clear the folder, will fail if not empty	
-	try {
-	  fs.rmdirSync(dest);
-	} catch (err) {
-		console.log("Unable to delete: ", dest);
-	}
-	
+
+    // Clear the folder, will fail if not empty
+    try {
+      fs.rmdirSync(dest);
+    } catch (err) {
+        console.log("Unable to delete: ", dest);
+    }
+
     return true;
 }

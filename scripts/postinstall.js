@@ -44,7 +44,7 @@ copyFolder(cwd+"css", appDir+"css");
 var appSheetPath = appDir + "app.css";
 var themeBasePath = "~/css/core.";
 if (!themeImported(appSheetPath, themeBasePath)) {
-    var themePath = `@import "${themeBasePath}light.css";`;
+    var themePath = `@import '${themeBasePath}light.css';`;
 
     fs.appendFileSync(appSheetPath, os.EOL);
     fs.appendFileSync(appSheetPath, themePath);
@@ -77,18 +77,18 @@ if (hasSCSS) {
 // -------------------------------------------------------
 
 /**
- * Checks whether a style sheet is imported in another sheet
+ * Checks whether a theme sheet is imported in another sheet
  * @param sheetPath (string) - The main sheet
- * @param themePath (string) - The sheet to check whether imported
+ * @param themeBasePath (string) - The base name of the theme
  */
-function themeImported(sheetPath, themePath) {
+function themeImported(sheetPath, themeBasePath) {
     if (!fs.existsSync(sheetPath)) {
         return false;
     }
 
     var cssData = fs.readFileSync(sheetPath).toString();
-    return cssData.indexOf(`@import '${themePath}`) !== -1 ||
-        cssData.indexOf(`@import "${themePath}`) !== -1;
+    return cssData.indexOf(`@import '${themeBasePath}`) !== -1 ||
+        cssData.indexOf(`@import "${themeBasePath}`) !== -1;
 }
 
 /**
@@ -152,20 +152,18 @@ function checkIfTNSBug() {
     // Windows & Linux
     var env = process.env["TMP"];
     if (env && process.argv[1].indexOf(env) === 0) {
-        process.exit(0);    
+        process.exit(0);
     }
 
     // Windows & Linux
     env = process.env["TEMP"];
     if (env && process.argv[1].indexOf(env) === 0) {
-        process.exit(0);    
+        process.exit(0);
     }
-    
+
     // Mac Directory
     env = process.env["TMPDIR"];
     if (env && (process.argv[1].indexOf(env) === 0 || process.argv[1].indexOf("/private"+env) === 0)) {
         process.exit(0);
     }
-    
-    
 }
