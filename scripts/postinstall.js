@@ -40,26 +40,15 @@ try {
 // Create our CSS folder
 copyFolder(cwd+"css", appDir+"css");
 
-// Update our main app.css to import the light theme
-if (fs.existsSync(appDir+"app.css")) {
-    var BOM='';
-    var cssData = fs.readFileSync(appDir + "app.css").toString();
+// Update our main app.css to import the light theme if another theme is not already imported
+var appSheetPath = appDir + "app.css";
+var themeBasePath = "~/css/core.";
+if (!themeImported(appSheetPath, themeBasePath)) {
+    var themePath = `@import "${themeBasePath}light.css";`;
 
-    // Strip the BOM at the beginning of the file
-    if (cssData.charCodeAt(0) === 0xFEFF) {
-        // Newer NodeJS
-        BOM = String.fromCharCode(0xFEFF);
-        cssData = cssData.slice(1);
-    } else if (cssData[0] === 0xEF && cssData[1] === 0xBB && cssData[2] === 0xBF) {
-        // Older NodeJS
-        BOM = String.fromCharCode(0xEF) + String.fromCharCode(0xBB) + String.fromCharCode(0xBF);
-        cssData = cssData.slice(3);
-    }
-
-    if (cssData.indexOf("@import '~/css/core.") === -1) {
-        cssData = BOM + "@import '~/css/core.light.css'; \r\n\r\n" + cssData;
-        fs.writeFileSync(appDir + "app.css", cssData);
-    }
+    fs.appendFileSync(appSheetPath, os.EOL);
+    fs.appendFileSync(appSheetPath, themePath);
+    fs.appendFileSync(appSheetPath, os.EOL);
 }
 
 // ------------------------------------------------------
@@ -73,11 +62,11 @@ copyFolder(cwd + "fonts", appDir + "fonts");
 
 if (hasSCSS) {
     copyFolder(cwd+"theme-core-scss", appDir+"theme-core-scss");
-	copyFile(cwd, appDir, "_bootstrap-map.scss");
-	copyFile(cwd, appDir, "core.dark.android.scss");
-	copyFile(cwd, appDir, "core.dark.ios.scss");
-	copyFile(cwd, appDir, "core.light.android.scss");
-	copyFile(cwd, appDir, "core.light.ios.scss");
+    copyFile(cwd, appDir, "_bootstrap-map.scss");
+    copyFile(cwd, appDir, "core.dark.android.scss");
+    copyFile(cwd, appDir, "core.dark.ios.scss");
+    copyFile(cwd, appDir, "core.light.android.scss");
+    copyFile(cwd, appDir, "core.light.ios.scss");
 }
 
 
@@ -86,6 +75,21 @@ if (hasSCSS) {
 // -------------------------------------------------------
 // Support Functions
 // -------------------------------------------------------
+
+/**
+ * Checks whether a style sheet is imported in another sheet
+ * @param sheetPath (string) - The main sheet
+ * @param themePath (string) - The sheet to check whether imported
+ */
+function themeImported(sheetPath, themePath) {
+    if (!fs.existsSync(sheetPath)) {
+        return false;
+    }
+
+    var cssData = fs.readFileSync(sheetPath).toString();
+    return cssData.indexOf(`@import '${themePath}`) !== -1 ||
+        cssData.indexOf(`@import "${themePath}`) !== -1;
+}
 
 /**
  * This copies a folder and recurses if needed
@@ -139,29 +143,29 @@ function mkRecursiveDirectories(path) {
  * Check for The TNS double install buggy behavior...
  */
 function checkIfTNSBug() {
-	// Generic Node Temp folder
-	var cwd = process.cwd();
-	if (cwd.indexOf(os.tmpdir()) === 0) {
-		process.exit(0);
-	}
+    // Generic Node Temp folder
+    var cwd = process.cwd();
+    if (cwd.indexOf(os.tmpdir()) === 0) {
+        process.exit(0);
+    }
 
-	// Windows & Linux
-	var env = process.env["TMP"];
-	if (env && process.argv[1].indexOf(env) === 0) {
-		process.exit(0);	
-	}
+    // Windows & Linux
+    var env = process.env["TMP"];
+    if (env && process.argv[1].indexOf(env) === 0) {
+        process.exit(0);    
+    }
 
-	// Windows & Linux
-	env = process.env["TEMP"];
-	if (env && process.argv[1].indexOf(env) === 0) {
-		process.exit(0);	
-	}
-	
-	// Mac Directory
-	env = process.env["TMPDIR"];
-	if (env && (process.argv[1].indexOf(env) === 0 || process.argv[1].indexOf("/private"+env) === 0)) {
-		process.exit(0);
-	}
-	
-	
+    // Windows & Linux
+    env = process.env["TEMP"];
+    if (env && process.argv[1].indexOf(env) === 0) {
+        process.exit(0);    
+    }
+    
+    // Mac Directory
+    env = process.env["TMPDIR"];
+    if (env && (process.argv[1].indexOf(env) === 0 || process.argv[1].indexOf("/private"+env) === 0)) {
+        process.exit(0);
+    }
+    
+    
 }
