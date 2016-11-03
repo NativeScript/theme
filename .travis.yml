@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "6"
+
+cache:
+    directories:
+        - .nvm
+
+install:
+    - ./scripts/travis/install.sh
+
+script:
+    - ./scripts/travis/build.sh
+    - ./scripts/travis/test.sh
