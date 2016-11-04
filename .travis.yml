@@ -6,6 +6,9 @@ cache:
     directories:
         - .nvm
 
+before_install:
+    - ./scripts/travis/lint.sh
+
 install:
     - ./scripts/travis/install.sh
 
