@@ -1,7 +1,7 @@
 /*************************************************************************************
  * Licensed under the APACHE license
  *
- * Version 0.0.7                                         Nathan@master-technology.com
+ * Version 0.0.8                                         Nathan@master-technology.com
  ************************************************************************************/
 "use strict";
 
@@ -10,8 +10,8 @@ var fs = require('fs');
 var path = require('path');
 var os = require('os');
 
-// Check for the Buggy TNS Behavior...
-checkIfTNSBug();
+// Check for the Duplicate Temp Install issue...
+checkIfTempInstall();
 
 // Do we have detect SCSS support
 var hasSCSS = false;
@@ -142,7 +142,7 @@ function mkRecursiveDirectories(path) {
 /**
  * Check for The TNS double install buggy behavior...
  */
-function checkIfTNSBug() {
+function checkIfTempInstall() {
     // Generic Node Temp folder
     var cwd = process.cwd();
     if (cwd.indexOf(os.tmpdir()) === 0) {
