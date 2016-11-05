@@ -1,6 +1,7 @@
 *.css
 !font-awesome.css
 *.js
+!.eslintrc.js
 *.map
 /platforms
 node_modules

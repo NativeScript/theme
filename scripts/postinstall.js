@@ -6,9 +6,9 @@
 "use strict";
 
 // Simple require statements, built into node
-var fs = require('fs');
-var path = require('path');
-var os = require('os');
+var fs = require("fs");
+var path = require("path");
+var os = require("os");
 
 // Check for the Buggy TNS Behavior...
 checkIfTNSBug();
@@ -17,15 +17,15 @@ checkIfTNSBug();
 var hasSCSS = false;
 
 // Get our Paths
-var cwd = process.cwd() + '/';
-var primaryDir = path.normalize(cwd+"../../");
-var appDir = primaryDir + 'app/';
+var cwd = process.cwd() + "/";
+var primaryDir = path.normalize(cwd + "../../");
+var appDir = primaryDir + "app/";
 
 // Test for has SCSS support
 try {
     var data = require(primaryDir + "package.json");
 
-    if (data && (data.devDependencies && data.devDependencies['nativescript-dev-sass']) || (data.dependencies && data.dependencies['nativescript-dev-sass']) ) {
+    if (data && (data.devDependencies && data.devDependencies["nativescript-dev-sass"]) || (data.dependencies && data.dependencies["nativescript-dev-sass"]) ) {
         hasSCSS = true;
     }
 } catch (err) {
@@ -38,7 +38,7 @@ try {
 // ------------------------------------------------------
 
 // Create our CSS folder
-copyFolder(cwd+"css", appDir+"css");
+copyFolder(cwd + "css", appDir + "css");
 
 // Update our main app.css to import the light theme if another theme is not already imported
 var appSheetPath = appDir + "app.css";
@@ -61,7 +61,7 @@ copyFolder(cwd + "fonts", appDir + "fonts");
 // ------------------------------------------------------
 
 if (hasSCSS) {
-    copyFolder(cwd+"theme-core-scss", appDir+"theme-core-scss");
+    copyFolder(cwd + "theme-core-scss", appDir + "theme-core-scss");
     copyFile(cwd, appDir, "_bootstrap-map.scss");
     copyFile(cwd, appDir, "core.dark.android.scss");
     copyFile(cwd, appDir, "core.dark.ios.scss");
@@ -98,12 +98,14 @@ function themeImported(sheetPath, themeBasePath) {
  */
 function copyFolder(src, dest) {
     // No source Folder exists, can't copy it!
-    if (!fs.existsSync(src)) { return false; }
+    if (!fs.existsSync(src)) {
+        return false;
+    }
 
     var files = fs.readdirSync(src);
-    files.forEach(function(file){
+    files.forEach(function(file) {
         var curPath = src + "/" + file;
-        if(fs.lstatSync(curPath).isDirectory()) { // check to see if we need to recurse
+        if (fs.lstatSync(curPath).isDirectory()) { // check to see if we need to recurse
             copyFolder(curPath, dest + "/" + file);
         } else { // copy file
             copyFile(src, dest, file);
@@ -122,7 +124,7 @@ function copyFile(src, dest, file) {
     if (!fs.existsSync(dest)) {
         mkRecursiveDirectories(dest);
     }
-    fs.writeFileSync(dest+"/"+file, fs.readFileSync(src + "/" + file));
+    fs.writeFileSync(dest + "/" + file, fs.readFileSync(src + "/" + file));
 }
 
 /**
@@ -130,11 +132,13 @@ function copyFile(src, dest, file) {
  * @param path
  */
 function mkRecursiveDirectories(path) {
-    var data = path.replace('\\','/').split('/');
-    var newPath = '';
-    for (var i=0;i<data.length;i++) {
+    var data = path.replace("\\","/").split("/");
+    var newPath = "";
+    for (var i = 0; i < data.length; i++) {
         newPath += data[i] + "/";
-        if (fs.existsSync(newPath)) { continue; }
+        if (fs.existsSync(newPath)) {
+            continue;
+        }
         fs.mkdirSync(newPath);
     }
 }
@@ -163,7 +167,7 @@ function checkIfTNSBug() {
 
     // Mac Directory
     env = process.env["TMPDIR"];
-    if (env && (process.argv[1].indexOf(env) === 0 || process.argv[1].indexOf("/private"+env) === 0)) {
+    if (env && (process.argv[1].indexOf(env) === 0 || process.argv[1].indexOf("/private" + env) === 0)) {
         process.exit(0);
     }
 }
