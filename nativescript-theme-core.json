@@ -8,9 +8,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/NativeScript/theme"
-  },
-  "scripts": {
-    "postinstall": "node scripts/postinstall.js",
-	"uninstall": "node scripts/uninstall.js"
   }
 }
