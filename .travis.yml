@@ -1,17 +1,11 @@
 language: node_js
-node_js:
-  - "6"
-
-cache:
-    directories:
-        - .nvm
+node_js: "6"
 
 before_install:
-    - ./scripts/travis/lint.sh
+    - ./scripts/lint.sh
 
 install:
-    - ./scripts/travis/install.sh
+    - echo no | npm install
 
 script:
-    - ./scripts/travis/build.sh
-    - ./scripts/travis/test.sh
+    - npm run builder

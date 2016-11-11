@@ -17,8 +17,6 @@ fs.mkdirSync("nativescript-theme-core");
 fs.mkdirSync("nativescript-theme-core/css");
 fs.mkdirSync("nativescript-theme-core/theme-core-scss");
 fs.mkdirSync("nativescript-theme-core/fonts");
-fs.mkdirSync("nativescript-theme-core/scripts");
-
 
 var version = getVersion();
 var versionPlaceholder = "__VERSION__";
@@ -36,16 +34,8 @@ copyFonts();
 // Copy our Package
 copyFile("./nativescript-theme-core.json", "./nativescript-theme-core/package.json");
 
-// Copy our Post Install Script
-copyFile("./scripts/postinstall.js", "./nativescript-theme-core/scripts/postinstall.js");
-
-// Copy our Un-install
-copyFile("./scripts/uninstall.js", "./nativescript-theme-core/scripts/uninstall.js");
-
 // Copy our Readme
 copyFile("./nativescript-theme-core.md", "./nativescript-theme-core/readme.md");
-
-
 
 console.log("Change to the 'nativescript-theme-core' folder and you can now do your `npm publish`");
 // TODO: We could Automatically run "npm publish"
