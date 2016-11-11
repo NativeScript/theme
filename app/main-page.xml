@@ -8,7 +8,7 @@
   </Page.actionBar>
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
       <drawer:RadSideDrawer.mainContent showOverNavigation="true">
-        <ScrollView>
+        <ScrollView class="page">
           <StackLayout class="mainContent">
             <Button text="Basics" tap="{{ viewBasics }}" class="btn btn-demo" />
             <Button text="Buttons" tap="{{ viewButtons }}" class="btn btn-demo" />

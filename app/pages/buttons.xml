@@ -8,8 +8,8 @@
   </Page.actionBar>
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
     <drawer:RadSideDrawer.mainContent android:showOverNavigation="true">
-      <ScrollView>
-        <StackLayout class="demo-full">
+      <ScrollView class="page">
+        <StackLayout>
             <Button text="btn" tap="" class="btn" />
             <Button text="btn btn-primary" tap="" class="btn btn-primary" />
             <Button text="btn btn-outline" tap="" class="btn btn-primary btn-outline" />

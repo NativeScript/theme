@@ -9,7 +9,7 @@
   </Page.actionBar>
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
     <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
-      <StackLayout class="demo-full">
+      <StackLayout class="page">
         <GridLayout rows="auto ,*" columns="">
           <Progress id="progress" row="0" value="50" maxValue="100" class="progress" />
           <ActivityIndicator row="1" busy="true" class="activity-indicator" />

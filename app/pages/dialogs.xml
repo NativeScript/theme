@@ -8,7 +8,7 @@
   </Page.actionBar>
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
     <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
-      <StackLayout class="demo-full">
+      <StackLayout class="page">
           <Button text="Show Alert" tap="{{showAlert}}" class="btn" />
 
       </StackLayout>

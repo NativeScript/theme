@@ -8,8 +8,8 @@
   </Page.actionBar>
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
     <drawer:RadSideDrawer.mainContent>
-      <ScrollView>
-          <StackLayout class="demo-full p-20">
+      <ScrollView class="page">
+          <StackLayout class="p-20">
             <GridLayout rows="auto" columns="*,*" class="h1 m-5 w-full">
               <Label text="Class: h1" row="0" col="0" />
               <Label text="Heading" row="0" col="1" class="text-right" />
@@ -42,7 +42,7 @@
               <Label text="Class: footnote" row="0" col="0" />
               <Label text="Footnote" row="0" col="1" class="text-right" />
             </GridLayout>
-            <StackLayout class="demo-full m-t-10">
+            <StackLayout class="page m-t-10">
               <Label text="Text" class="h2" />
               <StackLayout class="hr-light m-b-2"></StackLayout>
               <!--<Label text="Note: text-transform is not working." textWrap="true" class="t-14 c-grey-d-20 m-b-5" />-->
@@ -74,7 +74,7 @@
             </StackLayout>
             
             <!-- UTILITIES -->
-            <StackLayout class="demo-full m-t-10">
+            <StackLayout class="page m-t-10">
                 <Label text="Utilities" class="h2" />
                 <StackLayout class="hr-light m-b-2"></StackLayout>
                 <Label text=".pull-left" class="pull-left" />

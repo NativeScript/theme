@@ -9,7 +9,7 @@
   </Page.actionBar>
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
     <drawer:RadSideDrawer.mainContent android:showOverNavigation="true">
-      <StackLayout class="demo-full">
+      <StackLayout class="page">
           <Button text="btn btn-active" tap="" class="btn btn-active" />
           <Button text="btn btn-primary btn-active" tap="" class="btn btn-primary btn-active" />
           <Button text="btn btn-outline btn-active" tap="" class="btn btn-primary btn-outline btn-active" />
