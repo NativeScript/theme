@@ -5,11 +5,29 @@ $base: $white !default;
 $grey: #e0e0e0 !default;
 $grey-background: #bababa !default;
 $charcoal:#303030 !default;
+
+// accent varieties
+$aqua: #00caab !default;
+$blue: #3d5afe !default;
+$brown: #795548 !default;
+$forest: #006968 !default;
+$grey-dark: #5c687c !default;
+$purple: #8130ff !default;
+$lemon: #ffea00 !default;
+$lime: #aee406 !default;
+$orange: #f57c00 !default;
+$ruby: #ff1744 !default;
+$sky: #30bcff !default;
+
 $primary: lighten($black, 13%) !default;//rgba(0,0,0,.87);
 $secondary: lighten($black, 46%) !default;
 $disabled: lighten($black, 62%) !default;
-$accent: #30bcff !default;
+$accent: $sky !default;
 $error: #d50000 !default;
+
+// ActionBar
+$ab-background: #F8F8F8 !default;
+$ab-color: $primary !default;
 
 // Skin
 $background: $base !default;

@@ -1,0 +1,23 @@
+/*!
+ * NativeScript Theme v0.1.0 (https://nativescript.org)
+ * Copyright 2016-2016 The Theme Authors
+ * Copyright 2016-2016 Telerik
+ * Licensed under MIT (https://github.com/NativeScript/theme/blob/master/LICENSE)
+ */
+
+// Core variables and mixins
+@import 'theme-core-scss/variables';
+@import 'theme-core-scss/themes/core/variables_light';
+
+// Sky
+@import 'theme-core-scss/themes/core/skins/forest';
+
+// Core CSS
+@import 'theme-core-scss/index';
+
+// Platform adjustments
+@import 'theme-core-scss/themes/core/platforms/index.ios';
+
+// demo app
+@import 'demo-styles/demo';
+
