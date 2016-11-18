@@ -1,9 +1,10 @@
-.btn{
+.btn {
   color: $btn-color;
   background-color: transparent;
   min-height: 36;
   min-width: 64;
-  &.btn-active:highlighted{
+
+  &.btn-active:highlighted {
     color: $white;
     background-color:$btn-color-outline-highlighted;
   }
@@ -15,7 +16,9 @@
   color: $btn-color-inverse;
   background-color: $btn-color;
   border-color: $btn-color;
-  &.btn-active:highlighted{
+
+  &.btn-active:highlighted {
+    color: $btn-color-inverse;
     border-color:$btn-color-secondary;
     background-color:$btn-color-secondary;
   }
@@ -25,17 +28,19 @@
   color: $btn-color;
   background-color: transparent;
   border-color: $btn-color;
-  &.btn-active:highlighted{
-      background-color:$btn-color-outline-highlighted;
+
+  &.btn-active:highlighted {
+    color: $btn-color;
+    background-color:$btn-color-outline-highlighted;
   }
 }
 
-.btn[isEnabled=false]{
+.btn[isEnabled=false] {
   color:$btn-color-disabled;
   background-color: $grey;
   border-color: $grey;
 }
 
-.btn-rounded-lg{
+.btn-rounded-lg {
   border-radius: 20;
 }
