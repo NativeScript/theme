@@ -6,17 +6,17 @@
  */
 
 // Core variables and mixins
-@import 'theme-core-scss/variables';
-@import 'theme-core-scss/themes/core/variables_dark';
+@import 'scss/variables';
+@import 'scss/themes/core/variables_dark';
 
 // Theme variables cusomizations
 @import 'demo-styles/custom';
 
 // Core CSS
-@import 'theme-core-scss/index';
+@import 'scss/index';
 
 // Platform adjustments
-@import 'theme-core-scss/themes/core/platforms/index.android';
+@import 'scss/themes/core/platforms/index.android';
 
 // demo app
 @import 'demo-styles/demo';
