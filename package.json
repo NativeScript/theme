@@ -1,6 +1,6 @@
 {
   "name": "nativescript-theme-core",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "description": "Telerik NativeScript Core Theme",
   "homepage": "https://www.nativescript.org",
   "license": "Apache-2.0",
@@ -11,18 +11,18 @@
   "nativescript": {
     "id": "org.nativescript.theme",
     "tns-android": {
-      "version": "2.5.0-next-2016-11-11-1390"
+      "version": "2.4.0"
     },
     "tns-ios": {
-      "version": "2.3.0"
+      "version": "2.4.0"
     }
   },
   "dependencies": {
     "nativescript-dom": "^1.0.8",
     "nativescript-fonticon": "^1.1.0",
-    "nativescript-telerik-ui": "^1.4.1",
+    "nativescript-telerik-ui": "^1.5.1",
     "nativescript-themes": "^1.1.0",
-    "tns-core-modules": "^2.3.0",
+    "tns-core-modules": "^2.4.0",
     "bootstrap": "next"
   },
   "devDependencies": {

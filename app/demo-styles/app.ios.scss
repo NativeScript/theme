@@ -8,9 +8,9 @@
 /**
  * Base style (un-themed)
  */
-@import 'theme-core-scss/variables';
-@import 'theme-core-scss/index';
-@import 'theme-core-scss/themes/core/platforms/index.ios';
+@import 'scss/variables';
+@import 'scss/index';
+@import 'scss/themes/core/platforms/index.ios';
 
 // demo app
 @import 'demo-styles/demo';

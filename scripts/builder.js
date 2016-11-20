@@ -15,7 +15,7 @@ if (fs.existsSync("nativescript-theme-core")) {
 }
 fs.mkdirSync("nativescript-theme-core");
 fs.mkdirSync("nativescript-theme-core/css");
-fs.mkdirSync("nativescript-theme-core/theme-core-scss");
+fs.mkdirSync("nativescript-theme-core/scss");
 fs.mkdirSync("nativescript-theme-core/fonts");
 
 var version = getVersion();
@@ -76,7 +76,7 @@ function copyFonts() {
  * Copy our SCSS files over
  */
 function copySCSS() {
-    var sassFilesPath =  "./app/**/*.scss";
+    var sassFilesPath = "./app/**/*.scss";
     var sassFiles = glob.sync(sassFilesPath).filter(function (filePath) {
         return filePath.indexOf("App_Resources") === -1 && filePath.indexOf("demo-styles") === -1;
     });
@@ -92,7 +92,7 @@ function copySCSS() {
         if (paths.length > 1) {
             var path = "./nativescript-theme-core";
             for (var j = 0; j < paths.length - 1; j++) {
-                path +=  "/" + paths[j];
+                path += "/" + paths[j];
                 if (!fs.existsSync(path)) {
                     fs.mkdirSync(path);
                 }
@@ -146,7 +146,7 @@ function createCSSFromSCSS() {
  * @param importPaths - Other import paths
  */
 function parseSass(sassFile, importPaths) {
-    var sassFileContent = fs.readFileSync(sassFile, { encoding: "utf8"});
+    var sassFileContent = fs.readFileSync(sassFile, { encoding: "utf8" });
     var outputFile = "nativescript-theme-core/css";
     var offset = sassFile.lastIndexOf("/");
     outputFile += sassFile.substring(offset);
@@ -186,9 +186,9 @@ function parseSass(sassFile, importPaths) {
  */
 function deleteFolderRecursive(path) {
     var files = [];
-    if ( fs.existsSync(path) ) {
+    if (fs.existsSync(path)) {
         files = fs.readdirSync(path);
-        files.forEach(function(file) {
+        files.forEach(function (file) {
             var curPath = path + "/" + file;
             if (fs.lstatSync(curPath).isDirectory()) { // recurse
                 deleteFolderRecursive(curPath);
