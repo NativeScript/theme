@@ -1,9 +1,12 @@
 /*!
- * NativeScript Theme __VERSION__ (https://nativescript.org)
+ * NativeScript Theme v0.1.0 (https://nativescript.org)
  * Copyright 2016-2016 The Theme Authors
  * Copyright 2016-2016 Telerik
  * Licensed under MIT (https://github.com/NativeScript/theme/blob/master/LICENSE)
  */
 
-@import 'scss/skins/light/index';
+// Forest
+@import 'scss/skins/forest/index';
+
+// Platform adjustments
 @import 'scss/platforms/index.android';

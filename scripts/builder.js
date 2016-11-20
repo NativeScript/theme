@@ -18,6 +18,9 @@ fs.mkdirSync("nativescript-theme-core/css");
 fs.mkdirSync("nativescript-theme-core/scss");
 fs.mkdirSync("nativescript-theme-core/fonts");
 
+// Supported skins
+var skins = ['aqua', 'blue', 'brown', 'forest', 'grey', 'lemon', 'lime', 'orange', 'purple', 'ruby', 'sky'];
+
 var version = getVersion();
 var versionPlaceholder = "__VERSION__";
 console.log("Building the Deployment files for v" + version + "...");
@@ -76,9 +79,9 @@ function copyFonts() {
  * Copy our SCSS files over
  */
 function copySCSS() {
-    var sassFilesPath = "./app/**/*.scss";
+    var sassFilesPath = "./app/scss/**/*.scss";
     var sassFiles = glob.sync(sassFilesPath).filter(function (filePath) {
-        return filePath.indexOf("App_Resources") === -1 && filePath.indexOf("demo-styles") === -1;
+        return filePath.indexOf("App_Resources") === -1;
     });
 
     for (var i = 0; i < sassFiles.length; i++) {
@@ -99,14 +102,14 @@ function copySCSS() {
             }
         }
 
-        if (sassFiles[i].indexOf("./app/core.") > -1) {
-            // print correct version on main files
-            var scss = fs.readFileSync(sassFiles[i], { encoding: "utf8" });
-            scss = printVersion(scss);
-            fs.writeFileSync(out, scss, "utf8");
-        } else {
-            fs.writeFileSync(out, fs.readFileSync(sassFiles[i]));
-        }
+        // if (sassFiles[i].indexOf("./app/core.") > -1) {
+        //     // print correct version on main files
+        //     var scss = fs.readFileSync(sassFiles[i], { encoding: "utf8" });
+        //     scss = printVersion(scss);
+        //     fs.writeFileSync(out, scss, "utf8");
+        // } else {
+        fs.writeFileSync(out, fs.readFileSync(sassFiles[i]));
+        // }
     }
 }
 
@@ -127,7 +130,7 @@ function createCSSFromSCSS() {
         var path = filePath;
         var parts = path.split("/");
         var filename = parts[parts.length - 1];
-        return path.indexOf("App_Resources") === -1 && path.indexOf("demo-styles") === -1 && filename.indexOf("_") !== 0 && filename.indexOf("app.") !== 0;
+        return path.indexOf("App_Resources") === -1 && filename.indexOf("_") !== 0 && filename.indexOf("app.") !== 0 && filename.indexOf("customized.") !== 0 && filename.indexOf("bootstrap") !== 0;
     });
 
 

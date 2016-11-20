@@ -1,0 +1,15 @@
+/*!
+ * NativeScript Theme v0.1.0 (https://nativescript.org)
+ * Copyright 2016-2016 The Theme Authors
+ * Copyright 2016-2016 Telerik
+ * Licensed under MIT (https://github.com/NativeScript/theme/blob/master/LICENSE)
+ */
+ 
+// Variables form bootstrap v4 dependency
+@import 'bootstrap/scss/variables';
+
+// Import bootstrap map to apply variable mapping
+@import 'scss/bootstrap/map';
+
+// Import light theme
+@import 'core.light.ios.scss';
