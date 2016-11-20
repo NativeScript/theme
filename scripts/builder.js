@@ -18,9 +18,6 @@ fs.mkdirSync("nativescript-theme-core/css");
 fs.mkdirSync("nativescript-theme-core/scss");
 fs.mkdirSync("nativescript-theme-core/fonts");
 
-// Supported skins
-var skins = ['aqua', 'blue', 'brown', 'forest', 'grey', 'lemon', 'lime', 'orange', 'purple', 'ruby', 'sky'];
-
 var version = getVersion();
 var versionPlaceholder = "__VERSION__";
 console.log("Building the Deployment files for v" + version + "...");
