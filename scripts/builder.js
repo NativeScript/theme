@@ -76,9 +76,9 @@ function copyFonts() {
  * Copy our SCSS files over
  */
 function copySCSS() {
-    var sassFilesPath = "./app/**/*.scss";
-    var sassFiles = glob.sync(sassFilesPath).filter(function (filePath) {
-        return filePath.indexOf("App_Resources") === -1 && filePath.indexOf("demo-styles") === -1;
+    var sassFilesPath = "./app/scss/**/*.scss";
+    var sassFiles = glob.sync(sassFilesPath).filter(function(filePath) {
+        return filePath.indexOf("App_Resources") === -1;
     });
 
     for (var i = 0; i < sassFiles.length; i++) {
@@ -99,14 +99,14 @@ function copySCSS() {
             }
         }
 
-        if (sassFiles[i].indexOf("./app/core.") > -1) {
-            // print correct version on main files
-            var scss = fs.readFileSync(sassFiles[i], { encoding: "utf8" });
-            scss = printVersion(scss);
-            fs.writeFileSync(out, scss, "utf8");
-        } else {
-            fs.writeFileSync(out, fs.readFileSync(sassFiles[i]));
-        }
+        // if (sassFiles[i].indexOf("./app/core.") > -1) {
+        //     // print correct version on main files
+        //     var scss = fs.readFileSync(sassFiles[i], { encoding: "utf8" });
+        //     scss = printVersion(scss);
+        //     fs.writeFileSync(out, scss, "utf8");
+        // } else {
+        fs.writeFileSync(out, fs.readFileSync(sassFiles[i]));
+        // }
     }
 }
 
@@ -123,19 +123,19 @@ function createCSSFromSCSS() {
         "./node_modules/"
     ];
 
-    var sassFiles = glob.sync(sassFilesPath).filter(function (filePath) {
+    var sassFiles = glob.sync(sassFilesPath).filter(function(filePath) {
         var path = filePath;
         var parts = path.split("/");
         var filename = parts[parts.length - 1];
-        return path.indexOf("App_Resources") === -1 && path.indexOf("demo-styles") === -1 && filename.indexOf("_") !== 0 && filename.indexOf("app.") !== 0;
+        return path.indexOf("App_Resources") === -1 && filename.indexOf("_") !== 0 && filename.indexOf("app.") !== 0 && filename.indexOf("customized.") !== 0 && filename.indexOf("bootstrap") !== 0;
     });
 
 
     for (var i = 0; i < sassFiles.length; i++) {
         // We only process open /core. files
-        if (sassFiles[i].indexOf("/core.") === -1) {
-            continue;
-        }
+        // if (sassFiles[i].indexOf("/core.") === -1) {
+        //     continue;
+        // }
         parseSass(sassFiles[i], sassImportPaths);
     }
 }
@@ -158,7 +158,7 @@ function parseSass(sassFile, importPaths) {
         includePaths: importPaths,
         outFile: cssFilePath,
         outputStyle: "compressed"
-    }, function (error, result) {
+    }, function(error, result) {
         if (error) {
             console.log(error.status);
             console.log(error.column);
@@ -188,7 +188,7 @@ function deleteFolderRecursive(path) {
     var files = [];
     if (fs.existsSync(path)) {
         files = fs.readdirSync(path);
-        files.forEach(function (file) {
+        files.forEach(function(file) {
             var curPath = path + "/" + file;
             if (fs.lstatSync(curPath).isDirectory()) { // recurse
                 deleteFolderRecursive(curPath);

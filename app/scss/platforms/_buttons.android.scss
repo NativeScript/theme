@@ -1,0 +1,19 @@
+.btn{
+	font-family: 'Roboto Medium';
+	font-size: 14;
+}
+.btn-primary {
+  border-color:rgba(255, 0, 0, 0.0);
+  border-width: 1;
+}
+.btn-outline {
+  background-color: rgba(255, 0, 0, 0.0);
+  border-width: 1;
+  border-color: $btn-color;
+}
+.btn-rounded-sm {
+  border-radius: 2;
+}
+.btn-rounded-lg {
+  border-radius: 40;
+}
