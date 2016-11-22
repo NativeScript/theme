@@ -9,10 +9,16 @@
   background-color: rgba(255, 0, 0, 0.0);
   border-width: 1;
   border-color: $btn-color;
+  height: 36;
+  padding: 0;
 }
 .btn-rounded-sm {
   border-radius: 2;
+  height: 36;  // These will not inherit from above - important to keep here
+  padding: 0;  // <--
 }
 .btn-rounded-lg {
   border-radius: 40;
+  height: 36; // These will not inherit from above - important to keep here
+  padding: 0; // <--
 }

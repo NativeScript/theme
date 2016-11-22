@@ -5,7 +5,7 @@
 		<GridLayout rows="auto" columns="50,*,auto">
 			<Button tap="{{ toggleSideDrawer }}" text="{{'fa-bars' | fonticon }}" class="fa action-item text-left" row="0" col="0" />
 			<StackLayout verticalAlignment="center" row="0" col="1">
-				<Label id="actionBarTitle" class="action-title"/>
+				<Label id="actionBarTitle" class="action-bar-title"/>
 			</StackLayout>
 			<Button tap="{{ openModal }}" text="Modal" row="0" col="2" class="action-item"></Button>
 		</GridLayout>
@@ -14,7 +14,7 @@
 	<iOS>
 		<ActionBar.actionItems>
 			<ActionBar.titleView>
-				<StackLayout class="action-title">
+				<StackLayout class="action-bar-title">
 					<Label id="actionBarTitle"/>
 				</StackLayout>
 			</ActionBar.titleView>
