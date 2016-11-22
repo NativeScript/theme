@@ -8,12 +8,13 @@
 // Colors
 $background: #303030;
 $primary: #fff;
-$secondary: lighten(#fff, 30%);
-$disabled: lighten(#fff, 50%);
-$accent: #30bcff;
+$secondary: darken($primary, 30%);
+$disabled: darken($primary, 50%);
+$accent: $sky;
 
 // ActionBar
 $ab-background: $background;
+$ab-color: $primary;
 
 // Headings
 $headings-color: $primary;
