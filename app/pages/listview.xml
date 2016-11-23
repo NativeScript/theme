@@ -29,7 +29,7 @@
                     <ListView.itemTemplate>
                       <GridLayout class="list-group-item" rows="*" columns="auto, *">
                         <Image row="0" col="0" src="{{ image }}" class="thumb img-circle" />
-                        <Label row="0" col="1" text="{{ title }}"/>
+                        <Label row="0" col="1" text="{{ title }}"  />
                       </GridLayout>
                     </ListView.itemTemplate>
                   </ListView>
