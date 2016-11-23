@@ -51,6 +51,23 @@ npm publish
 
 **IMPORTANT**: Never modify the contents of `nativescript-theme-core` folder directly. The builder creates that everytime and any change you make there will be overwritten.
 
+Setup changelog generation:
+
+```
+npm install -g conventional-changelog-cli
+```
+
+Generate changelog workflow:
+
+1. Make changes
+2. Commit those changes - using [these conventions](https://gist.github.com/stephenparish/9941e89d80e2bc58a153).
+3. Make sure Travis turns green
+4. Bump version in `package.json` and `nativescript-theme-core.json`
+5. `conventional-changelog -p angular -i CHANGELOG.md -s`
+6. Commit package.json and CHANGELOG.md files
+7. Tag
+8. Push
+
 ## Awesome Contributors
 
 [<img alt="NathanWalker" src="https://avatars.githubusercontent.com/u/457187?v=3&s=117" width="117">](https://github.com/NathanWalker) |[<img alt="TheOriginalJosh" src="https://avatars.githubusercontent.com/u/1486275?v=3&s=117" width="117">](https://github.com/TheOriginalJosh) |[<img alt="tjvantoll" src="https://avatars.githubusercontent.com/u/544280?v=3&s=117" width="117">](https://github.com/tjvantoll) |[<img alt="triniwiz" src="https://avatars.githubusercontent.com/u/6695919?v=3&s=117" width="117">](https://github.com/triniwiz) |[<img alt="sitefinitysteve" src="https://avatars.githubusercontent.com/u/1542376?v=3&s=117" width="117">](https://github.com/sitefinitysteve) |[<img alt="vakrilov" src="https://avatars.githubusercontent.com/u/4092076?v=3&s=117" width="117">](https://github.com/vakrilov) |
