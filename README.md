@@ -5,6 +5,7 @@
 Home of the core NativeScript theme. Want to get started? Check out the [theme’s documentation on the official NativeScript docs site](http://docs.nativescript.org/ui/theme).
 
 - [Screenshots 📸](#screenshots)
+- [Changelog 📝](https://github.com/NativeScript/theme/blob/master/CHANGELOG.md)
 - [Contributing 🍺](#contributing)
 - [Publishing 📚](#publishing)
 - [Contributors 💖](#awesome-contributors)
