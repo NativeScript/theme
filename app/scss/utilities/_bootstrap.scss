@@ -2,16 +2,16 @@
 // # BOOTSTRAP #
 // ## Utilities ##
 // Image shapes http://v4-alpha.getbootstrap.com/content/images/#image-shapes
-.img-rounded{
-    border-radius: 5;
+.img-rounded {
+  border-radius: 5;
 }
 
-.img-circle{
-    border-radius: 20;
+.img-circle {
+  border-radius: 20;
 }
 
-.img-thumbnail{
-    border-radius: 0;
+.img-thumbnail {
+  border-radius: 0;
 }
 
 .invisible {
@@ -19,37 +19,42 @@
 }
 
 .pull-left {
-    horizontal-align: left;
+  horizontal-align: left;
 }
 
 .pull-right {
-    horizontal-align: right;
+  horizontal-align: right;
 }
 
 //Horizontal centering http://v4-alpha.getbootstrap.com/components/utilities/#horizontal-centering
-.m-x-auto{
-    horizontal-align: center;
+.m-x-auto {
+  horizontal-align: center;
+}
+
+//Vertical centering 
+.m-y-auto {
+  vertical-align: center;
 }
 
 // Contextual colors and backgrounds http://v4-alpha.getbootstrap.com/components/utilities/#contextual-colors-and-backgrounds
-.text-primary{
-    color: $accent;
+.text-primary {
+  color: $accent;
 }
 
-.text-danger{
-    color: $error;
+.text-danger {
+  color: $error;
 }
 
-.text-muted{
-    color: $disabled;
+.text-muted {
+  color: $disabled;
 }
 
-.bg-primary{
-    background-color: $accent;
-    color: $white;
+.bg-primary {
+  background-color: $accent;
+  color: $white;
 }
 
-.bg-danger{
-    background-color: $error;
-    color: $white;
+.bg-danger {
+  background-color: $error;
+  color: $white;
 }

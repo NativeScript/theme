@@ -1,0 +1,56 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+  xmlns:drawer="nativescript-telerik-ui/sidedrawer"
+  xmlns:sidedrawer="/sidedrawer"
+  xmlns:actionBar="/actionBar"
+  navigatingTo="navigatingTo">
+  <Page.actionBar>
+    <actionBar:actionBar ActionBarTitle="Colors" ></actionBar:actionBar>
+  </Page.actionBar>
+  <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
+    <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
+      <ScrollView class="page">
+        <StackLayout class="p-10">
+          <Label text="Set color property:" class="h2 font-italic" />
+          <Label text="c-black" class="text-center c-black p-y-2" />
+          <Label text="c-white" class="text-center c-white c-bg-black p-y-2" />
+          <Label text="c-aqua" class="text-center c-aqua p-y-2" />
+          <Label text="c-blue" class="text-center c-blue p-y-2" />
+          <Label text="c-brown" class="text-center c-brown p-y-2" />
+          <Label text="c-charcoal" class="text-center c-charcoal p-y-2" />
+          <Label text="c-forest" class="text-center c-forest p-y-2" />
+          <Label text="c-grey" class="text-center c-grey p-y-2" />
+          <Label text="c-grey-light" class="text-center c-grey-light p-y-2" />
+          <Label text="c-grey-dark" class="text-center c-grey-dark p-y-2" />
+          <Label text="c-lemon" class="text-center c-lemon p-y-2" />
+          <Label text="c-lime" class="text-center c-lime p-y-2" />
+          <Label text="c-orange" class="text-center c-orange p-y-2" />
+          <Label text="c-purple" class="text-center c-purple p-y-2" />
+          <Label text="c-ruby" class="text-center c-ruby p-y-2" />
+          <Label text="c-sky" class="text-center c-sky p-y-2" />
+
+          <StackLayout class="hr-light m-y-2"></StackLayout>
+          <Label text="Set background-color property:" class="h2 font-italic" />
+          <Label text="c-bg-black" class="text-center c-white c-bg-black p-y-5" />
+          <Label text="c-bg-white" class="text-center c-bg-white p-y-5" />
+          <Label text="c-bg-aqua" class="text-center c-bg-aqua p-y-5" />
+          <Label text="c-bg-blue" class="text-center c-bg-blue p-y-5" />
+          <Label text="c-bg-brown" class="text-center c-bg-brown p-y-5" />
+          <Label text="c-bg-charcoal" class="text-center c-bg-charcoal p-y-5" />
+          <Label text="c-bg-forest" class="text-center c-bg-forest p-y-5" />
+          <Label text="c-bg-grey" class="text-center c-bg-grey p-y-5" />
+          <Label text="c-bg-grey-light" class="text-center c-bg-grey-light p-y-5" />
+          <Label text="c-bg-grey-dark" class="text-center c-bg-grey-dark p-y-5" />
+          <Label text="c-bg-lemon" class="text-center c-bg-lemon p-y-5" />
+          <Label text="c-bg-lime" class="text-center c-bg-lime p-y-5" />
+          <Label text="c-bg-orange" class="text-center c-bg-orange p-y-5" />
+          <Label text="c-bg-purple" class="text-center c-bg-purple p-y-5" />
+          <Label text="c-bg-ruby" class="text-center c-bg-ruby p-y-5" />
+          <Label text="c-bg-sky" class="text-center c-bg-sky p-y-5" />
+        </StackLayout>
+      </ScrollView>
+    </drawer:RadSideDrawer.mainContent>
+    <drawer:RadSideDrawer.drawerContent>
+        <sidedrawer:sidedrawer  activeComponent='colors'></sidedrawer:sidedrawer>
+    </drawer:RadSideDrawer.drawerContent>
+  </drawer:RadSideDrawer>
+</Page>
