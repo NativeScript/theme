@@ -1,3 +1,18 @@
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/NativeScript/theme/compare/1.0.0...v1.0.1) (2016-11-27)
+
+
+### Bug Fixes
+
+* **ActionBar:** action-bar-title vertical-align centered for android, plus name migrate in platform ([e7a96c3](https://github.com/NativeScript/theme/commit/e7a96c3))
+
+
+### Features
+
+* **Colors:** add color classes for color/background-color with demo page ([997b336](https://github.com/NativeScript/theme/commit/997b336))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/NativeScript/theme/compare/109baea...1.0.0) (2016-11-23)
 
