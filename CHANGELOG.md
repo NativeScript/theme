@@ -1,3 +1,14 @@
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/NativeScript/theme/compare/1.0.1...v1.0.2) (2016-12-06)
+
+
+### Bug Fixes
+
+* 2.4.0 is minimum required version ([b399a3d](https://github.com/NativeScript/theme/commit/b399a3d))
+* forms spacing when same controls are used in a vertical stack ([ce9db89](https://github.com/NativeScript/theme/commit/ce9db89))
+
+
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/NativeScript/theme/compare/1.0.0...v1.0.1) (2016-11-27)
 
