@@ -4,7 +4,7 @@ $white: #fff !default;
 $base: $white !default;
 $grey: #e0e0e0 !default;
 $grey-background: #bababa !default;
-$charcoal:#303030 !default;
+$charcoal: #303030 !default;
 
 // accent varieties
 $aqua: #00caab !default;
@@ -60,10 +60,10 @@ $enable-gradients:          false !default;
 $enable-transitions:        false !default;
 
 $item-color-android : #a0a0a0;
-$item-color-ios:#848484;
-$item-active-background:#2b2b2b;
-$item-active-color:$accent;
-$item-active-icon-color:#fff;
+$item-color-ios: #848484;
+$item-active-background: #2b2b2b;
+$item-active-color: $accent;
+$item-active-icon-color: #fff;
 $image-background: #e0e0e0;
 $side-drawer-header-background: $accent;
 $side-drawer-header-brand: #fff;

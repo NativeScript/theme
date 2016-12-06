@@ -9,7 +9,7 @@
     background-color: $btn-color-outline-highlighted;
   }
 
-  @include button-base($btn-color, $btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius,0);
+  @include button-base($btn-color, $btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius, 0);
 }
 
 .btn-primary {
@@ -25,35 +25,45 @@
   &.btn-aqua {
     background-color: $aqua;
   }
+
   &.btn-blue {
     background-color: $blue;
   }
+
   &.btn-brown {
     background-color: $brown;
   }
+
   &.btn-forest {
     background-color: $forest;
   }
+
   &.btn-grey {
     background-color: $grey-dark;
   }
+
   &.btn-lemon {
     background-color: $lemon;
     color: $black;
   }
+
   &.btn-lime {
     background-color: $lime;
-    color: $black; 
+    color: $black;
   }
+
   &.btn-orange {
     background-color: $orange;
   }
+
   &.btn-purple {
     background-color: $purple;
   }
+
   &.btn-ruby {
     background-color: $ruby;
   }
+
   &.btn-sky {
     background-color: $sky;
   }
@@ -65,12 +75,12 @@
   color: $btn-color;
 
   &.btn-active:highlighted {
-    background-color:$btn-color-outline-highlighted;
+    background-color: $btn-color-outline-highlighted;
   }
 }
 
 .btn[isEnabled=false] {
-  color:$btn-color-disabled;
+  color: $btn-color-disabled;
   background-color: $grey;
   border-color: $grey;
 }

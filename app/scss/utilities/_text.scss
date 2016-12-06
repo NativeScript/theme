@@ -2,9 +2,11 @@
 .text-left {
   text-align: left;
 }
+
 .text-right {
   text-align: right;
 }
+
 .text-center {
   text-align: center;
 }
@@ -23,7 +25,8 @@
 
 // Size
 
-$font-size:   10 !default;
+// sass-lint:disable-all
+$font-size: 10 !default;
 $font-sizes: (
   10: (
     size: $font-size
@@ -67,7 +70,9 @@ $font-sizes: (
  * From 10, 12, 14, 15, 16, 17, 18, 19, 20
 **/
 @each $size, $sizes in $font-sizes {
-  $s:   map-get($sizes, size);
+  $s: map-get($sizes, size);
 
-  .t-#{$size} { font-size: $s; } 
+  .t-#{$size} {
+    font-size: $s;
+  }
 }

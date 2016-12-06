@@ -1,6 +1,6 @@
 // Button sizes
 
-@mixin button-base($color, $padding-y, $padding-x,$margin-y, $margin-x, $font-size, $border-radius, $border-width){
+@mixin button-base($color, $padding-y, $padding-x, $margin-y, $margin-x, $font-size, $border-radius, $border-width) {
   @include button-size($padding-y, $padding-x, $font-size, $border-radius);
   @include button-margin($margin-y, $margin-x);
 }
