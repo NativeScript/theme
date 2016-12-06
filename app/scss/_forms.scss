@@ -5,20 +5,20 @@
     background-color: transparent;
 
     &.input-border {
-      border-width:1;
-      border-color:$grey;
+      border-width: 1;
+      border-color: $grey;
       border-radius: 2;
-      padding:16;
+      padding: 16;
     }
 
     &.input-rounded {
-      border-width:1;
-      border-color:$grey;
+      border-width: 1;
+      border-color: $grey;
       border-radius: 28;
-      padding:16;
+      padding: 16;
     }
 
-    &[isEnabled="false"] {
+    &[isEnabled='false'] {
       background-color: lighten($grey, 10%);
     }
   }
@@ -27,8 +27,8 @@
     margin: 8;
 
     .label {
-      font-size:12;
-      color:$grey-background;//$grey;
+      font-size: 12;
+      color: $grey-background;//$grey;
     }
 
     .input {
@@ -46,7 +46,7 @@
     &.input-sides {
 
       .label {
-        font-size:18;
+        font-size: 18;
         margin: 0 0 8 0;
       }
     }

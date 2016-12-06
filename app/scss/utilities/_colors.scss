@@ -1,6 +1,7 @@
+// sass-lint:disable-all
 // Color classes
-$colors:  ('white', $white), 
-          ('black', $black), 
+$colors:  ('white', $white),
+          ('black', $black),
           ('aqua', $aqua),
           ('blue', $blue),
           ('charcoal', $charcoal),
@@ -22,6 +23,6 @@ $colors:  ('white', $white),
  * .c-grey{color:#e0e0e0}.c-bg-grey{background-color:#e0e0e0}
 **/
 @each $name, $color in $colors {
-  .c-#{$name} { color: $color; } 
-  .c-bg-#{$name} { background-color: $color; } 
+  .c-#{$name} { color: $color; }
+  .c-bg-#{$name} { background-color: $color; }
 }

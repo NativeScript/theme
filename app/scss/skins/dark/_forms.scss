@@ -1,7 +1,7 @@
 .form {
   .input {
 
-    &[isEnabled="false"] {
+    &[isEnabled='false'] {
       background-color: $background;
     }
   }

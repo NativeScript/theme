@@ -34,6 +34,7 @@
     "nativescript-dev-sass": "^0.4.1",
     "nativescript-dev-typescript": "^0.3.2",
     "node-sass": "^3.10.1",
+    "sass-lint": "^1.10.2",
     "typescript": "^2.0.6"
   },
   "scripts": {
