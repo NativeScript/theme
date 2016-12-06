@@ -1,5 +1,5 @@
 .form {
-  padding:0 15 0 15;
+
   .input {
     padding: 16 8 16 8;
     background-color: transparent;
@@ -24,7 +24,7 @@
   }
 
   .input-field {
-    padding: 16 8 16 8;
+    margin: 8;
 
     .label {
       font-size:12;
@@ -44,6 +44,7 @@
     }
 
     &.input-sides {
+
       .label {
         font-size:18;
         margin: 0 0 8 0;

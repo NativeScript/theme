@@ -8,7 +8,7 @@
   </Page.actionBar>
   <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
     <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
-      <StackLayout class="page form">
+      <StackLayout class="page form p-15">
 
         <StackLayout class="input-field">
           <TextField id="textField" hint="Input text" class="input" returnKeyType="{{keyType}}" returnPress="{{returnPress}}" />
