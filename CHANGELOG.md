@@ -1,3 +1,13 @@
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/NativeScript/theme/compare/1.0.2...v1.0.3) (2017-03-01)
+
+
+### Bug Fixes
+
+* **ListView:** dark skin ListView background ([79d5d8e](https://github.com/NativeScript/theme/commit/79d5d8e))
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/NativeScript/theme/compare/1.0.1...v1.0.2) (2016-12-06)
 
