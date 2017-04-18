@@ -1,3 +1,10 @@
+<a name="1.0.4"></a>
+## [1.0.4](https://github.com/NativeScript/theme/compare/1.0.3...v1.0.4) (2017-04-18)
+
+### Maintenance
+
+* maintenance release
+
 <a name="1.0.3"></a>
 ## [1.0.3](https://github.com/NativeScript/theme/compare/1.0.2...v1.0.3) (2017-03-01)
 
