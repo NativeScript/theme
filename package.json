@@ -18,7 +18,7 @@
     }
   },
   "dependencies": {
-    "bootstrap": "next",
+    "bootstrap": "4.0.0-alpha.6",
     "nativescript-dom": "^1.0.9",
     "nativescript-fonticon": "^1.1.1",
     "nativescript-telerik-ui": "^1.6.2",
