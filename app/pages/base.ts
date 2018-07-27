@@ -2,7 +2,7 @@ import { Observable, EventData } from 'data/observable';
 import { topmost } from 'ui/frame';
 import { View } from "ui/core/view";
 import { Page } from "ui/page";
-import { RadSideDrawer } from 'nativescript-telerik-ui/sidedrawer';
+import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 
 export class BaseModel extends Observable {
 
@@ -25,6 +25,6 @@ export class BaseModel extends Observable {
   public openModal() {
     this.page.showModal('pages/modal', 'Custom ActionBar', () => {
 
-    });
+    }, true);
   }
 }

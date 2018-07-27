@@ -3,7 +3,7 @@ import { Page } from "ui/page";
 import { BaseModel } from './base';
 import { knownFolders } from 'file-system';
 import { isIOS, isAndroid } from 'platform';
-var themes = require('nativescript-themes');
+var themes = require('~/theme-support');
 
 export class ThemesModel extends BaseModel {
     public labelText: string;
@@ -46,7 +46,7 @@ export class ThemesModel extends BaseModel {
     private getPath(name: string) {
         let appPath = knownFolders.currentApp().path + '/';
         let platform = '';
-        return `${appPath}/${name}${platform}`;
+        return `${appPath}${name}${platform}`;
     }
 }
 
