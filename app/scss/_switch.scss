@@ -1,6 +1,7 @@
 .switch {
   &[checked=true] {
     background-color: $accent;
+    color: $accent;
   }
 
   &[checked=true][isEnabled=false] {
