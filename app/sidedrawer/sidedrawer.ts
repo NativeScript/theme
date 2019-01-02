@@ -1,5 +1,3 @@
-import {Observable} from 'tns-core-modules/data/observable';
-import {topmost} from 'tns-core-modules/ui/frame';
 import { EventData } from "tns-core-modules/data/observable";
 import { Page } from "tns-core-modules/ui/page";
 import { NavigationViewModel } from '../navigation-vm';

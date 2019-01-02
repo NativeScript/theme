@@ -1,7 +1,8 @@
 {
   "name": "nativescript-theme-core",
-  "version": "1.0.6",
+  "version": "2.0.0-alpha",
   "description": "Telerik NativeScript Core Theme",
+  "author": "Telerik <support@telerik.com>",
   "homepage": "https://www.nativescript.org",
   "license": "Apache-2.0",
   "repository": {
@@ -11,31 +12,28 @@
   "nativescript": {
     "id": "org.nativescript.theme",
     "tns-android": {
-      "version": "5.4.0-2019-05-09-111319-03"
+      "version": "5.1.0"
     },
     "tns-ios": {
-      "version": "5.4.0-2019-05-07-181332-01"
+      "version": "5.1.0"
     }
   },
   "dependencies": {
-    "bootstrap": "~4.3.0",
-    "nativescript-dom": "~2.0.0",
-    "nativescript-fonticon": "~2.0.0",
-    "nativescript-themes": "~2.0.0",
-    "nativescript-ui-sidedrawer": "~6.0.0",
-    "tns-core-modules": "next"
+    "bootstrap": "^4.2.1",
+    "nativescript-dom": "^2.0.2",
+    "nativescript-fonticon": "^1.1.1",
+    "nativescript-ui-sidedrawer": "^5.1.0",
+    "nativescript-themes": "^1.9.9",
+    "tns-core-modules": "~5.1.1"
   },
   "devDependencies": {
-    "babel-traverse": "6.26.0",
-    "babel-types": "6.26.0",
-    "babylon": "6.18.0",
-    "glob": "~7.1.4",
+    "glob": "^7.1.3",
     "lazy": "1.0.11",
-    "nativescript-dev-sass": "~1.7.0",
-    "nativescript-dev-typescript": "~0.9.0",
-    "node-sass": "~4.12.0",
-    "sass-lint": "~1.13.0",
-    "typescript": "~3.4.0"
+    "nativescript-dev-sass": "~1.6.0",
+    "nativescript-dev-typescript": "~0.7.8",
+    "node-sass": "~4.11.0",
+    "sass-lint": "^1.12.1",
+    "typescript": "~3.2.2"
   },
   "scripts": {
     "builder": "node scripts/builder.js"

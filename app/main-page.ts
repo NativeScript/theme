@@ -1,4 +1,3 @@
-
 import { EventData } from "tns-core-modules/data/observable";
 import { Page } from "tns-core-modules/ui/page";
 import { isIOS } from 'tns-core-modules/platform';
