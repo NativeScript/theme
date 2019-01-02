@@ -9,6 +9,9 @@ TNSFontIcon.paths = {
 };
 TNSFontIcon.loadCss();
 
-application.resources['fonticon'] = fonticon;
-application.resources['isActive'] = isActive;
+const resources = application.getResources();
+resources['fonticon'] = fonticon;
+resources['isActive'] = isActive;
+application.setResources(resources);
+
 application.start({ moduleName: 'main-page' });

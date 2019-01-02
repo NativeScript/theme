@@ -6,7 +6,7 @@
  */
 
 // Variables form bootstrap v4 dependency
-@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/functions', '~bootstrap/scss/variables';
 
 // Import bootstrap map to apply variable mapping
 @import 'scss/bootstrap/map';

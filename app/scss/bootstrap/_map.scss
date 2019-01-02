@@ -12,16 +12,16 @@ $primary: lighten($black, 13%) !default;//rgba(0,0,0,.87);
 $secondary: lighten($black, 46%) !default;
 $disabled: $text-muted !default;
 
-$accent: $brand-primary !default;
-$error: $brand-danger !default;
+$accent: theme-color() !default;
+$error: theme-color("danger") !default;
 
 // Skin
 $background: $base !default;
 $text-color: $primary !default;
 
 // Buttons
-$btn-color: $btn-primary-bg !default;
-$btn-color-secondary: lighten($btn-primary-bg, 20%) !default;
+$btn-color: theme-color() !default;
+$btn-color-secondary: lighten(theme-color(), 20%) !default;
 $btn-color-outline-highlighted: lighten($btn-color-secondary, 20%) !default;
 $btn-color-disabled: $btn-link-disabled-color !default;
 
