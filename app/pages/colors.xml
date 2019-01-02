@@ -1,13 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
-  xmlns:drawer="nativescript-telerik-ui/sidedrawer"
-  xmlns:sidedrawer="/sidedrawer"
   xmlns:actionBar="/actionBar"
   navigatingTo="navigatingTo">
-  <Page.actionBar>
-    <actionBar:actionBar ActionBarTitle="Colors" ></actionBar:actionBar>
-  </Page.actionBar>
-  <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
-    <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
+  <actionBar:actionBar ActionBarTitle="Colors" />
       <ScrollView class="page">
         <StackLayout class="p-10">
           <Label text="Set color property:" class="h2 font-italic" />
@@ -28,7 +22,7 @@
           <Label text="c-ruby" class="text-center c-ruby p-y-2" />
           <Label text="c-sky" class="text-center c-sky p-y-2" />
 
-          <StackLayout class="hr-light m-y-2"></StackLayout>
+          <StackLayout class="hr-light m-y-2" />
           <Label text="Set background-color property:" class="h2 font-italic" />
           <Label text="c-bg-black" class="text-center c-white c-bg-black p-y-5" />
           <Label text="c-bg-white" class="text-center c-bg-white p-y-5" />
@@ -48,9 +42,4 @@
           <Label text="c-bg-sky" class="text-center c-bg-sky p-y-5" />
         </StackLayout>
       </ScrollView>
-    </drawer:RadSideDrawer.mainContent>
-    <drawer:RadSideDrawer.drawerContent>
-        <sidedrawer:sidedrawer  activeComponent='colors'></sidedrawer:sidedrawer>
-    </drawer:RadSideDrawer.drawerContent>
-  </drawer:RadSideDrawer>
 </Page>

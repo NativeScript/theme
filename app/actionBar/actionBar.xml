@@ -7,10 +7,10 @@
 			<StackLayout verticalAlignment="center" row="0" col="1">
 				<Label id="actionBarTitle" class="action-bar-title"/>
 			</StackLayout>
-			<Button tap="{{ openModal }}" text="Modal" row="0" col="2" class="action-item"></Button>
+			<Button tap="{{ openModal }}" text="Modal" row="0" col="2" class="action-item" />
 		</GridLayout>
 	</Android>
-	
+
 	<iOS>
 		<ActionBar.actionItems>
 			<ActionBar.titleView>

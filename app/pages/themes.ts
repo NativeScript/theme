@@ -3,7 +3,7 @@ import { Page } from "ui/page";
 import { BaseModel } from './base';
 import { knownFolders } from 'file-system';
 import { isIOS, isAndroid } from 'platform';
-var themes = require('nativescript-themes');
+var themes = require('../temp/themes');
 
 export class ThemesModel extends BaseModel {
     public labelText: string;

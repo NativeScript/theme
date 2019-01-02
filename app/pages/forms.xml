@@ -1,45 +1,29 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
-  xmlns:drawer="nativescript-telerik-ui/sidedrawer"
-  xmlns:sidedrawer="/sidedrawer"
   xmlns:actionBar="/actionBar"
   navigatingTo="navigatingTo">
-  <Page.actionBar>
-    <actionBar:actionBar ActionBarTitle="Forms" ></actionBar:actionBar>
-  </Page.actionBar>
-  <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
-    <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
-      <StackLayout class="page form p-15">
+  <actionBar:actionBar ActionBarTitle="Forms" />
+  <StackLayout class="page form p-15">
 
-        <StackLayout class="input-field">
-          <TextField id="textField" hint="Input text" class="input" returnKeyType="{{keyType}}" returnPress="{{returnPress}}" />
-          <StackLayout class="hr-light"></StackLayout>
-        </StackLayout>
+    <StackLayout class="input-field">
+      <TextField id="textField" hint="Input text" class="input" returnKeyType="{{ keyType }}" returnPress="{{ returnPress }}" />
+      <StackLayout class="hr-light" />
+    </StackLayout>
 
-        <StackLayout class="input-field">
-          <Label text="Label" class="label font-weight-bold m-b-5" />
-          <TextField hint="Input text for a single line field" class="input" />
-          <StackLayout class="hr-light"></StackLayout>
-        </StackLayout>
+    <StackLayout class="input-field">
+      <Label text="Label" class="label font-weight-bold m-b-5" />
+      <TextField hint="Input text for a single line field" class="input" />
+      <StackLayout class="hr-light" />
+    </StackLayout>
 
-        <GridLayout class="input-field input-sides" rows="auto, auto" columns="*,*">
-          <Label text="Label" class="label font-weight-bold" row="0" col="0" />
-          <TextField hint="Input text" class="input right" row="0" col="1" />
-          <StackLayout class="hr-light" row="1" colSpan="2"></StackLayout>
-        </GridLayout>
+    <GridLayout class="input-field input-sides" rows="auto, auto" columns="*,*">
+      <Label text="Label" class="label font-weight-bold" row="0" col="0" />
+      <TextField hint="Input text" class="input right" row="0" col="1" />
+      <StackLayout class="hr-light" row="1" colSpan="2" />
+    </GridLayout>
 
-        <TextField hint="Input border" class="input input-border m-b-10" />
-
-        <TextField hint="Input rounded" class="input input-rounded m-b-10" />
-
-        <TextField hint="Input border Disabled" class="input input-border m-b-10" isEnabled="false" />
-
-        <TextField hint="Input rounded Disabled" class="input input-rounded m-b-10" isEnabled="false" />
-
-
-      </StackLayout>
-    </drawer:RadSideDrawer.mainContent>
-    <drawer:RadSideDrawer.drawerContent>
-        <sidedrawer:sidedrawer activeComponent='forms'></sidedrawer:sidedrawer>
-    </drawer:RadSideDrawer.drawerContent>
-  </drawer:RadSideDrawer>
+    <TextField hint="Input border" class="input input-border m-b-10" />
+    <TextField hint="Input rounded" class="input input-rounded m-b-10" />
+    <TextField hint="Input border Disabled" class="input input-border m-b-10" isEnabled="false" />
+    <TextField hint="Input rounded Disabled" class="input input-rounded m-b-10" isEnabled="false" />
+  </StackLayout>
 </Page>

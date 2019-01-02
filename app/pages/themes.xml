@@ -1,40 +1,29 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
-  xmlns:drawer="nativescript-telerik-ui/sidedrawer"
-  xmlns:sidedrawer="/sidedrawer"
   xmlns:actionBar="/actionBar"
   navigatingTo="navigatingTo">
-  <Page.actionBar>
-    <actionBar:actionBar ActionBarTitle="Themes" ></actionBar:actionBar>
-  </Page.actionBar>
-  <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
-    <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
-      <ScrollView class="page themes">
-        <StackLayout>
-          <Label text="{{ 'Active: ' + labelText }}" textWrap="true" class="h2 text-center m-10" />
-          <Button text="Apply Default" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="app.css" />
-          <Button text="Apply Light" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="core.light.css" />
-          <Button text="Apply Dark" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="core.dark.css" />
-          <Button text="Apply Custom" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="customized.css" />
-          <Button text="Apply Bootstrap" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="bootstrap-based.css" />
+  <actionBar:actionBar ActionBarTitle="Themes" />
+  <ScrollView class="page themes">
+    <StackLayout>
+      <Label text="{{ 'Active: ' + labelText }}" textWrap="true" class="h2 text-center m-10" />
+      <Button text="Apply Default" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="app.css" />
+      <Button text="Apply Light" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="core.light.css" />
+      <Button text="Apply Dark" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="core.dark.css" />
+      <Button text="Apply Custom" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="customized.css" />
+      <Button text="Apply Bootstrap" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="bootstrap-based.css" />
 
-          <Label text="Skins" textWrap="true" class="h2 text-center text-underline font-italic m-10" />
+      <Label text="Skins" textWrap="true" class="h2 text-center text-underline font-italic m-10" />
 
-          <Button text="Apply Aqua" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-aqua m-5" cssName="aqua.css" />
-          <Button text="Apply Blue" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-blue m-5" cssName="blue.css" />
-          <Button text="Apply Brown" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-brown m-5" cssName="brown.css" />
-          <Button text="Apply Forest" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-forest m-5" cssName="forest.css" />
-          <Button text="Apply Grey" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-grey m-5" cssName="grey.css" />
-          <Button text="Apply Lemon" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-lemon m-5" cssName="lemon.css" />
-          <Button text="Apply Lime" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-lime m-5" cssName="lime.css" />
-          <Button text="Apply Orange" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-orange m-5" cssName="orange.css" />
-          <Button text="Apply Purple" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-purple m-5" cssName="purple.css" />
-          <Button text="Apply Ruby" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-ruby m-5" cssName="ruby.css" />
-          <Button text="Apply Sky" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-sky m-5" cssName="sky.css" />
-        </StackLayout>
-      </ScrollView>
-    </drawer:RadSideDrawer.mainContent>
-    <drawer:RadSideDrawer.drawerContent>
-        <sidedrawer:sidedrawer activeComponent='theme'></sidedrawer:sidedrawer>
-    </drawer:RadSideDrawer.drawerContent>
-  </drawer:RadSideDrawer>
+      <Button text="Apply Aqua" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-aqua m-5" cssName="aqua.css" />
+      <Button text="Apply Blue" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-blue m-5" cssName="blue.css" />
+      <Button text="Apply Brown" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-brown m-5" cssName="brown.css" />
+      <Button text="Apply Forest" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-forest m-5" cssName="forest.css" />
+      <Button text="Apply Grey" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-grey m-5" cssName="grey.css" />
+      <Button text="Apply Lemon" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-lemon m-5" cssName="lemon.css" />
+      <Button text="Apply Lime" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-lime m-5" cssName="lime.css" />
+      <Button text="Apply Orange" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-orange m-5" cssName="orange.css" />
+      <Button text="Apply Purple" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-purple m-5" cssName="purple.css" />
+      <Button text="Apply Ruby" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-ruby m-5" cssName="ruby.css" />
+      <Button text="Apply Sky" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-sky m-5" cssName="sky.css" />
+    </StackLayout>
+  </ScrollView>
 </Page>

@@ -1,6 +1,7 @@
 *.css
 !font-awesome.css
 *.js
+!app/temp/*.js
 !.eslintrc.js
 *.map
 /platforms

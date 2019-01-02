@@ -1,8 +1,8 @@
-import { Observable, EventData } from 'data/observable';
+import { Observable } from 'data/observable';
 import { topmost } from 'ui/frame';
-import { View } from "ui/core/view";
 import { Page } from "ui/page";
-import { RadSideDrawer } from 'nativescript-telerik-ui/sidedrawer';
+import * as app from "tns-core-modules/application";
+import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 
 export class BaseModel extends Observable {
 
@@ -15,10 +15,10 @@ export class BaseModel extends Observable {
   public goBack() {
     topmost().goBack();
   }
-  
-  public toggleSideDrawer(args: EventData) {
-    let view = <View>args.object;
-    let sideDrawer = <RadSideDrawer>this.page.getViewById('sideDrawer');
+
+  public toggleSideDrawer() {
+    let sideDrawer = <RadSideDrawer>app.getRootView();
+
     sideDrawer.toggleDrawerState();
   }
 

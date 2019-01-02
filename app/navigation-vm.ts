@@ -1,14 +1,24 @@
-import { topmost } from 'ui/frame';
+import { Page, topmost } from 'ui/frame';
 import { BaseModel } from './pages/base';
 
+export interface INavigationState extends Page {
+	activeComponent: string;
+	pageName: string;
+}
+
 export class NavigationViewModel extends BaseModel {
+	public static activeComponent: string;
+
 	public viewPage(args) {
-		let pageName = args.object.pageName;
-		let path = pageName === 'main-page' ? pageName : `pages/${pageName}`;
+		const page = <INavigationState>args.object;
+		const pageName = page.pageName;
+
 		let navigationEntry = {
-			moduleName: path,
+			moduleName: `pages/${pageName}`,
 			clearHistory: true
 		};
 		topmost().navigate(navigationEntry);
+
+		NavigationViewModel.activeComponent = page.pageName;
 	}
 }

@@ -1,30 +1,19 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
-  xmlns:drawer="nativescript-telerik-ui/sidedrawer"
-  xmlns:sidedrawer="/sidedrawer"
   xmlns:actionBar="/actionBar"
   navigatingTo="navigatingTo">
-  <Page.actionBar>
-    <actionBar:actionBar ActionBarTitle="Buttons" ></actionBar:actionBar>
-  </Page.actionBar>
-  <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
-    <drawer:RadSideDrawer.mainContent android:showOverNavigation="true">
-      <ScrollView class="page">
-        <StackLayout>
-            <Button text="btn" tap="" class="btn" />
-            <Button text="btn btn-primary" tap="" class="btn btn-primary" />
-            <Button text="btn btn-outline" tap="" class="btn btn-primary btn-outline" />
-            <Button text="btn btn-primary btn-rounded-sm" tap="" class="btn btn-primary btn-rounded-sm" />
-            <Button text="btn btn-outline btn-rounded-sm" tap="" class="btn btn-outline btn-rounded-sm" />
-            <Button text="btn btn-primary btn-rounded-lg" tap="" class="btn btn-primary btn-rounded-lg" />
-            <Button text="btn btn-outline btn-rounded-lg" tap="" class="btn btn-outline btn-rounded-lg" />
-            <Button text="btn isEnabled=false" tap="" isEnabled="false" class="btn btn-primary" />
-            <Button text="btn isEnabled=false btn-rounded-sm" tap="" isEnabled="false" class="btn btn-primary btn-rounded-sm" />
-            <Button text="btn isEnabled=false btn-rounded-lg" tap="" isEnabled="false" class="btn btn-primary btn-rounded-lg" />
-        </StackLayout>
-      </ScrollView>
-    </drawer:RadSideDrawer.mainContent>
-    <drawer:RadSideDrawer.drawerContent>
-        <sidedrawer:sidedrawer  activeComponent='buttons'></sidedrawer:sidedrawer>
-    </drawer:RadSideDrawer.drawerContent>
-  </drawer:RadSideDrawer>
+  <actionBar:actionBar ActionBarTitle="Buttons" />
+  <ScrollView class="page">
+    <StackLayout>
+        <Button text="btn" tap="" class="btn" />
+        <Button text="btn btn-primary" tap="" class="btn btn-primary" />
+        <Button text="btn btn-outline" tap="" class="btn btn-primary btn-outline" />
+        <Button text="btn btn-primary btn-rounded-sm" tap="" class="btn btn-primary btn-rounded-sm" />
+        <Button text="btn btn-outline btn-rounded-sm" tap="" class="btn btn-outline btn-rounded-sm" />
+        <Button text="btn btn-primary btn-rounded-lg" tap="" class="btn btn-primary btn-rounded-lg" />
+        <Button text="btn btn-outline btn-rounded-lg" tap="" class="btn btn-outline btn-rounded-lg" />
+        <Button text="btn isEnabled=false" tap="" isEnabled="false" class="btn btn-primary" />
+        <Button text="btn isEnabled=false btn-rounded-sm" tap="" isEnabled="false" class="btn btn-primary btn-rounded-sm" />
+        <Button text="btn isEnabled=false btn-rounded-lg" tap="" isEnabled="false" class="btn btn-primary btn-rounded-lg" />
+    </StackLayout>
+  </ScrollView>
 </Page>
