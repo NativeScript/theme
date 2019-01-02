@@ -1,5 +1,3 @@
-import {Observable} from 'data/observable';
-import {topmost} from 'ui/frame';
 import { EventData } from "data/observable";
 import { Page } from "ui/page";
 import { NavigationViewModel } from '../navigation-vm';
