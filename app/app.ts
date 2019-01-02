@@ -15,8 +15,10 @@ TNSFontIcon.paths = {
 };
 TNSFontIcon.loadCss();
 
-application.getResources().fonticon = fonticon;
-application.getResources().isActive = isActive;
+const resources = application.getResources();
+resources['fonticon'] = fonticon;
+resources['isActive'] = isActive;
+application.setResources(resources);
 
 var themes = require('nativescript-themes');
 themes.applyTheme(themes.getAppliedTheme('light.css'));
