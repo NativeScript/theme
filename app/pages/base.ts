@@ -1,7 +1,7 @@
-import { Observable, EventData } from 'tns-core-modules/data/observable';
+import { Observable } from 'tns-core-modules/data/observable';
 import { topmost } from 'tns-core-modules/ui/frame';
-import { View } from "tns-core-modules/ui/core/view";
 import { Page } from "tns-core-modules/ui/page";
+import * as app from "tns-core-modules/application";
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 
 export class BaseModel extends Observable {
@@ -15,10 +15,10 @@ export class BaseModel extends Observable {
   public goBack() {
     topmost().goBack();
   }
-  
-  public toggleSideDrawer(args: EventData) {
-    let view = <View>args.object;
-    let sideDrawer = <RadSideDrawer>this.page.getViewById('sideDrawer');
+
+  public toggleSideDrawer() {
+    let sideDrawer = <RadSideDrawer>app.getRootView();
+
     sideDrawer.toggleDrawerState();
   }
 

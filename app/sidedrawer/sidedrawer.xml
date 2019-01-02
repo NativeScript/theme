@@ -1,70 +1,70 @@
-<GridLayout rows="auto, *" class="sidedrawer-left" loaded="onLoad">
-    <StackLayout row="0" class="sidedrawer-header">
-        <Image src="~/sidedrawer/N.png" tap="{{ viewHome }}" class="sidedrawer-header-image"/>
-        <Label text="NativeScript Theme Project" textWrap="true" class="sidedrawer-header-brand" />
+<StackLayout class="sidedrawer-left" loaded="onLoad">
+  <StackLayout class="sidedrawer-header">
+      <Image src="~/sidedrawer/N.png" tap="{{ viewHome }}" class="sidedrawer-header-image"/>
+      <Label text="NativeScript Theme Project" textWrap="true" class="sidedrawer-header-brand" />
+  </StackLayout>
+  <ScrollView>
+    <StackLayout class="sidedrawer-content">
+      <GridLayout class="{{ 'home' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="root">
+        <Label text="{{'fa-home' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+        <Label text="Home" class="sidedrawer-list-item-text" row="0" col="1" />
+      </GridLayout>
+      <GridLayout class="{{ 'basics' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="basics">
+        <Label text="{{'fa-font' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+        <Label text="Basics" class="sidedrawer-list-item-text" row="0" col="1" />
+      </GridLayout>
+      <GridLayout class="{{ 'buttons' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="buttons">
+        <Label text="{{'fa-square' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+        <Label text="Buttons" class="sidedrawer-list-item-text" row="0" col="1" />
+      </GridLayout>
+      <GridLayout class="{{ 'buttons-active' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="buttons-active">
+        <Label text="{{'fa-square-o' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+        <Label text="Buttons Active" class="sidedrawer-list-item-text" row="0" col="1" />
+      </GridLayout>
+      <GridLayout class="{{ 'colors' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="colors">
+        <Label text="{{'fa-eyedropper' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+        <Label text="Colors" class="sidedrawer-list-item-text" row="0" col="1" />
+      </GridLayout>
+      <GridLayout class="{{ 'forms' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="forms">
+        <Label text="{{'fa-i-cursor' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+        <Label text="Forms" class="sidedrawer-list-item-text" row="0" col="1" />
+      </GridLayout>
+      <GridLayout class="{{ 'search' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="search">
+        <Label text="{{'fa-search' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+        <Label text="Search Bars" class="sidedrawer-list-item-text" row="0" col="1" />
+      </GridLayout>
+      <GridLayout class="{{ 'sliders' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="sliders">
+        <Label text="{{'fa-sliders' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+        <Label text="Sliders" class="sidedrawer-list-item-text" row="0" col="1" />
+      </GridLayout>
+      <GridLayout class="{{ 'switches' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="switches">
+        <Label text="{{'fa-toggle-on' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+        <Label text="Switches" class="sidedrawer-list-item-text" row="0" col="1" />
+      </GridLayout>
+      <GridLayout class="{{ 'progress' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="progress">
+        <Label text="{{'fa-spinner' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+        <Label text="Progress & Activity" class="sidedrawer-list-item-text" row="0" col="1" />
+      </GridLayout>
+      <GridLayout class="{{ 'tabs' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="tabs">
+        <Label text="{{'fa-road' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+        <Label text="Tabs" class="sidedrawer-list-item-text" row="0" col="1" />
+      </GridLayout>
+      <GridLayout class="{{ 'segmentbar' | isActive }}" tap="{{ viewPage }}"  rows="auto" columns="auto,*" pageName="segmentbar">
+        <Label text="{{'fa-columns' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+        <Label text="SegmentedBar" class="sidedrawer-list-item-text" row="0" col="1" />
+      </GridLayout>
+      <GridLayout class="{{ 'dialogs' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="dialogs">
+        <Label text="{{'fa-newspaper-o' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+        <Label text="Dialogs"  class="sidedrawer-list-item-text" row="0" col="1"/>
+      </GridLayout>
+      <GridLayout class="{{ 'list' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="listview">
+        <Label text="{{'fa-list' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+        <Label text="ListView" class="sidedrawer-list-item-text" row="0" col="1" />
+      </GridLayout>
+      <GridLayout class="{{ 'theme' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="themes">
+        <Label text="{{'fa-paint-brush' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
+        <Label text="Themes" class="sidedrawer-list-item-text" row="0" col="1" />
+      </GridLayout>
     </StackLayout>
-    <ScrollView row="1">
-        <StackLayout class="sidedrawer-content">
-            <GridLayout class="{{ 'home' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="main-page">
-                <Label text="{{'fa-home' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
-                <Label text="Home" class="sidedrawer-list-item-text" row="0" col="1" />
-            </GridLayout>
-            <GridLayout class="{{ 'basics' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="basics">
-                <Label text="{{'fa-font' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
-                <Label text="Basics" class="sidedrawer-list-item-text" row="0" col="1" />
-            </GridLayout>
-            <GridLayout class="{{ 'buttons' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="buttons">
-                <Label text="{{'fa-square' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
-                <Label text="Buttons" class="sidedrawer-list-item-text" row="0" col="1" />
-            </GridLayout>
-            <GridLayout class="{{ 'buttons-active' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="buttons-active">
-                <Label text="{{'fa-square-o' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
-                <Label text="Buttons Active" class="sidedrawer-list-item-text" row="0" col="1" />
-            </GridLayout>
-            <GridLayout class="{{ 'colors' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="colors">
-                <Label text="{{'fa-eyedropper' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
-                <Label text="Colors" class="sidedrawer-list-item-text" row="0" col="1" />
-            </GridLayout>
-            <GridLayout class="{{ 'forms' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="forms">
-                <Label text="{{'fa-i-cursor' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
-                <Label text="Forms" class="sidedrawer-list-item-text" row="0" col="1" />
-            </GridLayout>
-            <GridLayout class="{{ 'search' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="search">
-                <Label text="{{'fa-search' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
-                <Label text="Search Bars" class="sidedrawer-list-item-text" row="0" col="1" />
-            </GridLayout>
-            <GridLayout class="{{ 'sliders' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="sliders">
-                <Label text="{{'fa-sliders' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
-                <Label text="Sliders" class="sidedrawer-list-item-text" row="0" col="1" />
-            </GridLayout>
-            <GridLayout class="{{ 'switches' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="switches">
-                <Label text="{{'fa-toggle-on' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
-                <Label text="Switches" class="sidedrawer-list-item-text" row="0" col="1" />
-            </GridLayout>
-            <GridLayout class="{{ 'progress' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="progress">
-                <Label text="{{'fa-spinner' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
-                <Label text="Progress & Activity" class="sidedrawer-list-item-text" row="0" col="1" />
-            </GridLayout>
-            <GridLayout class="{{ 'tabs' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="tabs">
-                <Label text="{{'fa-road' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
-                <Label text="Tabs" class="sidedrawer-list-item-text" row="0" col="1" />
-            </GridLayout>
-            <GridLayout class="{{ 'segmentbar' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="segmentbar">
-                <Label text="{{'fa-columns' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
-                <Label text="SegmentedBar" class="sidedrawer-list-item-text" row="0" col="1" />
-            </GridLayout>
-            <GridLayout class="{{ 'dialogs' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="dialogs">
-                <Label text="{{'fa-newspaper-o' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
-                <Label text="Dialogs" class="sidedrawer-list-item-text" row="0" col="1"/>
-            </GridLayout>
-            <GridLayout class="{{ 'list' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="listview">
-                <Label text="{{'fa-list' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
-                <Label text="ListView" class="sidedrawer-list-item-text" row="0" col="1" />
-            </GridLayout>
-            <GridLayout class="{{ 'theme' | isActive }}" tap="{{ viewPage }}" rows="auto" columns="auto,*" pageName="themes">
-                <Label text="{{'fa-paint-brush' | fonticon }}" class="fa sidedrawer-list-item-icon" row="0" col="0" />
-                <Label text="Themes" class="sidedrawer-list-item-text" row="0" col="1" />
-            </GridLayout>
-        </StackLayout>
-    </ScrollView>
-</GridLayout>
+  </ScrollView>
+</StackLayout>

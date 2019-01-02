@@ -2,7 +2,7 @@ import { EventData } from "tns-core-modules/data/observable";
 import { Page } from "tns-core-modules/ui/page";
 import { BaseModel } from './base';
 import { knownFolders } from 'tns-core-modules/file-system';
-var themes = require('~/theme-support');
+var themes = require('../temp/themes');
 
 export class ThemesModel extends BaseModel {
     public labelText: string;
@@ -44,7 +44,7 @@ export class ThemesModel extends BaseModel {
     private getPath(name: string) {
         let appPath = knownFolders.currentApp().path + '/';
         let platform = '';
-        return `${appPath}${name}${platform}`;
+        return `${appPath}/${name}${platform}`;
     }
 }
 

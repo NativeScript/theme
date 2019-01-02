@@ -1,20 +1,8 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
-  xmlns:drawer="nativescript-ui-sidedrawer"
-  xmlns:sidedrawer="/sidedrawer"
   xmlns:actionBar="/actionBar"
   navigatingTo="navigatingTo">
-  <Page.actionBar>
-    <actionBar:actionBar ActionBarTitle="Dialogs" ></actionBar:actionBar>
-  </Page.actionBar>
-  <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
-    <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
-      <StackLayout class="page">
-          <Button text="Show Alert" tap="{{showAlert}}" class="btn" />
-
-      </StackLayout>
-    </drawer:RadSideDrawer.mainContent>
-    <drawer:RadSideDrawer.drawerContent>
-        <sidedrawer:sidedrawer  activeComponent='dialogs'></sidedrawer:sidedrawer>
-    </drawer:RadSideDrawer.drawerContent>
-  </drawer:RadSideDrawer>
+  <actionBar:actionBar ActionBarTitle="Dialogs" />
+  <StackLayout class="page">
+      <Button text="Show Alert" tap="{{showAlert}}" class="btn" />
+  </StackLayout>
 </Page>

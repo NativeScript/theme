@@ -1,96 +1,85 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
-  xmlns:drawer="nativescript-ui-sidedrawer"
-  xmlns:sidedrawer="/sidedrawer"
-  xmlns:actionBar="/actionBar"
+      xmlns:actionBar="/actionBar"
   navigatingTo="navigatingTo">
-  <Page.actionBar>
-    <actionBar:actionBar ActionBarTitle="Basics" ></actionBar:actionBar>
-  </Page.actionBar>
-  <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
-    <drawer:RadSideDrawer.mainContent>
-      <ScrollView class="page">
-          <StackLayout class="p-20">
-            <GridLayout rows="auto" columns="*,*" class="h1 m-5 w-full">
-              <Label text="Class: h1" row="0" col="0" />
-              <Label text="Heading" row="0" col="1" class="text-right" />
-            </GridLayout>
-            <GridLayout rows="auto" columns="*,*" class="h2 m-5 w-full">
-              <Label text="Class: h2" row="0" col="0" />
-              <Label text="Heading" row="0" col="1" class="text-right" />
-            </GridLayout>
-            <GridLayout rows="auto" columns="*,*" class="h3 m-5 w-full">
-              <Label text="Class: h3" row="0" col="0" />
-              <Label text="Heading" row="0" col="1" class="text-right" />
-            </GridLayout>
-            <GridLayout rows="auto" columns="*,*" class="h4 m-5 w-full">
-              <Label text="Class: h4" row="0" col="0" />
-              <Label text="Heading" row="0" col="1" class="text-right" />
-            </GridLayout>
-            <GridLayout rows="auto" columns="*,*" class="h5 m-5 w-full">
-              <Label text="Class: h5" row="0" col="0" />
-              <Label text="Heading" row="0" col="1" class="text-right" />
-            </GridLayout>
-            <GridLayout rows="auto" columns="*,*" class="body m-5 w-full">
-              <Label text="Class: body" row="0" col="0" />
-              <Label text="Body" row="0" col="1" class="text-right" />
-            </GridLayout>
-            <GridLayout rows="auto" columns="*,*" class="body2 m-5 w-full">
-              <Label text="Class: body2" row="0" col="0" />
-              <Label text="Body 2" row="0" col="1" class="text-right" />
-            </GridLayout>
-            <GridLayout rows="auto" columns="*,*" class="footnote m-5 w-full">
-              <Label text="Class: footnote" row="0" col="0" />
-              <Label text="Footnote" row="0" col="1" class="text-right" />
-            </GridLayout>
-            <StackLayout class="page m-t-10">
-              <Label text="Text" class="h2" />
-              <StackLayout class="hr-light m-b-2"></StackLayout>
-              <!--<Label text="Note: text-transform is not working." textWrap="true" class="t-14 c-grey-d-20 m-b-5" />-->
+  <actionBar:actionBar ActionBarTitle="Basics" />
+  <ScrollView class="page">
+    <StackLayout class="p-20">
+      <GridLayout rows="auto" columns="*,*" class="h1 m-5 w-full">
+        <Label text="Class: h1" row="0" col="0" />
+        <Label text="Heading" row="0" col="1" class="text-right" />
+      </GridLayout>
+      <GridLayout rows="auto" columns="*,*" class="h2 m-5 w-full">
+        <Label text="Class: h2" row="0" col="0" />
+        <Label text="Heading" row="0" col="1" class="text-right" />
+      </GridLayout>
+      <GridLayout rows="auto" columns="*,*" class="h3 m-5 w-full">
+        <Label text="Class: h3" row="0" col="0" />
+        <Label text="Heading" row="0" col="1" class="text-right" />
+      </GridLayout>
+      <GridLayout rows="auto" columns="*,*" class="h4 m-5 w-full">
+        <Label text="Class: h4" row="0" col="0" />
+        <Label text="Heading" row="0" col="1" class="text-right" />
+      </GridLayout>
+      <GridLayout rows="auto" columns="*,*" class="h5 m-5 w-full">
+        <Label text="Class: h5" row="0" col="0" />
+        <Label text="Heading" row="0" col="1" class="text-right" />
+      </GridLayout>
+      <GridLayout rows="auto" columns="*,*" class="body m-5 w-full">
+        <Label text="Class: body" row="0" col="0" />
+        <Label text="Body" row="0" col="1" class="text-right" />
+      </GridLayout>
+      <GridLayout rows="auto" columns="*,*" class="body2 m-5 w-full">
+        <Label text="Class: body2" row="0" col="0" />
+        <Label text="Body 2" row="0" col="1" class="text-right" />
+      </GridLayout>
+      <GridLayout rows="auto" columns="*,*" class="footnote m-5 w-full">
+        <Label text="Class: footnote" row="0" col="0" />
+        <Label text="Footnote" row="0" col="1" class="text-right" />
+      </GridLayout>
+      <StackLayout class="page m-t-10">
+        <Label text="Text" class="h2" />
+        <StackLayout class="hr-light m-b-2"></StackLayout>
+        <!--<Label text="Note: text-transform is not working." textWrap="true" class="t-14 c-grey-d-20 m-b-5" />-->
 
-              <GridLayout rows="auto" columns="*,*" class="text-lowercase m-t-5 w-full">
-                <Label text="text-lowercase" row="0" col="0" />
-                <Label text="Lowercase" row="0" col="1" class="text-right" />
-              </GridLayout>
-              <GridLayout rows="auto" columns="*,*" class="m-t-5 w-full">
-                <Label text="text-uppercase" row="0" col="0" />
-                <Label text="Uppercase" row="0" col="1" class="text-right text-uppercase" />
-              </GridLayout>
-              <GridLayout rows="auto" columns="*,*" class="m-t-5 w-full">
-                <Label text="text-capitalize" row="0" col="0" />
-                <Label text="capitalize" row="0" col="1" class="text-right text-capitalize" />
-              </GridLayout>
-              <GridLayout rows="auto" columns="*,*" class="font-weight-normal m-t-5 w-full">
-                <Label text="font-weight-normal" row="0" col="0" />
-                <Label text="Normal Weight" row="0" col="1" class="text-right" />
-              </GridLayout>
-              <GridLayout rows="auto" columns="*,*" class="font-weight-bold m-t-5 w-full">
-                <Label text="font-weight-bold" row="0" col="0" />
-                <Label text="Bold" row="0" col="1" class="text-right" />
-              </GridLayout>
-              <GridLayout rows="auto" columns="*,*" class="font-italic m-t-5 w-full">
-                <Label text="font-italic" row="0" col="0" />
-                <Label text="Italic" row="0" col="1" class="text-right" />
-              </GridLayout>
-            </StackLayout>
-            
-            <!-- UTILITIES -->
-            <StackLayout class="page m-t-10">
-                <Label text="Utilities" class="h2" />
-                <StackLayout class="hr-light m-b-2"></StackLayout>
-                <Label text=".pull-left" class="pull-left" />
-                <Label text=".pull-right" class="pull-right" />
-                <Label text=".m-x-auto" class="m-x-auto" />
-                <Label text=".text-primary" class="text-primary " />
-                <Label text=".text-danger" class="text-danger " />
-                <Label text=".text-muted" class="text-muted" />
-                <Label text=".bg-primary" class="bg-primary" />
-                <Label text=".bg-danger" class="bg-danger" />
-            </StackLayout>
-          </StackLayout>
-        </ScrollView>
-    </drawer:RadSideDrawer.mainContent>
-    <drawer:RadSideDrawer.drawerContent >
-        <sidedrawer:sidedrawer  activeComponent='basics'></sidedrawer:sidedrawer>
-    </drawer:RadSideDrawer.drawerContent>
-  </drawer:RadSideDrawer>
+        <GridLayout rows="auto" columns="*,*" class="text-lowercase m-t-5 w-full">
+          <Label text="text-lowercase" row="0" col="0" />
+          <Label text="Lowercase" row="0" col="1" class="text-right" />
+        </GridLayout>
+        <GridLayout rows="auto" columns="*,*" class="m-t-5 w-full">
+          <Label text="text-uppercase" row="0" col="0" />
+          <Label text="Uppercase" row="0" col="1" class="text-right text-uppercase" />
+        </GridLayout>
+        <GridLayout rows="auto" columns="*,*" class="m-t-5 w-full">
+          <Label text="text-capitalize" row="0" col="0" />
+          <Label text="capitalize" row="0" col="1" class="text-right text-capitalize" />
+        </GridLayout>
+        <GridLayout rows="auto" columns="*,*" class="font-weight-normal m-t-5 w-full">
+          <Label text="font-weight-normal" row="0" col="0" />
+          <Label text="Normal Weight" row="0" col="1" class="text-right" />
+        </GridLayout>
+        <GridLayout rows="auto" columns="*,*" class="font-weight-bold m-t-5 w-full">
+          <Label text="font-weight-bold" row="0" col="0" />
+          <Label text="Bold" row="0" col="1" class="text-right" />
+        </GridLayout>
+        <GridLayout rows="auto" columns="*,*" class="font-italic m-t-5 w-full">
+          <Label text="font-italic" row="0" col="0" />
+          <Label text="Italic" row="0" col="1" class="text-right" />
+        </GridLayout>
+      </StackLayout>
+
+      <!-- UTILITIES -->
+      <StackLayout class="page m-t-10">
+          <Label text="Utilities" class="h2" />
+          <StackLayout class="hr-light m-b-2" />
+          <Label text=".pull-left" class="pull-left" />
+          <Label text=".pull-right" class="pull-right" />
+          <Label text=".m-x-auto" class="m-x-auto" />
+          <Label text=".text-primary" class="text-primary " />
+          <Label text=".text-danger" class="text-danger " />
+          <Label text=".text-muted" class="text-muted" />
+          <Label text=".bg-primary" class="bg-primary" />
+          <Label text=".bg-danger" class="bg-danger" />
+      </StackLayout>
+    </StackLayout>
+  </ScrollView>
 </Page>

@@ -1,35 +1,8 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd"
-  xmlns:drawer="nativescript-ui-sidedrawer"
-  xmlns:sidedrawer="/sidedrawer"
-  xmlns:actionBar="/actionBar"
-  navigatingTo="navigatingTo">
-  <Page.actionBar>
-    <actionBar:actionBar ActionBarTitle="NativeScript Themes" ></actionBar:actionBar>
-  </Page.actionBar>
-  <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
-      <drawer:RadSideDrawer.mainContent showOverNavigation="true">
-        <ScrollView class="page">
-          <StackLayout class="mainContent p-15">
-            <Button text="Basics" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="basics" />
-            <Button text="Buttons" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="buttons" />
-            <Button text="Buttons Active" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="buttons-active" />
-            <Button text="Colors" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="colors" />
-            <Button text="Dialogs" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="dialogs"/>
-            <Button text="Forms" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="forms" />
-            <Button text="ListView" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="listview" />
-            <Button text="Login" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="login-landing" />
-            <Button text="Progress & Activity" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="progress" />
-            <Button text="Searchbars" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="search" />
-            <Button text="SegmentedBar" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="segmentbar" />
-            <Button text="Sliders" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="sliders" />
-            <Button text="Switches" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="switches" />
-            <Button text="Tabs" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="tabs" />
-            <Button text="Themes" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="themes" />
-          </StackLayout>
-        </ScrollView>
-    </drawer:RadSideDrawer.mainContent>
-    <drawer:RadSideDrawer.drawerContent >
-            <sidedrawer:sidedrawer activeComponent='home'></sidedrawer:sidedrawer>
-    </drawer:RadSideDrawer.drawerContent>
-  </drawer:RadSideDrawer>
-</Page>
+<drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left" xmlns:drawer="nativescript-ui-sidedrawer" xmlns:sidedrawer="/sidedrawer">
+    <drawer:RadSideDrawer.mainContent showOverNavigation="true">
+      <Frame defaultPage="./pages/root" />
+  </drawer:RadSideDrawer.mainContent>
+  <drawer:RadSideDrawer.drawerContent>
+    <sidedrawer:sidedrawer activeComponent='home' />
+  </drawer:RadSideDrawer.drawerContent>
+</drawer:RadSideDrawer>

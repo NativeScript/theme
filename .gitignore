@@ -1,6 +1,7 @@
 *.css
 !font-awesome.css
 *.js
+!app/temp/*.js
 !.eslintrc.js
 *.map
 /platforms
@@ -12,4 +13,3 @@ lib
 .vscode
 .idea
 .DS_Store
-!app/theme-support/index.js

@@ -1,4 +1,4 @@
-﻿import * as application from 'tns-core-modules/application';
+import * as app from 'tns-core-modules/application';
 import { TNSFontIcon, fonticon } from 'nativescript-fonticon';
 import { isActive } from './sidedrawer/sidedrawer';
 require("nativescript-dom");
@@ -15,12 +15,12 @@ TNSFontIcon.paths = {
 };
 TNSFontIcon.loadCss();
 
-const resources = application.getResources();
+const resources = app.getResources();
 resources['fonticon'] = fonticon;
 resources['isActive'] = isActive;
-application.setResources(resources);
+app.setResources(resources);
 
 var themes = require('nativescript-themes');
 themes.applyTheme(themes.getAppliedTheme('light.css'));
 
-application.run({ moduleName: "app-root" });
+app.run({ moduleName: "main-page" });

@@ -21,9 +21,8 @@
   "dependencies": {
     "bootstrap": "^4.2.1",
     "nativescript-dom": "^2.0.2",
-    "nativescript-fonticon": "^1.1.1",
+    "nativescript-fonticon": "^2.0.0",
     "nativescript-ui-sidedrawer": "^5.1.0",
-    "nativescript-themes": "^1.9.9",
     "tns-core-modules": "~5.1.1"
   },
   "devDependencies": {
