@@ -1,0 +1,8 @@
+<Repeater items="{{ items }}" xmlns:ui="nativescript-theme-core">
+    <Repeater.itemTemplate>
+        <StackLayout orientation="horizontal" class="{{ value === $parent.selected ? 'active' : '' }}">
+            <ui:ThemeIcon name="{{ icon }}" />
+            <Label class="theme-menu__text" text="{{ text || value }}" />
+        </StackLayout>
+    </Repeater.itemTemplate>
+</Repeater>

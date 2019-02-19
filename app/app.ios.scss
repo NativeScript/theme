@@ -1,14 +1,14 @@
-﻿/*!
- * NativeScript Theme v0.1.0 (https://nativescript.org)
- * Copyright 2016-2016 The Theme Authors
- * Copyright 2016-2016 Telerik
- * Licensed under MIT (https://github.com/NativeScript/theme/blob/master/LICENSE)
- */
+// Import app variables
+@import 'app-variables';
 
-/**
- * Base style (un-themed)
- */
-@import 'scss/variables';
-@import 'scss/index';
-@import 'scss/platforms/index.ios';
+// Import the theme’s main ruleset - both index and platform specific.
+@import '~nativescript-theme-core/styles/scss/index';
+@import '~nativescript-theme-core/styles/scss/platforms/index.ios';
 
+// Import common styles
+@import 'app-common';
+
+// Place any CSS rules you want to apply only on iOS here
+ActionBar .fa {
+    padding: 40px 40px 40px 0;
+}
