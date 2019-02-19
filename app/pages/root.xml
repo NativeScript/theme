@@ -1,6 +1,6 @@
 <Page class="page"
       loaded="onLoad"
-      xmlns:actionBar="./actionBar">
+      xmlns:actionBar="action-bar/action-bar">
     <actionBar:actionBar ActionBarTitle="NativeScript Themes" />
     <ScrollView>
         <StackLayout class="mainContent p-15">

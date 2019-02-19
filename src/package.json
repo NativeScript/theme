@@ -1,0 +1,39 @@
+{
+  "name": "nativescript-theme-core",
+  "version": "2.0.0-alpha",
+  "description": "Telerik NativeScript Core Theme",
+  "author": "Telerik <support@telerik.com>",
+  "main": "index",
+  "homepage": "https://www.nativescript.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NativeScript/theme"
+  },
+  "nativescript": {
+    "platforms": {
+      "android": "5.2.0",
+      "ios": "5.2.0"
+    }
+  },
+  "keywords": [
+    "NativeScript",
+    "JavaScript",
+    "Android",
+    "iOS",
+    "theme",
+    "skin"
+  ],
+  "bugs": {
+    "url": "https://github.com/NativeScript/theme/issues"
+  },
+  "license": "Apache-2.0",
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "tns-core-modules": "^5.2.0",
+    "nativescript-theme-core": "^2.0.0-alpha"
+  },
+  "devDependencies": {
+    "tns-core-modules": "^5.2.0",
+    "nativescript-theme-core": "^2.0.0-alpha"
+  }
+}
