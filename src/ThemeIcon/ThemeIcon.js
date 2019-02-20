@@ -25,12 +25,6 @@ export const variantProperty = new Property({
 });
 
 export class ThemeIcon extends Label {
-    constructor() {
-        super();
-
-        this.className = "theme-menu__icon";
-    }
-
     updateIcon() {
         if (!this._styleScope) {
             return;
@@ -40,8 +34,11 @@ export class ThemeIcon extends Label {
             .flatMap((value) => value.sel.ruleset.declarations)
             .reverse()
             .some((dec) => {
-                if (dec.content) {
-                    this.text = dec.content;
+                if (dec.property === "content") {
+                    this.text = String.fromCharCode(`0x${(dec.value.match(/[a-f\d]{2,4}/i) || [])[0]}`);
+
+                    this.classList.add("theme-menu__icon", this.ns);
+
                     return true;
                 }
             });
