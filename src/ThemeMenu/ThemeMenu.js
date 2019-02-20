@@ -1,5 +1,5 @@
 import { Property } from "tns-core-modules/ui/core/view";
-import { StackLayout } from "tns-core-modules/ui/layouts/stack-layout";
+import { GridLayout } from "tns-core-modules/ui/layouts/grid-layout";
 import { parse } from "tns-core-modules/ui/builder";
 import template from "./ThemeMenu.template.xml";
 
@@ -10,7 +10,7 @@ export const iconFieldProperty = new Property({name: "iconField", defaultValue: 
 export const valueFieldProperty = new Property({name: "valueField", defaultValue: "value"});
 export const itemSelectedProperty = new Property({name: "itemSelected", defaultValue: undefined});
 
-export class ThemeMenu extends StackLayout {
+export class ThemeMenu extends GridLayout {
     constructor() {
         super();
 
@@ -22,8 +22,8 @@ export class ThemeMenu extends StackLayout {
         this.addChild(component);
     }
 
-    onTap() {
-
+    onTap(args) {
+        this.itemSelected(this.items.getItem(args.index), args);
     }
 }
 

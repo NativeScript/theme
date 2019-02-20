@@ -1,8 +1,8 @@
-<Repeater items="{{ items }}" xmlns:ui="nativescript-theme-core">
-    <Repeater.itemTemplate>
+<ListView items="{{ items }}" xmlns:ui="nativescript-theme-core" itemTap="{{ onTap }}">
+    <ListView.itemTemplate>
         <StackLayout orientation="horizontal" class="{{ value === $parent.selected ? 'active' : '' }}">
             <ui:ThemeIcon name="{{ icon }}" />
             <Label class="theme-menu__text" text="{{ text || value }}" />
         </StackLayout>
-    </Repeater.itemTemplate>
-</Repeater>
+    </ListView.itemTemplate>
+</ListView>

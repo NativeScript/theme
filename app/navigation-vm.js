@@ -1,7 +1,7 @@
 import { topmost } from 'tns-core-modules/ui/frame';
 import { BaseModel } from './pages/base';
 import * as application from 'tns-core-modules/application';
-import {ObservableArray} from "tns-core-modules/data/observable-array";
+import { ObservableArray } from "tns-core-modules/data/observable-array";
 
 export class NavigationViewModel extends BaseModel {
 	constructor(page) {
@@ -32,10 +32,12 @@ export class NavigationViewModel extends BaseModel {
 			value: "forms",
 			icon: "i-cursor"
 		}, {
-			value: "list",
+			text: "ListView",
+			value: "listview",
 			icon: "list"
 		}, {
-			value: "login",
+			text: "login",
+			value: "login-landing",
 			icon: "user"
 		}, {
 			value: "modal",
@@ -59,17 +61,17 @@ export class NavigationViewModel extends BaseModel {
 			value: "tabs",
 			icon: "road"
 		}, {
-			value: "theme",
+			text: "theme",
+			value: "themes",
 			icon: "paint-brush"
 		});
 	}
 
-	onNavigationItemTap(args) {
-		const component = args.object;
-		const page = component.value;
+	onNavigationItemTap(item) {
+		const page = item.value;
 
-		this.topFrame.navigate({
-			moduleName: `../pages/${page}`,
+		topmost().navigate({
+			moduleName: `pages/${page}`,
 			transition: {
 				name: "slide"
 			}

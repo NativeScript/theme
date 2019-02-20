@@ -39,9 +39,5 @@ export function signIn(){
 }
 
 export function goBack(){
-    topmost().navigate({
-        moduleName: "main-page",
-        clearHistory: true,
-        animated: false
-    });
+    topmost().goBack();
 }
