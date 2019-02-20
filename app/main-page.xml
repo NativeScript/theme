@@ -1,8 +1,0 @@
-<drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left" xmlns:drawer="nativescript-ui-sidedrawer" xmlns:sidedrawer="/sidedrawer">
-    <drawer:RadSideDrawer.mainContent showOverNavigation="true">
-      <Frame defaultPage="./pages/root" />
-  </drawer:RadSideDrawer.mainContent>
-  <drawer:RadSideDrawer.drawerContent>
-    <sidedrawer:sidedrawer activeComponent='home' />
-  </drawer:RadSideDrawer.drawerContent>
-</drawer:RadSideDrawer>

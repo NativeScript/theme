@@ -3,7 +3,7 @@
 	<Android>
 		<!--<NavigationButton text="{{"fa-bars" | fonticon }}" tap="{{ toggleSideDrawer }}" />-->
 		<GridLayout rows="auto" columns="50,*,auto">
-			<Button tap="{{ toggleSideDrawer }}" text="{{'fa-bars' | fonticon }}" class="fa action-item text-left" row="0" col="0" />
+			<Button tap="{{ toggleSideDrawer }}" text="{{'fa-bars' }}" class="fa action-item text-left" row="0" col="0" />
 			<StackLayout verticalAlignment="center" row="0" col="1">
 				<Label id="actionBarTitle" class="action-bar-title"/>
 			</StackLayout>
@@ -20,7 +20,7 @@
 			</ActionBar.titleView>
 			<ActionItem position="left">
 				<ActionItem.actionView>
-					<Label text="{{'fa-bars' | fonticon }}" class="fa action-item" tap="{{ toggleSideDrawer }} " />
+					<Label text="{{'fa-bars' }}" class="fa action-item" tap="{{ toggleSideDrawer }} " />
 				</ActionItem.actionView>
 			</ActionItem>
 			<ActionItem tap="{{ openModal }}" text="Modal" class="action-item" ios.position="right" />

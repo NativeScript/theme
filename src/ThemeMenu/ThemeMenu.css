@@ -2,3 +2,7 @@
     text-transform: capitalize;
     color: blue;
 }
+
+.theme-menu__icon {
+    background-color: red;
+}
