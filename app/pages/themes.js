@@ -3,7 +3,8 @@ import { Page } from "ui/page";
 import { BaseModel } from "./base";
 import { knownFolders } from "file-system";
 import { isIOS, isAndroid } from "platform";
-var themes = require("../temp/themes");
+
+const themes = require("../temp/themes");
 
 export class ThemesModel extends BaseModel {
     constructor(page) {

@@ -147,6 +147,7 @@ module.exports = (env) => {
                         {
                             loader: "nativescript-dev-webpack/bundle-config-loader",
                             options: {
+                                registerModules: /\.(xml|css|js|ts)$/,
                                 loadCss: !snapshot // load the application css if in debug mode
                             }
                         }
@@ -154,7 +155,7 @@ module.exports = (env) => {
                 },
 
                 {
-                    test: /-page\.js$/,
+                    test: /\.js$/,
                     use: "nativescript-dev-webpack/script-hot-loader"
                 },
 
@@ -165,12 +166,10 @@ module.exports = (env) => {
 
                 {
                     test: /\.(html|xml)$/,
-                    use: "nativescript-dev-webpack/markup-hot-loader"
-                },
-
-                {
-                    test: /\.(html|xml)$/,
-                    use: "nativescript-dev-webpack/xml-namespace-loader"
+                    use: [
+                        "nativescript-dev-webpack/markup-hot-loader",
+                        "nativescript-dev-webpack/xml-namespace-loader"
+                    ]
                 },
                 {
                     test: /\.css$/,

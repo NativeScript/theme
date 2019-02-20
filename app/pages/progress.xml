@@ -1,8 +1,8 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
   navigatingTo="navigatingTo"
   navigatingFrom="navigatingFrom"
-  xmlns:actionBar="/actionBar">
-  <actionBar:actionBar ActionBarTitle="Progress" />
+  xmlns:actionBar="/action-bar">
+  <actionBar:action-bar ActionBarTitle="Progress" />
   <StackLayout class="page">
     <GridLayout rows="auto ,*" columns="">
       <Progress id="progress" row="0" value="50" maxValue="100" class="progress" />

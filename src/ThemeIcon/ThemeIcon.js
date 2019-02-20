@@ -1,5 +1,6 @@
 import { Property } from "tns-core-modules/ui/core/view";
 import { Label } from "tns-core-modules/ui/label";
+import { updateClasses } from "../utils/utils";
 
 const updateIcon = (target) => target.updateIcon();
 
@@ -13,8 +14,7 @@ export const nsProperty = new Property({
     name: "ns",
     defaultValue: "fa",
     valueChanged: (target, oldValue, newValue) => {
-        target.classList.remove(oldValue);
-        target.classList.add(newValue);
+        updateClasses(target, newValue, oldValue);
     }
 });
 
@@ -37,7 +37,7 @@ export class ThemeIcon extends Label {
                 if (dec.property === "content") {
                     this.text = String.fromCharCode(`0x${(dec.value.match(/[a-f\d]{2,4}/i) || [])[0]}`);
 
-                    this.classList.add("theme-menu__icon", this.ns);
+                    updateClasses(this, ["theme-menu__icon", this.ns]);
 
                     return true;
                 }

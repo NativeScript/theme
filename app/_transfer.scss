@@ -1,0 +1,383 @@
+.hidden {
+  visibility: collapsed;
+}
+
+// SideDrawer
+RadSideDrawer {
+  & > * {
+    background-color: $side-drawer-background;
+  }
+
+  .user-info {
+    padding: 30 25;
+
+    Label {
+      font-size: 16;
+    }
+
+    > Label {
+      font-size: 40;
+      margin-right: 15;
+    }
+  }
+
+  > [tkDrawerContent] {
+    color: $white;
+    background: $accent;
+  }
+
+  > [tkDrawerContent] > StackLayout {
+    background: $accent-light;
+    height: 100;
+  }
+
+  > [tkDrawerContent] ScrollView StackLayout {
+    padding: 15 0;
+  }
+
+  > [tkDrawerContent] Button {
+    color: $btn-color-inverse;
+    padding: 5 25;
+    font-size: 22;
+    text-align: left;
+    text-transform: none;
+  }
+
+  > [tkDrawerContent] Button:active {
+    background-color: $accent-light;
+  }
+}
+
+
+/* Page */
+
+Page {
+  color: $primary;
+  background-color: $background;
+}
+
+
+/* ActionBar */
+
+ActionBar,
+ActionBar > GridLayout {
+  background-color: $ab-background;
+  color: $ab-color;
+  font-weight: bold;
+  font-size: 16;
+  vertical-align: center;
+
+  > * > Label {
+    padding: 0 12;
+  }
+
+  ActionItem {
+    font-weight: normal;
+    font-size: 14;
+  }
+}
+
+
+/* ActivityIndicator */
+
+ActivityIndicator {
+  color: $accent;
+  width: 30;
+  height: 30;
+}
+
+
+/* Buttons */
+
+Button {
+  color: $btn-color;
+  background-color: transparent;
+  min-height: 36;
+  min-width: 64;
+
+  &:highlighted {
+    color: $white;
+    background-color: $btn-color-outline-highlighted;
+  }
+
+  @include button-base($btn-color, $btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius, 0);
+}
+
+.-primary {
+  background-color: $btn-color;
+  border-color: $btn-color;
+  color: $btn-color-inverse;
+
+  &:highlighted {
+    background-color: $btn-color-secondary;
+    border-color: $btn-color-secondary;
+  }
+
+  &.-aqua {
+    background-color: $aqua;
+  }
+
+  &.-blue {
+    background-color: $blue;
+  }
+
+  &.-brown {
+    background-color: $brown;
+  }
+
+  &.-forest {
+    background-color: $forest;
+  }
+
+  &.-grey {
+    background-color: $grey-dark;
+  }
+
+  &.-lemon {
+    background-color: $lemon;
+    color: $black;
+  }
+
+  &.-lime {
+    background-color: $lime;
+    color: $black;
+  }
+
+  &.-orange {
+    background-color: $orange;
+  }
+
+  &.-purple {
+    background-color: $purple;
+  }
+
+  &.-ruby {
+    background-color: $ruby;
+  }
+
+  &.-sky {
+    background-color: $sky;
+  }
+}
+
+.-outline {
+  background-color: transparent;
+  border-color: $btn-color;
+  color: $btn-color;
+
+  &:highlighted {
+    background-color: $btn-color-outline-highlighted;
+  }
+}
+
+Button[isEnabled=false] {
+  color: $btn-color-disabled;
+  background-color: $grey;
+  border-color: $grey;
+}
+
+
+/* ListView & RadListView */
+
+ListView,
+RadListView {
+  background-color: $background;
+  @at-root .-ios & > *,
+  .-android & > * > * {
+    background-color: $background;
+    padding: 16;
+  }
+  > * {
+    color: $primary;
+    font-size: 16;
+    margin: 0;
+
+    Label {
+      padding: 5;
+      vertical-align: center;
+    }
+
+    Label + Label {
+      color: $secondary;
+      font-size: 14;
+    }
+
+    Image {
+      stretch: aspectFill;
+    }
+
+    &:highlighted {
+      background-color: $grey;
+    }
+  }
+
+  @at-root &.-single-col-cards {
+    Image {
+      width: 100%;
+      height: 200;
+    }
+  }
+  @at-root &.-two-col-cards {
+    Image {
+      height: 100;
+    }
+
+    @at-root .-ios & {
+      > StackLayout {
+        width: 50%;
+      }
+
+      > StackLayout Image {
+        horizontal-align: left;
+        width: 100%;
+      }
+    }
+  }
+  @at-root &.-two-lines-image,
+  &.-single-line-image {
+    Image {
+      width: 60;
+      height: 60;
+      margin-right: 10;
+    }
+  }
+  .-separator {
+    border-bottom-width: 1;
+    border-bottom-color: $background-light;
+  }
+
+  .list-view__delete {
+    background-color: $error;
+    padding: 0 10;
+  }
+
+  @at-root .-ios & .list-view__delete {
+    padding: 0 10 0 25;
+  }
+  .list-view__delete > Label {
+    horizontal-align: center;
+    margin-top: 40%;
+    text-transform: capitalize;
+  }
+}
+
+.-rounded {
+  border-radius: 3;
+}
+
+
+/* Forms */
+
+.form {
+  padding: 0 16 16;
+
+  StackLayout {
+    > Label {
+      margin-top: 16;
+      font-size: 14;
+    }
+
+    > TextField,
+    > TextView,
+    > Label {
+      color: $primary-light;
+      padding: 4 0;
+      margin: 0;
+    }
+
+    > Label + Label {
+      color: $primary;
+    }
+
+    > Switch {
+      margin: -22 0 12;
+    }
+
+    > DatePicker,
+    > TimePicker,
+    > ListPicker {
+      background-color: lighten($background, 50%);
+    }
+
+    > .hr {
+      background-color: $primary-light;
+
+      &.active {
+        background-color: $accent;
+      }
+    }
+
+    &.-sides Label {
+      font-size: 18;
+      margin: 0 0 8 0;
+    }
+
+    &__button-separator {
+      margin: 20 0;
+    }
+
+    &__link {
+      color: $accent;
+    }
+  }
+}
+
+
+/* TextField */
+
+TextField {
+  color: $primary-light;
+  background-color: transparent;
+
+  &.-border.-border {
+    border-width: 1;
+    border-color: $accent-light;
+    border-radius: 4;
+    padding: 16;
+  }
+
+  &.-rounded.-rounded {
+    border-radius: 30;
+  }
+
+  &[isEnabled=false] {
+    background-color: lighten($grey, 10%);
+  }
+}
+
+
+/* TabView */
+
+TabView {
+  tab-text-color: $primary;
+  tab-text-font-size: 18;
+  selected-tab-text-color: $accent;
+  android-selected-tab-highlight-color: $accent-light;
+  tab-background-color: $background;
+  text-transform: none;
+}
+
+Switch {
+  color: $primary-light;
+  border-color: $primary-light;
+  @at-root .-ios & {
+    background-color: $background-light;
+  }
+  &[checked=true] {
+    color: $accent;
+    //border-color: $accent;
+    border-width: 1;
+  }
+
+  &[checked=true][isEnabled=false] {
+    background-color: $grey;
+    color: $white;
+  }
+
+  &[isEnabled=false] {
+    background-color: $grey;
+    color: $grey;
+  }
+}
+
+@import 'app-styles';

@@ -20,8 +20,6 @@
   },
   "dependencies": {
     "bootstrap": "4.3.1",
-    "nativescript-dom": "2.0.2",
-    "nativescript-fonticon": "2.0.0",
     "nativescript-theme-core": "./src",
     "nativescript-ui-sidedrawer": "5.1.0",
     "tns-core-modules": "5.2.1"
