@@ -1,7 +1,7 @@
 <Page class="page"
       loaded="onLoad"
-      xmlns:actionBar="/action-bar">
-    <actionBar:action-bar ActionBarTitle="NativeScript Themes" />
+      xmlns:ui="nativescript-theme-core">
+    <ui:ThemeActionBar title="NativeScript Themes" menu="{{ true }}" />
     <ScrollView>
         <StackLayout class="mainContent p-15">
             <Button text="Basics" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="basics" />

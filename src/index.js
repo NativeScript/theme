@@ -8,3 +8,4 @@
 
 export * from "./ThemeIcon/ThemeIcon";
 export * from "./ThemeMenu/ThemeMenu";
+export * from "./ThemeActionBar/ThemeActionBar";
