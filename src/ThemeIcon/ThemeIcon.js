@@ -30,7 +30,9 @@ export class ThemeIcon extends Label {
             return;
         }
 
-        this._styleScope._selectors.class[`${this.variant}-${this.name}`]
+        const icon = this._styleScope._selectors.class[`${this.variant}-${this.name}`];
+
+        icon && icon
             .flatMap((value) => value.sel.ruleset.declarations)
             .reverse()
             .some((dec) => {

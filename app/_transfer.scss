@@ -5,11 +5,13 @@
 // SideDrawer
 RadSideDrawer {
   & > * {
-    background-color: $side-drawer-background;
+    background: $background-light;
   }
 
   .user-info {
     padding: 30 25;
+    background: $ab-background-dark;
+    height: 100;
 
     Label {
       font-size: 16;
@@ -21,30 +23,29 @@ RadSideDrawer {
     }
   }
 
-  > [tkDrawerContent] {
-    color: $white;
-    background: $accent;
+  & > [tkDrawerContent] {
+    color: $ab-color;
+    background: $background;
   }
 
-  > [tkDrawerContent] > StackLayout {
-    background: $accent-light;
-    height: 100;
-  }
-
-  > [tkDrawerContent] ScrollView StackLayout {
+  & > [tkDrawerContent] ScrollView StackLayout {
     padding: 15 0;
   }
 
-  > [tkDrawerContent] Button {
-    color: $btn-color-inverse;
-    padding: 5 25;
-    font-size: 22;
+  & > [tkDrawerContent] Button {
+    color: $primary;
+    border-radius: 1;
+    width: 100%;
+    padding: 5 20;
+    margin-bottom: 0;
+    font-size: 16;
     text-align: left;
     text-transform: none;
   }
 
-  > [tkDrawerContent] Button:active {
-    background-color: $accent-light;
+  & > [tkDrawerContent] Button:active {
+    color: $ab-color;
+    background: $ab-background-dark;
   }
 }
 
@@ -59,12 +60,11 @@ Page {
 
 /* ActionBar */
 
-ActionBar,
-ActionBar > GridLayout {
+ActionBar {
   background-color: $ab-background;
   color: $ab-color;
   font-weight: bold;
-  font-size: 16;
+  font-size: 17;
   vertical-align: center;
 
   > * > Label {
@@ -271,61 +271,61 @@ RadListView {
 .form {
   padding: 0 16 16;
 
-  StackLayout {
-    > Label {
-      margin-top: 16;
-      font-size: 14;
-    }
+  Label {
+    margin-top: 16;
+    font-size: 14;
+  }
 
-    > TextField,
-    > TextView,
-    > Label {
-      color: $primary-light;
-      padding: 4 0;
-      margin: 0;
-    }
+  TextField,
+  TextView,
+  Label {
+    color: $primary-light;
+    padding: 4 0;
+    margin: 0;
+  }
 
-    > Label + Label {
-      color: $primary;
-    }
+  Label + Label {
+    color: $primary;
+  }
 
-    > Switch {
-      margin: -22 0 12;
-    }
+  Switch {
+    margin: -22 0 12;
+  }
 
-    > DatePicker,
-    > TimePicker,
-    > ListPicker {
-      background-color: lighten($background, 50%);
-    }
+  DatePicker,
+  TimePicker,
+  ListPicker {
+    background-color: lighten($background, 50%);
+  }
 
-    > .hr {
-      background-color: $primary-light;
+  .hr {
+    background-color: $primary-light;
 
-      &.active {
-        background-color: $accent;
-      }
+    &.active {
+      background-color: $accent;
     }
+  }
 
-    &.-sides Label {
-      font-size: 18;
-      margin: 0 0 8 0;
-    }
+  &.-sides Label {
+    font-size: 18;
+    margin: 0 0 8 0;
+  }
 
-    &__button-separator {
-      margin: 20 0;
-    }
+  &__button-separator {
+    margin: 20 0;
+  }
 
-    &__link {
-      color: $accent;
-    }
+  &__link {
+    color: $accent;
   }
 }
 
 
 /* TextField */
 
-TextField {
+TextField,
+DatePickerField,
+TimePickerField {
   color: $primary-light;
   background-color: transparent;
 
@@ -343,6 +343,18 @@ TextField {
   &[isEnabled=false] {
     background-color: lighten($grey, 10%);
   }
+}
+
+.date-time-picker {
+  background: $background;
+}
+
+.date-time-picker-buttons {
+  color: $accent;
+}
+
+.date-time-picker-spinners {
+  color: mix($btn-color-inverse, $accent-dark, 30%);
 }
 
 

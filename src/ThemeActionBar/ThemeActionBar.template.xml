@@ -1,0 +1,10 @@
+<GridLayout rows="auto" columns="auto,*,auto" xmlns:ui="nativescript-theme-core" >
+    <ui:ThemeIcon class="action-bar__nav-button" name="bars"
+                  visibility="{{ menu !== false ? 'visible' : 'collapsed' }}" />
+    <ui:ThemeIcon class="action-bar__nav-button" name="chevron-left"
+                  visibility="{{ backButton !== false ? 'visible' : 'collapsed' }}" />
+    <Label col="1" class="action-bar__title" text="{{ title }}" ios:horizontalAlignment="center" android:horizontalAlignment="left"/>
+    <StackLayout col="2">
+
+    </StackLayout>
+</GridLayout>
