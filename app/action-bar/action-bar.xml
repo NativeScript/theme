@@ -1,6 +1,5 @@
-<ui:ThemeActionBar title="NativeScript Themes" menu="{{ true }}"
-                   xmlns:ui="nativescript-theme-core">
-    <ActionItem tap="{{ openModal }}" text="Modal" ios.position="right" />
+<ui:ThemeActionBar title="{{ ActionBarTitle }}" menu="{{ toggleSideDrawer }}" xmlns:ui="nativescript-theme-core">
+    <ActionItem tap="{{ openModal }}" text="Modal" ios:position="right" />
 </ui:ThemeActionBar>
 
 <!--<ActionBar class="action-bar" loaded="onLoad" xmlns:ui="nativescript-theme-core" >
