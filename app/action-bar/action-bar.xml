@@ -1,6 +1,6 @@
-<ui:ThemeActionBar title="{{ ActionBarTitle }}" menu="{{ toggleSideDrawer }}" xmlns:ui="nativescript-theme-core">
+<ui:ThemeCustomActionBar title="{{ ActionBarTitle }}" menu="{{ toggleSideDrawer }}" xmlns:ui="nativescript-theme-core">
     <ActionItem tap="{{ openModal }}" text="Modal" ios:position="right" />
-</ui:ThemeActionBar>
+</ui:ThemeCustomActionBar>
 
 <!--<ActionBar class="action-bar" loaded="onLoad" xmlns:ui="nativescript-theme-core" >
 	&lt;!&ndash;<android:NavigationButton text="go back" icon="~/actionBar/ic_menu_black.png" tap="{{ toggleSideDrawer }}" />&ndash;&gt;

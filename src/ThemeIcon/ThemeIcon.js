@@ -4,6 +4,11 @@ import { updateClasses } from "../utils/utils";
 
 const updateIcon = (target) => target.updateIcon();
 
+let lastIcon = {
+    className: "",
+    variant: ""
+};
+
 export const nameProperty = new Property({
     name: "name",
     defaultValue: undefined,
@@ -30,7 +35,11 @@ export class ThemeIcon extends Label {
             return;
         }
 
-        const icon = this._styleScope._selectors.class[`${this.variant}-${this.name}`];
+        const newIcon = {
+            className: `${this.ns}-${this.name}`,
+            variant: this.variant
+        };
+        const icon = this._styleScope._selectors.class[newIcon.className];
 
         icon && icon
             .flatMap((value) => value.sel.ruleset.declarations)
@@ -39,7 +48,10 @@ export class ThemeIcon extends Label {
                 if (dec.property === "content") {
                     this.text = String.fromCharCode(`0x${(dec.value.match(/[a-f\d]{2,4}/i) || [])[0]}`);
 
-                    updateClasses(this, ["theme-menu__icon", this.ns]);
+                    updateClasses(this, ["theme__icon", newIcon.variant, newIcon.className],
+                                     [lastIcon.variant, lastIcon.className]);
+
+                    lastIcon = newIcon;
 
                     return true;
                 }

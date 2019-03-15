@@ -5,14 +5,7 @@ export function updateClasses(view, toAdd, toRemove) {
 
     if (view && view.className) {
         classList = view.className.split(whiteSpaceRegExp);
-    }
-
-    if (toAdd) {
-        if (typeof toAdd === "string") {
-            toAdd = toAdd.split(whiteSpaceRegExp);
-        }
-
-        toAdd.forEach((v) => classList.indexOf(v) === -1 && classList.push(v));
+        console.log(classList);
     }
 
     if (toRemove) {
@@ -21,8 +14,16 @@ export function updateClasses(view, toAdd, toRemove) {
         }
 
         classList = classList.filter((v) => {
-            return toRemove.indexOf(v) > -1;
+            return toRemove.indexOf(v) < 0;
         });
+    }
+
+    if (toAdd) {
+        if (typeof toAdd === "string") {
+            toAdd = toAdd.split(whiteSpaceRegExp);
+        }
+
+        toAdd.forEach((v) => classList.indexOf(v) === -1 && classList.push(v));
     }
 
     view.className = classList.join(" ");

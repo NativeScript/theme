@@ -1,8 +1,5 @@
-import { EventData } from "data/observable";
-import { Page } from "ui/page";
 import { BaseModel } from "./base";
-import { knownFolders } from "file-system";
-import { isIOS, isAndroid } from "platform";
+import { knownFolders } from "tns-core-modules/file-system";
 
 const themes = require("../temp/themes");
 

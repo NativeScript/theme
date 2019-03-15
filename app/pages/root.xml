@@ -1,9 +1,12 @@
 <Page class="page"
       loaded="onLoad"
+      xmlns:ui="nativescript-theme-core"
       xmlns:actionBar="/action-bar">
     <actionBar:action-bar ActionBarTitle="NativeScript Themes" />
     <ScrollView>
         <StackLayout class="mainContent p-15">
+            <ui:ThemeInput label="Title" />
+
             <Button text="Basics" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="basics" />
             <Button text="Buttons" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="buttons" />
             <Button text="Buttons Active" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="buttons-active" />
