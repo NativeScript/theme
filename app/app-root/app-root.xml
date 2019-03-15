@@ -3,7 +3,7 @@ RadSideDrawer is a UI component part of the Progress NativeScript UI set of comp
 Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
 http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawer/getting-started
 -->
-<nsDrawer:RadSideDrawer id="sideDrawer"
+<nsDrawer:RadSideDrawer id="sideDrawer" ios:class="-ios" android:class="-android"
                         xmlns:nsDrawer="nativescript-ui-sidedrawer"
                         xmlns:ui="nativescript-theme-core" loaded="onLoaded">
     <nsDrawer:RadSideDrawer.drawerTransition>

@@ -1,6 +1,3 @@
-import { EventData } from "data/observable";
-import { Page } from "ui/page";
-import { Label } from "ui/label";
 import { BaseModel } from "../pages/base";
 
 export function onLoad(args) {

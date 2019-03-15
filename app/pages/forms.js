@@ -1,7 +1,3 @@
-import { EventData } from "data/observable";
-import { Page } from "ui/page";
-import { TextField } from "ui/text-field";
-import { isIOS } from "platform";
 import { BaseModel } from "./base";
 
 export class FormsModel extends BaseModel {

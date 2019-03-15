@@ -8,6 +8,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const { NativeScriptWorkerPlugin } = require("nativescript-worker-loader/NativeScriptWorkerPlugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const hashSalt =  Date.now().toString();
 
 module.exports = (env) => {
     // Add your custom Activities, Services and other android app components here.
@@ -70,7 +71,8 @@ module.exports = (env) => {
             path: dist,
             libraryTarget: "commonjs2",
             filename: "[name].js",
-            globalObject: "global"
+            globalObject: "global",
+            hashSalt
         },
         resolve: {
             extensions: [".js", ".scss", ".css"],

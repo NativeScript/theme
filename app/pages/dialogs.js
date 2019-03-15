@@ -1,7 +1,5 @@
-import { EventData } from "data/observable";
-import { Page } from "ui/page";
 import { BaseModel } from "./base";
-import * as dialogs from "ui/dialogs";
+import * as dialogs from "tns-core-modules/ui/dialogs";
 
 export class DialogsModel extends BaseModel {
   showAlert() {

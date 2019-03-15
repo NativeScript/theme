@@ -1,5 +1,3 @@
-import { EventData } from "data/observable";
-import { Page } from "ui/page";
 import { BaseModel } from "./base";
 
 class DemoItem {

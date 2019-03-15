@@ -1,8 +1,8 @@
-<GridLayout rows="auto" columns="auto, *, auto" xmlns:ui="nativescript-theme-core" >
+<GridLayout rows="auto" columns="auto, *, auto" xmlns:ui="nativescript-theme-core">
     <ui:ThemeIcon class="action-bar__nav-button" name="bars" tap="{{ onMenuTap }}" visibility="{{ menu ? 'visible' : 'collapsed' }}" />
     <ui:ThemeIcon class="action-bar__nav-button" name="chevron-left" tap="{{ onBackTap }}" visibility="{{ backButton ? 'visible' : 'collapsed' }}" />
     <Label col="1" class="action-bar__title" text="{{ title }}" ios:horizontalAlignment="center" android:horizontalAlignment="left"/>
-    <StackLayout col="2">
+    <StackLayout col="2" id="NTCustomActionBarStackLayout">
 
     </StackLayout>
 </GridLayout>

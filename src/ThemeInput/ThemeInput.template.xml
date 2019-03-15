@@ -1,0 +1,6 @@
+<GridLayout xmlns:ui="nativescript-theme-core">
+    <Label class="input__label" text="{{ label }}" visibility="{{ label !== undefined ? 'visible' : 'collapsed' }}" />
+    <TextField row="1" class="input__field" />
+    <ui:ThemeIcon row="1" class="input__icon" name="{{ valid ? 'check-circle' : 'exclamation-circle' }}" />
+    <Label row="1" class="input__validation" visibility="{{ !valid ? 'visible' : 'collapsed' }}" />
+</GridLayout>

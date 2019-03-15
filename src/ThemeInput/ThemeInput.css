@@ -1,0 +1,22 @@
+.input__label {
+
+}
+
+.input__field {
+
+}
+
+.input__icon {
+    font-size: 24;
+    vertical-align: center;
+    horizontal-align: right;
+    margin: -15 10 0 0;
+}
+
+.input__icon.fa-check-circle {
+    color: forestgreen;
+}
+
+.input__icon.fa-exclamation-circle {
+    color: darkred;
+}

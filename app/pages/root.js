@@ -1,5 +1,3 @@
-import { EventData } from "tns-core-modules/data/observable";
-import { Page } from "tns-core-modules/ui/page";
 import { NavigationViewModel } from "~/navigation-vm";
 
 export function onLoad(args) {
