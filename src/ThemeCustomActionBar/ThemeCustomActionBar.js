@@ -13,10 +13,7 @@ export class ThemeCustomActionBar extends ActionBar {
     constructor() {
         super();
 
-        let component = parse(template);
-
-        this.className = "nt-action-bar";
-        this.titleView = component;
+        this.titleView = parse(template);
 
         if (isAndroid) {
             this.once('loaded', ({ object }) => {
@@ -27,25 +24,13 @@ export class ThemeCustomActionBar extends ActionBar {
     }
 
     _addChildFromBuilder(name, value) {
-        console.log(name, value);
-
         const layout = this.getViewById("NTCustomActionBarStackLayout");
 
         layout.addChild(value);
-        //super._addChildFromBuilder(name, value);
-        //debugger;
     }
 
-    onTap(event, args) {
-        this.notify(Object.assign(args,{ eventName: event }));
-    }
-
-    onMenuTap(args) {
-        this.onTap("menu", args);
-    }
-
-    onBackTap(args) {
-        this.onTap("back", args);
+    onTap(args) {
+        this.notify(Object.assign(args,{ eventName: this.menu ? 'menu' : this.backButton ? 'back' : 'custom' }));
     }
 }
 

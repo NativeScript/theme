@@ -5,7 +5,6 @@ export function updateClasses(view, toAdd, toRemove) {
 
     if (view && view.className) {
         classList = view.className.split(whiteSpaceRegExp);
-        console.log(classList);
     }
 
     if (toRemove) {

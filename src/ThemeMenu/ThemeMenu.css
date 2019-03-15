@@ -1,8 +1,12 @@
 .theme-menu__text {
-    text-transform: capitalize;
     color: blue;
+    text-transform: capitalize;
 }
 
 .theme-menu__icon {
-    background-color: red;
+    color: blue;
+    font-size: 20;
+    width: 56;
+    height: 100%;
+    text-align: center;
 }

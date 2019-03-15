@@ -17,7 +17,7 @@ export class ThemeMenu extends GridLayout {
         let component = parse(template);
         component.bindingContext = this;
 
-        this.className = "theme-menu";
+        this.className = "nt-theme-menu";
 
         this.addChild(component);
     }
