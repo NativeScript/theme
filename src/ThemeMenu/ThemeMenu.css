@@ -1,6 +1,7 @@
 .theme-menu__text {
     color: blue;
     text-transform: capitalize;
+    background: transparent;
 }
 
 .theme-menu__icon {

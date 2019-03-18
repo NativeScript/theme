@@ -3,25 +3,26 @@
       xmlns:ui="nativescript-theme-core"
       xmlns:actionBar="/action-bar">
     <actionBar:action-bar ActionBarTitle="NativeScript Themes" />
-    <ScrollView>
-        <StackLayout class="mainContent p-15">
-            <ui:ThemeInput label="Title" />
+    <GridLayout class="mainContent p-15" rows="auto, *">
+        <ui:ThemeInput label="Title" />
 
-            <Button text="Basics" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="basics" />
-            <Button text="Buttons" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="buttons" />
-            <Button text="Buttons Active" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="buttons-active" />
-            <Button text="Colors" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="colors" />
-            <Button text="Dialogs" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="dialogs"/>
-            <Button text="Forms" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="forms" />
-            <Button text="ListView" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="listview" />
-            <Button text="Login" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="login-landing" />
-            <Button text="Progress & Activity" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="progress" />
-            <Button text="Searchbars" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="search" />
-            <Button text="SegmentedBar" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="segmentbar" />
-            <Button text="Sliders" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="sliders" />
-            <Button text="Switches" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="switches" />
-            <Button text="Tabs" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="tabs" />
-            <Button text="Themes" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="themes" />
-        </StackLayout>
-    </ScrollView>
+        <ui:ThemeMenu row="1" items="{{ pages }}" selected="{{ selectedPage }}"
+                      itemSelected="{{ onNavigationItemTap }}"/>
+
+        <!--            <Button text="Basics" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="basics" />-->
+<!--            <Button text="Buttons" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="buttons" />-->
+<!--            <Button text="Buttons Active" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="buttons-active" />-->
+<!--            <Button text="Colors" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="colors" />-->
+<!--            <Button text="Dialogs" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="dialogs"/>-->
+<!--            <Button text="Forms" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="forms" />-->
+<!--            <Button text="ListView" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="listview" />-->
+<!--            <Button text="Login" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="login-landing" />-->
+<!--            <Button text="Progress & Activity" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="progress" />-->
+<!--            <Button text="Searchbars" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="search" />-->
+<!--            <Button text="SegmentedBar" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="segmentbar" />-->
+<!--            <Button text="Sliders" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="sliders" />-->
+<!--            <Button text="Switches" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="switches" />-->
+<!--            <Button text="Tabs" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="tabs" />-->
+<!--            <Button text="Themes" tap="{{ viewPage }}" class="btn btn-primary m-y-5" pageName="themes" />-->
+    </GridLayout>
 </Page>

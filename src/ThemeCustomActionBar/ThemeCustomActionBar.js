@@ -30,7 +30,7 @@ export class ThemeCustomActionBar extends ActionBar {
     }
 
     onTap(args) {
-        this.notify(Object.assign(args,{ eventName: this.menu ? 'menu' : this.backButton ? 'back' : 'custom' }));
+        this.notify(Object.assign(args,{ eventName: this.back ? 'back' : this.menu ? 'menu' : 'custom' }));
     }
 }
 

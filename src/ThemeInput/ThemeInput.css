@@ -1,5 +1,5 @@
 .input__label {
-
+    font-size: 16;
 }
 
 .input__field {
@@ -19,4 +19,13 @@
 
 .input__icon.fa-exclamation-circle {
     color: darkred;
+}
+
+.input__validation {
+    width: 90%;
+    height: 60;
+    background-color: #fff;
+    border-width: 1px;
+    border-color: forestgreen;
+    border-radius: 5;
 }
