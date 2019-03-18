@@ -1,9 +1,11 @@
+.nt-input {
+}
+
 .input__label {
     font-size: 16;
 }
 
 .input__field {
-
 }
 
 .input__icon {
@@ -22,10 +24,39 @@
 }
 
 .input__validation {
-    width: 90%;
+    margin: -15 0 0 30;
+    width: 100%;
     height: 60;
-    background-color: #fff;
-    border-width: 1px;
-    border-color: forestgreen;
+    padding-right: 30;
+    visibility: collapsed;
+}
+
+.-validation-popup .input__validation {
+    visibility: visible;
+}
+
+.input__validation-text {
+    height: 100%;
+    padding-left: 10;
     border-radius: 5;
+    background-color: #fff;
+    border-width: 1;
+    border-color: forestgreen;
+    vertical-align: center;
+}
+
+.input__validation-arrow {
+    margin-left: -4;
+    height: 30;
+    width: 30;
+    border-color: transparent transparent transparent #fff;
+    border-width: 16;
+}
+
+.input__validation-shadow {
+    margin-left: -2;
+    height: 32;
+    width: 32;
+    border-color: transparent transparent transparent forestgreen;
+    border-width: 17;
 }
