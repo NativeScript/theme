@@ -23,11 +23,11 @@ export class ThemeCustomActionBar extends ActionBar {
         }
     }
 
-    _addChildFromBuilder(name, value) {
-        const layout = this.getViewById("NTCustomActionBarStackLayout");
-
-        layout.addChild(value);
-    }
+    // _addChildFromBuilder(name, value) {
+    //     const layout = this.getViewById("NTCustomActionBarStackLayout");
+    //
+    //     layout.addChild(value);
+    // }
 
     onTap(args) {
         this.notify(Object.assign(args,{ eventName: this.back ? 'back' : this.menu ? 'menu' : 'custom' }));
