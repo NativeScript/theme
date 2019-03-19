@@ -30,7 +30,9 @@ export class ThemeInput extends GridLayout {
     }
 
     showPopup(args) {
-        args.object.showModal("./validation.xml", {
+        args.object.showModal(parse(`<Page>
+    <Label text="{{ text }}" />
+</Page>`), {
             context: {
                 text: "Remember, remember the fifth of November!"
             },
