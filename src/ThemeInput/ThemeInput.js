@@ -29,13 +29,22 @@ export class ThemeInput extends GridLayout {
         });
     }
 
-    showPopup() {
-        debugger;
-        if (this.className.indexOf("-validation-popup") > -1) {
-            updateClasses(this, null, ["-validation-popup"]);
-        } else {
-            updateClasses(this, ["-validation-popup"]);
-        }
+    showPopup(args) {
+        args.object.showModal("./validation.xml", {
+            context: {
+                text: "Remember, remember the fifth of November!"
+            },
+            ios: {
+                presentationStyle: UIPresentationStyle.Popover
+            }
+        });
+
+        // debugger;
+        // if (this.className.indexOf("-validation-popup") > -1) {
+        //     updateClasses(this, null, ["-validation-popup"]);
+        // } else {
+        //     updateClasses(this, ["-validation-popup"]);
+        // }
     }
 }
 
