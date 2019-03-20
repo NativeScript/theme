@@ -12,3 +12,4 @@ lib
 .vscode
 .idea
 .DS_Store
+!app/theme-support/index.js
