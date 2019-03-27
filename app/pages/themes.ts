@@ -1,8 +1,8 @@
-import { EventData } from "data/observable";
-import { Page } from "ui/page";
+import { EventData } from 'tns-core-modules/data/observable';
+import { Page } from 'tns-core-modules/ui/page';
 import { BaseModel } from './base';
-import { knownFolders } from 'file-system';
-import { isIOS, isAndroid } from 'platform';
+import { knownFolders } from 'tns-core-modules/file-system';
+import { isIOS, isAndroid } from 'tns-core-modules/platform';
 var themes = require('~/theme-support');
 
 export class ThemesModel extends BaseModel {

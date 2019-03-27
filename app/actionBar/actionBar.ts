@@ -1,8 +1,8 @@
-import { Observable } from 'data/observable';
-import { topmost } from 'ui/frame';
-import { EventData } from "data/observable";
-import { Page } from "ui/page";
-import { Label } from 'ui/label';
+import { Observable } from 'tns-core-modules/data/observable';
+import { topmost } from 'tns-core-modules/ui/frame';
+import { EventData } from 'tns-core-modules/data/observable';
+import { Page } from 'tns-core-modules/ui/page';
+import { Label } from 'tns-core-modules/ui/label';
 
 interface ICustomActionBar extends Page {
   ActionBarTitle: string;

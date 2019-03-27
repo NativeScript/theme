@@ -12,12 +12,12 @@
 /* jshint camelcase: false */
 /* global UIDevice, UIDeviceOrientation, getElementsByTagName, android */
 
-var fs = require("file-system");
-var fsa = require("file-system/file-system-access").FileSystemAccess;
-var frameCommon = require("ui/frame/frame-common");
-var appSettings = require("application-settings");
-var application = require("application");
-var StyleScope = require("ui/styling/style-scope");
+var fs = require("tns-core-modules/file-system");
+var fsa = require("tns-core-modules/file-system/file-system-access").FileSystemAccess;
+var frameCommon = require("tns-core-modules/ui/frame/frame-common");
+var appSettings = require("tns-core-modules/application-settings");
+var application = require("tns-core-modules/application");
+var StyleScope = require("tns-core-modules/ui/styling/style-scope");
 
 // This allows some basic CSS to propogate properly from the frame; but not the localStyles CSS.  See bug NativeScript#5911 & #5912
 if (!frameCommon.FrameBase.prototype.eachChild) {

@@ -13,3 +13,4 @@ lib
 .idea
 .DS_Store
 !app/theme-support/index.js
+package-lock.json
