@@ -1,8 +1,9 @@
-import { Property } from "tns-core-modules/ui/core/view";
+import { CSSType, Property } from "tns-core-modules/ui/core/view";
 import { ActionBar } from "tns-core-modules/ui/action-bar";
 import { parse } from "tns-core-modules/ui/builder";
 import template from "./ThemeCustomActionBar.template.xml";
 import { isAndroid } from "tns-core-modules/platform";
+import { decorate } from "../utils/utils";
 
 export const titleProperty = new Property({name: "title", defaultValue: undefined});
 
@@ -35,3 +36,7 @@ export class ThemeCustomActionBar extends ActionBar {
 }
 
 titleProperty.register(ThemeCustomActionBar);
+
+decorate([
+    CSSType("ThemeCustomActionBar")
+], ThemeCustomActionBar);

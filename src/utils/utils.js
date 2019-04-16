@@ -27,3 +27,15 @@ export function updateClasses(view, toAdd, toRemove) {
 
     view.className = classList.join(" ");
 }
+
+export function decorate(decorators, target, key, desc) {
+    const argumentLength = arguments.length;
+
+    if (argumentLength >= 3 && desc === null) {
+        desc = Object.getOwnPropertyDescriptor(target, key);
+    }
+
+    const descriptor = Reflect.decorate(decorators, target, key, desc);
+
+    return argumentLength > 3 && descriptor && Object.defineProperty(target, key, descriptor) && descriptor;
+}

@@ -1,4 +1,4 @@
-<GridLayout class="nt-action-bar" columns="auto, *, auto" xmlns:ui="nativescript-theme-core">
+<GridLayout class="action-bar__container" columns="auto, *, auto" xmlns:ui="nativescript-theme-core">
     <ui:ThemeIcon class="action-bar__nav-button" name="{{ back ? 'chevron-left' : menu ? 'bars' : undefined }}"
                   tap="{{ onTap }}" visibility="{{ menu || backButton ? 'visible' : 'collapsed' }}" />
     <Label col="1" class="action-bar__title" text="{{ title }}" ios:horizontalAlignment="center" android:horizontalAlignment="left"/>

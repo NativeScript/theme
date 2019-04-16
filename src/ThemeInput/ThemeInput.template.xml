@@ -1,4 +1,4 @@
-<GridLayout xmlns:ui="nativescript-theme-core">
+<GridLayout rows="auto, auto" xmlns:ui="nativescript-theme-core">
     <!--<GridLayout row="1" columns="*, auto" class="input__validation" id="input__validation" tap="{{ showPopup }}">
         <label col="1" class="input__validation-shadow" />
         <StackLayout class="input__validation-text">

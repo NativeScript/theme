@@ -1,6 +1,6 @@
-import { Property } from "tns-core-modules/ui/core/view";
+import { CSSType, Property } from "tns-core-modules/ui/core/view";
 import { Label } from "tns-core-modules/ui/label";
-import { updateClasses } from "../utils/utils";
+import { decorate, updateClasses } from "../utils/utils";
 
 const updateIcon = (target) => target.updateIcon();
 
@@ -68,3 +68,7 @@ export class ThemeIcon extends Label {
 nsProperty.register(ThemeIcon);
 nameProperty.register(ThemeIcon);
 variantProperty.register(ThemeIcon);
+
+decorate([
+    CSSType("ThemeIcon")
+], ThemeIcon);
