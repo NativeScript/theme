@@ -6,6 +6,8 @@
 //         () => require("./themed-menu/themed-menu.js"));
 // }
 
+import "@abraham/reflection";
+
 export * from "./ThemeIcon/ThemeIcon";
 export * from "./ThemeMenu/ThemeMenu";
 export * from "./ThemeInput/ThemeInput";

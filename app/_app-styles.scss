@@ -1,69 +1,164 @@
-TextField,
-DatePickerField,
-TimePickerField,
-.form StackLayout Label,
-.form StackLayout TextField {
-  font-size: 14;
-  placeholder-color: $grey;
+//ActionBar {
+//    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .2));
+//}
+
+Image {
+    margin-bottom: 20;
 }
 
+/* Form Controls */
+
+Label,
 TextField,
-.form Button,
+PickerField,
 DatePickerField,
-TimePickerField,
-.form.form TextField {
-  border-width: 1;
-  border-color: $accent;
-  border-radius: 3;
-  padding: 10;
-  margin: 5 0 20;
-  font-size: 16;
+TimePickerField {
+    font-size: 14;
+    placeholder-color: $grey;
 }
 
-.form.form Button {
-  width: 100%;
-  border-radius: 3;
-
-  &:active {
-    color: $btn-color-inverse;
-    background-color: $accent;
+Button,
+Slider,
+TextField,
+PickerField,
+DatePickerField,
+TimePickerField,
+.ks-date-time-picker {
+    border-width: 1;
     border-color: $accent;
-  }
+    border-radius: 3;
+    padding: 10;
+    margin: 5 0 20;
+    font-size: 16;
+}
 
-  &.-action {
-    color: $btn-color-inverse;
-    background-color: $accent;
-    border-color: $accent;
+/* Date Picker */
+
+PickerField,
+DatePickerField,
+TimePickerField,
+.ks-date-time-picker {
+    background-image: url('~/assets/images/components/date.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-color: transparent;
+
+    @at-root .-ios & {
+        background-size: 28 16;
+    }
+}
+
+/* Time Picker */
+
+TimePickerField {
+    background-image: url('~/assets/images/components/time.png');
+}
+
+
+/* Date/Time Picker */
+
+.ks-date-time-picker {
+    padding: 0;
+    flex-direction: row;
+    background-image: url('~/assets/images/components/date-time.png');
+
+    @at-root .-ios & {
+        background-size: 56 16;
+    }
+
+    DatePickerField {
+        width: 40%;
+    }
+
+    TimePickerField {
+        flex-grow: 1;
+    }
+
+    DatePickerField,
+    TimePickerField {
+        background-image: none;
+        border-width: 0;
+        padding: 10;
+        margin: 0;
+    }
+}
+
+
+/* Picker */
+
+PickerField {
+    background-image: url('~/assets/images/components/picker.png');
+}
+
+PickerPage ListView {
+    separator-color: transparent;
+
+    > * {
+        color: $text-color;
+        height: 54;
+        margin-top: 0;
+        padding: 12 15;
+
+        border-bottom-width: 1px;
+        border-bottom-color: $primary-light;
+    }
+}
+
+
+/* Form Buttons */
+
+Button {
+    width: auto;
+    border-radius: 3;
 
     &:active {
-      background-color: $accent-dark;
-      border-color: $accent-dark;
+        color: $btn-color-inverse;
+        background-color: $accent;
+        border-color: $accent;
     }
-  }
 }
 
-.dataform > StackLayout {
-  padding: 16;
+/* Form helpers */
+
+StackLayout {
+    padding: 8 16;
 }
 
+.ks-take-picture {
+    > StackLayout {
+        padding: 0;
+        horizontal-align: center;
+    }
 
-/* Detail Pages */
-
-.detail-page {
-  padding: 20;
+    Button {
+        width: 35%;
+        margin: 5;
+    }
 }
+
+Label {
+    padding: 4 0;
+}
+
+Label.-data-label {
+    color: $primary-light;
+    margin-top: 0;
+}
+
+/* TabView */
 
 TabView {
-  tab-text-color: mix($btn-color-inverse, $accent, 70%);
-  tab-background-color: $accent;
-  selected-tab-text-color: $btn-color-inverse;
+    font-size: 16;
+    tab-text-color: mix($btn-color-inverse, $accent, 70%);
+    tab-background-color: $accent;
+    selected-tab-text-color: $btn-color-inverse;
 
-  TabViewItem {
-    text-transform: default;
-  }
+    TabViewItem {
+        text-transform: default;
+    }
 }
 
 RadPieChart {
-  width: 90%;
-  height: 250;
+    width: 90%;
+    height: 250;
 }

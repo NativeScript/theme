@@ -1,6 +1,7 @@
-import { Property } from "tns-core-modules/ui/core/view";
+import { CSSType, Property } from "tns-core-modules/ui/core/view";
 import { GridLayout } from "tns-core-modules/ui/layouts/grid-layout";
 import { parse } from "tns-core-modules/ui/builder";
+import { decorate } from "../utils/utils";
 import template from "./ThemeMenu.template.xml";
 
 export const itemsProperty = new Property({name: "items", defaultValue: undefined});
@@ -33,3 +34,7 @@ textFieldProperty.register(ThemeMenu);
 iconFieldProperty.register(ThemeMenu);
 valueFieldProperty.register(ThemeMenu);
 itemSelectedProperty.register(ThemeMenu);
+
+decorate([
+    CSSType("ThemeMenu")
+], ThemeMenu);

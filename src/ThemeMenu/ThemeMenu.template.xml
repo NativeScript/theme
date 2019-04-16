@@ -1,4 +1,4 @@
-<ListView items="{{ items }}" xmlns:ui="nativescript-theme-core" itemTap="{{ onTap }}">
+<ListView class="theme-menu__list" items="{{ items }}" itemTap="{{ onTap }}" xmlns:ui="nativescript-theme-core">
     <ListView.itemTemplate>
         <StackLayout orientation="horizontal" class="{{ value === $parent.selected ? 'active' : '' }}">
             <ui:ThemeIcon class="theme-menu__icon" name="{{ icon }}" />

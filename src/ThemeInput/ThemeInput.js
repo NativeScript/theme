@@ -1,8 +1,8 @@
-import { Property } from "tns-core-modules/ui/core/view";
+import { Property, CSSType } from "tns-core-modules/ui/core/view";
 import { GridLayout } from "tns-core-modules/ui/layouts/grid-layout";
 import { parse } from "tns-core-modules/ui/builder";
+import { decorate, updateClasses } from "../utils/utils";
 import template from "./ThemeInput.template.xml";
-import { updateClasses } from "../utils/utils";
 
 export const labelProperty = new Property({ name: "label", defaultValue: undefined });
 export const validProperty = new Property({ name: "valid", defaultValue: true });
@@ -37,7 +37,7 @@ export class ThemeInput extends GridLayout {
                 text: "Remember, remember the fifth of November!"
             },
             ios: {
-                presentationStyle: UIPresentationStyle.Popover
+                presentationStyle: 7
             }
         });
 
@@ -52,3 +52,7 @@ export class ThemeInput extends GridLayout {
 
 labelProperty.register(ThemeInput);
 validProperty.register(ThemeInput);
+
+decorate([
+    CSSType("ThemeInput")
+], ThemeInput);
