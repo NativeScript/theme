@@ -184,6 +184,11 @@ ThemeCustomActionBar {
     font-weight: bold;
     font-size: 17;
     vertical-align: center;
+    padding-top: 0;
+
+    @at-root Page > & {
+        padding-top: 24;
+    }
 
     Button {
         color: $ab-color;
@@ -193,6 +198,8 @@ ThemeCustomActionBar {
         min-width: 0;
         width: auto;
         border-width: 0;
+        text-transform: none;
+        font-weight: normal;
     }
 
     Button:highlighted {
@@ -202,8 +209,6 @@ ThemeCustomActionBar {
     @at-root .-android & Button {
         border-radius: 1;
         padding: 12 6;
-        font-weight: normal;
-        text-transform: none;
     }
 
     @at-root .-android & Button:highlighted {

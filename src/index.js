@@ -7,8 +7,20 @@
 // }
 
 import "@abraham/reflection";
+// import { isAndroid, Frame } from "tns-core-modules/ui/frame";
 
 export * from "./ThemeIcon/ThemeIcon";
 export * from "./ThemeMenu/ThemeMenu";
 export * from "./ThemeInput/ThemeInput";
+export * from "./ThemeModalPage/ThemeModalPage";
 export * from "./ThemeCustomActionBar/ThemeCustomActionBar";
+
+// function addPlatformClass() {
+//     return function (cls) {
+//         cls.prototype.className = isAndroid ? "-android" : "-ios";
+//     };
+// }
+//
+// decorate([
+//     addPlatformClass()
+// ], Frame);

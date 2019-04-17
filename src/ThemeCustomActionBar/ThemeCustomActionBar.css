@@ -1,7 +1,16 @@
+ActionBar,
+ThemeCustomActionBar {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .2));
+}
+
+ActionBar,
 ThemeCustomActionBar > GridLayout {
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .3));
+}
+
+.-ios ThemeCustomActionBar > GridLayout {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .2));
 }
 
 .-android ThemeCustomActionBar > GridLayout {
@@ -23,4 +32,3 @@ ThemeCustomActionBar > GridLayout > Label {
     font-size: 17;
     margin: 0 16;
 }
-
