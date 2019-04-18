@@ -7,7 +7,6 @@
 // }
 
 import "@abraham/reflection";
-// import { isAndroid, Frame } from "tns-core-modules/ui/frame";
 
 export * from "./ThemeIcon/ThemeIcon";
 export * from "./ThemeMenu/ThemeMenu";
