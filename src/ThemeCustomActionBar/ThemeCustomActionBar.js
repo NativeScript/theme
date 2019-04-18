@@ -16,12 +16,13 @@ export class ThemeCustomActionBar extends ActionBar {
 
         this.titleView = parse(template);
 
-        if (isAndroid) {
-            this.once('loaded', ({ object }) => {
-                object.bindingContext = object;
+        this.once('loaded', ({ object }) => {
+            object.bindingContext = object;
+
+            if (isAndroid) {
                 object.nativeViewProtected.setContentInsetsAbsolute(0, 0);
-            });
-        }
+            }
+        });
     }
 
     onTap(args) {
@@ -34,3 +35,4 @@ titleProperty.register(ThemeCustomActionBar);
 decorate([
     CSSType("ThemeCustomActionBar")
 ], ThemeCustomActionBar);
+
