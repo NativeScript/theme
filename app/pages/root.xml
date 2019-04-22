@@ -1,6 +1,6 @@
 <Page class="page"
       loaded="onLoad"
-      xmlns:ui="nativescript-theme-core"
+      xmlns:ui="nativescript-theme-widgets"
       xmlns:actionBar="/action-bar">
     <actionBar:action-bar ActionBarTitle="NativeScript Themes">
         <ActionItem tap="{{ openModal }}" ios.position="right">
