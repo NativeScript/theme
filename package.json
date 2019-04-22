@@ -21,6 +21,7 @@
   "dependencies": {
     "bootstrap": "4.3.1",
     "nativescript-theme-core": "./src",
+    "nativescript-theme-widgets": "../nativescript-theme-widgets",
     "nativescript-ui-sidedrawer": "6.0.0",
     "tns-core-modules": "5.3.1"
   },

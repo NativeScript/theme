@@ -1,4 +1,4 @@
-<ui:ThemeModalPage xmlns="http://www.nativescript.org/tns.xsd" xmlns:ui="nativescript-theme-core">
+<ui:ThemeModalPage xmlns="http://www.nativescript.org/tns.xsd" xmlns:ui="nativescript-theme-widgets">
     <ui:ThemeCustomActionBar title="{{ title }}">
         <ActionItem tap="{{ close }}" ios.position="right">
             <Button text="Close"></Button>

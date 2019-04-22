@@ -5,7 +5,7 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
 -->
 <nsDrawer:RadSideDrawer id="sideDrawer" ios:class="-ios" android:class="-android"
                         xmlns:nsDrawer="nativescript-ui-sidedrawer"
-                        xmlns:ui="nativescript-theme-core" loaded="onLoaded">
+                        xmlns:ui="nativescript-theme-widgets" loaded="onLoaded">
     <nsDrawer:RadSideDrawer.drawerTransition>
         <nsDrawer:SlideInOnTopTransition/>
     </nsDrawer:RadSideDrawer.drawerTransition>

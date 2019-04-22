@@ -1,7 +1,7 @@
-<ui:ThemeCustomActionBar title="{{ ActionBarTitle }}" xmlns:ui="nativescript-theme-core"
+<ui:ThemeCustomActionBar title="{{ ActionBarTitle }}" xmlns:ui="nativescript-theme-widgets"
                          menu="{{ toggleSideDrawer }}" />
 
-<!--<ActionBar class="action-bar" loaded="onLoad" xmlns:ui="nativescript-theme-core" >
+<!--<ActionBar class="action-bar" loaded="onLoad" xmlns:ui="nativescript-theme-widgets" >
 	&lt;!&ndash;<android:NavigationButton text="go back" icon="~/actionBar/ic_menu_black.png" tap="{{ toggleSideDrawer }}" />&ndash;&gt;
 	<Android>
 		&lt;!&ndash;<NavigationButton text="{{"fa-bars" | fonticon }}" tap="{{ toggleSideDrawer }}" />&ndash;&gt;
