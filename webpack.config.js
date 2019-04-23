@@ -8,7 +8,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const { NativeScriptWorkerPlugin } = require("nativescript-worker-loader/NativeScriptWorkerPlugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const hashSalt =  Date.now().toString();
+const hashSalt = Date.now().toString();
 
 module.exports = (env) => {
     // Add your custom Activities, Services and other android app components here.
@@ -42,7 +42,7 @@ module.exports = (env) => {
         report, // --env.report
         sourceMap, // --env.sourceMap
         hmr, // --env.hmr,
-        unitTesting, // --env.unitTesting
+        unitTesting // --env.unitTesting
     } = env;
     const externals = nsWebpack.getConvertedExternals(env.externals);
 
@@ -182,13 +182,25 @@ module.exports = (env) => {
                 },
                 {
                     test: /\.css$/,
-                    use: {
-                        loader: "css-loader",
-                        options: {
-                            minimize: false,
-                            url: false
+                    use: [
+                        {
+                            loader: "css-loader",
+                            options: {
+                                minimize: false,
+                                url: false
+                            }
+                        },
+                        {
+                            loader: "postcss-loader",
+                            options: {
+                                plugins: [
+                                    require("postcss-custom-properties")({
+                                        preserve: false
+                                    })
+                                ]
+                            }
                         }
-                    }
+                    ]
                 },
 
                 {
@@ -201,7 +213,22 @@ module.exports = (env) => {
                             }
                         },
                         "resolve-url-loader",
-                        "sass-loader"
+                        {
+                            loader: "postcss-loader",
+                            options: {
+                                plugins: [
+                                    require("postcss-custom-properties")({
+                                        preserve: false
+                                    })
+                                ]
+                            }
+                        },
+                        {
+                            loader: "sassjs-loader",
+                            options: {
+                                importer: require("nativescript-dev-sass/lib/importer")
+                            }
+                        }
                     ]
                 }
             ]
@@ -266,7 +293,7 @@ module.exports = (env) => {
                 from: `${appResourcesFullPath}/${appResourcesPlatformDir}`,
                 to: `${dist}/App_Resources/${appResourcesPlatformDir}`,
                 context: projectRoot
-            },
+            }
         ]));
     }
 

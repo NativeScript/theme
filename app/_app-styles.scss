@@ -162,3 +162,17 @@ RadPieChart {
     width: 90%;
     height: 250;
 }
+
+
+
+:root {
+    --test: red;
+}
+
+Button {
+    background-color: blue;
+}
+
+Button {
+    background-color: var(--test);
+}
