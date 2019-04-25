@@ -181,7 +181,7 @@ module.exports = (env) => {
                     ]
                 },
                 {
-                    test: /\.css$/,
+                    test: /\.s?css$/,
                     use: [
                         {
                             loader: "css-loader",
@@ -193,40 +193,26 @@ module.exports = (env) => {
                         {
                             loader: "postcss-loader",
                             options: {
+                                syntax: "postcss-scss",
                                 plugins: [
-                                    require("postcss-custom-properties")({
-                                        preserve: false
-                                    })
-                                ]
-                            }
-                        }
-                    ]
-                },
+                                    require("postcss-sassy-import")({
+                                        loadPaths: [(url) => {
+                                            const file = require("nativescript-dev-sass/lib/importer")(url).file;
 
-                {
-                    test: /\.scss$/,
-                    use: [{
-                            loader: "css-loader",
-                            options: {
-                                minimize: false,
-                                url: false
-                            }
-                        },
-                        "resolve-url-loader",
-                        {
-                            loader: "postcss-loader",
-                            options: {
-                                plugins: [
+                                            console.log(url, file);
+
+                                            return file;
+                                        }]
+                                    }),
+                                    require("postcss-strip-inline-comments")(),
                                     require("postcss-custom-properties")({
                                         preserve: false
-                                    })
+                                    }),
+                                    require("postcss-extend")(),
+                                    require("postcss-atroot")(),
+                                    // require("stylelint")(),
+                                    // require("postcss-advanced-variables")(),
                                 ]
-                            }
-                        },
-                        {
-                            loader: "sassjs-loader",
-                            options: {
-                                importer: require("nativescript-dev-sass/lib/importer")
                             }
                         }
                     ]
