@@ -196,13 +196,16 @@ module.exports = (env) => {
                                 syntax: "postcss-scss",
                                 plugins: [
                                     require("postcss-sassy-import")({
-                                        loadPaths: [(url) => {
-                                            const file = require("nativescript-dev-sass/lib/importer")(url).file;
+                                        //debug: true,
+                                        resolver: (origin, fragment, opts) => {
+                                            const fsUtil = require("postcss-sassy-import/lib/fs-util");
 
-                                            console.log(url, file);
-
-                                            return file;
-                                        }]
+                                            return fragment.startsWith("~/") ?
+                                                fsUtil.resolvePath(opts.formats, [() => `${__dirname}/app/`].concat(opts.loadPaths), origin, fragment.substr(2)) :
+                                                fragment.startsWith("~") ?
+                                                fsUtil.resolvePath(opts.formats, [() => `${__dirname}/node_modules/`].concat(opts.loadPaths), origin, fragment.substr(1)) :
+                                                fsUtil.resolvePath(opts.formats, opts.loadPaths, origin, fragment);
+                                        }
                                     }),
                                     require("postcss-strip-inline-comments")(),
                                     require("postcss-custom-properties")({
@@ -211,7 +214,7 @@ module.exports = (env) => {
                                     require("postcss-extend")(),
                                     require("postcss-atroot")(),
                                     // require("stylelint")(),
-                                    // require("postcss-advanced-variables")(),
+                                    require("postcss-advanced-variables")(),
                                 ]
                             }
                         }
