@@ -4,7 +4,7 @@
 @import '~nativescript-theme-core/styles/scss/blue';
 
 @import '~nativescript-theme-widgets/theme.css';
-@import '/assets/css/font-awesome.scss';
+@import '~/assets/css/font-awesome.scss';
 
 $accent-dark: darken($accent, 20%);
 $accent-light: lighten($accent, 20%);
