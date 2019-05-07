@@ -200,11 +200,15 @@ module.exports = (env) => {
                                         resolver: (origin, fragment, opts) => {
                                             const fsUtil = require("postcss-sassy-import/lib/fs-util");
 
-                                            return fragment.startsWith("~/") ?
-                                                fsUtil.resolvePath(opts.formats, [() => `${__dirname}/app/`].concat(opts.loadPaths), origin, fragment.substr(2)) :
-                                                fragment.startsWith("~") ?
-                                                fsUtil.resolvePath(opts.formats, [() => `${__dirname}/node_modules/`].concat(opts.loadPaths), origin, fragment.substr(1)) :
-                                                fsUtil.resolvePath(opts.formats, opts.loadPaths, origin, fragment);
+                                            if (fragment.startsWith("~/")) {
+                                                return fsUtil.resolvePath(opts.formats, [() => `${__dirname}/app/`].concat(opts.loadPaths), origin, fragment.substr(2));
+                                            }
+
+                                            if (fragment.startsWith("~")) {
+                                                return fsUtil.resolvePath(opts.formats, [() => `${__dirname}/node_modules/`].concat(opts.loadPaths), origin, fragment.substr(1));
+                                            }
+
+                                            return fsUtil.resolvePath(opts.formats, opts.loadPaths, origin, fragment);
                                         }
                                     }),
                                     require("postcss-strip-inline-comments")(),
