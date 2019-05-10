@@ -1,7 +1,7 @@
-import { Observable, EventData } from 'data/observable';
-import { topmost } from 'ui/frame';
-import { View } from "ui/core/view";
-import { Page } from "ui/page";
+import { Observable, EventData } from 'tns-core-modules/data/observable';
+import { topmost } from 'tns-core-modules/ui/frame';
+import { View } from "tns-core-modules/ui/core/view";
+import { Page } from "tns-core-modules/ui/page";
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 
 export class BaseModel extends Observable {

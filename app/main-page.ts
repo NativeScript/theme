@@ -1,10 +1,8 @@
 
-import { EventData } from "data/observable";
-import { Page } from "ui/page";
-import * as app from 'application';
-import { isIOS, isAndroid, device } from 'platform';
-import { topmost } from 'ui/frame';
-import { Color } from 'color';
+import { EventData } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
+import { isIOS } from 'tns-core-modules/platform';
+import { topmost } from 'tns-core-modules/ui/frame';
 import { NavigationViewModel } from './navigation-vm';
 
 export function navigatingTo(args: EventData) {
