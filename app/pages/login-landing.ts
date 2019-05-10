@@ -1,9 +1,9 @@
-import { EventData } from "data/observable";
-import { Page } from "ui/page";
+import { EventData } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
 import { BaseModel } from './base';
-import * as frameModule from 'ui/frame';
-import {Color} from "color";
-import {topmost} from 'ui/frame';
+import * as frameModule from 'tns-core-modules/ui/frame';
+import {Color} from "tns-core-modules/color";
+import {topmost} from 'tns-core-modules/ui/frame';
 
 export class ProgressModel extends BaseModel {
 

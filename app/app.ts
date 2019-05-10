@@ -1,8 +1,8 @@
-﻿import * as application from 'application';
+﻿import * as application from 'tns-core-modules/application';
 import { TNSFontIcon, fonticon } from 'nativescript-fonticon';
 import { isActive } from './sidedrawer/sidedrawer';
 require("nativescript-dom");
-var frameCommon = require("ui/frame/frame-common");
+var frameCommon = require("tns-core-modules/ui/frame/frame-common");
 
 if (!frameCommon.FrameBase.prototype.eachChild) {
   frameCommon.FrameBase.prototype.eachChild =

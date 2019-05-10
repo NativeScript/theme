@@ -1,13 +1,11 @@
-import { EventData } from "data/observable";
-import { Page } from "ui/page";
+import { EventData } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
 import { BaseModel } from './base';
-import { knownFolders } from 'file-system';
-import { isIOS, isAndroid } from 'platform';
+import { knownFolders } from 'tns-core-modules/file-system';
 var themes = require('~/theme-support');
 
 export class ThemesModel extends BaseModel {
     public labelText: string;
-    private _toggled: boolean = false;
 
     constructor(page: Page) {
         super(page);

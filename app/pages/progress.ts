@@ -1,8 +1,6 @@
-import { EventData } from "data/observable";
-import { Page } from "ui/page";
-import { Progress } from "ui/progress";
-import {Observable} from 'data/observable';
-import {topmost} from 'ui/frame';
+import { EventData } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
+import { Progress } from "tns-core-modules/ui/progress";
 import { BaseModel } from './base';
 
 var interval;

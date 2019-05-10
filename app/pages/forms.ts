@@ -1,7 +1,6 @@
-import { EventData } from "data/observable";
-import { Page } from "ui/page";
-import { TextField } from 'ui/text-field';
-import { isIOS } from 'platform';
+import { EventData } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
+import { TextField } from 'tns-core-modules/ui/text-field';
 import { BaseModel } from './base';
 
 export class FormsModel extends BaseModel {
