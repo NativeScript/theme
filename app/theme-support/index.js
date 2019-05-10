@@ -9,9 +9,6 @@
  *********************************************************************************/
 "use strict";
 
-/* jshint camelcase: false */
-/* global UIDevice, UIDeviceOrientation, getElementsByTagName, android */
-
 var fs = require("tns-core-modules/file-system");
 var fsa = require("tns-core-modules/file-system/file-system-access").FileSystemAccess;
 var frameCommon = require("tns-core-modules/ui/frame/frame-common");
@@ -34,7 +31,10 @@ Themes.prototype.getAppliedTheme = function(defaultTheme) {
 
     if (appSettings.hasKey("__NS.themes")) {
         var theme = appSettings.getString("__NS.themes", defaultTheme);
-        if (theme == null || theme === "") { return defaultTheme; }
+        if (theme === null || theme === "") {
+            return defaultTheme;
+        }
+
         return theme;
     }
     return defaultTheme;
@@ -122,10 +122,11 @@ function internalLoadCss(cssFile, path) {
                 frame._onCssStateChange();
             }
 
+            var page;
             var backStack = frame.backStack;
             if (backStack) {
                 for (var i = 0; i < backStack.length; i++) {
-                    var page = backStack[i].resolvedPage;
+                    page = backStack[i].resolvedPage;
                     if (page) {
                         //page._onCssStateChange();
                         // I suspect this method is probably safer; but the above actually does work...
@@ -134,7 +135,7 @@ function internalLoadCss(cssFile, path) {
                 }
             }
 
-            var page = frame.currentPage;
+            page = frame.currentPage;
             if (page) {
                 page._onCssStateChange();
             }
