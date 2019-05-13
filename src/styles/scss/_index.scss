@@ -4,7 +4,10 @@
 // Utilities
 @import 'utilities/index';
 
-// Core CSS
+// Core
+@import 'core/index';
+
+// Specifics
 @import 'action-bar';
 @import 'activity-indicator';
 @import 'buttons';
@@ -12,11 +15,7 @@
 @import 'forms';
 @import 'labels';
 @import 'list-view';
-@import 'page';
-@import 'progress';
-@import 'segmented-bar';
 @import 'side-drawer';
-@import 'slider';
 @import 'switch';
 @import 'tabs';
 @import 'login';

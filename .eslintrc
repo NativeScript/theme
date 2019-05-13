@@ -15,9 +15,7 @@
         "arrow-spacing": "error",
         "block-spacing": "error",
         "brace-style": [
-            "error",
-            "stroustrup",
-            { "allowSingleLine": true }
+            "error"
         ],
         "camelcase": "error",
         "comma-dangle": "error",

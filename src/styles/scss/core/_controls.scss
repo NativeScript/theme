@@ -1,0 +1,30 @@
+ActivityIndicator,
+.activity-indicator {
+    width: 30;
+    height: 30;
+}
+
+SegmentedBar,
+.segmented-bar {
+  font-size: 13;
+}
+
+Slider {
+    margin-bottom: 20;
+}
+
+Switch,
+.switch {
+    &[checked=true] {
+        border-width: 1;
+    }
+}
+
+/* Dividers */
+
+.hr-light,
+.hr-dark {
+    height: 1;
+    width: 100%;
+    margin: 10 0;
+}

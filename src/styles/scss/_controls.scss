@@ -1,0 +1,54 @@
+Page,
+.page {
+    background-color: $background;
+}
+
+ActivityIndicator,
+.activity-indicator {
+    color: $accent;
+}
+
+SegmentedBar,
+.segmented-bar {
+    color: $primary;
+    background-color: $background;
+    selected-background-color: $accent;
+}
+
+Progress,
+.progress {
+    color: $accent-light;
+    background-color: $background-light;
+}
+
+Slider,
+.slider {
+    color: $accent;
+    background-color: $accent;
+
+    &[isEnabled=false] {
+        background-color: $grey;
+        color: $grey;
+    }
+}
+
+TabView,
+.tab-view {
+    tab-text-color: $primary;
+    tab-text-font-size: 18;
+    selected-tab-text-color: $accent;
+    android-selected-tab-highlight-color: $accent-light;
+    tab-background-color: $background;
+    text-transform: none;
+}
+
+/* Dividers */
+
+.hr-light {
+    background-color: $accent-light;
+}
+
+.hr-dark {
+    background-color: $accent-dark;
+}
+

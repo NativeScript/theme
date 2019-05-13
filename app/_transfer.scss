@@ -175,53 +175,6 @@ Button {
 }
 
 
-/* ActionBar */
-
-ActionBar,
-ThemeCustomActionBar {
-    background-color: $ab-background;
-    color: $ab-color;
-    font-weight: bold;
-    font-size: 17;
-    vertical-align: center;
-    padding-top: 0;
-
-    @at-root Page > & {
-        padding-top: 24;
-    }
-
-    Button {
-        color: $ab-color;
-        font-size: 15;
-        padding: 12 3;
-        margin: 0;
-        min-width: 0;
-        width: auto;
-        border-width: 0;
-        text-transform: none;
-        font-weight: normal;
-    }
-
-    Button:highlighted {
-        background-color: transparent;
-    }
-
-    @at-root .-android & Button {
-        border-radius: 1;
-        padding: 12 6;
-    }
-
-    @at-root .-android & Button:highlighted {
-        opacity: .7;
-    }
-
-    @at-root .-ios & Button:highlighted,
-             .-android & Button:highlighted {
-        color: $ab-color;
-    }
-}
-
-
 /* ListView & RadListView */
 
 ListView,
@@ -454,44 +407,5 @@ TimePickerField {
     color: mix($btn-color-inverse, $accent-dark, 30%);
 }
 
-Slider {
-    color: $accent;
-    background-color: $accent;
-    margin-bottom: 20;
-}
-
-
-/* TabView */
-
-TabView {
-    tab-text-color: $primary;
-    tab-text-font-size: 18;
-    selected-tab-text-color: $accent;
-    android-selected-tab-highlight-color: $accent-light;
-    tab-background-color: $background;
-    text-transform: none;
-}
-
-Switch {
-    color: $primary-light;
-    border-color: $primary-light;
-    @at-root .-ios & {
-        background-color: $background-light;
-    }
-    &[checked=true] {
-        color: $accent;
-        border-width: 1;
-    }
-
-    &[checked=true][isEnabled=false] {
-        background-color: $grey;
-        color: $white;
-    }
-
-    &[isEnabled=false] {
-        background-color: $grey;
-        color: $grey;
-    }
-}
 
 @import 'app-styles';
