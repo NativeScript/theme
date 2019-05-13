@@ -1,16 +1,24 @@
+Switch,
 .switch {
-  &[checked=true] {
-    background-color: $accent;
-    color: $accent;
-  }
+    color: $primary-light;
+    border-color: $primary-light;
 
-  &[checked=true][isEnabled=false] {
-    background-color: $grey;
-    color: $white;
-  }
+    @at-root .-ios & {
+        background-color: $background-light;
+    }
 
-  &[isEnabled=false] {
-    background-color: $grey;
-    color: $grey;
-  }
+    &[checked=true] {
+        color: $accent;
+        border-width: 1;
+    }
+
+    &[checked=true][isEnabled=false] {
+        background-color: $grey;
+        color: $white;
+    }
+
+    &[isEnabled=false] {
+        background-color: $grey;
+        color: $grey;
+    }
 }

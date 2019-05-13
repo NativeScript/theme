@@ -1,14 +1,25 @@
-.action-bar {
-  background-color: $ab-background;
-  color: $ab-color;
+ActionBar,
+.action-bar,
+ThemeCustomActionBar {
+    background-color: $ab-background;
+    color: $ab-color;
 
-  .action-bar-title {
-    font-weight: bold;
-    font-size: 17;
-    vertical-align: center;
-  }
+    Button,
+    .action-item {
+        color: $ab-color;
+    }
 
-  .action-item {
-    font-weight: normal;
-  }
+    Button:highlighted,
+    .action-item:highlighted {
+        background-color: transparent;
+    }
+
+    @at-root .-ios &,
+             .-android & {
+        Button:highlighted,
+        .action-item:highlighted {
+            color: $ab-color;
+        }
+    }
 }
+

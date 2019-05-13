@@ -182,44 +182,38 @@ module.exports = (env) => {
                 },
                 {
                     test: /\.s?css$/,
-                    use: [
-                        {
+                    use: [{
                             loader: "css-loader",
                             options: {
                                 minimize: false,
                                 url: false
                             }
                         },
+                        "resolve-url-loader",
                         {
                             loader: "postcss-loader",
                             options: {
-                                syntax: "postcss-scss",
                                 plugins: [
-                                    require("postcss-sassy-import")({
-                                        //debug: true,
-                                        resolver: (origin, fragment, opts) => {
-                                            const fsUtil = require("postcss-sassy-import/lib/fs-util");
-
-                                            if (fragment.startsWith("~/")) {
-                                                return fsUtil.resolvePath(opts.formats, [() => `${__dirname}/app/`].concat(opts.loadPaths), origin, fragment.substr(2));
-                                            }
-
-                                            if (fragment.startsWith("~")) {
-                                                return fsUtil.resolvePath(opts.formats, [() => `${__dirname}/node_modules/`].concat(opts.loadPaths), origin, fragment.substr(1));
-                                            }
-
-                                            return fsUtil.resolvePath(opts.formats, opts.loadPaths, origin, fragment);
-                                        }
-                                    }),
-                                    require("postcss-strip-inline-comments")(),
                                     require("postcss-custom-properties")({
                                         preserve: false
-                                    }),
-                                    require("postcss-extend")(),
-                                    require("postcss-atroot")(),
-                                    // require("stylelint")(),
-                                    require("postcss-advanced-variables")(),
+                                    })
                                 ]
+                            }
+                        },
+                        {
+                            loader: "sassjs-loader",
+                            options: {
+                                importer: (url) => {
+                                    if (url[0] === "~" && url[1] !== "/") {
+                                        // Resolve "~" paths to node_modules
+                                        url = resolve(projectRoot, "node_modules", url.substr(1));
+                                    } else if (url[0] === "~" && url[1] === "/") {
+                                        // Resolve "~/" paths to the app root
+                                        url = resolve(appPath, url.substr(2));
+                                    }
+
+                                    return { file: url };
+                                }
                             }
                         }
                     ]
