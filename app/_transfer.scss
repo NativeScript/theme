@@ -4,12 +4,6 @@
     visibility: collapsed;
 }
 
-/* Label should be first */
-Label {
-    margin: 16 0 0;
-    font-size: 14;
-}
-
 /* SideDrawer */
 
 RadSideDrawer {
@@ -70,110 +64,6 @@ RadSideDrawer {
         background: $ab-background-dark;
     }
 }
-
-/* Page */
-
-Page {
-    color: $primary;
-    background-color: $background;
-}
-
-/* ActivityIndicator */
-
-ActivityIndicator {
-    color: $accent;
-    width: 30;
-    height: 30;
-}
-
-/* Buttons */
-
-Button {
-    color: $btn-color;
-    background-color: transparent;
-    min-height: 36;
-    min-width: 64;
-
-    &:highlighted {
-        color: $white;
-        background-color: $btn-color-outline-highlighted;
-    }
-
-    @include button-base($btn-color, $btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius, 0);
-
-
-    &.-primary {
-        color: $btn-color-inverse;
-        background-color: $accent;
-        border-color: $accent;
-
-        &:highlighted {
-            background-color: $accent-dark;
-            border-color: $accent-dark;
-        }
-    }
-
-    &.-outline {
-        background-color: transparent;
-        border-color: $btn-color;
-        color: $btn-color;
-
-        &:highlighted {
-            background-color: $btn-color-outline-highlighted;
-        }
-    }
-
-    &.-aqua {
-        background-color: $aqua;
-    }
-
-    &.-blue {
-        background-color: $blue;
-    }
-
-    &.-brown {
-        background-color: $brown;
-    }
-
-    &.-forest {
-        background-color: $forest;
-    }
-
-    &.-grey {
-        background-color: $grey-dark;
-    }
-
-    &.-lemon {
-        background-color: $lemon;
-        color: $black;
-    }
-
-    &.-lime {
-        background-color: $lime;
-        color: $black;
-    }
-
-    &.-orange {
-        background-color: $orange;
-    }
-
-    &.-purple {
-        background-color: $purple;
-    }
-
-    &.-ruby {
-        background-color: $ruby;
-    }
-
-    &.-sky {
-        background-color: $sky;
-    }
-
-    &[isEnabled=false] {
-        opacity: 0.5;
-    }
-}
-
 
 /* ListView & RadListView */
 
@@ -274,10 +164,6 @@ RadListView {
     border-radius: 3;
 }
 
-Switch {
-    margin: 0 0 12;
-}
-
 /* Forms */
 
 .form {
@@ -335,76 +221,6 @@ Switch {
             margin: 5;
         }
     }
-}
-
-/* Form Validation styling */
-
-TextField,
-PickerField,
-DatePickerField,
-TimePickerField {
-    &.ng-valid {
-        margin-bottom: 20;
-    }
-
-    &.ng-invalid.ng-dirty {
-        border-color: #D50808;
-        margin-bottom: 0;
-    }
-}
-
-/* Input fields */
-
-Label,
-TextView,
-TextField,
-PickerField {
-    color: $primary-light;
-    padding: 2 0;
-    margin: 0;
-}
-
-DatePicker,
-TimePicker {
-    background-color: lighten($background, 50%);
-}
-
-TextField,
-PickerField,
-DatePickerField,
-TimePickerField {
-    color: $primary-light;
-    background-color: transparent;
-
-    &.-border {
-        border-width: 1;
-        border-color: $accent-light;
-        border-radius: 4;
-        padding: 16;
-    }
-
-    &.-rounded {
-        border-radius: 30;
-    }
-
-    &[isEnabled=false] {
-        background-color: lighten($grey, 10%);
-        opacity: 0.5;
-    }
-}
-
-/* DateTime Picker */
-
-.date-time-picker {
-    background: $background;
-}
-
-.date-time-picker-buttons {
-    color: $accent;
-}
-
-.date-time-picker-spinners {
-    color: mix($btn-color-inverse, $accent-dark, 30%);
 }
 
 

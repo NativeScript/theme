@@ -6,13 +6,13 @@
  */
 
 // Core variables
-@import 'scss/light';
+@import '~nativescript-theme-core/styles/scss/light';
 
 // Theme variables cusomizations
 @import 'custom';
 
 // Core CSS
-@import 'scss/index';
+@import '~nativescript-theme-core/styles/scss/index';
 
 // Platform adjustments
-@import 'scss/platforms/index.android';
+@import '~nativescript-theme-core/styles/scss/platforms/index.android';

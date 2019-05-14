@@ -1,0 +1,11 @@
+Button,
+.btn {
+    min-height: 36;
+    min-width: 64;
+
+    @include button-base($btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius, 0);
+
+    &[isEnabled=false] {
+        opacity: .5;
+    }
+}

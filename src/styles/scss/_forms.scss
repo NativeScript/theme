@@ -1,3 +1,59 @@
+/* Form Validation styling */
+
+TextField,
+PickerField,
+DatePickerField,
+TimePickerField {
+    &.ng-invalid.ng-dirty {
+        border-color: #D50808;
+    }
+}
+
+/* Input fields */
+
+Label,
+TextView,
+TextField,
+PickerField {
+    color: $primary-light;
+}
+
+DatePicker,
+TimePicker {
+    background-color: lighten($background, 50%);
+}
+
+TextField,
+PickerField,
+DatePickerField,
+TimePickerField {
+    color: $primary-light;
+    background-color: transparent;
+
+    &.-border {
+        border-color: $accent-light;
+    }
+
+    &[isEnabled=false] {
+        background-color: lighten($grey, 10%);
+    }
+}
+
+/* DateTime Picker */
+
+.date-time-picker {
+    background: $background;
+}
+
+.date-time-picker-buttons {
+    color: $accent;
+}
+
+.date-time-picker-spinners {
+    color: mix($btn-color-inverse, $accent-dark, 30%);
+}
+
+
 .form {
 
   .input {

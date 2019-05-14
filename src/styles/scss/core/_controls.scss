@@ -1,3 +1,9 @@
+Label,
+.label {
+    margin: 16 0 0;
+    font-size: 14;
+}
+
 ActivityIndicator,
 .activity-indicator {
     width: 30;
@@ -15,6 +21,8 @@ Slider {
 
 Switch,
 .switch {
+    margin: 0 0 12;
+
     &[checked=true] {
         border-width: 1;
     }

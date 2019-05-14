@@ -1,15 +1,14 @@
 import { BaseModel } from "./base";
-import { knownFolders } from "tns-core-modules/file-system";
 
-const themes = require("../temp/themes");
+const themes = require("nativescript-themes/themes");
 
 export class ThemesModel extends BaseModel {
     constructor(page) {
         super(page);
         this._toggled = false;
-        let active = themes.getAppliedTheme(this.getPath("app.css"));
+        let active = themes.getAppliedTheme(this.getPath("app"));
         this.label = this.getThemeName(active);
-        themes.applyTheme(active);
+        this._applyThemeInternal(active, "app");
     }
 
     set label(value) {
@@ -19,19 +18,29 @@ export class ThemesModel extends BaseModel {
     applyTheme(args) {
         let style = args.object.cssName;
         this.label = this.getThemeName(style);
-        themes.applyTheme(this.getPath(style));
+        this._applyThemeInternal(this.getPath(style), style);
+    }
+
+    _applyThemeInternal(path, name) {
+        import(
+            /* webpackMode: "eager",
+               webpackExclude: /\/scss\//
+               */
+            `nativescript-theme-core/styles/${path}`).then((styles) => {
+            themes.applyThemeCss(styles.default.toString(), name);
+        });
     }
 
     getThemeName(cssPath) {
-        if (!cssPath || cssPath.indexOf("app.css") > -1) {
+        if (!cssPath || cssPath.indexOf("app") > -1) {
             return "Default";
-        } else if (cssPath.indexOf("core.light.css") > -1) {
+        } else if (cssPath.indexOf("core.light") > -1) {
             return "Light";
-        } else if (cssPath.indexOf("core.dark.css") > -1) {
+        } else if (cssPath.indexOf("core.dark") > -1) {
             return "Dark";
-        } else if (cssPath.indexOf("customized.css") > -1) {
+        } else if (cssPath.indexOf("customized") > -1) {
             return "Custom";
-        } else if (cssPath.indexOf("bootstrap-based.css") > -1) {
+        } else if (cssPath.indexOf("bootstrap-based") > -1) {
             return "Bootstrap";
         } else {
             let filename = cssPath.split("/").splice(-1)[0].split(".")[0];
@@ -40,9 +49,8 @@ export class ThemesModel extends BaseModel {
     }
 
     getPath(name) {
-        let appPath = knownFolders.currentApp().path + "/";
         let platform = "";
-        return `${appPath}/${name}${platform}`;
+        return `${name}${platform}`;
     }
 }
 
