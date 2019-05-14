@@ -1,5 +1,6 @@
 Page,
 .page {
+    color: $primary;
     background-color: $background;
 }
 
@@ -25,6 +26,30 @@ Slider,
 .slider {
     color: $accent;
     background-color: $accent;
+
+    &[isEnabled=false] {
+        background-color: $grey;
+        color: $grey;
+    }
+}
+
+Switch,
+.switch {
+    color: $primary-light;
+    border-color: $primary-light;
+
+    @at-root .-ios & {
+        background-color: $background-light;
+    }
+
+    &[checked=true] {
+        color: $accent;
+    }
+
+    &[checked=true][isEnabled=false] {
+        background-color: $grey;
+        color: $white;
+    }
 
     &[isEnabled=false] {
         background-color: $grey;

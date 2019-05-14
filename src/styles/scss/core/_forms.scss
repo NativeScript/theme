@@ -1,0 +1,43 @@
+/* Form Validation styling */
+
+TextField,
+PickerField,
+DatePickerField,
+TimePickerField {
+    &.ng-valid {
+        margin-bottom: 20;
+    }
+
+    &.ng-invalid.ng-dirty {
+        margin-bottom: 0;
+    }
+}
+
+/* Input fields */
+
+Label,
+TextView,
+TextField,
+PickerField {
+    padding: 2 0;
+    margin: 0;
+}
+
+TextField,
+PickerField,
+DatePickerField,
+TimePickerField {
+    &.-border {
+        border-width: 1;
+        border-radius: 4;
+        padding: 16;
+    }
+
+    &.-rounded {
+        border-radius: 30;
+    }
+
+    &[isEnabled=false] {
+        opacity: 0.5;
+    }
+}

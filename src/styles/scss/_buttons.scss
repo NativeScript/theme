@@ -1,86 +1,93 @@
+Button,
 .btn {
-  color: $btn-color;
-  background-color: transparent;
-  min-height: 36;
-  min-width: 64;
+    color: $btn-color;
+    background-color: transparent;
 
-  &.btn-active:highlighted {
-    color: $white;
-    background-color: $btn-color-outline-highlighted;
-  }
+    &.btn-active:highlighted,
+    &:highlighted {
+        color: $white;
+        background-color: $btn-color-outline-highlighted;
+    }
 
-  @include button-base($btn-color, $btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius, 0);
-}
+    &-primary,
+    &.-primary {
+        color: $btn-color-inverse;
+        background-color: $accent;
+        border-color: $accent;
 
-.btn-primary {
-  background-color: $btn-color;
-  border-color: $btn-color;
-  color: $btn-color-inverse;
+        &.btn-active:highlighted,
+        &:highlighted {
+            background-color: $accent-dark;
+            border-color: $accent-dark;
+        }
+    }
 
-  &.btn-active:highlighted {
-    background-color: $btn-color-secondary;
-    border-color: $btn-color-secondary;
-  }
+    &-outline,
+    &.-outline {
+        background-color: transparent;
+        border-color: $btn-color;
+        color: $btn-color;
 
-  &.btn-aqua {
-    background-color: $aqua;
-  }
+        &.btn-active:highlighted,
+        &:highlighted {
+            background-color: $btn-color-outline-highlighted;
+        }
+    }
 
-  &.btn-blue {
-    background-color: $blue;
-  }
+    &-aqua,
+    &.-aqua {
+        background-color: $aqua;
+    }
 
-  &.btn-brown {
-    background-color: $brown;
-  }
+    &-blue,
+    &.-blue {
+        background-color: $blue;
+    }
 
-  &.btn-forest {
-    background-color: $forest;
-  }
+    &-brown,
+    &.-brown {
+        background-color: $brown;
+    }
 
-  &.btn-grey {
-    background-color: $grey-dark;
-  }
+    &-forest,
+    &.-forest {
+        background-color: $forest;
+    }
 
-  &.btn-lemon {
-    background-color: $lemon;
-    color: $black;
-  }
+    &-grey,
+    &.-grey {
+        background-color: $grey-dark;
+    }
 
-  &.btn-lime {
-    background-color: $lime;
-    color: $black;
-  }
+    &-lemon,
+    &.-lemon {
+        background-color: $lemon;
+        color: $black;
+    }
 
-  &.btn-orange {
-    background-color: $orange;
-  }
+    &-lime,
+    &.-lime {
+        background-color: $lime;
+        color: $black;
+    }
 
-  &.btn-purple {
-    background-color: $purple;
-  }
+    &-orange,
+    &.-orange {
+        background-color: $orange;
+    }
 
-  &.btn-ruby {
-    background-color: $ruby;
-  }
+    &-purple,
+    &.-purple {
+        background-color: $purple;
+    }
 
-  &.btn-sky {
-    background-color: $sky;
-  }
-}
+    &-ruby,
+    &.-ruby {
+        background-color: $ruby;
+    }
 
-.btn-outline {
-  background-color: transparent;
-  border-color: $btn-color;
-  color: $btn-color;
-
-  &.btn-active:highlighted {
-    background-color: $btn-color-outline-highlighted;
-  }
-}
-
-.btn[isEnabled=false] {
-  color: $btn-color-disabled;
-  background-color: $grey;
-  border-color: $grey;
+    &-sky,
+    &.-sky {
+        background-color: $sky;
+    }
 }

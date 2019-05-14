@@ -68,3 +68,10 @@ $image-background: #e0e0e0;
 $side-drawer-header-background: $accent;
 $side-drawer-header-brand: #fff;
 $side-drawer-background: $charcoal;
+
+$accent-dark: darken($accent, 20%);
+$accent-light: lighten($accent, 20%);
+$primary-light: mix($primary, $accent, 60%);
+$background-light: mix($background, $accent, 90%);
+$background-dark: mix($background, $accent, 85%);
+$ab-background-dark: darken($ab-background, 5%);
