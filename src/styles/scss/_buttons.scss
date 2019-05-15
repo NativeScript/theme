@@ -24,6 +24,7 @@ Button,
 
     &-outline,
     &.-outline {
+        android-elevation: 0;
         background-color: transparent;
         border-color: $btn-color;
         color: $btn-color;
