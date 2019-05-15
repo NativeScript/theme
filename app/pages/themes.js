@@ -6,9 +6,9 @@ export class ThemesModel extends BaseModel {
     constructor(page) {
         super(page);
         this._toggled = false;
-        let active = themes.getAppliedTheme(this.getPath("app"));
+        let active = themes.getAppliedTheme("app");
         this.label = this.getThemeName(active);
-        this._applyThemeInternal(active, "app");
+        this._applyThemeInternal(active);
     }
 
     set label(value) {
@@ -18,15 +18,22 @@ export class ThemesModel extends BaseModel {
     applyTheme(args) {
         let style = args.object.cssName;
         this.label = this.getThemeName(style);
-        this._applyThemeInternal(this.getPath(style), style);
+        this._applyThemeInternal(style);
     }
 
-    _applyThemeInternal(path, name) {
+    _applyThemeInternal(name) {
+        if (name === "customized") {
+            import(/* webpackMode: "eager", webpackChunkName: "themes" */ "../customized").then((styles) => {
+                themes.applyThemeCss(styles.default.toString(), name);
+            });
+        }
+
         import(
             /* webpackMode: "eager",
+               webpackChunkName: "themes",
                webpackExclude: /\/scss\//
                */
-            `nativescript-theme-core/styles/${path}`).then((styles) => {
+             `nativescript-theme-core/styles/${name}`).then((styles) => {
             themes.applyThemeCss(styles.default.toString(), name);
         });
     }
@@ -46,11 +53,6 @@ export class ThemesModel extends BaseModel {
             let filename = cssPath.split("/").splice(-1)[0].split(".")[0];
             return capitalizeFirstLetter(filename);
         }
-    }
-
-    getPath(name) {
-        let platform = "";
-        return `${name}${platform}`;
     }
 }
 
