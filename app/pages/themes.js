@@ -23,13 +23,13 @@ export class ThemesModel extends BaseModel {
 
     _applyThemeInternal(name) {
         if (name === "customized") {
-            import(/* webpackMode: "eager", webpackChunkName: "themes" */ "../customized").then((styles) => {
+            import(/* webpackMode: "lazy", webpackChunkName: "themes" */ "../customized").then((styles) => {
                 themes.applyThemeCss(styles.default.toString(), name);
             });
         }
 
         import(
-            /* webpackMode: "eager",
+            /* webpackMode: "lazy",
                webpackChunkName: "themes",
                webpackExclude: /\/scss\//
                */

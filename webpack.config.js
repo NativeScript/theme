@@ -9,6 +9,7 @@ const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const { NativeScriptWorkerPlugin } = require("nativescript-worker-loader/NativeScriptWorkerPlugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const hashSalt = Date.now().toString();
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (env) => {
     // Add your custom Activities, Services and other android app components here.
@@ -112,9 +113,14 @@ module.exports = (env) => {
         devtool: hiddenSourceMap ? "hidden-source-map" : (sourceMap ? "inline-source-map" : "none"),
         optimization:  {
             runtimeChunk: "single",
-            usedExports: true,
             splitChunks: {
                 cacheGroups: {
+                    // styles: {
+                    //     name: "styles",
+                    //     test: /\.scss$/,
+                    //     chunks: "all",
+                    //     enforce: true
+                    // },
                     vendor: {
                         name: "vendor",
                         chunks: "all",
@@ -124,6 +130,7 @@ module.exports = (env) => {
                                     appComponents.some((comp) => comp === moduleName);
 
                         },
+                        reuseExistingChunk: true,
                         enforce: true
                     }
                 }
@@ -192,7 +199,9 @@ module.exports = (env) => {
                 },
                 {
                     test: /\.s?css$/,
-                    use: [{
+                    use: [
+                        MiniCssExtractPlugin.loader,
+                        {
                             loader: "css-loader",
                             options: {
                                 url: false
@@ -258,6 +267,9 @@ module.exports = (env) => {
                     flatten: true
                 }
             ]),
+            new MiniCssExtractPlugin({
+                filename: "[name].css"
+            }),
             // Generate a bundle starter script and activate it in package.json
             new nsWebpack.GenerateBundleStarterPlugin(
                 // Don't include `runtime.js` when creating a snapshot. The plugin
