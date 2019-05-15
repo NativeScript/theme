@@ -5,7 +5,6 @@
   <ScrollView class="themes">
     <StackLayout>
       <Label text="{{ 'Active: ' + labelText }}" textWrap="true" class="h2 text-center m-10" />
-      <Button text="Apply Default" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="app" />
       <Button text="Apply Light" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="core.light" />
       <Button text="Apply Dark" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="core.dark" />
       <Button text="Apply Custom" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="customized" />

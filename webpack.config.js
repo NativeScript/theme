@@ -7,7 +7,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const { NativeScriptWorkerPlugin } = require("nativescript-worker-loader/NativeScriptWorkerPlugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const hashSalt = Date.now().toString();
 
 module.exports = (env) => {
@@ -41,20 +41,25 @@ module.exports = (env) => {
         uglify, // --env.uglify
         report, // --env.report
         sourceMap, // --env.sourceMap
+        hiddenSourceMap, // --env.hiddenSourceMap
         hmr, // --env.hmr,
         unitTesting // --env.unitTesting
     } = env;
-    const externals = nsWebpack.getConvertedExternals(env.externals);
 
+    const isAnySourceMapEnabled = !!sourceMap || !!hiddenSourceMap;
+    const externals = nsWebpack.getConvertedExternals(env.externals);
     const appFullPath = resolve(projectRoot, appPath);
     const appResourcesFullPath = resolve(projectRoot, appResourcesPath);
 
-    const entryModule = nsWebpack.getEntryModule(appFullPath);
+    const entryModule = nsWebpack.getEntryModule(appFullPath, platform);
     const entryPath = `.${sep}${entryModule}.js`;
     const entries = { bundle: entryPath };
+
     if (platform === "ios") {
         entries["tns_modules/tns-core-modules/inspector_modules"] = "inspector_modules.js";
     }
+
+    const sourceMapFilename = nsWebpack.getSourceMapFilename(hiddenSourceMap, __dirname, dist);
 
     const config = {
         mode: uglify ? "production" : "development",
@@ -72,6 +77,7 @@ module.exports = (env) => {
         output: {
             pathinfo: false,
             path: dist,
+            sourceMapFilename,
             libraryTarget: "commonjs2",
             filename: "[name].js",
             globalObject: "global",
@@ -102,9 +108,11 @@ module.exports = (env) => {
             "fs": "empty",
             "__dirname": false
         },
-        devtool: sourceMap ? "inline-source-map" : "none",
+        // eslint-disable-next-line no-nested-ternary
+        devtool: hiddenSourceMap ? "hidden-source-map" : (sourceMap ? "inline-source-map" : "none"),
         optimization:  {
             runtimeChunk: "single",
+            usedExports: true,
             splitChunks: {
                 cacheGroups: {
                     vendor: {
@@ -122,12 +130,14 @@ module.exports = (env) => {
             },
             minimize: !!uglify,
             minimizer: [
-                new UglifyJsPlugin({
+                new TerserPlugin({
                     parallel: true,
                     cache: true,
-                    uglifyOptions: {
+                    sourceMap: isAnySourceMapEnabled,
+                    terserOptions: {
                         output: {
-                            comments: false
+                            comments: false,
+                            semicolons: !isAnySourceMapEnabled
                         },
                         compress: {
                             // The Android SBG has problems parsing the output
@@ -185,7 +195,6 @@ module.exports = (env) => {
                     use: [{
                             loader: "css-loader",
                             options: {
-                                minimize: false,
                                 url: false
                             }
                         },
@@ -294,6 +303,10 @@ module.exports = (env) => {
             statsFilename: resolve(projectRoot, "report", "stats.json")
         }));
     }
+
+    config.plugins.push(new BundleAnalyzerPlugin({
+        openAnalyzer: false
+    }));
 
     if (snapshot) {
         config.plugins.push(new nsWebpack.NativeScriptSnapshotPlugin({
