@@ -1,7 +1,17 @@
+.fa {
+  font-family: FontAwesome, fontawesome-webfont;
+}
+
 Label,
 .label {
     margin: 16 0 0;
     font-size: 14;
+}
+
+Page,
+.page {
+    color: $primary;
+    background-color: $background;
 }
 
 ActivityIndicator,
@@ -12,20 +22,56 @@ ActivityIndicator,
 
 SegmentedBar,
 .segmented-bar {
-  font-size: 13;
+    font-size: 13;
+    background-color: $background;
+}
+
+Progress,
+.progress {
+    background-color: $background-light;
 }
 
 Slider {
     margin-bottom: 20;
+    background-color: $accent;
+
+    &[isEnabled=false] {
+        background-color: $grey;
+        color: $grey;
+    }
+}
+
+Search {
+    color: $primary;
 }
 
 Switch,
 .switch {
     margin: 0 0 12;
+    border-width: 1;
 
-    &[checked=true] {
-        border-width: 1;
+    @at-root .-ios & {
+        background-color: $background-light;
     }
+
+    &[checked=true][isEnabled=false] {
+        background-color: $grey;
+        color: $white;
+    }
+
+    &[isEnabled=false] {
+        background-color: $grey;
+        color: $grey;
+    }
+}
+
+TabView,
+.tab-view {
+    tab-text-font-size: 18;
+    text-transform: none;
+    tab-text-color: $primary;
+    selected-tab-text-color: $primary;
+    tab-background-color: $background;
 }
 
 /* Dividers */

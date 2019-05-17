@@ -8,9 +8,9 @@
         </ActionItem>
     </actionBar:action-bar>
     <GridLayout class="mainContent" rows="auto, *">
-        <ui:ThemeInput label="Title" />
+        <ui:NTInput label="Title" />
 
-        <ui:ThemeMenu row="1" items="{{ pages }}" selected="{{ selectedPage }}"
+        <ui:NTMenu row="1" items="{{ pages }}" selected="{{ selectedPage }}"
                       itemSelected="{{ onNavigationItemTap }}"/>
     </GridLayout>
 </Page>

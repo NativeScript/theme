@@ -1,11 +1,8 @@
 // Import the theme’s variables. If you’re using a color scheme
 // other than “light”, switch the path to the alternative scheme,
 // for example '~nativescript-theme-core/scss/dark'.
-@import '~nativescript-theme-core/styles/scss/blue';
+//@import '~nativescript-theme-core/styles/scss/blue';
+@import '~nativescript-theme-core/styles/core.light.android';
 
 @import '~nativescript-theme-widgets/theme.css';
 @import 'assets/css/font-awesome.scss';
-
-
-
-

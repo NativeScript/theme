@@ -11,17 +11,14 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
     </nsDrawer:RadSideDrawer.drawerTransition>
 
     <nsDrawer:RadSideDrawer.drawerContent>
-
-
-        <GridLayout rows="auto, *" class="drawer-content sidedrawer-left">
-            <StackLayout class="sidedrawer-header">
-                <Image src="~/assets/images/N.png" tap="{{ viewHome }}" class="sidedrawer-header-image"/>
-                <Label text="NativeScript Theme Project" textWrap="true" class="sidedrawer-header-brand" />
+        <GridLayout rows="auto, *" class="nt-drawer__content">
+            <StackLayout class="nt-drawer__header">
+                <Image src="~/assets/images/N.png" tap="{{ viewHome }}" class="nt-drawer__header-image"/>
+                <Label text="NativeScript Theme Project" textWrap="true" class="nt-drawer__header-brand" />
             </StackLayout>
-            <ui:ThemeMenu row="1" items="{{ pages }}" selected="{{ selectedPage }}"
+            <ui:NTMenu row="1" items="{{ pages }}" selected="{{ selectedPage }}"
                            itemSelected="{{ onNavigationItemTap }}"/>
         </GridLayout>
-
     </nsDrawer:RadSideDrawer.drawerContent>
 
     <nsDrawer:RadSideDrawer.mainContent>

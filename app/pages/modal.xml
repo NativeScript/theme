@@ -1,9 +1,9 @@
-<ui:ThemeModalPage xmlns="http://www.nativescript.org/tns.xsd" xmlns:ui="nativescript-theme-widgets">
-    <ui:ThemeCustomActionBar title="{{ title }}">
+<ui:NTModalPage xmlns="http://www.nativescript.org/tns.xsd" xmlns:ui="nativescript-theme-widgets">
+    <ui:NTCustomActionBar title="{{ title }}">
         <ActionItem tap="{{ close }}" ios.position="right">
             <Button text="Close"></Button>
         </ActionItem>
-    </ui:ThemeCustomActionBar>
+    </ui:NTCustomActionBar>
 
     <StackLayout>
         <StackLayout class="hr-light"/>
@@ -12,4 +12,4 @@
             <Label text="A modal with a real action bar (within a Frame)." class="h2" textWrap="true"/>
         </StackLayout>
     </StackLayout>
-</ui:ThemeModalPage>
+</ui:NTModalPage>

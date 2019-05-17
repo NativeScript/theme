@@ -1,6 +1,11 @@
 import { BaseModel } from "./base";
+import themes from "nativescript-themes/themes";
+import { on } from "tns-core-modules/application";
 
-const themes = require("nativescript-themes/themes");
+let currentTheme = {
+    name: "app",
+    css: ""
+};
 
 export class ThemesModel extends BaseModel {
     constructor(page) {
@@ -8,7 +13,7 @@ export class ThemesModel extends BaseModel {
         this._toggled = false;
         let active = themes.getAppliedTheme("app");
         this.label = this.getThemeName(active);
-        this._applyThemeInternal(active);
+        ThemesModel._applyThemeInternal(active);
     }
 
     set label(value) {
@@ -18,25 +23,26 @@ export class ThemesModel extends BaseModel {
     applyTheme(args) {
         let style = args.object.cssName;
         this.label = this.getThemeName(style);
-        this._applyThemeInternal(style);
+        ThemesModel._applyThemeInternal(style);
     }
 
-    _applyThemeInternal(name) {
-        if (name === "customized") {
-            import(/* webpackMode: "lazy", webpackChunkName: "themes" */ "../customized").then((styles) => {
-                themes.applyThemeCss(styles.default.toString(), name);
-            });
+    static _applyThemeInternal(name) {
+        currentTheme.name = typeof name === "string" ? name : currentTheme.name;
+
+        if (currentTheme.name === "customized") {
+            return import(/* webpackMode: "lazy" */ "../customized")
+                .then(ThemesModel._applyStyles);
         }
 
-        import(
-            /* webpackMode: "lazy",
-               webpackChunkName: "themes",
-               webpackExclude: /\/scss\//
-               */
-             `nativescript-theme-core/styles/${name}`).then((styles) => {
-            themes.applyThemeCss(styles.default.toString(), name);
-        });
+        import(/* webpackMode: "lazy", webpackExclude: /\/scss\// */ `nativescript-theme-core/styles/${currentTheme.name}`)
+            .then(ThemesModel._applyStyles);
     }
+
+    static _applyStyles(styles) {
+        currentTheme.css = styles.default.toString();
+
+        themes.applyThemeCss(currentTheme.css, currentTheme.name);
+    };
 
     getThemeName(cssPath) {
         if (!cssPath || cssPath.indexOf("app") > -1) {
@@ -55,6 +61,8 @@ export class ThemesModel extends BaseModel {
         }
     }
 }
+
+on("livesync", ThemesModel._applyThemeInternal);
 
 export function navigatingTo(args) {
     var page = args.object;
