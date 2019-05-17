@@ -1,0 +1,112 @@
+RadSideDrawer {
+    .nt-drawer__content,
+    .sidedrawer-left,
+    .sidedrawer-center {
+        color: $primary;
+        background: $background;
+    }
+
+    .sidedrawer-header,
+    .nt-drawer__header {
+        height: 148;
+        width: 100%;
+        padding: 30 25;
+        background: $background-dark;
+
+        Label {
+            color: $ab-color;
+            font-size: 16;
+            padding: 0;
+            vertical-align: center;
+        }
+
+        > Label {
+            font-size: 40;
+            margin-right: 15;
+        }
+    }
+
+    .nt-drawer__header-image,
+    .sidedrawer-header-image {
+        height: 74;
+        width: 74;
+        border-radius: 37;
+        horizontal-align: center;
+        margin-bottom: 24;
+    }
+
+    .nt-drawer__header-brand,
+    .sidedrawer-header-brand {
+        horizontal-align: center;
+        font-size: 15;
+    }
+
+    .sidedrawer-left {
+        .sidedrawer-header-brand,
+        .sidedrawer-header-image {
+            horizontal-align: left;
+        }
+    }
+
+    .sidedrawer-list-item {
+        height: 48;
+        horizontal-align: left;
+        width: 100%;
+        orientation: horizontal;
+
+        .sidedrawer-list-item-icon {
+            width: 24;
+            text-align: center;
+            font-size: 20;
+            height: 48;
+            vertical-align: center;
+            margin: 0 0 0 15;
+        }
+    }
+
+    .sidedrawer-list-item-text {
+        horizontal-align: left;
+        text-align: left;
+        font-size: 15;
+        background-color: transparent;
+        border-width: 0;
+        width: 80%;
+        vertical-align: center;
+        padding-left: 15;
+    }
+
+    & .nt-drawer__content > StackLayout,
+    & > [tkDrawerContent] StackLayout {
+        horizontal-align: stretch;
+    }
+
+    & .nt-drawer__content ScrollView StackLayout,
+    & > [tkDrawerContent] ScrollView StackLayout {
+        padding: 15 0;
+    }
+
+    & .nt-drawer__content Button,
+    & > [tkDrawerContent] Button {
+        color: $primary;
+        border-radius: 1;
+        border-width: 0;
+        width: 100%;
+        padding: 10 20;
+        margin-bottom: 0;
+        font-size: 16;
+        text-align: left;
+        text-transform: none;
+    }
+
+    @at-root .-ios .nt-drawer__content Button,
+             .-ios > [tkDrawerContent] Button {
+        height: 50;
+        padding: 50 0 0 20;
+        line-height: 50;
+    }
+
+    & .nt-drawer__content Button:active,
+    & > [tkDrawerContent] Button:active {
+        background: $background;
+    }
+}

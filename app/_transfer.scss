@@ -4,72 +4,11 @@
     visibility: collapsed;
 }
 
-/* SideDrawer */
-
-RadSideDrawer {
-    & > * {
-        background: $background-light;
-    }
-
-    & > [tkDrawerContent] .user-info {
-        padding: 30 25;
-        background: $ab-background-dark;
-
-        Label {
-            color: $ab-color;
-            font-size: 16;
-            padding: 0;
-            vertical-align: center;
-        }
-
-        > Label {
-            font-size: 40;
-            margin-right: 15;
-        }
-    }
-
-    & > [tkDrawerContent] {
-        color: $ab-color;
-        background: $background;
-    }
-
-    & > [tkDrawerContent] StackLayout {
-        horizontal-align: stretch;
-    }
-
-    & > [tkDrawerContent] ScrollView StackLayout {
-        padding: 15 0;
-    }
-
-    & > [tkDrawerContent] Button {
-        color: $primary;
-        border-radius: 1;
-        border-width: 0;
-        width: 100%;
-        padding: 10 20;
-        margin-bottom: 0;
-        font-size: 16;
-        text-align: left;
-        text-transform: none;
-    }
-
-    &.-ios > [tkDrawerContent] Button {
-        height: 50;
-        padding: 50 0 0 20;
-        line-height: 50;
-    }
-
-    & > [tkDrawerContent] Button:active {
-        color: $ab-color;
-        background: $ab-background-dark;
-    }
-}
-
 /* ListView & RadListView */
 
 ListView,
 RadListView {
-    background-color: $background;
+    background-color: transparent;
 
     @at-root .-ios & > *,
     .-android & > * > * {
@@ -224,4 +163,4 @@ RadListView {
 }
 
 
-@import 'app-styles';
+//@import 'app-styles';

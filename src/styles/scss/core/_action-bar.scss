@@ -1,16 +1,21 @@
 ActionBar,
 .action-bar,
-ThemeCustomActionBar {
+NTActionBar {
+    color: $primary;
+    background-color: $background;
+
     font-weight: bold;
     font-size: 17;
     padding-top: 0;
 
     .action-bar-title {
+        color: $primary;
         vertical-align: center;
     }
 
     Button,
     .action-item {
+        color: $primary;
         android-elevation: 0;
         font-size: 15;
         padding: 12 3;
@@ -20,6 +25,11 @@ ThemeCustomActionBar {
         border-width: 0;
         text-transform: none;
         font-weight: normal;
+    }
+
+    Button:highlighted,
+    .action-item:highlighted {
+        background-color: transparent;
     }
 
     @at-root Page > & {
@@ -32,6 +42,14 @@ ThemeCustomActionBar {
 
         &:highlighted {
             opacity: .7;
+        }
+    }
+
+    @at-root .-ios &,
+             .-android & {
+        Button:highlighted,
+        .action-item:highlighted {
+            color: $primary;
         }
     }
 }

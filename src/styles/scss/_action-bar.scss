@@ -1,17 +1,12 @@
 ActionBar,
 .action-bar,
-ThemeCustomActionBar {
+NTActionBar {
     background-color: $ab-background;
     color: $ab-color;
 
     Button,
     .action-item {
         color: $ab-color;
-    }
-
-    Button:highlighted,
-    .action-item:highlighted {
-        background-color: transparent;
     }
 
     @at-root .-ios &,

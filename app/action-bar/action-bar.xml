@@ -1,4 +1,4 @@
-<ui:ThemeCustomActionBar title="{{ ActionBarTitle }}" xmlns:ui="nativescript-theme-widgets"
+<ui:NTActionBar title="{{ ActionBarTitle }}" xmlns:ui="nativescript-theme-widgets"
                          menu="{{ toggleSideDrawer }}" />
 
 <!--<ActionBar class="action-bar" loaded="onLoad" xmlns:ui="nativescript-theme-widgets" >
@@ -6,7 +6,7 @@
 	<Android>
 		&lt;!&ndash;<NavigationButton text="{{"fa-bars" | fonticon }}" tap="{{ toggleSideDrawer }}" />&ndash;&gt;
 		<GridLayout rows="auto" columns="50,*,auto">
-			<ui:ThemeIcon tap="{{ toggleSideDrawer }}" name="bars" class="action-item text-left" row="0" col="0" />
+			<ui:NTIcon tap="{{ toggleSideDrawer }}" name="bars" class="action-item text-left" row="0" col="0" />
 			<StackLayout verticalAlignment="center" row="0" col="1">
 				<Label id="actionBarTitle" class="action-bar-title"/>
 			</StackLayout>
@@ -23,7 +23,7 @@
 			</ActionBar.titleView>
 			<ActionItem position="left">
 				<ActionItem.actionView>
-					<ui:ThemeIcon tap="{{ toggleSideDrawer }}" name="bars" class="action-item"/>
+					<ui:NTIcon tap="{{ toggleSideDrawer }}" name="bars" class="action-item"/>
 				</ActionItem.actionView>
 			</ActionItem>
 			<ActionItem tap="{{ openModal }}" text="Modal" class="action-item" ios.position="right" />

@@ -9,7 +9,6 @@ const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const { NativeScriptWorkerPlugin } = require("nativescript-worker-loader/NativeScriptWorkerPlugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const hashSalt = Date.now().toString();
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (env) => {
     // Add your custom Activities, Services and other android app components here.
@@ -115,12 +114,12 @@ module.exports = (env) => {
             runtimeChunk: "single",
             splitChunks: {
                 cacheGroups: {
-                    // styles: {
-                    //     name: "styles",
-                    //     test: /\.scss$/,
-                    //     chunks: "all",
-                    //     enforce: true
-                    // },
+                    styles: {
+                        name: "styles",
+                        test: /\.scss$/,
+                        chunks: "all",
+                        enforce: true
+                    },
                     vendor: {
                         name: "vendor",
                         chunks: "all",
@@ -200,7 +199,6 @@ module.exports = (env) => {
                 {
                     test: /\.s?css$/,
                     use: [
-                        MiniCssExtractPlugin.loader,
                         {
                             loader: "css-loader",
                             options: {
@@ -267,9 +265,6 @@ module.exports = (env) => {
                     flatten: true
                 }
             ]),
-            new MiniCssExtractPlugin({
-                filename: "[name].css"
-            }),
             // Generate a bundle starter script and activate it in package.json
             new nsWebpack.GenerateBundleStarterPlugin(
                 // Don't include `runtime.js` when creating a snapshot. The plugin
@@ -278,7 +273,8 @@ module.exports = (env) => {
                 (snapshot ? [] : ["./runtime"])
                 .concat([
                     "./vendor",
-                    "./bundle"
+                    "./bundle",
+                    "./styles"
               ])
             ),
             // For instructions on how to set up workers with webpack
@@ -315,10 +311,6 @@ module.exports = (env) => {
             statsFilename: resolve(projectRoot, "report", "stats.json")
         }));
     }
-
-    config.plugins.push(new BundleAnalyzerPlugin({
-        openAnalyzer: false
-    }));
 
     if (snapshot) {
         config.plugins.push(new nsWebpack.NativeScriptSnapshotPlugin({
