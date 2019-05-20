@@ -3,14 +3,13 @@ RadSideDrawer is a UI component part of the Progress NativeScript UI set of comp
 Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
 http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawer/getting-started
 -->
-<nsDrawer:RadSideDrawer id="sideDrawer" ios:class="-ios" android:class="-android"
-                        xmlns:nsDrawer="nativescript-ui-sidedrawer"
-                        xmlns:ui="nativescript-theme-widgets" loaded="onLoaded">
-    <nsDrawer:RadSideDrawer.drawerTransition>
-        <nsDrawer:SlideInOnTopTransition/>
-    </nsDrawer:RadSideDrawer.drawerTransition>
+<drawer:RadSideDrawer ios:class="-ios" android:class="-android" xmlns:drawer="nativescript-ui-sidedrawer"
+        xmlns:ui="nativescript-theme-widgets" loaded="onLoaded">
+    <drawer:RadSideDrawer.drawerTransition>
+        <drawer:SlideInOnTopTransition/>
+    </drawer:RadSideDrawer.drawerTransition>
 
-    <nsDrawer:RadSideDrawer.drawerContent>
+    <drawer:RadSideDrawer.drawerContent>
         <GridLayout rows="auto, *" class="nt-drawer__content">
             <StackLayout class="nt-drawer__header">
                 <Image src="~/assets/images/N.png" tap="{{ viewHome }}" class="nt-drawer__header-image"/>
@@ -19,9 +18,43 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
             <ui:NTMenu row="1" items="{{ pages }}" selected="{{ selectedPage }}"
                            itemSelected="{{ onNavigationItemTap }}"/>
         </GridLayout>
-    </nsDrawer:RadSideDrawer.drawerContent>
+    </drawer:RadSideDrawer.drawerContent>
 
-    <nsDrawer:RadSideDrawer.mainContent>
-        <Frame defaultPage="pages/root"></Frame>
-    </nsDrawer:RadSideDrawer.mainContent>
-</nsDrawer:RadSideDrawer>
+    <drawer:RadSideDrawer.mainContent>
+        <drawer:RadSideDrawer id="themeDrawer" loaded="onRightLoaded" drawerLocation="Right">
+            <drawer:RadSideDrawer.drawerTransition>
+                <drawer:SlideInOnTopTransition/>
+            </drawer:RadSideDrawer.drawerTransition>
+
+            <drawer:RadSideDrawer.drawerContent>
+                <ScrollView class="themes">
+                    <StackLayout>
+                        <Label text="{{ 'Active: ' + labelText }}" textWrap="true" class="h2 text-center m-10" />
+                        <Button text="Apply Light" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="core.light" />
+                        <Button text="Apply Dark" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="core.dark" />
+                        <Button text="Apply Custom" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="customized" />
+                        <Button text="Apply Bootstrap" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="bootstrap-based" />
+
+                        <Label text="Skins" textWrap="true" class="h2 text-center text-underline font-italic m-10" />
+
+                        <Button text="Apply Aqua" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-aqua m-5" cssName="aqua" />
+                        <Button text="Apply Blue" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-blue m-5" cssName="blue" />
+                        <Button text="Apply Brown" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-brown m-5" cssName="brown" />
+                        <Button text="Apply Forest" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-forest m-5" cssName="forest" />
+                        <Button text="Apply Grey" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-grey m-5" cssName="grey" />
+                        <Button text="Apply Lemon" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-lemon m-5" cssName="lemon" />
+                        <Button text="Apply Lime" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-lime m-5" cssName="lime" />
+                        <Button text="Apply Orange" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-orange m-5" cssName="orange" />
+                        <Button text="Apply Purple" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-purple m-5" cssName="purple" />
+                        <Button text="Apply Ruby" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-ruby m-5" cssName="ruby" />
+                        <Button text="Apply Sky" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-sky m-5" cssName="sky" />
+                    </StackLayout>
+                </ScrollView>
+
+                <drawer:RadSideDrawer.mainContent>
+                    <Frame defaultPage="pages/root"></Frame>
+                </drawer:RadSideDrawer.mainContent>
+            </drawer:RadSideDrawer.drawerContent>
+        </drawer:RadSideDrawer>
+    </drawer:RadSideDrawer.mainContent>
+</drawer:RadSideDrawer>

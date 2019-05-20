@@ -1,6 +1,6 @@
-import { topmost } from 'tns-core-modules/ui/frame';
-import { BaseModel } from './pages/base';
-import * as application from 'tns-core-modules/application';
+import { topmost } from "tns-core-modules/ui/frame";
+import { BaseModel } from "./pages/base";
+import * as application from "tns-core-modules/application";
 import { ObservableArray } from "tns-core-modules/data/observable-array";
 
 export class NavigationViewModel extends BaseModel {
@@ -60,15 +60,15 @@ export class NavigationViewModel extends BaseModel {
 		}, {
 			value: "tabs",
 			icon: "road"
-		}, {
-			text: "theme",
-			value: "themes",
-			icon: "paint-brush"
 		});
 	}
 
 	onNavigationItemTap(item) {
 		const page = item.value;
+
+		if (page === "modal") {
+			return this.bindingContext.openModal();
+		}
 
 		topmost().navigate({
 			moduleName: `pages/${page}`,
@@ -77,7 +77,7 @@ export class NavigationViewModel extends BaseModel {
 			}
 		});
 
-		NavigationViewModel.selectedPage = page;
+		this.bindingContext.selectedPage = page;
 
 		application.getRootView().closeDrawer();
 	}
@@ -86,12 +86,12 @@ export class NavigationViewModel extends BaseModel {
 		const button = args.object;
 		const pageName = button.value;
 
-		let navigationEntry = {
+		const navigationEntry = {
 			moduleName: `pages/${pageName}`,
 			clearHistory: true
 		};
 		topmost().navigate(navigationEntry);
 
-		NavigationViewModel.selectedPage = pageName;
+		this.bindingContext.selectedPage = pageName;
 	}
 }

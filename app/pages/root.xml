@@ -1,13 +1,13 @@
-<Page class="page"
-      loaded="onLoad"
+<Page loaded="onLoad"
       xmlns:ui="nativescript-theme-widgets"
       xmlns:actionBar="/action-bar">
     <actionBar:action-bar ActionBarTitle="NativeScript Themes">
-        <ActionItem tap="{{ openModal }}" ios.position="right">
-            <Button text="Modal"></Button>
+        <ActionItem tap="{{ toggleRightDrawer }}" ios.position="right">
+            <ui:NTIcon name="paint-brush" fontWeight="600"/>
         </ActionItem>
     </actionBar:action-bar>
-    <GridLayout class="mainContent" rows="auto, *">
+
+    <GridLayout rows="auto, *">
         <ui:NTInput label="Title" />
 
         <ui:NTMenu row="1" items="{{ pages }}" selected="{{ selectedPage }}"
