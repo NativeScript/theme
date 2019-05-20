@@ -1,5 +1,5 @@
 RadSideDrawer {
-    .nt-drawer__content,
+    > *,
     .sidedrawer-left,
     .sidedrawer-center {
         color: $primary;

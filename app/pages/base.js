@@ -24,6 +24,10 @@ export class BaseModel extends Observable {
         this.sideDrawer.closeModal();
     }
 
+    toggleRightDrawer() {
+        this.sideDrawer.getViewById("themeDrawer").toggleDrawerState();
+    }
+
     openModal() {
         this.page.showModal("pages/modal-frame", {
             context: {

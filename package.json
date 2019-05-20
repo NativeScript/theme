@@ -22,7 +22,7 @@
     "bootstrap": "4.3.1",
     "nativescript-theme-core": "./src",
     "nativescript-theme-widgets": "../nativescript-theme-widgets",
-    "nativescript-themes": "2.0.0",
+    "nativescript-themes": "2.0.1",
     "nativescript-ui-sidedrawer": "6.0.0",
     "tns-core-modules": "5.4.0"
   },
