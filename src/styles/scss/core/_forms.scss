@@ -1,3 +1,62 @@
+/* Forms */
+
+.form {
+    .hr {
+        background-color: $primary-light;
+
+        &.active {
+            background-color: $accent;
+        }
+    }
+
+    &.-sides Label {
+        font-size: 18;
+        margin: 0 0 8 0;
+    }
+
+    &__or-separator {
+        margin: 20 0;
+    }
+
+    &__link {
+        color: $accent;
+    }
+
+    &__title {
+        font-size: 18;
+    }
+
+    &[isEnabled=false] * {
+        opacity: 0.7;
+    }
+
+    &__logo {
+        margin: 20 0;
+        width: 50%;
+    }
+
+    .-center {
+        horizontal-align: center;
+    }
+
+    &__validation-message {
+        color: #D50808;
+        margin: 1 0 0;
+        padding: 0;
+        height: 19;
+    }
+
+    &__footer {
+        padding: 0;
+        horizontal-align: center;
+
+        Button {
+            width: 46%;
+            margin: 5;
+        }
+    }
+}
+
 /* Form Validation styling */
 
 TextField,

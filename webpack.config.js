@@ -9,8 +9,11 @@ const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const { NativeScriptWorkerPlugin } = require("nativescript-worker-loader/NativeScriptWorkerPlugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const hashSalt = Date.now().toString();
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 
-module.exports = (env) => {
+const smp = new SpeedMeasurePlugin();
+
+module.exports = smp.wrap((env) => {
     // Add your custom Activities, Services and other android app components here.
     const appComponents = [
         "tns-core-modules/ui/frame",
@@ -109,7 +112,7 @@ module.exports = (env) => {
             "__dirname": false
         },
         // eslint-disable-next-line no-nested-ternary
-        devtool: "none",
+        devtool: hiddenSourceMap ? "hidden-source-map" : (sourceMap ? "inline-source-map" : "none"),
         optimization:  {
             runtimeChunk: "single",
             splitChunks: {
@@ -197,7 +200,7 @@ module.exports = (env) => {
                     ]
                 },
                 {
-                    test: /\.s?css$/,
+                    test: /\.css$/,
                     use: [
                         {
                             loader: "css-loader",
@@ -205,7 +208,27 @@ module.exports = (env) => {
                                 url: false
                             }
                         },
-                        "resolve-url-loader",
+                        {
+                            loader: "postcss-loader",
+                            options: {
+                                plugins: [
+                                    require("postcss-custom-properties")({
+                                        preserve: false
+                                    })
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    test: /\.scss$/,
+                    use: [
+                        {
+                            loader: "css-loader",
+                            options: {
+                                url: false
+                            }
+                        },
                         {
                             loader: "postcss-loader",
                             options: {
@@ -222,10 +245,10 @@ module.exports = (env) => {
                                 importer: (url) => {
                                     if (url[0] === "~" && url[1] !== "/") {
                                         // Resolve "~" paths to node_modules
-                                        url = resolve(projectRoot, "node_modules", url.substr(1));
+                                        url = projectRoot + "/node_modules/" + url.substr(1);
                                     } else if (url[0] === "~" && url[1] === "/") {
                                         // Resolve "~/" paths to the app root
-                                        url = resolve(appPath, url.substr(2));
+                                        url = appPath + url.substr(1);
                                     }
 
                                     return { file: url };
@@ -237,7 +260,7 @@ module.exports = (env) => {
             ]
         },
         plugins: [
-            new webpack.debug.ProfilingPlugin(),
+            //new webpack.debug.ProfilingPlugin(),
 
             // Define useful constants like TNS_WEBPACK
             new webpack.DefinePlugin({
@@ -331,4 +354,4 @@ module.exports = (env) => {
 
 
     return config;
-};
+});

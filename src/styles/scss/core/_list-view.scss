@@ -1,17 +1,9 @@
-/* Theme specific */
-
-.hidden {
-    visibility: collapsed;
-}
-
-/* ListView & RadListView */
-
 ListView,
 RadListView {
     background-color: transparent;
 
-    @at-root .-ios & > *,
-    .-android & > * > * {
+    > *,
+    .list-group-item {
         background-color: transparent;
         padding: 16;
     }
@@ -20,7 +12,8 @@ RadListView {
         padding: 0;
     }
 
-    > * {
+    > *,
+    .list-group-item {
         color: $primary;
         font-size: 16;
         margin: 0;
@@ -30,15 +23,11 @@ RadListView {
             vertical-align: center;
         }
 
-        Label + Label {
-            color: $secondary;
-            font-size: 14;
-        }
-
         Image {
             stretch: aspectFit;
         }
 
+        &.active,
         &:highlighted {
             background-color: $grey;
         }
@@ -91,76 +80,24 @@ RadListView {
     @at-root .-ios & .list-view__delete {
         padding: 0 10 0 25;
     }
+
     .list-view__delete > Label {
         color: #fff;
         horizontal-align: center;
         vertical-align: center;
         text-transform: capitalize;
     }
-}
 
-.-rounded {
-    border-radius: 3;
-}
-
-/* Forms */
-
-.form {
-    .hr {
-        background-color: $primary-light;
-
-        &.active {
-            background-color: $accent;
-        }
+    .thumb {
+      stretch: fill;
+      width: 40;
+      height: 40;
+      margin-right: 16;
     }
 
-    &.-sides Label {
-        font-size: 18;
-        margin: 0 0 8 0;
-    }
-
-    &__or-separator {
-        margin: 20 0;
-    }
-
-    &__link {
-        color: $accent;
-    }
-
-    &__title {
-        font-size: 18;
-    }
-
-    &[isEnabled=false] * {
-        opacity: 0.7;
-    }
-
-    &__logo {
-        margin: 20 0;
-        width: 50%;
-    }
-
-    .-center {
-        horizontal-align: center;
-    }
-
-    &__validation-message {
-        color: #D50808;
-        margin: 1 0 0;
-        padding: 0;
-        height: 19;
-    }
-
-    &__footer {
-        padding: 0;
-        horizontal-align: center;
-
-        Button {
-            width: 46%;
-            margin: 5;
-        }
+    .list-group-item-text {
+      color: $secondary;
+      font-size: 14;
     }
 }
 
-
-//@import 'app-styles';

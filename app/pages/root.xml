@@ -1,16 +1,11 @@
 <Page loaded="onLoad"
       xmlns:ui="nativescript-theme-widgets"
       xmlns:actionBar="/action-bar">
-    <actionBar:action-bar ActionBarTitle="NativeScript Themes">
-        <ActionItem tap="{{ toggleRightDrawer }}" ios.position="right">
-            <Button text="Theme" />
-        </ActionItem>
-    </actionBar:action-bar>
+    <actionBar:action-bar ActionBarTitle="NativeScript Themes" />
 
     <GridLayout rows="auto, *">
         <ui:NTInput label="Title" />
 
-        <ui:NTMenu row="1" items="{{ pages }}" selected="{{ selectedPage }}"
-                      itemSelected="{{ onNavigationItemTap }}"/>
+        <ui:NTMenu row="1" items="{{ somePages }}" selected="{{ selectedPage }}" itemSelected="{{ onNavigationItemTap }}"/>
     </GridLayout>
 </Page>

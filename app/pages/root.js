@@ -6,4 +6,9 @@ export function onLoad(args) {
 }
 
 export class RootViewModel extends NavigationViewModel {
+    constructor(page) {
+        super(page);
+
+        this.somePages = this.pages.slice(1);
+    }
 }

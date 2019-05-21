@@ -2,6 +2,16 @@
   font-family: FontAwesome, fontawesome-webfont;
 }
 
+.-hidden,
+.hidden {
+    visibility: collapsed;
+}
+
+.-rounded,
+.rounded {
+    border-radius: 3;
+}
+
 Label,
 .label {
     margin: 16 0 0;
