@@ -109,7 +109,7 @@ module.exports = (env) => {
             "__dirname": false
         },
         // eslint-disable-next-line no-nested-ternary
-        devtool: hiddenSourceMap ? "hidden-source-map" : (sourceMap ? "inline-source-map" : "none"),
+        devtool: "none",
         optimization:  {
             runtimeChunk: "single",
             splitChunks: {
@@ -237,6 +237,8 @@ module.exports = (env) => {
             ]
         },
         plugins: [
+            new webpack.debug.ProfilingPlugin(),
+
             // Define useful constants like TNS_WEBPACK
             new webpack.DefinePlugin({
                 "global.TNS_WEBPACK": "true",

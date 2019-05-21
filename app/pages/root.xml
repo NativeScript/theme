@@ -3,7 +3,7 @@
       xmlns:actionBar="/action-bar">
     <actionBar:action-bar ActionBarTitle="NativeScript Themes">
         <ActionItem tap="{{ toggleRightDrawer }}" ios.position="right">
-            <ui:NTIcon name="paint-brush" fontWeight="600"/>
+            <Button text="Theme" />
         </ActionItem>
     </actionBar:action-bar>
 
