@@ -1,31 +1,24 @@
-.list-group {
-  .list-group-item {
-    color: $primary;
-    font-size: 16;
-    margin: 0;
-    padding: 16;
-
-    Label {
-      vertical-align: center;
+ListView,
+RadListView {
+    > *,
+    .list-group-item {
+        color: $primary;
     }
 
-    .thumb {
-      stretch: fill;
-      width: 40;
-      height: 40;
-      margin-right: 16;
+    .-separator {
+        border-bottom-color: $background-light;
     }
 
-    &.active {
-      background-color: $grey;
+    .list-view__delete {
+        background-color: $error;
     }
 
-    .list-group-item-heading {
+    .list-view__delete > Label {
+        color: $primary;
     }
 
     .list-group-item-text {
       color: $secondary;
-      font-size: 14;
     }
-  }
 }
+

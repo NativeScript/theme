@@ -1,5 +1,8 @@
-<ui:NTActionBar title="{{ ActionBarTitle }}" xmlns:ui="nativescript-theme-widgets"
-                         menu="{{ toggleSideDrawer }}" />
+<ui:NTActionBar title="{{ ActionBarTitle }}" xmlns:ui="nativescript-theme-widgets"  menu="{{ toggleSideDrawer }}">
+    <ActionItem tap="{{ toggleRightDrawer }}" ios.position="right">
+        <Button text="Theme" />
+    </ActionItem>
+</ui:NTActionBar>
 
 <!--<ActionBar class="action-bar" loaded="onLoad" xmlns:ui="nativescript-theme-widgets" >
 	&lt;!&ndash;<android:NavigationButton text="go back" icon="~/actionBar/ic_menu_black.png" tap="{{ toggleSideDrawer }}" />&ndash;&gt;
