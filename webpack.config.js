@@ -200,29 +200,9 @@ module.exports = smp.wrap((env) => {
                     ]
                 },
                 {
-                    test: /\.css$/,
+                    test: /\.s?css$/,
                     use: [
-                        {
-                            loader: "css-loader",
-                            options: {
-                                url: false
-                            }
-                        },
-                        {
-                            loader: "postcss-loader",
-                            options: {
-                                plugins: [
-                                    require("postcss-custom-properties")({
-                                        preserve: false
-                                    })
-                                ]
-                            }
-                        }
-                    ]
-                },
-                {
-                    test: /\.scss$/,
-                    use: [
+                        "cache-loader",
                         {
                             loader: "css-loader",
                             options: {
@@ -240,14 +220,13 @@ module.exports = smp.wrap((env) => {
                             }
                         },
                         {
-                            loader: "sassjs-loader",
+                            loader: "sass-loader",
                             options: {
+                                implementation: require("dart-sass"),
                                 importer: (url) => {
                                     if (url[0] === "~" && url[1] !== "/") {
-                                        // Resolve "~" paths to node_modules
-                                        url = projectRoot + "/node_modules/" + url.substr(1);
+                                        url = `${projectRoot}/node_modules/${url.substr(1)}`;
                                     } else if (url[0] === "~" && url[1] === "/") {
-                                        // Resolve "~/" paths to the app root
                                         url = appPath + url.substr(1);
                                     }
 
