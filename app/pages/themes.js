@@ -11,7 +11,7 @@ export class ThemesModel extends BaseModel {
     constructor(page) {
         super(page);
         this._toggled = false;
-        let active = themes.getAppliedTheme("app");
+        let active = themes.getAppliedTheme(currentTheme.name);
         this.label = this.getThemeName(active);
         ThemesModel._applyThemeInternal(active);
     }

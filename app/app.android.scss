@@ -2,6 +2,5 @@
 @import 'app-variables';
 
 // Import the theme’s main ruleset - both index and platform specific.
-//@import '~nativescript-theme-core/styles/scss/index';
-//@import '~nativescript-theme-core/styles/scss/platforms/index.android';
-//
+@import '~nativescript-theme-core/styles/scss/index';
+@import '~nativescript-theme-core/styles/scss/platforms/index.android';

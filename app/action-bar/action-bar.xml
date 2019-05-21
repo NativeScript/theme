@@ -1,4 +1,4 @@
-<ui:NTActionBar title="{{ ActionBarTitle }}" xmlns:ui="nativescript-theme-widgets"  menu="{{ toggleSideDrawer }}">
+<ui:NTActionBar title="{{ ActionBarTitle }}" xmlns:ui="nativescript-theme-widgets" menu="{{ toggleSideDrawer }}">
     <ActionItem tap="{{ toggleRightDrawer }}" ios.position="right">
         <Button text="Theme" />
     </ActionItem>
