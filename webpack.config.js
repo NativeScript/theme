@@ -222,16 +222,7 @@ module.exports = smp.wrap((env) => {
                         {
                             loader: "sass-loader",
                             options: {
-                                implementation: require("dart-sass"),
-                                importer: (url) => {
-                                    if (url[0] === "~" && url[1] !== "/") {
-                                        url = `${projectRoot}/node_modules/${url.substr(1)}`;
-                                    } else if (url[0] === "~" && url[1] === "/") {
-                                        url = appPath + url.substr(1);
-                                    }
-
-                                    return { file: url };
-                                }
+                                implementation: require("dart-sass")
                             }
                         }
                     ]
