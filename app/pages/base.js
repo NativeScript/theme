@@ -13,10 +13,6 @@ export class BaseModel extends Observable {
         this.title = page.ActionBarTitle;
     }
 
-    setActionBarTitle(title) {
-        this.title = title;
-    }
-
     goBack() {
         this.topFrame.goBack();
     }
