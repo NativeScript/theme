@@ -1,7 +1,16 @@
 <ActionBar title="{{ title }}" loaded="onLoad" xmlns:ui="nativescript-theme-widgets">
-    <ActionItem position="left">
-        <ui:NTIcon tap="{{ toggleSideDrawer }}" name="bars" />
-    </ActionItem>
+    <android>
+        <NavigationButton icon="{{ backButton ? 'res://chevron_left' : 'res://menu' }}"
+                          tap="{{ backButton ? goBack : toggleSideDrawer }}" />
+    </android>
+    <ios>
+        <ActionItem position="left" visibility=" backButton ? 'collapsed' : 'visible' ">
+            <ui:NTIcon tap="{{ toggleSideDrawer }}" name="bars" />
+        </ActionItem>
+        <ActionItem position="left" visibility=" backButton ? 'visible' : 'collapsed' ">
+            <ui:NTIcon tap="{{ goBack }}" name="chevron-left" />
+        </ActionItem>
+    </ios>
     <ActionItem tap="{{ toggleRightDrawer }}" ios.position="right">
         <Button text="Theme" />
     </ActionItem>
