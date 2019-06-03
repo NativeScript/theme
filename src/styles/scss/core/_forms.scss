@@ -92,6 +92,7 @@ TimePickerField {
     font-size: 16;
     padding: 16 8;
     background-color: transparent;
+    placeholder-color: $secondary;
 
     @at-root .-ios & {
         font-size: 15;
