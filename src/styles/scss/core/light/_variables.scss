@@ -10,8 +10,20 @@
  **/
 
 // Colors
-$background: #fff !default;
-$primary: lighten(#000, 13%) !default;
-$secondary: lighten(#000, 46%) !default;
-$disabled: lighten(#000, 62%) !default;
+$background: $white;
+$primary: lighten($black, 13%);
+$secondary: lighten($black, 46%);
+$disabled: lighten($black, 62%);
 $accent: $sky !default;
+
+// ActionBar
+$ab-color: $primary !default;
+$ab-background: mix($background, $primary, 20%) !default;
+
+$text-color: $primary;
+$headings-color: $primary;
+
+$item-active-color: mix($primary, $background, 40%);
+$item-active-icon-color: $item-active-color;
+
+@import "../mixers";

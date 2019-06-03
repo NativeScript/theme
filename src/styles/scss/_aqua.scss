@@ -1,5 +1,19 @@
+// Core variables
+@import 'variables';
+
 /**
- * Convenient single import for aqua variables
- * Includes base variables with aqua overrides
+ * Aqua variable overrides
  **/
-@import 'skins/aqua/variables';
+
+// ActionBar
+$ab-background: $aqua;
+$ab-color: $white;
+
+// Accent
+$accent: $lime;
+
+// Buttons
+$btn-color-inverse: $white;
+
+@import 'core/mixers';
+@import 'index';

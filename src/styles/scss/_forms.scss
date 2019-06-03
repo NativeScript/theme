@@ -1,23 +1,12 @@
 /* Input fields */
 
 Label,
-TextView,
-TextField,
-PickerField {
-    color: $primary-light;
-}
-
-DatePicker,
-TimePicker {
-    background-color: lighten($background, 50%);
-}
-
 .input,
+TextView,
 TextField,
 PickerField,
 DatePickerField,
 TimePickerField {
-    color: $primary-light;
     background-color: transparent;
 
     &.-rounded,
@@ -26,25 +15,17 @@ TimePickerField {
     &.input-border {
         border-color: $accent-light;
     }
-
-    &[isEnabled=false] {
-        background-color: lighten($grey, 10%);
-    }
 }
 
 NTInput,
 .input-field {
     .label,
-    NTInput > Label {
-        color: $grey-background;
+    & > Label {
+        color: $primary-accent;
     }
 }
 
 /* DateTime Picker */
-
-DateTimePickerFields {
-    background: $background;
-}
 
 .date-time-picker-buttons {
     color: $accent;

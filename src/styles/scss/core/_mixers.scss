@@ -1,10 +1,12 @@
-// ActionBar
-$ab-color: $primary !default;
-$ab-background: mix($background, $primary, 20%) !default;
-
 $accent-dark: darken($accent, 20%) !default;
 $accent-light: lighten($accent, 20%) !default;
-$primary-light: mix($primary, $accent, 60%) !default;
-$background-light: mix($background, $accent, 90%) !default;
-$background-dark: mix($background, $accent, 85%) !default;
+$primary-accent: mix(transparent, $accent, 60%) !default;
+$background-accent: mix(transparent, $accent, 90%) !default;
+$background-dark-accent: mix(transparent, $accent, 85%) !default;
 $ab-background-dark: darken($ab-background, 5%) !default;
+
+$item-active-background: $accent;
+
+$btn-color: $accent;
+$btn-color-secondary: darken($btn-color, 10%);
+$btn-color-outline-highlighted: lighten($btn-color, 10%);

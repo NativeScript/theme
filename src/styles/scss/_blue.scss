@@ -1,5 +1,18 @@
+// Core variables
+@import 'variables';
+
 /**
- * Convenient single import for blue variables
- * Includes base variables with blue overrides
+ * Blue variable overrides
  **/
-@import 'skins/blue/variables';
+
+// ActionBar
+$ab-background: $blue;
+$ab-color: $white;
+
+$accent: $sky;
+
+// Buttons
+$btn-color-inverse: $white;
+
+@import 'core/mixers';
+@import 'index';

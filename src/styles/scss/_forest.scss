@@ -1,5 +1,19 @@
+// Core variables
+@import 'variables';
+
 /**
- * Convenient single import for forest variables
- * Includes base variables with forest overrides
+ * Forest variable overrides
  **/
-@import 'skins/forest/variables';
+
+// ActionBar
+$ab-background: $forest;
+$ab-color: $white;
+
+// Accent
+$accent: $aqua;
+
+// Buttons
+$btn-color-inverse: $white;
+
+@import 'core/mixers';
+@import 'index';

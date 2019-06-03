@@ -3,51 +3,63 @@ import themes from "nativescript-themes/themes";
 import { on } from "tns-core-modules/application";
 
 let currentTheme = {
-    name: "app",
+    theme: "core.light",
+    skin: "blue",
     css: ""
 };
 
 export class ThemesModel extends BaseModel {
     constructor(page) {
         super(page);
-        this._toggled = false;
-        let active = themes.getAppliedTheme(currentTheme.name);
-        this.label = this.getThemeName(active);
-        ThemesModel._applyThemeInternal(active);
+
+        on("livesync", this._applyThemeInternal.bind(this));
+
+        this._applyThemeInternal(currentTheme.theme);
+        this._applyThemeInternal(currentTheme.skin);
     }
 
-    set label(value) {
-        this.set("labelText", value);
+    set theme(value) {
+        this.set("themeName", value);
+    }
+
+    set skin(value) {
+        this.set("skinName", value);
     }
 
     applyTheme(args) {
         let style = args.object.cssName;
-        this.label = this.getThemeName(style);
-        ThemesModel._applyThemeInternal(style);
+        this._applyThemeInternal(style);
     }
 
-    static _applyThemeInternal(name) {
-        currentTheme.name = typeof name === "string" ? name : currentTheme.name;
+    _applyThemeInternal(name) {
+        let oldName = currentTheme.theme;
 
-        if (currentTheme.name === "customized") {
-            return import(/* webpackMode: "lazy" */ "../customized")
-                .then(ThemesModel._applyStyles);
+        if (typeof name === "string" && name.startsWith("core.")) {
+            currentTheme.theme = name;
+            this.theme = this.getThemeName(name);
+        } else {
+            oldName = currentTheme.skin;
+            name = currentTheme.skin = typeof name === "string" ? name : currentTheme.skin;
+            this.skin = this.getThemeName(name);
         }
 
-        import(/* webpackMode: "lazy", webpackExclude: /\/scss\// */ `nativescript-theme-core/styles/${currentTheme.name}`)
-            .then(ThemesModel._applyStyles);
+        if (name === "customized") {
+            return import(/* webpackMode: "lazy" */ "../customized")
+                .then((styles) => this._applyStyles(styles, name, oldName));
+        }
+
+        import(/* webpackMode: "lazy", webpackExclude: /\/scss\// */ `nativescript-theme-core/styles/${name}`)
+            .then((styles) => this._applyStyles(styles, name, oldName));
     }
 
-    static _applyStyles(styles) {
+    _applyStyles(styles, name, oldName) {
         currentTheme.css = styles.default.toString();
 
-        themes.applyThemeCss(currentTheme.css, currentTheme.name);
+        themes.applyThemeCss(currentTheme.css, name, oldName);
     };
 
     getThemeName(cssPath) {
-        if (!cssPath || cssPath.indexOf("app") > -1) {
-            return "Default";
-        } else if (cssPath.indexOf("core.light") > -1) {
+        if (cssPath.indexOf("core.light") > -1) {
             return "Light";
         } else if (cssPath.indexOf("core.dark") > -1) {
             return "Dark";
@@ -61,8 +73,6 @@ export class ThemesModel extends BaseModel {
         }
     }
 }
-
-on("livesync", ThemesModel._applyThemeInternal);
 
 export function navigatingTo(args) {
     var page = args.object;

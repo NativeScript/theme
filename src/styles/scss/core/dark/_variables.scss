@@ -10,10 +10,20 @@
  **/
 
 // Colors
-$background: #303030 !default;
-$primary: #fff !default;
-$secondary: darken($primary, 30%) !default;
-$disabled: darken($primary, 50%) !default;
+$background: $charcoal;
+$primary: $white;
+$secondary: darken($primary, 30%);
+$disabled: darken($primary, 50%);
 $accent: $sky !default;
+
+// ActionBar
+$ab-color: $primary !default;
+$ab-background: mix($background, $primary, 20%) !default;
+
+$text-color: $primary;
+$headings-color: $primary;
+
+$item-active-color: mix($primary, $background, 40%);
+$item-active-icon-color: $item-active-color;
 
 @import "../mixers";

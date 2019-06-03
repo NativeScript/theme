@@ -1,5 +1,19 @@
+// Core variables
+@import 'variables';
+
 /**
- * Convenient single import for sky variables
- * Includes base variables with sky overrides
+ * Sky variable overrides
  **/
-@import 'skins/sky/variables';
+
+// ActionBar
+$ab-background: $sky;
+$ab-color: $white;
+
+// Accent
+$accent: $lemon;
+
+// Buttons
+$btn-color-inverse: $charcoal;
+
+@import 'core/mixers';
+@import 'index';
