@@ -1,3 +1,7 @@
+.nt-app {
+  class: -light;
+}
+
 // Core variables
 @import '../../variables';
 
@@ -6,17 +10,8 @@
  **/
 
 // Colors
-$background: #fff;
-$primary: lighten(#000, 13%);
-$secondary: lighten(#000, 46%);
-$disabled: lighten(#000, 62%);
-$accent: $sky;
-
-// SideDrawer
-$item-color-android : #737373;
-$item-active-background: $accent;
-$item-active-color: #fff;
-$item-active-icon-color: #fff;
-$item-color-ios: #949494;
-
-@import "../mixers";
+$background: #fff !default;
+$primary: lighten(#000, 13%) !default;
+$secondary: lighten(#000, 46%) !default;
+$disabled: lighten(#000, 62%) !default;
+$accent: $sky !default;

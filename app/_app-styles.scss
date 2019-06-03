@@ -19,7 +19,7 @@ TextField,
 PickerField,
 DatePickerField,
 TimePickerField,
-.ks-date-time-picker {
+DateTimePickerFields {
     border-width: 1;
     border-color: $accent;
     border-radius: 3;
@@ -33,7 +33,7 @@ TimePickerField,
 PickerField,
 DatePickerField,
 TimePickerField,
-.ks-date-time-picker {
+DateTimePickerFields {
     background-image: url('~/assets/images/components/date.png');
     background-repeat: no-repeat;
     background-position: right center;
@@ -53,7 +53,7 @@ TimePickerField {
 
 /* Date/Time Picker */
 
-.ks-date-time-picker {
+DateTimePickerFields {
     padding: 0;
     flex-direction: row;
     background-image: url('~/assets/images/components/date-time.png');

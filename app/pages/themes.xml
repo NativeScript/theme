@@ -6,8 +6,11 @@
       <Label text="{{ 'Active: ' + labelText }}" textWrap="true" class="h2 text-center m-10" />
       <Button text="Apply Light" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="core.light" />
       <Button text="Apply Dark" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="core.dark" />
-      <Button text="Apply Custom" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="customized" />
+
+      <Label class="hr-dark" />
+
       <Button text="Apply Bootstrap" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="bootstrap-based" />
+      <Button text="Apply Custom" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="customized" />
 
       <Label text="Skins" textWrap="true" class="h2 text-center text-underline font-italic m-10" />
 

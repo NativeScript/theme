@@ -8,6 +8,11 @@ NTActionBar {
     font-size: 17;
     padding-top: 0;
 
+    @at-root .-android & {
+        font-weight: 500;
+        font-size: 20;
+    }
+
     .action-bar-title {
         vertical-align: center;
     }
@@ -24,11 +29,11 @@ NTActionBar {
         border-width: 0;
         text-transform: none;
         font-weight: normal;
-    }
 
-    Button:highlighted,
-    .action-item:highlighted {
-        background-color: transparent;
+        &:highlighted {
+            android-elevation: 0;
+            background-color: transparent;
+        }
     }
 
     @at-root Page > & {
@@ -52,4 +57,3 @@ NTActionBar {
         }
     }
 }
-

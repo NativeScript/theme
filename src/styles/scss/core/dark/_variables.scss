@@ -1,3 +1,7 @@
+.nt-app {
+  class: -dark;
+}
+
 // Core variables
 @import '../../variables';
 
@@ -6,24 +10,10 @@
  **/
 
 // Colors
-$background: #303030;
-$primary: #fff;
-$secondary: darken($primary, 30%);
-$disabled: darken($primary, 50%);
-$accent: $sky;
-
-// ActionBar
-$ab-background: $background;
-$ab-color: $primary;
-
-// Headings
-$headings-color: $primary;
-
-// SideDrawer
-$item-color-android : #a0a0a0;
-$item-active-background: #2b2b2b;
-$item-active-color: $accent;
-$item-active-icon-color: #fff;
-$item-color-ios: #848484;
+$background: #303030 !default;
+$primary: #fff !default;
+$secondary: darken($primary, 30%) !default;
+$disabled: darken($primary, 50%) !default;
+$accent: $sky !default;
 
 @import "../mixers";

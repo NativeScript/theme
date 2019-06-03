@@ -4,10 +4,18 @@
   <actionBar:action-bar ActionBarTitle="Buttons" />
   <ScrollView>
     <StackLayout>
-        <Button text="btn" tap="" class="btn" />
-        <Button text="btn btn-primary" tap="" class="btn btn-primary" />
-        <Button text="btn btn-outline" tap="" class="btn btn-primary btn-outline" />
+        <Button text="Button" />
+        <Button text="btn" />
+        <Label class="hr-dark" />
+        <Button text="Button.-primary" class="-primary" />
+        <Button text="btn btn-primary" class="btn btn-primary" />
+        <Label class="hr-dark" />
+        <Button text="Button.-outline" class="-outline" />
+        <Button text="btn btn-outline" class="btn btn-primary btn-outline" />
+        <Label class="hr-dark" />
+        <Button text="Button.-primary.-rounded-sm" class="-primary -rounded-sm" />
         <Button text="btn btn-primary btn-rounded-sm" tap="" class="btn btn-primary btn-rounded-sm" />
+        <Label class="hr-dark" />
         <Button text="btn btn-outline btn-rounded-sm" tap="" class="btn btn-outline btn-rounded-sm" />
         <Button text="btn btn-primary btn-rounded-lg" tap="" class="btn btn-primary btn-rounded-lg" />
         <Button text="btn btn-outline btn-rounded-lg" tap="" class="btn btn-outline btn-rounded-lg" />

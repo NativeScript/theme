@@ -25,10 +25,6 @@ $disabled: lighten($black, 62%) !default;
 $accent: $sky !default;
 $error: #d50000 !default;
 
-// ActionBar
-$ab-background: #F8F8F8 !default;
-$ab-color: $primary !default;
-
 // Skin
 $background: $base !default;
 $text-color: $primary !default;
@@ -58,16 +54,3 @@ $enable-rounded:            false !default;
 $enable-shadows:            false !default;
 $enable-gradients:          false !default;
 $enable-transitions:        false !default;
-
-$item-color-android : #a0a0a0;
-$item-color-ios: #848484;
-$item-active-background: #2b2b2b;
-$item-active-color: $accent;
-$item-active-icon-color: #fff;
-
-$accent-dark: darken($accent, 20%) !default;
-$accent-light: lighten($accent, 20%) !default;
-$primary-light: mix($primary, $accent, 60%) !default;
-$background-light: mix($background, $accent, 90%) !default;
-$background-dark: mix($background, $accent, 85%) !default;
-$ab-background-dark: darken($ab-background, 5%) !default;
