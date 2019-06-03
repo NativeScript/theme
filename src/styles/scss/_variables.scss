@@ -19,18 +19,15 @@ $orange: #f57c00 !default;
 $ruby: #ff1744 !default;
 $sky: #30bcff !default;
 
-$primary: lighten($black, 13%) !default;//rgba(0,0,0,.87);
-$secondary: lighten($black, 46%) !default;
-$disabled: lighten($black, 62%) !default;
 $accent: $sky !default;
+
+$btn-color: $accent !default;
+$btn-color-secondary: darken($btn-color, 10%) !default;
+$btn-color-outline-highlighted: lighten($btn-color, 10%) !default;
+
 $error: #d50000 !default;
 
-// Skin
-$background: $base !default;
-$text-color: $primary !default;
-
 // Buttons
-$btn-color: $accent !default;
 $btn-color-inverse: $white !default;
 $btn-color-secondary: #01a0ec !default;
 $btn-color-outline-highlighted: #c0ebff !default;
@@ -45,7 +42,6 @@ $btn-margin-y:	8 !default;
 // Headings
 $headings-margin-bottom: 4 !default;
 $headings-font-weight: normal !default;
-$headings-color: $primary !default;
 
 // Options
 //

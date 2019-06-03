@@ -1,5 +1,19 @@
+// Core variables
+@import 'variables';
+
 /**
- * Convenient single import for orange variables
- * Includes base variables with orange overrides
+ * Orange variable overrides
  **/
-@import 'skins/orange/variables';
+
+// ActionBar
+$ab-background: $orange;
+$ab-color: $white;
+
+// Accent
+$accent: $brown;
+
+// Buttons
+$btn-color-inverse: $white;
+
+@import 'core/mixers';
+@import 'index';

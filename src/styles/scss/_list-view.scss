@@ -1,24 +1,11 @@
 ListView,
 RadListView {
-    > *,
-    .list-group-item {
-        color: $primary;
-    }
-
     .-separator {
-        border-bottom-color: $background-light;
+        border-bottom-color: $background-accent;
     }
 
     .list-view__delete {
         background-color: $error;
-    }
-
-    .list-view__delete > Label {
-        color: $primary;
-    }
-
-    .list-group-item-text {
-      color: $secondary;
     }
 }
 

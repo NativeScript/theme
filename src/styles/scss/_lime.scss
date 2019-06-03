@@ -1,5 +1,19 @@
+// Core variables
+@import 'variables';
+
 /**
- * Convenient single import for lime variables
- * Includes base variables with lime overrides
+ * Lime variable overrides
  **/
-@import 'skins/lime/variables';
+
+// ActionBar
+$ab-background: $lime;
+$ab-color: $charcoal;
+
+// Accent
+$accent: $forest;
+
+// Buttons
+$btn-color-inverse: $white;
+
+@import 'core/mixers';
+@import 'index';

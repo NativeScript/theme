@@ -8,6 +8,7 @@
 }
 
 .nt-app {
+    color: $primary;
     font-family: 'Roboto Medium';
     font-size: 14;
 
@@ -58,7 +59,7 @@ SegmentedBar,
 
 Progress,
 .progress {
-    background-color: $background-light;
+    background-color: $background-accent;
 }
 
 Slider,
@@ -98,7 +99,7 @@ Switch,
 
     @at-root .-ios & {
         margin: 8 15;
-        background-color: $background-light;
+        background-color: $background-accent;
     }
 
     &[checked=true][isEnabled=false] {

@@ -1,5 +1,19 @@
+// Core variables
+@import 'variables';
+
 /**
- * Convenient single import for lemon variables
- * Includes base variables with lemon overrides
+ * Lemon variable overrides
  **/
-@import 'skins/lemon/variables';
+
+// ActionBar
+$ab-background: $lemon;
+$ab-color: $charcoal;
+
+// Accent
+$accent: $grey-dark;
+
+// Buttons
+$btn-color-inverse: $white;
+
+@import 'core/mixers';
+@import 'index';

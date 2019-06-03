@@ -21,8 +21,8 @@ Slider,
 
 Switch,
 .switch {
-    color: $primary-light;
-    border-color: $primary-light;
+    color: $primary-accent;
+    border-color: $primary-accent;
 
     &[checked=true] {
         color: $accent;

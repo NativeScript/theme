@@ -69,10 +69,16 @@ TimePickerField {
 
 /* Input fields */
 
+DatePicker,
+TimePicker {
+    background-color: lighten($background, 50%);
+}
+
 Label,
 TextView,
 TextField,
 PickerField {
+    color: $primary;
     padding: 2 0;
     margin: 0;
 }
@@ -82,6 +88,7 @@ TextField,
 PickerField,
 DatePickerField,
 TimePickerField {
+    color: $primary;
     font-size: 16;
     padding: 16 8;
     background-color: transparent;
@@ -106,7 +113,12 @@ TimePickerField {
 
     &[isEnabled=false] {
         opacity: .5;
+        background-color: mix($background, $primary, 95%);
     }
+}
+
+DateTimePickerFields {
+    background: $background;
 }
 
 NTInput,

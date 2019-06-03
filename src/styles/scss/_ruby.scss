@@ -1,5 +1,19 @@
+// Core variables
+@import 'variables';
+
 /**
- * Convenient single import for ruby variables
- * Includes base variables with ruby overrides
+ * Ruby variable overrides
  **/
-@import 'skins/ruby/variables';
+
+// ActionBar
+$ab-background: $ruby;
+$ab-color: $white;
+
+// Accent
+$accent: $lemon;
+
+// Buttons
+$btn-color-inverse: $charcoal;
+
+@import 'core/mixers';
+@import 'index';

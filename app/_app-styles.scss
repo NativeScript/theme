@@ -96,7 +96,7 @@ PickerPage ListView {
         padding: 12 15;
 
         border-bottom-width: 1px;
-        border-bottom-color: $primary-light;
+        border-bottom-color: $primary-accent;
     }
 }
 
@@ -137,7 +137,7 @@ Label {
 }
 
 Label.-data-label {
-    color: $primary-light;
+    color: $primary-accent;
     margin-top: 0;
 }
 

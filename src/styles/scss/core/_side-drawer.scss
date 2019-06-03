@@ -11,7 +11,7 @@ RadSideDrawer {
         height: 148;
         width: 100%;
         padding: 30 25;
-        background: $background-dark;
+        background: $background-dark-accent;
 
         Label {
             color: $ab-color;
@@ -61,6 +61,15 @@ RadSideDrawer {
             height: 48;
             vertical-align: center;
             margin: 0 0 0 15;
+        }
+
+        &.active {
+            color: $item-active-color;
+            background-color: $item-active-background;
+
+            .sidedrawer-list-item-icon {
+                color: $item-active-icon-color;
+            }
         }
     }
 

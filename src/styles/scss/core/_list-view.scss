@@ -7,6 +7,7 @@ RadListView {
     .list-group-item {
         background-color: transparent;
         padding: 16;
+        color: $primary;
     }
 
     StackLayout {
@@ -30,7 +31,7 @@ RadListView {
 
         &.active,
         &:highlighted {
-            background-color: $grey;
+            background-color: $item-active-background;
         }
     }
 
@@ -70,7 +71,7 @@ RadListView {
 
     .-separator {
         border-bottom-width: 1;
-        border-bottom-color: $background-light;
+        border-bottom-color: $background-accent;
     }
 
     .list-view__delete {
@@ -83,17 +84,17 @@ RadListView {
     }
 
     .list-view__delete > Label {
-        color: #fff;
+        color: $primary;
         horizontal-align: center;
         vertical-align: center;
         text-transform: capitalize;
     }
 
     .thumb {
-      stretch: fill;
-      width: 40;
-      height: 40;
-      margin-right: 16;
+        stretch: fill;
+        width: 40;
+        height: 40;
+        margin-right: 16;
     }
 
     .list-group-item-heading {
@@ -101,7 +102,7 @@ RadListView {
     }
 
     .list-group-item-text {
-      color: $secondary;
-      font-size: 14;
+        color: $secondary;
+        font-size: 14;
     }
 }

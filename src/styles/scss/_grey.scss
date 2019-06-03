@@ -1,5 +1,22 @@
+// Core variables
+@import 'variables';
+
 /**
- * Convenient single import for grey variables
- * Includes base variables with grey overrides
+ * Forest variable overrides
  **/
-@import 'skins/grey/variables';
+
+// ActionBar
+$ab-background: $grey-dark;
+$ab-color: $white;
+
+// Accent
+$accent: $lime;
+
+// Buttons
+$btn-color-inverse: $white;
+$btn-color: $accent;
+$btn-color-secondary: darken($btn-color, 10%);
+$btn-color-outline-highlighted: lighten($btn-color, 10%);
+
+@import 'core/mixers';
+@import 'index';
