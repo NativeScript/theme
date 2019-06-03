@@ -5,8 +5,8 @@
  * Licensed under MIT (https://github.com/NativeScript/theme/blob/master/LICENSE)
  */
 
-// Lemon
-@import 'scss/skins/lemon/index';
+// Core variables
+@import '~nativescript-theme-core/styles/scss/core/light/index';
 
-// Platform adjustments
-@import 'scss/platforms/index.ios';
+// Theme variables cusomizations
+@import 'custom';

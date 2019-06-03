@@ -2,6 +2,21 @@
   font-family: FontAwesome, fontawesome-webfont;
 }
 
+.sidedrawer-list-item-icon {
+    margin: 0 16 0 16;
+    padding-top: 14;
+}
+
+.nt-app {
+    font-family: 'Roboto Medium';
+    font-size: 14;
+
+    @at-root .-ios {
+        font-family: 'SF UI Text Medium';
+        font-size: 15;
+    }
+}
+
 .-hidden,
 .hidden {
     visibility: collapsed;
@@ -34,6 +49,11 @@ SegmentedBar,
 .segmented-bar {
     font-size: 13;
     background-color: $background;
+
+    @at-root .-ios & {
+        margin: 0 15;
+        color: $accent;
+    }
 }
 
 Progress,
@@ -41,9 +61,18 @@ Progress,
     background-color: $background-light;
 }
 
-Slider {
-    margin-bottom: 20;
+Slider,
+.slider {
+    margin: 20 16;
     background-color: $accent;
+
+    @at-root .-android & {
+        color: $accent;
+    }
+
+    @at-root .-ios & {
+        margin: 10 15;
+    }
 
     &[isEnabled=false] {
         background-color: $grey;
@@ -51,16 +80,24 @@ Slider {
     }
 }
 
-Search {
+SearchBar,
+.search-bar {
     color: $primary;
 }
 
 Switch,
 .switch {
-    margin: 0 0 12;
+    margin: 14 16;
     border-width: 1;
+    color: $grey;
+    background-color: $grey;
+
+    &[checked=true] {
+        color: $accent;
+    }
 
     @at-root .-ios & {
+        margin: 8 15;
         background-color: $background-light;
     }
 
@@ -75,6 +112,7 @@ Switch,
     }
 }
 
+
 TabView,
 .tab-view {
     tab-text-font-size: 18;
@@ -88,7 +126,9 @@ TabView,
 
 .hr-light,
 .hr-dark {
-    height: 1;
+    height: 0;
     width: 100%;
     margin: 10 0;
+    border-width: 0 0 1;
+    border-style: solid;
 }

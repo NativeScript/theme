@@ -3,9 +3,5 @@
       xmlns:actionBar="/action-bar">
     <actionBar:action-bar ActionBarTitle="NativeScript Themes" />
 
-    <GridLayout rows="auto, *">
-        <ui:NTInput label="Title" />
-
-        <ui:NTMenu row="1" items="{{ somePages }}" selected="{{ selectedPage }}" itemSelected="{{ onNavigationItemTap }}"/>
-    </GridLayout>
+    <ui:NTMenu items="{{ somePages }}" selected="{{ selectedPage }}" itemSelected="{{ onNavigationItemTap }}"/>
 </Page>

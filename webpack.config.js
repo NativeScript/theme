@@ -184,17 +184,16 @@ module.exports = smp.wrap((env) => {
 
                 {
                     test: /\.js$/,
-                    use: "nativescript-dev-webpack/script-hot-loader"
-                },
-
-                {
-                    test: /\.(css|scss)$/,
-                    use: "nativescript-dev-webpack/style-hot-loader"
+                    use: [
+                        "cache-loader",
+                        "nativescript-dev-webpack/script-hot-loader"
+                    ]
                 },
 
                 {
                     test: /\.(html|xml)$/,
                     use: [
+                        "cache-loader",
                         "nativescript-dev-webpack/markup-hot-loader",
                         "nativescript-dev-webpack/xml-namespace-loader"
                     ]
@@ -203,6 +202,7 @@ module.exports = smp.wrap((env) => {
                     test: /\.s?css$/,
                     use: [
                         "cache-loader",
+                        "nativescript-dev-webpack/style-hot-loader",
                         {
                             loader: "css-loader",
                             options: {

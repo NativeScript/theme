@@ -46,6 +46,7 @@ function handleOrientation({ newValue: orientation }) {
         .add(`-${orientation}`);
 
     root.className = classList.get();
+    console.log(root.className);
 }
 
 on(displayedEvent, () => {
@@ -55,6 +56,8 @@ on(displayedEvent, () => {
     classList.add("nt-app", `-${isAndroid ? "android" : "ios"}`, `-${device.deviceType.toLowerCase()}`);
 
     root.className = classList.get();
+
+    console.log(root.className);
 
     if (!started) {
         handleOrientation({ newValue: display.heightDIPs > display.widthDIPs ? "portrait" : "landscape" });

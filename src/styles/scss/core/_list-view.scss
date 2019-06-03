@@ -1,3 +1,4 @@
+.list-view,
 ListView,
 RadListView {
     background-color: transparent;
@@ -95,9 +96,12 @@ RadListView {
       margin-right: 16;
     }
 
+    .list-group-item-heading {
+        margin-bottom: 5;
+    }
+
     .list-group-item-text {
       color: $secondary;
       font-size: 14;
     }
 }
-
