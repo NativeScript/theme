@@ -26,4 +26,6 @@ $headings-color: $primary;
 $item-active-color: mix($primary, $background, 40%);
 $item-active-icon-color: $item-active-color;
 
+$tab-text-color: mix(#999, $accent, 70%);
+
 @import "../mixers";

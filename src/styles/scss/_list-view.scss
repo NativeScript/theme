@@ -1,5 +1,9 @@
 ListView,
 RadListView {
+    NTIcon {
+        color: $ab-background;
+    }
+
     .-separator {
         border-bottom-color: $background-accent;
     }

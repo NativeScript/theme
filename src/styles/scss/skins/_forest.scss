@@ -1,5 +1,5 @@
 // Core variables
-@import 'variables';
+@import '../variables';
 
 /**
  * Forest variable overrides
@@ -15,5 +15,5 @@ $accent: $aqua;
 // Buttons
 $btn-color-inverse: $white;
 
-@import 'core/mixers';
-@import 'index';
+@import '../core/mixers';
+@import '../index';

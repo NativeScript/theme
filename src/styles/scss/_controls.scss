@@ -5,8 +5,12 @@ ActivityIndicator,
 
 SegmentedBar,
 .segmented-bar {
-    color: $primary;
     selected-background-color: $accent;
+
+    @at-root .-ios & {
+        margin: 0 15;
+        color: $accent;
+    }
 }
 
 Progress,
@@ -33,7 +37,6 @@ TabView,
 .tab-view {
     selected-tab-text-color: $accent;
     android-selected-tab-highlight-color: $accent-light;
-    tab-background-color: $background;
 }
 
 /* Dividers */

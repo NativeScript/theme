@@ -3,7 +3,7 @@
   navigatingTo="navigatingTo">
   <actionBar:action-bar ActionBarTitle="Progress" />
   <StackLayout class="page">
-    <Switch checked="true" class="switch" id="checked"/>
+    <Switch checked="true" class="switch" id="checked" />
     <Switch checked="false" class="switch" id="unChecked" />
     <Switch checked="true" class="switch" isEnabled="false" id="checkedDisabled"/>
     <Switch isEnabled="false" class="switch" id="unCheckedDisabled"/>

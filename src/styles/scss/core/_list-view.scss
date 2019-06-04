@@ -3,19 +3,14 @@ ListView,
 RadListView {
     background-color: transparent;
 
+    StackLayout {
+        padding: 8;
+    }
+
     > *,
     .list-group-item {
         background-color: transparent;
         padding: 16;
-        color: $primary;
-    }
-
-    StackLayout {
-        padding: 0;
-    }
-
-    > *,
-    .list-group-item {
         color: $primary;
         font-size: 16;
         margin: 0;

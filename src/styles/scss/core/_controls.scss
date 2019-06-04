@@ -30,7 +30,6 @@
 
 Label,
 .label {
-    margin: 16 0 0;
     font-size: 14;
 }
 
@@ -49,12 +48,8 @@ ActivityIndicator,
 SegmentedBar,
 .segmented-bar {
     font-size: 13;
+    color: $primary;
     background-color: $background;
-
-    @at-root .-ios & {
-        margin: 0 15;
-        color: $accent;
-    }
 }
 
 Progress,
@@ -117,10 +112,10 @@ Switch,
 TabView,
 .tab-view {
     tab-text-font-size: 18;
-    text-transform: none;
-    tab-text-color: $primary;
+    text-transform: capitalize;
     selected-tab-text-color: $primary;
     tab-background-color: $background;
+    tab-text-color: mix(#999, $accent, 70%);
 }
 
 /* Dividers */

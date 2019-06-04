@@ -1,12 +1,12 @@
 // Core variables
-@import 'variables';
+@import '../variables';
 
 /**
- * Sky variable overrides
+ * Ruby variable overrides
  **/
 
 // ActionBar
-$ab-background: $sky;
+$ab-background: $ruby;
 $ab-color: $white;
 
 // Accent
@@ -15,5 +15,5 @@ $accent: $lemon;
 // Buttons
 $btn-color-inverse: $charcoal;
 
-@import 'core/mixers';
-@import 'index';
+@import '../core/mixers';
+@import '../index';
