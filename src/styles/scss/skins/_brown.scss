@@ -1,5 +1,5 @@
 // Core variables
-@import 'variables';
+@import '../variables';
 
 /**
  * Brown variable overrides
@@ -15,5 +15,5 @@ $accent: $lime;
 // Buttons
 $btn-color-inverse: $white;
 
-@import 'core/mixers';
-@import 'index';
+@import '../core/mixers';
+@import '../index';
