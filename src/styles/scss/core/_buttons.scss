@@ -6,6 +6,8 @@ Button,
     padding: 0;
     font-family: 'Roboto Medium';
     font-size: 14;
+    border-width: 1;
+    border-color: transparent;
 
     @include button-base($btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius, 0);
 
@@ -21,7 +23,7 @@ Button,
         border-width: 1;
     }
 
-    .-rounded-sm,
+    &.-rounded-sm,
     &-rounded-sm {
         border-radius: 2;
 
@@ -30,7 +32,7 @@ Button,
         }
     }
 
-    .rounded-lg,
+    &.rounded-lg,
     &-rounded-lg {
         border-radius: 40;
 

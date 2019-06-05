@@ -53,7 +53,7 @@ on(displayedEvent, () => {
     const root = getRootView();
     const classList = new ClassList(root.className);
 
-    classList.add("nt-app", `-${isAndroid ? "android" : "ios"}`, `-${device.deviceType.toLowerCase()}`);
+    classList.add("ns-theme", `-${isAndroid ? "android" : "ios"}`, `-${device.deviceType.toLowerCase()}`);
 
     root.className = classList.get();
 
