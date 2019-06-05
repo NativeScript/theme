@@ -9,21 +9,15 @@ let currentTheme = {
 };
 
 export class ThemesModel extends BaseModel {
-    constructor(page) {
-        super(page);
+    constructor() {
+        super();
+
+        this.themeName = "";
+        this.skinName = "";
 
         on("livesync", this._applyThemeInternal.bind(this));
 
-        this._applyThemeInternal(currentTheme.theme);
-        this._applyThemeInternal(currentTheme.skin);
-    }
-
-    set theme(value) {
-        this.set("themeName", value);
-    }
-
-    set skin(value) {
-        this.set("skinName", value);
+        this._applyThemeInternal();
     }
 
     applyTheme(args) {
@@ -32,30 +26,31 @@ export class ThemesModel extends BaseModel {
     }
 
     _applyThemeInternal(name) {
-        let oldName = currentTheme.theme;
-
         if (typeof name === "string" && name.startsWith("core.")) {
             currentTheme.theme = name;
-            this.theme = this.getThemeName(name);
         } else {
-            oldName = currentTheme.skin;
-            name = currentTheme.skin = typeof name === "string" ? name : currentTheme.skin;
-            this.skin = this.getThemeName(name);
+            currentTheme.skin = typeof name === "string" ? name : currentTheme.skin;
         }
 
-        if (name === "customized") {
-            return import(/* webpackMode: "lazy" */ "../customized")
-                .then((styles) => this._applyStyles(styles, name, oldName));
-        }
+        this.set("themeName", this.getThemeName(currentTheme.theme));
+        this.set("skinName", this.getThemeName(currentTheme.skin));
 
-        import(/* webpackMode: "lazy", webpackExclude: /\/scss\// */ `nativescript-theme-core/styles/${name}`)
-            .then((styles) => this._applyStyles(styles, name, oldName));
+        import(/* webpackMode: "lazy", webpackExclude: /\/scss\// */ `nativescript-theme-core/styles/${currentTheme.theme}`)
+            .then((core_styles) => {
+                if (currentTheme.skin === "customized") {
+                    return import(/* webpackMode: "lazy" */ "../customized")
+                        .then((skin_styles) => this._applyStyles(core_styles, skin_styles, `${currentTheme.theme}.${currentTheme.skin}`));
+                }
+
+                import(/* webpackMode: "lazy", webpackExclude: /\/scss\// */ `nativescript-theme-core/styles/${currentTheme.skin}`)
+                    .then((skin_styles) => this._applyStyles(core_styles, skin_styles, `${currentTheme.theme}.${currentTheme.skin}`));
+            });
     }
 
-    _applyStyles(styles, name, oldName) {
-        currentTheme.css = styles.default.toString();
+    _applyStyles(core_styles, skin_styles, name) {
+        currentTheme.css = core_styles.default.toString() + skin_styles.default.toString();
 
-        themes.applyThemeCss(currentTheme.css, name, oldName);
+        themes.applyThemeCss(currentTheme.css, name);
     };
 
     getThemeName(cssPath) {
@@ -72,11 +67,6 @@ export class ThemesModel extends BaseModel {
             return capitalizeFirstLetter(filename);
         }
     }
-}
-
-export function navigatingTo(args) {
-    var page = args.object;
-    page.bindingContext = new ThemesModel(page);
 }
 
 function capitalizeFirstLetter(string) {

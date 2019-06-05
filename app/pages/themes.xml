@@ -1,9 +1,7 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd"
-  xmlns:actionBar="/action-bar"
-  navigatingTo="navigatingTo">
-  <ScrollView class="themes">
+<Page>
+  <ScrollView>
     <StackLayout>
-      <Label text="{{ 'Active: ' + theme + ' ' + skin }}" textWrap="true" class="h2 text-center m-10" />
+      <Label text="{{ `Active: ${themeName} ${skinName}` }}" textWrap="true" class="h3 text-center m-10" />
       <Button text="Apply Light" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="core.light" />
       <Button text="Apply Dark" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="core.dark" />
 
@@ -12,7 +10,7 @@
       <Button text="Apply Bootstrap" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="bootstrap-based" />
       <Button text="Apply Custom" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="customized" />
 
-      <Label text="Skins" textWrap="true" class="h2 text-center text-underline font-italic m-10" />
+      <Label text="Skins" textWrap="true" class="h3 text-center text-underline font-italic m-10" />
 
       <Button text="Apply Aqua" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-aqua m-5" cssName="aqua" />
       <Button text="Apply Blue" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-blue m-5" cssName="blue" />
