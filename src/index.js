@@ -42,8 +42,8 @@ function handleOrientation({ newValue: orientation }) {
     const classList = new ClassList(root.className);
 
     classList
-        .remove("-portrait", "-landscape", "-unknown")
-        .add(`-${orientation}`);
+        .remove("ns-portrait", "ns-landscape", "ns-unknown")
+        .add(`ns-${orientation}`);
 
     root.className = classList.get();
     console.log(root.className);
@@ -53,7 +53,7 @@ on(displayedEvent, () => {
     const root = getRootView();
     const classList = new ClassList(root.className);
 
-    classList.add("ns-theme", `-${isAndroid ? "android" : "ios"}`, `-${device.deviceType.toLowerCase()}`);
+    classList.add("ns-theme", `ns-${isAndroid ? "android" : "ios"}`, `ns-${device.deviceType.toLowerCase()}`);
 
     root.className = classList.get();
 

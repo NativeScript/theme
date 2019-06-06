@@ -2,17 +2,12 @@
   font-family: FontAwesome, fontawesome-webfont;
 }
 
-.sidedrawer-list-item-icon {
-    margin: 0 16 0 16;
-    padding-top: 14;
-}
-
 .ns-theme {
     color: $primary;
     font-family: 'Roboto Medium';
     font-size: 14;
 
-    @at-root .-ios {
+    @at-root .ns-ios {
         font-family: 'SF UI Text Medium';
         font-size: 15;
     }
@@ -35,6 +30,11 @@ Label,
 
 Page,
 .page {
+    @at-root .ns-dark & {
+        $background: $charcoal;
+        $primary: $white;
+    }
+
     color: $primary;
     background-color: $background;
 }
@@ -62,11 +62,11 @@ Slider,
     margin: 20 16;
     background-color: $accent;
 
-    @at-root .-android & {
+    @at-root .ns-android & {
         color: $accent;
     }
 
-    @at-root .-ios & {
+    @at-root .ns-ios & {
         margin: 10 15;
     }
 

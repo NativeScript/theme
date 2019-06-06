@@ -11,7 +11,6 @@ RadListView {
     .list-group-item {
         background-color: transparent;
         padding: 16;
-        color: $primary;
         font-size: 16;
         margin: 0;
 
@@ -42,7 +41,7 @@ RadListView {
             height: 100;
         }
 
-        @at-root .-ios & {
+        @at-root .ns-ios & {
             > StackLayout {
                 width: 50%;
             }
@@ -74,7 +73,7 @@ RadListView {
         padding: 0 10;
     }
 
-    @at-root .-ios & .list-view__delete {
+    @at-root .ns-ios & .list-view__delete {
         padding: 0 10 0 25;
     }
 

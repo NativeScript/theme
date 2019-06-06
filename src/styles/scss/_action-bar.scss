@@ -9,8 +9,8 @@ NTActionBar {
         color: $ab-color;
     }
 
-    @at-root .-ios &,
-             .-android & {
+    @at-root .ns-ios &,
+             .ns-android & {
         Button:highlighted,
         .action-item:highlighted {
             color: $ab-color;
