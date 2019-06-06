@@ -39,7 +39,7 @@ DateTimePickerFields {
     background-position: right center;
     background-color: transparent;
 
-    @at-root .-ios & {
+    @at-root .ns-ios & {
         background-size: 28 16;
     }
 }
@@ -58,7 +58,7 @@ DateTimePickerFields {
     flex-direction: row;
     background-image: url('~/assets/images/components/date-time.png');
 
-    @at-root .-ios & {
+    @at-root .ns-ios & {
         background-size: 56 16;
     }
 

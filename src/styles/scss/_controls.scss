@@ -7,7 +7,7 @@ SegmentedBar,
 .segmented-bar {
     selected-background-color: $accent;
 
-    @at-root .-ios & {
+    @at-root .ns-ios & {
         margin: 0 15;
         color: $accent;
     }

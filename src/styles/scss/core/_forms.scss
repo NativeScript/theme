@@ -4,7 +4,7 @@ Form,
 .form {
     font-family: 'Roboto Regular';
 
-    @at-root .-ios & {
+    @at-root .ns-ios & {
         font-family: 'SF UI Text Regular';
     }
 
@@ -94,7 +94,7 @@ TimePickerField {
     background-color: transparent;
     placeholder-color: $secondary;
 
-    @at-root .-ios & {
+    @at-root .ns-ios & {
         font-size: 15;
     }
 

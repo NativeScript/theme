@@ -8,7 +8,7 @@ NTActionBar {
     font-size: 17;
     padding-top: 0;
 
-    @at-root .-android & {
+    @at-root .ns-android & {
         font-weight: 500;
         font-size: 20;
     }
@@ -40,7 +40,7 @@ NTActionBar {
         padding-top: 24;
     }
 
-    @at-root .-android & Button {
+    @at-root .ns-android & Button {
         border-radius: 1;
         padding: 12 6;
 
@@ -49,8 +49,8 @@ NTActionBar {
         }
     }
 
-    @at-root .-ios &,
-             .-android & {
+    @at-root .ns-ios &,
+             .ns-android & {
         Button:highlighted,
         .action-item:highlighted {
             color: $primary;
