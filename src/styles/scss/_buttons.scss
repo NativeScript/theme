@@ -1,12 +1,12 @@
 Button,
 .btn {
-    color: $btn-color;
+    @include colors($color: btn-color);
     background-color: transparent;
 
     &.btn-active:highlighted,
     &:highlighted {
         color: $white;
-        background-color: $btn-color-outline-highlighted;
+        @include colors($background-color: btn-color-outline-highlighted);
     }
 
     &-primary,
@@ -17,8 +17,10 @@ Button,
 
         &.btn-active:highlighted,
         &:highlighted {
-            background-color: $accent-dark;
-            border-color: $accent-dark;
+            @include colors(
+                $background-color: accent-dark,
+                $border-color: accent-dark
+            );
         }
     }
 
@@ -26,12 +28,14 @@ Button,
     &.-outline {
         android-elevation: 0;
         background-color: transparent;
-        border-color: $btn-color;
-        color: $btn-color;
+        @include colors(
+            $border-color: btn-color,
+            $color: btn-color
+        );
 
         &.btn-active:highlighted,
         &:highlighted {
-            background-color: $btn-color-outline-highlighted;
+            @include colors($background-color: btn-color-outline-highlighted);
         }
     }
 

@@ -5,9 +5,9 @@ let started = false;
 
 const display = screen.mainScreen;
 
-class ClassList {
+export class ClassList {
     constructor(className) {
-        this.list = className.split(/\s+/);
+        this.list = (className || "").split(/\s+/);
     }
 
     add(...classes) {

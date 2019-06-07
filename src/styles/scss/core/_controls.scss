@@ -30,13 +30,10 @@ Label,
 
 Page,
 .page {
-    @at-root .ns-dark & {
-        $background: $charcoal;
-        $primary: $white;
-    }
-
-    color: $primary;
-    background-color: $background;
+    @include colors(
+        $color: primary,
+        $background-color: background
+    );
 }
 
 ActivityIndicator,
@@ -48,25 +45,27 @@ ActivityIndicator,
 SegmentedBar,
 .segmented-bar {
     font-size: 13;
-    color: $primary;
-    background-color: $background;
+    @include colors(
+        $color: primary,
+        $background-color: background
+    );
 }
 
 Progress,
 .progress {
-    background-color: $background-accent;
+    @include colors($background-color: background-accent);
 }
 
 Slider,
 .slider {
     margin: 20 16;
-    background-color: $accent;
+    @include colors($background-color: accent);
 
-    @at-root .ns-android & {
-        color: $accent;
+    .ns-android & {
+        @include colors($color: accent);
     }
 
-    @at-root .ns-ios & {
+    .ns-ios & {
         margin: 10 15;
     }
 
@@ -78,7 +77,7 @@ Slider,
 
 SearchBar,
 .search-bar {
-    color: $primary;
+    @include colors($color: primary);
 }
 
 Switch,
@@ -89,12 +88,12 @@ Switch,
     background-color: $grey;
 
     &[checked=true] {
-        color: $accent;
+        @include colors($color: accent);
     }
 
-    @at-root .-ios & {
+    .ns-ios & {
         margin: 8 15;
-        background-color: $background-accent;
+        @include colors($background-color: background-accent);
     }
 
     &[checked=true][isEnabled=false] {
@@ -113,9 +112,11 @@ TabView,
 .tab-view {
     tab-text-font-size: 18;
     text-transform: capitalize;
-    selected-tab-text-color: $primary;
-    tab-background-color: $background;
-    tab-text-color: mix(#999, $accent, 70%);
+    @include colors(
+        $selected-tab-text-color: primary,
+        $tab-background-color: background,
+        $tab-text-color: tab-text-color
+    );
 }
 
 /* Dividers */

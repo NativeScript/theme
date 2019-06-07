@@ -3,8 +3,10 @@ RadSideDrawer is a UI component part of the Progress NativeScript UI set of comp
 Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
 http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawer/getting-started
 -->
-<drawer:RadSideDrawer ios:class="-ios" android:class="-android" xmlns:drawer="nativescript-ui-sidedrawer"
-        xmlns:ui="nativescript-theme-widgets" loaded="onLoaded">
+<drawer:RadSideDrawer
+        xmlns:drawer="nativescript-ui-sidedrawer"
+        xmlns:ui="nativescript-theme-widgets"
+        loaded="onLoaded">
     <drawer:RadSideDrawer.drawerTransition>
         <drawer:SlideInOnTopTransition/>
     </drawer:RadSideDrawer.drawerTransition>

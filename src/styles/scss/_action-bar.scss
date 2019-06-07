@@ -1,19 +1,21 @@
 ActionBar,
 .action-bar,
 NTActionBar {
-    background-color: $ab-background;
-    color: $ab-color;
+    @include colors(
+        $color: ab-color,
+        $background-color: ab-background
+    );
 
     Button,
     .action-item {
-        color: $ab-color;
+        @include colors($color: ab-color);
     }
 
-    @at-root .ns-ios &,
-             .ns-android & {
+    .ns-ios &,
+    .ns-android & {
         Button:highlighted,
         .action-item:highlighted {
-            color: $ab-color;
+            @include colors($color: ab-color);
         }
     }
 }

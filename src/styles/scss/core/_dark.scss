@@ -1,0 +1,50 @@
+// Core variables
+@import '../variables';
+
+$dark-colors: (
+    primary: $white,
+    background: $charcoal,
+    accent: $sky,
+);
+
+$dark-colors: map-merge($dark-colors, (
+    secondary: darken(map-get($dark-colors, primary), 30%),
+    disabled: darken(map-get($dark-colors, primary), 50%),
+
+    ab-color: mix($ab-color, map-get($dark-colors, primary), 20%),
+    ab-background: mix($ab-background, map-get($dark-colors, background), 30%),
+
+    text-color: map-get($dark-colors, primary),
+    headings-color: map-get($dark-colors, primary),
+
+    item-active-color: mix(map-get($dark-colors, primary), map-get($dark-colors, background), 40%),
+
+    tab-text-color: mix(#999, map-get($dark-colors, accent), 70%),
+
+    accent-dark: darken(map-get($dark-colors, accent), 20%),
+    accent-light: lighten(map-get($dark-colors, accent), 20%),
+    primary-accent: mix(transparent, map-get($dark-colors, accent), 60%),
+    background-accent: mix(transparent, map-get($dark-colors, accent), 90%),
+    background-dark-accent: mix(transparent, map-get($dark-colors, accent), 85%),
+
+    item-active-background: map-get($dark-colors, accent),
+
+    btn-color: map-get($dark-colors, primary),
+));
+
+$dark-colors: map-merge($dark-colors, (
+    ab-background-dark: darken(map-get($dark-colors, ab-background), 5%),
+    item-active-icon-color: map-get($dark-colors, item-active-color),
+    btn-color-secondary: darken(map-get($dark-colors, btn-color), 10%),
+    btn-color-outline-highlighted: lighten(map-get($dark-colors, btn-color), 10%)
+));
+
+@mixin colors($args...) {
+    @each $name, $color in keywords($args) {
+        #{$name}: map-get($light-colors, $color);
+
+        .ns-dark & {
+            #{$name}: map-get($dark-colors, $color);
+        }
+    }
+}

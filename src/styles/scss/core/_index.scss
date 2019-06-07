@@ -1,5 +1,11 @@
+// Core vars
+@import 'variables';
+
+// Dark Helpers
+@import "dark";
+
+// Core CSS
 @import "../mixins/index";
-@import "mixers";
 
 @import "action-bar";
 @import "buttons";

@@ -1,14 +1,16 @@
 ActionBar,
 .action-bar,
 NTActionBar {
-    color: $primary;
-    background-color: $background;
+    @include colors(
+        $color: ab-color,
+        $background-color: ab-background
+    );
 
     font-weight: bold;
     font-size: 17;
     padding-top: 0;
 
-    @at-root .ns-android & {
+    .ns-android & {
         font-weight: 500;
         font-size: 20;
     }
@@ -36,11 +38,11 @@ NTActionBar {
         }
     }
 
-    @at-root Page > & {
+    Page > & {
         padding-top: 24;
     }
 
-    @at-root .ns-android & Button {
+    .ns-android & Button {
         border-radius: 1;
         padding: 12 6;
 
@@ -49,11 +51,11 @@ NTActionBar {
         }
     }
 
-    @at-root .ns-ios &,
-             .ns-android & {
+    .ns-ios &,
+    .ns-android & {
         Button:highlighted,
         .action-item:highlighted {
-            color: $primary;
+            @include colors($color: ab-color);
         }
     }
 }
