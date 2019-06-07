@@ -1,21 +1,3 @@
 // Core variables
 @import '../variables';
 
-// Colors
-$light-background: $white;
-$light-primary: lighten($black, 13%);
-$light-secondary: lighten($black, 46%);
-$light-disabled: lighten($black, 62%);
-$accent: $sky !default;
-
-// ActionBar
-$ab-color: $light-primary !default;
-$ab-background: mix($light-background, $light-primary, 20%) !default;
-
-$text-color: $light-primary;
-$headings-color: $light-primary;
-
-$item-active-color: mix($light-primary, $light-background, 40%);
-$item-active-icon-color: $item-active-color;
-
-@import "mixers";

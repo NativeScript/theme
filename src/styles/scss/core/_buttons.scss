@@ -11,7 +11,7 @@ Button,
 
     @include button-base($btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius, 0);
 
-    @at-root .ns-ios & {
+    .ns-ios & {
         border-width: 0;
         font-family: 'SF UI Text Medium';
         font-size: 15;
@@ -27,7 +27,7 @@ Button,
     &-rounded-sm {
         border-radius: 2;
 
-        @at-root .ns-ios & {
+        .ns-ios & {
             border-radius: 4;
         }
     }
@@ -36,7 +36,7 @@ Button,
     &-rounded-lg {
         border-radius: 40;
 
-        @at-root .ns-ios & {
+        .ns-ios & {
             border-radius: 19;
         }
     }

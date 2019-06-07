@@ -4,7 +4,7 @@ Form,
 .form {
     font-family: 'Roboto Regular';
 
-    @at-root .ns-ios & {
+    .ns-ios & {
         font-family: 'SF UI Text Regular';
     }
 
@@ -13,7 +13,7 @@ Form,
     }
 
     .form__link {
-        color: $accent;
+        @include colors($color: accent);
     }
 
     .form__title {
@@ -34,7 +34,7 @@ Form,
     }
 
     .form__validation-message {
-        color: #D50808;
+        color: $error;
         margin: 1 0 0;
         padding: 0;
         height: 19;
@@ -63,7 +63,7 @@ TimePickerField {
 
     &.ng-invalid.ng-dirty {
         margin-bottom: 0;
-        border-color: #D50808;
+        border-color: $error;
     }
 }
 
@@ -71,14 +71,14 @@ TimePickerField {
 
 DatePicker,
 TimePicker {
-    background-color: lighten($background, 50%);
+    @include colors($background-color: background);
 }
 
 Label,
 TextView,
 TextField,
 PickerField {
-    color: $primary;
+    @include colors($color: primary);
     padding: 2 0;
     margin: 0;
 }
@@ -88,13 +88,13 @@ TextField,
 PickerField,
 DatePickerField,
 TimePickerField {
-    color: $primary;
+    @include colors($color: primary);
     font-size: 16;
     padding: 16 8;
     background-color: transparent;
-    placeholder-color: $secondary;
+    @include colors($placeholder-color: secondary);
 
-    @at-root .ns-ios & {
+    .ns-ios & {
         font-size: 15;
     }
 
@@ -119,7 +119,7 @@ TimePickerField {
 }
 
 DateTimePickerFields {
-    background: $background;
+    @include colors($background: background);
 }
 
 NTInput,

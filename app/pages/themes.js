@@ -1,6 +1,7 @@
 import { BaseModel } from "./base";
 import themes from "nativescript-themes/themes";
-import { on } from "tns-core-modules/application";
+import * as application from "tns-core-modules/application";
+import { ClassList } from "nativescript-theme-core";
 
 let currentTheme = {
     theme: "core.light",
@@ -15,7 +16,7 @@ export class ThemesModel extends BaseModel {
         this.themeName = "";
         this.skinName = "";
 
-        on("livesync", this._applyThemeInternal.bind(this));
+        application.on("livesync", this._applyThemeInternal.bind(this));
 
         this._applyThemeInternal();
     }
@@ -28,33 +29,42 @@ export class ThemesModel extends BaseModel {
     _applyThemeInternal(name) {
         if (typeof name === "string" && name.startsWith("core.")) {
             currentTheme.theme = name;
+
+            this.themeName = this.getThemeName(currentTheme.theme);
+
+            const rootView = application.getRootView();
+            const classList = new ClassList(rootView.className);
+
+            classList
+                .remove("ns-light", "ns-dark")
+                .add(`ns-${this.themeName.toLowerCase()}`);
+
+            return rootView.className = classList.get();
         } else {
             currentTheme.skin = typeof name === "string" ? name : currentTheme.skin;
         }
 
-        this.set("themeName", this.getThemeName(currentTheme.theme));
-        this.set("skinName", this.getThemeName(currentTheme.skin));
+        this.skinName = this.getThemeName(currentTheme.skin);
 
-        import(/* webpackMode: "lazy", webpackExclude: /\/scss\// */ `nativescript-theme-core/styles/${currentTheme.theme}`)
-            .then((core_styles) => {
                 if (currentTheme.skin === "customized") {
                     return import(/* webpackMode: "lazy" */ "../customized")
-                        .then((skin_styles) => this._applyStyles(core_styles, skin_styles, `${currentTheme.theme}.${currentTheme.skin}`));
+                        .then((skin_styles) => this._applyStyles(skin_styles, `${currentTheme.skin}`));
                 }
 
                 import(/* webpackMode: "lazy", webpackExclude: /\/scss\// */ `nativescript-theme-core/styles/${currentTheme.skin}`)
-                    .then((skin_styles) => this._applyStyles(core_styles, skin_styles, `${currentTheme.theme}.${currentTheme.skin}`));
-            });
+                    .then((skin_styles) => this._applyStyles(skin_styles, `${currentTheme.skin}`));
+            // });
     }
 
-    _applyStyles(core_styles, skin_styles, name) {
-        currentTheme.css = core_styles.default.toString() + skin_styles.default.toString();
+    _applyStyles(skin_styles, name) {
+        currentTheme.css = skin_styles.default.toString();
 
         themes.applyThemeCss(currentTheme.css, name);
     };
 
     getThemeName(cssPath) {
         if (cssPath.indexOf("core.light") > -1) {
+
             return "Light";
         } else if (cssPath.indexOf("core.dark") > -1) {
             return "Dark";

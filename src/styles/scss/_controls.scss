@@ -1,51 +1,55 @@
 ActivityIndicator,
 .activity-indicator {
-    color: $accent;
+    @include colors($color: accent);
 }
 
 SegmentedBar,
 .segmented-bar {
-    selected-background-color: $accent;
+    @include colors($selected-background-color: accent);
 
-    @at-root .ns-ios & {
+    .ns-ios & {
         margin: 0 15;
-        color: $accent;
+        @include colors($color: accent);
     }
 }
 
 Progress,
 .progress {
-    color: $accent-light;
+    @include colors($color: accent-light);
 }
 
 Slider,
 .slider {
-    color: $accent;
+    @include colors($color: accent);
 }
 
 Switch,
 .switch {
-    color: $primary-accent;
-    border-color: $primary-accent;
+    @include colors(
+        $color: primary-accent,
+        $border-color: primary-accent
+    );
 
     &[checked=true] {
-        color: $accent;
+        @include colors($color: accent);
     }
 }
 
 TabView,
 .tab-view {
-    selected-tab-text-color: $accent;
-    android-selected-tab-highlight-color: $accent-light;
+    @include colors(
+        $selected-tab-text-color: accent,
+        $android-selected-tab-highlight-color: accent-light
+    );
 }
 
 /* Dividers */
 
 .hr-light {
-    border-color: $accent-light;
+    @include colors($border-color: accent-light);
 }
 
 .hr-dark {
-    border-color: $accent-dark;
+    @include colors($border-color: accent-dark);
 }
 
