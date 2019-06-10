@@ -1,10 +1,42 @@
-// Core variables
-@import '../variables';
+// Core light colors
+$light-colors: (
+    primary: $primary,
+    background: $background,
+    accent: $accent,
+    secondary: $secondary,
+    disabled: $disabled,
 
+    ab-color: $ab-color,
+    ab-background: $ab-background,
+
+    text-color: $text-color,
+    headings-color: $headings-color,
+
+    item-active-color: $item-active-color,
+
+    tab-text-color: $tab-text-color,
+
+    accent-dark: $accent-dark,
+    accent-light: $accent-light,
+    primary-accent: $primary-accent,
+    background-accent: $background-accent,
+    background-dark-accent: $background-dark-accent,
+
+    item-active-background: $item-active-background,
+
+    btn-color: $btn-color,
+    ab-background-dark: $ab-background-dark,
+    item-active-icon-color: $item-active-icon-color,
+    btn-color-secondary: $btn-color-secondary,
+    btn-color-outline-highlighted: $btn-color-outline-highlighted
+);
+
+
+// Core dark colors
 $dark-colors: (
     primary: $white,
     background: $charcoal,
-    accent: $sky,
+    accent: $accent
 );
 
 $dark-colors: map-merge($dark-colors, (
@@ -19,8 +51,8 @@ $dark-colors: map-merge($dark-colors, (
 
     tab-text-color: mix(#999, map-get($dark-colors, accent), 70%),
 
-    accent-dark: darken(map-get($dark-colors, accent), 20%),
-    accent-light: lighten(map-get($dark-colors, accent), 20%),
+    accent-dark: lighten(map-get($dark-colors, accent), 20%),
+    accent-light: lighten(map-get($dark-colors, accent), 40%),
     primary-accent: mix(transparent, map-get($dark-colors, accent), 60%),
     background-accent: mix(transparent, map-get($dark-colors, accent), 90%),
     background-dark-accent: mix(transparent, map-get($dark-colors, accent), 85%),
@@ -28,7 +60,7 @@ $dark-colors: map-merge($dark-colors, (
     item-active-color: mix(map-get($dark-colors, primary), map-get($dark-colors, background), 40%),
     item-active-background: map-get($dark-colors, accent),
 
-    btn-color: map-get($dark-colors, primary),
+    btn-color: map-get($dark-colors, primary)
 ));
 
 $dark-colors: map-merge($dark-colors, (

@@ -82,34 +82,5 @@ $btn-color: $white !default;
 $btn-color-secondary: darken($btn-color, 10%) !default;
 $btn-color-outline-highlighted: lighten($btn-color, 10%) !default;
 
-$light-colors: (
-    primary: $primary,
-    background: $white,
-    accent: $sky,
-    secondary: $secondary,
-    disabled: $disabled,
-
-    ab-color: $ab-color,
-    ab-background: $ab-background,
-
-    text-color: $text-color,
-    headings-color: $headings-color,
-
-    item-active-color: $item-active-color,
-
-    tab-text-color: $tab-text-color,
-
-    accent-dark: $accent-dark,
-    accent-light: $accent-light,
-    primary-accent: $primary-accent,
-    background-accent: $background-accent,
-    background-dark-accent: $background-dark-accent,
-
-    item-active-background: $item-active-background,
-
-    btn-color: $btn-color,
-    ab-background-dark: $ab-background-dark,
-    item-active-icon-color: $item-active-icon-color,
-    btn-color-secondary: $btn-color-secondary,
-    btn-color-outline-highlighted: $btn-color-outline-highlighted
-);
+// Core colors
+@import 'core/colors';

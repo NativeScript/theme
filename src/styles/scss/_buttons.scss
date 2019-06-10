@@ -11,9 +11,11 @@ Button,
 
     &-primary,
     &.-primary {
-        color: $btn-color-inverse;
-        background-color: $accent;
-        border-color: $accent;
+        @include colors(
+            $color: btn-color-inverse,
+            $background-color: accent,
+            $border-color: accent
+        );
 
         &.btn-active:highlighted,
         &:highlighted {
@@ -39,38 +41,38 @@ Button,
         }
     }
 
-    &-aqua,
-    &.-aqua {
+    .ns-root &-aqua,
+    .ns-root &.-aqua {
         background-color: $aqua;
         border-color: $aqua;
     }
 
-    &-blue,
-    &.-blue {
+    .ns-root &-blue,
+    .ns-root &.-blue {
         background-color: $blue;
         border-color: $blue;
     }
 
-    &-brown,
-    &.-brown {
+    .ns-root &-brown,
+    .ns-root &.-brown {
         background-color: $brown;
         border-color: $brown;
     }
 
-    &-forest,
-    &.-forest {
+    .ns-root &-forest,
+    .ns-root &.-forest {
         background-color: $forest;
         border-color: $forest;
     }
 
-    &-grey,
-    &.-grey {
+    .ns-root &-grey,
+    .ns-root &.-grey {
         background-color: $grey-dark;
         border-color: $grey-dark;
     }
 
-    &-lemon,
-    &.-lemon {
+    .ns-root &-lemon,
+    .ns-root &.-lemon {
         background-color: $lemon;
         border-color: $lemon;
         color: $black;
@@ -80,8 +82,8 @@ Button,
         }
     }
 
-    &-lime,
-    &.-lime {
+    .ns-root &-lime,
+    .ns-root &.-lime {
         background-color: $lime;
         border-color: $lime;
         color: $black;
@@ -91,26 +93,26 @@ Button,
         }
     }
 
-    &-orange,
-    &.-orange {
+    .ns-root &-orange,
+    .ns-root &.-orange {
         background-color: $orange;
         border-color: $orange;
     }
 
-    &-purple,
-    &.-purple {
+    .ns-root &-purple,
+    .ns-root &.-purple {
         background-color: $purple;
         border-color: $purple;
     }
 
-    &-ruby,
-    &.-ruby {
+    .ns-root &-ruby,
+    .ns-root &.-ruby {
         background-color: $ruby;
         border-color: $ruby;
     }
 
-    &-sky,
-    &.-sky {
+    .ns-root &-sky,
+    .ns-root &.-sky {
         background-color: $sky;
         border-color: $sky;
     }
