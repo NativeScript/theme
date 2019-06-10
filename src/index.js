@@ -53,7 +53,7 @@ on(displayedEvent, () => {
     const root = getRootView();
     const classList = new ClassList(root.className);
 
-    classList.add("ns-theme", `ns-${isAndroid ? "android" : "ios"}`, `ns-${device.deviceType.toLowerCase()}`);
+    classList.add("ns-root", `ns-${isAndroid ? "android" : "ios"}`, `ns-${device.deviceType.toLowerCase()}`);
 
     root.className = classList.get();
 
