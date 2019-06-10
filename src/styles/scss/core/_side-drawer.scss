@@ -1,9 +1,15 @@
 RadSideDrawer {
+    > *,
+    .nt-drawer__content {
+        @include colors($background: background);
+    }
 
     .sidedrawer-left,
     .sidedrawer-center {
-        color: $primary;
-        background: $background;
+        @include colors(
+            $color: primary,
+            $background: background
+        );
     }
 
     .sidedrawer-header,
@@ -11,10 +17,10 @@ RadSideDrawer {
         height: 148;
         width: 100%;
         padding: 30 25;
-        background: $background-dark-accent;
+        @include colors($background: background-dark-accent);
 
         Label {
-            color: $ab-color;
+            @include colors($color: ab-color);
             font-size: 16;
             padding: 0;
             vertical-align: center;
@@ -65,11 +71,13 @@ RadSideDrawer {
         }
 
         &.active {
-            color: $item-active-color;
-            background-color: $item-active-background;
+            @include colors(
+                $color: item-active-color,
+                $background-color: item-active-background
+            );
 
             .sidedrawer-list-item-icon {
-                color: $item-active-icon-color;
+                @include colors($color: item-active-icon-color);
             }
         }
     }
@@ -97,7 +105,7 @@ RadSideDrawer {
 
     & .nt-drawer__content Button,
     & > [tkDrawerContent] Button {
-        color: $primary;
+        @include colors($color: primary);
         border-radius: 1;
         border-width: 0;
         width: 100%;
@@ -117,6 +125,6 @@ RadSideDrawer {
 
     & .nt-drawer__content Button:active,
     & > [tkDrawerContent] Button:active {
-        background: $background;
+        @include colors($background: background);
     }
 }
