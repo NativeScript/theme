@@ -32,24 +32,24 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
                 <ScrollView class="themes">
                     <StackLayout>
                         <Label text="{{ 'Active: ' + labelText }}" textWrap="true" class="h2 text-center m-10" />
-                        <Button text="Apply Light" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="core.light" />
-                        <Button text="Apply Dark" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="core.dark" />
-                        <Button text="Apply Custom" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="customized" />
-                        <Button text="Apply Bootstrap" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="bootstrap-based" />
+                        <Button text="Apply Light" tap="{{ applyTheme }}" class="-primary m-5" cssName="core.light" />
+                        <Button text="Apply Dark" tap="{{ applyTheme }}" class="-primary m-5" cssName="core.dark" />
+                        <Button text="Apply Custom" tap="{{ applyTheme }}" class="-primary m-5" cssName="customized" />
+                        <Button text="Apply Bootstrap" tap="{{ applyTheme }}" class="-primary m-5" cssName="bootstrap-based" />
 
                         <Label text="Skins" textWrap="true" class="h2 text-center text-underline font-italic m-10" />
 
-                        <Button text="Apply Aqua" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-aqua m-5" cssName="aqua" />
-                        <Button text="Apply Blue" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-blue m-5" cssName="blue" />
-                        <Button text="Apply Brown" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-brown m-5" cssName="brown" />
-                        <Button text="Apply Forest" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-forest m-5" cssName="forest" />
-                        <Button text="Apply Grey" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-grey m-5" cssName="grey" />
-                        <Button text="Apply Lemon" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-lemon m-5" cssName="lemon" />
-                        <Button text="Apply Lime" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-lime m-5" cssName="lime" />
-                        <Button text="Apply Orange" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-orange m-5" cssName="orange" />
-                        <Button text="Apply Purple" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-purple m-5" cssName="purple" />
-                        <Button text="Apply Ruby" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-ruby m-5" cssName="ruby" />
-                        <Button text="Apply Sky" tap="{{ applyTheme }}" class="btn btn-primary btn-rounded-lg btn-sky m-5" cssName="sky" />
+                        <Button text="Apply Aqua" tap="{{ applyTheme }}" class="-primary -rounded-lg -aqua m-5" cssName="aqua" />
+                        <Button text="Apply Blue" tap="{{ applyTheme }}" class="-primary -rounded-lg -blue m-5" cssName="blue" />
+                        <Button text="Apply Brown" tap="{{ applyTheme }}" class="-primary -rounded-lg -brown m-5" cssName="brown" />
+                        <Button text="Apply Forest" tap="{{ applyTheme }}" class="-primary -rounded-lg -forest m-5" cssName="forest" />
+                        <Button text="Apply Grey" tap="{{ applyTheme }}" class="-primary -rounded-lg -grey m-5" cssName="grey" />
+                        <Button text="Apply Lemon" tap="{{ applyTheme }}" class="-primary -rounded-lg -lemon m-5" cssName="lemon" />
+                        <Button text="Apply Lime" tap="{{ applyTheme }}" class="-primary -rounded-lg -lime m-5" cssName="lime" />
+                        <Button text="Apply Orange" tap="{{ applyTheme }}" class="-primary -rounded-lg -orange m-5" cssName="orange" />
+                        <Button text="Apply Purple" tap="{{ applyTheme }}" class="-primary -rounded-lg -purple m-5" cssName="purple" />
+                        <Button text="Apply Ruby" tap="{{ applyTheme }}" class="-primary -rounded-lg -ruby m-5" cssName="ruby" />
+                        <Button text="Apply Sky" tap="{{ applyTheme }}" class="-primary -rounded-lg -sky m-5" cssName="sky" />
                     </StackLayout>
                 </ScrollView>
 

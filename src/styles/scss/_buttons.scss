@@ -42,57 +42,76 @@ Button,
     &-aqua,
     &.-aqua {
         background-color: $aqua;
+        border-color: $aqua;
     }
 
     &-blue,
     &.-blue {
         background-color: $blue;
+        border-color: $blue;
     }
 
     &-brown,
     &.-brown {
         background-color: $brown;
+        border-color: $brown;
     }
 
     &-forest,
     &.-forest {
         background-color: $forest;
+        border-color: $forest;
     }
 
     &-grey,
     &.-grey {
         background-color: $grey-dark;
+        border-color: $grey-dark;
     }
 
     &-lemon,
     &.-lemon {
         background-color: $lemon;
+        border-color: $lemon;
         color: $black;
+
+        .ns-dark & {
+            color: $black;
+        }
     }
 
     &-lime,
     &.-lime {
         background-color: $lime;
+        border-color: $lime;
         color: $black;
+
+        .ns-dark & {
+            color: $black;
+        }
     }
 
     &-orange,
     &.-orange {
         background-color: $orange;
+        border-color: $orange;
     }
 
     &-purple,
     &.-purple {
         background-color: $purple;
+        border-color: $purple;
     }
 
     &-ruby,
     &.-ruby {
         background-color: $ruby;
+        border-color: $ruby;
     }
 
     &-sky,
     &.-sky {
         background-color: $sky;
+        border-color: $sky;
     }
 }

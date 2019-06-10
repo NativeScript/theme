@@ -17,8 +17,6 @@ $dark-colors: map-merge($dark-colors, (
     text-color: map-get($dark-colors, primary),
     headings-color: map-get($dark-colors, primary),
 
-    item-active-color: mix(map-get($dark-colors, primary), map-get($dark-colors, background), 40%),
-
     tab-text-color: mix(#999, map-get($dark-colors, accent), 70%),
 
     accent-dark: darken(map-get($dark-colors, accent), 20%),
@@ -27,6 +25,7 @@ $dark-colors: map-merge($dark-colors, (
     background-accent: mix(transparent, map-get($dark-colors, accent), 90%),
     background-dark-accent: mix(transparent, map-get($dark-colors, accent), 85%),
 
+    item-active-color: mix(map-get($dark-colors, primary), map-get($dark-colors, background), 40%),
     item-active-background: map-get($dark-colors, accent),
 
     btn-color: map-get($dark-colors, primary),
