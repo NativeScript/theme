@@ -2,9 +2,13 @@ $enhancers: 'text-contrast';
 
 @mixin enhance($name, $color, $colors) {
     $args: slice($color, 2);
-    $color: nth($color, 1);
+    $first: nth($color, 1);
 
-    $color: map-get($colors, $color);
+    $color: map-get($colors, $first);
+
+    @if ($color == null) {
+        $color: $first;
+    }
 
     @each $enhancer in $enhancers {
         @if (str-index($name, '#{$enhancer}-') == 1) {

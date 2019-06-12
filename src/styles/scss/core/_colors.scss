@@ -9,7 +9,7 @@ $light-colors: (
 
 $light-colors: map-merge($light-colors, (
     secondary: darken(map-get($light-colors, primary), 30%),
-    disabled: mix(map-get($light-colors, accent), $charcoal, 30%),
+    disabled: mix(map-get($light-colors, accent), map-get($light-colors, background), 40%),
 
     text-color: map-get($light-colors, primary),
     headings-color: map-get($light-colors, primary),
@@ -45,7 +45,7 @@ $dark-colors: (
 
 $dark-colors: map-merge($dark-colors, (
     secondary: darken(map-get($dark-colors, primary), 30%),
-    disabled: mix(map-get($dark-colors, accent), $charcoal, 30%),
+    disabled: mix(map-get($dark-colors, accent), map-get($dark-colors, background), 40%),
 
     ab-color: mix($ab-color, map-get($dark-colors, primary), 20%),
     ab-background: mix($ab-background, map-get($dark-colors, background), 30%),

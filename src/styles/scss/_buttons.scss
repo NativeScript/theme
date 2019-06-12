@@ -21,8 +21,8 @@ Button,
         &.btn-active:highlighted,
         &:highlighted {
             @include colorize(
-                $background-color: accent-dark,
-                $border-color: accent-dark
+                $background-color: accent-light,
+                $border-color: accent-light
             );
         }
     }
@@ -33,8 +33,12 @@ Button,
             $border-color: accent
         );
 
-        &.btn-active:highlighted,
-        &:highlighted {
+        &[isEnabled=false] {
+            @include colorize(
+                $color: tab-text-color,
+                $border-color: tab-text-color,
+                $background-color: transparent
+            );
         }
     }
 
