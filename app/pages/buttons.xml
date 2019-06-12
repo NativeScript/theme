@@ -11,7 +11,7 @@
         <Button text="btn btn-primary" class="btn btn-primary" />
         <Label class="hr-dark" />
         <Button text="Button.-outline" class="-outline" />
-        <Button text="btn btn-outline" class="btn btn-primary btn-outline" />
+        <Button text="btn btn-outline" class="btn btn-outline" />
         <Label class="hr-dark" />
         <Button text="Button.-primary.-rounded-sm" class="-primary -rounded-sm" />
         <Button text="btn btn-primary btn-rounded-sm" tap="" class="btn btn-primary btn-rounded-sm" />

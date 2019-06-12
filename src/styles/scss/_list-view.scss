@@ -1,11 +1,11 @@
 ListView,
 RadListView {
     NTIcon {
-        @include colors($color: accent-dark);
+        @include colorize($color: accent-dark);
     }
 
     .-separator {
-        @include colors($border-bottom-color: background-accent);
+        @include colorize($border-bottom-color: background-accent);
     }
 
     .list-view__delete {

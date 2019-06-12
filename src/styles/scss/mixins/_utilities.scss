@@ -1,0 +1,35 @@
+@mixin transition($transition...) {
+  @if $enable-transitions {
+    transition: $transition;
+  }
+}
+
+
+
+// Functions
+@function text-contrast($color, $intensity: 50%) {
+    $color-brightness: round((red($color) * 299) + (green($color) * 587) + (blue($color) * 114) / 1000);
+    $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
+
+    @if abs($color-brightness) < ($light-color / 2){
+        @return lighten($color, $intensity);
+    }
+
+    @else {
+        @return darken($color, $intensity);
+    }
+}
+
+@function slice($list, $start: 1, $end: length($list)) {
+    $result: ();
+
+    @if ($start > $end) {
+        @return $result;
+    }
+
+    @for $i from $start through $end {
+        $result: append($result, nth($list, $i));
+    }
+
+    @return $result;
+}

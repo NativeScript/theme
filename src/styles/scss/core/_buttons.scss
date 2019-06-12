@@ -1,13 +1,14 @@
 Button,
 .btn {
-    min-height: 36;
+    height: 52;
     min-width: 64;
     text-transform: none;
-    padding: 0;
     font-family: 'Roboto Medium';
     font-size: 14;
-    border-width: 1;
+    background-color: transparent;
     border-color: transparent;
+    android-elevation: 0;
+    android-dynamic-elevation-offset: 0;
 
     @include button-base($btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius, 0);
 
@@ -17,31 +18,127 @@ Button,
         font-size: 15;
     }
 
-    @at-root .-outline,
-             &-outline {
+    .ns-android & {
+        margin: $btn-margin-y - 4 $btn-margin-x - 4;
+    }
+
+    &-primary,
+    &.-primary {
+        android-elevation: 2;
+        android-dynamic-elevation-offset: 4;
+    }
+
+    &.-outline,
+    &-outline {
+        height: 40;
         android-elevation: 0;
         border-width: 1;
+        background-color: transparent;
+
+        .ns-android & {
+            margin: $btn-margin-y $btn-margin-x;
+        }
     }
 
     &.-rounded-sm,
-    &-rounded-sm {
+    &-rounded-sm,
+    &.-rounded-lg,
+    &-rounded-lg {
+        height: 40;
         border-radius: 2;
 
         .ns-ios & {
             border-radius: 4;
+        }
+
+        .ns-android & {
+            margin: $btn-margin-y $btn-margin-x;
         }
     }
 
     &.-rounded-lg,
     &-rounded-lg {
         border-radius: 40;
-
-        .ns-ios & {
-            border-radius: 19;
-        }
     }
 
     &[isEnabled=false] {
         opacity: .5;
+    }
+
+    .ns-root &-aqua.btn,
+    .ns-root &.-aqua.-aqua {
+        background-color: $aqua;
+        border-color: $aqua;
+        color: text-contrast($aqua);
+    }
+
+    .ns-root &-blue.btn,
+    .ns-root &.-blue.-blue {
+        background-color: $blue;
+        border-color: $blue;
+        color: text-contrast($blue);
+    }
+
+    .ns-root &-brown.btn,
+    .ns-root &.-brown.-brown {
+        background-color: $brown;
+        border-color: $brown;
+        color: text-contrast($brown);
+    }
+
+    .ns-root &-forest.btn,
+    .ns-root &.-forest.-forest {
+        background-color: $forest;
+        border-color: $forest;
+        color: text-contrast($forest);
+    }
+
+    .ns-root &-grey.btn,
+    .ns-root &.-grey.-grey {
+        background-color: $grey-dark;
+        border-color: $grey-dark;
+        color: text-contrast($grey-dark);
+    }
+
+    .ns-root &-lemon.btn,
+    .ns-root &.-lemon.-lemon {
+        background-color: $lemon;
+        border-color: $lemon;
+        color: text-contrast($lemon);
+    }
+
+    .ns-root &-lime.btn,
+    .ns-root &.-lime.-lime {
+        background-color: $lime;
+        border-color: $lime;
+        color: text-contrast($lime);
+    }
+
+    .ns-root &-orange.btn,
+    .ns-root &.-orange.-orange {
+        background-color: $orange;
+        border-color: $orange;
+        color: text-contrast($orange);
+    }
+
+    .ns-root &-purple.btn,
+    .ns-root &.-purple.-purple {
+        background-color: $purple;
+        border-color: $purple;
+        color: text-contrast($purple);
+    }
+
+    .ns-root &-ruby.btn,
+    .ns-root &.-ruby.-ruby {
+        background-color: $ruby;
+        border-color: $ruby;
+        color: text-contrast($ruby);
+    }
+
+    .ns-root &-sky.btn,
+    .ns-root &.-sky.-sky {
+        background-color: $sky;
+        border-color: $sky;
+        color: text-contrast($sky);
     }
 }

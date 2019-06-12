@@ -1,4 +1,4 @@
 .text-muted {
-    @include colors($color: disabled);
+    @include colorize($color: disabled);
 }
 

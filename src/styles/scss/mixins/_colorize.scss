@@ -1,0 +1,27 @@
+$enhancers: 'text-contrast';
+
+@mixin enhance($name, $color, $colors) {
+    $args: slice($color, 2);
+    $color: nth($color, 1);
+
+    $color: map-get($colors, $color);
+
+    @each $enhancer in $enhancers {
+        @if (str-index($name, '#{$enhancer}-') == 1) {
+            $name: str-slice($name, str-length($enhancer) + 2);
+            $color: call(get-function($enhancer), $color, $args...);
+        }
+    }
+
+    #{$name}: $color;
+}
+
+@mixin colorize($args...) {
+    @each $name, $color in keywords($args) {
+        @include enhance($name, $color, $light-colors);
+
+        .ns-dark & {
+            @include enhance($name, $color, $dark-colors);
+        }
+    }
+}

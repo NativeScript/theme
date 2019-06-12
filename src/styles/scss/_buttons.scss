@@ -1,25 +1,26 @@
 Button,
 .btn {
-    @include colors($color: btn-color);
-    background-color: transparent;
+    @include colorize($color: accent-dark);
 
     &.btn-active:highlighted,
     &:highlighted {
-        color: $white;
-        @include colors($background-color: btn-color-outline-highlighted);
+        @include colorize(
+            $color: accent-dark,
+            $background-color: btn-color-outline-highlighted
+        );
     }
 
     &-primary,
     &.-primary {
-        @include colors(
-            $color: btn-color-inverse,
+        @include colorize(
+            $text-contrast-color: accent,
             $background-color: accent,
             $border-color: accent
         );
 
         &.btn-active:highlighted,
         &:highlighted {
-            @include colors(
+            @include colorize(
                 $background-color: accent-dark,
                 $border-color: accent-dark
             );
@@ -28,92 +29,16 @@ Button,
 
     &-outline,
     &.-outline {
-        android-elevation: 0;
-        background-color: transparent;
-        @include colors(
-            $border-color: btn-color,
-            $color: btn-color
+        @include colorize(
+            $border-color: accent
         );
 
         &.btn-active:highlighted,
         &:highlighted {
-            @include colors($background-color: btn-color-outline-highlighted);
         }
     }
 
-    .ns-root &-aqua,
-    .ns-root &.-aqua {
-        background-color: $aqua;
-        border-color: $aqua;
-    }
-
-    .ns-root &-blue,
-    .ns-root &.-blue {
-        background-color: $blue;
-        border-color: $blue;
-    }
-
-    .ns-root &-brown,
-    .ns-root &.-brown {
-        background-color: $brown;
-        border-color: $brown;
-    }
-
-    .ns-root &-forest,
-    .ns-root &.-forest {
-        background-color: $forest;
-        border-color: $forest;
-    }
-
-    .ns-root &-grey,
-    .ns-root &.-grey {
-        background-color: $grey-dark;
-        border-color: $grey-dark;
-    }
-
-    .ns-root &-lemon,
-    .ns-root &.-lemon {
-        background-color: $lemon;
-        border-color: $lemon;
-        color: $black;
-
-        .ns-dark & {
-            color: $black;
-        }
-    }
-
-    .ns-root &-lime,
-    .ns-root &.-lime {
-        background-color: $lime;
-        border-color: $lime;
-        color: $black;
-
-        .ns-dark & {
-            color: $black;
-        }
-    }
-
-    .ns-root &-orange,
-    .ns-root &.-orange {
-        background-color: $orange;
-        border-color: $orange;
-    }
-
-    .ns-root &-purple,
-    .ns-root &.-purple {
-        background-color: $purple;
-        border-color: $purple;
-    }
-
-    .ns-root &-ruby,
-    .ns-root &.-ruby {
-        background-color: $ruby;
-        border-color: $ruby;
-    }
-
-    .ns-root &-sky,
-    .ns-root &.-sky {
-        background-color: $sky;
-        border-color: $sky;
+    &[isEnabled=false] {
+        @include colorize($background-color: disabled);
     }
 }

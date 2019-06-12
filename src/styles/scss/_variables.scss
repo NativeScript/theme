@@ -24,14 +24,13 @@ $accent: $sky !default;
 $error: #d50000 !default;
 
 // Buttons
-$btn-color-inverse: $white !default;
 $btn-color-secondary: #01a0ec !default;
 $btn-color-outline-highlighted: #c0ebff !default;
 $btn-color-disabled: #a4a4a4 !default;
 $btn-font-size: 18 !default;
 $btn-radius: 0 !default;
-$btn-padding-x: 10 !default;
-$btn-padding-y: 10 !default;
+$btn-padding-x: 0 !default;
+$btn-padding-y: 0 !default;
 $btn-margin-x:	16 !default;
 $btn-margin-y:	8 !default;
 
@@ -54,8 +53,8 @@ $enable-transitions:        false !default;
 $background: $white !default;
 $primary: lighten($black, 13%) !default;
 $secondary: lighten($black, 46%) !default;
-$disabled: lighten($black, 62%) !default;
 $accent: $sky !default;
+$disabled: lighten($black, 62%) !default;
 
 // ActionBar
 $ab-color: $primary !default;
@@ -78,9 +77,12 @@ $ab-background-dark: darken($ab-background, 5%) !default;
 
 $item-active-background: $accent !default;
 
-$btn-color: $white !default;
+$btn-color: $primary !default;
+$btn-color-inverse: $background !default;
 $btn-color-secondary: darken($btn-color, 10%) !default;
 $btn-color-outline-highlighted: lighten($btn-color, 10%) !default;
+
+@import 'mixins/index';
 
 // Core colors
 @import 'core/colors';

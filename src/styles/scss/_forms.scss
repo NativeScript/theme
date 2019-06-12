@@ -13,7 +13,7 @@ TimePickerField {
     &.-border,
     &.input-rounded,
     &.input-border {
-        border-color: $accent-light;
+        @include colorize($border-color: accent-light);
     }
 }
 
@@ -21,16 +21,16 @@ NTInput,
 .input-field {
     .label,
     & > Label {
-        color: $primary-accent;
+        @include colorize($color: primary-accent);
     }
 }
 
 /* DateTime Picker */
 
 .date-time-picker-buttons {
-    color: $accent;
+    @include colorize($color: accent);
 }
 
 .date-time-picker-spinners {
-    color: mix($btn-color-inverse, $accent-dark, 30%);
+    @include colorize($color: mix($btn-color-inverse, $accent-dark, 30%));
 }
