@@ -5,3 +5,14 @@
 
 @import '~nativescript-theme-widgets/theme.css';
 @import '~/assets/css/font-awesome.scss';
+
+FlexboxLayout {
+    padding: 0 12;
+}
+
+FlexboxLayout > Button {
+    width: 40%;
+    flex: 1;
+    margin-left: 0;
+    margin-right: 0;
+}

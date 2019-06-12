@@ -36,6 +36,5 @@ export function onLoaded({ object: drawer }) {
     }
 }
 
-export function onRightLoaded({ object: drawer }) {
-    drawer.bindingContext = new ThemesModel();
-}
+// export function onRightLoaded({ object: drawer }) {
+// }

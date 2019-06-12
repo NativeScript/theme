@@ -82,3 +82,7 @@ export class ThemesModel extends BaseModel {
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+export function onLoaded({ object: page }) {
+    page.bindingContext = new ThemesModel();
+}
