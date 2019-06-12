@@ -13,8 +13,7 @@ export class ThemesModel extends BaseModel {
     constructor() {
         super();
 
-        this.themeName = "";
-        this.skinName = "";
+        this.theme = "";
 
         application.on("livesync", this._applyThemeInternal.bind(this));
 
@@ -30,7 +29,7 @@ export class ThemesModel extends BaseModel {
         if (typeof name === "string" && name.startsWith("core.")) {
             currentTheme.theme = name;
 
-            this.themeName = this.getThemeName(currentTheme.theme);
+            this.theme = `${this.getThemeName(currentTheme.theme)} ${this.getThemeName(currentTheme.skin)}`;
 
             const rootView = application.getRootView();
             const classList = new ClassList(rootView.className);
@@ -44,7 +43,7 @@ export class ThemesModel extends BaseModel {
             currentTheme.skin = typeof name === "string" ? name : currentTheme.skin;
         }
 
-        this.skinName = this.getThemeName(currentTheme.skin);
+        this.theme = `${this.getThemeName(currentTheme.theme)} ${this.getThemeName(currentTheme.skin)}`;
 
                 if (currentTheme.skin === "customized") {
                     return import(/* webpackMode: "lazy" */ "../customized")
