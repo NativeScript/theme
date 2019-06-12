@@ -7,7 +7,7 @@
 
 
 // Functions
-@function text-contrast($color, $intensity: 50%) {
+@function text-contrast($color, $intensity: 60%) {
     $color-brightness: round((red($color) * 299) + (green($color) * 587) + (blue($color) * 114) / 1000);
     $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
 

@@ -19,6 +19,9 @@
         <Button text="btn btn-outline btn-rounded-sm" tap="" class="btn btn-outline btn-rounded-sm" />
         <Button text="btn btn-primary btn-rounded-lg" tap="" class="btn btn-primary btn-rounded-lg" />
         <Button text="btn btn-outline btn-rounded-lg" tap="" class="btn btn-outline btn-rounded-lg" />
+        <Label class="hr-dark" />
+        <Button text="Button.-outline[isEnabled=false]" tap="" isEnabled="false" class="-outline" />
+        <Button text="Button.-primary[isEnabled=false]" tap="" isEnabled="false" class="-primary" />
         <Button text="btn isEnabled=false" tap="" isEnabled="false" class="btn btn-primary" />
         <Button text="btn isEnabled=false btn-rounded-sm" tap="" isEnabled="false" class="btn btn-primary btn-rounded-sm" />
         <Button text="btn isEnabled=false btn-rounded-lg" tap="" isEnabled="false" class="btn btn-primary btn-rounded-lg" />
