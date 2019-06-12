@@ -2,21 +2,21 @@ RadSideDrawer {
     .nt-drawer__content,
     .sidedrawer-left,
     .sidedrawer-center {
-        @include colors($color: ab-color);
+        @include colorize($color: ab-color);
     }
 
     .sidedrawer-header,
     .nt-drawer__header {
-        @include colors($background: ab-background-dark);
+        @include colorize($background: ab-background-dark);
 
         Label {
-            @include colors($color: ab-color);
+            @include colorize($color: ab-color);
         }
     }
 
     & .nt-drawer__content Button:active,
     & > [tkDrawerContent] Button:active {
-        @include colors(
+        @include colorize(
             $color: ab-color,
             $background: ab-background-dark
         );

@@ -1,21 +1,21 @@
 ActionBar,
 .action-bar,
 NTActionBar {
-    @include colors(
+    @include colorize(
         $color: ab-color,
         $background-color: ab-background
     );
 
     Button,
     .action-item {
-        @include colors($color: ab-color);
+        @include colorize($color: ab-color);
     }
 
     .ns-ios &,
     .ns-android & {
         Button:highlighted,
         .action-item:highlighted {
-            @include colors($color: ab-color);
+            @include colorize($color: ab-color);
         }
     }
 }

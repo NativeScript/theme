@@ -25,7 +25,7 @@ RadListView {
 
         &.active,
         &:highlighted {
-            @include colors($background-color: item-active-background);
+            @include colorize($background-color: item-active-background);
         }
     }
 
@@ -65,7 +65,7 @@ RadListView {
 
     .-separator {
         border-bottom-width: 1;
-        @include colors($border-bottom-color: background-accent);
+        @include colorize($border-bottom-color: background-accent);
     }
 
     .list-view__delete {
@@ -78,7 +78,7 @@ RadListView {
     }
 
     .list-view__delete > Label {
-        @include colors($color: primary);
+        @include colorize($color: primary);
         horizontal-align: center;
         vertical-align: center;
         text-transform: capitalize;
@@ -96,7 +96,7 @@ RadListView {
     }
 
     .list-group-item-text {
-        @include colors($color: secondary);
+        @include colorize($color: secondary);
         font-size: 14;
     }
 }

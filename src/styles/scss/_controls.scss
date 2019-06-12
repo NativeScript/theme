@@ -1,43 +1,43 @@
 ActivityIndicator,
 .activity-indicator {
-    @include colors($color: accent);
+    @include colorize($color: accent);
 }
 
 SegmentedBar,
 .segmented-bar {
-    @include colors($selected-background-color: accent);
+    @include colorize($selected-background-color: accent);
 
     .ns-ios & {
         margin: 0 15;
-        @include colors($color: accent);
+        @include colorize($color: accent);
     }
 }
 
 Progress,
 .progress {
-    @include colors($color: accent-light);
+    @include colorize($color: accent-light);
 }
 
 Slider,
 .slider {
-    @include colors($color: accent);
+    @include colorize($color: accent);
 }
 
 Switch,
 .switch {
-    @include colors(
+    @include colorize(
         $color: primary-accent,
         $border-color: primary-accent
     );
 
     &[checked=true] {
-        @include colors($color: accent);
+        @include colorize($color: accent);
     }
 }
 
 TabView,
 .tab-view {
-    @include colors(
+    @include colorize(
         $selected-tab-text-color: accent,
         $android-selected-tab-highlight-color: accent-light
     );
@@ -46,10 +46,10 @@ TabView,
 /* Dividers */
 
 .hr-light {
-    @include colors($border-color: accent-light);
+    @include colorize($border-color: accent-light);
 }
 
 .hr-dark {
-    @include colors($border-color: accent-dark);
+    @include colorize($border-color: accent-dark);
 }
 

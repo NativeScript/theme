@@ -1,13 +1,13 @@
 .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-bottom: $headings-margin-bottom;
     font-weight: $headings-font-weight;
-    @include colors($color: headings-color);
+    @include colorize($color: headings-color);
 }
 
 .body,
 .body2,
 .footnote {
-    @include colors($color: secondary);
+    @include colorize($color: secondary);
     font-weight: normal;
 }
 
