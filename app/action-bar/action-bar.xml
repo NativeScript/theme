@@ -10,7 +10,8 @@
             <Button class="fa" text="{{ backButton ? '&#xf053; Back' : '&#xf0c9;' }}" />
         </ActionItem>
     </ios>
-    <ActionItem tap="{{ toggleRightDrawer }}" ios.position="right">
+    <ActionItem tap="{{ toggleRightDrawer }}" ios.position="right"
+                visibility="{{ backButton ? 'collapsed' : 'visible' }}">
         <Button text="Theme" />
     </ActionItem>
 </ActionBar>

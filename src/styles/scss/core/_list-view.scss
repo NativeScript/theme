@@ -65,7 +65,7 @@ RadListView {
 
     .-separator {
         border-bottom-width: 1;
-        @include colorize($border-bottom-color: background-accent);
+        @include colorize($border-bottom-color: background-focus);
     }
 
     .list-view__delete {

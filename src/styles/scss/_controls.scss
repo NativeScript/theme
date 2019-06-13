@@ -1,55 +1,55 @@
 ActivityIndicator,
 .activity-indicator {
-    @include colorize($color: accent);
+    @include colorize($color: focus);
 }
 
 SegmentedBar,
 .segmented-bar {
-    @include colorize($selected-background-color: accent);
+    @include colorize($selected-background-color: focus);
 
     .ns-ios & {
         margin: 0 15;
-        @include colorize($color: accent);
+        @include colorize($color: focus);
     }
 }
 
 Progress,
 .progress {
-    @include colorize($color: accent-light);
+    @include colorize($color: focus-light);
 }
 
 Slider,
 .slider {
-    @include colorize($color: accent);
+    @include colorize($color: focus);
 }
 
 Switch,
 .switch {
     @include colorize(
-        $color: primary-accent,
-        $border-color: primary-accent
+        $color: primary-focus,
+        $border-color: primary-focus
     );
 
     &[checked=true] {
-        @include colorize($color: accent);
+        @include colorize($color: focus);
     }
 }
 
 TabView,
 .tab-view {
     @include colorize(
-        $selected-tab-text-color: accent,
-        $android-selected-tab-highlight-color: accent-light
+        $selected-tab-text-color: focus,
+        $android-selected-tab-highlight-color: focus-light
     );
 }
 
 /* Dividers */
 
 .hr-light {
-    @include colorize($border-color: accent-light);
+    @include colorize($border-color: focus-light);
 }
 
 .hr-dark {
-    @include colorize($border-color: accent-dark);
+    @include colorize($border-color: focus-dark);
 }
 

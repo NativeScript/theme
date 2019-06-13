@@ -10,11 +10,11 @@ $ab-background: $grey-dark;
 $ab-color: $white;
 
 // Accent
-$accent: $lime;
+$focus: $lime;
 
 // Buttons
 $btn-color-inverse: $white;
-$btn-color: $accent;
+$btn-color: $focus;
 $btn-color-secondary: darken($btn-color, 10%);
 $btn-color-outline-highlighted: lighten($btn-color, 10%);
 

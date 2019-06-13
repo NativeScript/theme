@@ -10,9 +10,9 @@ FlexboxLayout {
     padding: 0 12;
 }
 
-FlexboxLayout > Button {
-    width: 40%;
+.ns-root FlexboxLayout > Button {
+    width: 33%;
     flex: 1;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 2;
+    margin-right: 2;
 }

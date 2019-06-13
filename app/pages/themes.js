@@ -15,7 +15,16 @@ export class ThemesModel extends BaseModel {
 
         this.theme = "";
 
-        application.on("livesync", this._applyThemeInternal.bind(this));
+        const applyThemeProxy = this._applyThemeInternal.bind(this);
+
+        application.on("livesync", applyThemeProxy);
+
+        // Handle HMR
+        if (module.hot) {
+            module.hot.dispose(() => {
+                application.off("livesync", applyThemeProxy);
+            })
+        }
 
         this._applyThemeInternal();
     }
@@ -26,33 +35,45 @@ export class ThemesModel extends BaseModel {
     }
 
     _applyThemeInternal(name) {
-        if (typeof name === "string" && name.startsWith("core.")) {
+        const themeChange = typeof name === "string" && name.startsWith("core.");
+
+        if (themeChange) {
             currentTheme.theme = name;
-
-            this.theme = `${this.getThemeName(currentTheme.theme)} ${this.getThemeName(currentTheme.skin)}`;
-
-            const rootView = application.getRootView();
-            const classList = new ClassList(rootView.className);
-
-            classList
-                .remove("ns-light", "ns-dark")
-                .add(`ns-${this.themeName.toLowerCase()}`);
-
-            return rootView.className = classList.get();
         } else {
             currentTheme.skin = typeof name === "string" ? name : currentTheme.skin;
         }
 
-        this.theme = `${this.getThemeName(currentTheme.theme)} ${this.getThemeName(currentTheme.skin)}`;
+        const themeName = this.getThemeName(currentTheme.theme);
 
-                if (currentTheme.skin === "customized") {
-                    return import(/* webpackMode: "lazy" */ "../customized")
-                        .then((skin_styles) => this._applyStyles(skin_styles, `${currentTheme.skin}`));
-                }
+        const rootView = application.getRootView();
+        const classList = new ClassList(rootView.className);
 
-                import(/* webpackMode: "lazy", webpackExclude: /\/scss\// */ `nativescript-theme-core/styles/${currentTheme.skin}`)
-                    .then((skin_styles) => this._applyStyles(skin_styles, `${currentTheme.skin}`));
-            // });
+        classList
+            .remove("ns-light", "ns-dark")
+            .add(`ns-${themeName.toLowerCase()}`);
+
+        rootView.className = classList.get();
+
+        this.set("theme", `${themeName} ${this.getThemeName(currentTheme.skin)}`);
+
+        if (themeChange) {
+            return;
+        }
+
+        if (currentTheme.skin === "customized" || currentTheme.skin.startsWith("kendo-")) {
+            return import(
+                /*  webpackMode: "lazy",
+                    webpackInclude: /\.s?css$/,
+                    webpackExclude: /_app-styles\.scss/ */
+                `../${currentTheme.skin}`)
+                .then((skin_styles) => this._applyStyles(skin_styles, `${currentTheme.skin}`));
+        }
+
+        import(
+            /*  webpackMode: "lazy",
+                webpackExclude: /\/scss\// */
+            `nativescript-theme-core/styles/${currentTheme.skin}`)
+            .then((skin_styles) => this._applyStyles(skin_styles, `${currentTheme.skin}`));
     }
 
     _applyStyles(skin_styles, name) {

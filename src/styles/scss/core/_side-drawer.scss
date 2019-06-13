@@ -17,7 +17,7 @@ RadSideDrawer {
         height: 148;
         width: 100%;
         padding: 30 25;
-        @include colorize($background: background-dark-accent);
+        @include colorize($background: background-dark-focus);
 
         Label {
             @include colorize($color: ab-color);

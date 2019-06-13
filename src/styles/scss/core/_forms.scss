@@ -13,7 +13,7 @@ Form,
     }
 
     .form__link {
-        @include colorize($color: accent);
+        @include colorize($color: focus);
     }
 
     .form__title {
