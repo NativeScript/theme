@@ -1,3 +1,5 @@
+@import '~nativescript-theme-core/styles/scss/variables';
+
 $base-theme:Bootstrap;
 $skin-name:indigo;
 $swatch-name:Indigo;
@@ -20,3 +22,5 @@ $series-c: #0275d8;
 $series-d: #f0ad4e;
 $series-e: #e67d4a;
 $series-f: #d9534f;
+
+@import '~nativescript-theme-core/styles/index';

@@ -1,29 +1,31 @@
 // Core light colors
 $light-colors: (
     primary: $primary,
+    secondary: $secondary,
     background: $background,
-    accent: $accent,
-    ab-color: $ab-color,
-    ab-background: $ab-background
+    focus: $focus
 );
 
 $light-colors: map-merge($light-colors, (
-    secondary: darken(map-get($light-colors, primary), 30%),
-    disabled: mix(map-get($light-colors, accent), map-get($light-colors, background), 40%),
+    disabled: mix(map-get($light-colors, focus), map-get($light-colors, background), 40%),
+
+    ab-color: $ab-color,
+    ab-background: $ab-background,
 
     text-color: map-get($light-colors, primary),
     headings-color: map-get($light-colors, primary),
 
-    tab-text-color: mix(#999, map-get($light-colors, accent), 70%),
+    tab-text-color: mix(#999, map-get($light-colors, focus), 70%),
 
-    accent-dark: darken(map-get($light-colors, accent), 20%),
-    accent-light: lighten(map-get($light-colors, accent), 20%),
-    primary-accent: mix(transparent, map-get($light-colors, accent), 60%),
-    background-accent: mix(transparent, map-get($light-colors, accent), 90%),
-    background-dark-accent: mix(transparent, map-get($light-colors, accent), 85%),
+    focus-dark: darken(map-get($light-colors, focus), 20%),
+    focus-light: lighten(map-get($light-colors, focus), 20%),
+    focus-transparent: mix(transparent, map-get($light-colors, focus), 20%),
+    primary-focus: mix(transparent, map-get($light-colors, focus), 60%),
+    background-focus: mix(transparent, map-get($light-colors, focus), 90%),
+    background-dark-focus: mix(transparent, map-get($light-colors, focus), 85%),
 
     item-active-color: mix(map-get($light-colors, primary), map-get($light-colors, background), 40%),
-    item-active-background: map-get($light-colors, accent),
+    item-active-background: map-get($light-colors, focus),
 
     btn-color: map-get($light-colors, primary)
 ));
@@ -31,38 +33,61 @@ $light-colors: map-merge($light-colors, (
 $light-colors: map-merge($light-colors, (
     ab-background-dark: darken(map-get($light-colors, ab-background), 5%),
     item-active-icon-color: map-get($light-colors, item-active-color),
-    btn-color-inverse: text-contrast(map-get($light-colors, accent)),
+    btn-color-inverse: text-contrast(map-get($light-colors, focus)),
     btn-color-secondary: darken(map-get($light-colors, btn-color), 10%),
-    btn-color-outline-highlighted: lighten(map-get($light-colors, primary-accent), 20%)
+    btn-color-outline-highlighted: lighten(map-get($light-colors, primary-focus), 20%)
 ));
 
 // Core dark colors
 $dark-colors: (
     primary: $white,
+    secondary: $secondary,
     background: $charcoal,
-    accent: $accent
+    focus: $focus
 );
 
+@if (global_variable_exists("bg-color")) {
+    $dark-colors: map-merge($dark-colors, (
+        background: mix($bg-color, $charcoal, 10%)
+    ));
+
+    $dark-colors: map-merge($dark-colors, (
+        primary: text-contrast(map-get($dark-colors, background), 70%)
+    ));
+}
+
+@if (global_variable_exists("body-bg")) {
+    $dark-colors: map-merge($dark-colors, (
+        background: mix($body-bg, $charcoal, if(lightness($body-bg) > .5, 10%, 40%))
+    ));
+
+
+    $dark-colors: map-merge($dark-colors, (
+        primary: text-contrast(map-get($dark-colors, background), 70%)
+    ));
+}
+
+
 $dark-colors: map-merge($dark-colors, (
-    secondary: darken(map-get($dark-colors, primary), 30%),
-    disabled: mix(map-get($dark-colors, accent), map-get($dark-colors, background), 40%),
+    disabled: mix(map-get($dark-colors, focus), map-get($dark-colors, background), 40%),
 
     ab-color: mix($ab-color, map-get($dark-colors, primary), 20%),
-    ab-background: mix($ab-background, map-get($dark-colors, background), 30%),
+    ab-background: mix($ab-background, map-get($dark-colors, background), 50%),
 
     text-color: map-get($dark-colors, primary),
     headings-color: map-get($dark-colors, primary),
 
-    tab-text-color: mix(#999, map-get($dark-colors, accent), 70%),
+    tab-text-color: mix(#999, map-get($dark-colors, focus), 70%),
 
-    accent-dark: lighten(map-get($dark-colors, accent), 20%),
-    accent-light: lighten(map-get($dark-colors, accent), 40%),
-    primary-accent: mix(transparent, map-get($dark-colors, accent), 60%),
-    background-accent: mix(transparent, map-get($dark-colors, accent), 90%),
-    background-dark-accent: mix(transparent, map-get($dark-colors, accent), 85%),
+    focus-dark: lighten(map-get($dark-colors, focus), 20%),
+    focus-light: lighten(map-get($dark-colors, focus), 40%),
+    focus-transparent: mix(transparent, map-get($dark-colors, focus), 20%),
+    primary-focus: mix(transparent, map-get($dark-colors, focus), 60%),
+    background-focus: mix(transparent, map-get($dark-colors, focus), 90%),
+    background-dark-focus: mix(transparent, map-get($dark-colors, focus), 85%),
 
     item-active-color: mix(map-get($dark-colors, primary), map-get($dark-colors, background), 40%),
-    item-active-background: map-get($dark-colors, accent),
+    item-active-background: map-get($dark-colors, focus),
 
     btn-color: map-get($dark-colors, primary)
 ));
@@ -70,8 +95,8 @@ $dark-colors: map-merge($dark-colors, (
 $dark-colors: map-merge($dark-colors, (
     ab-background-dark: darken(map-get($dark-colors, ab-background), 5%),
     item-active-icon-color: map-get($dark-colors, item-active-color),
-    btn-color-inverse: text-contrast(map-get($dark-colors, accent)),
+    btn-color-inverse: text-contrast(map-get($dark-colors, focus)),
     btn-color-secondary: darken(map-get($dark-colors, btn-color), 10%),
-    btn-color-outline-highlighted: darken(map-get($dark-colors, primary-accent), 20%)
+    btn-color-outline-highlighted: darken(map-get($dark-colors, primary-focus), 20%)
 ));
 

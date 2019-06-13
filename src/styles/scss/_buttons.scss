@@ -1,11 +1,11 @@
 Button,
 .btn {
-    @include colorize($color: accent-dark);
+    @include colorize($color: focus-dark);
 
-    &.btn-active:highlighted,
+    .btn.btn-active:highlighted,
     &:highlighted {
         @include colorize(
-            $color: accent-dark,
+            $color: focus-dark,
             $background-color: btn-color-outline-highlighted
         );
     }
@@ -13,16 +13,16 @@ Button,
     &-primary,
     &.-primary {
         @include colorize(
-            $text-contrast-color: accent,
-            $background-color: accent,
-            $border-color: accent
+            $text-contrast-color: focus,
+            $background-color: focus,
+            $border-color: focus
         );
 
-        &.btn-active:highlighted,
+        .btn.btn-active:highlighted,
         &:highlighted {
             @include colorize(
-                $background-color: accent-light,
-                $border-color: accent-light
+                $background-color: focus-light,
+                $border-color: focus-light
             );
         }
     }
@@ -30,7 +30,7 @@ Button,
     &-outline,
     &.-outline {
         @include colorize(
-            $border-color: accent
+            $border-color: focus
         );
 
         &[isEnabled=false] {

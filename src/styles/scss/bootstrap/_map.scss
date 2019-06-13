@@ -12,7 +12,7 @@ $primary: lighten($black, 13%) !default;//rgba(0,0,0,.87);
 $secondary: lighten($black, 46%) !default;
 $disabled: $text-muted !default;
 
-$accent: theme-color() !default;
+$focus: theme-color() !default;
 $error: theme-color("danger") !default;
 
 // Skin

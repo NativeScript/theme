@@ -1,3 +1,6 @@
+// Mixins
+@import 'mixins/index';
+
 // Colors
 $black: #000 !default;
 $white: #fff !default;
@@ -18,8 +21,6 @@ $lime: #aee406 !default;
 $orange: #f57c00 !default;
 $ruby: #ff1744 !default;
 $sky: #30bcff !default;
-
-$accent: $sky !default;
 
 $error: #d50000 !default;
 
@@ -46,36 +47,69 @@ $enable-shadows:            false !default;
 $enable-gradients:          false !default;
 $enable-transitions:        false !default;
 
-
-
+$accent: $sky !default;
 
 // Colors
 $background: $white !default;
-$primary: lighten($black, 13%) !default;
-$secondary: lighten($black, 46%) !default;
-$accent: $sky !default;
-$disabled: lighten($black, 62%) !default;
+$primary: text-contrast($background, 85%) !default;
+$secondary: darken($primary, 30%) !default;
+$focus: $sky !default;
+$disabled: mix($focus, $background, 40%), !default;
 
-// ActionBar
-$ab-color: $primary !default;
-$ab-background: mix($background, $primary, 20%) !default;
+// Kendo overrides
+
+@if (global_variable_exists('primary-palette-name')) {
+    $focus: $primary-palette-name;
+}
+
+@if (global_variable_exists('secondary-palette-name')) {
+    $secondary: $secondary-palette-name;
+}
+
+@if (global_variable_exists("text-color")) {
+    $primary: $text-color;
+}
+
+@if (global_variable_exists("body-color")) {
+    $primary: $body-color;
+}
+
+@if (global_variable_exists("body-bg")) {
+    $background: $body-bg;
+}
 
 $text-color: $primary !default;
-$headings-color: $primary !default;
+$headings-color: $text-color !default;
+
+// ActionBar
+$ab-color: $text-color !default;
+$ab-background: mix($background, $text-color, 20%) !default;
+
+@if (global_variable_exists("base-theme")) {
+    $ab-background: $focus;
+    $ab-color: text-contrast($ab-background, 100%);
+}
+
+@if (global_variable_exists("bg-color")) {
+    $background: $bg-color;
+    $ab-background: $accent;
+    $ab-color: text-contrast($ab-background, 100%);
+    $focus: $base-bg;
+}
 
 $item-active-color: mix($primary, $background, 40%) !default;
 $item-active-icon-color: $item-active-color !default;
 
-$tab-text-color: mix(#999, $accent, 70%) !default;
+$tab-text-color: mix(#999, $focus, 70%) !default;
 
-$accent-dark: darken($accent, 20%) !default;
-$accent-light: lighten($accent, 20%) !default;
-$primary-accent: mix(transparent, $accent, 60%) !default;
-$background-accent: mix(transparent, $accent, 90%) !default;
-$background-dark-accent: mix(transparent, $accent, 85%) !default;
+$focus-dark: darken($focus, 20%) !default;
+$focus-light: lighten($focus, 20%) !default;
+$primary-focus: mix(transparent, $focus, 60%) !default;
+$background-focus: mix(transparent, $focus, 90%) !default;
+$background-dark-focus: mix(transparent, $focus, 85%) !default;
 $ab-background-dark: darken($ab-background, 5%) !default;
 
-$item-active-background: $accent !default;
+$item-active-background: $focus !default;
 
 $btn-color: $primary !default;
 $btn-color-inverse: $background !default;

@@ -2,13 +2,17 @@
   <ScrollView>
     <StackLayout>
       <Label text="{{ 'Active: ' + theme }}" textWrap="true" class="h3 text-center m-10" />
-      <Button text="Apply Light" tap="{{ applyTheme }}" class="-outline m-5" cssName="core.light" />
-      <Button text="Apply Dark" tap="{{ applyTheme }}" class="-outline m-5" cssName="core.dark" />
+      <FlexboxLayout flexDirection="row" flexWrap="wrap">
+        <Button text="Light" tap="{{ applyTheme }}" class="-outline m-5" cssName="core.light" />
+        <Button text="Dark" tap="{{ applyTheme }}" class="-outline m-5" cssName="core.dark" />
+      </FlexboxLayout>
 
       <Label class="hr-dark" />
 
-      <Button text="Apply Bootstrap" tap="{{ applyTheme }}" class="-outline m-5" cssName="bootstrap-based" />
-      <Button text="Apply Custom" tap="{{ applyTheme }}" class="-outline m-5" cssName="customized" />
+      <FlexboxLayout flexDirection="row" flexWrap="wrap">
+        <Button text="Bootstrap" tap="{{ applyTheme }}" class="-outline m-5" cssName="bootstrap-based" />
+        <Button text="Custom" tap="{{ applyTheme }}" class="-outline m-5" cssName="customized" />
+      </FlexboxLayout>
 
       <Label text="Skins" textWrap="true" class="h3 text-center font-italic m-10" />
 
@@ -24,6 +28,14 @@
         <Button text="Purple" tap="{{ applyTheme }}" class="-primary -purple m-5" cssName="purple" />
         <Button text="Ruby" tap="{{ applyTheme }}" class="-primary -ruby m-5" cssName="ruby" />
         <Button text="Sky" tap="{{ applyTheme }}" class="-primary -sky m-5" cssName="sky" />
+      </FlexboxLayout>
+
+      <Label text="Kendo skins" textWrap="true" class="h3 text-center font-italic m-10" />
+
+      <FlexboxLayout flexDirection="row" flexWrap="wrap">
+        <Button text="Default" tap="{{ applyTheme }}" class="-outline m-5" cssName="kendo-default" />
+        <Button text="Bootstrap" tap="{{ applyTheme }}" class="-outline m-5" cssName="kendo-bootstrap" />
+        <Button text="Material" tap="{{ applyTheme }}" class="-outline m-5" cssName="kendo-material" />
       </FlexboxLayout>
     </StackLayout>
   </ScrollView>

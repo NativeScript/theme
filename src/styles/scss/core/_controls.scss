@@ -53,16 +53,16 @@ SegmentedBar,
 
 Progress,
 .progress {
-    @include colorize($background-color: background-accent);
+    @include colorize($background-color: background-focus);
 }
 
 Slider,
 .slider {
     margin: 20 16;
-    @include colorize($background-color: accent);
+    @include colorize($background-color: focus);
 
     .ns-android & {
-        @include colorize($color: accent);
+        @include colorize($color: focus);
     }
 
     .ns-ios & {
@@ -88,12 +88,12 @@ Switch,
     background-color: $grey;
 
     &[checked=true] {
-        @include colorize($color: accent);
+        @include colorize($color: focus);
     }
 
     .ns-ios & {
         margin: 8 15;
-        @include colorize($background-color: background-accent);
+        @include colorize($background-color: background-focus);
     }
 
     &[checked=true][isEnabled=false] {

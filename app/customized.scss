@@ -5,8 +5,26 @@
  * Licensed under MIT (https://github.com/NativeScript/theme/blob/master/LICENSE)
  */
 
-// Core variables
-@import '~nativescript-theme-core/styles/core';
+// Theme variables customizations
 
-// Theme variables cusomizations
-@import 'custom';
+// Core variables
+@import '~nativescript-theme-core/styles/scss/variables';
+
+// Colors
+$focus: #09A52e;
+$error: #F74E2F;
+
+$ab-background: orangered;
+
+// Skin
+$background: #F0EED2;
+$text-color: $primary;
+
+// Buttons
+$btn-color: $focus;
+$btn-color-secondary: #0FC572;
+$btn-color-outline-highlighted: #0AC16E;
+$btn-color-disabled: #CCC4C9;
+
+// Core styles
+@import '~nativescript-theme-core/styles/index';
