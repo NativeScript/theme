@@ -9,6 +9,9 @@ $grey: #e0e0e0 !default;
 $grey-background: #bababa !default;
 $charcoal: #303030 !default;
 
+// Kendo Palettes
+@import 'utilities/kendo-palletes';
+
 // accent varieties
 $aqua: #00caab !default;
 $blue: #3d5afe !default;
@@ -74,20 +77,19 @@ $disabled: mix($focus, $background, 40%), !default;
     $primary: $body-color;
 }
 
-@if (global_variable_exists("body-bg")) {
-    $background: $body-bg;
+@if (global_variable_exists("theme-type")) {
+    $material-secondary: get-base-hue($secondary-palette-name, 500);
+    $material-colors: if($theme-type == dark, $material-dark-complimentary, $material-light-complimentary);
+
+    $ab-background: get-base-hue($primary-palette-name, 500);
+    $ab-color: text-contrast($ab-background);
 }
 
-$text-color: $primary !default;
-$headings-color: $text-color !default;
-
-// ActionBar
-$ab-color: $text-color !default;
-$ab-background: mix($background, $text-color, 20%) !default;
-
-@if (global_variable_exists("base-theme")) {
-    $ab-background: $focus;
+@if (global_variable_exists("body-bg")) {
+    $background: $body-bg;
+    $ab-background: $accent;
     $ab-color: text-contrast($ab-background, 100%);
+    $focus: $secondary;
 }
 
 @if (global_variable_exists("bg-color")) {
@@ -96,6 +98,13 @@ $ab-background: mix($background, $text-color, 20%) !default;
     $ab-color: text-contrast($ab-background, 100%);
     $focus: $base-bg;
 }
+
+$text-color: $primary !default;
+$headings-color: $text-color !default;
+
+// ActionBar
+$ab-color: $text-color !default;
+$ab-background: mix($background, $text-color, 20%) !default;
 
 $item-active-color: mix($primary, $background, 40%) !default;
 $item-active-icon-color: $item-active-color !default;

@@ -10,15 +10,40 @@
     @return round($value);
 }
 
-@function text-contrast($color, $intensity: 60%) {
+@function check-contrast($color) {
     $color-brightness: round((red($color) * 299) + (green($color) * 587) + (blue($color) * 114) / 1000);
     $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
 
-    @if abs($color-brightness) < ($light-color / 1.7){
-        @return lighten($color, $intensity);
-    }
+    @return abs($color-brightness) < ($light-color / 1.7);
+}
 
-    @else {
+@function text-contrast($color, $intensity: 60%, $lighten: null) {
+    @if check-contrast($color) {
+        $lighten: if($lighten != null, $lighten, $intensity);
+
+        @return lighten($color, $lighten);
+    } @else {
+
+        @return darken($color, $intensity);
+    }
+}
+
+@function scale-contrast($color, $intensity: 60%, $lighten: null) {
+    @if check-contrast($color) {
+        $lighten: if($lighten != null, $lighten, $intensity);
+
+        @return scale_color($color, $lightness: $lighten);
+    } @else {
+        @return scale_color($color, $lightness: -$intensity);
+    }
+}
+
+@function contrasted($color, $to-color, $intensity: 60%, $lighten: null) {
+    @if check-contrast($to-color) {
+        $lighten: if($lighten != null, $lighten, $intensity);
+
+        @return lighten($color, $lighten);
+    } @else {
         @return darken($color, $intensity);
     }
 }

@@ -1,19 +1,20 @@
-$enhancers: 'text-contrast';
+$enhancers: 'text-contrast', 'scale-contrast', 'contrasted';
 
-@mixin enhance($name, $color, $colors) {
-    $args: slice($color, 2);
-    $first: nth($color, 1);
+@mixin enhance($name, $arguments, $colors) {
+    $args: ();
 
-    $color: map-get($colors, $first);
+    $color: map-get($colors, $arguments);
 
-    @if ($color == null) {
-        $color: $first;
+    @each $arg in $arguments {
+        $color: map-get($colors, $arg);
+
+        $args: append($args, if($color != null, $color, $arg));
     }
 
     @each $enhancer in $enhancers {
         @if (str-index($name, '#{$enhancer}-') == 1) {
             $name: str-slice($name, str-length($enhancer) + 2);
-            $color: call(get-function($enhancer), $color, $args...);
+            $color: call(get-function($enhancer), $args...);
         }
     }
 
@@ -21,11 +22,11 @@ $enhancers: 'text-contrast';
 }
 
 @mixin colorize($args...) {
-    @each $name, $color in keywords($args) {
-        @include enhance($name, $color, $light-colors);
+    @each $name, $arguments in keywords($args) {
+        @include enhance($name, $arguments, $light-colors);
 
         .ns-dark & {
-            @include enhance($name, $color, $dark-colors);
+            @include enhance($name, $arguments, $dark-colors);
         }
     }
 }

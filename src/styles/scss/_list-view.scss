@@ -1,7 +1,7 @@
 ListView,
 RadListView {
     NTIcon {
-        @include colorize($text-contrast-color: focus-transparent 10%);
+        @include colorize($contrasted-color: focus background 10% 30%);
     }
 
     .-separator {
