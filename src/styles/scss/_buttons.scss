@@ -1,11 +1,11 @@
 Button,
 .btn {
-    @include colorize($color: focus-dark);
+    @include colorize($contrasted-color: focus background 40%);
 
-    .btn.btn-active:highlighted,
+    &-active:highlighted,
     &:highlighted {
         @include colorize(
-            $color: focus-dark,
+            $contrasted-color: focus background 40%,
             $background-color: btn-color-outline-highlighted
         );
     }
@@ -18,19 +18,23 @@ Button,
             $border-color: focus
         );
 
-        .btn.btn-active:highlighted,
+        &.btn-active:highlighted,
         &:highlighted {
             @include colorize(
-                $background-color: focus-light,
-                $border-color: focus-light
+                $contrasted-background-color: focus background 10%,
+                $contrasted-border-color: focus background 10%
             );
         }
+    }
+
+    &[isEnabled=false] {
+        @include colorize($contrasted-background-color: disabled background 10%);
     }
 
     &-outline,
     &.-outline {
         @include colorize(
-            $border-color: focus
+            $contrasted-border-color: focus background 20%
         );
 
         &[isEnabled=false] {
@@ -40,9 +44,5 @@ Button,
                 $background-color: transparent
             );
         }
-    }
-
-    &[isEnabled=false] {
-        @include colorize($background-color: disabled);
     }
 }

@@ -6,6 +6,13 @@ $light-colors: (
     focus: $focus
 );
 
+@if (global_variable_exists("theme-type")) {
+    $light-colors: map-merge($light-colors, (
+        focus: map-get($material-light-complimentary, component-bg),
+        disabled: mix(map-get($light-colors, focus), map-get($light-colors, background), 40%),
+    ));
+}
+
 $light-colors: map-merge($light-colors, (
     disabled: mix(map-get($light-colors, focus), map-get($light-colors, background), 40%),
 
@@ -35,7 +42,7 @@ $light-colors: map-merge($light-colors, (
     item-active-icon-color: map-get($light-colors, item-active-color),
     btn-color-inverse: text-contrast(map-get($light-colors, focus)),
     btn-color-secondary: darken(map-get($light-colors, btn-color), 10%),
-    btn-color-outline-highlighted: lighten(map-get($light-colors, primary-focus), 20%)
+    btn-color-outline-highlighted: darken(map-get($light-colors, primary-focus), 20%)
 ));
 
 // Core dark colors
@@ -67,6 +74,12 @@ $dark-colors: (
     ));
 }
 
+@if (global_variable_exists("theme-type")) {
+    $dark-colors: map-merge($dark-colors, (
+        focus: map-get($material-dark-complimentary, component-bg),
+        disabled: mix(map-get($dark-colors, focus), map-get($dark-colors, background), 40%),
+    ));
+}
 
 $dark-colors: map-merge($dark-colors, (
     disabled: mix(map-get($dark-colors, focus), map-get($dark-colors, background), 40%),
