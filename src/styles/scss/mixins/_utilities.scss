@@ -6,7 +6,12 @@
 
 // Functions
 @function rem-to-dip($size) {
+    @if unit($size) != 'em' or unit($size) != 'rem' {
+        @return $size / ($size * 0 + 1);
+    }
+
     $value: $size * 15;
+
     @return round($value);
 }
 
