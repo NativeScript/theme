@@ -1,7 +1,6 @@
 // Core light colors
 $light-colors: (
     primary: $primary,
-    secondary: $secondary,
     background: $background,
     focus: $focus
 );
@@ -14,6 +13,7 @@ $light-colors: (
 }
 
 $light-colors: map-merge($light-colors, (
+    secondary: lighten(map-get($light-colors, primary), 30%),
     disabled: mix(map-get($light-colors, focus), map-get($light-colors, background), 40%),
 
     ab-color: $ab-color,
@@ -48,7 +48,6 @@ $light-colors: map-merge($light-colors, (
 // Core dark colors
 $dark-colors: (
     primary: $white,
-    secondary: $secondary,
     background: $charcoal,
     focus: $focus
 );
@@ -82,6 +81,7 @@ $dark-colors: (
 }
 
 $dark-colors: map-merge($dark-colors, (
+    secondary: darken(map-get($dark-colors, primary), 30%),
     disabled: mix(map-get($dark-colors, focus), map-get($dark-colors, background), 40%),
 
     ab-color: mix($ab-color, map-get($dark-colors, primary), 20%),

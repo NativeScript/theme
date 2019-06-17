@@ -45,10 +45,14 @@ $headings-font-weight: normal !default;
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
+// Only border-radius affects all styles, the rest are bootstrap only.
 $enable-rounded:            false !default;
 $enable-shadows:            false !default;
 $enable-gradients:          false !default;
 $enable-transitions:        false !default;
+
+// Needs to be defined, to mitigate leftover radii from other themes
+$border-radius: null !default;
 
 $accent: $sky !default;
 
@@ -67,6 +71,11 @@ $disabled: mix($focus, $background, 40%), !default;
 
 @if (global_variable_exists('secondary-palette-name')) {
     $secondary: $secondary-palette-name;
+}
+
+@if ($border-radius != null) {
+    $btn-radius: rem-to-dip($border-radius);
+    $enable-rounded: true;
 }
 
 @if (global_variable_exists("text-color")) {

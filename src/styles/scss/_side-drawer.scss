@@ -22,3 +22,28 @@ RadSideDrawer {
         );
     }
 }
+
+
+// This covers the dark root RSD, as the .ns-dark class is set on it
+RadSideDrawer.ns-dark {
+    .nt-drawer__content,
+    .sidedrawer-left,
+    .sidedrawer-center {
+        color: map-get($dark-colors, ab-color);
+    }
+
+    .sidedrawer-header,
+    .nt-drawer__header {
+        background: map-get($dark-colors, ab-background-dark);
+
+        Label {
+            color: map-get($dark-colors, ab-color);
+        }
+    }
+
+    & .nt-drawer__content Button:active,
+    & > [tkDrawerContent] Button:active {
+        color: map-get($dark-colors, ab-color);
+        background: map-get($dark-colors, ab-background-dark);
+    }
+}

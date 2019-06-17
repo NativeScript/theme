@@ -114,17 +114,57 @@ RadSideDrawer {
         font-size: 16;
         text-align: left;
         text-transform: none;
+
+        .ns-ios & {
+            height: 50;
+            padding: 50 0 0 20;
+            line-height: 50;
+        }
+
+        &:active {
+            @include colorize($background: background);
+        }
+    }
+}
+
+
+// This covers the dark root RSD, as the .ns-dark class is set on it
+RadSideDrawer.ns-dark {
+    > *,
+    .nt-drawer__content {
+        background: map-get($dark-colors, background);
     }
 
-    .ns-ios .nt-drawer__content Button,
-    .ns-ios > [tkDrawerContent] Button {
-        height: 50;
-        padding: 50 0 0 20;
-        line-height: 50;
+    .sidedrawer-left,
+    .sidedrawer-center {
+        color: map-get($dark-colors, primary);
+        background: map-get($dark-colors, background);
     }
 
-    & .nt-drawer__content Button:active,
-    & > [tkDrawerContent] Button:active {
-        @include colorize($background: background);
+    .sidedrawer-header,
+    .nt-drawer__header {
+        background: map-get($dark-colors, background-dark-focus);
+
+        Label {
+            color: map-get($dark-colors, ab-color);
+        }
+    }
+
+    .sidedrawer-list-item.active {
+        color: map-get($dark-colors, item-active-color);
+        background-color: map-get($dark-colors, item-active-background);
+
+        .sidedrawer-list-item-icon {
+            color: map-get($dark-colors, item-active-icon-color);
+        }
+    }
+
+    .nt-drawer__content Button,
+    > [tkDrawerContent] Button {
+        color: map-get($dark-colors, primary);
+
+        &:active {
+            background: map-get($dark-colors, background);
+        }
     }
 }

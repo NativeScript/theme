@@ -22,6 +22,15 @@ Button,
         margin: $btn-margin-y - 4 $btn-margin-x - 4;
     }
 
+    @if $enable-rounded {
+        height: 40;
+        border-width: 1;
+
+        .ns-android & {
+            margin: $btn-margin-y $btn-margin-x;
+        }
+    }
+
     &-primary,
     &.-primary {
         android-elevation: 2;
