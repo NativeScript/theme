@@ -1,16 +1,13 @@
 Button,
 .btn {
-    height: 52;
-    min-width: 64;
     text-transform: none;
     font-family: 'Roboto Medium';
-    font-size: 14;
     background-color: transparent;
     border-color: transparent;
     android-elevation: 0;
     android-dynamic-elevation-offset: 0;
 
-    @include button-base($btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius, 0);
+    @include button-base($btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius, $btn-min-width, $btn-height);
 
     .ns-ios & {
         border-width: 0;
@@ -23,7 +20,7 @@ Button,
     }
 
     @if $enable-rounded {
-        height: 40;
+        height: $btn-height - 12;
         border-width: 1;
 
         .ns-android & {
@@ -39,7 +36,7 @@ Button,
 
     &.-outline,
     &-outline {
-        height: 40;
+        height: $btn-height - 12;
         android-elevation: 0;
         border-width: 1;
         background-color: transparent;
@@ -53,7 +50,7 @@ Button,
     &-rounded-sm,
     &.-rounded-lg,
     &-rounded-lg {
-        height: 40;
+        height: $btn-height - 12;
         border-radius: 2;
 
         .ns-ios & {

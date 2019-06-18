@@ -11,7 +11,10 @@
   @include border-radius($border-radius);
 }
 
-@mixin button-base($padding-y, $padding-x, $margin-y, $margin-x, $font-size, $border-radius, $border-width) {
+@mixin button-base($padding-y, $padding-x, $margin-y, $margin-x, $font-size, $border-radius, $min-width, $height) {
+  min-width: $min-width;
+  height: $height;
+
   @include button-size($padding-y, $padding-x, $font-size, $border-radius);
   @include button-margin($margin-y, $margin-x);
 }

@@ -2,3 +2,18 @@
     @include colorize($color: disabled);
 }
 
+
+//* Workarounds and tweaks *//
+
+
+// FormattedString Spans inherit the background of their parent
+Label,
+Button,
+TextField,
+TextView {
+    > *,
+    > * > * {
+        background-color: transparent;
+    }
+}
+

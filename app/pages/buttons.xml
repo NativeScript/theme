@@ -1,5 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
   xmlns:actionBar="/action-bar"
+  xmlns:ui="nativescript-theme-widgets"
   navigatingTo="navigatingTo">
   <actionBar:action-bar ActionBarTitle="Buttons" />
   <ScrollView>
@@ -7,6 +8,12 @@
         <Button text="Button" />
         <Button text="btn" />
         <Label class="hr-dark" />
+        <Button class="-primary">
+            <FormattedString>
+                <ui:NTSpanIcon name="twitter"/>
+                <Span text=" Tweetity Tweet" />
+            </FormattedString>
+        </Button>
         <Button text="Button.-primary" class="-primary" />
         <Button text="btn btn-primary" class="btn btn-primary" />
         <Label class="hr-dark" />
