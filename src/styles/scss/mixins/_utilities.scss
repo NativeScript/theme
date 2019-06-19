@@ -15,6 +15,24 @@
     @return round($value);
 }
 
+@function filter-by-text($list, $starts, $excludes, $recursive: false) {
+    $result: ();
+
+    @for $i from 1 through length($list) {
+        @if type-of(nth($list, $i)) == list and $recursive {
+            $result: append($result, filter-by-text(nth($list, $i), $starts, $recursive));
+        } @else if str-index(nth($list, $i), $starts) == 1 {
+            $result: append($result, nth($list, $i));
+        }
+    }
+
+    @return $result;
+}
+
+@function filter-selectors($selectors, $compat: false) {
+    @return filter-by-text($selectors, \., \.nt-);
+}
+
 @function check-contrast($color) {
     $color-brightness: round((red($color) * 299) + (green($color) * 587) + (blue($color) * 114) / 1000);
     $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
