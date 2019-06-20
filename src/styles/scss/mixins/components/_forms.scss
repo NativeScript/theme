@@ -1,0 +1,210 @@
+/* Forms */
+
+@mixin form($selectors) {
+    #{$selectors} {
+        font-family: 'Roboto Regular';
+
+        .ns-ios & {
+            font-family: 'SF UI Text Regular';
+        }
+
+        .-center {
+            horizontal-align: center;
+        }
+
+        .nt-form__or-separator {
+            margin: 20 0;
+        }
+
+        .nt-form__link {
+            @include colorize($color: focus);
+        }
+
+        .nt-form__title {
+            font-size: 18;
+        }
+
+        .nt-form__logo {
+            margin: 20 0;
+            width: 50%;
+        }
+
+        .nt-form__validation-message {
+            color: $error;
+            margin: 1 0 0;
+            padding: 0;
+            height: 19;
+        }
+
+        .nt-form__footer {
+            padding: 0;
+            horizontal-align: center;
+
+            Button {
+                width: 50%;
+                margin: 5;
+            }
+        }
+
+        // Set isEnabled="false" on the whole form
+        &[isEnabled=false] * {
+            opacity: .7;
+        }
+    }
+}
+
+
+@mixin form-fields($compat: false) {
+
+    /* Form Validation styling */
+
+    #{if($compat, '.input',
+        ('TextField',
+         'PickerField',
+         'DatePickerField',
+         'TimePickerField'))} {
+        &.ng-valid {
+            margin-bottom: 20;
+        }
+
+        &.ng-invalid.ng-dirty {
+            margin-bottom: 0;
+            border-color: $error;
+        }
+    }
+
+    /* Form fields */
+
+    DatePicker,
+    TimePicker {
+        @include colorize($background-color: background);
+    }
+
+    #{if($compat, '.input',
+        ('Label',
+         'TextView',
+         'TextField',
+         'PickerField'))} {
+        @include colorize($color: primary);
+        padding: 2 0;
+        margin: 0;
+    }
+
+    #{if($compat, '.input',
+        ('TextField',
+         'PickerField',
+         'DatePickerField',
+         'TimePickerField'))} {
+        @include colorize($color: primary);
+        font-size: 16;
+        padding: 16 8;
+        background-color: transparent;
+        @include colorize($placeholder-color: secondary);
+
+        .ns-ios & {
+            font-size: 15;
+        }
+
+        #{if($compat,
+            ('&.input-rounded',
+             '&.input-border'),
+            ('&.-rounded',
+             '&.-border'))} {
+            border-width: 1;
+            border-radius: 4;
+            padding: 16;
+        }
+
+        #{if($compat, '&.input-rounded', '&.-rounded')} {
+            border-radius: 28;
+        }
+
+        &[isEnabled=false] {
+            opacity: .5;
+            background-color: mix($background, $primary, 95%);
+        }
+    }
+
+    @if not $compat {
+        DateTimePickerFields {
+            @include colorize($background: background);
+        }
+    }
+}
+
+
+@mixin input-component($selectors, $compat: false) {
+    #{$selectors} {
+        margin: 8 16 0;
+
+        #{if($compat, '.label', '& > Label')} {
+            font-size: 16;
+            color: $grey-background;
+        }
+
+        #{if($compat, '.input', '& > TextField')} {
+            padding: 0;
+            margin: 0 0 8 0;
+        }
+
+        #{if($compat, '&.input-sides', '&.-sides')} {
+            #{if($compat, '.label', 'NTInput > Label')} {
+                font-size: 18;
+                margin: 0 0 8 0;
+            }
+        }
+
+        @if not $compat {
+            & > NTIcon,
+            & > .nt-icon {
+                font-size: 24;
+                vertical-align: center;
+                horizontal-align: right;
+                margin: -15 10 0 0;
+            }
+        }
+    }
+}
+
+
+@mixin form-fields-skin($compat: false) {
+
+    /* Form fields */
+
+    #{if($compat, '.input',
+        ('Label',
+         'TextView',
+         'TextField',
+         'PickerField',
+         'DatePickerField',
+         'TimePickerField'))} {
+        background-color: transparent;
+
+        #{if($compat,
+            ('&.input-rounded',
+             '&.input-border'),
+            ('&.-rounded',
+             '&.-border'))} {
+            @include colorize($contrasted-border-color: focus background 20%);
+        }
+    }
+
+    /* DateTime Picker */
+
+    .date-time-picker-buttons {
+        @include colorize($color: focus);
+    }
+
+    .date-time-picker-spinners {
+        @include colorize($color: mix($btn-color-inverse, $focus-dark, 30%));
+    }
+}
+
+
+@mixin input-component-skin($selectors, $compat: false) {
+    #{$selectors} {
+        #{if($compat, '.label', '& > Label')} {
+            @include colorize($contrasted-color: focus background 20%);
+        }
+    }
+}

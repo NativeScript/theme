@@ -1,0 +1,121 @@
+@mixin list-view($selectors, $compat: false) {
+    #{$selectors} {
+        background-color: transparent;
+
+        StackLayout {
+            padding: 8;
+        }
+
+        #{if($compat, '.list-group-item', '> *')} {
+            background-color: transparent;
+            padding: 16;
+            font-size: 16;
+            margin: 0;
+
+            Label {
+                padding: 5;
+                vertical-align: center;
+            }
+
+            Image {
+                stretch: aspectFit;
+            }
+
+            &.active,
+            &:highlighted {
+                @include colorize($background-color: item-active-background);
+            }
+        }
+
+        @if $compat {
+            .thumb {
+                stretch: fill;
+                width: 40;
+                height: 40;
+                margin-right: 16;
+            }
+
+            .list-group-item-heading {
+                margin-bottom: 5;
+            }
+
+            .list-group-item-text {
+                @include colorize($color: secondary);
+                font-size: 14;
+            }
+        } @else {
+            @at-root &.-single-col-cards {
+                Image {
+                    width: 100%;
+                    height: 200;
+                }
+            }
+
+            @at-root &.-two-col-cards {
+                Image {
+                    height: 100;
+                }
+
+                .ns-ios & {
+                    > StackLayout {
+                        width: 50%;
+                    }
+
+                    > StackLayout Image {
+                        horizontal-align: left;
+                        width: 100%;
+                    }
+                }
+            }
+
+            @at-root &.-two-lines-image,
+            &.-single-line-image {
+                Image {
+                    width: 60;
+                    height: 60;
+                    margin-right: 10;
+                    margin-bottom: 0;
+                }
+            }
+
+            .-separator {
+                border-bottom-width: 1;
+                @include colorize($border-bottom-color: background-focus);
+            }
+
+            .nt-list-view__delete {
+                background-color: $error;
+                padding: 0 10;
+
+                .ns-ios & {
+                    padding: 0 10 0 25;
+                }
+
+                & > Label {
+                    @include colorize($color: primary);
+                    horizontal-align: center;
+                    vertical-align: center;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+}
+
+
+@mixin list-view-skin($selectors, $compat: false) {
+    #{$selectors} {
+        NTIcon,
+        .nt-icon {
+            @include colorize($contrasted-color: focus background 10% 30%);
+        }
+
+        .-separator {
+            @include colorize($border-bottom-color: background-focus);
+        }
+
+        .nt-list-view__delete {
+            background-color: $error;
+        }
+    }
+}

@@ -1,36 +1,6 @@
-/* Input fields */
+@include form-fields-skin();
 
-Label,
-.input,
-TextView,
-TextField,
-PickerField,
-DatePickerField,
-TimePickerField {
-    background-color: transparent;
-
-    &.-rounded,
-    &.-border,
-    &.input-rounded,
-    &.input-border {
-        @include colorize($border-color: focus-light);
-    }
-}
-
-NTInput,
-.input-field {
-    .label,
-    & > Label {
-        @include colorize($color: primary-focus);
-    }
-}
-
-/* DateTime Picker */
-
-.date-time-picker-buttons {
-    @include colorize($color: focus);
-}
-
-.date-time-picker-spinners {
-    @include colorize($color: mix($btn-color-inverse, $focus-dark, 30%));
-}
+@include input-component-skin(
+    ('NTInput',
+     '.nt-input')
+);

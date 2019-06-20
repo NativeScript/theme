@@ -2,3 +2,42 @@
 @import 'spacing';
 @import 'text';
 @import 'bootstrap';
+
+.fa {
+  font-family: FontAwesome, fontawesome-webfont;
+}
+
+.ns-root {
+    @include colorize(
+        $color: primary
+    );
+
+    font-family: 'Roboto Medium';
+    font-size: 14;
+
+    @at-root .ns-ios {
+        font-family: 'SF UI Text Medium';
+        font-size: 15;
+    }
+}
+
+.-hidden,
+.hidden {
+    visibility: collapsed;
+}
+
+.-rounded,
+.rounded {
+    border-radius: 3;
+}
+
+/* Dividers */
+
+.hr-light,
+.hr-dark {
+    height: 0;
+    width: 100%;
+    margin: 10 0;
+    border-width: 0 0 1;
+    border-style: solid;
+}
