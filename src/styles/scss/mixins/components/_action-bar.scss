@@ -1,4 +1,6 @@
-@mixin action-bar($selectors, $compat: false) {
+// Core
+
+@mixin action-bar($selectors, $item-selectors, $compat: false) {
     #{$selectors} {
         @include colorize(
             $color: ab-color,
@@ -20,11 +22,7 @@
             }
         }
 
-        #{filter-selectors((
-            NTIcon,
-            Button,
-            \.action-item
-        ), $compat)} {
+        #{$item-selectors} {
             android-elevation: 0;
             font-size: 15;
             padding: 12 3;
@@ -56,11 +54,34 @@
 
         .ns-ios &,
         .ns-android & {
-            #{filter-selectors((
-                Button\:highlighted,
-                \.action-item\:highlighted
-            ), $compat)} {
-                @include colorize($color: ab-color);
+            #{$item-selectors} {
+                &:highlighted {
+                    @include colorize($color: ab-color);
+                }
+            }
+        }
+    }
+}
+
+// Skin
+
+@mixin action-bar-skin($selectors, $item-selectors, $compat: false) {
+    #{$selectors} {
+        @include colorize(
+            $color: ab-color,
+            $background-color: ab-background
+        );
+
+        #{$item-selectors} {
+            @include colorize($color: ab-color);
+        }
+
+        .ns-ios &,
+        .ns-android & {
+            #{$item-selectors} {
+                &:highlighted {
+                    @include colorize($color: ab-color);
+                }
             }
         }
     }

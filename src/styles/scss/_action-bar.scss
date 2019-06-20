@@ -1,22 +1,10 @@
-ActionBar,
-.action-bar,
-NTActionBar {
-    @include colorize(
-        $color: ab-color,
-        $background-color: ab-background
-    );
+@include action-bar-skin(
+    ('ActionBar',
+     'NTActionBar',
+     '.nt-action-bar'),
 
-    Button,
-    .action-item {
-        @include colorize($color: ab-color);
-    }
-
-    .ns-ios &,
-    .ns-android & {
-        Button:highlighted,
-        .action-item:highlighted {
-            @include colorize($color: ab-color);
-        }
-    }
-}
-
+    ('NTIcon',
+     'Label',
+     'Button',
+     '.nt-action-bar__item')
+);

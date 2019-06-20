@@ -1,0 +1,171 @@
+// Core
+
+@mixin label($selectors) {
+    #{$selectors} {
+        font-size: 14;
+    }
+}
+
+@mixin page($selectors) {
+    #{$selectors} {
+        @include colorize(
+            $color: primary,
+            $background-color: background
+        );
+    }
+}
+
+@mixin activity-indicator($selectors) {
+    #{$selectors} {
+        width: 30;
+        height: 30;
+    }
+}
+
+@mixin segmented-bar($selectors) {
+    #{$selectors} {
+        font-size: 13;
+        @include colorize(
+            $color: primary,
+            $background-color: background
+        );
+    }
+}
+
+@mixin progress($selectors) {
+    #{$selectors} {
+        @include colorize($background-color: background-focus);
+    }
+}
+
+@mixin slider($selectors) {
+    #{$selectors} {
+        margin: 20 16;
+        @include colorize($background-color: focus);
+
+        .ns-android & {
+            @include colorize($color: focus);
+        }
+
+        .ns-ios & {
+            margin: 10 15;
+        }
+
+        &[isEnabled=false] {
+            background-color: $grey;
+            color: $grey;
+        }
+    }
+}
+
+@mixin search-bar($selectors) {
+    #{$selectors} {
+        @include colorize($color: primary);
+    }
+}
+
+@mixin switch($selectors) {
+    #{$selectors} {
+        margin: 14 16;
+        border-width: 1;
+        color: $grey;
+        background-color: $grey;
+
+        &[checked=true] {
+            @include colorize($color: focus);
+        }
+
+        .ns-ios & {
+            margin: 8 15;
+            @include colorize($background-color: background-focus);
+        }
+
+        &[checked=true][isEnabled=false] {
+            background-color: $grey;
+            color: $white;
+        }
+
+        &[isEnabled=false] {
+            background-color: $grey;
+            color: $grey;
+        }
+    }
+}
+
+@mixin tab-view($selectors) {
+    #{$selectors} {
+        tab-text-font-size: 18;
+        text-transform: capitalize;
+        @include colorize(
+            $selected-tab-text-color: primary,
+            $tab-background-color: background,
+            $tab-text-color: tab-text-color
+        );
+    }
+}
+
+
+// Skin
+
+@mixin activity-indicator-skin($selectors) {
+    #{$selectors} {
+        @include colorize($color: focus);
+    }
+}
+
+@mixin segmented-bar-skin($selectors) {
+    #{$selectors} {
+        @include colorize($selected-background-color: focus);
+
+        .ns-ios & {
+            margin: 0 15;
+            @include colorize($color: focus);
+        }
+    }
+}
+
+@mixin progress-skin($selectors) {
+    #{$selectors} {
+        @include colorize($color: focus);
+    }
+}
+
+@mixin slider-skin($selectors) {
+    #{$selectors} {
+        @include colorize($color: focus);
+
+        &[isEnabled=false] {
+            color: $grey;
+        }
+    }
+}
+
+@mixin switch-skin($selectors) {
+    #{$selectors} {
+        @include colorize(
+            $color: primary-focus,
+            $border-color: primary-focus
+        );
+
+        &[checked=true] {
+            @include colorize($color: focus);
+        }
+
+        &[isEnabled=false] {
+            color: $grey;
+
+            .ns-dark & {
+                color: $grey-background;
+            }
+        }
+    }
+}
+
+@mixin tab-view-skin($selectors) {
+    #{$selectors} {
+        @include colorize(
+            $selected-tab-text-color: focus,
+            $android-selected-tab-highlight-color: focus
+        );
+    }
+}

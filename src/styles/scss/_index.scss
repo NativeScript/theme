@@ -3,10 +3,20 @@
 
 // Specifics
 @import 'action-bar';
-@import 'buttons';
+@import 'button';
 @import 'controls';
 @import 'forms';
 @import 'list-view';
 @import 'side-drawer';
 @import 'login';
+
+/* Dividers */
+
+.hr-light {
+    @include colorize($border-color: focus-light);
+}
+
+.hr-dark {
+    @include colorize($border-color: focus-dark);
+}
 

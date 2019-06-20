@@ -1,55 +1,30 @@
-ActivityIndicator,
-.activity-indicator {
-    @include colorize($color: focus);
-}
+@include activity-indicator-skin(
+    ('ActivityIndicator',
+     '.nt-activity-indicator')
+);
 
-SegmentedBar,
-.segmented-bar {
-    @include colorize($selected-background-color: focus);
+@include segmented-bar-skin(
+    ('SegmentedBar',
+     '.nt-segmented-bar')
+);
 
-    .ns-ios & {
-        margin: 0 15;
-        @include colorize($color: focus);
-    }
-}
+@include progress-skin(
+    ('Progress',
+     '.nt-progress')
+);
 
-Progress,
-.progress {
-    @include colorize($color: focus-light);
-}
+@include slider-skin(
+    ('Slider',
+     '.nt-slider')
+);
 
-Slider,
-.slider {
-    @include colorize($color: focus);
-}
+@include switch-skin(
+    ('Switch',
+     '.nt-switch')
+);
 
-Switch,
-.switch {
-    @include colorize(
-        $color: primary-focus,
-        $border-color: primary-focus
-    );
-
-    &[checked=true] {
-        @include colorize($color: focus);
-    }
-}
-
-TabView,
-.tab-view {
-    @include colorize(
-        $selected-tab-text-color: focus,
-        $android-selected-tab-highlight-color: focus-light
-    );
-}
-
-/* Dividers */
-
-.hr-light {
-    @include colorize($border-color: focus-light);
-}
-
-.hr-dark {
-    @include colorize($border-color: focus-dark);
-}
+@include tab-view-skin(
+    ('TabView',
+     '.nt-tab-view')
+);
 

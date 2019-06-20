@@ -16,3 +16,19 @@ FlexboxLayout {
     margin-left: 2;
     margin-right: 2;
 }
+
+.compat-components {
+    visibility: collapsed;
+}
+
+.compat-components + * {
+    visibility: visible;
+}
+
+.ns-compat .compat-components {
+    visibility: visible;
+}
+
+.ns-compat .compat-components + * {
+    visibility: collapsed;
+}

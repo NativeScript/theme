@@ -1,131 +1,45 @@
-.fa {
-  font-family: FontAwesome, fontawesome-webfont;
-}
+@include label(
+    ('Label',
+     '.nt-label')
+);
 
-.ns-theme {
-    color: $primary;
-    font-family: 'Roboto Medium';
-    font-size: 14;
+@include page(
+    ('Page',
+     '.nt-page')
+);
 
-    @at-root .ns-ios {
-        font-family: 'SF UI Text Medium';
-        font-size: 15;
-    }
-}
+@include activity-indicator(
+    ('ActivityIndicator',
+     '.nt-activity-indicator')
+);
 
-.-hidden,
-.hidden {
-    visibility: collapsed;
-}
+@include segmented-bar(
+    ('SegmentedBar',
+     '.nt-segmented-bar')
+);
 
-.-rounded,
-.rounded {
-    border-radius: 3;
-}
+@include progress(
+    ('Progress',
+     '.nt-progress')
+);
 
-Label,
-.label {
-    font-size: 14;
-}
+@include slider(
+    ('Slider',
+     '.nt-slider')
+);
 
-Page,
-.page {
-    @include colorize(
-        $color: primary,
-        $background-color: background
-    );
-}
+@include search-bar(
+    ('SearchBar',
+     '.nt-search-bar')
+);
 
-ActivityIndicator,
-.activity-indicator {
-    width: 30;
-    height: 30;
-}
+@include switch(
+    ('Switch',
+     '.nt-switch')
+);
 
-SegmentedBar,
-.segmented-bar {
-    font-size: 13;
-    @include colorize(
-        $color: primary,
-        $background-color: background
-    );
-}
+@include tab-view(
+    ('TabView',
+     '.nt-tab-view')
+);
 
-Progress,
-.progress {
-    @include colorize($background-color: background-focus);
-}
-
-Slider,
-.slider {
-    margin: 20 16;
-    @include colorize($background-color: focus);
-
-    .ns-android & {
-        @include colorize($color: focus);
-    }
-
-    .ns-ios & {
-        margin: 10 15;
-    }
-
-    &[isEnabled=false] {
-        background-color: $grey;
-        color: $grey;
-    }
-}
-
-SearchBar,
-.search-bar {
-    @include colorize($color: primary);
-}
-
-Switch,
-.switch {
-    margin: 14 16;
-    border-width: 1;
-    color: $grey;
-    background-color: $grey;
-
-    &[checked=true] {
-        @include colorize($color: focus);
-    }
-
-    .ns-ios & {
-        margin: 8 15;
-        @include colorize($background-color: background-focus);
-    }
-
-    &[checked=true][isEnabled=false] {
-        background-color: $grey;
-        color: $white;
-    }
-
-    &[isEnabled=false] {
-        background-color: $grey;
-        color: $grey;
-    }
-}
-
-
-TabView,
-.tab-view {
-    tab-text-font-size: 18;
-    text-transform: capitalize;
-    @include colorize(
-        $selected-tab-text-color: primary,
-        $tab-background-color: background,
-        $tab-text-color: tab-text-color
-    );
-}
-
-/* Dividers */
-
-.hr-light,
-.hr-dark {
-    height: 0;
-    width: 100%;
-    margin: 10 0;
-    border-width: 0 0 1;
-    border-style: solid;
-}
