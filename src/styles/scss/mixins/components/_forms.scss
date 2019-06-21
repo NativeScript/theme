@@ -75,11 +75,6 @@
 
     /* Form fields */
 
-    DatePicker,
-    TimePicker {
-        @include colorize($background-color: background);
-    }
-
     #{if($compat, '.input',
         ('Label',
          'TextView',
@@ -95,11 +90,14 @@
          'PickerField',
          'DatePickerField',
          'TimePickerField'))} {
-        @include colorize($color: primary);
-        font-size: 16;
-        padding: 16 8;
+        @include colorize(
+            $color: primary,
+            $placeholder-color: secondary
+        );
+
         background-color: transparent;
-        @include colorize($placeholder-color: secondary);
+        font-size: 16;
+        padding: 8;
 
         .ns-ios & {
             font-size: 15;
@@ -112,7 +110,7 @@
              '&.-border'))} {
             border-width: 1;
             border-radius: 4;
-            padding: 16;
+            padding: 12 14;
         }
 
         #{if($compat, '&.input-rounded', '&.-rounded')} {
@@ -126,8 +124,18 @@
     }
 
     @if not $compat {
+        DatePicker,
+        TimePicker,
         DateTimePickerFields {
-            @include colorize($background: background);
+            @include colorize($background-color: background);
+        }
+
+        TextField,
+        PickerField,
+        DatePickerField,
+        TimePickerField,
+        DateTimePickerFields {
+
         }
     }
 }
@@ -135,7 +143,7 @@
 
 @mixin input-component($selectors, $compat: false) {
     #{$selectors} {
-        margin: 8 16 0;
+        margin: 8 8 0;
 
         #{if($compat, '.label', '& > Label')} {
             font-size: 16;
@@ -177,7 +185,8 @@
          'TextField',
          'PickerField',
          'DatePickerField',
-         'TimePickerField'))} {
+         'TimePickerField',
+         'DateTimePickerFields'))} {
         background-color: transparent;
 
         #{if($compat,

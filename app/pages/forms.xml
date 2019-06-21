@@ -29,21 +29,16 @@
 
   <StackLayout class="page nt-form p-15">
 
-    <StackLayout class="nt-input">
-      <TextField id="textField" hint="Input text" returnKeyType="{{ keyType }}" returnPress="{{ returnPress }}" />
-      <StackLayout class="hr-light" />
-    </StackLayout>
+    <TextField hint="Input text" />
 
     <StackLayout class="nt-input">
       <Label text="Label" class="m-b-5" />
-      <TextField hint="Input text for a single line field" class="input" />
-      <StackLayout class="hr-light" />
+      <TextField hint="Input text for a single line field" />
     </StackLayout>
 
     <GridLayout class="nt-input -sides" rows="auto, auto" columns="*,*">
       <Label text="Label" row="0" col="0" />
       <TextField hint="Input text" row="0" col="1" />
-      <StackLayout class="hr-light" row="1" colSpan="2" />
     </GridLayout>
 
     <TextField hint="Input border" class="-border m-b-10" />
