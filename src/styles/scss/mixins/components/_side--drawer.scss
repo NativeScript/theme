@@ -92,8 +92,7 @@
             }
         }
 
-        .sidedrawer-header,
-        .nt-drawer__header {
+        #{if($compat, '.sidedrawer-header', '.nt-drawer__header')} {
             height: 148;
             width: 100%;
             padding: 30 25;
@@ -110,23 +109,20 @@
                 font-size: 40;
                 margin-right: 15;
             }
-        }
 
-        .nt-drawer__header-image,
-        .sidedrawer-header-image {
-            height: 74;
-            width: 74;
-            border-radius: 37;
-            horizontal-align: center;
-            margin-bottom: 24;
-        }
+            &-image {
+                height: 74;
+                width: 74;
+                border-radius: 37;
+                horizontal-align: center;
+                margin-bottom: 24;
+            }
 
-        .nt-drawer__header-brand,
-        .sidedrawer-header-brand {
-            horizontal-align: center;
-            font-size: 15;
+            &-brand {
+                horizontal-align: center;
+                font-size: 15;
+            }
         }
-
 
         // This covers the dark root RSD, as the .ns-dark class is set on it
         &.ns-dark {
@@ -150,18 +146,20 @@
                     background: map-get($dark-colors, background);
                 }
 
-                .sidedrawer-list-item.active {
-                    color: map-get($dark-colors, item-active-color);
-                    background-color: map-get($dark-colors, item-active-background);
+                .sidedrawer-list-item {
 
-                    .sidedrawer-list-item-icon {
+                    &.active {
+                        color: map-get($dark-colors, item-active-color);
+                        background-color: map-get($dark-colors, item-active-background);
+                    }
+
+                    &.active &-icon {
                         color: map-get($dark-colors, item-active-icon-color);
                     }
                 }
             }
 
-            .sidedrawer-header,
-            .nt-drawer__header {
+            #{if($compat, '.sidedrawer-header', '.nt-drawer__header')} {
                 background: map-get($dark-colors, background-dark-focus);
 
                 Label {
@@ -172,9 +170,8 @@
     }
 }
 
-@mixin side-drawer-skin-content() {
-    .sidedrawer-header,
-    .nt-drawer__header {
+@mixin side-drawer-skin-content($compat: false) {
+    #{if($compat, '.sidedrawer-header', '.nt-drawer__header')} {
         background: map-get($dark-colors, ab-background-dark);
 
         Label {
@@ -182,9 +179,7 @@
         }
     }
 
-    .nt-drawer__content,
-    .sidedrawer-left,
-    .sidedrawer-center {
+    #{if($compat, ('.sidedrawer-left', '.sidedrawer-center'), ('> *', '.nt-drawer__content'))} {
         color: map-get($dark-colors, ab-color);
 
         & Button:active {
@@ -196,11 +191,11 @@
 
 @mixin side-drawer-skin($selectors, $compat: false) {
     #{$selectors} {
-        @include side-drawer-skin-content();
+        @include side-drawer-skin-content($compat);
 
         // This covers the dark root RSD, as the .ns-dark class is set on it
         &.ns-dark {
-            @include side-drawer-skin-content();
+            @include side-drawer-skin-content($compat);
         }
     }
 }
