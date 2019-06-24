@@ -49,7 +49,8 @@ export class NavigationViewModel extends BaseModel {
 			value: "search",
 			icon: "search"
 		}, {
-			value: "segmentbar",
+			text: "SegmentedBar",
+			value: "segmentedbar",
 			icon: "columns"
 		}, {
 			value: "sliders",
