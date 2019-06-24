@@ -59,7 +59,8 @@
     /* Form Validation styling */
 
     #{if($compat, '.input',
-        ('TextField',
+        ('TextView',
+         'TextField',
          'PickerField',
          'DatePickerField',
          'TimePickerField'))} {
@@ -86,7 +87,8 @@
     }
 
     #{if($compat, '.input',
-        ('TextField',
+        ('TextView',
+         'TextField',
          'PickerField',
          'DatePickerField',
          'TimePickerField'))} {
@@ -128,6 +130,18 @@
     }
 
     @if not $compat {
+        TextView {
+            min-height: 100;
+        }
+
+        TextView,
+        TextField,
+        DatePicker,
+        TimePicker,
+        DateTimePickerFields {
+            margin-bottom: 10;
+        }
+
         DatePicker,
         TimePicker,
         DateTimePickerFields {
@@ -146,7 +160,7 @@
             color: $grey-background;
         }
 
-        #{if($compat, '.input', '> TextField')} {
+        #{if($compat, '.input', '> TextView, > TextField')} {
             margin: 0 0 8 0;
         }
 
