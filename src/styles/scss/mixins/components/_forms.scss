@@ -120,7 +120,10 @@
 
         &[isEnabled=false] {
             opacity: .5;
-            background-color: mix($background, $primary, 95%);
+            @include colorize(
+                $color: gray,
+                $decontrasted-background-color: gray background 30%
+            );
         }
     }
 
@@ -183,6 +186,13 @@
 
         &:focus {
             @include colorize($contrasted-border-color: focus background 20%);
+        }
+
+        &[isEnabled=false] {
+            @include colorize(
+                $color: gray,
+                $decontrasted-background-color: gray background 30%
+            );
         }
     }
 
