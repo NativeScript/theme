@@ -71,6 +71,17 @@
     }
 }
 
+@function decontrasted($color, $to-color, $intensity: 30%, $darken: null) {
+    @if check-contrast($to-color) {
+        $darken: if($darken != null, $darken, $intensity);
+
+        @return darken($color, $darken);
+    } @else {
+        @return lighten($color, $intensity);
+    }
+}
+
+
 @function slice($list, $start: 1, $end: length($list)) {
     $result: ();
 

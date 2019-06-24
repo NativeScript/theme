@@ -98,7 +98,7 @@
         border-width: 0 0 1;
         background-color: transparent;
         font-size: 16;
-        padding: 8;
+        padding: 8 0;
 
         .ns-ios & {
             font-size: 15;
@@ -136,22 +136,20 @@
 
 @mixin input-component($selectors, $compat: false) {
     #{$selectors} {
-        margin: 8 8 0;
+        margin: 8 0;
 
-        #{if($compat, '.label', '& > Label')} {
+        #{if($compat, '.label', '> Label')} {
             font-size: 16;
             color: $grey-background;
         }
 
         #{if($compat, '.input', '& > TextField')} {
-            padding: 0;
             margin: 0 0 8 0;
         }
 
         #{if($compat, '&.input-sides', '&.-sides')} {
-            #{if($compat, '.label', 'NTInput > Label')} {
-                font-size: 18;
-                margin: 0 0 8 0;
+            #{if($compat, '.label', '> Label')} {
+                margin: 8 0;
             }
         }
 
@@ -179,11 +177,12 @@
          'DatePickerField',
          'TimePickerField',
          'DateTimePickerFields'))} {
-        border-color: #999;
         background-color: transparent;
 
+        @include colorize($decontrasted-border-color: gray background 10%);
+
         &:focus {
-            border-color: $focus;
+            @include colorize($contrasted-border-color: focus background 20%);
         }
     }
 
@@ -202,7 +201,7 @@
 @mixin input-component-skin($selectors, $compat: false) {
     #{$selectors} {
         #{if($compat, '.label', '& > Label')} {
-            @include colorize($contrasted-color: focus background 20%);
+            @include colorize($contrasted-color: focus background 30%);
         }
     }
 }
