@@ -95,6 +95,7 @@
             $placeholder-color: secondary
         );
 
+        border-width: 0 0 1;
         background-color: transparent;
         font-size: 16;
         padding: 8;
@@ -128,14 +129,6 @@
         TimePicker,
         DateTimePickerFields {
             @include colorize($background-color: background);
-        }
-
-        TextField,
-        PickerField,
-        DatePickerField,
-        TimePickerField,
-        DateTimePickerFields {
-
         }
     }
 }
@@ -180,21 +173,17 @@
     /* Form fields */
 
     #{if($compat, '.input',
-        ('Label',
-         'TextView',
+        ('TextView',
          'TextField',
          'PickerField',
          'DatePickerField',
          'TimePickerField',
          'DateTimePickerFields'))} {
+        border-color: #999;
         background-color: transparent;
 
-        #{if($compat,
-            ('&.input-rounded',
-             '&.input-border'),
-            ('&.-rounded',
-             '&.-border'))} {
-            @include colorize($contrasted-border-color: focus background 20%);
+        &:focus {
+            border-color: $focus;
         }
     }
 
