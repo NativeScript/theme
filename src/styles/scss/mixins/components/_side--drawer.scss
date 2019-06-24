@@ -5,36 +5,6 @@
             > *,
             .nt-drawer__content {
                 @include colorize($background: background);
-
-                //& > StackLayout {
-                //    horizontal-align: stretch;
-                //}
-                //
-                //& ScrollView StackLayout {
-                //    padding: 15 0;
-                //}
-                //
-                //& Button {
-                //    @include colorize($color: primary);
-                //    border-radius: 1;
-                //    border-width: 0;
-                //    width: 100%;
-                //    padding: 10 20;
-                //    margin-bottom: 0;
-                //    font-size: 16;
-                //    text-align: left;
-                //    text-transform: none;
-                //
-                //    .ns-ios & {
-                //        height: 50;
-                //        padding: 50 0 0 20;
-                //        line-height: 50;
-                //    }
-                //
-                //    &:active {
-                //        @include colorize($background: background);
-                //    }
-                //}
             }
         } @else {
             .sidedrawer-left,
@@ -130,14 +100,6 @@
                 > *,
                 .nt-drawer__content {
                     background: map-get($dark-colors, background);
-
-                    Button {
-                        color: map-get($dark-colors, primary);
-
-                        &:active {
-                            background: map-get($dark-colors, background);
-                        }
-                    }
                 }
             } @else {
                 .sidedrawer-left,
@@ -181,11 +143,6 @@
 
     #{if($compat, ('.sidedrawer-left', '.sidedrawer-center'), ('> *', '.nt-drawer__content'))} {
         color: map-get($dark-colors, ab-color);
-
-        & Button:active {
-            color: map-get($dark-colors, ab-color);
-            background: map-get($dark-colors, ab-background-dark);
-        }
     }
 }
 

@@ -146,7 +146,7 @@
             color: $grey-background;
         }
 
-        #{if($compat, '.input', '& > TextField')} {
+        #{if($compat, '.input', '> TextField')} {
             margin: 0 0 8 0;
         }
 
