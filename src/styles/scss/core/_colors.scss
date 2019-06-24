@@ -2,7 +2,8 @@
 $light-colors: (
     primary: $primary,
     background: $background,
-    focus: $focus
+    focus: $focus,
+    gray: #999
 );
 
 @if (global_variable_exists("theme-type")) {
@@ -22,7 +23,7 @@ $light-colors: map-merge($light-colors, (
     text-color: map-get($light-colors, primary),
     headings-color: map-get($light-colors, primary),
 
-    tab-text-color: mix(#999, map-get($light-colors, focus), 70%),
+    tab-text-color: mix(map-get($light-colors, gray), map-get($light-colors, focus), 70%),
 
     focus-dark: darken(map-get($light-colors, focus), 20%),
     focus-light: lighten(map-get($light-colors, focus), 20%),
@@ -49,7 +50,8 @@ $light-colors: map-merge($light-colors, (
 $dark-colors: (
     primary: $white,
     background: $charcoal,
-    focus: $focus
+    focus: $focus,
+    gray: #999
 );
 
 @if (global_variable_exists("bg-color")) {
@@ -90,7 +92,7 @@ $dark-colors: map-merge($dark-colors, (
     text-color: map-get($dark-colors, primary),
     headings-color: map-get($dark-colors, primary),
 
-    tab-text-color: mix(#999, map-get($dark-colors, focus), 70%),
+    tab-text-color: mix(map-get($dark-colors, gray), map-get($dark-colors, focus), 70%),
 
     focus-dark: lighten(map-get($dark-colors, focus), 20%),
     focus-light: lighten(map-get($dark-colors, focus), 40%),
