@@ -35,6 +35,9 @@ export class NavigationViewModel extends BaseModel {
             value: "pickers",
             icon: "list-alt"
         }, {
+            value: "calendar",
+            icon: "calendar"
+        }, {
             text: "ListView",
             value: "listview",
             icon: "list"

@@ -2,7 +2,6 @@ import { BaseModel } from "./base";
 
 export class BasicsModel extends BaseModel {}
 
-export function navigatingTo(args) {
-    var page = args.object;
+export function navigatingTo({ object: page }) {
     page.bindingContext = new BasicsModel(page);
 }

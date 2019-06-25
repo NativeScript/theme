@@ -26,7 +26,8 @@
     "nativescript-theme-widgets": "../nativescript-theme-widgets",
     "nativescript-themes": "2.0.1",
     "nativescript-ui-sidedrawer": "^7.0.0-androidx-110619",
-    "tns-core-modules": "^6.0.0-next-2019-06-24-123740-02"
+    "nativescript-ui-calendar": "^5.0.0-androidx-110619-2",
+    "tns-core-modules": "^6.0.0-next-2019-06-25-151530-02"
   },
   "devDependencies": {
     "@abraham/reflection": "0.5.1",
@@ -35,7 +36,6 @@
     "eslint": "5.16.0",
     "glob": "7.1.4",
     "lazy": "1.0.11",
-    "nativescript-dev-sass": "1.7.0",
     "nativescript-dev-webpack": "^0.25.0-next-2019-06-21-150426-03",
     "postcss": "7.0.17",
     "postcss-custom-properties": "8.0.10",
