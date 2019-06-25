@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "bootstrap": "4.3.1",
+    "nativescript-picker": "^2.1.2",
+    "nativescript-datetimepicker": "^1.2.1",
     "nativescript-theme-core": "./src",
     "nativescript-theme-widgets": "../nativescript-theme-widgets",
     "nativescript-themes": "2.0.1",

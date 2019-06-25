@@ -1,0 +1,15 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:actionBar="/action-bar"
+      xmlns:p="nativescript-picker"
+      xmlns:dt="nativescript-datetimepicker"
+      navigatingTo="navigatingTo">
+  <actionBar:action-bar ActionBarTitle="Pickers" />
+  <ScrollView>
+    <StackLayout class="nt-form">
+      <p:PickerField hint="Pick an item" items="{{ items }}" modalAnimated="{{ true }}" />
+      <dt:DatePickerField hint="Pick a date" />
+      <dt:TimePickerField hint="Choose time" />
+      <dt:DateTimePickerFields hintDate="Choose date" hintTime="and time" />
+    </StackLayout>
+  </ScrollView>
+</Page>
