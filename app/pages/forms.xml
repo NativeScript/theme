@@ -29,18 +29,18 @@
             <TextField hint="Input rounded Disabled" class="input input-rounded m-b-10" isEnabled="false"/>
         </StackLayout>
 
-        <StackLayout class="page nt-form p-15">
+        <StackLayout class="page nt-form">
 
-            <TextField hint="Input text"/>
+            <TextField hint="TextField text"/>
 
             <StackLayout class="nt-input">
                 <Label text="Label" class="m-b-5"/>
-                <TextField hint="Input text for a single line field"/>
+                <TextField hint="TextField text for a single line field"/>
             </StackLayout>
 
             <GridLayout class="nt-input -sides" rows="auto, auto" columns="*,*">
                 <Label text="Label" row="0" col="0"/>
-                <TextField hint="Input text" row="0" col="1"/>
+                <TextField hint="TextField text" row="0" col="1"/>
             </GridLayout>
 
             <TextField hint="TextField.-border" class="-border m-b-10"/>
@@ -51,6 +51,11 @@
             <TextView hint="TextView"/>
 
             <TextView hint="TextView.-border" class="-border"/>
+
+            <GridLayout class="nt-input -sides" rows="auto, auto" columns="*,*">
+                <Label text="Label" row="0" col="0"/>
+                <TextView hint="TextView text" row="0" col="1"/>
+            </GridLayout>
         </StackLayout>
     </ScrollView>
 </Page>

@@ -1,98 +1,101 @@
-import { topmost } from "tns-core-modules/ui/frame";
-import { BaseModel } from "./pages/base";
+import {topmost} from "tns-core-modules/ui/frame";
+import {BaseModel} from "./pages/base";
 import * as application from "tns-core-modules/application";
-import { ObservableArray } from "tns-core-modules/data/observable-array";
+import {ObservableArray} from "tns-core-modules/data/observable-array";
 
 export class NavigationViewModel extends BaseModel {
-	constructor(page) {
-		super(page);
+    constructor(page) {
+        super(page);
 
-		this.selectedPage = "";
-		this.pages = new ObservableArray({
-			text: "home",
-			value: "root",
-			icon: "home"
-		}, {
-			value: "basics",
-			icon: "font"
-		}, {
-			value: "buttons",
-			icon: "square"
-		}, {
-			text: "active buttons",
-			value: "buttons-active",
-			icon: "square-o"
-		}, {
-			value: "colors",
-			icon: "eyedropper"
-		}, {
-			value: "dialogs",
-			icon: "newspaper-o"
-		}, {
-			value: "forms",
-			icon: "i-cursor"
-		}, {
-			text: "ListView",
-			value: "listview",
-			icon: "list"
-		}, {
-			text: "login",
-			value: "login-landing",
-			icon: "user"
-		}, {
-			value: "modal",
-			icon: "window-maximize"
-		}, {
-			value: "progress",
-			icon: "spinner"
-		}, {
-			value: "search",
-			icon: "search"
-		}, {
-			text: "SegmentedBar",
-			value: "segmentedbar",
-			icon: "columns"
-		}, {
-			value: "sliders",
-			icon: "sliders"
-		}, {
-			value: "switches",
-			icon: "toggle-on"
-		}, {
-			value: "tabs",
-			icon: "road"
-		});
-	}
+        this.selectedPage = "";
+        this.pages = new ObservableArray({
+            text: "home",
+            value: "root",
+            icon: "home"
+        }, {
+            value: "basics",
+            icon: "font"
+        }, {
+            value: "buttons",
+            icon: "square"
+        }, {
+            text: "active buttons",
+            value: "buttons-active",
+            icon: "square-o"
+        }, {
+            value: "colors",
+            icon: "eyedropper"
+        }, {
+            value: "dialogs",
+            icon: "newspaper-o"
+        }, {
+            value: "forms",
+            icon: "i-cursor"
+        }, {
+            value: "pickers",
+            icon: "list-alt"
+        }, {
+            text: "ListView",
+            value: "listview",
+            icon: "list"
+        }, {
+            text: "login",
+            value: "login-landing",
+            icon: "user"
+        }, {
+            value: "modal",
+            icon: "window-maximize"
+        }, {
+            value: "progress",
+            icon: "spinner"
+        }, {
+            value: "search",
+            icon: "search"
+        }, {
+            text: "SegmentedBar",
+            value: "segmentedbar",
+            icon: "columns"
+        }, {
+            value: "sliders",
+            icon: "sliders"
+        }, {
+            value: "switches",
+            icon: "toggle-on"
+        }, {
+            value: "tabs",
+            icon: "road"
+        });
+    }
 
-	onNavigationItemTap(item) {
-		const page = item.value;
+    onNavigationItemTap(item) {
+        const page = item.value;
 
-		if (page === "modal") {
-			return this.bindingContext.openModal();
-		}
+        if (page === "modal") {
+            return this.bindingContext.openModal();
+        }
 
-		topmost().navigate({
-			moduleName: `pages/${page}`,
-			transition: {
-				name: "slide"
-			}
-		});
+        topmost().navigate({
+            moduleName: `pages/${page}`,
+            transition: {
+                name: "slide"
+            }
+        });
 
-		this.bindingContext.selectedPage = page;
+        this.bindingContext.selectedPage = page;
 
-		application.getRootView().closeDrawer();
-	}
+        application.getRootView().closeDrawer();
+    }
 
-	viewPage(args) {
-		const button = args.object;
-		const pageName = button.value;
+    viewPage(args) {
+        const button = args.object;
+        const pageName = button.value;
 
-		const navigationEntry = {
-			moduleName: `pages/${pageName}`,
-			clearHistory: true
-		};
-		topmost().navigate(navigationEntry);
+        const navigationEntry = {
+            moduleName: `pages/${pageName}`,
+            clearHistory: true
+        };
+        topmost().navigate(navigationEntry);
 
-		this.bindingContext.selectedPage = pageName;
-	}
+        this.bindingContext.selectedPage = pageName;
+    }
 }
