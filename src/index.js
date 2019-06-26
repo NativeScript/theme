@@ -1,5 +1,7 @@
 import { on, displayedEvent, orientationChangedEvent, getRootView } from "tns-core-modules/application";
 import { device, isAndroid, screen } from "tns-core-modules/platform";
+import * as viewCommon from "tns-core-modules/ui/core/view/view-common";
+import { Frame } from "tns-core-modules/ui/frame";
 
 let started = false;
 
@@ -37,17 +39,48 @@ export class ClassList {
     }
 }
 
-function handleOrientation({ newValue: orientation }) {
-    const root = getRootView();
+function updateRootClasses(orientation, root = getRootView(), classes = []) {
     const classList = new ClassList(root.className);
 
     classList
-        .remove("ns-portrait", "ns-landscape", "ns-unknown")
-        .add(`ns-${orientation}`);
+        .remove("ns-portrait", "ns-landscape", "ns-unknown", ...classes)
+        .add(`ns-${orientation}`, ...classes);
 
     root.className = classList.get();
-    console.log(root.className);
 }
+
+function handleOrientation({ newValue: orientation }) {
+    updateRootClasses(orientation);
+
+    if (viewCommon._rootModalViews.length) {
+        const classList = new ClassList(getRootView().className);
+
+        viewCommon._rootModalViews.forEach((view) => updateRootClasses(orientation, view, classList.list.concat("ns-modal")));
+    }
+}
+
+function getOrientation() {
+    return display.heightDIPs > display.widthDIPs ? "portrait" : "landscape";
+}
+
+const test = {
+    defineProperty(target, key, desc) {
+        if (desc && 'value' in desc) {
+            target[key] = desc.value;
+
+            if (desc.value instanceof Frame) {
+                const classList = new ClassList(getRootView().className);
+
+                updateRootClasses(getOrientation(), desc.value, classList.list.concat("ns-modal"));
+            }
+        }
+
+        return target;
+    }
+};
+
+// Get notified when a modal is created.
+viewCommon._rootModalViews = new Proxy(viewCommon._rootModalViews, test);
 
 on(displayedEvent, () => {
     const root = getRootView();
@@ -60,7 +93,7 @@ on(displayedEvent, () => {
     console.log(root.className);
 
     if (!started) {
-        handleOrientation({ newValue: display.heightDIPs > display.widthDIPs ? "portrait" : "landscape" });
+        handleOrientation({ newValue: getOrientation() });
         on(orientationChangedEvent, handleOrientation);
         started = true;
     }

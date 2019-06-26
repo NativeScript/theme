@@ -41,6 +41,10 @@
 
         Page > & {
             padding-top: 24;
+
+            .ns-modal & {
+                padding-top: 0;
+            }
         }
 
         .ns-android & Button {
