@@ -104,18 +104,6 @@
     }
 }
 
-@mixin calendar($selectors) {
-    #{$selectors} {
-        * {
-            @include colorize(
-                $color: primary,
-                $background-color: background,
-                $cell-background-color: background
-            );
-        }
-    }
-}
-
 // Skin
 
 @mixin activity-indicator-skin($selectors) {

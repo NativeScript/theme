@@ -32,7 +32,7 @@ export class BaseModel extends Observable {
     openModal() {
         this.page.showModal("pages/modal-frame", {
             context: {
-                title: "Custom ActionBar",
+                title: "ActionBar in Modal",
             },
             closeCallback: () => {
 
