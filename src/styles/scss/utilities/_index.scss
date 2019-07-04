@@ -16,7 +16,7 @@
     font-size: 14;
 
     @at-root .ns-ios {
-        font-family: 'SF UI Text Medium';
+        font-family: 'SF UI Text Medium', system;
         font-size: 15;
     }
 }
