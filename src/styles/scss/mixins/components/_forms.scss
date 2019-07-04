@@ -125,10 +125,11 @@
     }
 
     @if not $compat {
-        Label {
+        Label,
+        DataFormEditorLabel
+        {
             @include colorize($color: primary);
             padding: 2 0;
-            margin: 0;
         }
 
         TextView {
