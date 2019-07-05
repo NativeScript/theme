@@ -51,7 +51,7 @@ export class DataFormModel extends BaseModel {
                 {
                     name: "street",
                     displayName: "Street Name",
-                    index: 4,
+                    index: 4
                 },
                 {
                     name: "streetNumber",

@@ -65,7 +65,7 @@ function getOrientation() {
 
 const test = {
     defineProperty(target, key, desc) {
-        if (desc && 'value' in desc) {
+        if (desc && "value" in desc) {
             target[key] = desc.value;
 
             if (desc.value instanceof Frame) {

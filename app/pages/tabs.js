@@ -12,7 +12,6 @@ export class TabsModel extends BaseModel {
     }
 }
 
-export function navigatingTo(args) {
-    var page = args.object;
+export function navigatingTo({ object: page }) {
     page.bindingContext = new TabsModel(page);
 }
