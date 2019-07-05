@@ -1,7 +1,14 @@
 <Page loaded="onLoad"
-      xmlns:ui="nativescript-theme-widgets"
       xmlns:actionBar="/action-bar">
     <actionBar:action-bar ActionBarTitle="NativeScript Themes" />
 
-    <ui:NTMenu items="{{ somePages }}" selected="{{ selectedPage }}" itemSelected="{{ onNavigationItemTap }}"/>
+    <ListView items="{{ somePages }}" itemTap="{{ onNavigationItemTap }}">
+        <ListView.itemTemplate>
+            <StackLayout orientation="horizontal">
+                <Label text="{{ icon | fonticon }}" class="fa" />
+                <Label text="{{ text || value }}" />
+            </StackLayout>
+        </ListView.itemTemplate>
+    </ListView>
+<!--    <ui:NTMenu items="{{ somePages }}" selected="{{ selectedPage }}" itemSelected="{{ onNavigationItemTap }}"/>-->
 </Page>
