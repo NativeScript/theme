@@ -25,7 +25,7 @@
                 <Button text="Button.-primary" class="-primary"/>
                 <Button class="-primary">
                     <FormattedString>
-                        <ui:NTSpanIcon name="twitter"/>
+                        <Span text="{{ 'twitter' | fonticon }}"/>
                         <Span text=" Button.-primary with icon"/>
                     </FormattedString>
                 </Button>
