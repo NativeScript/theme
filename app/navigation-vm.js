@@ -70,11 +70,11 @@ export class NavigationViewModel extends BaseModel {
         });
     }
 
-    onNavigationItemTap(item) {
-        const page = item.value;
+    onNavigationItemTap({ object: list, index }) {
+        const page = (list.items[index] || list.items.getItem(index)).value;
 
         if (page === "modal") {
-            return this.bindingContext.openModal();
+            return this.openModal();
         }
 
         topmost().navigate({
@@ -84,7 +84,7 @@ export class NavigationViewModel extends BaseModel {
             }
         });
 
-        this.bindingContext.selectedPage = page;
+        this.selectedPage = page;
 
         application.getRootView().closeDrawer();
     }
