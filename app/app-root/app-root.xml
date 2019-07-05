@@ -14,7 +14,7 @@
             </StackLayout>
             <ListView row="1" items="{{ pages }}" itemTap="{{ onNavigationItemTap }}">
                 <ListView.itemTemplate>
-                    <StackLayout orientation="horizontal" class="{{ value === $parent.selectedPage ? 'active' : '' }}">
+                    <StackLayout orientation="horizontal">
                         <Label text="{{ icon | fonticon }}" class="fa" />
                         <Label text="{{ text || value }}" />
                     </StackLayout>
