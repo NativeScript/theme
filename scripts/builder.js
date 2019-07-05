@@ -3,7 +3,7 @@
  *
  * Version 0.0.5                                      Nathan@master-technology.com
  ************************************************************************************/
-"use strict";
+
 
 const fs = require("fs");
 const sass = require("node-sass");
@@ -21,7 +21,7 @@ fs.mkdirSync("nativescript-theme-core/fonts");
 
 const version = getVersion();
 const versionPlaceholder = "__VERSION__";
-console.log("Building the Deployment files for v" + version + "...");
+console.log(`Building the Deployment files for v${version}...`);
 
 // Create CSS from SCSS
 createCSSFromSCSS();
@@ -45,7 +45,13 @@ console.log("Change to the 'nativescript-theme-core' folder and you can now do y
  */
 function createPackageJson() {
     const outputPackageJson = (({ name, version, description, author, homepage, licence, repository }) =>
-                               ({ name, version, description, author, homepage, licence, repository }))(pjs);
+                               ({ name,
+version,
+description,
+author,
+homepage,
+licence,
+repository }))(pjs);
 
     outputPackageJson.nativescript = {
         platforms: {
@@ -63,7 +69,8 @@ function createPackageJson() {
 function copyFonts() {
     const ttfFiles = glob.sync("./app/fonts/*.ttf");
     const otfFiles = glob.sync("./app/fonts/*.otf");
-    let i, out;
+    let i;
+    let out;
 
     for (i = 0; i < ttfFiles.length; i++) {
         out = ttfFiles[i].replace("./app/", "./nativescript-theme-core/");
@@ -86,7 +93,6 @@ function copyFonts() {
 }
 
 
-
 // ----------------------------------------------------------------------
 
 /**
@@ -94,9 +100,7 @@ function copyFonts() {
  */
 function copySCSS() {
     const sassFilesPath = "./app/scss/**/*.scss";
-    const sassFiles = glob.sync(sassFilesPath).filter(function(filePath) {
-        return filePath.indexOf("App_Resources") === -1;
-    });
+    const sassFiles = glob.sync(sassFilesPath).filter((filePath) => filePath.indexOf("App_Resources") === -1);
 
     for (let i = 0; i < sassFiles.length; i++) {
         const out = sassFiles[i].replace("./app/", "./nativescript-theme-core/");
@@ -109,7 +113,7 @@ function copySCSS() {
         if (paths.length > 1) {
             let path = "./nativescript-theme-core";
             for (let j = 0; j < paths.length - 1; j++) {
-                path += "/" + paths[j];
+                path += `/${paths[j]}`;
                 if (!fs.existsSync(path)) {
                     fs.mkdirSync(path);
                 }
@@ -140,7 +144,7 @@ function createCSSFromSCSS() {
         "./node_modules/"
     ];
 
-    const sassFiles = glob.sync(sassFilesPath).filter(function(filePath) {
+    const sassFiles = glob.sync(sassFilesPath).filter((filePath) => {
         const path = filePath;
         const parts = path.split("/");
         const filename = parts[parts.length - 1];
@@ -165,7 +169,7 @@ function createCSSFromSCSS() {
 function parseSass(sassFile, importPaths) {
     const sassFileContent = fs.readFileSync(sassFile, { encoding: "utf8" });
     const offset = sassFile.lastIndexOf("/");
-    const outputFile = "nativescript-theme-core/css" + sassFile.substring(offset);
+    const outputFile = `nativescript-theme-core/css${sassFile.substring(offset)}`;
     const cssFilePath = outputFile.replace(".scss", ".css");
 
     // const output = sass.renderSync({
@@ -174,7 +178,7 @@ function parseSass(sassFile, importPaths) {
         includePaths: importPaths,
         outFile: cssFilePath,
         outputStyle: "compressed"
-    }, function(error, result) {
+    }, (error, result) => {
         if (error) {
             console.log(error.status);
             console.log(error.column);
@@ -204,8 +208,8 @@ function deleteFolderRecursive(path) {
     let files = [];
     if (fs.existsSync(path)) {
         files = fs.readdirSync(path);
-        files.forEach(function(file) {
-            const curPath = path + "/" + file;
+        files.forEach((file) => {
+            const curPath = `${path}/${file}`;
             if (fs.lstatSync(curPath).isDirectory()) { // recurse
                 deleteFolderRecursive(curPath);
             } else { // delete file
@@ -229,7 +233,7 @@ function copyFile(src, dest) {
  * Print correct version
  */
 function printVersion(css) {
-    return css.replace(versionPlaceholder, "v" + version);
+    return css.replace(versionPlaceholder, `v${version}`);
 }
 
 /**

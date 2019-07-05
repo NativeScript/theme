@@ -41,8 +41,6 @@ export class ActionBarViewModel extends BaseModel {
     }
 }
 
-export function onLoad(args) {
-    const page = args.object;
-
+export function onLoad({ object: page }) {
     page.bindingContext = new ActionBarViewModel(page);
 }

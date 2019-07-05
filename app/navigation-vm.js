@@ -1,7 +1,7 @@
-import {topmost} from "tns-core-modules/ui/frame";
-import {BaseModel} from "./pages/base";
+import { topmost } from "tns-core-modules/ui/frame";
+import { BaseModel } from "./pages/base";
 import * as application from "tns-core-modules/application";
-import {ObservableArray} from "tns-core-modules/data/observable-array";
+import { ObservableArray } from "tns-core-modules/data/observable-array";
 
 export class NavigationViewModel extends BaseModel {
     constructor(page) {

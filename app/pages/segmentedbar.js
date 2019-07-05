@@ -1,10 +1,7 @@
 import { BaseModel } from "./base";
 
-export class SegmentModel extends BaseModel {
+export class SegmentModel extends BaseModel {}
 
-}
-
-export function navigatingTo(args) {
-    var page = args.object;
+export function navigatingTo({ object: page }) {
     page.bindingContext = new SegmentModel(page);
 }

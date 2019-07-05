@@ -5,7 +5,7 @@ const nsWebpack = require("nativescript-dev-webpack");
 const nativescriptTarget = require("nativescript-dev-webpack/nativescript-target");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
+const ExtraWatchWebpackPlugin = require("extra-watch-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const { NativeScriptWorkerPlugin } = require("nativescript-worker-loader/NativeScriptWorkerPlugin");
 const TerserPlugin = require("terser-webpack-plugin");
@@ -31,6 +31,7 @@ module.exports = smp.wrap((env) => {
 
     // Default destination inside platforms/<platform>/...
     const dist = resolve(projectRoot, nsWebpack.getAppPath(platform, projectRoot));
+    // eslint-disable-next-line no-unused-vars
     const appResourcesPlatformDir = platform === "android" ? "Android" : "iOS";
 
     const {
@@ -49,7 +50,7 @@ module.exports = smp.wrap((env) => {
         hiddenSourceMap, // --env.hiddenSourceMap
         hmr, // --env.hmr,
         unitTesting, // --env.unitTesting,
-        verbose, // --env.verbose
+        verbose // --env.verbose
     } = env;
 
     const isAnySourceMapEnabled = !!sourceMap || !!hiddenSourceMap;
@@ -65,7 +66,7 @@ module.exports = smp.wrap((env) => {
         entries["tns_modules/tns-core-modules/inspector_modules"] = "inspector_modules.js";
     }
 
-    let sourceMapFilename = nsWebpack.getSourceMapFilename(hiddenSourceMap, __dirname, dist);
+    const sourceMapFilename = nsWebpack.getSourceMapFilename(hiddenSourceMap, __dirname, dist);
 
     const itemsToClean = [`${dist}/**/*`];
     if (platform === "android") {
@@ -284,7 +285,7 @@ module.exports = smp.wrap((env) => {
             new ExtraWatchWebpackPlugin({
                 files: [`node_modules/**/*.${platform}.js`]
             })
-        ],
+        ]
     };
 
     if (report) {

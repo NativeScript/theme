@@ -30,10 +30,11 @@
     "tns-core-modules": "^6.0.0-next-2019-06-25-151530-02"
   },
   "devDependencies": {
+    "babel-eslint": "10.0.2",
     "@abraham/reflection": "0.5.1",
     "cache-loader": "4.0.0",
     "dart-sass": "1.21.0",
-    "eslint": "5.16.0",
+    "eslint": "6.0.1",
     "glob": "7.1.4",
     "lazy": "1.0.11",
     "nativescript-dev-webpack": "^0.25.0-next-2019-06-21-150426-03",

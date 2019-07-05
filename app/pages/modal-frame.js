@@ -1,7 +1,8 @@
 import { Observable } from "tns-core-modules/data/observable";
 
 export function onShowingModal(args) {
-    let page = args.object;
+    const page = args.object;
+
     page.bindingContext = new ModalDemo(args);
 }
 

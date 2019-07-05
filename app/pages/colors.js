@@ -1,10 +1,7 @@
 import { BaseModel } from "./base";
 
-export class ColorsModel extends BaseModel {
+export class ColorsModel extends BaseModel {}
 
-}
-
-export function navigatingTo(args) {
-  var page = args.object;
-  page.bindingContext = new ColorsModel(page);
+export function navigatingTo({ object: page }) {
+    page.bindingContext = new ColorsModel(page);
 }

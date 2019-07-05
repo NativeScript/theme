@@ -3,7 +3,7 @@ import themes from "nativescript-themes/themes";
 import * as application from "tns-core-modules/application";
 import { ClassList } from "nativescript-theme-core";
 
-let currentTheme = {
+const currentTheme = {
     theme: "core.light",
     skin: "blue",
     css: ""
@@ -23,14 +23,14 @@ export class ThemesModel extends BaseModel {
         if (module.hot) {
             module.hot.dispose(() => {
                 application.off("livesync", applyThemeProxy);
-            })
+            });
         }
 
         this._applyThemeInternal();
     }
 
     applyTheme(args) {
-        let style = args.object.cssName;
+        const style = args.object.cssName;
         this._applyThemeInternal(style);
     }
 
@@ -66,21 +66,21 @@ export class ThemesModel extends BaseModel {
                     webpackInclude: /\.s?css$/,
                     webpackExclude: /_app-styles\.scss/ */
                 `../${currentTheme.skin}`)
-                .then((skin_styles) => this._applyStyles(skin_styles, `${currentTheme.skin}`));
+                .then((skinStyles) => this._applyStyles(skinStyles, `${currentTheme.skin}`));
         }
 
         import(
             /*  webpackMode: "lazy",
                 webpackExclude: /\/scss\// */
             `nativescript-theme-core/styles/${currentTheme.skin}`)
-            .then((skin_styles) => this._applyStyles(skin_styles, `${currentTheme.skin}`));
+            .then((skinStyles) => this._applyStyles(skinStyles, `${currentTheme.skin}`));
     }
 
-    _applyStyles(skin_styles, name) {
-        currentTheme.css = skin_styles.default.toString();
+    _applyStyles(skinStyles, name) {
+        currentTheme.css = skinStyles.default.toString();
 
         themes.applyThemeCss(currentTheme.css, name);
-    };
+    }
 
     getThemeName(cssPath) {
         if (cssPath.indexOf("core.light") > -1) {
@@ -93,7 +93,7 @@ export class ThemesModel extends BaseModel {
         } else if (cssPath.indexOf("bootstrap-based") > -1) {
             return "Bootstrap";
         } else {
-            let filename = cssPath.split("/").splice(-1)[0].split(".")[0];
+            const filename = cssPath.split("/").splice(-1)[0].split(".")[0];
             return capitalizeFirstLetter(filename);
         }
     }
