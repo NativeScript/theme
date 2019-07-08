@@ -5,6 +5,8 @@
  * Licensed under MIT (https://github.com/NativeScript/theme/blob/master/LICENSE)
  */
 
+@import 'scss/variables';
+
 // Variables form bootstrap v4 dependency
 @import '~bootstrap/scss/functions', '~bootstrap/scss/variables';
 
@@ -12,4 +14,4 @@
 @import 'scss/bootstrap/map';
 
 // Import light theme
-@import 'core';
+@import 'index';

@@ -26,7 +26,7 @@
     "nativescript-themes": "2.0.1",
     "nativescript-ui-sidedrawer": "^7.0.0-androidx",
     "nativescript-ui-dataform": "^5.0.0-androidx",
-    "tns-core-modules": "^6.0.0-rc-2019-07-04-184211-04"
+    "tns-core-modules": "^6.0.0-rc-2019-07-08-122821-02"
   },
   "devDependencies": {
     "babel-eslint": "10.0.2",
@@ -35,7 +35,7 @@
     "eslint": "6.0.1",
     "glob": "7.1.4",
     "lazy": "1.0.11",
-    "nativescript-dev-webpack": "^1.0.0-rc-2019-07-05-084857-01",
+    "nativescript-dev-webpack": "^1.0.0-rc-2019-07-08-135456-03",
     "postcss": "7.0.17",
     "postcss-custom-properties": "9.0.1",
     "postcss-loader": "3.0.0",

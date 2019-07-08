@@ -15,7 +15,7 @@
             <ListView row="1" items="{{ pages }}" itemTap="{{ onNavigationItemTap }}">
                 <ListView.itemTemplate>
                     <StackLayout orientation="horizontal">
-                        <Label text="{{ icon | fonticon }}" class="fa" />
+                        <Label text="{{ 'fa-' + icon | fonticon }}" class="fa nt-icon" />
                         <Label text="{{ text || value }}" />
                     </StackLayout>
                 </ListView.itemTemplate>

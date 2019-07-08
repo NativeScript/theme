@@ -3,7 +3,7 @@
       xmlns:p="nativescript-picker"
       xmlns:dt="nativescript-datetimepicker"
       navigatingTo="navigatingTo">
-  <actionBar:action-bar ActionBarTitle="Pickers" />
+  <actionBar:action-bar actionBarTitle="Pickers" />
   <ScrollView>
     <StackLayout class="nt-form">
       <p:PickerField hint="Pick an item" items="{{ items }}" modalAnimated="{{ true }}" />

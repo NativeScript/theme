@@ -1,7 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
   xmlns:actionBar="/action-bar"
   navigatingTo="navigatingTo">
-  <actionBar:action-bar ActionBarTitle="Buttons Active" />
+  <actionBar:action-bar actionBarTitle="Buttons Active" />
   <StackLayout class="page">
       <Button text="btn btn-active" tap="" class="btn btn-active" />
       <Button text="btn btn-primary btn-active" tap="" class="btn btn-primary btn-active" />

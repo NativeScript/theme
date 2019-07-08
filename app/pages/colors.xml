@@ -1,7 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
   xmlns:actionBar="/action-bar"
   navigatingTo="navigatingTo">
-  <actionBar:action-bar ActionBarTitle="Colors" />
+  <actionBar:action-bar actionBarTitle="Colors" />
       <ScrollView class="page">
         <StackLayout class="p-10">
           <Label text="Set color property:" class="h2 font-italic" />

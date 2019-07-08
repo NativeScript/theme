@@ -33,11 +33,10 @@
 
 /* Dividers */
 
-.hr-light,
-.hr-dark {
-    height: 0;
+.hr {
+    height: 1;
     width: 100%;
-    margin: 10 0;
+    margin: 9 0 10;
     border-width: 0 0 1;
     border-style: solid;
 }

@@ -1,8 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
       xmlns:actionBar="/action-bar"
-      xmlns:ui="nativescript-theme-widgets"
       navigatingTo="navigatingTo">
-    <actionBar:action-bar ActionBarTitle="Buttons"/>
+    <actionBar:action-bar actionBarTitle="Buttons"/>
     <ScrollView>
         <StackLayout>
             <StackLayout class="compat-components">
@@ -25,7 +24,7 @@
                 <Button text="Button.-primary" class="-primary"/>
                 <Button class="-primary">
                     <FormattedString>
-                        <Span text="{{ 'twitter' | fonticon }}"/>
+                        <Span text="{{ 'fa-twitter' | fonticon }}" class="fa nt-icon"/>
                         <Span text=" Button.-primary with icon"/>
                     </FormattedString>
                 </Button>

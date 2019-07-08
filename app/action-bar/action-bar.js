@@ -8,6 +8,7 @@ export class ActionBarViewModel extends BaseModel {
         super(page);
 
         this.actionBar = page;
+        this.actionBar.page.actionBarHidden = page && page.hidden;
         this.backButton = this.topFrame.canGoBack();
 
         if (isAndroid) {
