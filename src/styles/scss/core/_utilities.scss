@@ -17,7 +17,18 @@ TextView {
     }
 }
 
-Image {
+Image,
+ListView,
+RadListView {
     min-height: 100;
+}
+
+Image {
     margin-bottom: 20;
 }
+
+NTIcon,
+.nt-icon {
+    font-size: 16;
+}
+

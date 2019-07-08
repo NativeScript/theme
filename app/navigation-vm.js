@@ -9,32 +9,33 @@ export class NavigationViewModel extends BaseModel {
 
         this.selectedPage = "";
         this.pages = new ObservableArray({
-            text: "home",
+            text: "Home",
             value: "root",
             icon: "home"
         }, {
-            value: "basics",
+            value: "Basics",
             icon: "font"
         }, {
-            value: "buttons",
+            value: "Buttons",
             icon: "square"
         }, {
-            text: "active buttons",
+            text: "Active Buttons",
             value: "buttons-active",
             icon: "square-o"
         }, {
-            value: "colors",
+            value: "Colors",
             icon: "eyedropper"
         }, {
-            value: "dialogs",
+            value: "Dialogs",
             icon: "newspaper-o"
         }, {
-            value: "forms",
+            value: "Forms",
             icon: "i-cursor"
         }, {
-            value: "pickers",
+            value: "Pickers",
             icon: "list-alt"
         }, {
+            text: "DataForm",
             value: "dataform",
             icon: "database"
         }, {
@@ -42,30 +43,30 @@ export class NavigationViewModel extends BaseModel {
             value: "listview",
             icon: "list"
         }, {
-            text: "login",
+            text: "Login",
             value: "login-landing",
             icon: "user"
         }, {
-            value: "modal",
+            value: "Modal",
             icon: "window-maximize"
         }, {
-            value: "progress",
+            value: "Progress",
             icon: "spinner"
         }, {
-            value: "search",
+            value: "Search",
             icon: "search"
         }, {
             text: "SegmentedBar",
             value: "segmentedbar",
             icon: "columns"
         }, {
-            value: "sliders",
+            value: "Sliders",
             icon: "sliders"
         }, {
-            value: "switches",
+            value: "Switches",
             icon: "toggle-on"
         }, {
-            value: "tabs",
+            value: "Tabs",
             icon: "road"
         });
     }
@@ -73,12 +74,12 @@ export class NavigationViewModel extends BaseModel {
     onNavigationItemTap({ object: list, index }) {
         const page = (list.items[index] || list.items.getItem(index)).value;
 
-        if (page === "modal") {
+        if (page === "Modal") {
             return this.openModal();
         }
 
         topmost().navigate({
-            moduleName: `pages/${page}`,
+            moduleName: `pages/${page.toLowerCase()}`,
             transition: {
                 name: "slide"
             }

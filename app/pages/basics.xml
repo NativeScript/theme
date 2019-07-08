@@ -1,7 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
       xmlns:actionBar="/action-bar"
   navigatingTo="navigatingTo">
-  <actionBar:action-bar ActionBarTitle="Basics" />
+  <actionBar:action-bar actionBarTitle="Basics" />
   <ScrollView class="page">
     <StackLayout class="p-20">
       <GridLayout rows="auto" columns="*,*" class="h1 m-5 w-full">
@@ -38,7 +38,7 @@
       </GridLayout>
       <StackLayout class="page m-t-10">
         <Label text="Text" class="h2" />
-        <StackLayout class="hr-light m-b-2"></StackLayout>
+        <StackLayout class="hr m-b-2" />
         <!--<Label text="Note: text-transform is not working." textWrap="true" class="t-14 c-grey-d-20 m-b-5" />-->
 
         <GridLayout rows="auto" columns="*,*" class="text-lowercase m-t-5 w-full">

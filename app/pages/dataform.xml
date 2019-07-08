@@ -2,7 +2,7 @@
       xmlns:actionBar="/action-bar"
       xmlns:df="nativescript-ui-dataform"
       navigatingTo="navigatingTo">
-    <actionBar:action-bar ActionBarTitle="RadDataForm"/>
+    <actionBar:action-bar actionBarTitle="RadDataForm"/>
 
     <ScrollView>
         <StackLayout>

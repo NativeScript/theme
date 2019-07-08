@@ -10,7 +10,7 @@ export class BaseModel extends Observable {
         this.page = page;
         this.topFrame = topmost();
         this.sideDrawer = app.getRootView();
-        this.title = page && page.ActionBarTitle;
+        this.title = page && page.actionBarTitle;
     }
 
     goBack() {

@@ -2,7 +2,7 @@
   navigatingTo="navigatingTo"
   navigatingFrom="navigatingFrom"
   xmlns:actionBar="/action-bar">
-  <actionBar:action-bar ActionBarTitle="Progress" />
+  <actionBar:action-bar actionBarTitle="Progress" />
   <StackLayout class="page">
     <GridLayout rows="auto ,*" columns="">
       <Progress id="progress" row="0" value="50" maxValue="100" class="progress" />

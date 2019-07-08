@@ -4,8 +4,8 @@ class DemoItem {
     constructor(title) {
         this.title = title;
         this.content = "Secondary line text lorem ipsum dapibus, neque id cursus faucibus";
-        this.image = "~/images/Thumb1.jpg";
-        this.imagealt = "~/images/Thumb3.jpg";
+        this.image = "~/assets/images/Thumb1.jpg";
+        this.imagealt = "~/assets/images/Thumb3.jpg";
     }
 }
 

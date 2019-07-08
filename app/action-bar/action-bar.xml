@@ -1,4 +1,4 @@
-<ActionBar title="{{ title }}" loaded="onLoad">
+<ActionBar title="{{ title }}" loaded="onLoad" actionBarHidden="{{ actionBarHidden }}">
     <android>
         <NavigationButton icon="{{ backButton ? 'res://chevron_left' : 'res://menu' }}"
                           tap="{{ backButton ? goBack : toggleSideDrawer }}" />
