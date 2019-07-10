@@ -1,7 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
       xmlns:actionBar="/action-bar"
       navigatingTo="navigatingTo">
-    <actionBar:action-bar actionBarTitle="Progress"/>
+    <actionBar:action-bar actionBarTitle="TabView"/>
     <GridLayout rows="*, *">
         <TabView>
             <TabViewItem title="One">

@@ -71,67 +71,67 @@
         .ns-root #{if($compat, '&-aqua.btn', '&.-aqua.-aqua')} {
             background-color: $aqua;
             border-color: $aqua;
-            color: text-contrast($aqua);
+            color: alternate($aqua);
         }
 
         .ns-root #{if($compat, '&-blue.btn', '&.-blue.-blue')} {
             background-color: $blue;
             border-color: $blue;
-            color: text-contrast($blue);
+            color: alternate($blue);
         }
 
         .ns-root #{if($compat, '&-brown.btn', '&.-brown.-brown')} {
             background-color: $brown;
             border-color: $brown;
-            color: text-contrast($brown);
+            color: alternate($brown);
         }
 
         .ns-root #{if($compat, '&-forest.btn', '&.-forest.-forest')} {
             background-color: $forest;
             border-color: $forest;
-            color: text-contrast($forest);
+            color: alternate($forest);
         }
 
         .ns-root #{if($compat, '&-grey.btn', '&.-grey.-grey')} {
             background-color: $grey-dark;
             border-color: $grey-dark;
-            color: text-contrast($grey-dark);
+            color: alternate($grey-dark);
         }
 
         .ns-root #{if($compat, '&-lemon.btn', '&.-lemon.-lemon')} {
             background-color: $lemon;
             border-color: $lemon;
-            color: text-contrast($lemon);
+            color: alternate($lemon);
         }
 
         .ns-root #{if($compat, '&-lime.btn', '&.-lime.-lime')} {
             background-color: $lime;
             border-color: $lime;
-            color: text-contrast($lime);
+            color: alternate($lime);
         }
 
         .ns-root #{if($compat, '&-orange.btn', '&.-orange.-orange')} {
             background-color: $orange;
             border-color: $orange;
-            color: text-contrast($orange);
+            color: alternate($orange);
         }
 
         .ns-root #{if($compat, '&-purple.btn', '&.-purple.-purple')} {
             background-color: $purple;
             border-color: $purple;
-            color: text-contrast($purple);
+            color: alternate($purple);
         }
 
         .ns-root #{if($compat, '&-ruby.btn', '&.-ruby.-ruby')} {
             background-color: $ruby;
             border-color: $ruby;
-            color: text-contrast($ruby);
+            color: alternate($ruby);
         }
 
         .ns-root #{if($compat, '&-sky.btn', '&.-sky.-sky')} {
             background-color: $sky;
             border-color: $sky;
-            color: text-contrast($sky);
+            color: alternate($sky);
         }
     }
 }
@@ -151,7 +151,7 @@
 
         #{if($compat, '&-primary', '&.-primary')} {
             @include colorize(
-                $text-contrast-color: focus,
+                $alternate-color: focus,
                 $background-color: focus,
                 $border-color: focus
             );

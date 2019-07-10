@@ -44,6 +44,13 @@
      '.nt-tab-view')
 );
 
+@include tab-skin(
+    ('BottomNavigation',
+     '.nt-bottom-navigation'
+     'Tabs',
+     '.nt-tabs')
+);
+
 @include list-view-skin(
     ('ListView',
      'RadListView',
