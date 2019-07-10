@@ -117,7 +117,7 @@
     #{$selectors} {
         NTIcon,
         .nt-icon {
-            @include colorize($contrasted-color: focus background 10% 30%);
+            @include colorize($scale-contrasted-color: focus background 0% 50%);
         }
 
         .-separator {

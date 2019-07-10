@@ -30,8 +30,6 @@ module.exports = smp.wrap((env) => {
 
     // Default destination inside platforms/<platform>/...
     const dist = resolve(projectRoot, nsWebpack.getAppPath(platform, projectRoot));
-    // eslint-disable-next-line no-unused-vars
-    const appResourcesPlatformDir = platform === "android" ? "Android" : "iOS";
 
     const {
         // The 'appPath' and 'appResourcesPath' values are fetched from
@@ -74,6 +72,7 @@ module.exports = smp.wrap((env) => {
         itemsToClean.push(`${join(projectRoot, "platforms", "android", "app", "build", "configurations", "nativescript-android-snapshot")}`);
     }
 
+    nsWebpack.processAppComponents(appComponents, platform);
     const config = {
         mode: production ? "production" : "development",
         context: appFullPath,
@@ -186,33 +185,37 @@ module.exports = smp.wrap((env) => {
                                 loadCss: !snapshot, // load the application css if in debug mode
                                 unitTesting,
                                 appFullPath,
-                                projectRoot
+                                projectRoot,
+                                ignoredFiles: nsWebpack.getUserDefinedEntries(entries, platform)
                             }
                         }
                     ].filter((loader) => !!loader)
                 },
 
                 {
-                    test: /\.js$/,
+                    test: /\.(js|css|scss|html|xml)$/,
                     use: [
                         "cache-loader",
-                        "nativescript-dev-webpack/script-hot-loader"
+                        "nativescript-dev-webpack/hmr/hot-loader"
                     ]
                 },
 
                 {
                     test: /\.(html|xml)$/,
-                    use: [
-                        "cache-loader",
-                        "nativescript-dev-webpack/markup-hot-loader",
-                        "nativescript-dev-webpack/xml-namespace-loader"
-                    ]
+                    use: "nativescript-dev-webpack/xml-namespace-loader"
                 },
+
                 {
-                    test: /\.s?css$/,
+                    test: /\.css$/,
+                    use: {
+                        loader: "css-loader",
+                        options: { url: false }
+                    }
+                },
+
+                {
+                    test: /\.scss$/,
                     use: [
-                        "cache-loader",
-                        "nativescript-dev-webpack/style-hot-loader",
                         {
                             loader: "css-loader",
                             options: {
@@ -240,12 +243,10 @@ module.exports = smp.wrap((env) => {
             ]
         },
         plugins: [
-            //new webpack.debug.ProfilingPlugin(),
-
             // Define useful constants like TNS_WEBPACK
             new webpack.DefinePlugin({
                 "global.TNS_WEBPACK": "true",
-                "process": "global.process",
+                "process": "global.process"
             }),
             // Remove all files from the out dir.
             new CleanWebpackPlugin(itemsToClean, { verbose: !!verbose }),

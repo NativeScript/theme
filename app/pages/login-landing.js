@@ -19,6 +19,7 @@ export function signIn() {
 export function goBack() {
     topmost().navigate({
         moduleName: "pages/root",
+        clearHistory: true,
         transition: {
             name: "slide"
         }

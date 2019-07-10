@@ -104,6 +104,24 @@
     }
 }
 
+@mixin tab($selectors) {
+    #{$selectors} {
+        font-size: 18;
+
+        TabStrip {
+            @include colorize($scale-alternate-background: background 5%);
+        }
+
+        TabStripItem {
+            @include colorize($color: primary);
+        }
+
+        TabContentItem {
+            @include colorize($background: background);
+        }
+    }
+}
+
 // Skin
 
 @mixin activity-indicator-skin($selectors) {
@@ -166,5 +184,16 @@
             $selected-tab-text-color: focus,
             $android-selected-tab-highlight-color: focus
         );
+    }
+}
+
+@mixin tab-skin($selectors) {
+    #{$selectors} {
+        TabStripItem:active {
+            @include colorize(
+                $color: focus,
+                $highlight-color: focus
+            );
+        }
     }
 }

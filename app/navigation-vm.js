@@ -66,8 +66,13 @@ export class NavigationViewModel extends BaseModel {
             value: "Switches",
             icon: "toggle-on"
         }, {
-            value: "Tabs",
+            text: "TabView",
+            value: "tabs",
             icon: "road"
+        }, {
+            text: "Tabs & BottomNavigation",
+            value: "new-tabs",
+            icon: "ellipsis-h"
         });
     }
 

@@ -60,7 +60,7 @@ $accent: $sky !default;
 
 // Colors
 $background: $white !default;
-$primary: text-contrast($background, 85%) !default;
+$primary: alternate($background, 85%) !default;
 $secondary: darken($primary, 30%) !default;
 $focus: $sky !default;
 $disabled: mix($focus, $background, 40%), !default;
@@ -93,20 +93,20 @@ $disabled: mix($focus, $background, 40%), !default;
     $material-colors: if($theme-type == dark, $material-dark-complimentary, $material-light-complimentary);
 
     $ab-background: get-base-hue($primary-palette-name, 500);
-    $ab-color: text-contrast($ab-background);
+    $ab-color: alternate($ab-background);
 }
 
 @if (global_variable_exists("body-bg")) {
     $background: $body-bg;
     $ab-background: $accent;
-    $ab-color: text-contrast($ab-background, 100%);
+    $ab-color: alternate($ab-background, 100%);
     $focus: $secondary;
 }
 
 @if (global_variable_exists("bg-color")) {
     $background: $bg-color;
     $ab-background: $accent;
-    $ab-color: text-contrast($ab-background, 100%);
+    $ab-color: alternate($ab-background, 100%);
     $focus: $base-bg;
 }
 

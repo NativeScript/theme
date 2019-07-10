@@ -59,6 +59,13 @@
      '.nt-tab-view')
 );
 
+@include tab(
+    ('BottomNavigation',
+     '.nt-bottom-navigation',
+     'Tabs',
+     '.nt-tabs')
+);
+
 @include list-view(
     ('ListView',
      'RadListView',

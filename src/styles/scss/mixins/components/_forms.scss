@@ -119,7 +119,7 @@
             opacity: .5;
             @include colorize(
                 $color: gray,
-                $decontrasted-background-color: gray background 30%
+                $contrasted-background-color: gray background -30%
             );
         }
     }
@@ -344,7 +344,7 @@
          'DataFormEditorCore'))} {
         background-color: transparent;
 
-        @include colorize($decontrasted-border-color: gray background 10%);
+        @include colorize($contrasted-border-color: gray background -10%);
 
         &:focus {
             @include colorize($contrasted-border-color: focus background 20%);
@@ -353,7 +353,7 @@
         &[isEnabled=false] {
             @include colorize(
                 $color: gray,
-                $decontrasted-background-color: gray background 30%
+                $contrasted-background-color: gray background -30%
             );
         }
     }

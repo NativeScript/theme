@@ -1,4 +1,4 @@
-$enhancers: 'text-contrast', 'scale-contrast', 'contrasted', 'decontrasted';
+$enhancers: 'alternate', 'scale-alternate', 'contrasted', 'scale-contrasted';
 
 @mixin enhance($name, $arguments, $colors) {
     $args: ();
