@@ -1,0 +1,186 @@
+// Core
+
+@mixin button($selectors) {
+    #{$selectors} {
+        text-transform: none;
+        font-family: 'Roboto Medium';
+        background-color: transparent;
+        border-color: transparent;
+        android-elevation: 0;
+        android-dynamic-elevation-offset: 0;
+
+        @include button-base($btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius, $btn-min-width, $btn-height);
+
+        .ns-ios & {
+            border-width: 0;
+            font-family: 'SF UI Text Medium', system;
+            font-size: 15;
+        }
+
+        .ns-android & {
+            margin: $btn-margin-y - 4 $btn-margin-x - 4;
+        }
+
+        @if $enable-rounded {
+            height: $btn-height - 12;
+            border-width: 1;
+
+            .ns-android & {
+                margin: $btn-margin-y $btn-margin-x;
+            }
+        }
+
+        #{if($compat, '&-primary', '&.-primary')} {
+            android-elevation: 2;
+            android-dynamic-elevation-offset: 4;
+        }
+
+        #{if($compat, '&-outline', '&.-outline')} {
+            height: $btn-height - 12;
+            android-elevation: 0;
+            border-width: 1;
+            background-color: transparent;
+
+            .ns-android & {
+                margin: $btn-margin-y $btn-margin-x;
+            }
+        }
+
+        #{if($compat, '&-rounded-sm', '&.-rounded-sm')},
+        #{if($compat, '&-rounded-lg', '&.-rounded-lg')} {
+            height: $btn-height - 12;
+            border-radius: 2;
+
+            .ns-ios & {
+                border-radius: 4;
+            }
+
+            .ns-android & {
+                margin: $btn-margin-y $btn-margin-x;
+            }
+        }
+
+        #{if($compat, '&-rounded-lg', '&.-rounded-lg')} {
+            border-radius: 40;
+        }
+
+        &[isEnabled=false] {
+            opacity: .5;
+        }
+
+        .ns-root #{if($compat, '&-aqua.btn', '&.-aqua.-aqua')} {
+            background-color: $aqua;
+            border-color: $aqua;
+            color: alternate($aqua);
+        }
+
+        .ns-root #{if($compat, '&-blue.btn', '&.-blue.-blue')} {
+            background-color: $blue;
+            border-color: $blue;
+            color: alternate($blue);
+        }
+
+        .ns-root #{if($compat, '&-brown.btn', '&.-brown.-brown')} {
+            background-color: $brown;
+            border-color: $brown;
+            color: alternate($brown);
+        }
+
+        .ns-root #{if($compat, '&-forest.btn', '&.-forest.-forest')} {
+            background-color: $forest;
+            border-color: $forest;
+            color: alternate($forest);
+        }
+
+        .ns-root #{if($compat, '&-grey.btn', '&.-grey.-grey')} {
+            background-color: $grey-dark;
+            border-color: $grey-dark;
+            color: alternate($grey-dark);
+        }
+
+        .ns-root #{if($compat, '&-lemon.btn', '&.-lemon.-lemon')} {
+            background-color: $lemon;
+            border-color: $lemon;
+            color: alternate($lemon);
+        }
+
+        .ns-root #{if($compat, '&-lime.btn', '&.-lime.-lime')} {
+            background-color: $lime;
+            border-color: $lime;
+            color: alternate($lime);
+        }
+
+        .ns-root #{if($compat, '&-orange.btn', '&.-orange.-orange')} {
+            background-color: $orange;
+            border-color: $orange;
+            color: alternate($orange);
+        }
+
+        .ns-root #{if($compat, '&-purple.btn', '&.-purple.-purple')} {
+            background-color: $purple;
+            border-color: $purple;
+            color: alternate($purple);
+        }
+
+        .ns-root #{if($compat, '&-ruby.btn', '&.-ruby.-ruby')} {
+            background-color: $ruby;
+            border-color: $ruby;
+            color: alternate($ruby);
+        }
+
+        .ns-root #{if($compat, '&-sky.btn', '&.-sky.-sky')} {
+            background-color: $sky;
+            border-color: $sky;
+            color: alternate($sky);
+        }
+    }
+}
+
+// Skin
+
+@mixin button-skin($selectors) {
+    #{$selectors} {
+        @include colorize($contrasted-color: focus background 40%);
+
+        #{if($compat, '&-active:highlighted', '&:highlighted')} {
+            @include colorize(
+                $contrasted-color: focus background 40%,
+                $background-color: btn-color-outline-highlighted
+            );
+        }
+
+        #{if($compat, '&-primary', '&.-primary')} {
+            @include colorize(
+                $alternate-color: focus,
+                $background-color: focus,
+                $border-color: focus
+            );
+
+            #{if($compat, '&.btn-active:highlighted', '&:highlighted')} {
+                @include colorize(
+                    $contrasted-background-color: focus background 10%,
+                    $contrasted-border-color: focus background 10%
+                );
+            }
+        }
+
+        &[isEnabled=false] {
+            @include colorize($contrasted-background-color: disabled background 10%);
+        }
+
+        #{if($compat, '&-outline', '&.-outline')}  {
+            @include colorize(
+                $contrasted-border-color: focus background 20%
+            );
+
+            &[isEnabled=false] {
+                background-color: transparent;
+
+                @include colorize(
+                    $color: tab-text-color,
+                    $border-color: tab-text-color
+                );
+            }
+        }
+    }
+}

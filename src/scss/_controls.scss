@@ -1,0 +1,87 @@
+
+@if not $compat {
+    @include action-bar-skin(
+                ('ActionBar',
+                'NTActionBar',
+                '.nt-action-bar'),
+                ('NTIcon',
+                'Label',
+                'Button',
+                '.nt-action-bar__item')
+    );
+
+    @include button-skin(
+                ('Button',
+                '.nt-button')
+    );
+
+    @include activity-indicator-skin(
+                ('ActivityIndicator',
+                '.nt-activity-indicator')
+    );
+
+    @include segmented-bar-skin(
+                ('SegmentedBar',
+                '.nt-segmented-bar')
+    );
+
+    @include progress-skin(
+                ('Progress',
+                '.nt-progress')
+    );
+
+    @include slider-skin(
+                ('Slider',
+                '.nt-slider')
+    );
+
+    @include switch-skin(
+                ('Switch',
+                '.nt-switch')
+    );
+
+    @include tab-view-skin(
+                ('TabView',
+                '.nt-tab-view')
+    );
+
+    @include tab-skin(
+                ('BottomNavigation',
+                '.nt-bottom-navigation' 'Tabs',
+                '.nt-tabs')
+    );
+
+    @include list-view-skin(
+                ('ListView',
+                'RadListView',
+                '.nt-list-view')
+    );
+
+    @include side-drawer-skin(
+                ('RadSideDrawer',
+                '.nt-drawer')
+    );
+
+
+    // Forms
+
+    @include form-fields-skin();
+
+    @include input-component-skin(
+                ('NTInput',
+                '.nt-input')
+    );
+} @else {
+    @include action-bar-skin('.action-bar', '.action-item');
+    @include button-skin('.button');
+    @include activity-indicator-skin('.activity-indicator');
+    @include segmented-bar-skin('.segmented-bar');
+    @include progress-skin('.progress');
+    @include slider-skin('.slider');
+    @include switch-skin('.switch');
+    @include tab-view-skin('.tab-view');
+    @include list-view-skin('.list-view');
+    @include side-drawer-skin('.side-drawer');
+    @include form-fields-skin();
+    @include input-component-skin('.input');
+}

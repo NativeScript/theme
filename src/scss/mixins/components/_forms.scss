@@ -1,0 +1,398 @@
+/* Forms */
+
+@mixin form($selectors) {
+    #{$selectors} {
+        font-family: 'Roboto Regular';
+        padding: 16 0 10;
+
+        .ns-ios & {
+            font-family: 'SF UI Text Regular', system;
+        }
+
+        .-center {
+            horizontal-align: center;
+        }
+
+        .nt-form__or-separator {
+            margin: 20 0;
+        }
+
+        .nt-form__link {
+            @include colorize($color: focus);
+        }
+
+        .nt-form__title {
+            font-size: 18;
+        }
+
+        .nt-form__logo {
+            margin: 20 0;
+            width: 50%;
+        }
+
+        .nt-form__validation-message {
+            color: $error;
+            margin: 1 0 0;
+            padding: 0;
+            height: 19;
+        }
+
+        .nt-form__footer {
+            padding: 0;
+            horizontal-align: center;
+
+            Button {
+                width: 50%;
+                margin: 5;
+            }
+        }
+
+        // Set isEnabled="false" on the whole form
+        &[isEnabled=false] * {
+            opacity: .7;
+        }
+    }
+}
+
+
+@mixin form-fields() {
+
+    /* Form Validation styling */
+
+    #{if($compat, '.input',
+        ('TextView',
+         'TextField',
+         'PickerField',
+         'DatePickerField',
+         'TimePickerField'))} {
+        &.ng-valid {
+            margin-bottom: 20;
+        }
+
+        &.ng-invalid.ng-dirty {
+            margin-bottom: 0;
+            border-color: $error;
+        }
+    }
+
+    /* Form fields */
+
+    #{if($compat, '.input',
+        ('TextView',
+         'TextField',
+         'PickerField',
+         'DatePickerField',
+         'TimePickerField',
+         'DateTimePickerFields',
+         'DataFormEditorCore'))} {
+        @include colorize(
+            $color: primary,
+            $placeholder-color: secondary
+        );
+
+        border-width: 0 0 1;
+        border-radius: $btn-radius;
+        background-color: transparent;
+        font-size: 16;
+        padding: 8 0 4;
+        margin: 5 16;
+
+        .ns-ios & {
+            font-size: 15;
+        }
+
+        #{if($compat,
+            ('&.input-rounded',
+             '&.input-border'),
+            ('&.-rounded',
+             '&.-border'))} {
+            border-width: 1;
+            border-radius: 4;
+            padding: 12 14;
+        }
+
+        #{if($compat, '&.input-rounded', '&.-rounded')} {
+            border-radius: 28;
+        }
+
+        &[isEnabled=false] {
+            opacity: .5;
+            @include colorize(
+                $color: gray,
+                $contrasted-background-color: gray background -30%
+            );
+        }
+    }
+
+    @if not $compat {
+        Label,
+        DataFormEditorLabel
+        {
+            @include colorize($color: primary);
+            padding: 2 0;
+        }
+
+        TextView {
+            min-height: 100;
+        }
+
+        /* Date Picker */
+
+        DataFormEditorCore,
+        PickerField,
+        DatePickerField,
+        TimePickerField,
+        DateTimePickerFields {
+            @include colorize($background-color: background);
+
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-color: transparent;
+
+            .ns-ios & {
+                background-size: 28 16;
+            }
+        }
+
+        PropertyEditor[type='Date'] DataFormEditorCore,
+        DatePickerField {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAAAwBAMAAAB9IEC+AAAAD1BMVEVHcEwAAAAAAAAAAAAAAADTrAj/AAAABHRSTlMAwBAgU5DCQwAAAFdJREFUSMdjYCAVuLi4oDHop5RJxAUDOCpgVcroggUIYFXKgk2pMw6lChhudXHAoZSBVkrRw26EKcUC6Kt0NAoGkVIWaFSNKh25Sgd7QURCZURCFUcLAAC2I2hEECBYPgAAAABJRU5ErkJggg==');
+        }
+
+        /* Time Picker */
+
+        PropertyEditor[type='Time'] DataFormEditorCore,
+        TimePickerField {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAAAwBAMAAAB9IEC+AAAALVBMVEVHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACttl6nAAAADnRSTlMAYOBAwCAQ0FCAcPCwoEZwdhsAAAE2SURBVEjHY2AYLIB1Td27d89PBRBWyQhUCALPBQiq1HsHBY8IqGX1e/fuyWRjY0sQjd8N3e/eKSaAGGxC797twGs9UCWMDVSLzwly794mwNhs9949xK2SA8UgoBUNOJVGo5oj924rTqV+EEP53sGMfYLbU28ZkJUy3MPpMaZ3aqhKk94p4PS/AKpSRpxhUPeIAVUpg95zHJEKMwOhVO4d9sjlevcMXWneuwVYlfK8c0BXyvLuAI4AmICulPNdAValfO8M0JVyvHtArFJmqiqFACopbSBWKTsssBAAV2DBowABcEUBPGIRAFfEsmImOVzJBZ4IEQBXIoQnbaQc9JBAhoED3BkGlg3hAHc2hGVuhNYn1CgySCiISCjeSCk0SSiKIQX8DGPjTsIFPAnVBimVESlV3IABAKDkz5jHIcToAAAAAElFTkSuQmCC');
+        }
+
+
+        /* Date/Time Picker */
+
+        DateTimePickerFields {
+            padding: 0;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKgAAAAwBAMAAAB3UCypAAAALVBMVEVHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACttl6nAAAADnRSTlMAQGDgwBAg0FCAcPCwoM9Ie+kAAAGcSURBVEjH5Ze/TsMwEMZD2pQWVRUZu0VijxASa8UTVJXYUXYWniDqilhgY+QBmBEjMw9RtTQlU79nICRyrDjxxYkdqYhviYe7X87/7s6WlQqAMDCgPwF15igpWhAOg9cQiD8DCtpHha7k9naYmcQeAZ1UQb/lzBmz2XoUdFFaU2ykc08WK3py3envNyCgVgPoA3CRLrhzBrybgdoJk40TqkdCxRMmg/rY5wfDWeHLBHRYCC4Je2kAeluMzcebAeg8C5S52Ij0oTb2RZeVbKsaQHu4LLpc47zBjdpI9t4rQm3Z/jeAhltxcrNYFzpgcXGoj0BzTU+wE11u8KIJHbOMyF36+NCE9vAouowk268OneBUdBlibR56dPDQTAcMXbaBZtZrCfSYHSmuEe40oeNyO6By+Glofk25VK4pDR2UE51KQqGheerjkqc+ZagvVg8iSStDWTnJRZQTZSgrfLmUCl8NlJVo/hOVEl0HbdVM1EFbtT110E4atG5ayUZNrzI0bc+fXfe+rj2v0E7zIdHJk6eTx5nluCUF1j/RDxQQPw3i9N+zAAAAAElFTkSuQmCC');
+
+            .ns-ios & {
+                background-size: 56 16;
+            }
+
+            DatePickerField,
+            TimePickerField {
+                background-image: none;
+                border-width: 0;
+                margin: 0;
+
+                .ns-dark & {
+                    background-image: none;
+                }
+            }
+
+            TimePickerField {
+                margin-left: -30;
+            }
+        }
+
+        /* Picker */
+
+        PickerField {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAAAwBAMAAAB9IEC+AAAAGFBMVEVHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAABoAtTLAAAAB3RSTlMAoPAw0BAgCEJU4wAAAEpJREFUSMdjYBgFgwUwChCtVLyQaEPLy4k1Nqm8nFhjmdWJN9Zo1NghZiwJSol3wKihA2ooCZk7hPj0x+pOdEHEEEJ88TYKBgoAAAC5JRg49rIWAAAAAElFTkSuQmCC');
+        }
+
+        PickerPage {
+            ListView {
+                separator-color: transparent;
+
+                @include colorize(
+                    $color: primary,
+                    $background: background
+                );
+
+                > * {
+                    @include colorize($border-bottom-color: primary-focus);
+
+                    height: 48;
+                    margin-top: 0;
+                    padding: 10 12;
+
+                    border-bottom-width: 1px;
+                }
+            }
+        }
+
+        .ns-dark {
+            PickerField {
+                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAAAwBAMAAAB9IEC+AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAYUExURUdwTP///////////////////////////x1LVb4AAAAHdFJOUwCg8DDQECAIQlTjAAAASklEQVRIx2NgGAWDBTAKEK1UvJBoQ8vLiTU2qbycWGOZ1Yk31mjU2CFmLAlKiXfAqKEDaigJmTuE+PTH6k50QcQQQnzxNgoGCgAAALklGDj2shYAAAAASUVORK5CYII=');
+            }
+
+            DatePickerField {
+                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAAAwBAMAAAB9IEC+AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAPUExURUdwTP///////////////xPgMRoAAAAEdFJOUwDAECBTkMJDAAAAV0lEQVRIx2NgIBW4uLigMeinlEnEBQM4KmBVyuiCBQhgVcqCTakzDqUKGG51ccChlIFWStHDboQpxQLoq3Q0CgaRUhZoVI0qHblKB3tBREJlREIVRwsAALYjaEQQIFg+AAAAAElFTkSuQmCC');
+            }
+
+            TimePickerField {
+                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAAAwBAMAAAB9IEC+AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAtUExURUdwTP///////////////////////////////////////////////////////81e3QIAAAAOdFJOUwBg4EDAIBDQUHDwsKCA4isvJAAAATZJREFUSMdjYBgsgHV23bt3z3cGEFbJCFQIAs8FCKrUewcFjwioZfV79+7JZWNjWxCN3w1d794pJoAYbELv3q3Aaz1QJYwNVIvPCXLv3iTA2Gzn3j3ErZIDxSCgFQ04lUahmiP3bilOpX4QQ/newYx9gttTbxiQlTKcw+kxpndqqEqT3ing9L8AqlJGnGFQ94gBVSmD3nMckQozA6FU7h32yOV89wxdad67CViVcr9zQFfK8m4DjgC4gK6U910BVqV87wzQlXK8e0CsUmaqKoUAKiltIFYpOyywEABXYMGjAAFwRQE8YhEAV8SyYiY5XMkFnggRAFcihCdtpBz0kECGgQPcGQaWDeEAdzaEZW6E1ifUKDJIKIhIKN5IKTRJKIohBfwNY+NewgU8CdUGKZURKVXcgAEAq1LPmF1qDewAAAAASUVORK5CYII=');
+            }
+
+            DateTimePickerFields {
+                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKgAAAAwBAMAAAB3UCypAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAtUExURUdwTP///////////////////////////////////////////////////////81e3QIAAAAOdFJOUwBAYODAECDQUHDwsKCAaxMi1gAAAZxJREFUSMfll89Kw0AQxmPa1EppMQ9QCHgPIngtPkEpeJecPfkEoWdB8O5dPHr1JYrePLY2NZfyPYMxYbNkk51sshuo+F2yh5lfZv/NzFpWKgDCwID+BNSZo6RoQTgMnkIgfgsoaB8VupLb22FmEnsEdFIF/ZYzZ8xm61HQRWlNsZHOPVms6MN1p7/fgIBaDaD3wEW64M4Z8GIGaidMNk6oHgkVT5gM6mOfHwxnhS8T0GEhuCTspQHobTE2H88GoPMsUOZiI9KH2tgXXVayrWoA7eGy6HKN8wY3aiPZe68ItWX73wAabsXJzWJd6IDFxaE+As01PcFOdLnBoyZ0xDIid+njVRPaw7voMpZsvzp0glPRZYi1eejRwUMzHTB02QaaWa8l0GN2pLjGuNOEjsrtgMrhp6H5NeVSuaY0dFBOdCoJhYbmqY9LnvqUob5YPYgkrQxl5SQXUU6Uoazw5VIqfDVQVqL5T1RKdB20VTNRB23V9tRBO2nQumklGzW9ytC0Pf903Ye69rxCO82HRCdPnk4eZ5bjlhRY/0Q/Hn4/DfXSncYAAAAASUVORK5CYII=');
+            }
+
+            DatePickerField,
+            TimePickerField,
+            DateTimePickerFields {
+                // Here be dragons! >:)
+                class: ns-dark;
+            }
+        }
+
+        PickerPage.ns-dark ListView {
+            color: dark(primary);
+            background: dark(background);
+        }
+
+        RadDataForm {
+            @include colorize(
+                $color: primary,
+                $placeholder-color: secondary
+            );
+
+            PropertyEditor {
+                padding: 5 0 0;
+
+                @include colorize(
+                    $color: primary,
+                    $background-color: background
+                );
+            }
+        }
+
+        @if $enable-rounded {
+            TextView,
+            TextField,
+            PickerField,
+            DatePickerField,
+            TimePickerField,
+            DateTimePickerFields,
+            DataFormEditorCore {
+                border-width: 1;
+                padding: 12 14;
+            }
+
+            DateTimePickerFields {
+                DatePickerField,
+                TimePickerField {
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+
+@mixin input-component($selectors) {
+    #{$selectors} {
+        margin: 10 0;
+
+        @at-root DataFormEditorLabel,
+        & #{if($compat, '.label', '> Label')} {
+            font-size: 16;
+            color: $grey-background;
+        }
+
+        @at-root DataFormEditorLabel,
+        & #{if($compat, '.label', '> Label')},
+        & #{if($compat, '.input', '> TextView, > TextField, > PickerField, > DatePickerField, > TimePickerField, > DateTimePickerFields')} {
+            margin: 0 16;
+        }
+
+        #{if($compat, '&.input-sides', '&.-sides')} {
+            margin: 0 0 10;
+
+            #{if($compat, '.label', '> Label')} {
+                margin: 5 16;
+
+                @if $enable-rounded {
+                    margin-top: 11;
+                }
+            }
+        }
+
+        @if not $compat {
+            & > NTIcon,
+            & > .nt-icon {
+                font-size: 24;
+                vertical-align: center;
+                horizontal-align: right;
+                margin: -15 10 0 0;
+            }
+        }
+    }
+}
+
+
+@mixin form-fields-skin() {
+
+    /* Form fields */
+
+    #{if($compat, '.input',
+        ('TextView',
+         'TextField',
+         'PickerField',
+         'DatePickerField',
+         'TimePickerField',
+         'DateTimePickerFields',
+         'DataFormEditorCore'))} {
+        background-color: transparent;
+
+        @include colorize($contrasted-border-color: gray background -10%);
+
+        &:focus {
+            @include colorize($contrasted-border-color: focus background 20%);
+        }
+
+        &[isEnabled=false] {
+            @include colorize(
+                $color: gray,
+                $contrasted-background-color: gray background -30%
+            );
+        }
+    }
+
+    /* DateTime Picker */
+
+    .date-time-picker {
+        color: light(primary);
+        background: light(background);
+
+        &.ns-dark {
+            color: dark(primary);
+            background: dark(background);
+        }
+    }
+
+    .date-time-picker-buttons {
+        color: contrasted(light(focus), light(background), 40%);
+
+        &.ns-dark {
+            color: contrasted(dark(focus), dark(background), 40%);
+        }
+    }
+
+    .date-time-picker-spinners {
+        color: contrasted(light(focus), light(background), 30%);
+
+        &.ns-dark {
+            color: contrasted(dark(focus), dark(background), 30%);
+        }
+    }
+}
+
+
+@mixin input-component-skin($selectors) {
+    #{$selectors} {
+        @at-root DataFormEditorLabel,
+        & #{if($compat, '.label', '> Label')} {
+            @include colorize($contrasted-color: focus background 30%);
+        }
+    }
+}

@@ -1,6 +1,6 @@
 {
-  "name": "nativescript-theme",
-  "version": "2.0.0-alpha",
+  "name": "nativescript-theme-core",
+  "version": "2.0.0-rc-2019-07-11-190225-04",
   "description": "Telerik NativeScript Core Theme",
   "author": "Telerik <support@telerik.com>",
   "homepage": "https://www.nativescript.org",
@@ -26,7 +26,7 @@
     "nativescript-themes": "2.0.1",
     "nativescript-ui-sidedrawer": "^7.0.0-androidx",
     "nativescript-ui-dataform": "^5.0.0-androidx",
-    "tns-core-modules": "^6.0.1-rc-2019-07-11-133202-02"
+    "tns-core-modules": "^6.0.1"
   },
   "devDependencies": {
     "babel-eslint": "10.0.2",
@@ -35,7 +35,7 @@
     "eslint": "6.0.1",
     "glob": "7.1.4",
     "lazy": "1.0.11",
-    "nativescript-dev-webpack": "^1.0.0-rc-2019-07-10-215625-05",
+    "nativescript-dev-webpack": "^1.0.0",
     "postcss": "7.0.17",
     "postcss-custom-properties": "9.0.1",
     "postcss-loader": "3.0.0",
@@ -50,7 +50,6 @@
   },
   "scripts": {
     "eslint": "node_modules/.bin/eslint .",
-    "build": "tns build android --release",
     "builder": "node scripts/builder.js",
     "lint": "eslint \"app/**/*.js\" \"src/**/*.js\""
   }

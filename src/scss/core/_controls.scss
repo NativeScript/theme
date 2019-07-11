@@ -1,0 +1,114 @@
+
+@if not $compat {
+    @include action-bar(
+                ('ActionBar',
+                'NTActionBar',
+                '.nt-action-bar'),
+
+                ('NTIcon',
+                'Label',
+                'Button',
+                '.nt-action-bar__item')
+    );
+
+    @include button(
+                ('Button',
+                '.nt-button')
+    );
+
+    @include label(
+                ('Label',
+                '.nt-label')
+    );
+
+    @include page(
+                ('Page',
+                '.nt-page')
+    );
+
+    @include activity-indicator(
+                ('ActivityIndicator',
+                '.nt-activity-indicator')
+    );
+
+    @include segmented-bar(
+                ('SegmentedBar',
+                '.nt-segmented-bar')
+    );
+
+    @include progress(
+                ('Progress',
+                '.nt-progress')
+    );
+
+    @include slider(
+                ('Slider',
+                '.nt-slider')
+    );
+
+    @include search-bar(
+                ('SearchBar',
+                '.nt-search-bar')
+    );
+
+    @include switch(
+                ('Switch',
+                '.nt-switch')
+    );
+
+    @include tab-view(
+                ('TabView',
+                '.nt-tab-view')
+    );
+
+    @include tab(
+                ('BottomNavigation',
+                '.nt-bottom-navigation',
+                'Tabs',
+                '.nt-tabs')
+    );
+
+    @include list-view(
+                ('ListView',
+                'RadListView',
+                '.nt-list-view')
+    );
+
+    @include side-drawer(
+                ('RadSideDrawer',
+                '.nt-drawer')
+    );
+
+
+    // Forms
+
+    @include form(
+                ('Form',
+                '.nt-form')
+    );
+
+    @include form-fields();
+
+    @include input-component(
+                ('NTInput',
+                '.nt-input')
+    );
+
+} @else {
+    @include action-bar('.action-bar', '.action-item');
+    @include button('.btn');
+    @include label('.label');
+    @include page('.page');
+    @include activity-indicator('.activity-indicator');
+    @include segmented-bar('.segmented-bar');
+    @include progress('.progress');
+    @include slider('.slider');
+    @include search-bar('.search-bar');
+    @include switch('.switch');
+    @include tab-view('.tab-view');
+    @include list-view('.list-view');
+    @include side-drawer('.side-drawer');
+    @include form('.form');
+    @include form-fields();
+    @include input-component('.input');
+}
