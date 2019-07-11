@@ -106,19 +106,27 @@
 
 @mixin tab($selectors) {
     #{$selectors} {
-        font-size: 18;
+        font-size: 13;
 
-        TabStrip {
-            @include colorize($scale-alternate-background: background 5%);
-        }
-
-        TabStripItem {
+        TabStripItem,
+        .nt-tab-strip__item {
             @include colorize($color: primary);
         }
 
-        TabContentItem {
+        TabStrip,
+        .nt-tab-strip {
+            @include colorize($scale-alternate-background: background 5%);
+        }
+
+        TabContentItem,
+        .nt-tab-content__item {
             @include colorize($background: background);
         }
+    }
+
+    BottomNavigation,
+    .nt-bottom-navigation {
+        font-size: 14;
     }
 }
 
@@ -188,11 +196,18 @@
 }
 
 @mixin tab-skin($selectors) {
+    TabStrip,
+    .nt-tab-strip {
+        @include colorize(
+            $highlight-color: focus
+        );
+    }
+
     #{$selectors} {
-        TabStripItem:active {
+        TabStripItem:active,
+        .nt-tab-strip__item:active {
             @include colorize(
-                $color: focus,
-                $highlight-color: focus
+                $color: focus
             );
         }
     }
