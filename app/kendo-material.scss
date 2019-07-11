@@ -1,4 +1,4 @@
-@import '~nativescript-theme-core/styles/scss/variables';
+@import '~nativescript-theme-core/scss/variables';
 
 $base-theme:Material;
 $skin-name:test;
@@ -8,4 +8,4 @@ $primary-palette-name: blue;
 $secondary-palette-name: pink;
 $theme-type: dark;
 
-@import '~nativescript-theme-core/styles/index';
+@import '~nativescript-theme-core/index';

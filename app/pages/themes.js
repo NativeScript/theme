@@ -72,7 +72,7 @@ export class ThemesModel extends BaseModel {
         import(
             /*  webpackMode: "lazy",
                 webpackExclude: /\/scss\// */
-            `nativescript-theme-core/styles/${currentTheme.skin}`)
+            `nativescript-theme-core/${currentTheme.skin}`)
             .then((skinStyles) => this._applyStyles(skinStyles, `${currentTheme.skin}`));
     }
 

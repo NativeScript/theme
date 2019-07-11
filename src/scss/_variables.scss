@@ -1,0 +1,144 @@
+// Mixins
+@import 'mixins/index';
+
+$compat: false !default;
+
+// Colors
+$black: #000 !default;
+$white: #fff !default;
+$base: $white !default;
+$grey: #e0e0e0 !default;
+$grey-background: #bababa !default;
+$charcoal: #303030 !default;
+
+// Kendo Palettes
+@import 'utilities/kendo-palletes';
+
+// accent varieties
+$aqua: #00caab !default;
+$blue: #3d5afe !default;
+$brown: #795548 !default;
+$forest: #006968 !default;
+$grey-dark: #5c687c !default;
+$purple: #8130ff !default;
+$lemon: #ffea00 !default;
+$lime: #aee406 !default;
+$orange: #f57c00 !default;
+$ruby: #ff1744 !default;
+$sky: #30bcff !default;
+
+$error: #d50000 !default;
+
+// Buttons
+$btn-color-secondary: #01a0ec !default;
+$btn-color-outline-highlighted: #c0ebff !default;
+$btn-color-disabled: #a4a4a4 !default;
+$btn-font-size: 18 !default;
+$btn-min-width: 64 !default;
+$btn-height: 52 !default;
+$btn-radius: 0 !default;
+$btn-padding-x: 0 !default;
+$btn-padding-y: 0 !default;
+$btn-margin-x:	16 !default;
+$btn-margin-y:	8 !default;
+
+// Headings
+$headings-margin-bottom: 4 !default;
+$headings-font-weight: normal !default;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+// Only border-radius affects all styles, the rest are bootstrap only.
+$enable-rounded:            false !default;
+$enable-shadows:            false !default;
+$enable-gradients:          false !default;
+$enable-transitions:        false !default;
+
+// Needs to be defined, to mitigate leftover radii from other themes
+$border-radius: null !default;
+
+$accent: $sky !default;
+
+// Colors
+$background: $white !default;
+$primary: alternate($background, 85%) !default;
+$secondary: darken($primary, 30%) !default;
+$focus: $sky !default;
+$disabled: mix($focus, $background, 40%), !default;
+
+// Kendo overrides
+
+@if (global_variable_exists('primary-palette-name')) {
+    $focus: $primary-palette-name;
+}
+
+@if (global_variable_exists('secondary-palette-name')) {
+    $secondary: $secondary-palette-name;
+}
+
+@if ($border-radius != null) {
+    $btn-radius: rem-to-dip($border-radius);
+    $enable-rounded: true;
+}
+
+@if (global_variable_exists("text-color")) {
+    $primary: $text-color;
+}
+
+@if (global_variable_exists("body-color")) {
+    $primary: $body-color;
+}
+
+@if (global_variable_exists("theme-type")) {
+    $material-secondary: get-base-hue($secondary-palette-name, 500);
+    $material-colors: if($theme-type == dark, $material-dark-complimentary, $material-light-complimentary);
+
+    $ab-background: get-base-hue($primary-palette-name, 500);
+    $ab-color: alternate($ab-background);
+}
+
+@if (global_variable_exists("body-bg")) {
+    $background: $body-bg;
+    $ab-background: $accent;
+    $ab-color: alternate($ab-background, 100%);
+    $focus: $secondary;
+}
+
+@if (global_variable_exists("bg-color")) {
+    $background: $bg-color;
+    $ab-background: $accent;
+    $ab-color: alternate($ab-background, 100%);
+    $focus: $base-bg;
+}
+
+$text-color: $primary !default;
+$headings-color: $text-color !default;
+
+// ActionBar
+$ab-color: $text-color !default;
+$ab-background: mix($background, $text-color, 20%) !default;
+
+$item-active-color: mix($primary, $background, 40%) !default;
+$item-active-icon-color: $item-active-color !default;
+
+$tab-text-color: mix(#999, $focus, 70%) !default;
+
+$focus-dark: darken($focus, 20%) !default;
+$focus-light: lighten($focus, 20%) !default;
+$primary-focus: mix(transparent, $focus, 60%) !default;
+$background-focus: mix(transparent, $focus, 90%) !default;
+$background-dark-focus: mix(transparent, $focus, 85%) !default;
+$ab-background-dark: darken($ab-background, 5%) !default;
+
+$item-active-background: $focus !default;
+
+$btn-color: $primary !default;
+$btn-color-inverse: $background !default;
+$btn-color-secondary: darken($btn-color, 10%) !default;
+$btn-color-outline-highlighted: lighten($btn-color, 10%) !default;
+
+@import 'mixins/index';
+
+// Core colors
+@import 'core/colors';

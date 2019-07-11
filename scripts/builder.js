@@ -6,7 +6,7 @@
 
 
 const fs = require("fs");
-const sass = require("node-sass");
+const sass = require("dart-sass");
 const glob = require("glob");
 const pjs = require("../package.json");
 
@@ -17,7 +17,6 @@ if (fs.existsSync("nativescript-theme-core")) {
 fs.mkdirSync("nativescript-theme-core");
 fs.mkdirSync("nativescript-theme-core/css");
 fs.mkdirSync("nativescript-theme-core/scss");
-fs.mkdirSync("nativescript-theme-core/fonts");
 
 const version = getVersion();
 const versionPlaceholder = "__VERSION__";
@@ -30,9 +29,13 @@ createCSSFromSCSS();
 copySCSS();
 
 // Copy any Fonts
-copyFonts();
+//copyFonts();
 
 createPackageJson();
+
+// Copy the temporary class helper and SCSS
+copyFile("./src/index.js", "./nativescript-theme-core/index.js");
+copyFile("./src/index.scss", "./nativescript-theme-core/index.scss");
 
 // Copy our Readme
 copyFile("./nativescript-theme-core.md", "./nativescript-theme-core/readme.md");
@@ -99,11 +102,11 @@ function copyFonts() {
  * Copy our SCSS files over
  */
 function copySCSS() {
-    const sassFilesPath = "./app/scss/**/*.scss";
-    const sassFiles = glob.sync(sassFilesPath).filter((filePath) => filePath.indexOf("App_Resources") === -1);
+    const sassFilesPath = "./src/scss/**/*.scss";
+    const sassFiles = glob.sync(sassFilesPath);
 
     for (let i = 0; i < sassFiles.length; i++) {
-        const out = sassFiles[i].replace("./app/", "./nativescript-theme-core/");
+        const out = sassFiles[i].replace("./src/", "./nativescript-theme-core/");
 
         const paths = sassFiles[i].split("/");
         // eliminate the ["." and "app"]
@@ -138,17 +141,16 @@ function copySCSS() {
  */
 function createCSSFromSCSS() {
 
-    const sassFilesPath = "./app/**/*.scss";
+    const sassFilesPath = "./src/**/*.scss";
     const sassImportPaths = [
-        "./app/",
+        "./src/",
         "./node_modules/"
     ];
 
     const sassFiles = glob.sync(sassFilesPath).filter((filePath) => {
-        const path = filePath;
-        const parts = path.split("/");
+        const parts = filePath.split("/");
         const filename = parts[parts.length - 1];
-        return path.indexOf("App_Resources") === -1 && filename.indexOf("_") !== 0 && filename.indexOf("app.") !== 0 && filename.indexOf("customized.") !== 0 && filename.indexOf("bootstrap") !== 0;
+        return filename.indexOf("_") !== 0 && filename.indexOf("app.") !== 0 && filename.indexOf("customized.") !== 0 && filename.indexOf("bootstrap") !== 0 && filename.indexOf("kendo") !== 0;
     });
 
 
