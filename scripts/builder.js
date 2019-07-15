@@ -35,7 +35,6 @@ createPackageJson();
 
 // Copy the temporary class helper and SCSS
 copyFile("./src/index.js", "./nativescript-theme-core/index.js");
-copyFile("./src/index.scss", "./nativescript-theme-core/index.scss");
 
 // Copy our Readme
 copyFile("./nativescript-theme-core.md", "./nativescript-theme-core/readme.md");
@@ -102,7 +101,7 @@ function copyFonts() {
  * Copy our SCSS files over
  */
 function copySCSS() {
-    const sassFilesPath = "./src/scss/**/*.scss";
+    const sassFilesPath = "./src/**/*.scss";
     const sassFiles = glob.sync(sassFilesPath);
 
     for (let i = 0; i < sassFiles.length; i++) {
