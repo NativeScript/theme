@@ -6,8 +6,12 @@
     <ios>
         <NavigationButton visibility="collapsed" />
         <ActionItem position="left" tap="{{ backButton ? goBack : toggleSideDrawer }}">
-            <Label name="{{ backButton ? 'chevron-left' : 'bars' | fonticon }}"/>
-            <Button class="fa" text="{{ backButton ? '&#xf053; Back' : '&#xf0c9;' }}" />
+            <Button>
+                <FormattedString>
+                    <Span text="{{ backButton ? '&#xf053;' : '&#xf0c9;' }}" class="fa nt-icon"/>
+                    <Span text="{{ backButton ? ' Back' : ' ' }}"/>
+                </FormattedString>
+            </Button>
         </ActionItem>
     </ios>
     <ActionItem tap="{{ toggleRightDrawer }}" ios.position="right"
