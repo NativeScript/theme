@@ -378,6 +378,11 @@
         }
     }
 
+    // Special iOS dark styling for the Cancel button.
+    .ns-dark.date-time-picker-button-cancel {
+        background: dark(background);
+    }
+
     .date-time-picker-spinners {
         color: contrasted(light(focus), light(background), 30%);
 
