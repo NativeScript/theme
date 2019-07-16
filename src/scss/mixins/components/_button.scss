@@ -12,6 +12,7 @@
         @include button-base($btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius, $btn-min-width, $btn-height);
 
         .ns-ios & {
+            height: $btn-height - 12;
             border-width: 0;
             font-family: 'SF UI Text Medium', system;
             font-size: 15;
