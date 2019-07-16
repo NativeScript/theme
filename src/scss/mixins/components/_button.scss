@@ -143,7 +143,7 @@
     #{$selectors} {
         @include colorize($contrasted-color: focus background 40%);
 
-        #{if($compat, '&-active:highlighted', '&:highlighted')} {
+        #{if($compat, '&-active:highlighted', '&:highlighted, &.-active')} {
             @include colorize(
                 $contrasted-color: focus background 40%,
                 $background-color: btn-color-outline-highlighted
@@ -157,7 +157,7 @@
                 $border-color: focus
             );
 
-            #{if($compat, '&.btn-active:highlighted', '&:highlighted')} {
+            #{if($compat, '&.btn-active:highlighted', '&:highlighted, &.-active')} {
                 @include colorize(
                     $contrasted-background-color: focus background 10%,
                     $contrasted-border-color: focus background 10%

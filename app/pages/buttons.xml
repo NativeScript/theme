@@ -3,39 +3,37 @@
       navigatingTo="navigatingTo">
     <actionBar:action-bar actionBarTitle="Buttons"/>
     <ScrollView>
+        <StackLayout class="compat-components">
+            <Label text="Compat styling" class="h3"/>
+            <Button class="btn" text="btn"/>
+            <Button text="btn btn-primary" class="btn btn-primary"/>
+            <Button text="btn btn-outline" class="btn btn-outline"/>
+            <Button text="btn btn-primary btn-rounded-sm" tap="" class="btn btn-primary btn-rounded-sm"/>
+            <Button text="btn btn-outline btn-rounded-sm" tap="" class="btn btn-outline btn-rounded-sm"/>
+            <Button text="btn btn-primary btn-rounded-lg" tap="" class="btn btn-primary btn-rounded-lg"/>
+            <Button text="btn btn-outline btn-rounded-lg" tap="" class="btn btn-outline btn-rounded-lg"/>
+            <Button text="btn isEnabled=false" tap="" isEnabled="false" class="btn btn-primary"/>
+            <Button text="btn isEnabled=false btn-rounded-sm" tap="" isEnabled="false"
+                    class="btn btn-primary btn-rounded-sm"/>
+            <Button text="btn isEnabled=false btn-rounded-lg" tap="" isEnabled="false"
+                    class="btn btn-primary btn-rounded-lg"/>
+        </StackLayout>
         <StackLayout>
-            <StackLayout class="compat-components">
-                <Label text="Compat styling" class="h3"/>
-                <Button class="btn" text="btn"/>
-                <Button text="btn btn-primary" class="btn btn-primary"/>
-                <Button text="btn btn-outline" class="btn btn-outline"/>
-                <Button text="btn btn-primary btn-rounded-sm" tap="" class="btn btn-primary btn-rounded-sm"/>
-                <Button text="btn btn-outline btn-rounded-sm" tap="" class="btn btn-outline btn-rounded-sm"/>
-                <Button text="btn btn-primary btn-rounded-lg" tap="" class="btn btn-primary btn-rounded-lg"/>
-                <Button text="btn btn-outline btn-rounded-lg" tap="" class="btn btn-outline btn-rounded-lg"/>
-                <Button text="btn isEnabled=false" tap="" isEnabled="false" class="btn btn-primary"/>
-                <Button text="btn isEnabled=false btn-rounded-sm" tap="" isEnabled="false"
-                        class="btn btn-primary btn-rounded-sm"/>
-                <Button text="btn isEnabled=false btn-rounded-lg" tap="" isEnabled="false"
-                        class="btn btn-primary btn-rounded-lg"/>
-            </StackLayout>
-            <StackLayout>
-                <Button text="Button"/>
-                <Button text="Button.-primary" class="-primary"/>
-                <Button class="-primary">
-                    <FormattedString>
-                        <Span text="{{ 'fa-twitter' | fonticon }}" class="fa nt-icon"/>
-                        <Span text=" Button.-primary with icon"/>
-                    </FormattedString>
-                </Button>
-                <Button text="Button.-outline" class="-outline"/>
-                <Button text="Button.-primary.-rounded-sm" class="-primary -rounded-sm"/>
-                <Button text="Button.-primary.-rounded-lg" tap="" class="-primary -rounded-lg"/>
-                <Button text="Button.-outline.-rounded-sm" tap="" class="-outline -rounded-sm"/>
-                <Button text="Button.-outline.-rounded-lg" tap="" class="-outline -rounded-lg"/>
-                <Button text="Button.-outline[isEnabled=false]" tap="" isEnabled="false" class="-outline"/>
-                <Button text="Button.-primary[isEnabled=false]" tap="" isEnabled="false" class="-primary"/>
-            </StackLayout>
+            <Button text="Button"/>
+            <Button text="Button.-primary" class="-primary"/>
+            <Button class="-primary">
+                <FormattedString>
+                    <Span text="{{ 'fa-twitter' | fonticon }}" class="fa nt-icon"/>
+                    <Span text=" Button.-primary with icon"/>
+                </FormattedString>
+            </Button>
+            <Button text="Button.-outline" class="-outline"/>
+            <Button text="Button.-primary.-rounded-sm" class="-primary -rounded-sm"/>
+            <Button text="Button.-primary.-rounded-lg" tap="" class="-primary -rounded-lg"/>
+            <Button text="Button.-outline.-rounded-sm" tap="" class="-outline -rounded-sm"/>
+            <Button text="Button.-outline.-rounded-lg" tap="" class="-outline -rounded-lg"/>
+            <Button text="Button.-outline[isEnabled=false]" tap="" isEnabled="false" class="-outline"/>
+            <Button text="Button.-primary[isEnabled=false]" tap="" isEnabled="false" class="-primary"/>
         </StackLayout>
     </ScrollView>
 </Page>
