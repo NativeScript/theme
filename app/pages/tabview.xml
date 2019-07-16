@@ -1,0 +1,64 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:actionBar="/action-bar"
+      navigatingTo="navigatingTo">
+    <actionBar:action-bar actionBarTitle="TabView"/>
+    <GridLayout>
+        <TabView>
+            <TabViewItem title="One">
+                <StackLayout class="p-20">
+                    <Label text="Tab 1 Content" class="h1"/>
+                    <StackLayout>
+                        <Label text="{{ tab1 }}" textWrap="true" class="body"/>
+                    </StackLayout>
+                </StackLayout>
+            </TabViewItem>
+
+            <TabViewItem title="Two">
+                <StackLayout class="p-20">
+                    <Label text="Tab 2 Content" class="h1"/>
+                    <StackLayout>
+                        <Label text="{{ tab2 }}" textWrap="true" class="body"/>
+                    </StackLayout>
+                </StackLayout>
+            </TabViewItem>
+
+            <TabViewItem title="Three">
+                <StackLayout class="p-20">
+                    <Label text="Tab 3 Content" class="h1"/>
+                    <StackLayout>
+                        <Label text="{{ tab3 }}" textWrap="true" class="body"/>
+                    </StackLayout>
+                </StackLayout>
+            </TabViewItem>
+        </TabView>
+
+        <TabView row="1" class="tab-view compat-components">
+            <TabViewItem title="One" class="tab-view-item">
+                <StackLayout class="page p-20">
+                    <Label text="Tab 1 Content" class="h1"/>
+                    <StackLayout>
+                        <Label text="{{ tab1 }}" textWrap="true" class="body"/>
+                    </StackLayout>
+                </StackLayout>
+            </TabViewItem>
+
+            <TabViewItem title="Two">
+                <StackLayout class="page p-20">
+                    <Label text="Tab 2 Content" class="h1"/>
+                    <StackLayout>
+                        <Label text="{{ tab2 }}" textWrap="true" class="body"/>
+                    </StackLayout>
+                </StackLayout>
+            </TabViewItem>
+
+            <TabViewItem title="Three">
+                <StackLayout class="page p-20">
+                    <Label text="Tab 3 Content" class="h1"/>
+                    <StackLayout>
+                        <Label text="{{ tab3 }}" textWrap="true" class="body"/>
+                    </StackLayout>
+                </StackLayout>
+            </TabViewItem>
+        </TabView>
+    </GridLayout>
+</Page>
