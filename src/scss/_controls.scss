@@ -47,7 +47,8 @@
 
     @include tab-skin(
                 ('BottomNavigation',
-                '.nt-bottom-navigation' 'Tabs',
+                '.nt-bottom-navigation',
+                'Tabs',
                 '.nt-tabs')
     );
 
