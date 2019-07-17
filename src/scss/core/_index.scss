@@ -1,6 +1,9 @@
 // Core vars
 @import '../variables';
 
+// Utilities
+@import 'utilities/index';
+
 @import 'headings';
 @import 'utilities';
 @import 'controls';
