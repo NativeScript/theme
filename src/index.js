@@ -63,7 +63,7 @@ function getOrientation() {
     return display.heightDIPs > display.widthDIPs ? "portrait" : "landscape";
 }
 
-const test = {
+const rootModalTrap = {
     defineProperty(target, key, desc) {
         if (desc && "value" in desc) {
             target[key] = desc.value;
@@ -80,7 +80,7 @@ const test = {
 };
 
 // Get notified when a modal is created.
-viewCommon._rootModalViews = new Proxy(viewCommon._rootModalViews, test);
+viewCommon._rootModalViews = new Proxy(viewCommon._rootModalViews, rootModalTrap);
 
 on(displayedEvent, () => {
     const root = getRootView();
@@ -89,8 +89,6 @@ on(displayedEvent, () => {
     classList.add("ns-root", `ns-${isAndroid ? "android" : "ios"}`, `ns-${device.deviceType.toLowerCase()}`);
 
     root.className = classList.get();
-
-    console.log(root.className);
 
     if (!started) {
         handleOrientation({ newValue: getOrientation() });
