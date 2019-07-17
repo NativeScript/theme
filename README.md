@@ -4,14 +4,14 @@
 
 Home of the core NativeScript theme 2.0 beta. The documentation of the beta theme will live here, until it gets final.
 
-- [Breaking Changes 📸](#breaking-changes)
-- [Usage 📸](#usage)
-- [Changing Core Theme 📸](#changing-core-theme)
-- [More Root Classes 📸](#more-root-classes)
-- [Helper Functions and Mixins 📸](#helper-functions-and-mixins)
-- [Kendo UI ThemeBuilder Support 📸](#kendo-ui-themebuilder-support)
-- [Theme Classes and Compatibility 📸](#theme-classes-and-compatibility)
-- [Why Beta 📸](#why-beta)
+- [Breaking Changes](#breaking-changes)
+- [Usage](#usage)
+- [Changing Core Theme](#changing-core-theme)
+- [More Root Classes](#more-root-classes)
+- [Helper Functions and Mixins](#helper-functions-and-mixins)
+- [Kendo UI ThemeBuilder Support](#kendo-ui-themebuilder-support)
+- [Theme Classes and Compatibility](#theme-classes-and-compatibility)
+- [Why Beta](#why-beta)
 - [Screenshots 📸](#screenshots)
 - [Changelog 📝](https://github.com/NativeScript/theme/blob/master/CHANGELOG.md)
 - [Contributing 🍺](#contributing)
