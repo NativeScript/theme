@@ -82,8 +82,11 @@
 
             .-separator {
                 border-bottom-width: 1;
-                @include colorize($border-bottom-color: background-focus);
+                @include colorize($border-bottom-color: background-alt);
             }
+
+            @include colorize($separator-color: background-alt);
+
 
             .nt-list-view__delete {
                 background-color: $error;
@@ -118,10 +121,6 @@
         NTIcon,
         .nt-icon {
             @include colorize($scale-contrasted-color: focus background 0% 50%);
-        }
-
-        .-separator {
-            @include colorize($border-bottom-color: background-focus);
         }
 
         .nt-list-view__delete {
