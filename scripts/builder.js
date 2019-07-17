@@ -46,13 +46,13 @@ console.log("Change to the 'nativescript-theme-core' folder and you can now do y
  * Create package.json from the original one
  */
 function createPackageJson() {
-    const outputPackageJson = (({ name, version, description, author, homepage, licence, repository }) =>
+    const outputPackageJson = (({ name, version, description, author, homepage, license, repository }) =>
                                ({ name,
 version,
 description,
 author,
 homepage,
-licence,
+license,
 repository }))(pjs);
 
     outputPackageJson.nativescript = {
