@@ -1,0 +1,85 @@
+// Import the theme’s variables. If you’re using a color scheme
+// other than “light”, switch the path to the alternative scheme,
+// for example '~nativescript-theme-core/scss/dark'.
+@import '~nativescript-theme-core/core';
+
+@import '~/assets/css/font-awesome.scss';
+
+FlexboxLayout {
+    padding: 0 12;
+}
+
+.ns-root FlexboxLayout > Button {
+    width: 33%;
+    flex: 1;
+    margin-left: 2;
+    margin-right: 2;
+}
+
+.compat-components {
+    visibility: collapsed;
+}
+
+.compat-components + * {
+    visibility: visible;
+}
+
+.ns-compat .compat-components {
+    visibility: visible;
+}
+
+.ns-compat .compat-components + * {
+    visibility: collapsed;
+}
+
+#login-background {
+  margin-top: -20;
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* Login page Styling */
+
+.login-wrap {
+  padding: 0 40;
+}
+
+.logo-wrap {
+  margin: 60 0 10 0 ;
+  padding: 20 0;
+
+  .login-logo {
+    text-align: center;
+    font-size: 30;
+    font-weight: bold;
+    margin-bottom: 10;
+    opacity: 1;
+    color: $primary;
+    opacity: .9;
+  }
+
+  .login-logo-sub {
+    color: $primary;
+    opacity: .8;
+    text-align: center;
+  }
+}
+
+.login-wrapper {
+  padding: 20;
+  background-color: #fff;
+  border-radius: 3;
+
+  TextField {
+    padding: 10 10;
+    margin: 10 0 0 0;
+  }
+}
+
+.go-back {
+  font-size: 14;
+  text-align: center;
+  color: $primary;
+  margin-top: 10;
+}

@@ -1,0 +1,24 @@
+$base-theme:Bootstrap;
+$skin-name:indigo;
+$swatch-name:Indigo;
+$border-radius: 0.25rem;
+$accent: #25c55b;
+$secondary: #465372;
+$info: #5bc0de;
+$success: #5cb85c;
+$warning: #f0ad4e;
+$error: #d9534f;
+$body-bg: #5c7091;
+$body-color: #ffffff;
+$component-bg: #536182;
+$component-color: #ffffff;
+$card-cap-bg: #465372;
+$card-cap-color: #ffffff;
+$series-a: #25c55b;
+$series-b: #5bc0de;
+$series-c: #0275d8;
+$series-d: #f0ad4e;
+$series-e: #e67d4a;
+$series-f: #d9534f;
+
+@import '~nativescript-theme-core/index';

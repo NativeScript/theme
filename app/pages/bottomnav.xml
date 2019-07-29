@@ -1,0 +1,19 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:actionBar="/action-bar"
+      navigatingTo="navigatingTo">
+    <actionBar:action-bar actionBarTitle="Tabs and BottomNavigation"/>
+    <BottomNavigation>
+        <TabStrip>
+            <TabStripItem title="Tab 1" />
+            <TabStripItem title="Tab 2" />
+        </TabStrip>
+
+        <TabContentItem>
+            <TextView text="{{ tab3 }}" class="p-20" editable="false"/>
+        </TabContentItem>
+
+        <TabContentItem>
+            <Image src="{{ image1 }}" class="p-20" width="100%" height="100%" stretch="aspectFit"/>
+        </TabContentItem>
+    </BottomNavigation>
+</Page>

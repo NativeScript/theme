@@ -1,20 +1,9 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
-  xmlns:drawer="nativescript-ui-sidedrawer"
-  xmlns:sidedrawer="/sidedrawer"
-  xmlns:actionBar="/actionBar"
+  xmlns:actionBar="/action-bar"
   navigatingTo="navigatingTo">
-  <Page.actionBar>
-    <actionBar:actionBar ActionBarTitle="Sliders" ></actionBar:actionBar>
-  </Page.actionBar>
-  <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
-    <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
-      <StackLayout class="page">
-          <Slider minValue="1" maxValue="100" value="50" class="slider" />
-          <Slider minValue="1" maxValue="100" value="50" class="slider" isEnabled="false" />
-      </StackLayout>
-    </drawer:RadSideDrawer.mainContent>
-    <drawer:RadSideDrawer.drawerContent>
-        <sidedrawer:sidedrawer activeComponent='sliders'></sidedrawer:sidedrawer>
-    </drawer:RadSideDrawer.drawerContent>
-  </drawer:RadSideDrawer>
+  <actionBar:action-bar actionBarTitle="Progress" />
+  <StackLayout class="page">
+    <Slider minValue="1" maxValue="100" value="50" class="slider" />
+    <Slider minValue="1" maxValue="100" value="50" class="slider" isEnabled="false" />
+  </StackLayout>
 </Page>

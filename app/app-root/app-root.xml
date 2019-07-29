@@ -1,0 +1,41 @@
+<drawer:RadSideDrawer
+        xmlns:drawer="nativescript-ui-sidedrawer"
+        xmlns:themes="pages/themes"
+        loaded="onLoaded">
+    <drawer:RadSideDrawer.drawerTransition>
+        <drawer:SlideInOnTopTransition/>
+    </drawer:RadSideDrawer.drawerTransition>
+
+    <drawer:RadSideDrawer.drawerContent>
+        <GridLayout rows="auto, *" class="nt-drawer__content">
+            <StackLayout class="nt-drawer__header">
+                <Image src="~/assets/images/N.png" tap="{{ viewHome }}" class="nt-drawer__header-image"/>
+                <Label text="NativeScript Theme Project" textWrap="true" class="nt-drawer__header-brand" />
+            </StackLayout>
+            <ListView row="1" items="{{ pages }}" itemTap="{{ onNavigationItemTap }}">
+                <ListView.itemTemplate>
+                    <StackLayout orientation="horizontal">
+                        <Label text="{{ 'fa-' + icon | fonticon }}" class="fa nt-icon" />
+                        <Label text="{{ text || value }}" />
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </GridLayout>
+    </drawer:RadSideDrawer.drawerContent>
+
+    <drawer:RadSideDrawer.mainContent>
+        <drawer:RadSideDrawer id="themeDrawer" loaded="onRightLoaded" drawerLocation="Right">
+            <drawer:RadSideDrawer.drawerTransition>
+                <drawer:SlideInOnTopTransition/>
+            </drawer:RadSideDrawer.drawerTransition>
+
+            <drawer:RadSideDrawer.drawerContent>
+                <themes:themes />
+
+                <drawer:RadSideDrawer.mainContent>
+                    <Frame defaultPage="pages/root" />
+                </drawer:RadSideDrawer.mainContent>
+            </drawer:RadSideDrawer.drawerContent>
+        </drawer:RadSideDrawer>
+    </drawer:RadSideDrawer.mainContent>
+</drawer:RadSideDrawer>

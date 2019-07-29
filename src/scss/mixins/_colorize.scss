@@ -1,0 +1,32 @@
+$enhancers: 'alternate', 'scale-alternate', 'contrasted', 'scale-contrasted';
+
+@mixin enhance($name, $arguments, $colors) {
+    $args: ();
+
+    $color: map-get($colors, $arguments);
+
+    @each $arg in $arguments {
+        $color: map-get($colors, $arg);
+
+        $args: append($args, if($color != null, $color, $arg));
+    }
+
+    @each $enhancer in $enhancers {
+        @if (str-index($name, '#{$enhancer}-') == 1) {
+            $name: str-slice($name, str-length($enhancer) + 2);
+            $color: call(get-function($enhancer), $args...);
+        }
+    }
+
+    #{$name}: $color;
+}
+
+@mixin colorize($args...) {
+    @each $name, $arguments in keywords($args) {
+        @include enhance($name, $arguments, $light-colors);
+
+        .ns-dark & {
+            @include enhance($name, $arguments, $dark-colors);
+        }
+    }
+}

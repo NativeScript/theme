@@ -1,43 +1,56 @@
 {
   "name": "nativescript-theme-core",
-  "version": "1.0.6",
+  "version": "2.0.3",
   "description": "Telerik NativeScript Core Theme",
+  "author": "Telerik <support@telerik.com>",
   "homepage": "https://www.nativescript.org",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NativeScript/theme"
+    "url": "https://github.com/NativeScript/theme/tree/next"
   },
   "nativescript": {
     "id": "org.nativescript.theme",
-    "tns-android": {
-      "version": "5.4.0-2019-05-09-111319-03"
-    },
     "tns-ios": {
-      "version": "5.4.0-2019-05-07-181332-01"
+      "version": "6.0.1"
+    },
+    "tns-android": {
+      "version": "6.0.0"
     }
   },
   "dependencies": {
-    "bootstrap": "~4.3.0",
-    "nativescript-dom": "~2.0.0",
-    "nativescript-fonticon": "~2.0.0",
-    "nativescript-themes": "~2.0.0",
-    "nativescript-ui-sidedrawer": "~6.0.0",
-    "tns-core-modules": "next"
+    "bootstrap": "4.3.1",
+    "nativescript-picker": "^2.1.2",
+    "nativescript-datetimepicker": "^1.2.1",
+    "nativescript-theme-core": "./src",
+    "nativescript-themes": "2.0.1",
+    "nativescript-ui-sidedrawer": "^7.0.0",
+    "nativescript-ui-dataform": "^5.0.0",
+    "tns-core-modules": "^6.0.1"
   },
   "devDependencies": {
-    "babel-traverse": "6.26.0",
-    "babel-types": "6.26.0",
-    "babylon": "6.18.0",
-    "glob": "~7.1.4",
+    "babel-eslint": "10.0.2",
+    "cache-loader": "4.0.1",
+    "dart-sass": "1.22.3",
+    "eslint": "6.0.1",
+    "glob": "7.1.4",
     "lazy": "1.0.11",
-    "nativescript-dev-sass": "~1.7.0",
-    "nativescript-dev-typescript": "~0.9.0",
-    "node-sass": "~4.12.0",
-    "sass-lint": "~1.13.0",
-    "typescript": "~3.4.0"
+    "nativescript-dev-webpack": "^1.0.0",
+    "postcss": "7.0.17",
+    "postcss-custom-properties": "9.0.1",
+    "postcss-loader": "3.0.0",
+    "resolve-url-loader": "3.1.0",
+    "sass-lint": "1.13.1",
+    "sass-loader": "7.1.0",
+    "speed-measure-webpack-plugin": "1.3.1",
+    "webpack": "4.35.3",
+    "webpack-bundle-analyzer": "3.3.2",
+    "webpack-cli": "3.3.5",
+    "webpack-sources": "1.3.0"
   },
   "scripts": {
-    "builder": "node scripts/builder.js"
+    "eslint": "node_modules/.bin/eslint .",
+    "builder": "node scripts/builder.js",
+    "lint": "eslint \"app/**/*.js\" \"src/**/*.js\""
   }
 }

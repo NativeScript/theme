@@ -1,23 +1,12 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
-  xmlns:drawer="nativescript-ui-sidedrawer"
-  xmlns:sidedrawer="/sidedrawer"
   navigatingTo="navigatingTo"
   navigatingFrom="navigatingFrom"
-  xmlns:actionBar="/actionBar">
-  <Page.actionBar>
-    <actionBar:actionBar ActionBarTitle="Progress" ></actionBar:actionBar>
-  </Page.actionBar>
-  <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
-    <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
-      <StackLayout class="page">
-        <GridLayout rows="auto ,*" columns="">
-          <Progress id="progress" row="0" value="50" maxValue="100" class="progress" />
-          <ActivityIndicator row="1" busy="true" class="activity-indicator" />
-        </GridLayout>
-      </StackLayout>
-    </drawer:RadSideDrawer.mainContent>
-    <drawer:RadSideDrawer.drawerContent>
-        <sidedrawer:sidedrawer activeComponent='progress'></sidedrawer:sidedrawer>
-    </drawer:RadSideDrawer.drawerContent>
-  </drawer:RadSideDrawer>
+  xmlns:actionBar="/action-bar">
+  <actionBar:action-bar actionBarTitle="Progress" />
+  <StackLayout class="page">
+    <GridLayout rows="auto ,*" columns="">
+      <Progress id="progress" row="0" value="50" maxValue="100" class="progress" />
+      <ActivityIndicator row="1" busy="true" class="activity-indicator" />
+    </GridLayout>
+  </StackLayout>
 </Page>

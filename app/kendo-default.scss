@@ -1,0 +1,25 @@
+$base-theme:Default;
+$skin-name:test;
+$swatch-name:Forest;
+$border-radius: 10px;
+$accent: #b43531;
+$info: #4dabe1;
+$success: #8db753;
+$warning: #ffc924;
+$error: #d5110b;
+$text-color: #2e1f0c;
+$bg-color: #F7F7F2;
+$base-text: #ffffff;
+$base-bg: #859d69;
+$hovered-text: #ffffff;
+$hovered-bg: #859d69;
+$selected-text: #ffffff;
+$selected-bg: #ffa54c;
+$series-a: #d55652;
+$series-b: #b70803;
+$series-c: #ff9329;
+$series-d: #ac3900;
+$series-e: #9bbd73;
+$series-f: #598229;
+
+@import '~nativescript-theme-core/index';

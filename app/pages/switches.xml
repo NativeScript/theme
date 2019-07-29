@@ -1,22 +1,11 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
-  xmlns:drawer="nativescript-ui-sidedrawer"
-  xmlns:sidedrawer="/sidedrawer"
-  xmlns:actionBar="/actionBar"
+  xmlns:actionBar="/action-bar"
   navigatingTo="navigatingTo">
-  <Page.actionBar>
-    <actionBar:actionBar ActionBarTitle="Switches" ></actionBar:actionBar>
-  </Page.actionBar>
-  <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
-    <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
-      <StackLayout class="page">
-        <Switch checked="true" class="switch" id="checked"/>
-        <Switch checked="false" class="switch" id="unChecked" />
-        <Switch checked="true" class="switch" isEnabled="false" id="checkedDisabled"/>
-        <Switch isEnabled="false" class="switch" id="unCheckedDisabled"/>
-      </StackLayout>
-    </drawer:RadSideDrawer.mainContent>
-    <drawer:RadSideDrawer.drawerContent>
-        <sidedrawer:sidedrawer activeComponent='switches'></sidedrawer:sidedrawer>
-    </drawer:RadSideDrawer.drawerContent>
-  </drawer:RadSideDrawer>
+  <actionBar:action-bar actionBarTitle="Progress" />
+  <StackLayout class="page">
+    <Switch checked="true" class="switch" id="checked" />
+    <Switch checked="false" class="switch" id="unChecked" />
+    <Switch checked="true" class="switch" isEnabled="false" id="checkedDisabled"/>
+    <Switch isEnabled="false" class="switch" id="unCheckedDisabled"/>
+  </StackLayout>
 </Page>

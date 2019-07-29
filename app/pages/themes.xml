@@ -1,40 +1,42 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd"
-  xmlns:drawer="nativescript-ui-sidedrawer"
-  xmlns:sidedrawer="/sidedrawer"
-  xmlns:actionBar="/actionBar"
-  navigatingTo="navigatingTo">
-  <Page.actionBar>
-    <actionBar:actionBar ActionBarTitle="Themes" ></actionBar:actionBar>
-  </Page.actionBar>
-  <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
-    <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
-      <ScrollView class="page themes">
-        <StackLayout>
-          <Label text="{{ 'Active: ' + labelText }}" textWrap="true" class="h2 text-center m-10" />
-          <Button text="Apply Default" tap="{{ applyTheme }}" class="btn btn-outline btn-active m-5" cssName="app.css" />
-          <Button text="Apply Light" tap="{{ applyTheme }}" class="btn btn-outline btn-active m-5" cssName="core.light.css" />
-          <Button text="Apply Dark" tap="{{ applyTheme }}" class="btn btn-outline btn-active m-5" cssName="core.dark.css" />
-          <Button text="Apply Custom" tap="{{ applyTheme }}" class="btn btn-outline btn-active m-5" cssName="customized.css" />
-          <Button text="Apply Bootstrap" tap="{{ applyTheme }}" class="btn btn-outline btn-active m-5" cssName="bootstrap-based.css" />
+<Page loaded="onLoaded">
+  <ScrollView>
+    <StackLayout>
+      <Label text="{{ 'Active: ' + theme }}" textWrap="true" class="h3 text-center m-10" />
+      <FlexboxLayout flexDirection="row" flexWrap="wrap">
+        <Button text="Light" tap="{{ applyTheme }}" class="-outline m-5" cssName="core.light" />
+        <Button text="Dark" tap="{{ applyTheme }}" class="-outline m-5" cssName="core.dark" />
+      </FlexboxLayout>
 
-          <Label text="Skins" textWrap="true" class="h2 text-center text-underline font-italic m-10" />
+      <Label class="hr-dark" />
 
-          <Button text="Apply Aqua" tap="{{ applyTheme }}" class="btn btn-primary btn-active btn-rounded-lg btn-aqua m-5" cssName="aqua.css" />
-          <Button text="Apply Blue" tap="{{ applyTheme }}" class="btn btn-primary btn-active btn-rounded-lg btn-blue m-5" cssName="blue.css" />
-          <Button text="Apply Brown" tap="{{ applyTheme }}" class="btn btn-primary btn-active btn-rounded-lg btn-brown m-5" cssName="brown.css" />
-          <Button text="Apply Forest" tap="{{ applyTheme }}" class="btn btn-primary btn-active btn-rounded-lg btn-forest m-5" cssName="forest.css" />
-          <Button text="Apply Grey" tap="{{ applyTheme }}" class="btn btn-primary btn-active btn-rounded-lg btn-grey m-5" cssName="grey.css" />
-          <Button text="Apply Lemon" tap="{{ applyTheme }}" class="btn btn-primary btn-active btn-rounded-lg btn-lemon m-5" cssName="lemon.css" />
-          <Button text="Apply Lime" tap="{{ applyTheme }}" class="btn btn-primary btn-active btn-rounded-lg btn-lime m-5" cssName="lime.css" />
-          <Button text="Apply Orange" tap="{{ applyTheme }}" class="btn btn-primary btn-active btn-rounded-lg btn-orange m-5" cssName="orange.css" />
-          <Button text="Apply Purple" tap="{{ applyTheme }}" class="btn btn-primary btn-active btn-rounded-lg btn-purple m-5" cssName="purple.css" />
-          <Button text="Apply Ruby" tap="{{ applyTheme }}" class="btn btn-primary btn-active btn-rounded-lg btn-ruby m-5" cssName="ruby.css" />
-          <Button text="Apply Sky" tap="{{ applyTheme }}" class="btn btn-primary btn-active btn-rounded-lg btn-sky m-5" cssName="sky.css" />
-        </StackLayout>
-      </ScrollView>
-    </drawer:RadSideDrawer.mainContent>
-    <drawer:RadSideDrawer.drawerContent>
-        <sidedrawer:sidedrawer activeComponent='theme'></sidedrawer:sidedrawer>
-    </drawer:RadSideDrawer.drawerContent>
-  </drawer:RadSideDrawer>
+      <FlexboxLayout flexDirection="row" flexWrap="wrap">
+        <Button text="Bootstrap" tap="{{ applyTheme }}" class="-outline m-5" cssName="bootstrap-based" />
+        <Button text="Custom" tap="{{ applyTheme }}" class="-outline m-5" cssName="customized" />
+      </FlexboxLayout>
+
+      <Label text="Skins" textWrap="true" class="h3 text-center font-italic m-10" />
+
+      <FlexboxLayout flexDirection="row" flexWrap="wrap">
+        <Button text="Aqua" tap="{{ applyTheme }}" class="-primary -aqua m-5" cssName="aqua" />
+        <Button text="Blue" tap="{{ applyTheme }}" class="-primary -blue m-5" cssName="blue" />
+        <Button text="Brown" tap="{{ applyTheme }}" class="-primary -brown m-5" cssName="brown" />
+        <Button text="Forest" tap="{{ applyTheme }}" class="-primary -forest m-5" cssName="forest" />
+        <Button text="Grey" tap="{{ applyTheme }}" class="-primary -grey m-5" cssName="grey" />
+        <Button text="Lemon" tap="{{ applyTheme }}" class="-primary -lemon m-5" cssName="lemon" />
+        <Button text="Lime" tap="{{ applyTheme }}" class="-primary -lime m-5" cssName="lime" />
+        <Button text="Orange" tap="{{ applyTheme }}" class="-primary -orange m-5" cssName="orange" />
+        <Button text="Purple" tap="{{ applyTheme }}" class="-primary -purple m-5" cssName="purple" />
+        <Button text="Ruby" tap="{{ applyTheme }}" class="-primary -ruby m-5" cssName="ruby" />
+        <Button text="Sky" tap="{{ applyTheme }}" class="-primary -sky m-5" cssName="sky" />
+      </FlexboxLayout>
+
+      <Label text="Kendo skins" textWrap="true" class="h3 text-center font-italic m-10" />
+
+      <FlexboxLayout flexDirection="row" flexWrap="wrap">
+        <Button text="Default" tap="{{ applyTheme }}" class="-outline m-5" cssName="kendo-default" />
+        <Button text="Bootstrap" tap="{{ applyTheme }}" class="-outline m-5" cssName="kendo-bootstrap" />
+        <Button text="Material" tap="{{ applyTheme }}" class="-outline m-5" cssName="kendo-material" />
+      </FlexboxLayout>
+    </StackLayout>
+  </ScrollView>
 </Page>

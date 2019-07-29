@@ -1,23 +1,25 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" id="login-background" style="background-image:url('~/images/login-bg.jpg');">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:actionBar="/action-bar"
+      navigatingTo="navigatingTo"
+      style="background: no-repeat url('~/assets/images/login-bg.jpg'); background-size: cover">
 
+    <actionBar:action-bar hidden="true" />
 
-<GridLayout rows="auto, auto, auto" columns="*"  class="login-wrap">
+    <GridLayout rows="auto, auto, auto">
 
-    <StackLayout class="logo-wrap">
-        <Label text="FRESH" textWrap="true" class="login-logo" row="0" col="0" />
-        <Label text="Lorem ipsum dolor set, neque adsa elmond faucabis" class="login-logo-sub" textWrap="true" />            
-    </StackLayout>
-            
-    <StackLayout row="1" col="0" class="login-wrapper">        
-        <TextField hint="username" />
-        <StackLayout class="hr-light m-b-10" android:visibility="collapsed" />
-        <TextField hint="password"  secure="true" />
-        <StackLayout class="hr-light m-b-10" android:visibility="collapsed" />    
-        <Button text="Sign in" class="btn btn-primary btn-rounded-lg" tap="" />                            
-    </StackLayout>            
+        <StackLayout class="logo-wrap">
+            <Label text="FRESH" textWrap="true" class="login-logo" row="0" col="0" />
+            <Label text="Lorem ipsum dolor set, neque adsa elmond faucabis" class="login-logo-sub" textWrap="true" />
+        </StackLayout>
 
-    <Label row="2" col="0" text="Go Back" class="go-back" textWrap="true" tap="goBack" />    
+        <StackLayout row="1">
+            <TextField hint="username" />
+            <TextField hint="password" secure="true" />
+            <Button text="Sign in" class="-primary -rounded-lg" tap="goBack" />
+        </StackLayout>
 
-</GridLayout>
-  
+        <Label row="2" text="Go Back" class="go-back" textWrap="true" tap="goBack" />
+
+    </GridLayout>
+
 </Page>

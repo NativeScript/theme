@@ -1,0 +1,21 @@
+<ActionBar title="{{ title }}" loaded="onLoad" actionBarHidden="{{ actionBarHidden }}">
+    <android>
+        <NavigationButton icon="{{ backButton ? 'res://chevron_left' : 'res://menu' }}"
+                          tap="{{ backButton ? goBack : toggleSideDrawer }}" />
+    </android>
+    <ios>
+        <NavigationButton visibility="collapsed" />
+        <ActionItem position="left" tap="{{ backButton ? goBack : toggleSideDrawer }}">
+            <Button>
+                <FormattedString>
+                    <Span text="{{ backButton ? '&#xf053;' : '&#xf0c9;' }}" class="fa nt-icon"/>
+                    <Span text="{{ backButton ? ' Back' : ' ' }}"/>
+                </FormattedString>
+            </Button>
+        </ActionItem>
+    </ios>
+    <ActionItem tap="{{ toggleRightDrawer }}" ios.position="right"
+                visibility="{{ backButton ? 'collapsed' : 'visible' }}">
+        <Button text="Theme" />
+    </ActionItem>
+</ActionBar>

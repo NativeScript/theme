@@ -1,3 +1,22 @@
+<a name="2.0.0 beta"></a>
+## [2.0.0 beta](https://github.com/NativeScript/theme/compare/1.0.4...v2.0.0) (2019-07-17)
+
+### Breaking Changes
+
+* The theme is now **applied using Element selectors**, for instance Button, Label, etc. This means it will style the app it is added to directly, without the need to add classes to every element. The old classes are moved to .compat CSS/SCSS. New namespaced classes are introduced to avoid clashes with user CSS.
+* The theme supports a core light or dark theme and skins on top of it - **2 files should be imported for it to work**. A simple change of a class on root level controls if the core theme is light or dark. Skins can be changed on the fly, without changing the core theme. However special steps are needed with the new Webpack workflow. 
+* Theme 2.0 beta **requires some JavaScript to be loaded** which helps with the styling. It should be included in [core modules](https://github.com/NativeScript/NativeScript/issues/7313) before the theme goes final.
+* Theme 2.0 replaces node-sass with **dart-sass** which is more up to date feature-wise and doesn't have a native dependency. 
+
+### Features
+
+* Introduced several classes that are set on the root view and used to control light/dark theme and other platform features.
+* Several helper SASS functions and mixins are introduced to ease app/component styling
+* Theme is now compatible with Kendo UI ThemeBuilder, allowing for shared Web/Mobile themes
+* Added styling for the new Tabs and BottomNavigation.
+* Added styling for several nativescript-ui components that are CSS stylable - RadListView, RadDataForm.
+* Added styling for nativescript-picker and nativescript-datetimepicker components.
+
 <a name="1.0.4"></a>
 ## [1.0.4](https://github.com/NativeScript/theme/compare/1.0.3...v1.0.4) (2017-04-18)
 

@@ -1,0 +1,119 @@
+// Core light colors
+$light-colors: (
+    primary: $primary,
+    background: $background,
+    focus: $focus,
+    gray: #999
+);
+
+@if (global_variable_exists("theme-type")) {
+    $light-colors: map-merge($light-colors, (
+        focus: map-get($material-light-complimentary, component-bg),
+        disabled: mix(light(focus), light(background), 40%),
+    ));
+}
+
+$light-colors: map-merge($light-colors, (
+    background-alt: darken(light(background), 20%),
+    secondary: lighten(light(primary), 30%),
+    disabled: mix(light(focus), light(background), 40%),
+
+    ab-color: $ab-color,
+    ab-background: $ab-background,
+
+    text-color: light(primary),
+    headings-color: light(primary),
+
+    tab-text-color: mix(light(gray), light(focus), 70%),
+
+    focus-dark: darken(light(focus), 20%),
+    focus-light: lighten(light(focus), 20%),
+    focus-transparent: mix(transparent, light(focus), 20%),
+    primary-focus: mix(transparent, light(focus), 60%),
+    background-focus: mix(transparent, light(focus), 90%),
+    background-dark-focus: mix(transparent, light(focus), 85%),
+
+    item-active-color: mix(light(primary), light(background), 40%),
+    item-active-background: light(focus),
+
+    btn-color: light(primary)
+));
+
+$light-colors: map-merge($light-colors, (
+    ab-background-dark: darken(light(ab-background), 5%),
+    item-active-icon-color: light(item-active-color),
+    btn-color-inverse: alternate(light(focus)),
+    btn-color-secondary: darken(light(btn-color), 10%),
+    btn-color-outline-highlighted: darken(light(primary-focus), 20%)
+));
+
+// Core dark colors
+$dark-colors: (
+    primary: $white,
+    background: $charcoal,
+    focus: $focus,
+    gray: #999
+);
+
+@if (global_variable_exists("bg-color")) {
+    $dark-colors: map-merge($dark-colors, (
+        background: mix($bg-color, $charcoal, 10%)
+    ));
+
+    $dark-colors: map-merge($dark-colors, (
+        primary: alternate(dark(background), 70%)
+    ));
+}
+
+@if (global_variable_exists("body-bg")) {
+    $dark-colors: map-merge($dark-colors, (
+        background: mix($body-bg, $charcoal, if(lightness($body-bg) > .5, 10%, 40%))
+    ));
+
+
+    $dark-colors: map-merge($dark-colors, (
+        primary: alternate(dark(background), 70%)
+    ));
+}
+
+@if (global_variable_exists("theme-type")) {
+    $dark-colors: map-merge($dark-colors, (
+        focus: map-get($material-dark-complimentary, component-bg),
+        disabled: mix(dark(focus), dark(background), 40%),
+    ));
+}
+
+$dark-colors: map-merge($dark-colors, (
+    background-alt: lighten(dark(background), 20%),
+    secondary: darken(dark(primary), 30%),
+    disabled: mix(dark(focus), dark(background), 40%),
+
+    ab-color: mix($ab-color, dark(primary), 20%),
+    ab-background: mix($ab-background, dark(background), 50%),
+
+    text-color: dark(primary),
+    headings-color: dark(primary),
+
+    tab-text-color: mix(dark(gray), dark(focus), 70%),
+
+    focus-dark: lighten(dark(focus), 20%),
+    focus-light: lighten(dark(focus), 40%),
+    focus-transparent: mix(transparent, dark(focus), 20%),
+    primary-focus: mix(transparent, dark(focus), 60%),
+    background-focus: mix(transparent, dark(focus), 90%),
+    background-dark-focus: mix(transparent, dark(focus), 85%),
+
+    item-active-color: mix(dark(primary), dark(background), 40%),
+    item-active-background: dark(focus),
+
+    btn-color: dark(primary)
+));
+
+$dark-colors: map-merge($dark-colors, (
+    ab-background-dark: darken(dark(ab-background), 5%),
+    item-active-icon-color: dark(item-active-color),
+    btn-color-inverse: alternate(dark(focus)),
+    btn-color-secondary: darken(dark(btn-color), 10%),
+    btn-color-outline-highlighted: darken(dark(primary-focus), 20%)
+));
+

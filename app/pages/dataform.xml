@@ -1,0 +1,12 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:actionBar="/action-bar"
+      xmlns:df="nativescript-ui-dataform"
+      navigatingTo="navigatingTo">
+    <actionBar:action-bar actionBarTitle="RadDataForm"/>
+
+    <ScrollView>
+        <StackLayout>
+            <df:RadDataForm id="myDataForm" source="{{ person }}" metadata="{{ metadata }}" />
+        </StackLayout>
+    </ScrollView>
+</Page>

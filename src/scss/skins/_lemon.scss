@@ -1,0 +1,19 @@
+// Core variables
+@import '../variables';
+
+/**
+ * Lemon variable overrides
+ **/
+
+// ActionBar
+$ab-background: $lemon;
+$ab-color: $charcoal;
+
+// Accent
+$focus: $grey-dark;
+
+// Buttons
+$btn-color-inverse: $white;
+
+@import '../core/colors';
+@import '../index';

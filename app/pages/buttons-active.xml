@@ -1,27 +1,33 @@
-
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
-  xmlns:drawer="nativescript-ui-sidedrawer"
-  xmlns:sidedrawer="/sidedrawer"
-  xmlns:actionBar="/actionBar"
-  navigatingTo="navigatingTo">
-  <Page.actionBar>
-    <actionBar:actionBar ActionBarTitle="Buttons Active" ></actionBar:actionBar>
-  </Page.actionBar>
-  <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
-    <drawer:RadSideDrawer.mainContent android:showOverNavigation="true">
-      <StackLayout class="page">
-          <Button text="btn btn-active" tap="" class="btn btn-active" />
-          <Button text="btn btn-primary btn-active" tap="" class="btn btn-primary btn-active" />
-          <Button text="btn btn-outline btn-active" tap="" class="btn btn-primary btn-outline btn-active" />
-          <Button text="btn btn-primary btn-rounded-sm btn-active" tap="" class="btn btn-primary btn-rounded-sm btn-active" />
-          <Button text="btn btn-outline btn-rounded-sm btn-active" tap="" class="btn btn-outline btn-rounded-sm btn-active" />
-          <Button text="btn btn-primary btn-rounded-lg btn-active" tap="" class="btn btn-primary btn-rounded-lg btn-active" />
-          <Button text="btn btn-outline btn-rounded-lg btn-active" tap="" class="btn btn-outline btn-rounded-lg btn-active" />
+      xmlns:actionBar="/action-bar"
+      navigatingTo="navigatingTo">
+    <actionBar:action-bar actionBarTitle="Buttons Active"/>
+    <ScrollView>
+        <StackLayout class="page compat-components">
+            <Button text="btn btn-active" tap="" class="btn btn-active"/>
+            <Button text="btn btn-primary btn-active" tap="" class="btn btn-primary btn-active"/>
+            <Button text="btn btn-outline btn-active" tap="" class="btn btn-primary btn-outline btn-active"/>
+            <Button text="btn btn-primary btn-rounded-sm btn-active" tap=""
+                    class="btn btn-primary btn-rounded-sm btn-active"/>
+            <Button text="btn btn-outline btn-rounded-sm btn-active" tap=""
+                    class="btn btn-outline btn-rounded-sm btn-active"/>
+            <Button text="btn btn-primary btn-rounded-lg btn-active" tap=""
+                    class="btn btn-primary btn-rounded-lg btn-active"/>
+            <Button text="btn btn-outline btn-rounded-lg btn-active" tap=""
+                    class="btn btn-outline btn-rounded-lg btn-active"/>
         </StackLayout>
-    </drawer:RadSideDrawer.mainContent>
-    <drawer:RadSideDrawer.drawerContent>
-        <sidedrawer:sidedrawer activeComponent='buttons-active'></sidedrawer:sidedrawer>
-    </drawer:RadSideDrawer.drawerContent>
-  </drawer:RadSideDrawer>
-
+        <StackLayout class="page">
+            <Button text="-active" tap="" class="-active"/>
+            <Button text="-primary -active" tap="" class="-primary -active"/>
+            <Button text="-outline -active" tap="" class="-outline -active"/>
+            <Button text="-primary -rounded-sm -active" tap=""
+                    class="-primary -rounded-sm -active"/>
+            <Button text="-outline -rounded-sm -active" tap=""
+                    class="-outline -rounded-sm -active"/>
+            <Button text="-primary -rounded-lg -active" tap=""
+                    class="-primary -rounded-lg -active"/>
+            <Button text="-outline -rounded-lg -active" tap=""
+                    class="-outline -rounded-lg -active"/>
+        </StackLayout>
+    </ScrollView>
 </Page>

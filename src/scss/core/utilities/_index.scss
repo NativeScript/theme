@@ -1,0 +1,42 @@
+@import 'colors';
+@import 'spacing';
+@import 'text';
+@import 'bootstrap';
+
+.fa {
+  font-family: FontAwesome, fontawesome-webfont;
+}
+
+.ns-root {
+    @include colorize(
+        $color: primary
+    );
+
+    font-family: 'Roboto Medium';
+    font-size: 14;
+
+    @at-root .ns-ios {
+        font-family: 'SF UI Text Medium', system;
+        font-size: 15;
+    }
+}
+
+.-hidden,
+.hidden {
+    visibility: collapsed;
+}
+
+.-rounded,
+.rounded {
+    border-radius: 3;
+}
+
+/* Dividers */
+
+.hr {
+    height: 1;
+    width: 100%;
+    margin: 9 0 10;
+    border-width: 0 0 1;
+    border-style: solid;
+}

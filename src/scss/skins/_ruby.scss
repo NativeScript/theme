@@ -1,0 +1,19 @@
+// Core variables
+@import '../variables';
+
+/**
+ * Ruby variable overrides
+ **/
+
+// ActionBar
+$ab-background: $ruby;
+$ab-color: $white;
+
+// Accent
+$focus: $lemon;
+
+// Buttons
+$btn-color-inverse: $charcoal;
+
+@import '../core/colors';
+@import '../index';

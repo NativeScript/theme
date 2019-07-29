@@ -1,9 +1,9 @@
 files:
-    include: 'app/**/*.s+(a|c)ss'
+    include: 'src/**/*.s+(a|c)ss'
 rules:
     indentation:
         - 2
-        - size: 2
+        - size: 4
     quotes:
         - 2
         - style: single

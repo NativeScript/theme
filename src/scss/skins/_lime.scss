@@ -1,0 +1,19 @@
+// Core variables
+@import '../variables';
+
+/**
+ * Lime variable overrides
+ **/
+
+// ActionBar
+$ab-background: $lime;
+$ab-color: $charcoal;
+
+// Accent
+$focus: $forest;
+
+// Buttons
+$btn-color-inverse: $white;
+
+@import '../core/colors';
+@import '../index';

@@ -1,15 +1,16 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd"
-  loaded="onLoaded"
-  shownModally="onShownModally">
-  <StackLayout>
-    <GridLayout rows="auto" columns="100,*,100" class="action-bar p-10">
-      <Button text="Close" tap="{{close}}" row="0" col="0" class="action-item text-left" />
-      <Label text="{{title}}" textWrap="true" col="1" class="action-bar-title text-center" /> 
-    </GridLayout>
-    <StackLayout class="hr-light"></StackLayout>
+<Page xmlns="http://www.nativescript.org/tns.xsd">
 
-    <StackLayout class="p-20">
-      <Label text="Just to show that 'action-bar' class can be used to style a custom action bar like above for use in modals." class="h2" textWrap="true" />  
+    <ActionBar title="{{ title }}">
+        <ActionItem tap="{{ close }}" ios.position="right">
+            <Button text="Close"></Button>
+        </ActionItem>
+    </ActionBar>
+
+    <StackLayout>
+        <StackLayout class="hr-light"/>
+
+        <StackLayout class="p-20">
+            <Label text="A modal with a real action bar (within a Frame)." class="h2" textWrap="true"/>
+        </StackLayout>
     </StackLayout>
-  </StackLayout>
 </Page>

@@ -3,11 +3,12 @@
  *
  * Version 0.0.5                                      Nathan@master-technology.com
  ************************************************************************************/
-"use strict";
 
-var fs = require("fs");
-var sass = require("node-sass");
-var glob = require("glob");
+
+const fs = require("fs");
+const sass = require("dart-sass");
+const glob = require("glob");
+const pjs = require("../package.json");
 
 // Kill The original folder, so that way it is a clean folder
 if (fs.existsSync("nativescript-theme-core")) {
@@ -16,11 +17,10 @@ if (fs.existsSync("nativescript-theme-core")) {
 fs.mkdirSync("nativescript-theme-core");
 fs.mkdirSync("nativescript-theme-core/css");
 fs.mkdirSync("nativescript-theme-core/scss");
-fs.mkdirSync("nativescript-theme-core/fonts");
 
-var version = getVersion();
-var versionPlaceholder = "__VERSION__";
-console.log("Building the Deployment files for v" + version + "...");
+const version = getVersion();
+const versionPlaceholder = "__VERSION__";
+console.log(`Building the Deployment files for v${version}...`);
 
 // Create CSS from SCSS
 createCSSFromSCSS();
@@ -29,10 +29,12 @@ createCSSFromSCSS();
 copySCSS();
 
 // Copy any Fonts
-copyFonts();
+//copyFonts();
 
-// Copy our Package
-copyFile("./nativescript-theme-core.json", "./nativescript-theme-core/package.json");
+createPackageJson();
+
+// Copy the temporary class helper and SCSS
+copyFile("./src/index.js", "./nativescript-theme-core/index.js");
 
 // Copy our Readme
 copyFile("./nativescript-theme-core.md", "./nativescript-theme-core/readme.md");
@@ -41,12 +43,36 @@ console.log("Change to the 'nativescript-theme-core' folder and you can now do y
 // TODO: We could Automatically run "npm publish"
 
 /**
+ * Create package.json from the original one
+ */
+function createPackageJson() {
+    const outputPackageJson = (({ name, version, description, author, homepage, license, repository }) =>
+                               ({ name,
+version,
+description,
+author,
+homepage,
+license,
+repository }))(pjs);
+
+    outputPackageJson.nativescript = {
+        platforms: {
+            android: pjs.nativescript["tns-android"].version,
+            ios: pjs.nativescript["tns-ios"].version
+        }
+    };
+
+    fs.writeFileSync("./nativescript-theme-core/package.json", JSON.stringify(outputPackageJson, null, 2));
+}
+
+/**
  * Copy any fonts files over
  */
 function copyFonts() {
-    var ttfFiles = glob.sync("./app/fonts/*.ttf");
-    var otfFiles = glob.sync("./app/fonts/*.otf");
-    var i, out;
+    const ttfFiles = glob.sync("./app/fonts/*.ttf");
+    const otfFiles = glob.sync("./app/fonts/*.otf");
+    let i;
+    let out;
 
     for (i = 0; i < ttfFiles.length; i++) {
         out = ttfFiles[i].replace("./app/", "./nativescript-theme-core/");
@@ -69,30 +95,27 @@ function copyFonts() {
 }
 
 
-
 // ----------------------------------------------------------------------
 
 /**
  * Copy our SCSS files over
  */
 function copySCSS() {
-    var sassFilesPath = "./app/scss/**/*.scss";
-    var sassFiles = glob.sync(sassFilesPath).filter(function(filePath) {
-        return filePath.indexOf("App_Resources") === -1;
-    });
+    const sassFilesPath = "./src/**/*.scss";
+    const sassFiles = glob.sync(sassFilesPath);
 
-    for (var i = 0; i < sassFiles.length; i++) {
-        var out = sassFiles[i].replace("./app/", "./nativescript-theme-core/");
+    for (let i = 0; i < sassFiles.length; i++) {
+        const out = sassFiles[i].replace("./src/", "./nativescript-theme-core/");
 
-        var paths = sassFiles[i].split("/");
+        const paths = sassFiles[i].split("/");
         // eliminate the ["." and "app"]
         paths.shift();
         paths.shift();
 
         if (paths.length > 1) {
-            var path = "./nativescript-theme-core";
-            for (var j = 0; j < paths.length - 1; j++) {
-                path += "/" + paths[j];
+            let path = "./nativescript-theme-core";
+            for (let j = 0; j < paths.length - 1; j++) {
+                path += `/${paths[j]}`;
                 if (!fs.existsSync(path)) {
                     fs.mkdirSync(path);
                 }
@@ -101,7 +124,7 @@ function copySCSS() {
 
         // if (sassFiles[i].indexOf("./app/core.") > -1) {
         //     // print correct version on main files
-        //     var scss = fs.readFileSync(sassFiles[i], { encoding: "utf8" });
+        //     let scss = fs.readFileSync(sassFiles[i], { encoding: "utf8" });
         //     scss = printVersion(scss);
         //     fs.writeFileSync(out, scss, "utf8");
         // } else {
@@ -117,21 +140,20 @@ function copySCSS() {
  */
 function createCSSFromSCSS() {
 
-    var sassFilesPath = "./app/**/*.scss";
-    var sassImportPaths = [
-        "./app/",
+    const sassFilesPath = "./src/**/*.scss";
+    const sassImportPaths = [
+        "./src/",
         "./node_modules/"
     ];
 
-    var sassFiles = glob.sync(sassFilesPath).filter(function(filePath) {
-        var path = filePath;
-        var parts = path.split("/");
-        var filename = parts[parts.length - 1];
-        return path.indexOf("App_Resources") === -1 && filename.indexOf("_") !== 0 && filename.indexOf("app.") !== 0 && filename.indexOf("customized.") !== 0 && filename.indexOf("bootstrap") !== 0;
+    const sassFiles = glob.sync(sassFilesPath).filter((filePath) => {
+        const parts = filePath.split("/");
+        const filename = parts[parts.length - 1];
+        return filename.indexOf("_") !== 0 && filename.indexOf("app.") !== 0 && filename.indexOf("customized.") !== 0 && filename.indexOf("bootstrap") !== 0 && filename.indexOf("kendo") !== 0;
     });
 
 
-    for (var i = 0; i < sassFiles.length; i++) {
+    for (let i = 0; i < sassFiles.length; i++) {
         // We only process open /core. files
         // if (sassFiles[i].indexOf("/core.") === -1) {
         //     continue;
@@ -146,26 +168,25 @@ function createCSSFromSCSS() {
  * @param importPaths - Other import paths
  */
 function parseSass(sassFile, importPaths) {
-    var sassFileContent = fs.readFileSync(sassFile, { encoding: "utf8" });
-    var outputFile = "nativescript-theme-core/css";
-    var offset = sassFile.lastIndexOf("/");
-    outputFile += sassFile.substring(offset);
-    var cssFilePath = outputFile.replace(".scss", ".css");
+    const sassFileContent = fs.readFileSync(sassFile, { encoding: "utf8" });
+    const offset = sassFile.lastIndexOf("/");
+    const outputFile = `nativescript-theme-core/css${sassFile.substring(offset)}`;
+    const cssFilePath = outputFile.replace(".scss", ".css");
 
-    // var output = sass.renderSync({
+    // const output = sass.renderSync({
     sass.render({
         data: sassFileContent,
         includePaths: importPaths,
         outFile: cssFilePath,
         outputStyle: "compressed"
-    }, function(error, result) {
+    }, (error, result) => {
         if (error) {
             console.log(error.status);
             console.log(error.column);
             console.log(error.message);
             console.log(error.line);
         } else {
-            var css = result.css.toString();
+            let css = result.css.toString();
             // correct version tag
             css = printVersion(css);
             // uncomment to debug builds
@@ -185,11 +206,11 @@ function parseSass(sassFile, importPaths) {
  * @param path
  */
 function deleteFolderRecursive(path) {
-    var files = [];
+    let files = [];
     if (fs.existsSync(path)) {
         files = fs.readdirSync(path);
-        files.forEach(function(file) {
-            var curPath = path + "/" + file;
+        files.forEach((file) => {
+            const curPath = `${path}/${file}`;
             if (fs.lstatSync(curPath).isDirectory()) { // recurse
                 deleteFolderRecursive(curPath);
             } else { // delete file
@@ -213,13 +234,13 @@ function copyFile(src, dest) {
  * Print correct version
  */
 function printVersion(css) {
-    return css.replace(versionPlaceholder, "v" + version);
+    return css.replace(versionPlaceholder, `v${version}`);
 }
 
 /**
  * Get version from package
  */
 function getVersion() {
-    var packageJSON = require("../package.json");
+    const packageJSON = require("../package.json");
     return packageJSON ? packageJSON.version : null;
 }

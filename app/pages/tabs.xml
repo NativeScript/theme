@@ -1,56 +1,19 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
-  xmlns:drawer="nativescript-ui-sidedrawer"
-  xmlns:sidedrawer="/sidedrawer"
-  xmlns:actionBar="/actionBar"
-  navigatingTo="navigatingTo">
-  <Page.actionBar>
-    <actionBar:actionBar ActionBarTitle="Tabs" ></actionBar:actionBar>
-  </Page.actionBar>
-  <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
-    <drawer:RadSideDrawer.mainContent android:showOverNavigation="false">
- <TabView class="tab-view">
- <!-- we want to set this via css: selectedColor="#30bcff" tabsBackgroundColor="#f9f9f9"-->
-   <TabView.items>
-    <!-- ITEMS -->
-     <TabViewItem title="One" class="tab-view-item">
-       <TabViewItem.view>
-          <StackLayout class="page p-20">
-            <Label text="Tab 1 Content" class="h1" />
-            <StackLayout>
-                <Label text="{{ tab1 }}" textWrap="true" class="body" />
-            </StackLayout>
-          </StackLayout>
-       </TabViewItem.view>
-     </TabViewItem>
+      xmlns:actionBar="/action-bar"
+      navigatingTo="navigatingTo">
+    <actionBar:action-bar actionBarTitle="Tabs and BottomNavigation"/>
+    <Tabs>
+        <TabStrip>
+            <TabStripItem title="First"/>
+            <TabStripItem title="Second"/>
+        </TabStrip>
 
-     <TabViewItem title="Two">
-      <TabViewItem.view>
-        <StackLayout class="page p-20">
-              <Label text="Tab 2 Content" class="h1" />
-              <StackLayout>
-                <Label text="{{ tab2 }}" textWrap="true" class="body" />
-            </StackLayout>
-          </StackLayout>
-        </TabViewItem.view>
-     </TabViewItem>
+        <TabContentItem>
+            <TextView text="{{ tab1 }}" class="p-20" editable="false"/>
+        </TabContentItem>
 
-      <TabViewItem title="Three">
-        <TabViewItem.view>
-          <StackLayout class="page p-20">
-            <Label text="Tab 3 Content" class="h1" />
-            <StackLayout>
-                <Label text="{{ tab3 }}" textWrap="true" class="body" />
-            </StackLayout>
-          </StackLayout>
-        </TabViewItem.view>
-      </TabViewItem>
-
-      <!-- END ITEMS -->
-   </TabView.items>
- </TabView>
-    </drawer:RadSideDrawer.mainContent>
-    <drawer:RadSideDrawer.drawerContent>
-        <sidedrawer:sidedrawer activeComponent='tabs'></sidedrawer:sidedrawer>
-    </drawer:RadSideDrawer.drawerContent>
-  </drawer:RadSideDrawer>
+        <TabContentItem>
+            <TextView text="{{ tab2 }}" class="p-20" editable="false"/>
+        </TabContentItem>
+    </Tabs>
 </Page>

@@ -1,0 +1,13 @@
+// Specifics
+@import 'controls';
+
+/* Dividers */
+
+.hr,
+.hr-light {
+    @include colorize($border-color: focus-light);
+}
+
+.hr-dark {
+    @include colorize($border-color: focus-dark);
+}
