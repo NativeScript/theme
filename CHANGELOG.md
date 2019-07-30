@@ -1,3 +1,10 @@
+<a name="2.0.4 beta"></a>
+## [2.0.4 beta](https://github.com/NativeScript/theme/compare/2.0.0...v2.0.4) (2019-07-30)
+
+### Maintenance
+
+* All SASS imports are now from same folder qualifiers to allow working in a folder (e.g. in Playground) 
+
 <a name="2.0.0 beta"></a>
 ## [2.0.0 beta](https://github.com/NativeScript/theme/compare/1.0.4...v2.0.0) (2019-07-17)
 
