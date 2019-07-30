@@ -60,8 +60,16 @@ initial styling of the components without colorizing them too much.
 ## Changing Core Theme
 
 Changing the core theme from light to dark is now easier - instead of loading a new file, just get the root view and 
-set the `.ns-dark` class to it - this will change all colorization to dark tones. You can also do it from 
-JavaScript like this, for instance:
+set the `.ns-dark` class to it - this will change all colorization to dark tones. For instance, if your page root is 
+RadSideDrawer, just add a class to it, like this:
+
+```html
+<drawer:RadSideDrawer class="ns-dark" xmlns:drawer="nativescript-ui-sidedrawer">
+    ...
+</drawer:RadSideDrawer>
+```
+
+You can also do it from JavaScript like this, for instance:
 
 ```javascript
 import { getRootView } from "tns-core-modules/application";
@@ -73,9 +81,12 @@ This of course won't remove your previously added classes.
 
 ## More Root Classes
 
-In addition to `.ns-light` and `.ns-dark` classes, the theme's little JavaScript introduces `.ns-root` on the root element,
-`.ns-android/.ns-ios` depending on the current platform and additionally `.ns-portrait/.ns-landscape` and `.ns-phone/.ns-tablet`, which should be 
-self-explanatory. Of course `.ns-portrait/.ns-landscape` get updated on orientation change.
+In addition to `.ns-light` and `.ns-dark` classes, the theme's little JavaScript file introduces `.ns-root` on the root element,
+`.ns-android/.ns-ios` depending on the current platform (which the theme extensively uses) and additionally 
+`.ns-portrait/.ns-landscape` and `.ns-phone/.ns-tablet`, which should be self-explanatory. 
+Of course `.ns-portrait/.ns-landscape` get updated on orientation change, so you can use it to show a two pane layout 
+in landscape, for instance. The newest addition is `.ns-statusbar-transparent` since 2.0.4 - add this class to your root 
+element, if you have enabled transparent status bar in the OS and your ActionBar gets underneath it.   
 
 ## Helper Functions and Mixins
 
