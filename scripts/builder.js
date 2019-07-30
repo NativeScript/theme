@@ -6,7 +6,7 @@
 
 
 const fs = require("fs");
-const sass = require("dart-sass");
+const sass = require("sass");
 const glob = require("glob");
 const pjs = require("../package.json");
 
