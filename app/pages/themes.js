@@ -1,5 +1,5 @@
 import { BaseModel } from "./base";
-import themes from "nativescript-themes/themes";
+import themes from "nativescript-themes";
 import * as application from "tns-core-modules/application";
 import { ClassList } from "nativescript-theme-core";
 

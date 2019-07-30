@@ -26,7 +26,7 @@
     "nativescript-themes": "2.0.1",
     "nativescript-ui-sidedrawer": "^7.0.0",
     "nativescript-ui-dataform": "^5.0.0",
-    "tns-core-modules": "^6.0.3"
+    "tns-core-modules": "6.0.3"
   },
   "devDependencies": {
     "babel-eslint": "10.0.2",
