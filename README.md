@@ -40,8 +40,8 @@ This JS takes care of updating several classes on the app root elements, until t
 To load the theme styling, just load the core and skin CSS:
 
 ```css
-    @import "nativescript-theme-core/css/core.css";
-    @import "nativescript-theme-core/css/blue.css";
+    @import "~nativescript-theme-core/css/core.css";
+    @import "~nativescript-theme-core/css/blue.css";
 ```
 
 or alternatively SCSS:
