@@ -1,4 +1,5 @@
 <drawer:RadSideDrawer
+        class="ns-statusbar-transparent"
         xmlns:drawer="nativescript-ui-sidedrawer"
         xmlns:themes="pages/themes"
         loaded="onLoaded">

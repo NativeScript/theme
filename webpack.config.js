@@ -99,6 +99,8 @@ module.exports = smp.wrap((env) => {
             extensions: [".js", ".scss", ".css"],
             // Resolve {N} system modules from tns-core-modules
             modules: [
+                resolve(__dirname, "node_modules/tns-core-modules"),
+                resolve(__dirname, "node_modules"),
                 "node_modules/tns-core-modules",
                 "node_modules"
             ],
@@ -235,7 +237,7 @@ module.exports = smp.wrap((env) => {
                         {
                             loader: "sass-loader",
                             options: {
-                                implementation: require("dart-sass")
+                                implementation: require("sass")
                             }
                         }
                     ]

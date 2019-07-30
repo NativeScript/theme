@@ -2,8 +2,8 @@
 @import '../variables';
 
 // Utilities
-@import 'utilities/index';
+@import './utilities/index';
 
-@import 'headings';
-@import 'utilities';
-@import 'controls';
+@import './headings';
+@import './utilities';
+@import './controls';

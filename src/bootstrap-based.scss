@@ -5,13 +5,13 @@
  * Licensed under Apache 2.0 (https://github.com/NativeScript/theme/blob/master/LICENSE)
  */
 
-@import 'scss/variables';
+@import './scss/variables';
 
 // Variables form bootstrap v4 dependency
 @import '../node_modules/bootstrap/scss/functions', '../node_modules/bootstrap/scss/variables';
 
 // Import bootstrap map to apply variable mapping
-@import 'scss/bootstrap/map';
+@import './scss/bootstrap/map';
 
 // Import light theme
-@import 'index';
+@import './index';
