@@ -1,3 +1,12 @@
+<a name="2.0.5 beta"></a>
+## [2.0.5 beta](https://github.com/NativeScript/theme/compare/2.0.4...v2.0.5) (2019-07-30)
+
+### Maintenance
+
+* Remove PostCSS loader, as it doesn't do anything at this point
+* Fix the repo URL
+*  
+
 <a name="2.0.4 beta"></a>
 ## [2.0.4 beta](https://github.com/NativeScript/theme/compare/2.0.0...v2.0.4) (2019-07-30)
 

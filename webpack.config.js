@@ -225,16 +225,6 @@ module.exports = smp.wrap((env) => {
                             }
                         },
                         {
-                            loader: "postcss-loader",
-                            options: {
-                                plugins: [
-                                    require("postcss-custom-properties")({
-                                        preserve: false
-                                    })
-                                ]
-                            }
-                        },
-                        {
                             loader: "sass-loader",
                             options: {
                                 implementation: require("sass")

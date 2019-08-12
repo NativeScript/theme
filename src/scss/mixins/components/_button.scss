@@ -3,7 +3,6 @@
 @mixin button($selectors) {
     #{$selectors} {
         text-transform: none;
-        font-family: 'Roboto Medium';
         background-color: transparent;
         border-color: transparent;
         android-elevation: 0;
@@ -14,7 +13,6 @@
         .ns-ios & {
             height: $btn-height - 12;
             border-width: 0;
-            font-family: 'SF UI Text Medium', system;
             font-size: 15;
         }
 

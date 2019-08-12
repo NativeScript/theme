@@ -37,7 +37,9 @@ createPackageJson();
 copyFile("./src/index.js", "./nativescript-theme-core/index.js");
 
 // Copy our Readme
-copyFile("./nativescript-theme-core.md", "./nativescript-theme-core/readme.md");
+copyFile("./README.md", "./nativescript-theme-core/README.md");
+copyFile("./CHANGELOG.md", "./nativescript-theme-core/CHANGELOG.md");
+copyFile("./LICENSE", "./nativescript-theme-core/LICENSE");
 
 console.log("Change to the 'nativescript-theme-core' folder and you can now do your `npm publish`");
 // TODO: We could Automatically run "npm publish"
