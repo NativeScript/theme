@@ -1,4 +1,4 @@
-import { on, displayedEvent, orientationChangedEvent, getRootView } from "tns-core-modules/application";
+import { on, displayedEvent, orientationChangedEvent, getRootView, android } from "tns-core-modules/application";
 import { device, isAndroid, screen } from "tns-core-modules/platform";
 import * as viewCommon from "tns-core-modules/ui/core/view/view-common";
 import { Frame } from "tns-core-modules/ui/frame";
@@ -39,7 +39,7 @@ export class ClassList {
     }
 }
 
-function updateRootClasses(orientation, root = getRootView(), classes = []) {
+function updateRootClasses(orientation, root = rootView(), classes = []) {
     const classList = new ClassList(root.className);
 
     classList
@@ -53,7 +53,7 @@ function handleOrientation({ newValue: orientation }) {
     updateRootClasses(orientation);
 
     if (viewCommon._rootModalViews.length) {
-        const classList = new ClassList(getRootView().className);
+        const classList = new ClassList(rootView().className);
 
         viewCommon._rootModalViews.forEach((view) => updateRootClasses(orientation, view, classList.list.concat("ns-modal")));
     }
@@ -69,7 +69,7 @@ const rootModalTrap = {
             target[key] = desc.value;
 
             if (desc.value instanceof Frame) {
-                const classList = new ClassList(getRootView().className);
+                const classList = new ClassList(rootView().className);
 
                 updateRootClasses(getOrientation(), desc.value, classList.list.concat("ns-modal"));
             }
@@ -83,7 +83,7 @@ const rootModalTrap = {
 viewCommon._rootModalViews = new Proxy(viewCommon._rootModalViews, rootModalTrap);
 
 on(displayedEvent, () => {
-    const root = getRootView();
+    const root = rootView();
     const classList = new ClassList(root.className);
 
     classList.add("ns-root", `ns-${isAndroid ? "android" : "ios"}`, `ns-${device.deviceType.toLowerCase()}`);
@@ -96,3 +96,7 @@ on(displayedEvent, () => {
         started = true;
     }
 });
+
+const rootView = function () {
+    return getRootView() || android.foregroundActivity.getWindow().getDecorView().getRootView();
+};
