@@ -1,11 +1,23 @@
+<a name="2.0.6 beta"></a>
+## [2.0.6 beta](https://github.com/NativeScript/theme/compare/2.0.5...v2.0.6) (2019-08-22)
+
+### Features
+
+* Add styling and demo for nativescript-ui-autocomplete
+
+
+### Maintenance
+
+* Fix the bootstrap links in the bootstrap-based theme (Playground compatibility)
+* Update dependencies
+
 <a name="2.0.5 beta"></a>
 ## [2.0.5 beta](https://github.com/NativeScript/theme/compare/2.0.4...v2.0.5) (2019-07-30)
 
 ### Maintenance
 
 * Remove PostCSS loader, as it doesn't do anything at this point
-* Fix the repo URL
-*  
+* Fix the repo URL 
 
 <a name="2.0.4 beta"></a>
 ## [2.0.4 beta](https://github.com/NativeScript/theme/compare/2.0.0...v2.0.4) (2019-07-30)

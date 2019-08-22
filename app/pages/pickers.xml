@@ -1,5 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
       xmlns:actionBar="/action-bar"
+      xmlns:ac="nativescript-ui-autocomplete"
       xmlns:p="nativescript-picker"
       xmlns:dt="nativescript-datetimepicker"
       navigatingTo="navigatingTo">
@@ -10,6 +11,8 @@
       <dt:DatePickerField hint="Pick a date" />
       <dt:TimePickerField hint="Choose time" />
       <dt:DateTimePickerFields hintDate="Choose date" hintTime="and time" />
+      <ac:RadAutoCompleteTextView items="{{ dataItems }}" />
+      <ac:RadAutoCompleteTextView items="{{ dataItems }}" displayMode="Tokens" />
     </StackLayout>
   </ScrollView>
 </Page>

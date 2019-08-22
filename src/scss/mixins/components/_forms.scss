@@ -64,7 +64,8 @@
          'TextField',
          'PickerField',
          'DatePickerField',
-         'TimePickerField'))} {
+         'TimePickerField',
+         'RadAutoCompleteTextView'))} {
         &.ng-valid {
             margin-bottom: 20;
         }
@@ -84,7 +85,8 @@
          'DatePickerField',
          'TimePickerField',
          'DateTimePickerFields',
-         'DataFormEditorCore'))} {
+         'DataFormEditorCore',
+         'RadAutoCompleteTextView'))} {
         @include colorize(
             $color: primary,
             $placeholder-color: secondary
@@ -136,13 +138,41 @@
             min-height: 100;
         }
 
+        RadAutoCompleteTextView {
+            padding: 0;
+
+            Token {
+                @include colorize($contrasted-background-color: focus background -20%);
+                border-radius: 50%;
+
+                TokenClearButton {
+                    width: 18;
+                    height: 18;
+                    border-radius: 50%;
+                    opacity: .6;
+                }
+
+                @if $enable-rounded {
+                    border-radius: max($btn-radius - 3, 0);
+                }
+            }
+
+            SuggestionView {
+                @include colorize(
+                    $color: primary,
+                    $background-color: background
+                );
+            }
+        }
+
         /* Date Picker */
 
         DataFormEditorCore,
         PickerField,
         DatePickerField,
         TimePickerField,
-        DateTimePickerFields {
+        DateTimePickerFields,
+        RadAutoCompleteTextView {
             @include colorize($background-color: background);
 
             background-repeat: no-repeat;
@@ -239,13 +269,15 @@
 
             DatePickerField,
             TimePickerField,
-            DateTimePickerFields {
+            DateTimePickerFields,
+            RadAutoCompleteTextView {
                 // Here be dragons! >:)
                 class: ns-dark;
             }
         }
 
-        PickerPage.ns-dark ListView {
+        PickerPage.ns-dark ListView,
+        .ns-dark SuggestionView {
             color: dark(primary);
             background: dark(background);
         }
@@ -273,9 +305,18 @@
             DatePickerField,
             TimePickerField,
             DateTimePickerFields,
-            DataFormEditorCore {
+            DataFormEditorCore,
+            RadAutoCompleteTextView {
                 border-width: 1;
                 padding: 12 14;
+            }
+
+            RadAutoCompleteTextView {
+                padding: 1 10;
+
+                &[displayMode$=okens] {
+                    padding: 1 7;
+                }
             }
 
             DateTimePickerFields {
@@ -301,7 +342,7 @@
 
         @at-root DataFormEditorLabel,
         & #{if($compat, '.label', '> Label')},
-        & #{if($compat, '.input', '> TextView, > TextField, > PickerField, > DatePickerField, > TimePickerField, > DateTimePickerFields')} {
+        & #{if($compat, '.input', '> TextView, > TextField, > PickerField, > DatePickerField, > TimePickerField, > DateTimePickerFields, > RadAutoCompleteTextView')} {
             margin: 0 16;
         }
 
@@ -341,7 +382,8 @@
          'DatePickerField',
          'TimePickerField',
          'DateTimePickerFields',
-         'DataFormEditorCore'))} {
+         'DataFormEditorCore',
+         'RadAutoCompleteTextView'))} {
         background-color: transparent;
 
         @include colorize($contrasted-border-color: gray background -10%);
@@ -355,6 +397,16 @@
                 $color: gray,
                 $contrasted-background-color: gray background -30%
             );
+        }
+    }
+
+    /* NativeScript UI AutoComplete */
+
+    RadAutoCompleteTextView Token {
+        @include colorize($contrasted-background-color: focus background -20%);
+
+        &:selected {
+            @include colorize($contrasted-background-color: focus background -10%);
         }
     }
 

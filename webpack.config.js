@@ -33,8 +33,7 @@ module.exports = smp.wrap((env) => {
 
     const {
         // The 'appPath' and 'appResourcesPath' values are fetched from
-        // the nsconfig.json configuration file
-        // when bundling with `tns run android|ios --bundle`.
+        // the nsconfig.json configuration file.
         appPath = "app",
         appResourcesPath = "app/App_Resources",
 
@@ -143,7 +142,6 @@ module.exports = smp.wrap((env) => {
                                     appComponents.some((comp) => comp === moduleName);
 
                         },
-                        //reuseExistingChunk: true,
                         enforce: true
                     }
                 }
@@ -172,7 +170,7 @@ module.exports = smp.wrap((env) => {
         module: {
             rules: [
                 {
-                    test: nsWebpack.getEntryPathRegExp(appFullPath, entryPath),
+                    include: join(appFullPath, entryPath),
                     use: [
                         // Require all Android app components
                         platform === "android" && {
