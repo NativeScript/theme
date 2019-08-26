@@ -1,11 +1,11 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
       xmlns:actionBar="/action-bar"
       navigatingTo="navigatingTo">
-    <actionBar:action-bar actionBarTitle="Tabs and BottomNavigation"/>
+    <actionBar:action-bar actionBarTitle="BottomNavigation"/>
     <BottomNavigation>
         <TabStrip>
-            <TabStripItem title="Tab 1" />
-            <TabStripItem title="Tab 2" />
+            <TabStripItem iconSource="font://&#xF10B;" title="Tab 1" class="fa" />
+            <TabStripItem iconSource="font://&#xF10C;" title="Tab 2" class="fa" />
         </TabStrip>
 
         <TabContentItem>

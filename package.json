@@ -27,7 +27,7 @@
     "nativescript-ui-autocomplete": "^5.1.0",
     "nativescript-ui-sidedrawer": "^7.0.0",
     "nativescript-ui-dataform": "^5.0.0",
-    "tns-core-modules": "^6.0.7"
+    "tns-core-modules": "^6.1.0-rc-2019-08-23-161023-01"
   },
   "devDependencies": {
     "babel-eslint": "10.0.2",

@@ -199,16 +199,12 @@
     #{$selectors} {
         TabStrip,
         .nt-tab-strip {
-            @include colorize(
-                $highlight-color: focus
-            );
+            @include colorize($highlight-color: focus);
         }
 
         TabStripItem:active,
         .nt-tab-strip__item:active {
-            @include colorize(
-                $color: focus
-            );
+            @include colorize($color: focus);
         }
     }
 }
