@@ -1,3 +1,4 @@
 {
-	"useLegacyWorkflow": false
+	"useLegacyWorkflow": false,
+	"appPath": "app"
 }

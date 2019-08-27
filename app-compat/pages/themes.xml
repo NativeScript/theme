@@ -1,0 +1,42 @@
+<Page loaded="onLoaded">
+  <ScrollView>
+    <StackLayout>
+      <Label text="{{ 'Active: ' + theme }}" textWrap="true" class="h3 text-center m-10" />
+      <FlexboxLayout flexDirection="row" flexWrap="wrap">
+        <Button text="Light" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="core.light" />
+        <Button text="Dark" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="core.dark" />
+      </FlexboxLayout>
+
+      <Label class="hr-dark" />
+
+      <FlexboxLayout flexDirection="row" flexWrap="wrap">
+        <Button text="Bootstrap" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="bootstrap-based" />
+        <Button text="Custom" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="customized" />
+      </FlexboxLayout>
+
+      <Label text="Skins" textWrap="true" class="h3 text-center font-italic m-10" />
+
+      <FlexboxLayout flexDirection="row" flexWrap="wrap">
+        <Button text="Aqua" tap="{{ applyTheme }}" class="btn btn-primary btn-aqua m-5" cssName="aqua" />
+        <Button text="Blue" tap="{{ applyTheme }}" class="btn btn-primary btn-blue m-5" cssName="blue" />
+        <Button text="Brown" tap="{{ applyTheme }}" class="btn btn-primary btn-brown m-5" cssName="brown" />
+        <Button text="Forest" tap="{{ applyTheme }}" class="btn btn-primary btn-forest m-5" cssName="forest" />
+        <Button text="Grey" tap="{{ applyTheme }}" class="btn btn-primary btn-grey m-5" cssName="grey" />
+        <Button text="Lemon" tap="{{ applyTheme }}" class="btn btn-primary btn-lemon m-5" cssName="lemon" />
+        <Button text="Lime" tap="{{ applyTheme }}" class="btn btn-primary btn-lime m-5" cssName="lime" />
+        <Button text="Orange" tap="{{ applyTheme }}" class="btn btn-primary btn-orange m-5" cssName="orange" />
+        <Button text="Purple" tap="{{ applyTheme }}" class="btn btn-primary btn-purple m-5" cssName="purple" />
+        <Button text="Ruby" tap="{{ applyTheme }}" class="btn btn-primary btn-ruby m-5" cssName="ruby" />
+        <Button text="Sky" tap="{{ applyTheme }}" class="btn btn-primary btn-sky m-5" cssName="sky" />
+      </FlexboxLayout>
+
+      <Label text="Kendo skins" textWrap="true" class="h3 text-center font-italic m-10" />
+
+      <FlexboxLayout flexDirection="row" flexWrap="wrap">
+        <Button text="Default" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="kendo-default" />
+        <Button text="Bootstrap" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="kendo-bootstrap" />
+        <Button text="Material" tap="{{ applyTheme }}" class="btn btn-outline m-5" cssName="kendo-material" />
+      </FlexboxLayout>
+    </StackLayout>
+  </ScrollView>
+</Page>

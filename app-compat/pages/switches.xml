@@ -1,0 +1,11 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+  xmlns:actionBar="/action-bar"
+  navigatingTo="navigatingTo">
+  <actionBar:action-bar actionBarTitle="Progress" />
+  <StackLayout class="page">
+    <Switch checked="true" class="switch" id="checked" />
+    <Switch checked="false" class="switch" id="unChecked" />
+    <Switch checked="true" class="switch" isEnabled="false" id="checkedDisabled"/>
+    <Switch isEnabled="false" class="switch" id="unCheckedDisabled"/>
+  </StackLayout>
+</Page>

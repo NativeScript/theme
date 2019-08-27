@@ -74,7 +74,7 @@
     );
 } @else {
     @include action-bar-skin('.action-bar', '.action-item');
-    @include button-skin('.button');
+    @include button-skin('.btn');
     @include activity-indicator-skin('.activity-indicator');
     @include segmented-bar-skin('.segmented-bar');
     @include progress-skin('.progress');

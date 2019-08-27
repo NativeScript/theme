@@ -1,0 +1,16 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd">
+
+    <ActionBar title="{{ title }}">
+        <ActionItem tap="{{ close }}" ios.position="right">
+            <Button text="Close"></Button>
+        </ActionItem>
+    </ActionBar>
+
+    <StackLayout>
+        <StackLayout class="hr-light"/>
+
+        <StackLayout class="p-20">
+            <Label text="A modal with a real action bar (within a Frame)." class="h2" textWrap="true"/>
+        </StackLayout>
+    </StackLayout>
+</Page>

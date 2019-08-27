@@ -1,0 +1,14 @@
+<Page loaded="onLoad"
+      xmlns:actionBar="/action-bar"
+      class="page">
+    <actionBar:action-bar actionBarTitle="NativeScript Themes" />
+
+    <ListView class="list-view" items="{{ somePages }}" itemTap="{{ onNavigationItemTap }}">
+        <ListView.itemTemplate>
+            <StackLayout orientation="horizontal">
+                <Label text="{{ 'fa-' + icon | fonticon }}" class="fa nt-icon" />
+                <Label text="{{ text || value }}" />
+            </StackLayout>
+        </ListView.itemTemplate>
+    </ListView>
+</Page>

@@ -1,0 +1,13 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      navigatingTo="navigatingTo"
+      navigatingFrom="navigatingFrom"
+      class="page"
+      xmlns:actionBar="/action-bar">
+  <actionBar:action-bar actionBarTitle="Progress" />
+  <StackLayout class="page">
+    <GridLayout rows="auto ,*" columns="">
+      <Progress id="progress" row="0" value="50" maxValue="100" class="progress" />
+      <ActivityIndicator row="1" busy="true" class="activity-indicator" />
+    </GridLayout>
+  </StackLayout>
+</Page>

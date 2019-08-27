@@ -1,0 +1,49 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:actionBar="/action-bar"
+      class="page"
+      navigatingTo="navigatingTo">
+  <actionBar:action-bar actionBarTitle="ListView" />
+
+  <TabView id="tabViewContainer" class="tab-view">
+    <TabView.items>
+    <TabViewItem title="Simple">
+      <TabViewItem.view>
+        <ListView items="{{ sampleItems }}" class="list-group">
+          <ListView.itemTemplate>
+            <StackLayout>
+              <Label class="list-group-item" text="{{ title }}"/>
+            </StackLayout>
+          </ListView.itemTemplate>
+        </ListView>
+      </TabViewItem.view>
+    </TabViewItem>
+    <TabViewItem title="Thumbs">
+      <TabViewItem.view>
+        <ListView items="{{ sampleItems }}" class="list-group">
+          <ListView.itemTemplate>
+            <GridLayout class="list-group-item" rows="*" columns="auto, *">
+              <Image row="0" col="0" src="{{ image }}" class="thumb img-circle" />
+              <Label row="0" col="1" text="{{ title }}"  />
+            </GridLayout>
+          </ListView.itemTemplate>
+        </ListView>
+      </TabViewItem.view>
+    </TabViewItem>
+    <TabViewItem title="Multi-line">
+    <TabViewItem.view>
+      <ListView items="{{ sampleItems }}" class="list-group">
+        <ListView.itemTemplate>
+          <GridLayout class="list-group-item" rows="auto" columns="auto, *">
+            <Image row="0" col="0" src="{{ imagealt }}" class="thumb img-rounded" />
+            <StackLayout row="0" col="1" >
+              <Label text="{{ title }}" class="list-group-item-heading" />
+              <Label text="{{ content }}" textWrap="true"  class="list-group-item-text" />
+            </StackLayout>
+          </GridLayout>
+        </ListView.itemTemplate>
+      </ListView>
+    </TabViewItem.view>
+  </TabViewItem>
+    </TabView.items>
+  </TabView>
+</Page>

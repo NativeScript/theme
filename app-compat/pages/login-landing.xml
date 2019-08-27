@@ -1,0 +1,24 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:actionBar="/action-bar"
+      navigatingTo="navigatingTo"
+      style="background: no-repeat url('~/assets/images/login-bg.jpg'); background-size: cover">
+
+    <actionBar:action-bar hidden="true" />
+
+<GridLayout rows="auto, auto, auto">
+
+    <StackLayout class="logo-wrap">
+        <Label text="FRESH" textWrap="true" class="login-logo" />
+        <Label text="Lorem ipsum dolor set, neque adsa elmond faucabis" class="login-logo-sub" textWrap="true" />
+    </StackLayout>
+
+    <StackLayout row="1">
+        <Button text="Sign in" class="-primary -rounded-lg" tap="signIn" />
+        <Button text="Create account" class="-rounded-lg -outline" tap="" />
+    </StackLayout>
+
+    <Label row="2" text="Go Back" class="go-back" textWrap="true" tap="goBack" />
+
+</GridLayout>
+
+</Page>
