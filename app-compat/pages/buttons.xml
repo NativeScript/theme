@@ -5,9 +5,14 @@
     <actionBar:action-bar actionBarTitle="Buttons"/>
     <ScrollView>
         <StackLayout>
-            <Label text="Compat styling" class="h3"/>
             <Button class="btn" text="btn"/>
             <Button text="btn btn-primary" class="btn btn-primary"/>
+            <Button class="btn btn-primary">
+                <FormattedString>
+                    <Span text="{{ 'fa-twitter' | fonticon }}" class="fa nt-icon"/>
+                    <Span text=" btn btn-primary with icon"/>
+                </FormattedString>
+            </Button>
             <Button text="btn btn-outline" class="btn btn-outline"/>
             <Button text="btn btn-primary btn-rounded-sm" tap="" class="btn btn-primary btn-rounded-sm"/>
             <Button text="btn btn-outline btn-rounded-sm" tap="" class="btn btn-outline btn-rounded-sm"/>

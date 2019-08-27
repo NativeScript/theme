@@ -2,7 +2,9 @@
 
 @mixin label($selectors) {
     #{$selectors} {
-        font-size: 14;
+        // Looks like .h1 classes can't override the element selector
+        // Commented out for investigation.
+        //font-size: 14;
     }
 }
 

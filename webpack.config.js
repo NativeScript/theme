@@ -31,10 +31,11 @@ module.exports = smp.wrap((env) => {
     // Default destination inside platforms/<platform>/...
     const dist = resolve(projectRoot, nsWebpack.getAppPath(platform, projectRoot));
 
+    const appPath = env.forceAppPath || env.appPath || "app";
+
     const {
         // The 'appPath' and 'appResourcesPath' values are fetched from
         // the nsconfig.json configuration file.
-        appPath = "app",
         appResourcesPath = "app/App_Resources",
 
         // You can provide the following flags when running 'tns run android|ios'

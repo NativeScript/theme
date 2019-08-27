@@ -5,7 +5,7 @@ import { ClassList } from "nativescript-theme-core";
 
 const currentTheme = {
     theme: "core.light",
-    skin: "blue.compat",
+    skin: "blue",
     css: ""
 };
 
