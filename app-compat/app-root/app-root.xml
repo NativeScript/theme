@@ -1,5 +1,5 @@
 <drawer:RadSideDrawer
-        class="ns-statusbar-transparent"
+        class="ns-statusbar-transparent side-drawer"
         xmlns:drawer="nativescript-ui-sidedrawer"
         xmlns:themes="pages/themes"
         loaded="onLoaded">
@@ -8,16 +8,16 @@
     </drawer:RadSideDrawer.drawerTransition>
 
     <drawer:RadSideDrawer.drawerContent>
-        <GridLayout rows="auto, *" class="nt-drawer__content page">
-            <StackLayout class="nt-drawer__header">
-                <Image src="~/assets/images/N.png" tap="{{ viewHome }}" class="nt-drawer__header-image"/>
-                <Label text="NativeScript Theme Project" textWrap="true" class="nt-drawer__header-brand" />
+        <GridLayout rows="auto, *" class="page">
+            <StackLayout class="sidedrawer-header">
+                <Image src="~/assets/images/N.png" tap="{{ viewHome }}" class="sidedrawer-header-image"/>
+                <Label text="NativeScript Theme Project" textWrap="true" class="sidedrawer-header-brand" />
             </StackLayout>
             <ListView class="list-view" row="1" items="{{ pages }}" itemTap="{{ onNavigationItemTap }}">
                 <ListView.itemTemplate>
-                    <StackLayout orientation="horizontal">
-                        <Label text="{{ 'fa-' + icon | fonticon }}" class="fa nt-icon" />
-                        <Label text="{{ text || value }}" />
+                    <StackLayout class="sidedrawer-list-item" orientation="horizontal">
+                        <Label text="{{ 'fa-' + icon | fonticon }}" class="fa sidedrawer-list-item-icon" />
+                        <Label text="{{ text || value }}" class="sidedrawer-list-item-text" />
                     </StackLayout>
                 </ListView.itemTemplate>
             </ListView>

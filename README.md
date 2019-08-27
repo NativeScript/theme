@@ -23,7 +23,7 @@ Home of the core NativeScript theme 2.0 beta. The documentation of the beta them
 
 * The theme is now **applied using Element selectors**, if you need the old classes approach - it has moved to .compat CSS/SCSS files, e.g. `core.compat.css` and `blue.compat.css`.
 * Theme 2.0 beta **requires some JavaScript to be loaded** which helps with the styling.
-* Theme 2.0 replaces node-sass with **dart-sass** which is more up to date feature-wise and doesn't have a native dependency. 
+* Theme 2.0 replaces node-sass with **sass** which is more up to date feature-wise and doesn't have a native dependency. 
 
 ## Usage
 
@@ -69,6 +69,12 @@ RadSideDrawer, just add a class to it, like this:
 </drawer:RadSideDrawer>
 ```
 
+If your root is a frame, you can do this
+
+```html
+<Frame class="ns-dark" defaultPage="root"></Frame>
+```
+
 You can also do it from JavaScript like this, for instance:
 
 ```javascript
@@ -77,7 +83,10 @@ import { getRootView } from "tns-core-modules/application";
 getRootView().className += " ns-dark";
 ```
 
-This of course won't remove your previously added classes.
+This of course won't remove your previously added classes. Also make sure the root view is already initialized by then.
+
+For **Angular**, if your root is a `page-router-outlet`, you can set the .ns-dark class on it - it will pass it down to the 
+Frame it renders. 
 
 ## More Root Classes
 
