@@ -1,45 +1,74 @@
-import { on, displayedEvent, orientationChangedEvent, getRootView } from "tns-core-modules/application";
+import * as app from "tns-core-modules/application";
 import { device, isAndroid, screen } from "tns-core-modules/platform";
 import * as viewCommon from "tns-core-modules/ui/core/view/view-common";
 import { Frame } from "tns-core-modules/ui/frame";
 
-let started = false;
-
 const display = screen.mainScreen;
+const whiteSpaceRegExp = /\s+/;
+
+let rootView;
+let started = false;
 
 export class ClassList {
     constructor(className) {
-        this.list = (className || "").split(/\s+/);
+        this.list = new Set();
+
+        (className || "").split(whiteSpaceRegExp).forEach((v) => v && this.list.add(v));
     }
 
     add(...classes) {
-        classes.forEach((value) => {
-            if (this.list.indexOf(value) === -1) {
-                this.list.push(value);
-            }
-        });
+        classes.forEach((v) => this.list.add(v));
 
         return this;
     }
 
     remove(...classes) {
-        classes.forEach((value) => {
-            const index = this.list.indexOf(value);
-
-            if (index !== -1) {
-                delete this.list[index];
-            }
-        });
+        classes.forEach((v) => this.list.delete(v));
 
         return this;
     }
 
     get() {
-        return this.list.join(" ");
+        return Array.from(this.list).join(" ");
     }
 }
 
-function updateRootClasses(orientation, root = getRootView(), classes = []) {
+export default class Theme {
+    static setMode(mode = Theme.Light, root = app.getRootView()) {
+        currentMode = mode;
+        rootView = root;
+
+        if (!root) {
+            return;
+        }
+
+        const classList = new ClassList(rootView.className);
+
+        classList
+            .remove(Theme.Light, Theme.Dark)
+            .add(currentMode);
+
+        rootView.className = classList.get();
+    }
+}
+
+Theme.Light = "ns-light";
+Theme.Dark = "ns-dark";
+
+let currentMode = Theme.Light;
+
+const oldResetRootView = app._resetRootView;
+
+app._resetRootView = function() {
+    oldResetRootView.apply(app, arguments);
+    Theme.setMode(currentMode);
+};
+
+app.on(app.launchEvent, ({ root }) => Theme.setMode(currentMode, root));
+app.on("livesync", () => Theme.setMode(currentMode));
+
+
+function updateRootClasses(orientation, root = app.getRootView(), classes = []) {
     const classList = new ClassList(root.className);
 
     classList
@@ -53,7 +82,7 @@ function handleOrientation({ newValue: orientation }) {
     updateRootClasses(orientation);
 
     if (viewCommon._rootModalViews.length) {
-        const classList = new ClassList(getRootView().className);
+        const classList = new ClassList(app.getRootView().className);
 
         viewCommon._rootModalViews.forEach((view) => updateRootClasses(orientation, view, classList.list.concat("ns-modal")));
     }
@@ -69,7 +98,7 @@ const rootModalTrap = {
             target[key] = desc.value;
 
             if (desc.value instanceof Frame) {
-                const classList = new ClassList(getRootView().className);
+                const classList = new ClassList(app.getRootView().className);
 
                 updateRootClasses(getOrientation(), desc.value, classList.list.concat("ns-modal"));
             }
@@ -82,8 +111,8 @@ const rootModalTrap = {
 // Get notified when a modal is created.
 viewCommon._rootModalViews = new Proxy(viewCommon._rootModalViews, rootModalTrap);
 
-on(displayedEvent, () => {
-    const root = getRootView();
+app.on(app.displayedEvent, () => {
+    const root = app.getRootView();
     const classList = new ClassList(root.className);
 
     classList.add("ns-root", `ns-${isAndroid ? "android" : "ios"}`, `ns-${device.deviceType.toLowerCase()}`);
@@ -92,7 +121,7 @@ on(displayedEvent, () => {
 
     if (!started) {
         handleOrientation({ newValue: getOrientation() });
-        on(orientationChangedEvent, handleOrientation);
+        app.on(app.orientationChangedEvent, handleOrientation);
         started = true;
     }
 });

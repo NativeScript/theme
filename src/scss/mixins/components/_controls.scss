@@ -103,6 +103,12 @@
             $tab-background-color: background,
             $tab-text-color: tab-text-color
         );
+
+        &.ns-dark {
+            selected-tab-text-color: dark(primary);
+            tab-background-color: dark(background);
+            tab-text-color: dark(tab-text-color);
+        }
     }
 }
 
@@ -194,6 +200,11 @@
             $selected-tab-text-color: focus,
             $android-selected-tab-highlight-color: focus
         );
+
+        &.ns-dark {
+            selected-tab-text-color: dark(focus);
+            android-selected-tab-highlight-color: dark(focus)
+        }
     }
 }
 
