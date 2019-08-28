@@ -1,10 +1,18 @@
+<a name="2.0.7 beta"></a>
+## [2.0.7 beta](https://github.com/NativeScript/theme/compare/v2.0.6...v2.0.7) (2019-08-22)
+
+### Fixes
+
+* Fix headings
+* Fix the RadAutoCompleteTextView iOS TokenClearButton
+* Fix compat .btn styling, other compat fixes
+
 <a name="2.0.6 beta"></a>
-## [2.0.6 beta](https://github.com/NativeScript/theme/compare/2.0.5...v2.0.6) (2019-08-22)
+## [2.0.6 beta](https://github.com/NativeScript/theme/compare/v2.0.5...v2.0.6) (2019-08-22)
 
 ### Features
 
 * Add styling and demo for nativescript-ui-autocomplete
-
 
 ### Maintenance
 
@@ -12,7 +20,7 @@
 * Update dependencies
 
 <a name="2.0.5 beta"></a>
-## [2.0.5 beta](https://github.com/NativeScript/theme/compare/2.0.4...v2.0.5) (2019-07-30)
+## [2.0.5 beta](https://github.com/NativeScript/theme/compare/v2.0.4...v2.0.5) (2019-07-30)
 
 ### Maintenance
 
@@ -20,7 +28,7 @@
 * Fix the repo URL 
 
 <a name="2.0.4 beta"></a>
-## [2.0.4 beta](https://github.com/NativeScript/theme/compare/2.0.0...v2.0.4) (2019-07-30)
+## [2.0.4 beta](https://github.com/NativeScript/theme/compare/v2.0.0...v2.0.4) (2019-07-30)
 
 ### Maintenance
 
