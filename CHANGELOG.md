@@ -1,5 +1,12 @@
+<a name="2.0.8 beta"></a>
+## [2.0.8 beta](https://github.com/NativeScript/theme/compare/v2.0.7...v2.0.8) (2019-08-28)
+
+### Fixes
+
+* Remove folder imports while the Playground has issues with them
+
 <a name="2.0.7 beta"></a>
-## [2.0.7 beta](https://github.com/NativeScript/theme/compare/v2.0.6...v2.0.7) (2019-08-22)
+## [2.0.7 beta](https://github.com/NativeScript/theme/compare/v2.0.6...v2.0.7) (2019-08-28)
 
 ### Fixes
 
