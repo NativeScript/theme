@@ -112,24 +112,20 @@
     }
 }
 
-@mixin tab($selectors) {
-    #{$selectors} {
-        font-size: 13;
+@mixin tabs() {
+    TabStripItem,
+    .nt-tab-strip__item {
+        @include colorize($color: primary);
+    }
 
-        TabStripItem,
-        .nt-tab-strip__item {
-            @include colorize($color: primary);
-        }
+    TabStrip,
+    .nt-tab-strip {
+        @include colorize($scale-alternate-background: background 5%);
+    }
 
-        TabStrip,
-        .nt-tab-strip {
-            @include colorize($scale-alternate-background: background 5%);
-        }
-
-        TabContentItem,
-        .nt-tab-content__item {
-            @include colorize($background: background);
-        }
+    TabContentItem,
+    .nt-tab-content__item {
+        @include colorize($background: background);
     }
 
     BottomNavigation,
@@ -208,16 +204,14 @@
     }
 }
 
-@mixin tab-skin($selectors) {
-    #{$selectors} {
-        TabStrip,
-        .nt-tab-strip {
-            @include colorize($highlight-color: focus);
-        }
+@mixin tabs-skin() {
+    TabStrip,
+    .nt-tab-strip {
+        @include colorize($highlight-color: focus);
+    }
 
-        TabStripItem:active,
-        .nt-tab-strip__item:active {
-            @include colorize($color: focus);
-        }
+    TabStripItem:active,
+    .nt-tab-strip__item:active {
+        @include colorize($color: focus);
     }
 }

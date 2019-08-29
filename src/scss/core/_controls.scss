@@ -61,12 +61,7 @@
                 '.nt-tab-view')
     );
 
-    @include tab(
-                ('BottomNavigation',
-                '.nt-bottom-navigation',
-                'Tabs',
-                '.nt-tabs')
-    );
+    @include tabs();
 
     @include list-view(
                 ('ListView',

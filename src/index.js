@@ -1,12 +1,11 @@
 import * as app from "tns-core-modules/application";
 import { device, isAndroid, screen } from "tns-core-modules/platform";
 import * as viewCommon from "tns-core-modules/ui/core/view/view-common";
-import { Frame } from "tns-core-modules/ui/frame";
+import * as frame from "tns-core-modules/ui/frame";
 
 const display = screen.mainScreen;
 const whiteSpaceRegExp = /\s+/;
 
-let rootView;
 let started = false;
 
 export class ClassList {
@@ -35,38 +34,37 @@ export class ClassList {
 
 export default class Theme {
     static setMode(mode = Theme.Light, root = app.getRootView()) {
-        currentMode = mode;
-        rootView = root;
+        Theme.currentMode = mode;
+        Theme.rootView = root;
 
         if (!root) {
             return;
         }
 
-        const classList = new ClassList(rootView.className);
+        const classList = new ClassList(Theme.rootView.className);
 
         classList
             .remove(Theme.Light, Theme.Dark)
-            .add(currentMode);
+            .add(Theme.currentMode);
 
-        rootView.className = classList.get();
+        Theme.rootView.className = classList.get();
+    }
+
+    static getMode() {
+        return Theme.currentMode;
     }
 }
 
 Theme.Light = "ns-light";
 Theme.Dark = "ns-dark";
+Theme.currentMode = Theme.Light;
 
-let currentMode = Theme.Light;
-
-const oldResetRootView = app._resetRootView;
-
-app._resetRootView = function() {
-    oldResetRootView.apply(app, arguments);
-    Theme.setMode(currentMode);
+// Where the magic happens
+const oldSetupAsRootView = viewCommon.ViewCommon.prototype._setupAsRootView;
+viewCommon.ViewCommon.prototype._setupAsRootView = function() {
+    oldSetupAsRootView.call(this, ...arguments);
+    Theme.setMode(Theme.currentMode);
 };
-
-app.on(app.launchEvent, ({ root }) => Theme.setMode(currentMode, root));
-app.on("livesync", () => Theme.setMode(currentMode));
-
 
 function updateRootClasses(orientation, root = app.getRootView(), classes = []) {
     const classList = new ClassList(root.className);
@@ -97,7 +95,7 @@ const rootModalTrap = {
         if (desc && "value" in desc) {
             target[key] = desc.value;
 
-            if (desc.value instanceof Frame) {
+            if (desc.value instanceof frame.Frame) {
                 const classList = new ClassList(app.getRootView().className);
 
                 updateRootClasses(getOrientation(), desc.value, classList.list.concat("ns-modal"));
