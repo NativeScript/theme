@@ -57,10 +57,10 @@ need to style.
 Additionally, if you need to create you own skin, you can start from the core theme - it includes the sizing and 
 initial styling of the components without colorizing them too much.
 
-## Changing Core Theme
+## Setting Dark or Light mode
 
-Changing the core theme from light to dark is now easier - instead of loading a new file, just get the root view and 
-set the `.ns-dark` class to it - this will change all colorization to dark tones. For instance, if your page root is 
+Setting the theme mode from light to dark is now easier - instead of loading a new file, just find the root view and 
+set `.ns-dark` class to it - this will change all colorization to dark tones. For instance, if your page root is 
 RadSideDrawer, just add a class to it, like this:
 
 ```html
@@ -75,18 +75,19 @@ If your root is a frame, you can do this
 <Frame class="ns-dark" defaultPage="root"></Frame>
 ```
 
-You can also do it from JavaScript like this, for instance:
-
-```javascript
-import { getRootView } from "tns-core-modules/application";
-
-getRootView().className += " ns-dark";
-```
-
-This of course won't remove your previously added classes. Also make sure the root view is already initialized by then.
-
 For **Angular**, if your root is a `page-router-outlet`, you can set the .ns-dark class on it - it will pass it down to the 
 Frame it renders. 
+
+## Setting Dark or Light mode from JavaScript
+
+Setting the theme mode from JavaScript is also much easier now - just import the theme and call Theme.setMode() with 
+your preferred mode - either Theme.Light or Theme.dark, like this:
+
+```javascript
+import Theme from "nativescript-theme-core";
+
+Theme.setMode(Theme.Dark); // Or Theme.Light
+```
 
 ## More Root Classes
 
