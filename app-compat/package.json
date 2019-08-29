@@ -1,1 +1,8 @@
-/www/theme/app/package.json
+{
+    "main": "app.js",
+    "android": {
+        "v8Flags": "--expose_gc",
+        "markingMode": "none"
+    },
+    "sideEffects": false
+}

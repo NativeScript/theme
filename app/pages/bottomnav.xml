@@ -4,8 +4,14 @@
     <actionBar:action-bar actionBarTitle="BottomNavigation"/>
     <BottomNavigation>
         <TabStrip>
-            <TabStripItem iconSource="font://&#xF10B;" title="Tab 1" class="fa" />
-            <TabStripItem iconSource="font://&#xF10C;" title="Tab 2" class="fa" />
+            <TabStripItem class="fa">
+                <Image src="font://&#xf10b;" />
+                <Label text="Tab 1" />
+            </TabStripItem>
+            <TabStripItem>
+                <Image src="font://&#xf10c;" class="fa" />
+                <Label text="Tab 2" />
+            </TabStripItem>
         </TabStrip>
 
         <TabContentItem>

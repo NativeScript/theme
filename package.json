@@ -1,6 +1,6 @@
 {
   "name": "nativescript-theme-core",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "Telerik NativeScript Core Theme",
   "author": "Telerik <support@telerik.com>",
   "homepage": "https://www.nativescript.org",
@@ -12,10 +12,10 @@
   "nativescript": {
     "id": "org.nativescript.theme",
     "tns-ios": {
-      "version": "6.0.2"
+      "version": "next"
     },
     "tns-android": {
-      "version": "6.0.2"
+      "version": "next"
     }
   },
   "dependencies": {
@@ -27,7 +27,7 @@
     "nativescript-ui-autocomplete": "^5.1.0",
     "nativescript-ui-sidedrawer": "^7.0.0",
     "nativescript-ui-dataform": "^5.0.0",
-    "tns-core-modules": "^6.0.7"
+    "tns-core-modules": "^6.1.0-rc-2019-08-29-094218-01"
   },
   "devDependencies": {
     "babel-eslint": "10.0.2",
@@ -35,7 +35,7 @@
     "eslint": "6.2.1",
     "glob": "7.1.4",
     "lazy": "1.0.11",
-    "nativescript-dev-webpack": "1.1.1",
+    "nativescript-dev-webpack": "1.2.0-rc-2019-08-28-180826-01",
     "resolve-url-loader": "3.1.0",
     "sass": "1.22.10",
     "sass-lint": "1.13.1",
