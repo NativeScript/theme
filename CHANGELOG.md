@@ -1,3 +1,23 @@
+<a name="2.0.9 beta"></a>
+## [2.0.9 beta](https://github.com/NativeScript/theme/compare/v2.0.8...v2.0.9) (2019-08-29)
+
+### Features
+
+* Add small API for setMode. Usage:
+
+    ```javascript
+    import Theme from "nativescript-theme-core";
+    
+    Theme.setMode(Theme.Dark); // Or Theme.Light
+    ```
+    
+    It would set light or dark mode even before the app is initialized.
+
+### Fixes
+
+* Simplify ClassList, use Set
+* Fix dark mode for TabView, BottomNavigation and Tabs if they are root views
+
 <a name="2.0.8 beta"></a>
 ## [2.0.8 beta](https://github.com/NativeScript/theme/compare/v2.0.7...v2.0.8) (2019-08-28)
 
