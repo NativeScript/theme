@@ -51,7 +51,7 @@
             border-radius: 1;
             padding: 12 6;
 
-            &:highlighted {
+            &:active {
                 opacity: .7;
             }
         }
@@ -63,6 +63,15 @@
                     @include colorize($color: ab-color);
                 }
             }
+        }
+
+        & Button {
+            @include colorize(
+                $background-color: ab-background
+            );
+
+            android-elevation: 0;
+            android-dynamic-elevation-offset: 0;
         }
     }
 }
@@ -76,8 +85,18 @@
             $background-color: ab-background
         );
 
-        #{$item-selectors} {
-            @include colorize($color: ab-color);
+        .ns-root & #{$item-selectors} {
+            @include colorize(
+                $color: ab-color,
+                $background-color: ab-background
+            );
+
+            #{if($compat, '&-active:active', '&:active, &.-active')} {
+                @include colorize(
+                    $color: ab-color,
+                    $background-color: ab-background
+                );
+            }
         }
 
         .ns-ios &,

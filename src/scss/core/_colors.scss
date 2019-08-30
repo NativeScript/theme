@@ -44,7 +44,7 @@ $light-colors: map-merge($light-colors, (
     item-active-icon-color: light(item-active-color),
     btn-color-inverse: alternate(light(focus)),
     btn-color-secondary: darken(light(btn-color), 10%),
-    btn-color-outline-highlighted: darken(light(primary-focus), 20%)
+    btn-color-outline-highlighted: darken(light(background), 10%)
 ));
 
 // Core dark colors
@@ -114,6 +114,6 @@ $dark-colors: map-merge($dark-colors, (
     item-active-icon-color: dark(item-active-color),
     btn-color-inverse: alternate(dark(focus)),
     btn-color-secondary: darken(dark(btn-color), 10%),
-    btn-color-outline-highlighted: darken(dark(primary-focus), 20%)
+    btn-color-outline-highlighted: lighten(dark(background), 10%)
 ));
 

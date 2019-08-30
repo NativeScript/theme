@@ -214,4 +214,9 @@
     .nt-tab-strip__item:active {
         @include colorize($color: focus);
     }
+
+    TabStripItem:active Label,
+    .nt-tab-strip__item:active Label {
+        @include colorize($color: focus);
+    }
 }

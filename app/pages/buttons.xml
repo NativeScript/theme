@@ -5,6 +5,7 @@
     <ScrollView>
         <StackLayout>
             <Button text="Button"/>
+            <Button text="Button.-simple" class="-simple" />
             <Button text="Button.-primary" class="-primary"/>
             <Button class="-primary">
                 <FormattedString>

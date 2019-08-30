@@ -3,10 +3,7 @@
 @mixin button($selectors) {
     #{$selectors} {
         text-transform: none;
-        background-color: transparent;
         border-color: transparent;
-        android-elevation: 0;
-        android-dynamic-elevation-offset: 0;
 
         @include button-base($btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius, $btn-min-width, $btn-height);
 
@@ -23,22 +20,16 @@
         @if $enable-rounded {
             height: $btn-height - 12;
             border-width: 1;
+            border-color: transparent;
 
             .ns-android & {
                 margin: $btn-margin-y $btn-margin-x;
             }
         }
 
-        #{if($compat, '&-primary', '&.-primary')} {
-            android-elevation: 2;
-            android-dynamic-elevation-offset: 4;
-        }
-
         #{if($compat, '&-outline', '&.-outline')} {
             height: $btn-height - 12;
-            android-elevation: 0;
             border-width: 1;
-            background-color: transparent;
 
             .ns-android & {
                 margin: $btn-margin-y $btn-margin-x;
@@ -67,85 +58,214 @@
             opacity: .5;
         }
 
-        .ns-root #{if($compat, '&-aqua.btn', '&.-aqua.-aqua')} {
-            background-color: $aqua;
-            border-color: $aqua;
-            color: alternate($aqua);
+        #{if($compat, '&-simple', '&.-simple')} {
+            android-elevation: 0;
+            android-dynamic-elevation-offset: 0;
         }
 
-        .ns-root #{if($compat, '&-blue.btn', '&.-blue.-blue')} {
-            background-color: $blue;
-            border-color: $blue;
-            color: alternate($blue);
+        #{if($compat, '&-aqua', '&.-aqua')} {
+            .ns-root & {
+                background-color: $aqua;
+                border-color: $aqua;
+                color: alternate($aqua);
+            }
+
+            .ns-root.ns-dark & {
+                background-color: $aqua;
+                border-color: $aqua;
+                color: alternate($aqua);
+            }
         }
 
-        .ns-root #{if($compat, '&-brown.btn', '&.-brown.-brown')} {
-            background-color: $brown;
-            border-color: $brown;
-            color: alternate($brown);
+        #{if($compat, '&-blue', '&.-blue')} {
+            .ns-root & {
+                background-color: $blue;
+                border-color: $blue;
+                color: alternate($blue);
+            }
+
+            .ns-root.ns-dark & {
+                background-color: $blue;
+                border-color: $blue;
+                color: alternate($blue);
+            }
         }
 
-        .ns-root #{if($compat, '&-forest.btn', '&.-forest.-forest')} {
-            background-color: $forest;
-            border-color: $forest;
-            color: alternate($forest);
+        #{if($compat, '&-brown', '&.-brown')} {
+            .ns-root & {
+                background-color: $brown;
+                border-color: $brown;
+                color: alternate($brown);
+            }
+
+            .ns-root.ns-dark & {
+                background-color: $brown;
+                border-color: $brown;
+                color: alternate($brown);
+            }
         }
 
-        .ns-root #{if($compat, '&-grey.btn', '&.-grey.-grey')} {
-            background-color: $grey-dark;
-            border-color: $grey-dark;
-            color: alternate($grey-dark);
+        #{if($compat, '&-forest', '&.-forest')} {
+            .ns-root & {
+                background-color: $forest;
+                border-color: $forest;
+                color: alternate($forest);
+            }
+
+            .ns-root.ns-dark & {
+                background-color: $forest;
+                border-color: $forest;
+                color: alternate($forest);
+            }
         }
 
-        .ns-root #{if($compat, '&-lemon.btn', '&.-lemon.-lemon')} {
-            background-color: $lemon;
-            border-color: $lemon;
-            color: alternate($lemon);
+        #{if($compat, '&-grey', '&.-grey')} {
+            .ns-root & {
+                background-color: $grey-dark;
+                border-color: $grey-dark;
+                color: alternate($grey-dark);
+            }
+
+            .ns-root.ns-dark & {
+                background-color: $grey-dark;
+                border-color: $grey-dark;
+                color: alternate($grey-dark);
+            }
         }
 
-        .ns-root #{if($compat, '&-lime.btn', '&.-lime.-lime')} {
-            background-color: $lime;
-            border-color: $lime;
-            color: alternate($lime);
+        #{if($compat, '&-lemon', '&.-lemon')} {
+            .ns-root & {
+                background-color: $lemon;
+                border-color: $lemon;
+                color: alternate($lemon);
+            }
+
+            .ns-root.ns-dark & {
+                background-color: $lemon;
+                border-color: $lemon;
+                color: alternate($lemon);
+            }
         }
 
-        .ns-root #{if($compat, '&-orange.btn', '&.-orange.-orange')} {
-            background-color: $orange;
-            border-color: $orange;
-            color: alternate($orange);
+        #{if($compat, '&-lime', '&.-lime')} {
+            .ns-root & {
+                background-color: $lime;
+                border-color: $lime;
+                color: alternate($lime);
+            }
+
+            .ns-root.ns-dark & {
+                background-color: $lime;
+                border-color: $lime;
+                color: alternate($lime);
+            }
         }
 
-        .ns-root #{if($compat, '&-purple.btn', '&.-purple.-purple')} {
-            background-color: $purple;
-            border-color: $purple;
-            color: alternate($purple);
+        #{if($compat, '&-orange', '&.-orange')} {
+            .ns-root & {
+                background-color: $orange;
+                border-color: $orange;
+                color: alternate($orange);
+            }
+
+            .ns-root.ns-dark & {
+                background-color: $orange;
+                border-color: $orange;
+                color: alternate($orange);
+            }
         }
 
-        .ns-root #{if($compat, '&-ruby.btn', '&.-ruby.-ruby')} {
-            background-color: $ruby;
-            border-color: $ruby;
-            color: alternate($ruby);
+        #{if($compat, '&-purple', '&.-purple')} {
+            .ns-root & {
+                background-color: $purple;
+                border-color: $purple;
+                color: alternate($purple);
+            }
+
+            .ns-root.ns-dark & {
+                background-color: $purple;
+                border-color: $purple;
+                color: alternate($purple);
+            }
         }
 
-        .ns-root #{if($compat, '&-sky.btn', '&.-sky.-sky')} {
-            background-color: $sky;
-            border-color: $sky;
-            color: alternate($sky);
+        #{if($compat, '&-ruby', '&.-ruby')} {
+            .ns-root & {
+                background-color: $ruby;
+                border-color: $ruby;
+                color: alternate($ruby);
+            }
+
+            .ns-root.ns-dark & {
+                background-color: $ruby;
+                border-color: $ruby;
+                color: alternate($ruby);
+            }
+        }
+
+        #{if($compat, '&-sky', '&.-sky')} {
+            .ns-root & {
+                background-color: $sky;
+                border-color: $sky;
+                color: alternate($sky);
+            }
+
+            .ns-root.ns-dark & {
+                background-color: $sky;
+                border-color: $sky;
+                color: alternate($sky);
+            }
         }
     }
 }
 
 // Skin
 
-@mixin button-skin($selectors) {
-    #{$selectors} {
-        @include colorize($contrasted-color: focus background 40%);
+@mixin button-animations() {
+    animation: light-highlight .3s ease-out forwards;
+    background-color: light(btn-color-outline-highlighted);
 
-        #{if($compat, '&-active:highlighted', '&:highlighted, &.-active')} {
+    .ns-dark & {
+        animation: dark-highlight .3s ease-out forwards;
+        background-color: darken(dark(background), 5%);;
+    }
+}
+
+@mixin button-skin($selectors) {
+    @keyframes light-highlight {
+        0%   { background-color: light(background); }
+        100% { background-color: light(btn-color-outline-highlighted); }
+    }
+
+    @keyframes dark-highlight {
+        0%   { background-color: dark(background); }
+        100% { background-color: darken(dark(background), 5%); }
+    }
+
+    @keyframes focus-highlight {
+        0%   { background-color: light(focus); }
+        100% { background-color: darken(light(focus), 10%); }
+    }
+
+    @keyframes dark-focus-highlight {
+        0%   { background-color: dark(focus); }
+        100% { background-color: darken(dark(focus), 10%); }
+    }
+
+    #{$selectors} {
+        @include colorize(
+            $background-color: background,
+            $contrasted-color: focus background 40%
+        );
+
+        #{if($compat, '&-active:active', '&:active, &.-active')} {
             @include colorize(
-                $contrasted-color: focus background 40%,
-                $background-color: btn-color-outline-highlighted
+                $contrasted-color: focus background 40%
             );
+
+            @if $enable-rounded {
+                @include button-animations;
+            }
         }
 
         #{if($compat, '&-primary', '&.-primary')} {
@@ -155,11 +275,16 @@
                 $border-color: focus
             );
 
-            #{if($compat, '&.btn-active:highlighted', '&:highlighted, &.-active')} {
-                @include colorize(
-                    $contrasted-background-color: focus background 10%,
-                    $contrasted-border-color: focus background 10%
-                );
+            #{if($compat, '&.btn-active:active', '&:active, &.-active')} {
+                animation: focus-highlight .3s ease-out forwards;
+                background-color: darken(light(focus), 10%);
+
+                @if $enable-rounded {
+                    .ns-dark & {
+                        animation: dark-focus-highlight .3s ease-out forwards;
+                        background-color: darken(dark(focus), 10%);
+                    }
+                }
             }
         }
 
@@ -169,13 +294,17 @@
 
         #{if($compat, '&-outline', '&.-outline')}  {
             @include colorize(
+                $background-color: background,
                 $contrasted-border-color: focus background 20%
             );
 
-            &[isEnabled=false] {
-                background-color: transparent;
+            #{if($compat, '&-active:active', '&:active, &.-active')} {
+                @include button-animations;
+            }
 
+            &[isEnabled=false] {
                 @include colorize(
+                    $background-color: background,
                     $color: tab-text-color,
                     $border-color: tab-text-color
                 );

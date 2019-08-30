@@ -6,6 +6,7 @@
     <ScrollView>
         <StackLayout>
             <Button class="btn" text="btn"/>
+            <Button text="btn btn-simple" class="btn btn-simple" />
             <Button text="btn btn-primary" class="btn btn-primary"/>
             <Button class="btn btn-primary">
                 <FormattedString>
