@@ -66,6 +66,7 @@ viewCommon.ViewCommon.prototype._setupAsRootView = function() {
     Theme.setMode(Theme.currentMode);
 };
 
+/* Deprecated root class setters, now available in core modules */
 function updateRootClasses(orientation, root = app.getRootView(), classes = []) {
     const classList = new ClassList(root.className);
 
@@ -106,11 +107,17 @@ const rootModalTrap = {
     }
 };
 
-// Get notified when a modal is created.
-viewCommon._rootModalViews = new Proxy(viewCommon._rootModalViews, rootModalTrap);
-
 app.on(app.displayedEvent, () => {
     const root = app.getRootView();
+
+    // Bail out if no root view or root classes already set (pre 6.1).
+    if (!root || root.cssClasses.has("ns-root")) {
+        return;
+    }
+
+    // Get notified when a modal is created.
+    viewCommon._rootModalViews = new Proxy(viewCommon._rootModalViews, rootModalTrap);
+
     const classList = new ClassList(root.className);
 
     classList.add("ns-root", `ns-${isAndroid ? "android" : "ios"}`, `ns-${device.deviceType.toLowerCase()}`);
