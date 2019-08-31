@@ -223,7 +223,7 @@
 
 @mixin button-animations() {
     animation: light-highlight .3s ease-out forwards;
-    background-color: light(btn-color-outline-highlighted);
+    background-color: light(background-alt-10);
 
     .ns-dark & {
         animation: dark-highlight .3s ease-out forwards;
@@ -234,7 +234,7 @@
 @mixin button-skin($selectors) {
     @keyframes light-highlight {
         0%   { background-color: light(background); }
-        100% { background-color: light(btn-color-outline-highlighted); }
+        100% { background-color: light(background-alt-10); }
     }
 
     @keyframes dark-highlight {

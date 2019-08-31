@@ -14,7 +14,9 @@ $light-colors: (
 }
 
 $light-colors: map-merge($light-colors, (
-    background-alt: darken(light(background), 20%),
+    background-alt-5: darken(light(background), 5%),
+    background-alt-10: darken(light(background), 10%),
+    background-alt-20: darken(light(background), 20%),
     secondary: lighten(light(primary), 30%),
     disabled: mix(light(focus), light(background), 40%),
 
@@ -43,8 +45,7 @@ $light-colors: map-merge($light-colors, (
     ab-background-dark: darken(light(ab-background), 5%),
     item-active-icon-color: light(item-active-color),
     btn-color-inverse: alternate(light(focus)),
-    btn-color-secondary: darken(light(btn-color), 10%),
-    btn-color-outline-highlighted: darken(light(background), 10%)
+    btn-color-secondary: darken(light(btn-color), 10%)
 ));
 
 // Core dark colors
@@ -84,7 +85,9 @@ $dark-colors: (
 }
 
 $dark-colors: map-merge($dark-colors, (
-    background-alt: lighten(dark(background), 20%),
+    background-alt-5: lighten(dark(background), 5%),
+    background-alt-10: lighten(dark(background), 10%),
+    background-alt-20: lighten(dark(background), 20%),
     secondary: darken(dark(primary), 30%),
     disabled: mix(dark(focus), dark(background), 40%),
 
@@ -113,7 +116,6 @@ $dark-colors: map-merge($dark-colors, (
     ab-background-dark: darken(dark(ab-background), 5%),
     item-active-icon-color: dark(item-active-color),
     btn-color-inverse: alternate(dark(focus)),
-    btn-color-secondary: darken(dark(btn-color), 10%),
-    btn-color-outline-highlighted: lighten(dark(background), 10%)
+    btn-color-secondary: darken(dark(btn-color), 10%)
 ));
 

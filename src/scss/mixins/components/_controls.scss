@@ -68,28 +68,25 @@
 
 @mixin switch($selectors) {
     #{$selectors} {
-        margin: 14 16;
-        border-width: 1;
-        color: $grey;
-        background-color: $grey;
-
-        &[checked=true] {
+        .ns-android &[checked=true] {
+            margin: 14 16;
+            background-color: $grey;
             @include colorize($color: focus);
         }
 
         .ns-ios & {
             margin: 8 15;
-            @include colorize($background-color: background-focus);
-        }
-
-        &[checked=true][isEnabled=false] {
-            background-color: $grey;
-            color: $white;
+            color: #fff;
+            @include colorize(
+                $background-color: focus,
+                $off-background-color: background-alt-10
+            );
         }
 
         &[isEnabled=false] {
-            background-color: $grey;
-            color: $grey;
+            @include colorize(
+                $background-color: primary-focus
+            );
         }
     }
 }
@@ -171,21 +168,22 @@
 
 @mixin switch-skin($selectors) {
     #{$selectors} {
-        @include colorize(
-            $color: primary-focus,
-            $border-color: primary-focus
-        );
-
-        &[checked=true] {
+        .ns-android &[checked=true] {
             @include colorize($color: focus);
         }
 
-        &[isEnabled=false] {
-            color: $grey;
+        .ns-ios & {
+            @include colorize(
+                $background-color: focus,
+                $off-background-color: background-alt-10
+            );
+        }
 
-            .ns-dark & {
-                color: $grey-background;
-            }
+        &[isEnabled=false] {
+            @include colorize(
+                $background-color: primary-focus,
+                $off-background-color: background-alt-10
+            );
         }
     }
 }

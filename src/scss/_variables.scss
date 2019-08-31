@@ -31,7 +31,7 @@ $error: #d50000 !default;
 
 // Buttons
 $btn-color-secondary: #01a0ec !default;
-$btn-color-outline-highlighted: #c0ebff !default;
+$background-alt-10: #c0ebff !default;
 $btn-color-disabled: #a4a4a4 !default;
 $btn-font-size: 18 !default;
 $btn-min-width: 64 !default;
@@ -136,7 +136,7 @@ $item-active-background: $focus !default;
 $btn-color: $primary !default;
 $btn-color-inverse: $background !default;
 $btn-color-secondary: darken($btn-color, 10%) !default;
-$btn-color-outline-highlighted: lighten($btn-color, 10%) !default;
+$background-alt-10: lighten($btn-color, 10%) !default;
 
 @import './mixins/index';
 

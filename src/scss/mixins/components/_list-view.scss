@@ -81,10 +81,10 @@
 
             .-separator {
                 border-bottom-width: 1;
-                @include colorize($border-bottom-color: background-alt);
+                @include colorize($border-bottom-color: background-alt-20);
             }
 
-            @include colorize($separator-color: background-alt);
+            @include colorize($separator-color: background-alt-20);
 
 
             .nt-list-view__delete {

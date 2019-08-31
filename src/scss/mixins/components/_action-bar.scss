@@ -33,7 +33,7 @@
             text-transform: none;
             font-weight: normal;
 
-            &:highlighted {
+            &:active {
                 android-elevation: 0;
                 background-color: transparent;
             }
@@ -47,7 +47,8 @@
             }
         }
 
-        .ns-android & Button {
+        .ns-android & Button,
+        .ns-android & .nt-button {
             border-radius: 1;
             padding: 12 6;
 
@@ -56,22 +57,27 @@
             }
         }
 
-        .ns-ios &,
-        .ns-android & {
-            #{$item-selectors} {
-                &:highlighted {
-                    @include colorize($color: ab-color);
-                }
-            }
-        }
-
-        & Button {
+        & Button,
+        & .nt-button {
             @include colorize(
                 $background-color: ab-background
             );
 
+            .ns-ios.ns-root & {
+                background-color: transparent;
+            }
+
             android-elevation: 0;
             android-dynamic-elevation-offset: 0;
+        }
+
+        .ns-ios &,
+        .ns-android & {
+            #{$item-selectors} {
+                &:active {
+                    @include colorize($color: ab-color);
+                }
+            }
         }
     }
 }
@@ -102,7 +108,7 @@
         .ns-ios &,
         .ns-android & {
             #{$item-selectors} {
-                &:highlighted {
+                &:active {
                     @include colorize($color: ab-color);
                 }
             }
