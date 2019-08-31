@@ -12,10 +12,10 @@
   "nativescript": {
     "id": "org.nativescript.theme",
     "tns-ios": {
-      "version": "next"
+      "version": "6.1.0"
     },
     "tns-android": {
-      "version": "next"
+      "version": "6.1.0"
     }
   },
   "dependencies": {
