@@ -1,3 +1,17 @@
+<a name="2.0.10 beta"></a>
+## [2.0.10 beta](https://github.com/NativeScript/theme/compare/v2.0.9...v2.0.10) (2019-09-01)
+
+### Features
+
+* Revise the Button styling, now all buttons have elevation in Android
+
+### Fixes
+
+* Fix the missing root view crash
+* Only load root class modifier if no support in core modules
+* Fix the jumping iOS Switch
+* Fix the Switch styling
+
 <a name="2.0.9 beta"></a>
 ## [2.0.9 beta](https://github.com/NativeScript/theme/compare/v2.0.8...v2.0.9) (2019-08-29)
 
