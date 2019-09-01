@@ -9,6 +9,7 @@ const fs = require("fs");
 const sass = require("sass");
 const glob = require("glob");
 const pjs = require("../package.json");
+const babel = require("babel-core");
 
 // Kill The original folder, so that way it is a clean folder
 if (fs.existsSync("nativescript-theme-core")) {
@@ -33,8 +34,12 @@ copySCSS();
 
 createPackageJson();
 
-// Copy the temporary class helper and SCSS
-copyFile("./src/index.js", "./nativescript-theme-core/index.js");
+// Transform imports to commonjs
+const transform = babel.transform(fs.readFileSync("./src/index.js"), {
+  plugins: ["transform-es2015-modules-commonjs"]
+});
+
+fs.writeFile("./nativescript-theme-core/index.js", transform.code, {}, () => {});
 
 // Copy our Readme
 copyFile("./README.md", "./nativescript-theme-core/README.md");

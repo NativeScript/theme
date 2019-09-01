@@ -60,7 +60,9 @@ export class ThemesModel extends BaseModel {
             return;
         }
 
-        if (currentTheme.skin === "customized" || currentTheme.skin.startsWith("kendo-")) {
+        if (currentTheme.skin === "customized" ||
+            currentTheme.skin.startsWith("kendo-") ||
+            currentTheme.skin === "bootstrap-based") {
             return import(
                 /*  webpackMode: "lazy",
                     webpackInclude: /\.s?css$/,

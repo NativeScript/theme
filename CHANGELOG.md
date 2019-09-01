@@ -1,3 +1,15 @@
+<a name="2.0.11 beta"></a>
+## [2.0.11 beta](https://github.com/NativeScript/theme/compare/v2.0.10...v2.0.11) (2019-09-01)
+
+### Features
+
+* Add JS transpilation to work in non-transpiling projects and Playground 
+
+### Fixes
+
+* Fix setMode in Playground
+* Move bootstrap-based skin outside of theme-core to make the theme importable in Playground
+
 <a name="2.0.10 beta"></a>
 ## [2.0.10 beta](https://github.com/NativeScript/theme/compare/v2.0.9...v2.0.10) (2019-09-01)
 

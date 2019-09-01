@@ -32,7 +32,7 @@ export class ClassList {
     }
 }
 
-export default class Theme {
+class Theme {
     static setMode(mode = Theme.Light, root = app.getRootView()) {
         Theme.currentMode = mode;
         Theme.rootView = root;
@@ -55,15 +55,26 @@ export default class Theme {
     }
 }
 
+if (module) {
+    const desc = Object.getOwnPropertyDescriptor(module, "exports");
+
+    // Check if in a commonjs module
+    if (desc.writable) {
+        module.exports = Theme;
+    }
+}
+
 Theme.Light = "ns-light";
 Theme.Dark = "ns-dark";
 Theme.currentMode = Theme.Light;
+
+export default Theme;
 
 // Where the magic happens
 const oldSetupAsRootView = viewCommon.ViewCommon.prototype._setupAsRootView;
 viewCommon.ViewCommon.prototype._setupAsRootView = function() {
     oldSetupAsRootView.call(this, ...arguments);
-    Theme.setMode(Theme.currentMode);
+    Theme.setMode(Theme.currentMode, this);
 };
 
 /* Deprecated root class setters, now available in core modules */
