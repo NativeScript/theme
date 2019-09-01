@@ -68,10 +68,23 @@
 
 @mixin switch($selectors) {
     #{$selectors} {
-        .ns-android &[checked=true] {
+        .ns-android & {
             margin: 14 16;
-            background-color: $grey;
-            @include colorize($color: focus);
+
+            @include colorize(
+                $color: background-alt-20,
+                $background-color: background-alt-20
+            );
+
+            &[checked=true] {
+                @include colorize($color: focus);
+            }
+
+            &[isEnabled=false] {
+                @include colorize(
+                    $color: background-alt-10
+                );
+            }
         }
 
         .ns-ios & {
@@ -81,12 +94,12 @@
                 $background-color: focus,
                 $off-background-color: background-alt-10
             );
-        }
 
-        &[isEnabled=false] {
-            @include colorize(
-                $background-color: primary-focus
-            );
+            &[isEnabled=false] {
+                @include colorize(
+                    $background-color: primary-focus
+                );
+            }
         }
     }
 }
@@ -168,8 +181,21 @@
 
 @mixin switch-skin($selectors) {
     #{$selectors} {
-        .ns-android &[checked=true] {
-            @include colorize($color: focus);
+        .ns-android & {
+            @include colorize(
+                $color: background-alt-20,
+                $background-color: background-alt-20
+            );
+
+            &[checked=true] {
+                @include colorize($color: focus);
+            }
+
+            &[isEnabled=false] {
+                @include colorize(
+                    $color: background-alt-10
+                );
+            }
         }
 
         .ns-ios & {
@@ -177,13 +203,13 @@
                 $background-color: focus,
                 $off-background-color: background-alt-10
             );
-        }
 
-        &[isEnabled=false] {
-            @include colorize(
-                $background-color: primary-focus,
-                $off-background-color: background-alt-10
-            );
+            &[isEnabled=false] {
+                @include colorize(
+                    $background-color: primary-focus,
+                    $off-background-color: background-alt-10
+                );
+            }
         }
     }
 }
