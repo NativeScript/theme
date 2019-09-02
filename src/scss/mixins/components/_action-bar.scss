@@ -35,8 +35,22 @@
 
             &:active {
                 android-elevation: 0;
-                background-color: transparent;
             }
+        }
+
+        .ns-ios & {
+            Label, Button {
+                background-color: transparent;
+
+                &:active {
+                    background-color: transparent;
+                }
+            }
+        }
+
+        & > Label {
+            font-weight: bold;
+            font-size: 17;
         }
 
         .ns-statusbar-transparent Page > & {
@@ -62,10 +76,6 @@
             @include colorize(
                 $background-color: ab-background
             );
-
-            .ns-ios.ns-root & {
-                background-color: transparent;
-            }
 
             android-elevation: 0;
             android-dynamic-elevation-offset: 0;
