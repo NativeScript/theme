@@ -50,6 +50,10 @@ class Theme {
         Theme.rootView.className = classList.get();
     }
 
+    static toggleMode(isDark = false) {
+        Theme.setMode(Theme.getMode() === Theme.Light || isDark ? Theme.Dark : Theme.Light);
+    }
+
     static getMode() {
         return Theme.currentMode;
     }
