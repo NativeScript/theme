@@ -48,22 +48,24 @@
             }
         }
 
-        .ns-android & Button,
-        .ns-android & .nt-button {
-            border-radius: 1;
-            padding: 12 6;
+        @if not $compat {
+            .ns-android & Button,
+            .ns-android & .nt-button {
+                border-radius: 1;
+                padding: 12 6;
 
-            @include colorize(
-                $background-color: ab-background
-            );
+                @include colorize(
+                    $background-color: ab-background
+                );
 
-            &:active {
-                opacity: .7;
-                @include colorize($color: ab-color);
+                &:active {
+                    opacity: .7;
+                    @include colorize($color: ab-color);
+                }
+
+                android-elevation: 0;
+                android-dynamic-elevation-offset: 0;
             }
-
-            android-elevation: 0;
-            android-dynamic-elevation-offset: 0;
         }
     }
 }
@@ -89,14 +91,19 @@
             }
         }
 
-        .ns-android & Button,
-        .ns-android & .nt-button {
-            @include colorize(
-                $background-color: ab-background
-            );
+        @if not $compat {
+            .ns-android & Button,
+            .ns-android & .nt-button {
+                @include colorize(
+                    $background-color: ab-background
+                );
 
-            &:active {
-                @include colorize($color: ab-color);
+                &:active {
+                    @include colorize(
+                        $color: ab-color,
+                        $background-color: ab-background
+                    );
+                }
             }
         }
     }
