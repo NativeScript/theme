@@ -1,15 +1,5 @@
 
 @if not $compat {
-    @include action-bar-skin(
-                ('ActionBar',
-                'NTActionBar',
-                '.nt-action-bar'),
-                ('NTIcon',
-                'Label',
-                'Button',
-                '.nt-action-bar__item')
-    );
-
     @include button-skin(
                 ('Button',
                 '.nt-button')
@@ -64,11 +54,21 @@
     @include form-fields-skin();
 
     @include input-component-skin(
-                ('NTInput',
+                (//'NTInput',
                 '.nt-input')
     );
+
+  @include action-bar-skin(
+              ('ActionBar',
+              //'NTActionBar',
+              '.nt-action-bar'),
+              ('NTIcon',
+              'Label',
+              'Button',
+              '.nt-action-bar__item')
+  );
+
 } @else {
-    @include action-bar-skin('.action-bar', '.action-item');
     @include button-skin('.btn');
     @include activity-indicator-skin('.activity-indicator');
     @include segmented-bar-skin('.segmented-bar');
@@ -80,4 +80,5 @@
     @include side-drawer-skin('.side-drawer');
     @include form-fields-skin();
     @include input-component-skin('.input');
+    @include action-bar-skin('.action-bar', '.action-item');
 }

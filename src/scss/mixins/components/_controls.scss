@@ -89,7 +89,6 @@
 
         .ns-ios & {
             margin: 8 15;
-            color: #fff;
             @include colorize(
                 $background-color: focus,
                 $off-background-color: background-alt-10
@@ -199,15 +198,16 @@
         }
 
         .ns-ios & {
+            $off-background-color: transparent;
+
             @include colorize(
-                $background-color: focus,
-                $off-background-color: background-alt-10
+                $color: background,
+                $background-color: focus
             );
 
             &[isEnabled=false] {
                 @include colorize(
-                    $background-color: primary-focus,
-                    $off-background-color: background-alt-10
+                    $background-color: primary-focus
                 );
             }
         }

@@ -1,16 +1,5 @@
 
 @if not $compat {
-    @include action-bar(
-                ('ActionBar',
-                'NTActionBar',
-                '.nt-action-bar'),
-
-                ('NTIcon',
-                'Label',
-                'Button',
-                '.nt-action-bar__item')
-    );
-
     @include button(
                 ('Button',
                 '.nt-button')
@@ -85,12 +74,21 @@
     @include form-fields();
 
     @include input-component(
-                ('NTInput',
+                (//'NTInput',
                 '.nt-input')
     );
 
+  @include action-bar(
+              ('ActionBar',
+              //'NTActionBar',
+              '.nt-action-bar'),
+
+              ('NTIcon',
+              'Label',
+              'Button',
+              '.nt-action-bar__item')
+  );
 } @else {
-    @include action-bar('.action-bar', '.action-item');
     @include button('.btn');
     @include label('.label');
     @include page('.page');
@@ -106,4 +104,5 @@
     @include form('.form');
     @include form-fields();
     @include input-component('.input');
+    @include action-bar('.action-bar', '.action-item');
 }

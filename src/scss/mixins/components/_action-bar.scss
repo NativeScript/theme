@@ -32,20 +32,7 @@
             border-width: 0;
             text-transform: none;
             font-weight: normal;
-
-            &:active {
-                android-elevation: 0;
-            }
-        }
-
-        .ns-ios & {
-            Label, Button {
-                background-color: transparent;
-
-                &:active {
-                    background-color: transparent;
-                }
-            }
+            background-color: transparent;
         }
 
         & > Label {
@@ -66,28 +53,17 @@
             border-radius: 1;
             padding: 12 6;
 
-            &:active {
-                opacity: .7;
-            }
-        }
-
-        & Button,
-        & .nt-button {
             @include colorize(
                 $background-color: ab-background
             );
 
+            &:active {
+                opacity: .7;
+                @include colorize($color: ab-color);
+            }
+
             android-elevation: 0;
             android-dynamic-elevation-offset: 0;
-        }
-
-        .ns-ios &,
-        .ns-android & {
-            #{$item-selectors} {
-                &:active {
-                    @include colorize($color: ab-color);
-                }
-            }
         }
     }
 }
@@ -101,26 +77,26 @@
             $background-color: ab-background
         );
 
-        .ns-root & #{$item-selectors} {
+        #{$item-selectors} {
             @include colorize(
-                $color: ab-color,
-                $background-color: ab-background
+                $color: ab-color
             );
 
             #{if($compat, '&-active:active', '&:active, &.-active')} {
                 @include colorize(
-                    $color: ab-color,
-                    $background-color: ab-background
+                    $color: ab-color
                 );
             }
         }
 
-        .ns-ios &,
-        .ns-android & {
-            #{$item-selectors} {
-                &:active {
-                    @include colorize($color: ab-color);
-                }
+        .ns-android & Button,
+        .ns-android & .nt-button {
+            @include colorize(
+                $background-color: ab-background
+            );
+
+            &:active {
+                @include colorize($color: ab-color);
             }
         }
     }
