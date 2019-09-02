@@ -33,6 +33,11 @@
             text-transform: none;
             font-weight: normal;
             background-color: transparent;
+
+            &:active {
+                opacity: .7;
+                @include colorize($color: ab-color);
+            }
         }
 
         & > Label {
@@ -51,17 +56,7 @@
         @if not $compat {
             .ns-android & Button,
             .ns-android & .nt-button {
-                border-radius: 1;
                 padding: 12 6;
-
-                @include colorize(
-                    $background-color: ab-background
-                );
-
-                &:active {
-                    opacity: .7;
-                    @include colorize($color: ab-color);
-                }
 
                 android-elevation: 0;
                 android-dynamic-elevation-offset: 0;
@@ -97,13 +92,6 @@
                 @include colorize(
                     $background-color: ab-background
                 );
-
-                &:active {
-                    @include colorize(
-                        $color: ab-color,
-                        $background-color: ab-background
-                    );
-                }
             }
         }
     }

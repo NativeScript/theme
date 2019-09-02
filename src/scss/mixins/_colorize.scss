@@ -1,4 +1,5 @@
 $enhancers: 'alternate', 'scale-alternate', 'contrasted', 'scale-contrasted';
+$root-classes: '.ns-root', '.ns-android', '.ns-ios', '.ns-phone', '.ns-tablet', '.ns-portrait', '.ns-landscape';
 
 @mixin enhance($name, $arguments, $colors) {
     $args: ();
@@ -25,7 +26,15 @@ $enhancers: 'alternate', 'scale-alternate', 'contrasted', 'scale-contrasted';
     @each $name, $arguments in keywords($args) {
         @include enhance($name, $arguments, $light-colors);
 
-        .ns-dark & {
+        $is-at-root: false;
+
+        @each $class in $root-classes {
+            @if(str-index('#{&}', $class) == 1) {
+                $is-at-root: true;
+            }
+        }
+
+        @at-root .ns-dark#{if($is-at-root, #{&}, ' #{&}')} {
             @include enhance($name, $arguments, $dark-colors);
         }
     }
