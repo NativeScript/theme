@@ -1,3 +1,10 @@
+<a name="2.0.13 beta"></a>
+## [2.0.13 beta](https://github.com/NativeScript/theme/compare/v2.0.12...v2.0.13) (2019-09-03)
+
+### Fixes
+
+* Workaround the folder issue in Playground
+
 <a name="2.0.12 beta"></a>
 ## [2.0.12 beta](https://github.com/NativeScript/theme/compare/v2.0.11...v2.0.12) (2019-09-03)
 
