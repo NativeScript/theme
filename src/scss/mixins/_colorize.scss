@@ -34,7 +34,9 @@ $root-classes: '.ns-root', '.ns-android', '.ns-ios', '.ns-phone', '.ns-tablet', 
             }
         }
 
-        @at-root .ns-dark#{if($is-at-root, #{&}, ' #{&}')} {
+        @at-root #{if($is-at-root,
+            selector-append('.ns-dark', &),
+            selector-nest('.ns-dark', &))} {
             @include enhance($name, $arguments, $dark-colors);
         }
     }
