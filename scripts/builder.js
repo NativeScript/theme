@@ -42,7 +42,7 @@ const transform = babel.transform(fs.readFileSync("./src/index.js"), {
 fs.writeFile("./nativescript-theme-core/index.js", transform.code, {}, () => {});
 
 // Copy typings
-copyFile("./index.d.ts", "./nativescript-theme-core/index.d.ts");
+copyFile("./src/index.d.ts", "./nativescript-theme-core/index.d.ts");
 
 // Copy our Readme
 copyFile("./README.md", "./nativescript-theme-core/README.md");
@@ -56,14 +56,24 @@ console.log("Change to the 'nativescript-theme-core' folder and you can now do y
  * Create package.json from the original one
  */
 function createPackageJson() {
-    const outputPackageJson = (({ name, version, description, author, homepage, license, repository }) =>
+    const outputPackageJson = (({ name,
+                                  version,
+                                  description,
+                                  main,
+                                  typings,
+                                  author,
+                                  homepage,
+                                  license,
+                                  repository }) =>
                                ({ name,
-version,
-description,
-author,
-homepage,
-license,
-repository }))(pjs);
+                                  version,
+                                  description,
+                                  main,
+                                  typings,
+                                  author,
+                                  homepage,
+                                  license,
+                                  repository }))(pjs);
 
     outputPackageJson.nativescript = {
         platforms: {
