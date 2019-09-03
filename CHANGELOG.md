@@ -1,3 +1,14 @@
+<a name="2.0.14 beta"></a>
+## [2.0.14 beta](https://github.com/NativeScript/theme/compare/v2.0.13...v2.0.14) (2019-09-03)
+
+### Features
+
+* Add typings to make Angular projects in Playground happy
+
+### Fixes
+
+* Fix setMode resets the classes set manually on root
+
 <a name="2.0.13 beta"></a>
 ## [2.0.13 beta](https://github.com/NativeScript/theme/compare/v2.0.12...v2.0.13) (2019-09-03)
 

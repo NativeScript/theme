@@ -41,6 +41,9 @@ const transform = babel.transform(fs.readFileSync("./src/index.js"), {
 
 fs.writeFile("./nativescript-theme-core/index.js", transform.code, {}, () => {});
 
+// Copy typings
+copyFile("./index.d.ts", "./nativescript-theme-core/index.d.ts");
+
 // Copy our Readme
 copyFile("./README.md", "./nativescript-theme-core/README.md");
 copyFile("./CHANGELOG.md", "./nativescript-theme-core/CHANGELOG.md");
