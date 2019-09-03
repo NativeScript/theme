@@ -1,5 +1,5 @@
 // Mixins
-@import './mixins/index';
+@import '../mixins/index';
 
 $compat: false !default;
 
@@ -12,7 +12,7 @@ $grey-background: #bababa !default;
 $charcoal: #303030 !default;
 
 // Kendo Palettes
-@import './core/utilities/kendo-palletes';
+@import '../core/utilities/kendo-palletes';
 
 // accent varieties
 $aqua: #00caab !default;
@@ -138,7 +138,7 @@ $btn-color-inverse: $background !default;
 $btn-color-secondary: darken($btn-color, 10%) !default;
 $background-alt-10: lighten($btn-color, 10%) !default;
 
-@import './mixins/index';
+@import '../mixins/index';
 
 // Core colors
-@import './core/colors';
+@import '../core/colors';

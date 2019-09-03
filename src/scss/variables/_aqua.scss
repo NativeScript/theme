@@ -2,18 +2,17 @@
 @import '../variables';
 
 /**
- * Ruby variable overrides
+ * Blue variable overrides
  **/
 
 // ActionBar
-$ab-background: $ruby;
+$ab-background: $blue;
 $ab-color: $white;
 
 // Accent
-$focus: $lemon;
+$focus: $sky;
 
 // Buttons
-$btn-color-inverse: $charcoal;
+$btn-color-inverse: $white;
 
 @import '../core/colors';
-@import '../index';

@@ -1,9 +1,53 @@
+// Constants
+
+$constants: (
+    black: $black,
+    white: $white,
+    grey: $grey,
+    grey-background: $grey-background,
+    charcoal: $charcoal,
+    transparent: transparent,
+
+    // accent varieties
+    aqua: $aqua,
+    blue: $blue,
+    brown: $brown,
+    forest: $forest,
+    grey-dark: $grey-dark,
+    purple: $purple,
+    lemon: $lemon,
+    lime: $lime,
+    orange: $orange,
+    ruby: $ruby,
+    sky: $sky,
+
+    error: $error,
+
+    // Buttons
+    btn-color-secondary: $btn-color-secondary,
+    background-alt-10: $background-alt-10,
+    btn-color-disabled: $btn-color-disabled,
+    btn-font-size: $btn-font-size,
+    btn-min-width: $btn-min-width,
+    btn-height: $btn-height,
+    btn-radius: $btn-radius,
+    btn-padding-x: $btn-padding-x,
+    btn-padding-y: $btn-padding-y,
+    btn-margin-x: $btn-margin-x,
+    btn-margin-y: $btn-margin-y,
+
+    // Headings
+    headings-margin-bottom: $headings-margin-bottom,
+    headings-font-weight: $headings-font-weight,
+
+    border-radius: $border-radius
+);
+
 // Core light colors
 $light-colors: (
     primary: $primary,
     background: $background,
-    focus: $focus,
-    gray: #999
+    focus: $focus
 );
 
 @if (global_variable_exists("theme-type")) {
@@ -26,7 +70,7 @@ $light-colors: map-merge($light-colors, (
     text-color: light(primary),
     headings-color: light(primary),
 
-    tab-text-color: mix(light(gray), light(focus), 70%),
+    tab-text-color: mix(const(gray), light(focus), 70%),
 
     focus-dark: darken(light(focus), 20%),
     focus-light: lighten(light(focus), 20%),
@@ -52,8 +96,7 @@ $light-colors: map-merge($light-colors, (
 $dark-colors: (
     primary: $white,
     background: $charcoal,
-    focus: $focus,
-    gray: #999
+    focus: $focus
 );
 
 @if (global_variable_exists("bg-color")) {
@@ -97,7 +140,7 @@ $dark-colors: map-merge($dark-colors, (
     text-color: dark(primary),
     headings-color: dark(primary),
 
-    tab-text-color: mix(dark(gray), dark(focus), 70%),
+    tab-text-color: mix(const(gray), dark(focus), 70%),
 
     focus-dark: lighten(dark(focus), 20%),
     focus-light: lighten(dark(focus), 40%),

@@ -63,158 +63,92 @@
             android-dynamic-elevation-offset: 0;
         }
 
-        #{if($compat, '&-aqua', '&.-aqua')} {
-            .ns-root & {
-                background-color: $aqua;
-                border-color: $aqua;
-                color: alternate($aqua);
-            }
-
-            .ns-root.ns-dark & {
-                background-color: $aqua;
-                border-color: $aqua;
-                color: alternate($aqua);
-            }
+        .ns-root #{if($compat, '&-aqua.btn', '&.-aqua')} {
+            @include colorize(
+                $background-color: aqua,
+                $border-color: aqua,
+                $alternate-color: aqua
+            );
         }
 
-        #{if($compat, '&-blue', '&.-blue')} {
-            .ns-root & {
-                background-color: $blue;
-                border-color: $blue;
-                color: alternate($blue);
-            }
-
-            .ns-root.ns-dark & {
-                background-color: $blue;
-                border-color: $blue;
-                color: alternate($blue);
-            }
+        .ns-root #{if($compat, '&-blue.btn', '&.-blue')} {
+            @include colorize(
+                $background-color: blue,
+                $border-color: blue,
+                $alternate-color: blue
+            );
         }
 
-        #{if($compat, '&-brown', '&.-brown')} {
-            .ns-root & {
-                background-color: $brown;
-                border-color: $brown;
-                color: alternate($brown);
-            }
-
-            .ns-root.ns-dark & {
-                background-color: $brown;
-                border-color: $brown;
-                color: alternate($brown);
-            }
+        .ns-root #{if($compat, '&-brown', '&.-brown')} {
+            @include colorize(
+                $background-color: brown,
+                $border-color: brown,
+                $alternate-color: brown
+            );
         }
 
-        #{if($compat, '&-forest', '&.-forest')} {
-            .ns-root & {
-                background-color: $forest;
-                border-color: $forest;
-                color: alternate($forest);
-            }
-
-            .ns-root.ns-dark & {
-                background-color: $forest;
-                border-color: $forest;
-                color: alternate($forest);
-            }
+        .ns-root #{if($compat, '&-forest', '&.-forest')} {
+            @include colorize(
+                $alternate-color: forest,
+                $background-color: forest,
+                $border-color: forest
+            );
         }
 
-        #{if($compat, '&-grey', '&.-grey')} {
-            .ns-root & {
-                background-color: $grey-dark;
-                border-color: $grey-dark;
-                color: alternate($grey-dark);
-            }
-
-            .ns-root.ns-dark & {
-                background-color: $grey-dark;
-                border-color: $grey-dark;
-                color: alternate($grey-dark);
-            }
+        .ns-root #{if($compat, '&-grey', '&.-grey')} {
+            @include colorize(
+                $background-color: grey-dark,
+                $border-color: grey-dark,
+                $alternate-color: grey-dark
+            );
         }
 
-        #{if($compat, '&-lemon', '&.-lemon')} {
-            .ns-root & {
-                background-color: $lemon;
-                border-color: $lemon;
-                color: alternate($lemon);
-            }
-
-            .ns-root.ns-dark & {
-                background-color: $lemon;
-                border-color: $lemon;
-                color: alternate($lemon);
-            }
+        .ns-root #{if($compat, '&-lemon', '&.-lemon')} {
+            @include colorize(
+                $background-color: lemon,
+                $border-color: lemon,
+                $alternate-color: lemon
+            );
         }
 
-        #{if($compat, '&-lime', '&.-lime')} {
-            .ns-root & {
-                background-color: $lime;
-                border-color: $lime;
-                color: alternate($lime);
-            }
-
-            .ns-root.ns-dark & {
-                background-color: $lime;
-                border-color: $lime;
-                color: alternate($lime);
-            }
+        .ns-root #{if($compat, '&-lime', '&.-lime')} {
+            @include colorize(
+                $background-color: lime,
+                $border-color: lime,
+                $alternate-color: lime
+            );
         }
 
-        #{if($compat, '&-orange', '&.-orange')} {
-            .ns-root & {
-                background-color: $orange;
-                border-color: $orange;
-                color: alternate($orange);
-            }
-
-            .ns-root.ns-dark & {
-                background-color: $orange;
-                border-color: $orange;
-                color: alternate($orange);
-            }
+        .ns-root #{if($compat, '&-orange', '&.-orange')} {
+            @include colorize(
+                $background-color: orange,
+                $border-color: orange,
+                $alternate-color: orange
+            );
         }
 
-        #{if($compat, '&-purple', '&.-purple')} {
-            .ns-root & {
-                background-color: $purple;
-                border-color: $purple;
-                color: alternate($purple);
-            }
-
-            .ns-root.ns-dark & {
-                background-color: $purple;
-                border-color: $purple;
-                color: alternate($purple);
-            }
+        .ns-root #{if($compat, '&-purple', '&.-purple')} {
+            @include colorize(
+                $background-color: purple,
+                $border-color: purple,
+                $alternate-color: purple
+            );
         }
 
-        #{if($compat, '&-ruby', '&.-ruby')} {
-            .ns-root & {
-                background-color: $ruby;
-                border-color: $ruby;
-                color: alternate($ruby);
-            }
-
-            .ns-root.ns-dark & {
-                background-color: $ruby;
-                border-color: $ruby;
-                color: alternate($ruby);
-            }
+        .ns-root #{if($compat, '&-ruby', '&.-ruby')} {
+            @include colorize(
+                $background-color: ruby,
+                $border-color: ruby,
+                $alternate-color: ruby
+            );
         }
 
-        #{if($compat, '&-sky', '&.-sky')} {
-            .ns-root & {
-                background-color: $sky;
-                border-color: $sky;
-                color: alternate($sky);
-            }
-
-            .ns-root.ns-dark & {
-                background-color: $sky;
-                border-color: $sky;
-                color: alternate($sky);
-            }
+        .ns-root #{if($compat, '&-sky', '&.-sky')} {
+            @include colorize(
+                $background-color: sky,
+                $border-color: sky,
+                $alternate-color: sky
+            );
         }
     }
 }

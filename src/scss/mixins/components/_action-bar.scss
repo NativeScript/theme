@@ -32,7 +32,11 @@
             border-width: 0;
             text-transform: none;
             font-weight: normal;
-            background-color: transparent;
+
+            .ns-ios &,
+            .ns-ios &:active {
+                @include colorize($background-color: transparent);
+            }
 
             &:active {
                 opacity: .7;

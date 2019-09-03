@@ -2,18 +2,17 @@
 @import '../variables';
 
 /**
- * Aqua variable overrides
+ * Lemon variable overrides
  **/
 
 // ActionBar
-$ab-background: $aqua;
-$ab-color: $white;
+$ab-background: $lemon;
+$ab-color: $charcoal;
 
 // Accent
-$focus: $lime;
+$focus: $grey-dark;
 
 // Buttons
 $btn-color-inverse: $white;
 
 @import '../core/colors';
-@import '../index';

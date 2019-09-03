@@ -3,40 +3,50 @@ $root-classes: '.ns-root', '.ns-android', '.ns-ios', '.ns-phone', '.ns-tablet', 
 
 @mixin enhance($name, $arguments, $colors) {
     $args: ();
+    $has-enhancer: false;
 
     $color: map-get($colors, $arguments);
-
-    @each $arg in $arguments {
-        $color: map-get($colors, $arg);
-
-        $args: append($args, if($color != null, $color, $arg));
-    }
+    $color: if($color != null, $color, const($arguments));
 
     @each $enhancer in $enhancers {
-        @if (str-index($name, '#{$enhancer}-') == 1) {
-            $name: str-slice($name, str-length($enhancer) + 2);
-            $color: call(get-function($enhancer), $args...);
+        @if str-index($name, '#{$enhancer}-') == 1 {
+            $has-enhancer: $enhancer;
         }
+    }
+
+    @if $has-enhancer {
+        @each $arg in $arguments {
+            $color: map-get($colors, $arg);
+            $const: const($arg);
+
+            $args: append($args, if($color != null, $color, if($const != null, $const, $arg)));
+        }
+
+        $name: str-slice($name, str-length($has-enhancer) + 2);
+        $color: call(get-function($has-enhancer), $args...);
     }
 
     #{$name}: $color;
 }
 
 @mixin colorize($args...) {
+    $is-at-root: false;
+
+    @each $class in $root-classes {
+        @if(str-index('#{&}', $class) == 1) {
+            $is-at-root: true;
+        }
+    }
+
     @each $name, $arguments in keywords($args) {
         @include enhance($name, $arguments, $light-colors);
+    }
 
-        $is-at-root: false;
+    @at-root #{if($is-at-root,
+        selector-append('.ns-dark', &),
+        selector-nest('.ns-dark', &))} {
 
-        @each $class in $root-classes {
-            @if(str-index('#{&}', $class) == 1) {
-                $is-at-root: true;
-            }
-        }
-
-        @at-root #{if($is-at-root,
-            selector-append('.ns-dark', &),
-            selector-nest('.ns-dark', &))} {
+        @each $name, $arguments in keywords($args) {
             @include enhance($name, $arguments, $dark-colors);
         }
     }

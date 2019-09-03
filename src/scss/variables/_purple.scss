@@ -2,18 +2,17 @@
 @import '../variables';
 
 /**
- * Sky variable overrides
+ * Purple variable overrides
  **/
 
 // ActionBar
-$ab-background: $sky;
+$ab-background: $purple;
 $ab-color: $white;
 
 // Accent
-$focus: $lemon;
+$focus: $sky;
 
 // Buttons
-$btn-color-inverse: $charcoal;
+$btn-color-inverse: $white;
 
 @import '../core/colors';
-@import '../index';
