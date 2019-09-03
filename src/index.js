@@ -50,8 +50,14 @@ class Theme {
         Theme.rootView.className = classList.get();
     }
 
-    static toggleMode(isDark = false) {
-        Theme.setMode(Theme.getMode() === Theme.Light || isDark ? Theme.Dark : Theme.Light);
+    static toggleMode(isDark) {
+        if (isDark === undefined) {
+            Theme.setMode(Theme.getMode() === Theme.Light ? Theme.Dark : Theme.Light);
+
+            return;
+        }
+
+        Theme.setMode(isDark ? Theme.Dark : Theme.Light);
     }
 
     static getMode() {

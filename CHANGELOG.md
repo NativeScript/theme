@@ -1,3 +1,30 @@
+<a name="2.0.12 beta"></a>
+## [2.0.12 beta](https://github.com/NativeScript/theme/compare/v2.0.11...v2.0.12) (2019-09-03)
+
+### Features
+
+* Add scss/variables folder with SCSS skin variables for easier import  
+* Add variable map for generic variables, accessible with const()
+* Add toggleMode to the API with optional boolean state enforcer, used like this:
+
+```javascript
+    import Theme from 'nativescript-theme-core';
+
+    Theme.toggleMode(); // to toggle between the modes
+
+    // or
+
+    Theme.toggleMode(true);  // to ensure dark mode
+    Theme.toggleMode(false); // to ensure light mode
+```
+
+### Fixes
+
+* Fix dark mode for Switches and several other components
+* Fix ActionBar Label title background, fix dark buttons
+* Fix the colorize function to produce better organized code, to work with consts and to properly 
+    prepend .ns-dark on root classes
+
 <a name="2.0.11 beta"></a>
 ## [2.0.11 beta](https://github.com/NativeScript/theme/compare/v2.0.10...v2.0.11) (2019-09-01)
 
