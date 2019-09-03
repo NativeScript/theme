@@ -33,11 +33,11 @@ export class ClassList {
 }
 
 class Theme {
-    static setMode(mode = Theme.Light, root = app.getRootView()) {
+    static setMode(mode, root = app.getRootView()) {
         Theme.currentMode = mode;
         Theme.rootView = root;
 
-        if (!root) {
+        if (!root || !mode) {
             return;
         }
 
@@ -61,7 +61,9 @@ class Theme {
     }
 
     static getMode() {
-        return Theme.currentMode;
+        const root = app.getRootView();
+
+        return Theme.currentMode || ((root.className || "").indexOf(Theme.Dark) !== -1 ? Theme.Dark : Theme.Light);
     }
 }
 
@@ -76,7 +78,6 @@ if (module) {
 
 Theme.Light = "ns-light";
 Theme.Dark = "ns-dark";
-Theme.currentMode = Theme.Light;
 
 export default Theme;
 
