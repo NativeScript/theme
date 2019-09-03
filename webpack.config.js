@@ -107,7 +107,7 @@ module.exports = smp.wrap((env) => {
             alias: {
                 "~": appFullPath
             },
-            // don't resolve symlinks to symlinked modules
+            // resolve symlinks to symlinked modules
             symlinks: true
         },
         resolveLoader: {
@@ -124,7 +124,7 @@ module.exports = smp.wrap((env) => {
         },
         // eslint-disable-next-line no-nested-ternary
         devtool: hiddenSourceMap ? "hidden-source-map" : (sourceMap ? "inline-source-map" : "none"),
-        optimization:  {
+        optimization: {
             runtimeChunk: "single",
             splitChunks: {
                 cacheGroups: {

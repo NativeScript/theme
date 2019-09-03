@@ -1,3 +1,11 @@
+<a name="2.0.15 beta"></a>
+## [2.0.15 beta](https://github.com/NativeScript/theme/compare/v2.0.14...v2.0.15) (2019-09-04)
+
+### Fixes
+
+* Fix TextField borders
+* Compat fixes
+
 <a name="2.0.14 beta"></a>
 ## [2.0.14 beta](https://github.com/NativeScript/theme/compare/v2.0.13...v2.0.14) (2019-09-03)
 

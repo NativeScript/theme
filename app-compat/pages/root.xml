@@ -3,7 +3,7 @@
       class="page">
     <actionBar:action-bar actionBarTitle="NativeScript Themes" />
 
-    <ListView class="list-view" items="{{ somePages }}" itemTap="{{ onNavigationItemTap }}">
+    <ListView class="list-group" items="{{ somePages }}" itemTap="{{ onNavigationItemTap }}">
         <ListView.itemTemplate>
             <StackLayout class="list-group-item" orientation="horizontal">
                 <Label text="{{ 'fa-' + icon | fonticon }}" class="fa nt-icon" />

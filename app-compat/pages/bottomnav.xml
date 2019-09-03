@@ -2,11 +2,17 @@
       xmlns:actionBar="/action-bar"
       class="page"
       navigatingTo="navigatingTo">
-    <actionBar:action-bar actionBarTitle="Tabs and BottomNavigation"/>
+    <actionBar:action-bar actionBarTitle="BottomNavigation"/>
     <BottomNavigation>
         <TabStrip>
-            <TabStripItem title="Tab 1" />
-            <TabStripItem title="Tab 2" />
+            <TabStripItem class="fa">
+                <Image src="font://&#xf10b;" />
+                <Label text="Tab 1" />
+            </TabStripItem>
+            <TabStripItem>
+                <Image src="font://&#xf10c;" class="fa" />
+                <Label text="Tab 2" />
+            </TabStripItem>
         </TabStrip>
 
         <TabContentItem>

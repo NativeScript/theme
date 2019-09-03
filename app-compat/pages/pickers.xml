@@ -7,12 +7,12 @@
   <actionBar:action-bar actionBarTitle="Pickers" />
   <ScrollView>
     <StackLayout class="nt-form">
-      <p:PickerField hint="Pick an item" items="{{ items }}" modalAnimated="{{ true }}" />
-      <dt:DatePickerField hint="Pick a date" />
-      <dt:TimePickerField hint="Choose time" />
-      <dt:DateTimePickerFields hintDate="Choose date" hintTime="and time" />
-      <ac:RadAutoCompleteTextView items="{{ dataItems }}" />
-      <ac:RadAutoCompleteTextView items="{{ dataItems }}" displayMode="Tokens" />
+      <p:PickerField class="input" hint="Pick an item" items="{{ items }}" modalAnimated="{{ true }}" />
+      <dt:DatePickerField class="input" hint="Pick a date" />
+      <dt:TimePickerField class="input" hint="Choose time" />
+      <dt:DateTimePickerFields class="input" hintDate="Choose date" hintTime="and time" />
+      <ac:RadAutoCompleteTextView class="input" items="{{ dataItems }}" />
+      <ac:RadAutoCompleteTextView class="input" items="{{ dataItems }}" displayMode="Tokens" />
     </StackLayout>
   </ScrollView>
 </Page>

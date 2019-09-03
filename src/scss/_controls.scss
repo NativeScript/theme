@@ -54,13 +54,13 @@
     @include form-fields-skin();
 
     @include input-component-skin(
-                (//'NTInput',
+                ('NTInput',
                 '.nt-input')
     );
 
   @include action-bar-skin(
               ('ActionBar',
-              //'NTActionBar',
+              'NTActionBar',
               '.nt-action-bar'),
               ('NTIcon',
               'Label',
@@ -76,9 +76,9 @@
     @include slider-skin('.slider');
     @include switch-skin('.switch');
     @include tab-view-skin('.tab-view');
-    @include list-view-skin('.list-view');
+    @include list-view-skin('.list-group');
     @include side-drawer-skin('.side-drawer');
     @include form-fields-skin();
-    @include input-component-skin('.input');
+    @include input-component-skin('.input-field');
     @include action-bar-skin('.action-bar', '.action-item');
 }

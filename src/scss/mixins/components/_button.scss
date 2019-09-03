@@ -192,7 +192,7 @@
             $contrasted-color: focus background 40%
         );
 
-        #{if($compat, '&-active:active', '&:active, &.-active')} {
+        #{if($compat, '&-active, &:active', '&:active, &.-active')} {
             @include colorize(
                 $contrasted-color: focus background 40%
             );
@@ -209,7 +209,7 @@
                 $border-color: focus
             );
 
-            #{if($compat, '&.btn-active:active', '&:active, &.-active')} {
+            #{if($compat, '&.btn-active, &.btn:active', '&:active, &.-active')} {
                 animation: focus-highlight .3s ease-out forwards;
                 background-color: darken(light(focus), 10%);
 
@@ -232,7 +232,7 @@
                 $contrasted-border-color: focus background 20%
             );
 
-            #{if($compat, '&-active:active', '&:active, &.-active')} {
+            #{if($compat, '&.btn-active, &.btn:active', '&:active, &.-active')} {
                 @include button-animations;
             }
 

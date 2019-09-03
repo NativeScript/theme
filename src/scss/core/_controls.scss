@@ -74,13 +74,13 @@
     @include form-fields();
 
     @include input-component(
-                (//'NTInput',
+                ('NTInput',
                 '.nt-input')
     );
 
   @include action-bar(
               ('ActionBar',
-              //'NTActionBar',
+              'NTActionBar',
               '.nt-action-bar'),
 
               ('NTIcon',
@@ -99,10 +99,10 @@
     @include search-bar('.search-bar');
     @include switch('.switch');
     @include tab-view('.tab-view');
-    @include list-view('.list-view');
+    @include list-view('.list-group');
     @include side-drawer('.side-drawer');
     @include form('.form');
     @include form-fields();
-    @include input-component('.input');
+    @include input-component('.input-field');
     @include action-bar('.action-bar', '.action-item');
 }

@@ -3,7 +3,7 @@
       navigatingTo="navigatingTo">
     <actionBar:action-bar actionBarTitle="Forms"/>
     <ScrollView>
-        <StackLayout class="page form p-15 compat">
+        <StackLayout class="page form p-15">
 
             <StackLayout class="input-field">
                 <TextField id="textField" hint="Input text" class="input" returnKeyType="{{ keyType }}"
@@ -27,35 +27,6 @@
             <TextField hint="Input rounded" class="input input-rounded m-b-10"/>
             <TextField hint="Input border Disabled" class="input input-border m-b-10" isEnabled="false"/>
             <TextField hint="Input rounded Disabled" class="input input-rounded m-b-10" isEnabled="false"/>
-        </StackLayout>
-
-        <StackLayout class="page nt-form">
-
-            <TextField hint="TextField text"/>
-
-            <StackLayout class="nt-input">
-                <Label text="Label" class="m-b-5"/>
-                <TextField hint="TextField text for a single line field"/>
-            </StackLayout>
-
-            <GridLayout class="nt-input -sides" rows="auto, auto" columns="*,*">
-                <Label text="Label" row="0" col="0"/>
-                <TextField hint="TextField text" row="0" col="1"/>
-            </GridLayout>
-
-            <TextField hint="TextField.-border" class="-border m-b-10"/>
-            <TextField hint="TextField.-rounded" class="-rounded m-b-10"/>
-            <TextField hint="TextField.-border Disabled" class="-border m-b-10" isEnabled="false"/>
-            <TextField hint="TextField.-rounded Disabled" class="-rounded m-b-10" isEnabled="false"/>
-
-            <TextView hint="TextView"/>
-
-            <TextView hint="TextView.-border" class="-border"/>
-
-            <GridLayout class="nt-input -sides" rows="auto, auto" columns="*,*">
-                <Label text="Label" row="0" col="0"/>
-                <TextView hint="TextView text" row="0" col="1"/>
-            </GridLayout>
         </StackLayout>
     </ScrollView>
 </Page>

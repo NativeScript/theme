@@ -65,6 +65,13 @@
                 android-elevation: 0;
                 android-dynamic-elevation-offset: 0;
             }
+        } @else {
+            .ns-android & .btn {
+                padding: 12 6;
+
+                android-elevation: 0;
+                android-dynamic-elevation-offset: 0;
+            }
         }
     }
 }
@@ -93,6 +100,12 @@
         @if not $compat {
             .ns-android & Button,
             .ns-android & .nt-button {
+                @include colorize(
+                    $background-color: ab-background
+                );
+            }
+        } @else {
+            .ns-android & .btn {
                 @include colorize(
                     $background-color: ab-background
                 );

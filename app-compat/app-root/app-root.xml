@@ -13,7 +13,7 @@
                 <Image src="~/assets/images/N.png" tap="{{ viewHome }}" class="sidedrawer-header-image"/>
                 <Label text="NativeScript Theme Project" textWrap="true" class="sidedrawer-header-brand" />
             </StackLayout>
-            <ListView class="list-view" row="1" items="{{ pages }}" itemTap="{{ onNavigationItemTap }}">
+            <ListView class="list-group" row="1" items="{{ pages }}" itemTap="{{ onNavigationItemTap }}">
                 <ListView.itemTemplate>
                     <StackLayout class="sidedrawer-list-item" orientation="horizontal">
                         <Label text="{{ 'fa-' + icon | fonticon }}" class="fa sidedrawer-list-item-icon" />
