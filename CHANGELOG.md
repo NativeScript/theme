@@ -1,3 +1,15 @@
+<a name="2.0.16 beta"></a>
+## [2.0.16 beta](https://github.com/NativeScript/theme/compare/v2.0.15...v2.0.16) (2019-09-04)
+
+### Features
+
+* Add .t-36 class
+
+### Fixes
+
+* Fix the dark DateTimePicker's missing icons
+* Fix a crash on orientation change
+
 <a name="2.0.15 beta"></a>
 ## [2.0.15 beta](https://github.com/NativeScript/theme/compare/v2.0.14...v2.0.15) (2019-09-04)
 

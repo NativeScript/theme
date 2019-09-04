@@ -7,7 +7,7 @@
   <actionBar:action-bar actionBarTitle="Pickers" />
   <ScrollView>
     <StackLayout class="nt-form">
-      <p:PickerField hint="Pick an item" items="{{ items }}" modalAnimated="{{ true }}" />
+      <p:PickerField hint="Pick an item" items="{{ countries }}" modalAnimated="{{ true }}" />
       <dt:DatePickerField hint="Pick a date" />
       <dt:TimePickerField hint="Choose time" />
       <dt:DateTimePickerFields hintDate="Choose date" hintTime="and time" />

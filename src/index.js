@@ -105,7 +105,7 @@ function handleOrientation({ newValue: orientation }) {
     if (viewCommon._rootModalViews.length) {
         const classList = new ClassList(app.getRootView().className);
 
-        viewCommon._rootModalViews.forEach((view) => updateRootClasses(orientation, view, classList.list.concat("ns-modal")));
+        viewCommon._rootModalViews.forEach((view) => updateRootClasses(orientation, view, classList.add("ns-modal").list));
     }
 }
 
@@ -121,7 +121,7 @@ const rootModalTrap = {
             if (desc.value instanceof frame.Frame) {
                 const classList = new ClassList(app.getRootView().className);
 
-                updateRootClasses(getOrientation(), desc.value, classList.list.concat("ns-modal"));
+                updateRootClasses(getOrientation(), desc.value, classList.add("ns-modal").list);
             }
         }
 
