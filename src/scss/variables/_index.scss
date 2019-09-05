@@ -3,6 +3,16 @@
 
 $compat: false !default;
 
+$black: #000 !default;
+$white: #fff !default;
+$base: $white !default;
+$grey: #e0e0e0 !default;
+$grey-background: #bababa !default;
+$charcoal: #303030 !default;
+
+// Kendo Palettes
+@import '../core/utilities/kendo-palletes';
+
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
@@ -14,16 +24,17 @@ $enable-transitions:        false !default;
 
 // Needs to be defined, to mitigate leftover radii from other themes
 $border-radius: null !default;
+$btn-radius: 0 !default;
 
 // $accent is only used for compatibility with Kendo Material theme.
 // Main accent variable is $focus. However, it again becomes accent in the color map.
-$accent: $sky !default;
+$accent: lightblue !default;
 
 // Colors
-$background: $white !default;
+$background: #fff !default;
 $primary: alternate($background, 85%) !default;
 $secondary: darken($primary, 30%) !default;
-$focus: $sky !default;
+$focus: lightblue !default;
 $disabled: mix($focus, $background, 40%), !default;
 
 $ab-color: $primary;

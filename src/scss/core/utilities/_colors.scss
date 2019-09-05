@@ -1,21 +1,21 @@
 // sass-lint:disable-all
 // Color classes
-$colors:  ('white', $white),
-          ('black', $black),
-          ('aqua', $aqua),
-          ('blue', $blue),
-          ('charcoal', $charcoal),
-          ('brown', $brown),
-          ('forest', $forest),
-          ('grey', $grey),
-          ('grey-light', $grey-background),
-          ('grey-dark', $grey-dark),
-          ('purple', $purple),
-          ('lemon', $lemon),
-          ('lime', $lime),
-          ('orange', $orange),
-          ('ruby', $ruby),
-          ('sky', $sky);
+$colors:  ('white', const(white)),
+          ('black', const(black)),
+          ('aqua', const(aqua)),
+          ('blue', const(blue)),
+          ('charcoal', const(charcoal)),
+          ('brown', const(brown)),
+          ('forest', const(forest)),
+          ('grey', const(grey)),
+          ('grey-light', const(grey-light)),
+          ('grey-dark', const(grey-dark)),
+          ('purple', const(purple)),
+          ('lemon', const(lemon)),
+          ('lime', const(lime)),
+          ('orange', const(orange)),
+          ('ruby', const(ruby)),
+          ('sky', const(sky));
 
 /**
  * Color classes

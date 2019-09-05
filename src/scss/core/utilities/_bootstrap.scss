@@ -42,7 +42,7 @@
 }
 
 .text-danger {
-  color: $error;
+  color: const(error);
 }
 
 .bg-primary {
@@ -51,6 +51,6 @@
 }
 
 .bg-danger {
-  background-color: $error;
+  background-color: const(error);
   color: $white;
 }
