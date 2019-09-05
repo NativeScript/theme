@@ -1,0 +1,60 @@
+// Core light colors
+$light-colors: (
+    primary: $primary,
+    background: $background,
+    accent: $focus,
+    ab-color: $ab-color,
+    ab-background: $ab-background,
+);
+
+@if (global_variable_exists("theme-type")) {
+    $light-colors: map-merge($light-colors, (
+        accent: map-get($material-light-complimentary, component-bg),
+        disabled: mix(light(accent), light(background), 40%),
+        ab-background: get-base-hue($primary-palette-name, 500)
+    ));
+
+    $light-colors: map-merge($light-colors, (
+        ab-color: alternate(light(ab-background))
+    ));
+}
+
+@if (global_variable_exists("body-bg") or global_variable_exists("bg-color")) {
+    $light-colors: map-merge($light-colors, (
+        ab-background: $accent,
+        ab-color: alternate($accent, 100%)
+    ));
+}
+
+$light-colors: map-merge($light-colors, (
+    background-alt-5: darken(light(background), 5%),
+    background-alt-10: darken(light(background), 10%),
+    background-alt-20: darken(light(background), 20%),
+    secondary: lighten(light(primary), 30%),
+    disabled: mix(light(accent), light(background), 40%),
+
+    text-color: light(primary),
+    headings-color: light(primary),
+
+    tab-text-color: mix(const(gray), light(accent), 70%),
+
+    accent-dark: darken(light(accent), 20%),
+    accent-light: lighten(light(accent), 20%),
+    accent-transparent: mix(transparent, light(accent), 20%),
+    primary-accent: mix(transparent, light(accent), 60%),
+    background-accent: mix(transparent, light(accent), 90%),
+    background-dark-accent: mix(transparent, light(accent), 85%),
+
+    item-active-color: mix(light(primary), light(background), 40%),
+    item-active-background: light(accent),
+
+    btn-color: light(primary)
+));
+
+$light-colors: map-merge($light-colors, (
+    ab-background-dark: darken(light(ab-background), 5%),
+    item-active-icon-color: light(item-active-color),
+    btn-color-inverse: alternate(light(accent)),
+    btn-color-secondary: darken(light(btn-color), 10%)
+));
+

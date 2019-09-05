@@ -5,9 +5,9 @@
 
 .hr,
 .hr-light {
-    @include colorize($border-color: focus-light);
+    @include colorize($border-color: accent-light);
 }
 
 .hr-dark {
-    @include colorize($border-color: focus-dark);
+    @include colorize($border-color: accent-dark);
 }

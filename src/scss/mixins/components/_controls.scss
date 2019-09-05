@@ -36,17 +36,17 @@
 
 @mixin progress($selectors) {
     #{$selectors} {
-        @include colorize($background-color: background-focus);
+        @include colorize($background-color: background-accent);
     }
 }
 
 @mixin slider($selectors) {
     #{$selectors} {
         margin: 20 16;
-        @include colorize($background-color: focus);
+        @include colorize($background-color: accent);
 
         .ns-android & {
-            @include colorize($color: focus);
+            @include colorize($color: accent);
         }
 
         .ns-ios & {
@@ -77,7 +77,7 @@
             );
 
             &[checked=true] {
-                @include colorize($color: focus);
+                @include colorize($color: accent);
             }
 
             &[isEnabled=false] {
@@ -90,13 +90,13 @@
         .ns-ios & {
             margin: 8 15;
             @include colorize(
-                $background-color: focus,
+                $background-color: accent,
                 $off-background-color: background-alt-10
             );
 
             &[isEnabled=false] {
                 @include colorize(
-                    $background-color: primary-focus
+                    $background-color: primary-accent
                 );
             }
         }
@@ -147,30 +147,30 @@
 
 @mixin activity-indicator-skin($selectors) {
     #{$selectors} {
-        @include colorize($color: focus);
+        @include colorize($color: accent);
     }
 }
 
 @mixin segmented-bar-skin($selectors) {
     #{$selectors} {
-        @include colorize($selected-background-color: focus);
+        @include colorize($selected-background-color: accent);
 
         .ns-ios & {
             margin: 0 15;
-            @include colorize($color: focus);
+            @include colorize($color: accent);
         }
     }
 }
 
 @mixin progress-skin($selectors) {
     #{$selectors} {
-        @include colorize($color: focus);
+        @include colorize($color: accent);
     }
 }
 
 @mixin slider-skin($selectors) {
     #{$selectors} {
-        @include colorize($color: focus);
+        @include colorize($color: accent);
 
         &[isEnabled=false] {
             color: $grey;
@@ -187,7 +187,7 @@
             );
 
             &[checked=true] {
-                @include colorize($color: focus);
+                @include colorize($color: accent);
             }
 
             &[isEnabled=false] {
@@ -202,12 +202,12 @@
 
             @include colorize(
                 $color: background,
-                $background-color: focus
+                $background-color: accent
             );
 
             &[isEnabled=false] {
                 @include colorize(
-                    $background-color: primary-focus
+                    $background-color: primary-accent
                 );
             }
         }
@@ -217,13 +217,13 @@
 @mixin tab-view-skin($selectors) {
     #{$selectors} {
         @include colorize(
-            $selected-tab-text-color: focus,
-            $android-selected-tab-highlight-color: focus
+            $selected-tab-text-color: accent,
+            $android-selected-tab-highlight-color: accent
         );
 
         &.ns-dark {
-            selected-tab-text-color: dark(focus);
-            android-selected-tab-highlight-color: dark(focus)
+            selected-tab-text-color: dark(accent);
+            android-selected-tab-highlight-color: dark(accent)
         }
     }
 }
@@ -231,16 +231,16 @@
 @mixin tabs-skin() {
     TabStrip,
     .nt-tab-strip {
-        @include colorize($highlight-color: focus);
+        @include colorize($highlight-color: accent);
     }
 
     TabStripItem:active,
     .nt-tab-strip__item:active {
-        @include colorize($color: focus);
+        @include colorize($color: accent);
     }
 
     TabStripItem:active Label,
     .nt-tab-strip__item:active Label {
-        @include colorize($color: focus);
+        @include colorize($color: accent);
     }
 }

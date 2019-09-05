@@ -1,18 +1,18 @@
 // Core variables
-@import '../variables/index';
+@import './index';
 
 /**
  * Brown variable overrides
  **/
 
 // ActionBar
-$ab-background: $brown;
-$ab-color: $white;
+$ab-background: const(brown);
+$ab-color: const(white);
 
 // Accent
-$focus: $lime;
+$focus: const(lime);
 
 // Buttons
-$btn-color-inverse: $white;
+$btn-color-inverse: const(white);
 
-@import '../core/colors';
+@import '../core/colors/index';

@@ -111,6 +111,11 @@
             height: 100%;
             text-align: center;
         }
+
+        // There is a hidden StackLayout at the root of RadListView.
+        @at-root RadListView > StackLayout {
+            padding: 0;
+        }
     }
 }
 
@@ -119,7 +124,7 @@
     #{$selectors} {
         NTIcon,
         .nt-icon {
-            @include colorize($scale-contrasted-color: focus background 0% 50%);
+            @include colorize($scale-contrasted-color: accent background 0% 50%);
         }
 
         .nt-list-view__delete {

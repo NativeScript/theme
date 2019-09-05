@@ -7,40 +7,40 @@
     <TabView.items>
     <TabViewItem title="Simple">
       <TabViewItem.view>
-        <ListView items="{{ sampleItems }}">
-          <ListView.itemTemplate>
+        <RadListView items="{{ sampleItems }}" class="list-group">
+          <RadListView.itemTemplate>
             <StackLayout>
-              <Label text="{{ title }}"/>
+              <Label class="list-group-item" text="{{ title }}"/>
             </StackLayout>
-          </ListView.itemTemplate>
-        </ListView>
+          </RadListView.itemTemplate>
+        </RadListView>
       </TabViewItem.view>
     </TabViewItem>
     <TabViewItem title="Thumbs">
       <TabViewItem.view>
-        <ListView items="{{ sampleItems }}">
-          <ListView.itemTemplate>
-            <GridLayout rows="*" columns="auto, *">
+        <RadListView items="{{ sampleItems }}" class="list-group">
+          <RadListView.itemTemplate>
+            <GridLayout class="list-group-item" rows="*" columns="auto, *">
               <Image row="0" col="0" src="{{ image }}" class="thumb img-circle" />
               <Label row="0" col="1" text="{{ title }}"  />
             </GridLayout>
-          </ListView.itemTemplate>
-        </ListView>
+          </RadListView.itemTemplate>
+        </RadListView>
       </TabViewItem.view>
     </TabViewItem>
     <TabViewItem title="Multi-line">
     <TabViewItem.view>
-      <ListView items="{{ sampleItems }}">
-        <ListView.itemTemplate>
-          <GridLayout rows="auto" columns="auto, *">
+      <RadListView items="{{ sampleItems }}" class="list-group">
+        <RadListView.itemTemplate>
+          <GridLayout class="list-group-item" rows="auto" columns="auto, *">
             <Image row="0" col="0" src="{{ imagealt }}" class="thumb img-rounded" />
             <StackLayout row="0" col="1" >
               <Label text="{{ title }}" class="list-group-item-heading" />
               <Label text="{{ content }}" textWrap="true"  class="list-group-item-text" />
             </StackLayout>
           </GridLayout>
-        </ListView.itemTemplate>
-      </ListView>
+        </RadListView.itemTemplate>
+      </RadListView>
     </TabViewItem.view>
   </TabViewItem>
     </TabView.items>

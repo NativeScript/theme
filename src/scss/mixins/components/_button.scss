@@ -155,70 +155,58 @@
 
 // Skin
 
-@mixin button-animations() {
-    animation: light-highlight .3s ease-out forwards;
-    background-color: light(background-alt-10);
+@mixin button-animations($animation: "", $color: background, $percent: 5%) {
+    @at-root {
+        @keyframes light-#{$animation}-hightlight {
+            0%   { background-color: light($color); }
+            100% { background-color: darken(light($color), $percent); }
+        }
+
+        @keyframes dark-#{$animation}-hightlight {
+            0%   { background-color: dark($color); }
+            100% { background-color: darken(dark($color), $percent); }
+        }
+    }
+
+    animation: light-#{$animation}-hightlight .3s ease-out forwards;
+    background-color: darken(light($color), $percent);
 
     .ns-dark & {
-        animation: dark-highlight .3s ease-out forwards;
-        background-color: darken(dark(background), 5%);;
+        animation: dark-#{$animation}-hightlight .3s ease-out forwards;
+        background-color: darken(dark($color), $percent);
     }
 }
 
 @mixin button-skin($selectors) {
-    @keyframes light-highlight {
-        0%   { background-color: light(background); }
-        100% { background-color: light(background-alt-10); }
-    }
-
-    @keyframes dark-highlight {
-        0%   { background-color: dark(background); }
-        100% { background-color: darken(dark(background), 5%); }
-    }
-
-    @keyframes focus-highlight {
-        0%   { background-color: light(focus); }
-        100% { background-color: darken(light(focus), 10%); }
-    }
-
-    @keyframes dark-focus-highlight {
-        0%   { background-color: dark(focus); }
-        100% { background-color: darken(dark(focus), 10%); }
-    }
-
     #{$selectors} {
         @include colorize(
             $background-color: background,
-            $contrasted-color: focus background 40%
+            $contrasted-color: accent background 40%
         );
 
         #{if($compat, '&-active, &:active', '&:active, &.-active')} {
             @include colorize(
-                $contrasted-color: focus background 40%
+                $contrasted-color: accent background 40%
             );
 
             @if $enable-rounded {
-                @include button-animations;
+                @include button-animations();
+
+                .ns-root ActionBar & {
+                    @include button-animations(actionbar, ab-background, 10%);
+                }
             }
         }
 
         #{if($compat, '&-primary', '&.-primary')} {
             @include colorize(
-                $alternate-color: focus,
-                $background-color: focus,
-                $border-color: focus
+                $alternate-color: accent,
+                $background-color: accent,
+                $border-color: accent
             );
 
             #{if($compat, '&.btn-active, &.btn:active', '&:active, &.-active')} {
-                animation: focus-highlight .3s ease-out forwards;
-                background-color: darken(light(focus), 10%);
-
-                @if $enable-rounded {
-                    .ns-dark & {
-                        animation: dark-focus-highlight .3s ease-out forwards;
-                        background-color: darken(dark(focus), 10%);
-                    }
-                }
+                @include button-animations(accent, accent, 10%);
             }
         }
 
@@ -229,11 +217,11 @@
         #{if($compat, '&-outline', '&.-outline')}  {
             @include colorize(
                 $background-color: background,
-                $contrasted-border-color: focus background 20%
+                $contrasted-border-color: accent background 20%
             );
 
             #{if($compat, '&.btn-active, &.btn:active', '&:active, &.-active')} {
-                @include button-animations;
+                @include button-animations();
             }
 
             &[isEnabled=false] {

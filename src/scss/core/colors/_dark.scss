@@ -1,0 +1,69 @@
+// Core dark colors
+$dark-colors: (
+    primary: $white,
+    background: $charcoal,
+    accent: $focus
+);
+
+@if (global_variable_exists("bg-color")) {
+    $dark-colors: map-merge($dark-colors, (
+        background: mix($bg-color, $charcoal, 10%)
+    ));
+
+    $dark-colors: map-merge($dark-colors, (
+        primary: alternate(dark(background), 70%)
+    ));
+}
+
+@if (global_variable_exists("body-bg")) {
+    $dark-colors: map-merge($dark-colors, (
+        background: mix($body-bg, $charcoal, if(lightness($body-bg) > .5, 10%, 40%))
+    ));
+
+    $dark-colors: map-merge($dark-colors, (
+        primary: alternate(dark(background), 70%)
+    ));
+}
+
+@if (global_variable_exists("theme-type")) {
+    $dark-colors: map-merge($dark-colors, (
+        accent: map-get($material-dark-complimentary, component-bg),
+        disabled: mix(dark(accent), dark(background), 40%),
+    ));
+}
+
+$dark-colors: map-merge($dark-colors, (
+    background-alt-5: lighten(dark(background), 5%),
+    background-alt-10: lighten(dark(background), 10%),
+    background-alt-20: lighten(dark(background), 20%),
+    secondary: darken(dark(primary), 30%),
+    disabled: mix(dark(accent), dark(background), 40%),
+
+    ab-color: mix(light(ab-color), dark(primary), 20%),
+    ab-background: mix(light(ab-background), dark(background), 50%),
+
+    text-color: dark(primary),
+    headings-color: dark(primary),
+
+    tab-text-color: mix(const(gray), dark(accent), 70%),
+
+    accent-dark: lighten(dark(accent), 20%),
+    accent-light: lighten(dark(accent), 40%),
+    accent-transparent: mix(transparent, dark(accent), 20%),
+    primary-accent: mix(transparent, dark(accent), 60%),
+    background-accent: mix(transparent, dark(accent), 90%),
+    background-dark-accent: mix(transparent, dark(accent), 85%),
+
+    item-active-color: mix(dark(primary), dark(background), 40%),
+    item-active-background: dark(accent),
+
+    btn-color: dark(primary)
+));
+
+$dark-colors: map-merge($dark-colors, (
+    ab-background-dark: darken(dark(ab-background), 5%),
+    item-active-icon-color: dark(item-active-color),
+    btn-color-inverse: alternate(dark(accent)),
+    btn-color-secondary: darken(dark(btn-color), 10%)
+));
+

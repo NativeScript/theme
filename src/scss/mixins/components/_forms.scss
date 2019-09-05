@@ -18,7 +18,7 @@
         }
 
         .nt-form__link {
-            @include colorize($color: focus);
+            @include colorize($color: accent);
         }
 
         .nt-form__title {
@@ -141,7 +141,7 @@
         padding: 0;
 
         Token {
-            @include colorize($contrasted-background-color: focus background -20%);
+            @include colorize($contrasted-background-color: accent background -20%);
             border-radius: 50%;
 
             .ns-android TokenClearButton {
@@ -245,7 +245,7 @@
             );
 
             > * {
-                @include colorize($border-bottom-color: primary-focus);
+                @include colorize($border-bottom-color: primary-accent);
 
                 height: 48;
                 margin-top: 0;
@@ -394,7 +394,7 @@
         @include colorize($contrasted-border-color: gray background 10%);
 
         &:focus {
-            @include colorize($contrasted-border-color: focus background 20%);
+            @include colorize($contrasted-border-color: accent background 20%);
         }
 
         &[isEnabled=false] {
@@ -408,10 +408,10 @@
     /* NativeScript UI AutoComplete */
 
     RadAutoCompleteTextView Token {
-        @include colorize($contrasted-background-color: focus background -20%);
+        @include colorize($contrasted-background-color: accent background -20%);
 
         &:selected {
-            @include colorize($contrasted-background-color: focus background -10%);
+            @include colorize($contrasted-background-color: accent background -10%);
         }
     }
 
@@ -428,10 +428,10 @@
     }
 
     .date-time-picker-buttons {
-        color: contrasted(light(focus), light(background), 40%);
+        color: contrasted(light(accent), light(background), 40%);
 
         &.ns-dark {
-            color: contrasted(dark(focus), dark(background), 40%);
+            color: contrasted(dark(accent), dark(background), 40%);
         }
     }
 
@@ -441,10 +441,10 @@
     }
 
     .date-time-picker-spinners {
-        color: contrasted(light(focus), light(background), 30%);
+        color: contrasted(light(accent), light(background), 30%);
 
         &.ns-dark {
-            color: contrasted(dark(focus), dark(background), 30%);
+            color: contrasted(dark(accent), dark(background), 30%);
         }
     }
 }
@@ -454,7 +454,7 @@
     #{$selectors} {
         @at-root DataFormEditorLabel,
         & #{if($compat, '.label', '> Label')} {
-            @include colorize($contrasted-color: focus background 30%);
+            @include colorize($contrasted-color: accent background 30%);
         }
     }
 }

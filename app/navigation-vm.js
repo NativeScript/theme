@@ -43,6 +43,10 @@ export class NavigationViewModel extends BaseModel {
             value: "listview",
             icon: "list"
         }, {
+            text: "RadListView",
+            value: "radlistview",
+            icon: "th-list"
+        }, {
             text: "Login",
             value: "login-landing",
             icon: "user"

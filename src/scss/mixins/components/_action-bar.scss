@@ -51,10 +51,10 @@
 
         .ns-statusbar-transparent Page > & {
             padding-top: 24;
+        }
 
-            .ns-modal & {
-                padding-top: 0;
-            }
+        .ns-modal.ns-statusbar-transparent Page > & {
+            padding-top: 0;
         }
 
         @if not $compat {

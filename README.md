@@ -89,18 +89,56 @@ import Theme from "nativescript-theme-core";
 Theme.setMode(Theme.Dark); // Or Theme.Light
 ```
 
+Additionally there is another helper method - toggleMode, which can be used without parameters to just toggle the mode
+or with a boolean parameter to ensure light or dark mode is set:
+
+```javascript
+import Theme from "nativescript-theme-core";
+
+Theme.toggleMode(); // to toggle between the modes
+
+// or
+
+Theme.toggleMode(true);  // to ensure dark mode
+Theme.toggleMode(false); // to ensure light mode
+```
+
+##### A note of warning
+
+Due to limitation in Playground the JS Theme API cannot be imported like an ES6 module in a TS/Angular projects. You'll
+have to resort to requiring it:
+
+```javascript
+const Theme = require("nativescript-theme-core");
+
+Theme.setMode(Theme.Dark); // Or Theme.Light
+```
+
 ## More Root Classes
 
 In addition to `.ns-light` and `.ns-dark` classes, the theme's little JavaScript file introduces `.ns-root` on the root element,
 `.ns-android/.ns-ios` depending on the current platform (which the theme extensively uses) and additionally 
 `.ns-portrait/.ns-landscape` and `.ns-phone/.ns-tablet`, which should be self-explanatory. 
 Of course `.ns-portrait/.ns-landscape` get updated on orientation change, so you can use it to show a two pane layout 
-in landscape, for instance. The newest addition is `.ns-statusbar-transparent` since 2.0.4 - add this class to your root 
-element, if you have enabled transparent status bar in the OS and your ActionBar gets underneath it.   
+in landscape, for instance. 
+
+The newest addition is `.ns-statusbar-transparent` since 2.0.4 - add this class to your root element, if you have enabled 
+transparent status bar in the OS and your ActionBar gets underneath it. Keep in mind that **Android APIs before 21** don't
+support transparent status bars and this will result in an undesired top ActionBar padding.
 
 ## Helper Functions and Mixins
 
-There are several functions and mixins in the core theme, that can be used in your projects, as long as you're using SASS/SCSS.
+There are several functions and mixins in the core theme, that can be used in your projects, as long as you're using 
+SASS/SCSS.
+
+If you need to access specific theme variables like simple colors or sizes, do it through the `const` function:
+
+```scss
+Button {
+    background-color: const(forest);
+    height: const(btn-height);
+}
+``` 
 
 You can easily get light/dark colors:
 

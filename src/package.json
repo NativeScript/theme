@@ -1,6 +1,6 @@
 {
   "name": "nativescript-theme-core",
-  "version": "2.0.16",
+  "version": "2.0.17",
   "description": "Telerik NativeScript Core Theme",
   "author": "Telerik <support@telerik.com>",
   "main": "index",
@@ -11,8 +11,8 @@
   },
   "nativescript": {
     "platforms": {
-      "android": "6.0.0",
-      "ios": "6.0.0"
+      "android": "6.1.0",
+      "ios": "6.1.0"
     }
   },
   "keywords": [

@@ -1,18 +1,18 @@
 // Core variables
-@import '../variables/index';
+@import './index';
 
 /**
  * Sky variable overrides
  **/
 
 // ActionBar
-$ab-background: $sky;
-$ab-color: $white;
+$ab-background: const(sky);
+$ab-color: const(white);
 
 // Accent
-$focus: $lemon;
+$focus: const(lemon);
 
 // Buttons
-$btn-color-inverse: $charcoal;
+$btn-color-inverse: const(charcoal);
 
-@import '../core/colors';
+@import '../core/colors/index';

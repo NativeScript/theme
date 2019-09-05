@@ -1,18 +1,18 @@
 // Core variables
-@import '../variables/index';
+@import './index';
 
 /**
  * Forest variable overrides
  **/
 
 // ActionBar
-$ab-background: $forest;
-$ab-color: $white;
+$ab-background: const(forest);
+$ab-color: const(white);
 
 // Accent
-$focus: $aqua;
+$focus: const(aqua);
 
 // Buttons
-$btn-color-inverse: $white;
+$btn-color-inverse: const(white);
 
-@import '../core/colors';
+@import '../core/colors/index';

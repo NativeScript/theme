@@ -1,21 +1,21 @@
 // Core variables
-@import '../variables/index';
+@import './index';
 
 /**
  * Forest variable overrides
  **/
 
 // ActionBar
-$ab-background: $grey-dark;
-$ab-color: $white;
+$ab-background: const(grey-dark);
+$ab-color: const(white);
 
 // Accent
-$focus: $lime;
+$focus: const(lime);
 
 // Buttons
-$btn-color-inverse: $white;
+$btn-color-inverse: const(white);
 $btn-color: $focus;
 $btn-color-secondary: darken($btn-color, 10%);
 $background-alt-10: lighten($btn-color, 10%);
 
-@import '../core/colors';
+@import '../core/colors/index';

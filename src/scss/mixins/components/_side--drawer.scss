@@ -66,7 +66,7 @@
             height: 148;
             width: 100%;
             padding: 30 25;
-            @include colorize($background: background-dark-focus);
+            @include colorize($background: background-dark-accent);
 
             Label {
                 @include colorize($color: ab-color);
@@ -122,7 +122,7 @@
             }
 
             #{if($compat, '.sidedrawer-header', '.nt-drawer__header')} {
-                background: dark(background-dark-focus);
+                background: dark(background-dark-accent);
 
                 Label {
                     color: dark(ab-color);
