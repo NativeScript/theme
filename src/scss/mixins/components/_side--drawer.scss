@@ -83,7 +83,7 @@
             &-image {
                 height: 74;
                 width: 74;
-                border-radius: 37;
+                border-radius: const(border-radius-lg);
                 horizontal-align: center;
                 margin-bottom: 24;
             }

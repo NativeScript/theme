@@ -3,11 +3,11 @@
 // ## Utilities ##
 // Image shapes http://v4-alpha.getbootstrap.com/content/images/#image-shapes
 .img-rounded {
-  border-radius: 5;
+  border-radius: const(border-radius-rounded);
 }
 
 .img-circle {
-  border-radius: 20;
+  border-radius: const(border-radius-lg);
 }
 
 .img-thumbnail {

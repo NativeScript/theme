@@ -28,7 +28,7 @@
 
 .-rounded,
 .rounded {
-    border-radius: 3;
+    border-radius: const(border-radius-rounded);
 }
 
 /* Dividers */
@@ -37,6 +37,6 @@
     height: 1;
     width: 100%;
     margin: 9 0 10;
-    border-width: 0 0 1;
+    border-width: 0 0 const(border-width);
     border-style: solid;
 }

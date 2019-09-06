@@ -5,57 +5,57 @@
         text-transform: none;
         border-color: transparent;
 
-        @include button-base($btn-padding-y, $btn-padding-x, $btn-margin-y, $btn-margin-x, $btn-font-size, $btn-radius, $btn-min-width, $btn-height);
+        @include button-base(const(btn-padding-y), const(btn-padding-x), const(btn-margin-y), const(btn-margin-x), const(btn-font-size), const(btn-radius), const(btn-min-width), const(btn-height));
 
         .ns-ios & {
-            height: $btn-height - 12;
+            height: const(btn-height) - 12;
             border-width: 0;
             font-size: 15;
         }
 
         .ns-android & {
-            margin: $btn-margin-y - 4 $btn-margin-x - 4;
+            margin: const(btn-margin-y) - 4 const(btn-margin-x) - 4;
         }
 
         @if $enable-rounded {
-            height: $btn-height - 12;
-            border-width: 1;
+            height: const(btn-height) - 12;
+            border-width: const(border-width);
             border-color: transparent;
 
             .ns-android & {
-                margin: $btn-margin-y $btn-margin-x;
+                margin: const(btn-margin-y) const(btn-margin-x);
             }
         }
 
         #{if($compat, '&-outline', '&.-outline')} {
-            height: $btn-height - 12;
-            border-width: 1;
+            height: const(btn-height) - 12;
+            border-width: const(border-width);
 
             .ns-android & {
-                margin: $btn-margin-y $btn-margin-x;
+                margin: const(btn-margin-y) const(btn-margin-x);
             }
         }
 
         #{if($compat, '&-rounded-sm', '&.-rounded-sm')},
         #{if($compat, '&-rounded-lg', '&.-rounded-lg')} {
-            height: $btn-height - 12;
-            border-radius: 2;
+            height: const(btn-height) - 12;
+            border-radius: const(border-radius-sm);
 
             .ns-ios & {
-                border-radius: 4;
+                border-radius: const(border-radius-sm) * 2;
             }
 
             .ns-android & {
-                margin: $btn-margin-y $btn-margin-x;
+                margin: const(btn-margin-y) const(btn-margin-x);
             }
         }
 
         #{if($compat, '&-rounded-lg', '&.-rounded-lg')} {
-            border-radius: 40;
+            border-radius: const(border-radius-lg);
         }
 
         &[isEnabled=false] {
-            opacity: .5;
+            opacity: const(disabled-opacity);
         }
 
         #{if($compat, '&-simple', '&.-simple')} {

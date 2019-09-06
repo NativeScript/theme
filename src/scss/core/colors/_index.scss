@@ -40,7 +40,15 @@ $constants: (
     headings-margin-bottom: 4,
     headings-font-weight: normal,
 
-    border-radius: $border-radius
+    // Borders
+    border-width: 1,
+    border-radius: $border-radius,
+    border-radius-sm: 2,
+    border-radius-lg: 50%,
+    border-radius-rounded: 5,
+
+    // Misc
+    disabled-opacity: .5
 );
 
 @import "./light";

@@ -22,13 +22,13 @@
   },
   "dependencies": {
     "bootstrap": "4.3.1",
-    "nativescript-picker": "^2.1.2",
-    "nativescript-datetimepicker": "^1.2.1",
+    "nativescript-picker": "2.1.2",
+    "nativescript-datetimepicker": "1.2.1",
     "nativescript-theme-core": "./src",
     "nativescript-themes": "2.0.1",
-    "nativescript-ui-autocomplete": "^5.1.0",
-    "nativescript-ui-sidedrawer": "^7.0.1",
-    "nativescript-ui-dataform": "^5.0.0",
+    "nativescript-ui-autocomplete": "5.1.0",
+    "nativescript-ui-sidedrawer": "7.0.1",
+    "nativescript-ui-dataform": "5.1.0",
     "tns-core-modules": "^6.1.0"
   },
   "devDependencies": {
