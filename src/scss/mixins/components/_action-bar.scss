@@ -8,7 +8,7 @@
         );
 
         font-weight: bold;
-        font-size: const(btn-font-size) + 2;
+        font-size: const(btn-font-size);
         padding-top: 0;
 
         .ns-android & {
@@ -23,7 +23,7 @@
 
         #{$item-selectors} {
             android-elevation: 0;
-            font-size: const(btn-font-size);
+            font-size: const(font-size);
             padding: 12 3;
             margin: 0;
             min-width: const(btn-min-width);
@@ -45,7 +45,7 @@
 
         & > Label {
             font-weight: bold;
-            font-size: const(btn-font-size) + 2;
+            font-size: const(btn-font-size);
         }
 
         .ns-statusbar-transparent Page > & {
