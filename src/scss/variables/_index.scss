@@ -15,6 +15,33 @@ $charcoal: #303030 !default;
 
 $font-size: 16 !default;
 
+// Button defaults
+$background-alt-10: #c0ebff !default;
+$btn-color-secondary: #01a0ec !default;
+$btn-color-disabled: #a4a4a4 !default;
+$btn-font-size: $font-size + 2 !default;
+$btn-min-width: 64 !default;
+$btn-height: 52 !default;
+$btn-padding-x: 0 !default;
+$btn-padding-y: 0 !default;
+$btn-margin-x: 16 !default;
+$btn-margin-y: 8 !default;
+$btn-radius: 0 !default;
+
+$headings-margin-bottom: 4 !default;
+$headings-font-weight: normal !default;
+
+// Border defaults
+$border-width: 1 !default;
+// Needs to be defined, to mitigate leftover radii from other themes
+$border-radius: null !default;
+$border-radius-sm: 2 !default;
+$border-radius-lg: 50% !default;
+$border-radius-rounded: 5 !default;
+
+// Misc defaults
+$disabled-opacity: .5 !default;
+
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
@@ -24,9 +51,6 @@ $enable-shadows:            false !default;
 $enable-gradients:          false !default;
 $enable-transitions:        false !default;
 
-// Needs to be defined, to mitigate leftover radii from other themes
-$border-radius: null !default;
-$btn-radius: 0 !default;
 
 // $accent is only used for compatibility with Kendo Material theme.
 // Main accent variable is $focus. However, it again becomes accent in the color map.

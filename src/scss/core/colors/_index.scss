@@ -27,35 +27,35 @@ $constants: (
     error: #d50000,
 
     // Buttons
-    btn-color-secondary: #01a0ec,
-    background-alt-10: #c0ebff,
-    btn-color-disabled: #a4a4a4,
-    btn-font-size: 18,
-    btn-min-width: 64,
-    btn-height: 52,
+    background-alt-10: $background-alt-10,
+    btn-color-secondary: $btn-color-secondary,
+    btn-color-disabled: $btn-color-disabled,
+    btn-font-size: $btn-font-size,
+    btn-min-width: $btn-min-width,
+    btn-height: $btn-height,
+    btn-padding-x: $btn-padding-x,
+    btn-padding-y: $btn-padding-y,
+    btn-margin-x: $btn-margin-x,
+    btn-margin-y: $btn-margin-y,
     btn-radius: $btn-radius,
-    btn-padding-x: 0,
-    btn-padding-y: 0,
-    btn-margin-x: 16,
-    btn-margin-y: 8,
 
     // Headings
-    headings-margin-bottom: 4,
-    headings-font-weight: normal,
+    headings-margin-bottom: $headings-margin-bottom,
+    headings-font-weight: $headings-font-weight,
 
     // Borders
-    border-width: 1,
+    border-width: $border-width,
     border-radius: $border-radius,
-    border-radius-sm: 2,
-    border-radius-lg: 50%,
-    border-radius-rounded: 5,
+    border-radius-sm: $border-radius-sm,
+    border-radius-lg: $border-radius-lg,
+    border-radius-rounded: $border-radius-rounded,
 
     // Icons
     icon-font-size: $font-size,
     icon-font-size-lg: $font-size + 4,
 
     // Misc
-    disabled-opacity: .5
+    disabled-opacity: $disabled-opacity
 );
 
 @import "./light";
