@@ -5,6 +5,8 @@
 
 @import '~/assets/css/font-awesome.scss';
 
+@import './app-vars.css';
+
 FlexboxLayout {
     padding: 0 12;
 }
@@ -21,7 +23,6 @@ FlexboxLayout {
   background-size: cover;
   background-position: center;
 }
-
 
 /* Login page Styling */
 

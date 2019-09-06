@@ -6,6 +6,7 @@ node_modules/
 # NativeScript Template
 *.js.map
 *.css
+!app/app-vars.css
 !**/src/**/*.css
 !font-awesome.css
 

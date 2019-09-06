@@ -12,8 +12,8 @@
         <Label text="Class: h2" row="0" col="0" />
         <Label text="Heading" row="0" col="1" class="text-right" />
       </GridLayout>
-      <GridLayout rows="auto" columns="*,*" class="h3 m-5 w-full">
-        <Label text="Class: h3" row="0" col="0" />
+      <GridLayout rows="auto" columns="*,*" class="h3 m-5 w-full test-variable">
+        <Label text="Class: h3, CSS var bgr" row="0" col="0" />
         <Label text="Heading" row="0" col="1" class="text-right" />
       </GridLayout>
       <GridLayout rows="auto" columns="*,*" class="h4 m-5 w-full">
