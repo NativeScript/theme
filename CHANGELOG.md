@@ -1,3 +1,19 @@
+<a name="2.0.17 beta"></a>
+## [2.0.17 beta](https://github.com/NativeScript/theme/compare/v2.0.16...v2.0.17) (2019-09-06)
+
+### Features
+
+* Export all variable maps to CSS variables. Check the [README.md](README.md#css-variables) for a full list.
+* Revise font-sizes, make them the same for both platforms
+
+### Fixes
+
+* Fix the modal ActionBar with ns-statusbar-transparent
+* Fix the aqua skin colors
+* Revamp the Button animations to work in ActionBar
+* Return accent var in maps
+* Remove the ghost StackLayout padding in RadListView
+
 <a name="2.0.16 beta"></a>
 ## [2.0.16 beta](https://github.com/NativeScript/theme/compare/v2.0.15...v2.0.16) (2019-09-04)
 

@@ -9,6 +9,7 @@ Home of the core NativeScript theme 2.0 beta. The documentation of the beta them
 - [Changing Core Theme](#changing-core-theme)
 - [More Root Classes](#more-root-classes)
 - [Helper Functions and Mixins](#helper-functions-and-mixins)
+- [CSS Variables](#css-variables)
 - [Kendo UI ThemeBuilder Support](#kendo-ui-themebuilder-support)
 - [Theme Classes and Compatibility](#theme-classes-and-compatibility)
 - [Why Beta](#why-beta)
@@ -170,6 +171,43 @@ Button {
 
 The above example uses the contrasted function to check the contrast level of the background and adjust the lightness of 
 the focus color (the accent) according to it.
+
+## CSS Variables
+
+Since 2.0.17 beta, the Theme now exports all its internal variables to CSS ones. This is also done for Kendo based skins.
+You can use them to inherit your styles from the Theme. A list of the supported CSS variables follows:
+
+| Simple Colors | Constants | Light Colors | Dark Colors |
+|---------|---------|---------|---------|
+| --color-black | --const-font-size | --light-primary | --dark-primary |
+| --color-white | --const-background-alt-10 | --light-background | --dark-background |
+| --color-grey | --const-btn-color-secondary | --light-accent | --dark-accent |
+| --color-grey-light | --const-btn-color-disabled | --light-ab-color | --dark-background-alt-5 |
+| --color-charcoal | --const-btn-font-size | --light-ab-background | --dark-background-alt-10 |
+| --color-transparent | --const-btn-min-width | --light-background-alt-5 | --dark-background-alt-20 |
+| --color-aqua | --const-btn-height | --light-background-alt-10 | --dark-secondary |
+| --color-blue | --const-btn-padding-x | --light-background-alt-20 | --dark-disabled |
+| --color-brown | --const-btn-padding-y | --light-secondary | --dark-ab-color |
+| --color-forest | --const-btn-margin-x | --light-disabled | --dark-ab-background |
+| --color-grey-dark | --const-btn-margin-y | --light-text-color | --dark-text-color |
+| --color-purple | --const-btn-radius | --light-headings-color | --dark-headings-color |
+| --color-lemon | --const-headings-margin-bottom | --light-tab-text-color | --dark-tab-text-color |
+| --color-lime | --const-headings-font-weight | --light-accent-dark | --dark-accent-dark |
+| --color-orange | --const-border-width | --light-accent-light | --dark-accent-light |
+| --color-ruby | --const-border-radius | --light-accent-transparent | --dark-accent-transparent |
+| --color-sky | --const-border-radius-sm | --light-primary-accent | --dark-primary-accent |
+| --color-error | --const-border-radius-lg | --light-background-accent | --dark-background-accent |
+|  | --const-border-radius-rounded | --light-background-dark-accent | --dark-background-dark-accent |
+|  | --const-icon-font-size | --light-item-active-color | --dark-item-active-color |
+|  | --const-icon-font-size-lg | --light-item-active-background | --dark-item-active-background |
+|  | --const-disabled-opacity | --light-btn-color | --dark-btn-color |
+|  |  | --light-ab-background-dark | --dark-ab-background-dark |
+|  |  | --light-item-active-icon-color | --dark-item-active-icon-color |
+|  |  | --light-btn-color-inverse | --dark-btn-color-inverse |
+|  |  | --light-btn-color-secondary | --dark-btn-color-secondary |
+
+For now these CSS variables are not used internally, so changing them won't change the look of your skin. This is planned 
+for after HSL color support comes in NativeScript 6.2. 
 
 ## Kendo UI ThemeBuilder Support
 
