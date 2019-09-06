@@ -10,6 +10,10 @@
     @return map-get($constants, $const);
 }
 
+@function color($color) {
+    @return map-get($colors, $color);
+}
+
 @function light($color) {
     @return map-get($light-colors, $color);
 }

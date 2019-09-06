@@ -1,7 +1,7 @@
 // Constants
 
-$constants: (
-    // Core variables
+$colors:  (
+    // Core colors
     black: $black,
     white: $white,
     grey: $grey,
@@ -9,9 +9,7 @@ $constants: (
     charcoal: $charcoal,
     transparent: transparent,
 
-    font-size: $font-size,
-
-    // accent varieties
+    // Accents
     aqua: #00caab,
     blue: #3d5afe,
     brown: #795548,
@@ -24,7 +22,11 @@ $constants: (
     ruby: #ff1744,
     sky: #30bcff,
 
-    error: #d50000,
+    error: #d50000
+);
+
+$constants: map-merge($colors, (
+    font-size: $font-size,
 
     // Buttons
     background-alt-10: $background-alt-10,
@@ -56,7 +58,7 @@ $constants: (
 
     // Misc
     disabled-opacity: $disabled-opacity
-);
+));
 
 @import "./light";
 @import "./dark";

@@ -1,28 +1,9 @@
-// sass-lint:disable-all
-// Color classes
-$colors:  ('white', const(white)),
-          ('black', const(black)),
-          ('aqua', const(aqua)),
-          ('blue', const(blue)),
-          ('charcoal', const(charcoal)),
-          ('brown', const(brown)),
-          ('forest', const(forest)),
-          ('grey', const(grey)),
-          ('grey-light', const(grey-light)),
-          ('grey-dark', const(grey-dark)),
-          ('purple', const(purple)),
-          ('lemon', const(lemon)),
-          ('lime', const(lime)),
-          ('orange', const(orange)),
-          ('ruby', const(ruby)),
-          ('sky', const(sky));
-
 /**
  * Color classes
  * The following creates this pattern:
  * .c-grey{color:#e0e0e0}.c-bg-grey{background-color:#e0e0e0}
 **/
-@each $name, $color in $colors {
-  .c-#{$name} { color: $color; }
-  .c-bg-#{$name} { background-color: $color; }
+@each $name in map-keys($colors) {
+  .c-#{"" + $name} { color: color($name); }
+  .c-bg-#{"" + $name} { background-color: color($name); }
 }
