@@ -11,7 +11,9 @@ $grey-background: #bababa !default;
 $charcoal: #303030 !default;
 
 // Kendo Palettes
-@import '../core/utilities/kendo-palletes';
+@import '../core/primitives/kendo-palletes';
+
+$font-size: 16 !default;
 
 // Options
 //

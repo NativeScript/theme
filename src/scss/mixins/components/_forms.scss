@@ -22,7 +22,7 @@
         }
 
         .nt-form__title {
-            font-size: 18;
+            font-size: const(btn-font-size);
         }
 
         .nt-form__logo {
@@ -95,13 +95,9 @@
         border-width: 0 0 const(border-width);
         border-radius: const(btn-radius);
         background-color: transparent;
-        font-size: 16;
+        font-size: const(font-size);
         padding: 8 0 4;
         margin: 5 16;
-
-        .ns-ios & {
-            font-size: 15;
-        }
 
         #{if($compat,
             ('&.input-rounded',
@@ -338,7 +334,7 @@
 
         @at-root DataFormEditorLabel,
         & #{if($compat, '.label', '> Label')} {
-            font-size: 16;
+            font-size: const(font-size);
             color: const(grey-light);
         }
 
@@ -363,7 +359,7 @@
         @if not $compat {
             & > NTIcon,
             & > .nt-icon {
-                font-size: 24;
+                font-size: const(icon-font-size-lg);
                 vertical-align: center;
                 horizontal-align: right;
                 margin: -15 10 0 0;

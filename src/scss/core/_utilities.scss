@@ -29,7 +29,7 @@ Image {
 
 NTIcon,
 .nt-icon {
-    font-size: 16;
+    font-size: const(btn-font-size);
 }
 
 

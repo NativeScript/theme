@@ -1,6 +1,7 @@
 @import './colors';
 @import './spacing';
 @import './text';
+@import './headings';
 @import './bootstrap';
 
 .fa {
@@ -13,12 +14,11 @@
     );
 
     font-family: 'Roboto Medium';
-    font-size: 14;
+    font-size: const(font-size);
+}
 
-    @at-root .ns-ios {
-        font-family: 'SF UI Text Medium', system;
-        font-size: 15;
-    }
+.ns-ios {
+    font-family: 'SF UI Text Medium', system;
 }
 
 .-hidden,

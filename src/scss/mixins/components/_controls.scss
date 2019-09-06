@@ -26,7 +26,6 @@
 
 @mixin segmented-bar($selectors) {
     #{$selectors} {
-        font-size: 13;
         @include colorize(
             $color: primary,
             $background-color: background
@@ -105,7 +104,7 @@
 
 @mixin tab-view($selectors) {
     #{$selectors} {
-        tab-text-font-size: 18;
+        tab-text-font-size: const(btn-font-size);
         text-transform: capitalize;
         @include colorize(
             $selected-tab-text-color: primary,
@@ -139,7 +138,7 @@
 
     BottomNavigation,
     .nt-bottom-navigation {
-        font-size: 14;
+        font-size: const(font-size) - 2;
     }
 }
 

@@ -8,12 +8,11 @@
         );
 
         font-weight: bold;
-        font-size: 17;
+        font-size: const(btn-font-size) + 2;
         padding-top: 0;
 
         .ns-android & {
             font-weight: 500;
-            font-size: 20;
         }
 
         @if $compat {
@@ -24,10 +23,10 @@
 
         #{$item-selectors} {
             android-elevation: 0;
-            font-size: 15;
+            font-size: const(btn-font-size);
             padding: 12 3;
             margin: 0;
-            min-width: 0;
+            min-width: const(btn-min-width);
             width: auto;
             border-width: 0;
             text-transform: none;
@@ -46,7 +45,7 @@
 
         & > Label {
             font-weight: bold;
-            font-size: 17;
+            font-size: const(btn-font-size) + 2;
         }
 
         .ns-statusbar-transparent Page > & {

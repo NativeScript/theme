@@ -1,12 +1,15 @@
 // Constants
 
 $constants: (
+    // Core variables
     black: $black,
     white: $white,
     grey: $grey,
     grey-light: $grey-background,
     charcoal: $charcoal,
     transparent: transparent,
+
+    font-size: $font-size,
 
     // accent varieties
     aqua: #00caab,
@@ -46,6 +49,10 @@ $constants: (
     border-radius-sm: 2,
     border-radius-lg: 50%,
     border-radius-rounded: 5,
+
+    // Icons
+    icon-font-size: $font-size,
+    icon-font-size-lg: $font-size + 4,
 
     // Misc
     disabled-opacity: .5
