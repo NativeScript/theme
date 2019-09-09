@@ -177,8 +177,9 @@ the focus color (the accent) according to it.
 
 ## CSS Variables
 
-Since 2.0.17 beta, the Theme now exports all its internal variables to CSS ones. This is also done for Kendo based skins.
-You can use them to inherit your styles from the Theme. A list of the supported CSS variables follows:
+Since 2.0.17 beta, the Theme now exports all its internal variables to CSS ones in the .ns-root class. 
+This is also done for Kendo based skins. You can use them to inherit your styles from the Theme. 
+A list of the supported CSS variables follows:
 
 | Simple Colors | Constants | Light Colors | Dark Colors |
 |---------|---------|---------|---------|
@@ -208,6 +209,14 @@ You can use them to inherit your styles from the Theme. A list of the supported 
 |  |  | --light-item-active-icon-color | --dark-item-active-icon-color |
 |  |  | --light-btn-color-inverse | --dark-btn-color-inverse |
 |  |  | --light-btn-color-secondary | --dark-btn-color-secondary |
+
+Use them like this:
+
+```css
+.my-accented-class {
+    color: var(--light-accent);
+}
+```
 
 For now these CSS variables are not used internally, so changing them won't change the look of your skin. This is planned 
 for after HSL color support comes in NativeScript 6.2. 
