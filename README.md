@@ -22,9 +22,12 @@ Home of the core NativeScript theme 2.0 beta. The documentation of the beta them
 
 ## Breaking changes
 
-* The theme is now **applied using Element selectors**, if you need the old classes approach - it has moved to .compat CSS/SCSS files, e.g. `core.compat.css` and `blue.compat.css`.
-* Theme 2.0 beta **requires some JavaScript to be loaded** which helps with the styling.
+* The theme requires 2 files to be loaded - the core theme and a skin on top of it. Read [Usage](#usage) for more info.
+* The theme is now **applied using Element selectors**, if you need the old classes approach - it has moved to 
+.compat CSS/SCSS files, e.g. `core.compat.css` and `blue.compat.css`.
+* Theme 2.0 beta **requires some JavaScript to be loaded** for **{N} before 6.1** which helps with the styling.
 * Theme 2.0 replaces node-sass with **sass** which is more up to date feature-wise and doesn't have a native dependency. 
+It does still work with node-sass though.
 
 ## Usage
 
@@ -271,10 +274,13 @@ to look like another one) are namespaced, so for instance a button is `.nt-butto
 ## Why Beta
 
 * Firstly, we want to gather feedback from the community and create a theme that is useful and if possible - beautiful.
-* Secondly, the theme needs the classes inside the core modules to work properly without loading additional JavaScript.
-* And thirdly - {N} core modules should have a way to propagate OS theme changes inside the app, so that it can act accordingly.
+* Secondly, the theme needs the classes inside the core modules to work properly without loading additional JavaScript 
+(this is now released with {N} 6.1).
+* And thirdly - {N} core modules should have a way to propagate OS theme changes inside the app, so that it can act accordingly 
+(planned for {N} 6.2).
 
-Hopefully these can be achieved until {N} 6.1. 
+The theme is relatively stable, try the latest version [![npm](https://img.shields.io/npm/v/nativescript-theme-core?label=%20&style=flat-square)](https://www.npmjs.com/package/nativescript-theme-core)
+and report if you notice problems. 
 
 ## Screenshots
 
