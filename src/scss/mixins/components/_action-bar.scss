@@ -26,7 +26,7 @@
             font-size: const(font-size);
             padding: 12 3;
             margin: 0;
-            min-width: const(btn-min-width);
+            min-width: const(btn-min-width) - 24;
             width: auto;
             border-width: 0;
             text-transform: none;
@@ -70,6 +70,36 @@
 
                 android-elevation: 0;
                 android-dynamic-elevation-offset: 0;
+            }
+        }
+
+        > Label {
+            width: 100%;
+        }
+
+        > Label,
+        > GridLayout Label {
+            font-weight: bold;
+            font-size: const(btn-font-size);
+            vertical-alignment: center;
+            text-align: center;
+        }
+
+        > GridLayout {
+            padding: 0 4;
+            width: 100%;
+
+            Button {
+                padding: 12 8;
+            }
+
+            [col="2"] {
+                horizontal-alignment: right;
+            }
+
+            @at-root .ns-android & Button {
+                padding: 12 14;
+                margin: 0;
             }
         }
     }

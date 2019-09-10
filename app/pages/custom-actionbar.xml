@@ -1,0 +1,16 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      navigatingTo="navigatingTo">
+
+  <ActionBar loaded="onLoaded">
+    <GridLayout rows="*" columns="*, auto, *">
+        <Label row="0" col="1" text="Action Title" textWrap="true"></Label>
+        <Button text="Back" textWrap="true" row="0" col="0"></Button>
+        <Button text="Something" textWrap="true" row="0" col="2"></Button>
+    </GridLayout>
+  </ActionBar>
+
+  <ScrollView class="page">
+    <StackLayout class="p-20">
+    </StackLayout>
+  </ScrollView>
+</Page>

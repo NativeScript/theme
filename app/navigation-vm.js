@@ -81,6 +81,10 @@ export class NavigationViewModel extends BaseModel {
             text: "BottomNavigation",
             value: "bottomnav",
             icon: "ellipsis-v"
+        }, {
+            text: "Custom ActionBar",
+            value: "custom-actionbar",
+            icon: "minus"
         });
     }
 
