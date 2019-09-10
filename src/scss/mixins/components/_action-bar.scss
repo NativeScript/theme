@@ -60,16 +60,10 @@
             .ns-android & Button,
             .ns-android & .nt-button {
                 padding: 12 6;
-
-                android-elevation: 0;
-                android-dynamic-elevation-offset: 0;
             }
         } @else {
             .ns-android & .btn {
                 padding: 12 6;
-
-                android-elevation: 0;
-                android-dynamic-elevation-offset: 0;
             }
         }
 
@@ -81,7 +75,7 @@
         > GridLayout Label {
             font-weight: bold;
             font-size: const(btn-font-size);
-            vertical-alignment: center;
+            vertical-align: center;
             text-align: center;
         }
 
@@ -91,10 +85,11 @@
 
             Button {
                 padding: 12 8;
+                horizontal-align: left;
             }
 
             [col="2"] {
-                horizontal-alignment: right;
+                horizontal-align: right;
             }
 
             @at-root .ns-android & Button {
