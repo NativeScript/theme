@@ -1,16 +1,17 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
       navigatingTo="navigatingTo">
 
-  <ActionBar loaded="onLoaded">
-    <GridLayout rows="*" columns="*, auto, *">
-        <Label row="0" col="1" text="Action Title" textWrap="true" />
-        <Button text="Back" textWrap="true" row="0" col="0" tap="{{ goBack }}" />
-        <Button text="Something" textWrap="true" row="0" col="2" />
-    </GridLayout>
-  </ActionBar>
+    <ActionBar loaded="onLoaded">
+        <NavigationButton visibility="collapsed" />
+        <GridLayout rows="*" columns="*, auto, *">
+            <Label row="0" col="1" text="Action Title" textWrap="true"/>
+            <Button text="Back" textWrap="true" row="0" col="0" tap="{{ goBack }}"/>
+            <Button text="Something" textWrap="true" row="0" col="2"/>
+        </GridLayout>
+    </ActionBar>
 
-  <ScrollView class="page">
-    <StackLayout class="p-20">
-    </StackLayout>
-  </ScrollView>
+    <ScrollView class="page">
+        <StackLayout class="p-20">
+        </StackLayout>
+    </ScrollView>
 </Page>

@@ -4,6 +4,7 @@
 ### Features
 
 * Apply a default skin over the Core theme, similar to core in 1.x
+* Add styling for custom ActionBar (GridLayout, Label and Buttons in the TitleView), check the example
 
 ### Fixes
 

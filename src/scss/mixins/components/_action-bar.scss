@@ -27,11 +27,6 @@
             text-transform: none;
             font-weight: normal;
 
-            .ns-ios &,
-            .ns-ios &:active {
-                @include colorize($background-color: transparent);
-            }
-
             &:active {
                 opacity: .7;
             }
@@ -117,6 +112,11 @@
                 @include colorize(
                     $color: ab-color
                 );
+            }
+
+            .ns-ios &,
+            .ns-ios &:active {
+                @include colorize($background-color: transparent);
             }
         }
 

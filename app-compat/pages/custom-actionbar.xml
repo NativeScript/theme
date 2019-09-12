@@ -2,6 +2,7 @@
       navigatingTo="navigatingTo">
 
   <ActionBar loaded="onLoaded">
+        <NavigationButton visibility="collapsed" />
     <GridLayout rows="*" columns="*, auto, *">
         <Label row="0" col="1" text="Action Title" textWrap="true" />
         <Button text="Back" textWrap="true" row="0" col="0" tap="{{ goBack }}" />

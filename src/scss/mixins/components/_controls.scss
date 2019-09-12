@@ -117,11 +117,10 @@
 
 @mixin slider-skin($selectors) {
     #{$selectors} {
-        @include colorize($background-color: accent);
-
-        .ns-android & {
-            @include colorize($color: accent);
-        }
+        @include colorize(
+            $color: accent,
+            $background-color: accent
+        );
 
         &[isEnabled=false],
         .ns-android &[isEnabled=false] {
@@ -162,11 +161,10 @@
         }
 
         .ns-ios & {
-            $off-background-color: transparent;
-
             @include colorize(
                 $color: background,
-                $background-color: accent
+                $background-color: accent,
+                $off-background-color: background-alt-10
             );
 
             &[isEnabled=false] {
