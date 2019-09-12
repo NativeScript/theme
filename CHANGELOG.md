@@ -1,3 +1,17 @@
+<a name="2.0.18 beta"></a>
+## [2.0.18 beta](https://github.com/NativeScript/theme/compare/v2.0.17...v2.0.18) (2019-09-12)
+
+### Features
+
+* Apply a default skin over the Core theme, similar to core in 1.x
+
+### Fixes
+
+* Fix some issues in the app
+* Move all colorization in the skins
+* Fix some issues in Slider, SearchBar, SegmentedBar
+* Fix the aqua accent
+
 <a name="2.0.17 beta"></a>
 ## [2.0.17 beta](https://github.com/NativeScript/theme/compare/v2.0.16...v2.0.17) (2019-09-06)
 

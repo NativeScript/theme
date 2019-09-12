@@ -6,6 +6,7 @@ Home of the core NativeScript theme 2.0 beta. The documentation of the beta them
 
 - [Breaking Changes](#breaking-changes)
 - [Usage](#usage)
+- [Usage before NativeScript 6.1](#usage-before-nativescript-61)
 - [Changing Core Theme](#changing-core-theme)
 - [More Root Classes](#more-root-classes)
 - [Helper Functions and Mixins](#helper-functions-and-mixins)
@@ -31,35 +32,56 @@ It does still work with node-sass though.
 
 ## Usage
 
-The core theme supports light and dark core styling and skins on top of that. In order to use the 2.0 beta theme, 
-you will also need to include a small JS file in your project:
-
-```javascript
-    import "nativescript-theme-core";
-```
-
-This JS takes care of updating several classes on the app root elements, until their 
-[inclusion in tns-core-modules](https://github.com/NativeScript/NativeScript/issues/7313). 
-
-To load the theme styling, just load the core and skin CSS:
+The core theme supports light and dark core styling and skins on top of that. To load the core theme styling, just 
+load the core CSS (the default skin was added in 2.0.18):
 
 ```css
-    @import "~nativescript-theme-core/css/core.css";
-    @import "~nativescript-theme-core/css/blue.css";
+ @import "~nativescript-theme-core/css/core.css";
 ```
 
 or alternatively SCSS:
 
 ```scss
-    @import "~nativescript-theme-core/core";
-    @import "~nativescript-theme-core/blue";
+@import "~nativescript-theme-core/core";
 ```
+
+If you want, you can choose from several different skins. To do that, you can include a second CSS/SCC file just after
+you load the core CSS/SCSS (if you use Theme 2.017 or earlier, you will have to include both files for the styling
+to work. 
+
+```css
+@import "~nativescript-theme-core/css/core.css";
+@import "~nativescript-theme-core/css/blue.css";
+```
+
+or
+
+```scss
+@import "~nativescript-theme-core/core";
+@import "~nativescript-theme-core/blue";
+```
+
+Here is the old list of Theme skins - the first two are now the Core default Light and Dark skins, the rest are 
+all the Light skins available, listed by name.
+
+![Multiple Platforms](http://docs.nativescript.org/img/theme/color-schemes-all.png) 
 
 The theme will style your application using Element selectors - you don't need to add CSS classes on every element you
 need to style.
 
-Additionally, if you need to create you own skin, you can start from the core theme - it includes the sizing and 
-initial styling of the components without colorizing them too much.
+Additionally, if you need to create you own skin, you can start just from the core theme - it includes the sizing and 
+initial styling of the components.
+
+## Usage before NativeScript 6.1
+
+In order to use the 2.0 beta theme before {N} 6.1, you will also need to include a small JS file in your project:
+
+```javascript
+import "nativescript-theme-core";
+```
+
+This JS takes care of updating several classes on the app root elements, something that got 
+[included in tns-core-modules](https://github.com/NativeScript/NativeScript/issues/7313) in {N} 6.1.
 
 ## Setting Dark or Light mode
 
@@ -268,8 +290,8 @@ The old generic theme classes have been retired to avoid clashes with user code.
 if you want to use them, you should load them separately, like this:
 
 ```scss
-    @import "~nativescript-theme-core/core.compat";
-    @import "~nativescript-theme-core/blue.compat";
+@import "~nativescript-theme-core/core.compat";
+@import "~nativescript-theme-core/blue.compat";
 ```
 
 There might be bugs with these in the beta, you might want to hold off upgrading if you want to use the old classes.
