@@ -5,7 +5,7 @@ import { ClassList } from "nativescript-theme-core";
 
 const currentTheme = {
     theme: "core.light",
-    skin: "blue",
+    skin: "",
     css: ""
 };
 
@@ -73,7 +73,7 @@ export class ThemesModel extends BaseModel {
 
         import(
             /*  webpackMode: "lazy",
-                webpackExclude: /\/scss\/|index.d.ts/ */
+                webpackExclude: /\/scss\/|index.d.ts|index.js/ */
             `nativescript-theme-core/${currentTheme.skin}`)
             .then((skinStyles) => this._applyStyles(skinStyles, `${currentTheme.skin}`));
     }

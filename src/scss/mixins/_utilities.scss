@@ -22,6 +22,14 @@
     @return map-get($dark-colors, $color);
 }
 
+@function mode-get($mode: light, $color) {
+    @if $mode == light {
+        @return map-get($light-colors, $color);
+    }
+
+    @return map-get($dark-colors, $color);
+}
+
 @function rem-to-dip($size) {
     @if unit($size) != 'em' or unit($size) != 'rem' {
         @return $size / ($size * 0 + 1);

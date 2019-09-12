@@ -87,10 +87,6 @@
          'DateTimePickerFields',
          'DataFormEditorCore',
          'RadAutoCompleteTextView'))} {
-        @include colorize(
-            $color: primary,
-            $placeholder-color: secondary
-        );
 
         border-width: 0 0 const(border-width);
         border-radius: const(btn-radius);
@@ -115,17 +111,12 @@
 
         &[isEnabled=false] {
             opacity: const(disabled-opacity);
-            @include colorize(
-                $color: gray,
-                $contrasted-background-color: gray background -30%
-            );
         }
     }
 
     Label,
     DataFormEditorLabel
     {
-        @include colorize($color: primary);
         padding: 2 0;
     }
 
@@ -137,7 +128,6 @@
         padding: 0;
 
         Token {
-            @include colorize($contrasted-background-color: accent background -20%);
             border-radius: const(border-radius-lg);
 
             @at-root .ns-android TokenClearButton {
@@ -150,13 +140,6 @@
             @if $enable-rounded {
                 border-radius: max(const(btn-radius) - 3, 0);
             }
-        }
-
-        SuggestionView {
-            @include colorize(
-                $color: primary,
-                $background-color: background
-            );
         }
     }
 
@@ -232,14 +215,7 @@
         ListView {
             separator-color: transparent;
 
-            @include colorize(
-                $color: primary,
-                $background: background
-            );
-
             > * {
-                @include colorize($border-bottom-color: primary-accent);
-
                 height: 48;
                 margin-top: 0;
                 padding: 10 12;
@@ -275,26 +251,8 @@
         }
     }
 
-    PickerPage.ns-dark ListView,
-    .ns-dark SuggestionView {
-        color: dark(primary);
-        background: dark(background);
-    }
-
-    RadDataForm {
-        @include colorize(
-            $color: primary,
-            $placeholder-color: secondary
-        );
-
-        PropertyEditor {
-            padding: 5 0 0;
-
-            @include colorize(
-                $color: primary,
-                $background-color: background
-            );
-        }
+    RadDataForm PropertyEditor {
+        padding: 5 0 0;
     }
 
     @if $enable-rounded {
@@ -384,7 +342,11 @@
          'RadAutoCompleteTextView'))} {
         background-color: transparent;
 
-        @include colorize($contrasted-border-color: gray background 10%);
+        @include colorize(
+            $color: primary,
+            $placeholder-color: secondary,
+            $contrasted-border-color: gray background 10%
+        );
 
         &:focus {
             @include colorize($contrasted-border-color: accent background 20%);
@@ -393,7 +355,41 @@
         &[isEnabled=false] {
             @include colorize(
                 $color: gray,
-                $contrasted-background-color: gray background -10%
+                $background-color: background-alt-5
+            );
+        }
+    }
+
+    Label,
+    DataFormEditorLabel
+    {
+        @include colorize($color: primary);
+    }
+
+    RadAutoCompleteTextView {
+        Token {
+            @include colorize($contrasted-background-color: accent background -20%);
+        }
+
+        SuggestionView {
+            @include colorize(
+                $color: primary,
+                $background-color: background
+            );
+        }
+    }
+
+
+    RadDataForm {
+        @include colorize(
+            $color: primary,
+            $placeholder-color: secondary
+        );
+
+        PropertyEditor {
+            @include colorize(
+                $color: primary,
+                $background-color: background
             );
         }
     }
@@ -406,6 +402,25 @@
         &:selected {
             @include colorize($contrasted-background-color: accent background -10%);
         }
+    }
+
+    PickerPage {
+        ListView {
+            @include colorize(
+                $color: primary,
+                $background: background
+            );
+
+            > * {
+                @include colorize($border-bottom-color: primary-accent);
+            }
+        }
+    }
+
+    PickerPage.ns-dark ListView,
+    .ns-dark SuggestionView {
+        color: dark(primary);
+        background: dark(background);
     }
 
     /* DateTime Picker */

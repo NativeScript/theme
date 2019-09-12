@@ -3,9 +3,9 @@
 
   <ActionBar loaded="onLoaded">
     <GridLayout rows="*" columns="*, auto, *">
-        <Label row="0" col="1" text="Action Title" textWrap="true"></Label>
-        <Button text="Back" textWrap="true" row="0" col="0"></Button>
-        <Button text="Something" textWrap="true" row="0" col="2"></Button>
+        <Label row="0" col="1" text="Action Title" textWrap="true" />
+        <Button text="Back" textWrap="true" row="0" col="0" tap="{{ goBack }}" />
+        <Button text="Something" textWrap="true" row="0" col="2" />
     </GridLayout>
   </ActionBar>
 

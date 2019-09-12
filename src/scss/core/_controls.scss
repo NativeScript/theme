@@ -78,16 +78,16 @@
                 '.nt-input')
     );
 
-  @include action-bar(
-              ('ActionBar',
-              'NTActionBar',
-              '.nt-action-bar'),
+    @include action-bar(
+                ('ActionBar',
+                'NTActionBar',
+                '.nt-action-bar'),
 
-              ('NTIcon',
-              'Label',
-              'Button',
-              '.nt-action-bar__item')
-  );
+                ('NTIcon',
+                'Label',
+                'Button',
+                '.nt-action-bar__item')
+    );
 } @else {
     @include button('.btn');
     @include label('.label');
@@ -106,3 +106,5 @@
     @include input-component('.input-field');
     @include action-bar('.action-bar', '.action-item');
 }
+
+@import '../controls';

@@ -1,20 +1,7 @@
 @mixin side-drawer($selectors) {
     #{$selectors} {
 
-        @if not $compat {
-            > *,
-            .nt-drawer__content {
-                @include colorize($background: background);
-            }
-        } @else {
-            .sidedrawer-left,
-            .sidedrawer-center {
-                @include colorize(
-                    $color: primary,
-                    $background: background
-                );
-            }
-
+        @if $compat {
             .sidedrawer-left {
                 .sidedrawer-header-brand,
                 .sidedrawer-header-image {
@@ -65,10 +52,8 @@
             height: 148;
             width: 100%;
             padding: 30 25;
-            @include colorize($background: background-dark-accent);
 
             Label {
-                @include colorize($color: ab-color);
                 padding: 0;
                 vertical-align: center;
             }
@@ -94,12 +79,7 @@
 
         // This covers the dark root RSD, as the .ns-dark class is set on it
         &.ns-dark {
-            @if not $compat {
-                > *,
-                .nt-drawer__content {
-                    background: dark(background);
-                }
-            } @else {
+            @if $compat {
                 .sidedrawer-left,
                 .sidedrawer-center {
                     color: dark(primary);
@@ -130,17 +110,18 @@
     }
 }
 
-@mixin side-drawer-skin-content() {
+@mixin side-drawer-skin-content($mode: light) {
     #{if($compat, '.sidedrawer-header', '.nt-drawer__header')} {
-        background: dark(ab-background-dark);
+        background: mode-get($mode, ab-background-dark);
 
         Label {
-            color: dark(ab-color);
+            color: mode-get($mode, ab-color);
         }
     }
 
     #{if($compat, ('.sidedrawer-left', '.sidedrawer-center'), ('> *', '.nt-drawer__content'))} {
-        color: dark(ab-color);
+        color: mode-get($mode, ab-color);
+        background: mode-get($mode, background);
     }
 }
 
@@ -149,8 +130,9 @@
         @include side-drawer-skin-content();
 
         // This covers the dark root RSD, as the .ns-dark class is set on it
+        .ns-dark &,
         &.ns-dark {
-            @include side-drawer-skin-content();
+            @include side-drawer-skin-content(dark);
         }
     }
 }

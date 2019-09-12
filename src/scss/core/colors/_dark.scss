@@ -40,7 +40,7 @@ $dark-colors: map-merge($dark-colors, (
     disabled: mix(dark(accent), dark(background), 40%),
 
     ab-color: mix(light(ab-color), dark(primary), 20%),
-    ab-background: mix(light(ab-background), dark(background), 50%),
+    ab-background: if(light(ab-background) == #fff, dark(background), mix(light(ab-background), dark(background), 50%)),
 
     text-color: dark(primary),
     headings-color: dark(primary),

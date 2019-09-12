@@ -25,6 +25,11 @@
                 '.nt-slider')
     );
 
+    @include search-bar-skin(
+                ('SearchBar',
+                '.nt-search-bar')
+    );
+
     @include switch-skin(
                 ('Switch',
                 '.nt-switch')

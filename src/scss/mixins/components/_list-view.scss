@@ -21,11 +21,6 @@
                 stretch: aspectFit;
                 margin-bottom: 0;
             }
-
-            &.active,
-            &:highlighted {
-                @include colorize($background-color: item-active-background);
-            }
         }
 
         @if $compat {
@@ -41,7 +36,6 @@
             }
 
             .list-group-item-text {
-                @include colorize($color: secondary);
                 font-size: const(font-size) - 2;
             }
         } @else {
@@ -81,14 +75,9 @@
 
             .-separator {
                 border-bottom-width: 1;
-                @include colorize($border-bottom-color: background-alt-20);
             }
 
-            @include colorize($separator-color: background-alt-20);
-
-
             .nt-list-view__delete {
-                background-color: const(error);
                 padding: 0 10;
 
                 .ns-ios & {
@@ -96,7 +85,6 @@
                 }
 
                 & > Label {
-                    @include colorize($color: primary);
                     horizontal-align: center;
                     vertical-align: center;
                     text-transform: capitalize;
@@ -122,13 +110,36 @@
 
 @mixin list-view-skin($selectors) {
     #{$selectors} {
+        #{if($compat, '.list-group-item', '> *')} {
+            &.active,
+            &:highlighted {
+                @include colorize($background-color: item-active-background);
+            }
+        }
+
+        @if $compat {
+            .list-group-item-text {
+                @include colorize($color: secondary);
+            }
+        } @else {
+            .-separator {
+                @include colorize($border-bottom-color: background-alt-20);
+            }
+
+            @include colorize($separator-color: background-alt-20);
+
+            .nt-list-view__delete {
+                background-color: const(error);
+
+                & > Label {
+                    @include colorize($color: primary);
+                }
+            }
+        }
+
         NTIcon,
         .nt-icon {
             @include colorize($scale-contrasted-color: accent background 0% 50%);
-        }
-
-        .nt-list-view__delete {
-            background-color: const(error);
         }
     }
 }

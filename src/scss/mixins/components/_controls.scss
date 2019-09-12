@@ -24,60 +24,31 @@
     }
 }
 
-@mixin segmented-bar($selectors) {
-    #{$selectors} {
-        @include colorize(
-            $color: primary,
-            $background-color: background
-        );
-    }
-}
+@mixin segmented-bar($selectors) {}
 
-@mixin progress($selectors) {
-    #{$selectors} {
-        @include colorize($background-color: background-accent);
-    }
-}
+@mixin progress($selectors) {}
 
 @mixin slider($selectors) {
     #{$selectors} {
         margin: 20 16;
-        @include colorize($background-color: accent);
-
-        .ns-android & {
-            @include colorize($color: accent);
-        }
 
         .ns-ios & {
             margin: 10 15;
         }
 
         &[isEnabled=false] {
-            background-color: $grey;
-            color: $grey;
+            background-color: const(grey);
+            color: const(grey);
         }
     }
 }
 
-@mixin search-bar($selectors) {
-    #{$selectors} {
-        @include colorize($color: primary);
-    }
-}
+@mixin search-bar($selectors) {}
 
 @mixin switch($selectors) {
     #{$selectors} {
         .ns-android & {
             margin: 14 16;
-
-            @include colorize(
-                $color: background-alt-20,
-                $background-color: background-alt-20
-            );
-
-            &[checked=true] {
-                @include colorize($color: accent);
-            }
 
             &[isEnabled=false] {
                 @include colorize(
@@ -88,10 +59,6 @@
 
         .ns-ios & {
             margin: 8 15;
-            @include colorize(
-                $background-color: accent,
-                $off-background-color: background-alt-10
-            );
 
             &[isEnabled=false] {
                 @include colorize(
@@ -106,36 +73,10 @@
     #{$selectors} {
         tab-text-font-size: const(btn-font-size);
         text-transform: capitalize;
-        @include colorize(
-            $selected-tab-text-color: primary,
-            $tab-background-color: background,
-            $tab-text-color: tab-text-color
-        );
-
-        &.ns-dark {
-            selected-tab-text-color: dark(primary);
-            tab-background-color: dark(background);
-            tab-text-color: dark(tab-text-color);
-        }
     }
 }
 
 @mixin tabs() {
-    TabStripItem,
-    .nt-tab-strip__item {
-        @include colorize($color: primary);
-    }
-
-    TabStrip,
-    .nt-tab-strip {
-        @include colorize($scale-alternate-background: background 5%);
-    }
-
-    TabContentItem,
-    .nt-tab-content__item {
-        @include colorize($background: background);
-    }
-
     BottomNavigation,
     .nt-bottom-navigation {
         font-size: const(font-size) - 2;
@@ -152,7 +93,11 @@
 
 @mixin segmented-bar-skin($selectors) {
     #{$selectors} {
-        @include colorize($selected-background-color: accent);
+        @include colorize(
+            $color: primary,
+            $background-color: background,
+            $selected-background-color: accent
+        );
 
         .ns-ios & {
             margin: 0 15;
@@ -163,17 +108,37 @@
 
 @mixin progress-skin($selectors) {
     #{$selectors} {
-        @include colorize($color: accent);
+        @include colorize(
+            $color: accent,
+            $background-color: background-accent
+        );
     }
 }
 
 @mixin slider-skin($selectors) {
     #{$selectors} {
-        @include colorize($color: accent);
+        @include colorize($background-color: accent);
 
-        &[isEnabled=false] {
-            color: $grey;
+        .ns-android & {
+            @include colorize($color: accent);
         }
+
+        &[isEnabled=false],
+        .ns-android &[isEnabled=false] {
+            color: const(grey);
+            background-color: const(grey);
+        }
+    }
+}
+
+@mixin search-bar-skin($selectors) {
+    #{$selectors} {
+        @include colorize(
+            $color: primary,
+            $background-color: background,
+            $text-field-hint-color: secondary,
+            $text-field-background-color: transparent
+        );
     }
 }
 
@@ -217,11 +182,15 @@
     #{$selectors} {
         @include colorize(
             $selected-tab-text-color: accent,
+            $tab-background-color: background,
+            $tab-text-color: tab-text-color,
             $android-selected-tab-highlight-color: accent
         );
 
         &.ns-dark {
             selected-tab-text-color: dark(accent);
+            tab-background-color: dark(background);
+            tab-text-color: dark(tab-text-color);
             android-selected-tab-highlight-color: dark(accent)
         }
     }
@@ -230,16 +199,24 @@
 @mixin tabs-skin() {
     TabStrip,
     .nt-tab-strip {
-        @include colorize($highlight-color: accent);
+        @include colorize(
+            $highlight-color: accent,
+            $scale-alternate-background: background 5%
+        );
     }
 
-    TabStripItem:active,
-    .nt-tab-strip__item:active {
-        @include colorize($color: accent);
+    TabStripItem,
+    .nt-tab-strip__item {
+        @include colorize($color: primary);
+
+        &:active,
+        &:active Label {
+            @include colorize($color: accent);
+        }
     }
 
-    TabStripItem:active Label,
-    .nt-tab-strip__item:active Label {
-        @include colorize($color: accent);
+    TabContentItem,
+    .nt-tab-content__item {
+        @include colorize($background: background);
     }
 }

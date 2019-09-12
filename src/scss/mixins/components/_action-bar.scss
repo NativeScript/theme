@@ -2,11 +2,6 @@
 
 @mixin action-bar($selectors, $item-selectors) {
     #{$selectors} {
-        @include colorize(
-            $color: ab-color,
-            $background-color: ab-background
-        );
-
         font-weight: bold;
         font-size: const(btn-font-size);
         padding-top: 0;
@@ -39,7 +34,6 @@
 
             &:active {
                 opacity: .7;
-                @include colorize($color: ab-color);
             }
         }
 
@@ -59,11 +53,11 @@
         @if not $compat {
             .ns-android & Button,
             .ns-android & .nt-button {
-                padding: 12 6;
+                padding: 0 6;
             }
         } @else {
             .ns-android & .btn {
-                padding: 12 6;
+                padding: 0 6;
             }
         }
 
@@ -83,8 +77,13 @@
             padding: 0 4;
             width: 100%;
 
+            > StackLayout {
+                padding: 0;
+                horizontal-align: left;
+            }
+
             Button {
-                padding: 12 8;
+                padding: 12 10;
                 horizontal-align: left;
             }
 
@@ -93,7 +92,7 @@
             }
 
             @at-root .ns-android & Button {
-                padding: 12 14;
+                padding: 12 16;
                 margin: 0;
             }
         }

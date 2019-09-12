@@ -54,17 +54,17 @@ $enable-transitions:        false !default;
 
 // $accent is only used for compatibility with Kendo Material theme.
 // Main accent variable is $focus. However, it again becomes accent in the color map.
-$accent: lightblue !default;
+$accent: #30bcff !default;
 
 // Colors
 $background: #fff !default;
 $primary: alternate($background, 85%) !default;
 $secondary: darken($primary, 30%) !default;
-$focus: lightblue !default;
+$focus: #30bcff !default;
 $disabled: mix($focus, $background, 40%), !default;
 
 $ab-color: $primary;
-$ab-background: mix($background, $primary, 20%);
+$ab-background: $white;
 
 // Kendo overrides
 
