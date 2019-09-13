@@ -14,7 +14,8 @@
 
 // export each map to CSS custom variables
 
-.ns-root {
+.ns-root,
+.ns-modal {
     @each $name in map-keys($colors) {
         --color-#{"" + $name}: #{color($name)};
     }

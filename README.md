@@ -199,7 +199,7 @@ the focus color (the accent) according to it.
 
 ## CSS Variables
 
-Since 2.0.17 beta, the Theme now exports all its internal variables to CSS ones in the .ns-root class. 
+Since 2.0.17 beta, the Theme now exports all its internal variables to CSS ones in the .ns-root and .ns-modal classes. 
 This is also done for Kendo based skins. You can use them to inherit your styles from the Theme. 
 A list of the supported CSS variables follows:
 

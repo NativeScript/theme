@@ -1,3 +1,10 @@
+<a name="2.0.19 beta"></a>
+## [2.0.19 beta](https://github.com/NativeScript/theme/compare/v2.0.18...v2.0.19) (2019-09-12)
+
+### Features
+
+* Export CSS variables to .ns-modal too
+
 <a name="2.0.18 beta"></a>
 ## [2.0.18 beta](https://github.com/NativeScript/theme/compare/v2.0.17...v2.0.18) (2019-09-12)
 
