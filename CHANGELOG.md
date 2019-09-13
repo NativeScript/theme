@@ -1,5 +1,12 @@
+<a name="2.0.20 beta"></a>
+## [2.0.20 beta](https://github.com/NativeScript/theme/compare/v2.0.19...v2.0.20) (2019-09-13)
+
+### Fixes
+
+* Fix a node-sass incompatibility
+
 <a name="2.0.19 beta"></a>
-## [2.0.19 beta](https://github.com/NativeScript/theme/compare/v2.0.18...v2.0.19) (2019-09-12)
+## [2.0.19 beta](https://github.com/NativeScript/theme/compare/v2.0.18...v2.0.19) (2019-09-13)
 
 ### Features
 

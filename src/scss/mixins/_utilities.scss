@@ -22,7 +22,7 @@
     @return map-get($dark-colors, $color);
 }
 
-@function mode-get($mode: light, $color) {
+@function mode-get($mode, $color) {
     @if $mode == light {
         @return map-get($light-colors, $color);
     }
