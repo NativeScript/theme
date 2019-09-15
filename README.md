@@ -13,6 +13,7 @@ Home of the core NativeScript theme 2.0 beta. The documentation of the beta them
 - [CSS Variables](#css-variables)
 - [Kendo UI ThemeBuilder Support](#kendo-ui-themebuilder-support)
 - [Theme Classes and Compatibility](#theme-classes-and-compatibility)
+- [Should I use sass or node-sass](#should-i-use-sass-or-node-sass)
 - [Why Beta](#why-beta)
 - [Screenshots 📸](#screenshots)
 - [Changelog 📝](https://github.com/NativeScript/theme/blob/master/CHANGELOG.md)
@@ -82,6 +83,19 @@ import "nativescript-theme-core";
 
 This JS takes care of updating several classes on the app root elements, something that got 
 [included in tns-core-modules](https://github.com/NativeScript/NativeScript/issues/7313) in {N} 6.1.
+
+## Should I use sass or node-sass
+
+Theme 2.0 is developed using SASS. The NPM package used was sass (formerly dart-sass), however it can be used with either sass or node-sass. The difference between them is that sass doesn't depend on a native module (unless you add fibers) and is a little slower (30%) than node-sass, however it doesn't need recompilation if you change Node versions often. If you decide to use it, you should update your webpack config and change the sass-loader options to load sass instead (node-sass is the default sass-loader implementation), like this:
+
+```javascript
+{
+    loader: "sass-loader",
+    options: {
+        implementation: require("sass")
+    }
+}
+```
 
 ## Setting Dark or Light mode
 
@@ -301,6 +315,19 @@ For instance, the buttons need `.-primary` and `.-outline` modifiers, instead of
 `.btn-outline` classes. All element classes (which are not needed by default, except if you want to style a component 
 to look like another one) are namespaced, so for instance a button is `.nt-button`, an action bar is `.nt-action-bar` and a ListView is 
 `.nt-list-view`.
+
+## Should I use sass or node-sass
+
+Theme 2.0 is developed using SASS. The NPM package used was sass (formerly dart-sass), however it can be used with either sass or node-sass. The difference between them is that sass doesn't depend on a native module (unless you add fibers) and is a little slower (30%) than node-sass, however it doesn't need recompilation if you change Node versions often. If you decide to use it, you should update your webpack config and change the sass-loader options to load sass instead (node-sass is the default sass-loader implementation), like this:
+
+```javascript
+{
+    loader: "sass-loader",
+    options: {
+        implementation: require("sass")
+    }
+}
+```
 
 ## Why Beta
 
