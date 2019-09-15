@@ -7,12 +7,13 @@ Home of the core NativeScript theme 2.0 beta. The documentation of the beta them
 - [Breaking Changes](#breaking-changes)
 - [Usage](#usage)
 - [Usage before NativeScript 6.1](#usage-before-nativescript-61)
-- [Changing Core Theme](#changing-core-theme)
-- [More Root Classes](#more-root-classes)
-- [Helper Functions and Mixins](#helper-functions-and-mixins)
-- [CSS Variables](#css-variables)
-- [Kendo UI ThemeBuilder Support](#kendo-ui-themebuilder-support)
-- [Theme Classes and Compatibility](#theme-classes-and-compatibility)
+- [Setting Dark or Light mode](#setting-dark-or-light-mode)
+- [Setting Dark or Light mode from JavaScript](#setting-dark-or-light-mode-from-javascript)
+- [More root classes](#more-root-classes)
+- [Using Theme variables](#using-theme-variables)
+- [CSS variables](#css-variables)
+- [Kendo UI ThemeBuilder support](#kendo-ui-themebuilder-support)
+- [Theme classes and compatibility](#theme-classes-and-compatibility)
 - [Should I use sass or node-sass](#should-i-use-sass-or-node-sass)
 - [Why Beta](#why-beta)
 - [Screenshots 📸](#screenshots)
@@ -149,7 +150,7 @@ const Theme = require("nativescript-theme-core");
 Theme.setMode(Theme.Dark); // Or Theme.Light
 ```
 
-## More Root Classes
+## More root classes
 
 In addition to `.ns-light` and `.ns-dark` classes, the theme's little JavaScript file introduces `.ns-root` on the root element,
 `.ns-android/.ns-ios` depending on the current platform (which the theme extensively uses) and additionally 
@@ -206,7 +207,7 @@ Button {
 The above example uses the contrasted function to check the contrast level of the background and adjust the lightness of 
 the focus color (the accent) according to it.
 
-## CSS Variables
+## CSS variables
 
 Since 2.0.17 beta, the Theme now exports all its internal variables to CSS ones in the .ns-root and .ns-modal classes. 
 This is also done for Kendo based skins. You can use them to inherit your styles from the Theme. 
@@ -252,7 +253,7 @@ Use them like this:
 For now these CSS variables are not used internally, so changing them won't change the look of your skin. This is planned 
 for after HSL color support comes in NativeScript 6.2. 
 
-## Kendo UI ThemeBuilder Support
+## Kendo UI ThemeBuilder support
 
 The theme now supports inheriting the [Kendo UI ThemeBuilder](https://themebuilder.telerik.com/) theme variables. Just head
 there, customize your Keno UI SASS theme and hit the Download button. You will get a ZIP with two files in it - the theme CSS 
@@ -293,7 +294,7 @@ Take this file, add the following row under it:
 
 And load the file after your core theme. It should just work&trade;. If it doesn't - head for the issues section.
 
-## Theme Classes and Compatibility
+## Theme classes and compatibility
 
 The old generic theme classes have been retired to avoid clashes with user code. They now live in the .compat world - 
 if you want to use them, you should load them separately, like this:
