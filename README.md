@@ -62,6 +62,14 @@ or
 @import "~nativescript-theme-core/blue";
 ```
 
+In order to import just the Theme variables in one of your modules, use this:
+
+```scss
+@import "~nativescript-theme-core/scss/variables";
+```
+
+It will import just the variables and mixins, without any additional styling.
+
 Here is the old list of Theme skins - the first two are now the Core default Light and Dark skins, the rest are 
 all the Light skins available, listed by name.
 
@@ -83,19 +91,6 @@ import "nativescript-theme-core";
 
 This JS takes care of updating several classes on the app root elements, something that got 
 [included in tns-core-modules](https://github.com/NativeScript/NativeScript/issues/7313) in {N} 6.1.
-
-## Should I use sass or node-sass
-
-Theme 2.0 is developed using SASS. The NPM package used was sass (formerly dart-sass), however it can be used with either sass or node-sass. The difference between them is that sass doesn't depend on a native module (unless you add fibers) and is a little slower (30%) than node-sass, however it doesn't need recompilation if you change Node versions often. If you decide to use it, you should update your webpack config and change the sass-loader options to load sass instead (node-sass is the default sass-loader implementation), like this:
-
-```javascript
-{
-    loader: "sass-loader",
-    options: {
-        implementation: require("sass")
-    }
-}
-```
 
 ## Setting Dark or Light mode
 
@@ -166,7 +161,7 @@ The newest addition is `.ns-statusbar-transparent` since 2.0.4 - add this class 
 transparent status bar in the OS and your ActionBar gets underneath it. Keep in mind that **Android APIs before 21** don't
 support transparent status bars and this will result in an undesired top ActionBar padding.
 
-## Helper Functions and Mixins
+## Using Theme variables
 
 There are several functions and mixins in the core theme, that can be used in your projects, as long as you're using 
 SASS/SCSS.
@@ -180,7 +175,7 @@ Button {
 }
 ``` 
 
-You can easily get light/dark colors:
+You can get light/dark colors:
 
 ```scss
 Button {
