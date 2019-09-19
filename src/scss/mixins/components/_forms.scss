@@ -125,7 +125,9 @@
     }
 
     RadAutoCompleteTextView {
-        padding: 0;
+        &[displayMode=Tokens] {
+            padding: 4 0 8;
+        }
 
         Token {
             border-radius: const(border-radius-lg);
@@ -268,12 +270,8 @@
             padding: 12 14;
         }
 
-        RadAutoCompleteTextView {
-            padding: 1 10;
-
-            &[displayMode$=okens] {
-                padding: 1 7;
-            }
+        RadAutoCompleteTextView[displayMode=Tokens] {
+            padding: 12 14;
         }
 
         DateTimePickerFields {
@@ -358,6 +356,10 @@
                 $background-color: background-alt-5
             );
         }
+    }
+
+    PropertyEditor:focus DataFormEditorCore {
+        @include colorize($contrasted-border-color: accent background 20%);
     }
 
     Label,
