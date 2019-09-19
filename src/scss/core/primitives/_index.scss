@@ -13,12 +13,9 @@
         $color: primary
     );
 
-    font-family: 'Roboto Medium';
+    font-family: sans-serif;
+    font-weight: normal;
     font-size: const(font-size);
-}
-
-.ns-ios {
-    font-family: 'SF UI Text Medium', system;
 }
 
 .-hidden,
