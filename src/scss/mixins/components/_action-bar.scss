@@ -2,19 +2,8 @@
 
 @mixin action-bar($selectors, $item-selectors) {
     #{$selectors} {
-        font-weight: bold;
         font-size: const(btn-font-size);
         padding-top: 0;
-
-        .ns-android & {
-            font-weight: 500;
-        }
-
-        @if $compat {
-            .action-bar-title {
-                vertical-align: center;
-            }
-        }
 
         #{$item-selectors} {
             android-elevation: 0;
@@ -60,9 +49,7 @@
             width: 100%;
         }
 
-        > Label,
-        > GridLayout Label {
-            font-weight: bold;
+        #{if($compat, '.action-bar-title', '> Label, > GridLayout Label')} {
             font-size: const(btn-font-size);
             vertical-align: center;
             text-align: center;
