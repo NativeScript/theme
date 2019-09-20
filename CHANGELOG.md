@@ -1,3 +1,18 @@
+<a name="2.0.21 beta"></a>
+## [2.0.21 beta](https://github.com/NativeScript/theme/compare/v2.0.20...v2.0.21) (2019-09-21)
+
+### Features
+
+* Add focus state support for the RadDataForm
+* Adjust RadAutoCompleteTextView paddings after its CSS fixes in 5.1.1
+
+### Fixes
+
+* Remove bold from ActionBar title to make it consistent across OSes
+* Fix .action-bar-title in compat
+* Fix the missing Roboto font in iOS - font now set to sans-serif normal
+* Fix RadAutoCompleteTextView clear button in iOS
+
 <a name="2.0.20 beta"></a>
 ## [2.0.20 beta](https://github.com/NativeScript/theme/compare/v2.0.19...v2.0.20) (2019-09-13)
 
