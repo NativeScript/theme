@@ -371,6 +371,14 @@
     RadAutoCompleteTextView {
         Token {
             @include colorize($contrasted-background-color: accent background -20%);
+
+            &:selected {
+                @include colorize($contrasted-background-color: accent background -10%);
+            }
+        }
+
+        ClearButton {
+            @include colorize($color: accent);
         }
 
         SuggestionView {
@@ -397,14 +405,6 @@
     }
 
     /* NativeScript UI AutoComplete */
-
-    RadAutoCompleteTextView Token {
-        @include colorize($contrasted-background-color: accent background -20%);
-
-        &:selected {
-            @include colorize($contrasted-background-color: accent background -10%);
-        }
-    }
 
     PickerPage {
         ListView {
