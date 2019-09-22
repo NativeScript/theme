@@ -46,10 +46,6 @@
 
         #{if($compat, '&-rounded-sm', '&.-rounded-sm')} {
             border-radius: const(border-radius-sm);
-
-            .ns-ios & {
-                border-radius: const(border-radius-sm) * 2;
-            }
         }
 
         #{if($compat, '&-rounded-lg', '&.-rounded-lg')} {
