@@ -38,15 +38,14 @@
         #{if($compat, '&-rounded-sm', '&.-rounded-sm')},
         #{if($compat, '&-rounded-lg', '&.-rounded-lg')} {
             height: const(btn-height) - 12;
-            border-radius: const(border-radius-sm);
-
-            .ns-ios & {
-                border-radius: const(border-radius-sm) * 2;
-            }
 
             .ns-android & {
                 margin: const(btn-margin-y) const(btn-margin-x);
             }
+        }
+
+        #{if($compat, '&-rounded-sm', '&.-rounded-sm')} {
+            border-radius: const(border-radius-sm);
         }
 
         #{if($compat, '&-rounded-lg', '&.-rounded-lg')} {
