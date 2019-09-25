@@ -1,46 +1,47 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
   xmlns:actionBar="/action-bar"
+  xmlns:rlv="nativescript-ui-listview"
   navigatingTo="navigatingTo">
-  <actionBar:action-bar actionBarTitle="ListView" />
+  <actionBar:action-bar actionBarTitle="RadListView" />
 
   <TabView id="tabViewContainer" class="tab-view">
     <TabView.items>
     <TabViewItem title="Simple">
       <TabViewItem.view>
-        <ListView items="{{ sampleItems }}">
-          <ListView.itemTemplate>
+        <rlv:RadListView items="{{ sampleItems }}" selectionBehavior="Press">
+          <rlv:RadListView.itemTemplate>
             <StackLayout>
               <Label text="{{ title }}"/>
             </StackLayout>
-          </ListView.itemTemplate>
-        </ListView>
+          </rlv:RadListView.itemTemplate>
+        </rlv:RadListView>
       </TabViewItem.view>
     </TabViewItem>
     <TabViewItem title="Thumbs">
       <TabViewItem.view>
-        <ListView items="{{ sampleItems }}">
-          <ListView.itemTemplate>
-            <GridLayout rows="*" columns="auto, *">
+        <rlv:RadListView items="{{ sampleItems }}">
+          <rlv:RadListView.itemTemplate>
+            <GridLayout rows="*" columns="auto, *" class="-separator">
               <Image row="0" col="0" src="{{ image }}" class="thumb img-circle" />
               <Label row="0" col="1" text="{{ title }}"  />
             </GridLayout>
-          </ListView.itemTemplate>
-        </ListView>
+          </rlv:RadListView.itemTemplate>
+        </rlv:RadListView>
       </TabViewItem.view>
     </TabViewItem>
     <TabViewItem title="Multi-line">
     <TabViewItem.view>
-      <ListView items="{{ sampleItems }}">
-        <ListView.itemTemplate>
-          <GridLayout rows="auto" columns="auto, *">
+      <rlv:RadListView items="{{ sampleItems }}">
+        <rlv:RadListView.itemTemplate>
+          <GridLayout rows="auto" columns="auto, *" class="-separator">
             <Image row="0" col="0" src="{{ imagealt }}" class="thumb img-rounded" />
             <StackLayout row="0" col="1" >
               <Label text="{{ title }}" class="list-group-item-heading" />
               <Label text="{{ content }}" textWrap="true"  class="list-group-item-text" />
             </StackLayout>
           </GridLayout>
-        </ListView.itemTemplate>
-      </ListView>
+        </rlv:RadListView.itemTemplate>
+      </rlv:RadListView>
     </TabViewItem.view>
   </TabViewItem>
     </TabView.items>

@@ -1,37 +1,38 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
   xmlns:actionBar="/action-bar"
+  xmlns:rlv="nativescript-ui-listview"
   navigatingTo="navigatingTo">
-  <actionBar:action-bar actionBarTitle="ListView" />
+  <actionBar:action-bar actionBarTitle="RadListView" />
 
   <TabView id="tabViewContainer" class="tab-view">
     <TabView.items>
     <TabViewItem title="Simple">
       <TabViewItem.view>
-        <RadListView items="{{ sampleItems }}" class="list-group">
-          <RadListView.itemTemplate>
+        <rlv:RadListView items="{{ sampleItems }}" class="list-group">
+          <rlv:RadListView.itemTemplate>
             <StackLayout>
               <Label class="list-group-item" text="{{ title }}"/>
             </StackLayout>
-          </RadListView.itemTemplate>
-        </RadListView>
+          </rlv:RadListView.itemTemplate>
+        </rlv:RadListView>
       </TabViewItem.view>
     </TabViewItem>
     <TabViewItem title="Thumbs">
       <TabViewItem.view>
-        <RadListView items="{{ sampleItems }}" class="list-group">
-          <RadListView.itemTemplate>
+        <rlv:RadListView items="{{ sampleItems }}" class="list-group">
+          <rlv:RadListView.itemTemplate>
             <GridLayout class="list-group-item" rows="*" columns="auto, *">
               <Image row="0" col="0" src="{{ image }}" class="thumb img-circle" />
               <Label row="0" col="1" text="{{ title }}"  />
             </GridLayout>
-          </RadListView.itemTemplate>
-        </RadListView>
+          </rlv:RadListView.itemTemplate>
+        </rlv:RadListView>
       </TabViewItem.view>
     </TabViewItem>
     <TabViewItem title="Multi-line">
     <TabViewItem.view>
-      <RadListView items="{{ sampleItems }}" class="list-group">
-        <RadListView.itemTemplate>
+      <rlv:RadListView items="{{ sampleItems }}" class="list-group">
+        <rlv:RadListView.itemTemplate>
           <GridLayout class="list-group-item" rows="auto" columns="auto, *">
             <Image row="0" col="0" src="{{ imagealt }}" class="thumb img-rounded" />
             <StackLayout row="0" col="1" >
@@ -39,8 +40,8 @@
               <Label text="{{ content }}" textWrap="true"  class="list-group-item-text" />
             </StackLayout>
           </GridLayout>
-        </RadListView.itemTemplate>
-      </RadListView>
+        </rlv:RadListView.itemTemplate>
+      </rlv:RadListView>
     </TabViewItem.view>
   </TabViewItem>
     </TabView.items>

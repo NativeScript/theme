@@ -3,32 +3,6 @@
       navigatingTo="navigatingTo">
     <actionBar:action-bar actionBarTitle="Forms"/>
     <ScrollView>
-        <StackLayout class="page form p-15 compat">
-
-            <StackLayout class="input-field">
-                <TextField id="textField" hint="Input text" class="input" returnKeyType="{{ keyType }}"
-                           returnPress="{{ returnPress }}"/>
-                <StackLayout class="hr-light"/>
-            </StackLayout>
-
-            <StackLayout class="input-field">
-                <Label text="Label" class="label font-weight-bold m-b-5"/>
-                <TextField hint="Input text for a single line field" class="input"/>
-                <StackLayout class="hr-light"/>
-            </StackLayout>
-
-            <GridLayout class="input-field input-sides" rows="auto, auto" columns="*,*">
-                <Label text="Label" class="label font-weight-bold" row="0" col="0"/>
-                <TextField hint="Input text" class="input right" row="0" col="1"/>
-                <StackLayout class="hr-light" row="1" colSpan="2"/>
-            </GridLayout>
-
-            <TextField hint="Input border" class="input input-border m-b-10"/>
-            <TextField hint="Input rounded" class="input input-rounded m-b-10"/>
-            <TextField hint="Input border Disabled" class="input input-border m-b-10" isEnabled="false"/>
-            <TextField hint="Input rounded Disabled" class="input input-rounded m-b-10" isEnabled="false"/>
-        </StackLayout>
-
         <StackLayout class="page nt-form">
 
             <TextField hint="TextField text"/>

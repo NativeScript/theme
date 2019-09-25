@@ -105,11 +105,19 @@
             padding: 0;
         }
     }
+
+    // Workaround for the background-color set on deeper level in RadListView
+    RadListView > * > * {
+        background-color: transparent;
+    }
+
 }
 
 
 @mixin list-view-skin($selectors) {
     #{$selectors} {
+        @include colorize($item-selected-background-color: item-active-background);
+
         #{if($compat, '.list-group-item', '> *')} {
             &.active,
             &:highlighted {

@@ -29,6 +29,7 @@
     "nativescript-ui-autocomplete": "5.1.1",
     "nativescript-ui-sidedrawer": "7.0.2",
     "nativescript-ui-dataform": "5.1.0",
+    "nativescript-ui-listview": "7.1.0",
     "tns-core-modules": "6.1.1"
   },
   "devDependencies": {
