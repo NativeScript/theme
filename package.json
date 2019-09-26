@@ -1,6 +1,6 @@
 {
   "name": "nativescript-theme-core",
-  "version": "2.0.21",
+  "version": "2.0.22",
   "description": "Telerik NativeScript Core Theme",
   "author": "Telerik <support@telerik.com>",
   "homepage": "https://www.nativescript.org",
@@ -28,7 +28,7 @@
     "nativescript-themes": "2.0.1",
     "nativescript-ui-autocomplete": "5.1.1",
     "nativescript-ui-sidedrawer": "7.0.2",
-    "nativescript-ui-dataform": "5.1.0",
+    "nativescript-ui-dataform": "5.1.1",
     "nativescript-ui-listview": "7.1.0",
     "tns-core-modules": "6.1.1"
   },

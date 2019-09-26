@@ -1,3 +1,14 @@
+<a name="2.0.22 beta"></a>
+## [2.0.22 beta](https://github.com/NativeScript/theme/compare/v2.0.21...v2.0.22) (2019-09-26)
+
+### Fixes
+
+* Added a workaround for node-sass still not getting updated to 3.6.x - to be able to import variables
+as listed in the README
+* Fix large border-radius not applied in iOS, up the small to 4pt (to differ from Android defaults) (thanks @kulikala)
+* Remove the default Image margin - not needed and confusing
+* Sync app and app-compat, some housekeeping
+
 <a name="2.0.21 beta"></a>
 ## [2.0.21 beta](https://github.com/NativeScript/theme/compare/v2.0.20...v2.0.21) (2019-09-21)
 

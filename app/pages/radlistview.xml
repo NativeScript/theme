@@ -10,7 +10,7 @@
       <TabViewItem.view>
         <rlv:RadListView items="{{ sampleItems }}" selectionBehavior="Press">
           <rlv:RadListView.itemTemplate>
-            <StackLayout>
+            <StackLayout class="-separator">
               <Label text="{{ title }}"/>
             </StackLayout>
           </rlv:RadListView.itemTemplate>
@@ -19,7 +19,7 @@
     </TabViewItem>
     <TabViewItem title="Thumbs">
       <TabViewItem.view>
-        <rlv:RadListView items="{{ sampleItems }}">
+        <rlv:RadListView class="-single-line-image" items="{{ sampleItems }}">
           <rlv:RadListView.itemTemplate>
             <GridLayout rows="*" columns="auto, *" class="-separator">
               <Image row="0" col="0" src="{{ image }}" class="thumb img-circle" />
@@ -31,13 +31,13 @@
     </TabViewItem>
     <TabViewItem title="Multi-line">
     <TabViewItem.view>
-      <rlv:RadListView items="{{ sampleItems }}">
+      <rlv:RadListView class="-two-lines-image" items="{{ sampleItems }}">
         <rlv:RadListView.itemTemplate>
           <GridLayout rows="auto" columns="auto, *" class="-separator">
             <Image row="0" col="0" src="{{ imagealt }}" class="thumb img-rounded" />
             <StackLayout row="0" col="1" >
-              <Label text="{{ title }}" class="list-group-item-heading" />
-              <Label text="{{ content }}" textWrap="true"  class="list-group-item-text" />
+              <Label text="{{ title }}" />
+              <Label text="{{ content }}" textWrap="true" />
             </StackLayout>
           </GridLayout>
         </rlv:RadListView.itemTemplate>
