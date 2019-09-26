@@ -200,12 +200,12 @@ You can darken/lighten a color depending on its background (darken for light the
 
 ```scss
 Button {
-    @include colorize($contrasted-border-color: focus background 20%);
+    @include colorize($contrasted-border-color: accent background 20%);
 }
 ```
 
 The above example uses the contrasted function to check the contrast level of the background and adjust the lightness of 
-the focus color (the accent) according to it.
+the accent color according to it.
 
 ## CSS variables
 
