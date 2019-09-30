@@ -1,3 +1,11 @@
+<a name="2.0.23 beta"></a>
+## [2.0.23 beta](https://github.com/NativeScript/theme/compare/v2.0.22...v2.0.23) (2019-09-30)
+
+### Fixes
+
+* Don't set default colors to labels, as it overrides dialog colors in iOS
+* Make the ActionBar colors defaults so they can be overridden
+
 <a name="2.0.22 beta"></a>
 ## [2.0.22 beta](https://github.com/NativeScript/theme/compare/v2.0.21...v2.0.22) (2019-09-26)
 
