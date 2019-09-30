@@ -63,8 +63,8 @@ $secondary: darken($primary, 30%) !default;
 $focus: #30bcff !default;
 $disabled: mix($focus, $background, 40%), !default;
 
-$ab-color: $primary;
-$ab-background: $white;
+$ab-color: $primary !default;
+$ab-background: $white !default;
 
 // Kendo overrides
 

@@ -362,12 +362,6 @@
         @include colorize($contrasted-border-color: accent background 20%);
     }
 
-    Label,
-    DataFormEditorLabel
-    {
-        @include colorize($color: primary);
-    }
-
     RadAutoCompleteTextView {
         Token {
             @include colorize($contrasted-background-color: accent background -20%);
@@ -388,7 +382,6 @@
             );
         }
     }
-
 
     RadDataForm {
         @include colorize(
