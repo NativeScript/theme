@@ -5,24 +5,40 @@ $light-colors: (
     accent: $focus,
     ab-color: $ab-color,
     ab-background: $ab-background,
+
+    btn-color: $primary,
+    border-color: $border-color
 );
 
-@if (global_variable_exists("theme-type")) {
+@if global_variable_exists("theme-type") {
     $light-colors: map-merge($light-colors, (
-        accent: map-get($material-light-complimentary, component-bg),
-        disabled: mix(light(accent), light(background), 40%),
-        ab-background: get-base-hue($primary-palette-name, 500)
+        accent: get-base-hue($primary-palette-name, 500),
+        ab-background: get-base-hue($secondary-palette-name, 500),
+        btn-color: map-get($material-light-complimentary, body-bg),
+        border-color: rgba(0,0,0,.08)
     ));
 
     $light-colors: map-merge($light-colors, (
+        disabled: mix(light(accent), light(background), 40%),
         ab-color: alternate(light(ab-background))
     ));
 }
 
-@if (global_variable_exists("body-bg") or global_variable_exists("bg-color")) {
+@if global_variable_exists("body-bg") {
+    $light-colors: map-merge($light-colors, (
+        ab-background: $card-cap-bg,
+        ab-color: alternate($card-cap-bg, 100%),
+        border-color: darken($background, 3%),
+        btn-color: $secondary
+    ));
+}
+
+@if global_variable_exists("bg-color") {
     $light-colors: map-merge($light-colors, (
         ab-background: $accent,
-        ab-color: alternate($accent, 100%)
+        ab-color: alternate($accent, 100%),
+        border-color: rgba(0,0,0,.08),
+        btn-color: $base-bg
     ));
 }
 
@@ -47,8 +63,6 @@ $light-colors: map-merge($light-colors, (
 
     item-active-color: mix(light(primary), light(background), 40%),
     item-active-background: light(background-dark-accent),
-
-    btn-color: light(primary)
 ));
 
 $light-colors: map-merge($light-colors, (

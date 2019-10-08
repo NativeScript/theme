@@ -22,6 +22,14 @@
     @return map-get($dark-colors, $color);
 }
 
+@function theme-is($type) {
+    @if $type == "kendo" {
+        @return str-index($theme-variant, '#{$type}-') == 1;
+    }
+
+    @return $type == $theme-variant;
+}
+
 @function mode-get($mode, $color) {
     @if $mode == light {
         @return map-get($light-colors, $color);

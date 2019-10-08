@@ -62,9 +62,14 @@ $primary: alternate($background, 85%) !default;
 $secondary: darken($primary, 30%) !default;
 $focus: #30bcff !default;
 $disabled: mix($focus, $background, 40%), !default;
+$border-color: $focus !default;
 
 $ab-color: $primary !default;
 $ab-background: $white !default;
+
+$theme-variant: "nativescript";
+
+$material-colors: () !default;
 
 // Kendo overrides
 
@@ -93,18 +98,21 @@ $ab-background: $white !default;
 }
 
 @if (global_variable_exists("theme-type")) {
-    $material-secondary: get-base-hue($secondary-palette-name, 500);
-    $material-colors: if($theme-type == dark, $material-dark-complimentary, $material-light-complimentary);
+    $theme-variant: "kendo-material";
 }
 
 @if (global_variable_exists("body-bg")) {
+    $theme-variant: "kendo-bootstrap";
+
     $background: $body-bg;
-    $focus: $secondary;
+    $focus: $accent;
 }
 
 @if (global_variable_exists("bg-color")) {
+    $theme-variant: "kendo-default";
+
     $background: $bg-color;
-    $focus: $base-bg;
+    $focus: $accent;
 }
 
 // Core colors

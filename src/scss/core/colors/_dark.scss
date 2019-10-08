@@ -2,8 +2,23 @@
 $dark-colors: (
     primary: $white,
     background: $charcoal,
-    accent: $focus
+    accent: $focus,
+    border-color: $focus,
+
+    btn-color: $white
 );
+
+@if (global_variable_exists("theme-type")) {
+    $dark-colors: map-merge($dark-colors, (
+        accent: get-base-hue($primary-palette-name, 500),
+        btn-color: map-get($material-dark-complimentary, base-bg),
+        border-color: rgba(0,0,0,.08)
+    ));
+
+    $dark-colors: map-merge($dark-colors, (
+        disabled: mix(dark(accent), dark(background), 40%),
+    ));
+}
 
 @if (global_variable_exists("bg-color")) {
     $dark-colors: map-merge($dark-colors, (
@@ -11,7 +26,9 @@ $dark-colors: (
     ));
 
     $dark-colors: map-merge($dark-colors, (
-        primary: alternate(dark(background), 70%)
+        primary: alternate(dark(background), 70%),
+        border-color: rgba(255,255,255,.08),
+        btn-color: $base-bg
     ));
 }
 
@@ -21,14 +38,9 @@ $dark-colors: (
     ));
 
     $dark-colors: map-merge($dark-colors, (
-        primary: alternate(dark(background), 70%)
-    ));
-}
-
-@if (global_variable_exists("theme-type")) {
-    $dark-colors: map-merge($dark-colors, (
-        accent: map-get($material-dark-complimentary, component-bg),
-        disabled: mix(dark(accent), dark(background), 40%),
+        primary: alternate(dark(background), 70%),
+        border-color: lighten($background, 3%),
+        btn-color: $secondary
     ));
 }
 
@@ -55,9 +67,7 @@ $dark-colors: map-merge($dark-colors, (
     background-dark-accent: mix(transparent, dark(accent), 85%),
 
     item-active-color: mix(dark(primary), dark(background), 40%),
-    item-active-background: dark(background-dark-accent),
-
-    btn-color: dark(primary)
+    item-active-background: dark(background-dark-accent)
 ));
 
 $dark-colors: map-merge($dark-colors, (

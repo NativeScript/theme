@@ -150,45 +150,84 @@
 
 // Skin
 
-@mixin button-animations($animation: "", $color: background, $percent: 5%) {
+@mixin button-animations($animation: "", $color: background, $percent: 5%, $root: false) {
     @at-root {
-        @keyframes light-#{$animation}-hightlight {
+        @keyframes #{$animation}-hightlight-light {
             0%   { background-color: light($color); }
             100% { background-color: darken(light($color), $percent); }
         }
 
-        @keyframes dark-#{$animation}-hightlight {
+        @keyframes #{$animation}-hightlight-dark {
             0%   { background-color: dark($color); }
             100% { background-color: darken(dark($color), $percent); }
         }
     }
 
-    animation: light-#{$animation}-hightlight .3s ease-out forwards;
-    background-color: darken(light($color), $percent);
+    #{if($root, '.ns-root &', '&')} {
+        animation: #{$animation}-hightlight-light .3s ease-out forwards;
+        background-color: darken(light($color), $percent);
+    }
 
-    .ns-dark & {
-        animation: dark-#{$animation}-hightlight .3s ease-out forwards;
+    #{if($root, '.ns-root.ns-dark &', '.ns-dark &')} {
+        animation: #{$animation}-hightlight-dark .3s ease-out forwards;
         background-color: darken(dark($color), $percent);
     }
 }
 
 @mixin button-skin($selectors) {
     #{$selectors} {
-        @include colorize(
-            $background-color: background,
-            $contrasted-color: accent background 40%
-        );
-
-        #{if($compat, '&-active, &:active', '&:active, &.-active')} {
+        @if theme-is("kendo") {
             @include colorize(
+                $background-color: btn-color,
+                $contrasted-color: btn-color background 40%
+            );
+
+            @if $theme-variant == "kendo-material" {
+                text-transform: uppercase;
+            }
+
+            #{if($compat, '&-active, &:active', '&:active, &.-active')} {
+                @include colorize(
+                    $contrasted-color: btn-color background 40%
+                );
+
+                @include button-animations(btn-color-active, btn-color, 10%);
+
+                ActionBar & {
+                    @include button-animations(actionbar, ab-background, 10%, true);
+                }
+            }
+
+            #{if($compat, '&-outline', '&.-outline')}  {
+                @include colorize(
+                    $background-color: background,
+                    $contrasted-border-color: btn-color background 20%
+                );
+
+                #{if($compat, '&.btn-active, &.btn:active', '&:active, &.-active')} {
+                    @include button-animations(btn-color-ourline-active, background, 10%);
+                }
+            }
+        } @else {
+            @include colorize(
+                $background-color: background,
                 $contrasted-color: accent background 40%
             );
 
-            @if $enable-rounded {
-                @include button-animations();
+            #{if($compat, '&-active, &:active', '&:active, &.-active')} {
+                @include colorize(
+                    $contrasted-color: accent background 40%
+                );
+            }
 
-                .ns-root ActionBar & {
-                    @include button-animations(actionbar, ab-background, 10%);
+            #{if($compat, '&-outline', '&.-outline')}  {
+                @include colorize(
+                    $background-color: background,
+                    $contrasted-border-color: accent background 20%
+                );
+
+                #{if($compat, '&.btn-active, &.btn:active', '&:active, &.-active')} {
+                    @include button-animations();
                 }
             }
         }
@@ -202,29 +241,6 @@
 
             #{if($compat, '&.btn-active, &.btn:active', '&:active, &.-active')} {
                 @include button-animations(accent, accent, 10%);
-            }
-        }
-
-        &[isEnabled=false] {
-            @include colorize($contrasted-background-color: disabled background 10%);
-        }
-
-        #{if($compat, '&-outline', '&.-outline')}  {
-            @include colorize(
-                $background-color: background,
-                $contrasted-border-color: accent background 20%
-            );
-
-            #{if($compat, '&.btn-active, &.btn:active', '&:active, &.-active')} {
-                @include button-animations();
-            }
-
-            &[isEnabled=false] {
-                @include colorize(
-                    $background-color: background,
-                    $color: tab-text-color,
-                    $border-color: tab-text-color
-                );
             }
         }
     }

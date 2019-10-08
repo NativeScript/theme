@@ -347,7 +347,11 @@
         );
 
         &:focus {
-            @include colorize($contrasted-border-color: accent background 20%);
+            @if $theme-variant == "kendo-default" {
+                @include colorize($alternate-border-color: gray 20%);
+            } @else {
+                @include colorize($contrasted-border-color: accent background 20%);
+            }
         }
 
         &[isEnabled=false] {
