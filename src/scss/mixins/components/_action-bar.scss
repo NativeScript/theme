@@ -3,7 +3,6 @@
 @mixin action-bar($selectors, $item-selectors) {
     #{$selectors} {
         font-size: const(btn-font-size);
-        padding-top: 0;
 
         #{$item-selectors} {
             android-elevation: 0;
@@ -33,7 +32,7 @@
         .ns-api-19.ns-statusbar-transparent Page > &,
         .ns-modal.ns-statusbar-transparent Page > & {
             padding-top: 0;
-        }
+       }
 
         @if not $compat {
             .ns-android & Button,
