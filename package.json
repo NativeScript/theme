@@ -1,6 +1,6 @@
 {
-  "name": "nativescript-theme-core",
-  "version": "2.0.24",
+  "name": "@nativescript/theme",
+  "version": "2.0.25",
   "description": "Telerik NativeScript Core Theme",
   "author": "Telerik <support@telerik.com>",
   "homepage": "https://www.nativescript.org",
@@ -21,10 +21,10 @@
     }
   },
   "dependencies": {
+    "@nativescript/theme": "./src",
     "bootstrap": "4.3.1",
     "nativescript-picker": "2.1.2",
     "nativescript-datetimepicker": "1.2.1",
-    "nativescript-theme-core": "./src",
     "nativescript-themes": "2.0.1",
     "nativescript-ui-autocomplete": "5.1.1",
     "nativescript-ui-sidedrawer": "7.0.2",

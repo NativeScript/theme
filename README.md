@@ -26,15 +26,15 @@ Home of the core NativeScript theme 2.0 beta. The documentation of the beta them
 ## Breaking changes
 
 * The theme requires 2 files to be loaded - the core theme and a skin on top of it. Read [Usage](#usage) for more info.
-* The theme is now **applied using Element selectors**, if you need the old classes approach - it has moved to 
+* The theme is now **applied using Element selectors**, if you need the old classes approach - it has moved to
 .compat CSS/SCSS files, e.g. `core.compat.css` and `blue.compat.css`.
 * Theme 2.0 beta **requires some JavaScript to be loaded** for **{N} before 6.1** which helps with the styling.
-* Theme 2.0 replaces node-sass with **sass** which is more up to date feature-wise and doesn't have a native dependency. 
+* Theme 2.0 replaces node-sass with **sass** which is more up to date feature-wise and doesn't have a native dependency.
 It does still work with node-sass though.
 
 ## Usage
 
-The core theme supports light and dark core styling and skins on top of that. To load the core theme styling, just 
+The core theme supports light and dark core styling and skins on top of that. To load the core theme styling, just
 load the core CSS (the default skin was added in 2.0.18):
 
 ```css
@@ -49,7 +49,7 @@ or alternatively SCSS:
 
 If you want, you can choose from several different skins. To do that, you can include a second CSS/SCC file just after
 you load the core CSS/SCSS (if you use Theme 2.017 or earlier, you will have to include both files for the styling
-to work. 
+to work.
 
 ```css
 @import "~nativescript-theme-core/css/core.css";
@@ -71,15 +71,15 @@ In order to import just the Theme variables in one of your modules, use this:
 
 It will import just the variables and mixins, without any additional styling.
 
-Here is the old list of Theme skins - the first two are now the Core default Light and Dark skins, the rest are 
+Here is the old list of Theme skins - the first two are now the Core default Light and Dark skins, the rest are
 all the Light skins available, listed by name.
 
-![Multiple Platforms](http://docs.nativescript.org/img/theme/color-schemes-all.png) 
+![Multiple Platforms](http://docs.nativescript.org/img/theme/color-schemes-all.png)
 
 The theme will style your application using Element selectors - you don't need to add CSS classes on every element you
 need to style.
 
-Additionally, if you need to create you own skin, you can start just from the core theme - it includes the sizing and 
+Additionally, if you need to create you own skin, you can start just from the core theme - it includes the sizing and
 initial styling of the components.
 
 ## Usage before NativeScript 6.1
@@ -90,13 +90,13 @@ In order to use the 2.0 beta theme before {N} 6.1, you will also need to include
 import "nativescript-theme-core";
 ```
 
-This JS takes care of updating several classes on the app root elements, something that got 
+This JS takes care of updating several classes on the app root elements, something that got
 [included in tns-core-modules](https://github.com/NativeScript/NativeScript/issues/7313) in {N} 6.1.
 
 ## Setting Dark or Light mode
 
-Setting the theme mode from light to dark is now easier - instead of loading a new file, just find the root view and 
-set `.ns-dark` class to it - this will change all colorization to dark tones. For instance, if your page root is 
+Setting the theme mode from light to dark is now easier - instead of loading a new file, just find the root view and
+set `.ns-dark` class to it - this will change all colorization to dark tones. For instance, if your page root is
 RadSideDrawer, just add a class to it, like this:
 
 ```html
@@ -111,12 +111,12 @@ If your root is a frame, you can do this
 <Frame class="ns-dark" defaultPage="root"></Frame>
 ```
 
-For **Angular**, if your root is a `page-router-outlet`, you can set the .ns-dark class on it - it will pass it down to the 
-Frame it renders. 
+For **Angular**, if your root is a `page-router-outlet`, you can set the .ns-dark class on it - it will pass it down to the
+Frame it renders.
 
 ## Setting Dark or Light mode from JavaScript
 
-Setting the theme mode from JavaScript is also much easier now - just import the theme and call Theme.setMode() with 
+Setting the theme mode from JavaScript is also much easier now - just import the theme and call Theme.setMode() with
 your preferred mode - either Theme.Light or Theme.dark, like this:
 
 ```javascript
@@ -153,20 +153,20 @@ Theme.setMode(Theme.Dark); // Or Theme.Light
 ## More root classes
 
 In addition to `.ns-light` and `.ns-dark` classes, the theme's little JavaScript file introduces `.ns-root` on the root element,
-`.ns-android/.ns-ios` depending on the current platform (which the theme extensively uses) and additionally 
-`.ns-portrait/.ns-landscape` and `.ns-phone/.ns-tablet`, which should be self-explanatory. 
-Of course `.ns-portrait/.ns-landscape` get updated on orientation change, so you can use it to show a two pane layout 
-in landscape, for instance. 
+`.ns-android/.ns-ios` depending on the current platform (which the theme extensively uses) and additionally
+`.ns-portrait/.ns-landscape` and `.ns-phone/.ns-tablet`, which should be self-explanatory.
+Of course `.ns-portrait/.ns-landscape` get updated on orientation change, so you can use it to show a two pane layout
+in landscape, for instance.
 
-The newest addition is `.ns-statusbar-transparent` since 2.0.4 - add this class to your root element, if you have enabled 
-transparent status bar in the OS and your ActionBar gets underneath it. 
+The newest addition is `.ns-statusbar-transparent` since 2.0.4 - add this class to your root element, if you have enabled
+transparent status bar in the OS and your ActionBar gets underneath it.
 
-> Keep in mind that **Android APIs before 21** don't support transparent status bars and this will result 
+> Keep in mind that **Android APIs before 21** don't support transparent status bars and this will result
 in an undesired top ActionBar padding!
 
 ## Using Theme variables
 
-There are several functions and mixins in the core theme, that can be used in your projects, as long as you're using 
+There are several functions and mixins in the core theme, that can be used in your projects, as long as you're using
 SASS/SCSS.
 
 If you need to access specific theme variables like simple colors or sizes, do it through the `const` function:
@@ -176,7 +176,7 @@ Button {
     background-color: const(forest);
     height: const(btn-height);
 }
-``` 
+```
 
 You can get light/dark colors:
 
@@ -206,13 +206,13 @@ Button {
 }
 ```
 
-The above example uses the contrasted function to check the contrast level of the background and adjust the lightness of 
+The above example uses the contrasted function to check the contrast level of the background and adjust the lightness of
 the accent color according to it.
 
 ## CSS variables
 
-Since 2.0.17 beta, the Theme now exports all its internal variables to CSS ones in the .ns-root and .ns-modal classes. 
-This is also done for Kendo based skins. You can use them to inherit your styles from the Theme. 
+Since 2.0.17 beta, the Theme now exports all its internal variables to CSS ones in the .ns-root and .ns-modal classes.
+This is also done for Kendo based skins. You can use them to inherit your styles from the Theme.
 A list of the supported CSS variables follows:
 
 | Simple Colors | Constants | Light Colors | Dark Colors |
@@ -252,14 +252,14 @@ Use them like this:
 }
 ```
 
-For now these CSS variables are not used internally, so changing them won't change the look of your skin. This is planned 
-for after HSL color support comes in NativeScript 6.2. 
+For now these CSS variables are not used internally, so changing them won't change the look of your skin. This is planned
+for after HSL color support comes in NativeScript 6.2.
 
 ## Kendo UI ThemeBuilder support
 
 The theme now supports inheriting the [Kendo UI ThemeBuilder](https://themebuilder.telerik.com/) theme variables. Just head
-there, customize your Keno UI SASS theme and hit the Download button. You will get a ZIP with two files in it - the theme CSS 
-that you can use to style your web app, and `variables.scss` - the one you need for your NativeScript theme. It will look 
+there, customize your Keno UI SASS theme and hit the Download button. You will get a ZIP with two files in it - the theme CSS
+that you can use to style your web app, and `variables.scss` - the one you need for your NativeScript theme. It will look
 something like this:
 
 ```scss
@@ -301,7 +301,7 @@ And load the file after your core theme. It should just work&trade;. If it doesn
 
 ## Theme classes and compatibility
 
-The old generic theme classes have been retired to avoid clashes with user code. They now live in the .compat world - 
+The old generic theme classes have been retired to avoid clashes with user code. They now live in the .compat world -
 if you want to use them, you should load them separately, like this:
 
 ```scss
@@ -312,9 +312,9 @@ if you want to use them, you should load them separately, like this:
 There might be bugs with these in the beta, you might want to hold off upgrading if you want to use the old classes.
 
 As of 2.0, the theme now utilizes a simplified BEM approach for the new element classes, that might be needed here or there.
-For instance, the buttons need `.-primary` and `.-outline` modifiers, instead of the old `.btn-primary` and 
-`.btn-outline` classes. All element classes (which are not needed by default, except if you want to style a component 
-to look like another one) are namespaced, so for instance a button is `.nt-button`, an action bar is `.nt-action-bar` and a ListView is 
+For instance, the buttons need `.-primary` and `.-outline` modifiers, instead of the old `.btn-primary` and
+`.btn-outline` classes. All element classes (which are not needed by default, except if you want to style a component
+to look like another one) are namespaced, so for instance a button is `.nt-button`, an action bar is `.nt-action-bar` and a ListView is
 `.nt-list-view`.
 
 ## Should I use sass or node-sass
@@ -333,13 +333,13 @@ Theme 2.0 is developed using SASS. The NPM package used was sass (formerly dart-
 ## Why Beta
 
 * Firstly, we want to gather feedback from the community and create a theme that is useful and if possible - beautiful.
-* Secondly, the theme needs the classes inside the core modules to work properly without loading additional JavaScript 
+* Secondly, the theme needs the classes inside the core modules to work properly without loading additional JavaScript
 (this is now released with {N} 6.1).
-* And thirdly - {N} core modules should have a way to propagate OS theme changes inside the app, so that it can act accordingly 
+* And thirdly - {N} core modules should have a way to propagate OS theme changes inside the app, so that it can act accordingly
 (planned for {N} 6.2).
 
 The theme is relatively stable, try the latest version [![npm](https://img.shields.io/npm/v/nativescript-theme-core?label=%20&style=flat-square)](https://www.npmjs.com/package/nativescript-theme-core)
-and report if you notice problems. 
+and report if you notice problems.
 
 ## Screenshots
 
@@ -371,7 +371,7 @@ If you’d like to toggle the color scheme from light to dark, open the sidedraw
 
 **IMPORTANT**: Always make sure you have run the demo app in iOS or Android to verify any changes as well as ensure the latest `css` has been built before doing the following:
 
-* Bump version in `nativescript-theme-core.json`
+* Bump version in `package.json`
 * Adjust `nativescript-theme-core.md` if any changes to the published `README` are needed.
 
 ```
