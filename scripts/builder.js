@@ -36,10 +36,10 @@ createPackageJson();
 
 // Transform imports to commonjs
 const transform = babel.transform(fs.readFileSync("./src/index.js"), {
-  plugins: ["transform-es2015-modules-commonjs"]
+    plugins: ["transform-es2015-modules-commonjs"]
 });
 
-fs.writeFile("./nativescript-theme-core/index.js", transform.code, {}, () => {});
+fs.writeFile("./nativescript-theme-core/index.js", transform.code, {}, () => { });
 
 // Copy typings
 copyFile("./src/index.d.ts", "./nativescript-theme-core/index.d.ts");
@@ -57,23 +57,25 @@ console.log("Change to the 'nativescript-theme-core' folder and you can now do y
  */
 function createPackageJson() {
     const outputPackageJson = (({ name,
-                                  version,
-                                  description,
-                                  main,
-                                  typings,
-                                  author,
-                                  homepage,
-                                  license,
-                                  repository }) =>
-                               ({ name,
-                                  version,
-                                  description,
-                                  main,
-                                  typings,
-                                  author,
-                                  homepage,
-                                  license,
-                                  repository }))(pjs);
+        version,
+        description,
+        main,
+        typings,
+        author,
+        homepage,
+        license,
+        repository }) =>
+        ({
+            name,
+            version,
+            description,
+            main,
+            typings,
+            author,
+            homepage,
+            license,
+            repository
+        }))(pjs);
 
     outputPackageJson.nativescript = {
         platforms: {
@@ -88,6 +90,7 @@ function createPackageJson() {
 /**
  * Copy any fonts files over
  */
+/*
 function copyFonts() {
     const ttfFiles = glob.sync("./app/fonts/*.ttf");
     const otfFiles = glob.sync("./app/fonts/*.otf");
@@ -113,7 +116,7 @@ function copyFonts() {
     }
 
 }
-
+*/
 
 // ----------------------------------------------------------------------
 

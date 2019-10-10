@@ -5,7 +5,7 @@ install:
     - echo no | npm install
 
 before_script:
-    - node_modules/.bin/eslint
+    - npm run eslint
 
 script:
     - npm run builder
