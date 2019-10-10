@@ -40,7 +40,7 @@ export class ThemesModel extends BaseModel {
         if (themeChange) {
             currentTheme.theme = name;
         } else {
-            currentTheme.skin = typeof name === "string" ? name : `${currentTheme.skin}.compat`;
+            currentTheme.skin = `${typeof name === "string" ? name : currentTheme.skin}.compat`;
         }
 
         const themeName = this.getThemeName(currentTheme.theme);

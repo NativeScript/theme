@@ -1,0 +1,32 @@
+/*!
+ * NativeScript Theme v0.1.0 (https://nativescript.org)
+ * Copyright 2016-2016 The Theme Authors
+ * Copyright 2016-2016 Telerik
+ * Licensed under MIT (https://github.com/NativeScript/theme/blob/master/LICENSE)
+ */
+
+// Theme variables customizations
+
+$compat: true;
+
+// Core variables
+@import '~nativescript-theme-core/scss/variables';
+
+// Colors
+$focus: #09A52e;
+$error: #F74E2F;
+
+$ab-background: #F74E2F;
+
+// Skin
+$background: #F0EED2;
+$text-color: $primary;
+
+// Buttons
+$btn-color: $focus;
+$btn-color-secondary: #0FC572;
+$background-alt-10: #0AC16E;
+$btn-color-disabled: #CCC4C9;
+
+// Core styles
+@import '~nativescript-theme-core/index';

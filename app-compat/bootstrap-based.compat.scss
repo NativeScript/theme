@@ -1,0 +1,19 @@
+/*!
+ * NativeScript Theme __VERSION__ (https://nativescript.org)
+ * Copyright 2016-2016 The Theme Authors
+ * Copyright 2016-2019 Progress Software
+ * Licensed under Apache 2.0 (https://github.com/NativeScript/theme/blob/master/LICENSE)
+ */
+
+$compat: true;
+
+@import '~nativescript-theme-core/scss/variables';
+
+// Variables form bootstrap v4 dependency
+@import '~bootstrap/scss/functions', '~bootstrap/scss/variables';
+
+// Import bootstrap map to apply variable mapping
+@import '~nativescript-theme-core/scss/bootstrap/map';
+
+// Import theme
+@import '~nativescript-theme-core/index';
