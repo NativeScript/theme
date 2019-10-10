@@ -8,7 +8,7 @@
 // Theme variables customizations
 
 // Core variables
-@import '~nativescript-theme-core/scss/variables';
+@import '~@nativescript/theme/scss/variables';
 
 // Colors
 $focus: #09A52e;
@@ -27,4 +27,4 @@ $background-alt-10: #0AC16E;
 $btn-color-disabled: #CCC4C9;
 
 // Core styles
-@import '~nativescript-theme-core/index';
+@import '~@nativescript/theme/index';

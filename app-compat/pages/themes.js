@@ -1,7 +1,7 @@
 import { BaseModel } from "./base";
 import themes from "nativescript-themes";
 import * as application from "tns-core-modules/application";
-import { ClassList } from "nativescript-theme-core";
+import { ClassList } from "@nativescript/theme";
 
 const currentTheme = {
     theme: "core.light",
@@ -74,7 +74,7 @@ export class ThemesModel extends BaseModel {
         import(
             /*  webpackMode: "lazy",
                 webpackExclude: /\/scss\/|index.d.ts|index.js/ */
-            `nativescript-theme-core/${currentTheme.skin}`)
+            `@nativescript/theme/${currentTheme.skin}`)
             .then((skinStyles) => this._applyStyles(skinStyles, `${currentTheme.skin}`));
     }
 
