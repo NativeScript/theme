@@ -35,6 +35,7 @@
         #{if($compat, '.sidedrawer-header', '.nt-drawer__header')} {
             height: 148;
             width: 100%;
+            vertical-align: center;
 
             Label {
                 padding: 0;
@@ -51,10 +52,6 @@
                 border-radius: const(border-radius-lg);
                 vertical-align: center;
                 margin-bottom: 0;
-            }
-
-            &-brand {
-                font-size: const(font-size);
             }
 
             &-footnote {

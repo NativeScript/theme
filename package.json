@@ -30,7 +30,7 @@
     "nativescript-ui-sidedrawer": "7.0.2",
     "nativescript-ui-dataform": "5.1.1",
     "nativescript-ui-listview": "7.1.0",
-    "tns-core-modules": "6.2.0-next-2019-10-08-153615-03"
+    "tns-core-modules": "6.2.0-next-2019-10-10-143928-03"
   },
   "devDependencies": {
     "babel-core": "6.26.3",

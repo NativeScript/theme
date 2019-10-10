@@ -1,3 +1,20 @@
+<a name="2.0.24 beta"></a>
+## [2.0.24 beta](https://github.com/NativeScript/theme/compare/v2.0.23...v2.0.24) (2019-10-10)
+
+### Features
+
+* Add platform API classes in .ns-{platform}-{sdkVersion} format to the root element, which should allow
+ targeting both platform and sdkVersion
+* Make .hr to depend on background color by default
+
+### Fixes
+
+* Fix SideDrawer styling to be more like in templates
+* Update Kendo skin colors to be more alike their web counterparts
+* Fix .ns-statusbar-transparent to not target or break API 19
+* Fix compat theme setting in app
+* Make sure app-compat to target compat theming with the variable
+
 <a name="2.0.23 beta"></a>
 ## [2.0.23 beta](https://github.com/NativeScript/theme/compare/v2.0.22...v2.0.23) (2019-09-30)
 

@@ -132,13 +132,14 @@ const rootModalTrap = {
 
 app.on(app.displayedEvent, () => {
     const root = app.getRootView();
+    const platformClass = `ns-${isAndroid ? "android" : "ios"}`;
 
     // Bail out if no root view or root classes already set (pre 6.1).
     if (!root || root.cssClasses.has("ns-root")) {
         // Add ns-api classes
         if (root) {
             root.className = new ClassList(root.className)
-                .add(`ns-api-${device.sdkVersion}`)
+                .add(`${platformClass}__${device.sdkVersion}`)
                 .get();
         }
 
@@ -149,7 +150,7 @@ app.on(app.displayedEvent, () => {
     viewCommon._rootModalViews = new Proxy(viewCommon._rootModalViews, rootModalTrap);
 
     root.className = new ClassList(root.className)
-        .add("ns-root", `ns-${isAndroid ? "android" : "ios"}`, `ns-${device.deviceType.toLowerCase()}`)
+        .add("ns-root", platformClass, `ns-${device.deviceType.toLowerCase()}`)
         .get();
 
     if (!started) {

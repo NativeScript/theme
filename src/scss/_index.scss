@@ -7,6 +7,14 @@
     @include colorize($contrasted-border-color: primary background -70%);
 }
 
+.hr-light {
+    @include colorize($border-color: accent-light);
+}
+
+.hr-dark {
+    @include colorize($border-color: accent-dark);
+}
+
 // export each map to CSS custom variables
 
 .ns-root,
