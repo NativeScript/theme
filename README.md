@@ -286,9 +286,12 @@ $series-e: #2d73f5;
 $series-f: #aa46be;
 ```
 
-Take this file, add the following row under it:
+Take this file, add the following under it:
 
 ```scss
+// Uncomment this row, if you target compat styling:
+// $compat: true;
+
 @import '~nativescript-theme-core/index';
 ```
 
