@@ -3,7 +3,7 @@
       navigatingTo="navigatingTo">
     <actionBar:action-bar actionBarTitle="Forms"/>
     <ScrollView>
-        <StackLayout class="page nt-form">
+        <StackLayout class="nt-form">
 
             <TextField hint="TextField text"/>
 

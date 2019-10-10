@@ -2,7 +2,7 @@
   xmlns:actionBar="/action-bar"
   navigatingTo="navigatingTo">
   <actionBar:action-bar actionBarTitle="Colors" />
-      <ScrollView class="page">
+      <ScrollView>
         <StackLayout class="p-10">
           <Label text="Set color property:" class="h2 font-italic" />
           <Label text="c-black" class="text-center c-black p-y-2" />
