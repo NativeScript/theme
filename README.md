@@ -1,6 +1,6 @@
 # NativeScript Theme: Core V2
-[![npm](https://img.shields.io/npm/v/nativescript-theme-core.svg)](https://www.npmjs.com/package/nativescript-theme-core)
-[![npm](https://img.shields.io/npm/dt/nativescript-theme-core.svg?label=npm%20downloads)](https://www.npmjs.com/package/nativescript-theme-core)
+[![npm](https://img.shields.io/npm/v/@nativescript/theme.svg)](https://www.npmjs.com/package/@nativescript/theme)
+[![npm](https://img.shields.io/npm/dt/@nativescript/theme.svg?label=npm%20downloads)](https://www.npmjs.com/package/@nativescript/theme)
 
 Home of the core NativeScript theme 2.0 beta. The documentation of the beta theme will live here, until it gets final.
 
@@ -38,13 +38,13 @@ The core theme supports light and dark core styling and skins on top of that. To
 load the core CSS (the default skin was added in 2.0.18):
 
 ```css
- @import "~nativescript-theme-core/css/core.css";
+ @import "~@nativescript/theme/css/core.css";
 ```
 
 or alternatively SCSS:
 
 ```scss
-@import "~nativescript-theme-core/core";
+@import "~@nativescript/theme/core";
 ```
 
 If you want, you can choose from several different skins. To do that, you can include a second CSS/SCC file just after
@@ -52,21 +52,21 @@ you load the core CSS/SCSS (if you use Theme 2.017 or earlier, you will have to 
 to work.
 
 ```css
-@import "~nativescript-theme-core/css/core.css";
-@import "~nativescript-theme-core/css/blue.css";
+@import "~@nativescript/theme/css/core.css";
+@import "~@nativescript/theme/css/blue.css";
 ```
 
 or
 
 ```scss
-@import "~nativescript-theme-core/core";
-@import "~nativescript-theme-core/blue";
+@import "~@nativescript/theme/core";
+@import "~@nativescript/theme/blue";
 ```
 
 In order to import just the Theme variables in one of your modules, use this:
 
 ```scss
-@import "~nativescript-theme-core/scss/variables";
+@import "~@nativescript/theme/scss/variables";
 ```
 
 It will import just the variables and mixins, without any additional styling.
@@ -87,7 +87,7 @@ initial styling of the components.
 In order to use the 2.0 beta theme before {N} 6.1, you will also need to include a small JS file in your project:
 
 ```javascript
-import "nativescript-theme-core";
+import "@nativescript/theme";
 ```
 
 This JS takes care of updating several classes on the app root elements, something that got
@@ -120,7 +120,7 @@ Setting the theme mode from JavaScript is also much easier now - just import the
 your preferred mode - either Theme.Light or Theme.dark, like this:
 
 ```javascript
-import Theme from "nativescript-theme-core";
+import Theme from "@nativescript/theme";
 
 Theme.setMode(Theme.Dark); // Or Theme.Light
 ```
@@ -129,7 +129,7 @@ Additionally there is another helper method - toggleMode, which can be used with
 or with a boolean parameter to ensure light or dark mode is set:
 
 ```javascript
-import Theme from "nativescript-theme-core";
+import Theme from "@nativescript/theme";
 
 Theme.toggleMode(); // to toggle between the modes
 
@@ -145,7 +145,7 @@ Due to limitation in Playground the JS Theme API cannot be imported like an ES6 
 have to resort to requiring it:
 
 ```javascript
-const Theme = require("nativescript-theme-core");
+const Theme = require("@nativescript/theme");
 
 Theme.setMode(Theme.Dark); // Or Theme.Light
 ```
@@ -294,7 +294,7 @@ Take this file, add the following under it:
 // Uncomment this row, if you target compat styling:
 // $compat: true;
 
-@import '~nativescript-theme-core/index';
+@import '~@nativescript/theme/index';
 ```
 
 And load the file after your core theme. It should just work&trade;. If it doesn't - head for the issues section.
@@ -305,8 +305,8 @@ The old generic theme classes have been retired to avoid clashes with user code.
 if you want to use them, you should load them separately, like this:
 
 ```scss
-@import "~nativescript-theme-core/core.compat";
-@import "~nativescript-theme-core/blue.compat";
+@import "~@nativescript/theme/core.compat";
+@import "~@nativescript/theme/blue.compat";
 ```
 
 There might be bugs with these in the beta, you might want to hold off upgrading if you want to use the old classes.
@@ -338,7 +338,7 @@ Theme 2.0 is developed using SASS. The NPM package used was sass (formerly dart-
 * And thirdly - {N} core modules should have a way to propagate OS theme changes inside the app, so that it can act accordingly
 (planned for {N} 6.2).
 
-The theme is relatively stable, try the latest version [![npm](https://img.shields.io/npm/v/nativescript-theme-core?label=%20&style=flat-square)](https://www.npmjs.com/package/nativescript-theme-core)
+The theme is relatively stable, try the latest version [![npm](https://img.shields.io/npm/v/@nativescript/theme?label=%20&style=flat-square)](https://www.npmjs.com/package/@nativescript/theme)
 and report if you notice problems.
 
 ## Screenshots
