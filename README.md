@@ -159,8 +159,10 @@ Of course `.ns-portrait/.ns-landscape` get updated on orientation change, so you
 in landscape, for instance. 
 
 The newest addition is `.ns-statusbar-transparent` since 2.0.4 - add this class to your root element, if you have enabled 
-transparent status bar in the OS and your ActionBar gets underneath it. Keep in mind that **Android APIs before 21** don't
-support transparent status bars and this will result in an undesired top ActionBar padding.
+transparent status bar in the OS and your ActionBar gets underneath it. 
+
+> Keep in mind that **Android APIs before 21** don't support transparent status bars and this will result 
+in an undesired top ActionBar padding!
 
 ## Using Theme variables
 
