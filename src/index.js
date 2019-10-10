@@ -5,6 +5,8 @@ import * as frame from "tns-core-modules/ui/frame";
 
 const display = screen.mainScreen;
 const whiteSpaceRegExp = /\s+/;
+const platformClass = `ns-${isAndroid ? "android" : "ios"}`;
+const sdkVersionClass = device.sdkVersion.replace(".", "-");
 
 let started = false;
 
@@ -132,14 +134,13 @@ const rootModalTrap = {
 
 app.on(app.displayedEvent, () => {
     const root = app.getRootView();
-    const platformClass = `ns-${isAndroid ? "android" : "ios"}`;
 
     // Bail out if no root view or root classes already set (pre 6.1).
     if (!root || root.cssClasses.has("ns-root")) {
-        // Add ns-api classes
+        // Add ns-{platform}-{sdkVersion} classes
         if (root) {
             root.className = new ClassList(root.className)
-                .add(`${platformClass}__${device.sdkVersion}`)
+                .add(`${platformClass}__${sdkVersionClass}`)
                 .get();
         }
 
