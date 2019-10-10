@@ -3,13 +3,8 @@
 
 /* Dividers */
 
-.hr,
-.hr-light {
-    @include colorize($border-color: accent-light);
-}
-
-.hr-dark {
-    @include colorize($border-color: accent-dark);
+.hr {
+    @include colorize($contrasted-border-color: primary background -70%);
 }
 
 // export each map to CSS custom variables

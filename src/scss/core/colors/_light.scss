@@ -61,11 +61,11 @@ $light-colors: map-merge($light-colors, (
     background-accent: mix(transparent, light(accent), 90%),
     background-dark-accent: mix(transparent, light(accent), 85%),
 
-    item-active-color: mix(light(primary), light(background), 40%),
-    item-active-background: light(background-dark-accent),
+    item-active-color: mix(light(primary), light(background), 70%)
 ));
 
 $light-colors: map-merge($light-colors, (
+    item-active-background: light(background-dark-accent),
     ab-background-dark: darken(light(ab-background), 5%),
     item-active-icon-color: light(item-active-color),
     btn-color-inverse: alternate(light(accent)),

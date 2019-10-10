@@ -10,11 +10,6 @@
             }
 
             .sidedrawer-list-item {
-                height: 48;
-                horizontal-align: left;
-                width: 100%;
-                orientation: horizontal;
-
                 .sidedrawer-list-item-icon {
                     margin: 0 16 0 16;
                     padding-top: 6;
@@ -23,17 +18,6 @@
                     font-size: const(icon-font-size-lg);
                     height: 48;
                     vertical-align: center;
-                }
-
-                &.active {
-                    @include colorize(
-                        $color: item-active-color,
-                        $background-color: item-active-background
-                    );
-
-                    .sidedrawer-list-item-icon {
-                        @include colorize($color: item-active-icon-color);
-                    }
                 }
             }
 
@@ -51,7 +35,6 @@
         #{if($compat, '.sidedrawer-header', '.nt-drawer__header')} {
             height: 148;
             width: 100%;
-            padding: 30 25;
 
             Label {
                 padding: 0;
@@ -59,21 +42,57 @@
             }
 
             > Label {
-                font-size: 40;
-                margin-right: 15;
+                font-size: 18;
             }
 
             &-image {
                 height: 74;
                 width: 74;
                 border-radius: const(border-radius-lg);
-                horizontal-align: center;
-                margin-bottom: 24;
+                vertical-align: center;
+                margin-bottom: 0;
             }
 
             &-brand {
-                horizontal-align: center;
                 font-size: const(font-size);
+            }
+
+            &-footnote {
+                opacity: .5;
+            }
+
+            > Label,
+            &-image {
+                margin-left: 15;
+                margin-right: 15;
+                horizontal-align: center;
+            }
+
+            @if not $compat {
+                &.-left {
+                    > Label,
+                    .nt-drawer__header-image {
+                        horizontal-align: left;
+                    }
+                }
+            }
+        }
+
+        #{if($compat, '.sidedrawer-list-item', '.nt-drawer__list-item')} {
+            padding-left: 15;
+            height: 48;
+            horizontal-align: left;
+            width: 100%;
+            orientation: horizontal;
+
+            Label {
+                vertical-align: center;
+            }
+
+            NTIcon,
+            .nt-icon {
+                font-size: const(icon-font-size);
+                width: 30;
             }
         }
 
@@ -100,7 +119,7 @@
             }
 
             #{if($compat, '.sidedrawer-header', '.nt-drawer__header')} {
-                background: dark(background-dark-accent);
+                background-color: dark(ab-background-dark);
 
                 Label {
                     color: dark(ab-color);
@@ -112,16 +131,20 @@
 
 @mixin side-drawer-skin-content($mode: light) {
     #{if($compat, '.sidedrawer-header', '.nt-drawer__header')} {
-        background: mode-get($mode, ab-background-dark);
-
-        Label {
-            color: mode-get($mode, ab-color);
-        }
+        color: mode-get($mode, ab-color);
+        background-color: mode-get($mode, ab-background-dark);
     }
 
     #{if($compat, ('.sidedrawer-left', '.sidedrawer-center'), ('> *', '.nt-drawer__content'))} {
-        color: mode-get($mode, ab-color);
-        background: mode-get($mode, background);
+        background-color: mode-get($mode, background);
+    }
+
+    #{if($compat, '.sidedrawer-list-item.active', '.nt-drawer__list-item.-selected')} {
+        background-color: mode-get($mode, item-active-background);
+
+        Label {
+            color: mode-get($mode, accent-dark);
+        }
     }
 }
 
