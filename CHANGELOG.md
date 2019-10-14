@@ -1,3 +1,26 @@
+<a name="2.1.1"></a>
+## [2.1.1](https://github.com/NativeScript/theme/compare/v2.1.0...v2.1.1) (2019-10-14)
+
+### Features
+
+* Export CSS variables in Core CSS
+
+### Fixes
+
+* Fix divider colors
+* Add 5pt Button default padding
+* Remove default font-weight from .ns-root
+* Fix vertical SideDrawer header centering in iOS - remove height, use padding
+
+### Breaking changes
+
+* Remove default FontAwesome 4 rule as it doesn't belong in the theme. Leave it for compat mode.
+
+<a name="2.1.0"></a>
+## [2.1.0](https://github.com/NativeScript/theme/compare/v2.0.24...v2.1.0) (2019-10-11)
+
+Version 2.0.24 Beta was promoted to stable and was published as a scoped @nativescript/theme package.
+
 <a name="2.0.24 beta"></a>
 ## [2.0.24 beta](https://github.com/NativeScript/theme/compare/v2.0.23...v2.0.24) (2019-10-10)
 

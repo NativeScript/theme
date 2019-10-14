@@ -33,13 +33,12 @@
         }
 
         #{if($compat, '.sidedrawer-header', '.nt-drawer__header')} {
-            height: 148;
             width: 100%;
-            vertical-align: center;
+            vertical-align: top;
+            padding: 25 0;
 
             Label {
                 padding: 0;
-                vertical-align: center;
             }
 
             > Label {
@@ -50,8 +49,6 @@
                 height: 74;
                 width: 74;
                 border-radius: const(border-radius-lg);
-                vertical-align: center;
-                margin-bottom: 0;
             }
 
             &-footnote {
@@ -63,6 +60,7 @@
                 margin-left: 15;
                 margin-right: 15;
                 horizontal-align: center;
+                text-align: center;
             }
 
             @if not $compat {

@@ -5,6 +5,10 @@
 
 @import '~/assets/css/font-awesome.scss';
 
+.fa {
+    font-family: FontAwesome, fontawesome-webfont;
+}
+
 @import './app-vars.css';
 
 FlexboxLayout {

@@ -4,8 +4,10 @@
 @import './headings';
 @import './bootstrap';
 
-.fa {
-  font-family: FontAwesome, fontawesome-webfont;
+@if $compat {
+    .fa {
+        font-family: FontAwesome, fontawesome-webfont;
+    }
 }
 
 .ns-root {
@@ -14,7 +16,6 @@
     );
 
     font-family: sans-serif;
-    font-weight: normal;
     font-size: const(font-size);
 }
 

@@ -1,6 +1,5 @@
 @mixin list-view($selectors) {
     #{$selectors} {
-        min-height: 100;
         background-color: transparent;
 
         StackLayout {
