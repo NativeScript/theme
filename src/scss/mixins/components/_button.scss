@@ -60,95 +60,163 @@
 
         .ns-root #{if($compat, '&-aqua.btn', '&.-aqua')} {
             @include colorize(
-                $background-color: aqua,
                 $border-color: aqua,
-                $alternate-color: aqua
+                $color: aqua
             );
+
+            #{if($compat, '&.btn-primary', '&.-primary')} {
+                @include colorize(
+                    $alternate-color: aqua,
+                    $background-color: aqua
+                );
+            }
         }
 
         .ns-root #{if($compat, '&-blue.btn', '&.-blue')} {
             @include colorize(
-                $background-color: blue,
                 $border-color: blue,
-                $alternate-color: blue
+                $color: blue
             );
+
+            #{if($compat, '&.btn-primary', '&.-primary')} {
+                @include colorize(
+                    $alternate-color: blue,
+                    $background-color: blue
+                );
+            }
         }
 
         .ns-root #{if($compat, '&-brown', '&.-brown')} {
             @include colorize(
-                $background-color: brown,
                 $border-color: brown,
-                $alternate-color: brown
+                $color: brown
             );
+
+            #{if($compat, '&.btn-primary', '&.-primary')} {
+                @include colorize(
+                    $alternate-color: brown,
+                    $background-color: brown
+                );
+            }
         }
 
         .ns-root #{if($compat, '&-forest', '&.-forest')} {
             @include colorize(
-                $alternate-color: forest,
-                $background-color: forest,
-                $border-color: forest
+                $border-color: forest,
+                $color: forest
             );
+
+            #{if($compat, '&.btn-primary', '&.-primary')} {
+                @include colorize(
+                    $alternate-color: forest,
+                    $background-color: forest
+                );
+            }
         }
 
         .ns-root #{if($compat, '&-grey', '&.-grey')} {
             @include colorize(
-                $background-color: grey-dark,
                 $border-color: grey-dark,
-                $alternate-color: grey-dark
+                $color: grey-dark
             );
+
+            #{if($compat, '&.btn-primary', '&.-primary')} {
+                @include colorize(
+                    $alternate-color: grey-dark,
+                    $background-color: grey-dark
+                );
+            }
         }
 
         .ns-root #{if($compat, '&-lemon', '&.-lemon')} {
             @include colorize(
-                $background-color: lemon,
                 $border-color: lemon,
-                $alternate-color: lemon
+                $color: lemon
             );
+
+            #{if($compat, '&.btn-primary', '&.-primary')} {
+                @include colorize(
+                    $alternate-color: lemon,
+                    $background-color: lemon
+                );
+            }
         }
 
         .ns-root #{if($compat, '&-lime', '&.-lime')} {
             @include colorize(
-                $background-color: lime,
                 $border-color: lime,
-                $alternate-color: lime
+                $color: lime
             );
+
+            #{if($compat, '&.btn-primary', '&.-primary')} {
+                @include colorize(
+                    $alternate-color: lime,
+                    $background-color: lime
+                );
+            }
         }
 
         .ns-root #{if($compat, '&-orange', '&.-orange')} {
             @include colorize(
-                $background-color: orange,
                 $border-color: orange,
-                $alternate-color: orange
+                $color: orange
             );
+
+            #{if($compat, '&.btn-primary', '&.-primary')} {
+                @include colorize(
+                    $alternate-color: orange,
+                    $background-color: orange
+                );
+            }
         }
 
         .ns-root #{if($compat, '&-purple', '&.-purple')} {
             @include colorize(
-                $background-color: purple,
                 $border-color: purple,
-                $alternate-color: purple
+                $color: purple
             );
+
+            #{if($compat, '&.btn-primary', '&.-primary')} {
+                @include colorize(
+                    $alternate-color: purple,
+                    $background-color: purple
+                );
+            }
         }
 
-        .ns-root #{if($compat, '&-ruby', '&.-ruby')} {
+        .ns-root #{if($compat, '&-ruby.btn', '&.-ruby')} {
             @include colorize(
-                $background-color: ruby,
                 $border-color: ruby,
-                $alternate-color: ruby
+                $color: ruby
             );
+
+            #{if($compat, '&.btn-primary', '&.-primary')} {
+                @include colorize(
+                    $alternate-color: ruby,
+                    $background-color: ruby
+                );
+            }
         }
 
         .ns-root #{if($compat, '&-sky', '&.-sky')} {
             @include colorize(
-                $background-color: sky,
                 $border-color: sky,
-                $alternate-color: sky
+                $color: sky
             );
+
+            #{if($compat, '&.btn-primary', '&.-primary')} {
+                @include colorize(
+                    $alternate-color: sky,
+                    $background-color: sky
+                );
+            }
         }
     }
 }
 
 // Skin
+
+@keyframes empty {}
 
 @mixin button-animations($animation: "", $color: background, $percent: 5%, $root: false) {
     @at-root {
@@ -226,7 +294,7 @@
                     $contrasted-border-color: accent background 20%
                 );
 
-                #{if($compat, '&.btn-active, &.btn:active', '&:active, &.-active')} {
+                #{if($compat, '&.btn-active, &:active', '&:active, &.-active')} {
                     @include button-animations();
                 }
             }
@@ -239,8 +307,12 @@
                 $border-color: accent
             );
 
-            #{if($compat, '&.btn-active, &.btn:active', '&:active, &.-active')} {
-                @include button-animations(accent, accent, 10%);
+            #{if($compat, '&.btn-active, &:active', '&:active, &.-active')} {
+                @if $enable-rounded {
+                    @include button-animations(accent, accent, 10%);
+                } @else {
+                    @include colorize($contrasted-background-color: accent background 10%);
+                }
             }
         }
     }

@@ -7,13 +7,13 @@
 
 $compat: true;
 
-@import '~nativescript-theme-core/scss/variables';
+@import '~@nativescript/theme/scss/variables';
 
 // Variables form bootstrap v4 dependency
 @import '~bootstrap/scss/functions', '~bootstrap/scss/variables';
 
 // Import bootstrap map to apply variable mapping
-@import '~nativescript-theme-core/scss/bootstrap/map';
+@import '~@nativescript/theme/scss/bootstrap/map';
 
 // Import theme
-@import '~nativescript-theme-core/index';
+@import '~@nativescript/theme/index';

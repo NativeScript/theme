@@ -6,8 +6,11 @@
     <ScrollView>
         <StackLayout>
             <Button class="btn" text="btn"/>
+            <Button class="btn btn-ruby" text="btn btn-ruby"/>
             <Button text="btn btn-simple" class="btn btn-simple" />
+            <Button text="btn btn-simple btn-ruby" class="btn btn-simple btn-ruby" />
             <Button text="btn btn-primary" class="btn btn-primary"/>
+            <Button text="btn btn-primary btn-ruby" class="btn btn-primary btn-ruby"/>
             <Button class="btn btn-primary">
                 <FormattedString>
                     <Span text="{{ 'fa-twitter' | fonticon }}" class="fa nt-icon"/>
@@ -15,6 +18,7 @@
                 </FormattedString>
             </Button>
             <Button text="btn btn-outline" class="btn btn-outline"/>
+            <Button text="btn btn-outline btn-ruby" class="btn btn-outline btn-ruby"/>
             <Button text="btn btn-primary btn-rounded-sm" tap="" class="btn btn-primary btn-rounded-sm"/>
             <Button text="btn btn-outline btn-rounded-sm" tap="" class="btn btn-outline btn-rounded-sm"/>
             <Button text="btn btn-primary btn-rounded-lg" tap="" class="btn btn-primary btn-rounded-lg"/>
