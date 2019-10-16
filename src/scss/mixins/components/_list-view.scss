@@ -21,14 +21,14 @@
             }
         }
 
-        @if $compat {
-            .thumb {
-                stretch: fill;
-                width: 40;
-                height: 40;
-                margin-right: 16;
-            }
+        .thumb#{if($compat, '', ', .-thumb')} {
+            stretch: fill;
+            width: 40;
+            height: 40;
+            margin-right: 16;
+        }
 
+        @if $compat {
             .list-group-item-heading {
                 margin-bottom: 5;
             }

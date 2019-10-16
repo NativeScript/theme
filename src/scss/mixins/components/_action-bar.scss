@@ -4,6 +4,17 @@
     #{$selectors} {
         font-size: const(btn-font-size);
 
+        @at-root .ns-ios & {
+            margin-left: 20;
+            vertical-align: stretch;
+            horizontal-align: stretch;
+        }
+
+        @at-root .ns-landscape.ns-ios & {
+            margin-left: 100;
+            padding: 0 5;
+        }
+
         #{$item-selectors} {
             android-elevation: 0;
             font-size: const(font-size);
@@ -45,7 +56,7 @@
             }
         }
 
-        > Label {
+        @at-root .ns-android & > Label {
             width: 100%;
         }
 
@@ -56,8 +67,8 @@
         }
 
         > GridLayout {
-            padding: 0 4;
             width: 100%;
+            height: 100%;
 
             > StackLayout {
                 padding: 0;
@@ -73,9 +84,13 @@
                 horizontal-align: right;
             }
 
-            @at-root .ns-android & Button {
-                padding: 12 16;
-                margin: 0;
+            @at-root .ns-android & {
+                padding: 0 4;
+
+                Button {
+                    padding: 12 16;
+                    margin: 0;
+                }
             }
         }
     }

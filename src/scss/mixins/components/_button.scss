@@ -291,7 +291,7 @@
             #{if($compat, '&-outline', '&.-outline')}  {
                 @include colorize(
                     $background-color: background,
-                    $contrasted-border-color: accent background 20%
+                    $border-color: accent
                 );
 
                 #{if($compat, '&.btn-active, &:active', '&:active, &.-active')} {
