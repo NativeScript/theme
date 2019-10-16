@@ -26,7 +26,11 @@
 
 .-rounded,
 .rounded {
-    border-radius: const(border-radius-rounded);
+    border-radius: const(border-radius-sm);
+}
+
+.-circle {
+    border-radius: const(border-radius-lg);
 }
 
 /* Dividers */

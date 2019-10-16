@@ -1,6 +1,6 @@
 {
   "name": "@nativescript/theme",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Telerik NativeScript Core Theme",
   "author": "Telerik <support@telerik.com>",
   "homepage": "https://www.nativescript.org",
@@ -30,11 +30,11 @@
     "nativescript-ui-sidedrawer": "7.0.3",
     "nativescript-ui-dataform": "5.1.1",
     "nativescript-ui-listview": "7.1.0",
-    "tns-core-modules": "6.2.0-next-2019-10-10-163621-04"
+    "tns-core-modules": "6.2.0-next-2019-10-16-100036-02"
   },
   "devDependencies": {
-    "babel-core": "6.26.3",
-    "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
+    "@babel/core": "7.6.4",
+    "@babel/plugin-transform-modules-commonjs": "7.6.0",
     "babel-eslint": "10.0.3",
     "cache-loader": "4.1.0",
     "eslint": "6.4.0",

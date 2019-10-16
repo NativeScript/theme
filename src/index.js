@@ -34,7 +34,7 @@ export class ClassList {
     }
 }
 
-class Theme {
+export class Theme {
     static setMode(mode, root = app.getRootView()) {
         Theme.currentMode = mode;
         Theme.rootView = root;
@@ -66,15 +66,6 @@ class Theme {
         const root = app.getRootView();
 
         return Theme.currentMode || ((root.className || "").indexOf(Theme.Dark) !== -1 ? Theme.Dark : Theme.Light);
-    }
-}
-
-if (module) {
-    const desc = Object.getOwnPropertyDescriptor(module, "exports");
-
-    // Check if in a commonjs module
-    if (desc.writable) {
-        module.exports = Theme;
     }
 }
 

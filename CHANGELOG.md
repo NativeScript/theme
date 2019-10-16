@@ -1,3 +1,27 @@
+<a name="2.1.2"></a>
+## [2.1.2](https://github.com/NativeScript/theme/compare/v2.1.1...v2.1.2) (2019-10-16)
+
+### Features
+
+* Make the Button color modifiers work as such (applies to primary and outline buttons)
+
+### Fixes
+
+* Fix the iOS landscape custom ActionBar items displacement
+* Fix the not properly distributed custom ActionBar title and iOS buttons
+* Update blue skin accent color (to blue:)
+* Make the outline button borders use accent color
+* Return the thumb/-thumb classes for Listview (Playground compatibility)
+* Fix app-compat to use scoped packages
+* Make the default Image height only 20pt
+* Increase the side drawer header padding
+* Add -circle class to complement -rounded/rounded
+* Fix the esm to cjs transpilation (was breaking Angular projects in Playground)
+
+### Potential breaking changes
+
+* Remove border-radius-rounded variable - use border-radius-sm instead (they had 1pt difference).
+
 <a name="2.1.1"></a>
 ## [2.1.1](https://github.com/NativeScript/theme/compare/v2.1.0...v2.1.1) (2019-10-14)
 

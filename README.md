@@ -235,10 +235,10 @@ A list of the supported CSS variables follows:
 | --color-ruby | --const-border-radius | --light-accent-transparent | --dark-accent-transparent |
 | --color-sky | --const-border-radius-sm | --light-primary-accent | --dark-primary-accent |
 | --color-error | --const-border-radius-lg | --light-background-accent | --dark-background-accent |
-|  | --const-border-radius-rounded | --light-background-dark-accent | --dark-background-dark-accent |
+|  | --const-disabled-opacity | --light-background-dark-accent | --dark-background-dark-accent |
 |  | --const-icon-font-size | --light-item-active-color | --dark-item-active-color |
 |  | --const-icon-font-size-lg | --light-item-active-background | --dark-item-active-background |
-|  | --const-disabled-opacity | --light-btn-color | --dark-btn-color |
+|  |  | --light-btn-color | --dark-btn-color |
 |  |  | --light-ab-background-dark | --dark-ab-background-dark |
 |  |  | --light-item-active-icon-color | --dark-item-active-icon-color |
 |  |  | --light-btn-color-inverse | --dark-btn-color-inverse |

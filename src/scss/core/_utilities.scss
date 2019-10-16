@@ -17,10 +17,13 @@ TextView {
     }
 }
 
-Image,
 ListView,
 RadListView {
     min-height: 100;
+}
+
+Image {
+    min-height: 20;
 }
 
 NTIcon,
