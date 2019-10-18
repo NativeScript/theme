@@ -1,6 +1,6 @@
 import * as app from "tns-core-modules/application";
 import { device, isAndroid, screen } from "tns-core-modules/platform";
-import * as viewCommon from "tns-core-modules/ui/core/view/view-common";
+import * as view from "tns-core-modules/ui/core/view";
 import * as frame from "tns-core-modules/ui/frame";
 
 const display = screen.mainScreen;
@@ -75,8 +75,8 @@ Theme.Dark = "ns-dark";
 export default Theme;
 
 // Where the magic happens
-const oldSetupAsRootView = viewCommon.ViewCommon.prototype._setupAsRootView;
-viewCommon.ViewCommon.prototype._setupAsRootView = function() {
+const oldSetupAsRootView = view.ViewCommon.prototype._setupAsRootView;
+view.ViewCommon.prototype._setupAsRootView = function() {
     oldSetupAsRootView.call(this, ...arguments);
     Theme.setMode(Theme.currentMode, this);
 };
@@ -96,10 +96,10 @@ function updateRootClasses(orientation, root = app.getRootView(), classes = []) 
 function handleOrientation({ newValue: orientation }) {
     updateRootClasses(orientation);
 
-    if (viewCommon._rootModalViews.length) {
+    if (view._rootModalViews.length) {
         const classList = new ClassList(app.getRootView().className);
 
-        viewCommon._rootModalViews.forEach((view) => updateRootClasses(orientation, view, classList.add("ns-modal").list));
+        view._rootModalViews.forEach((view) => updateRootClasses(orientation, view, classList.add("ns-modal").list));
     }
 }
 
@@ -139,7 +139,7 @@ app.on(app.displayedEvent, () => {
     }
 
     // Get notified when a modal is created.
-    viewCommon._rootModalViews = new Proxy(viewCommon._rootModalViews, rootModalTrap);
+    view._rootModalViews = new Proxy(view._rootModalViews, rootModalTrap);
 
     root.className = new ClassList(root.className)
         .add("ns-root", platformClass, `ns-${device.deviceType.toLowerCase()}`)
