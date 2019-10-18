@@ -12,7 +12,7 @@
             <Button text="Button.-primary.-ruby" class="-primary -ruby"/>
             <Button class="-primary">
                 <FormattedString>
-                    <Span text="{{ 'fa-twitter' | fonticon }}" class="fa nt-icon"/>
+                    <Span text="{{ 'fa-twitter' | fonticon }}" class="fa"/>
                     <Span text=" Button.-primary with icon"/>
                 </FormattedString>
             </Button>

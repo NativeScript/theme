@@ -7,3 +7,8 @@
 .test-variable {
     background: var(--color-grey-light);
 }
+
+.ns-root Button {
+  //font-size: 42;
+}
+

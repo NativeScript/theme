@@ -126,7 +126,7 @@ const rootModalTrap = {
 app.on(app.displayedEvent, () => {
     const root = app.getRootView();
 
-    // Bail out if no root view or root classes already set (pre 6.1).
+    // Bail out if no root view or root classes already set (since 6.1).
     if (!root || root.cssClasses.has("ns-root")) {
         // Add ns-{platform}-{sdkVersion} classes
         if (root) {

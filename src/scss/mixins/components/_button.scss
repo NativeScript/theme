@@ -4,43 +4,53 @@
     #{$selectors} {
         text-transform: none;
         border-color: transparent;
+        min-height: 36;
+        min-width: 100;
 
         @include button-base(const(btn-padding-y), const(btn-padding-x), const(btn-margin-y), const(btn-margin-x), const(btn-font-size), const(btn-radius), const(btn-min-width), const(btn-height));
 
         .ns-ios & {
-            height: const(btn-height) - 12;
             border-width: 0;
         }
 
         .ns-android & {
+            padding-top: const(btn-padding-y) + 3;
+            padding-bottom: const(btn-padding-y) + 3;
+
             margin: const(btn-margin-y) - 4 const(btn-margin-x) - 4;
         }
 
         @if $enable-rounded {
-            height: const(btn-height) - 12;
             border-width: const(border-width);
             border-color: transparent;
 
             .ns-android & {
+                padding-top: const(btn-padding-y) - 3;
+                padding-bottom: const(btn-padding-y) - 3;
+
                 margin: const(btn-margin-y) const(btn-margin-x);
             }
         }
 
         #{if($compat, '&-outline', '&.-outline')} {
-            height: const(btn-height) - 12;
             border-width: const(border-width);
 
             .ns-android & {
+                padding-top: const(btn-padding-y) - 3;
+                padding-bottom: const(btn-padding-y) - 3;
+
                 margin: const(btn-margin-y) const(btn-margin-x);
             }
         }
 
         #{if($compat, '&-rounded-sm', '&.-rounded-sm')},
         #{if($compat, '&-rounded-lg', '&.-rounded-lg')} {
-            height: const(btn-height) - 12;
             border-radius: const(border-radius-sm);
 
             .ns-android & {
+                padding-top: const(btn-padding-y) - 3;
+                padding-bottom: const(btn-padding-y) - 3;
+
                 margin: const(btn-margin-y) const(btn-margin-x);
             }
         }
