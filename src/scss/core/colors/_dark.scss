@@ -3,9 +3,9 @@ $dark-colors: (
     primary: $white,
     background: $charcoal,
     accent: $focus,
-    border-color: $focus,
 
-    btn-color: $white
+    btn-color: $white,
+    border-color: lighten($focus, 10%)
 );
 
 @if (global_variable_exists("theme-type")) {
@@ -52,7 +52,6 @@ $dark-colors: map-merge($dark-colors, (
     disabled: mix(dark(accent), dark(background), 40%),
 
     accent: lighten(dark(accent), 10%),
-    border-color: lighten(dark(accent), 10%),
     ab-color: mix(light(ab-color), dark(primary), 20%),
     ab-background: if(light(ab-background) == #fff, dark(background), mix(light(ab-background), dark(background), 50%)),
 
