@@ -70,7 +70,7 @@
       <!-- UTILITIES -->
       <StackLayout class="page m-t-10">
           <Label text="Utilities" class="h2" />
-          <StackLayout class="hr-light m-b-2" />
+          <StackLayout class="hr m-b-2" />
           <Label text=".pull-left" class="pull-left" />
           <Label text=".pull-right" class="pull-right" />
           <Label text=".m-x-auto" class="m-x-auto" />

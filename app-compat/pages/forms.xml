@@ -8,19 +8,19 @@
             <StackLayout class="input-field">
                 <TextField id="textField" hint="Input text" class="input" returnKeyType="{{ keyType }}"
                            returnPress="{{ returnPress }}"/>
-                <StackLayout class="hr-light"/>
+                <StackLayout class="hr"/>
             </StackLayout>
 
             <StackLayout class="input-field">
                 <Label text="Label" class="label font-weight-bold m-b-5"/>
                 <TextField hint="Input text for a single line field" class="input"/>
-                <StackLayout class="hr-light"/>
+                <StackLayout class="hr"/>
             </StackLayout>
 
             <GridLayout class="input-field input-sides" rows="auto, auto" columns="*,*">
                 <Label text="Label" class="label font-weight-bold" row="0" col="0"/>
                 <TextField hint="Input text" class="input right" row="0" col="1"/>
-                <StackLayout class="hr-light" row="1" colSpan="2"/>
+                <StackLayout class="hr" row="1" colSpan="2"/>
             </GridLayout>
 
             <TextField hint="Input border" class="input input-border m-b-10"/>

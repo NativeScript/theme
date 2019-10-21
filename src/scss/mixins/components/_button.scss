@@ -4,8 +4,7 @@
     #{$selectors} {
         text-transform: none;
         border-color: transparent;
-        min-height: 36;
-        min-width: 100;
+        min-height: 0;
 
         @include button-base(const(btn-padding-y), const(btn-padding-x), const(btn-margin-y), const(btn-margin-x), const(btn-font-size), const(btn-radius), const(btn-min-width), const(btn-height));
 
@@ -25,8 +24,8 @@
             border-color: transparent;
 
             .ns-android & {
-                padding-top: const(btn-padding-y) - 3;
-                padding-bottom: const(btn-padding-y) - 3;
+                padding-top: const(btn-padding-y) - 4;
+                padding-bottom: const(btn-padding-y) - 4;
 
                 margin: const(btn-margin-y) const(btn-margin-x);
             }
@@ -36,8 +35,8 @@
             border-width: const(border-width);
 
             .ns-android & {
-                padding-top: const(btn-padding-y) - 3;
-                padding-bottom: const(btn-padding-y) - 3;
+                padding-top: const(btn-padding-y) - 4;
+                padding-bottom: const(btn-padding-y) - 4;
 
                 margin: const(btn-margin-y) const(btn-margin-x);
             }
@@ -48,8 +47,8 @@
             border-radius: const(border-radius-sm);
 
             .ns-android & {
-                padding-top: const(btn-padding-y) - 3;
-                padding-bottom: const(btn-padding-y) - 3;
+                padding-top: const(btn-padding-y) - 4;
+                padding-bottom: const(btn-padding-y) - 4;
 
                 margin: const(btn-margin-y) const(btn-margin-x);
             }

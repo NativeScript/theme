@@ -23,7 +23,7 @@
           <Label text="c-ruby" class="text-center c-ruby p-y-2" />
           <Label text="c-sky" class="text-center c-sky p-y-2" />
 
-          <StackLayout class="hr-light m-y-2" />
+          <StackLayout class="hr m-y-2" />
           <Label text="Set background-color property:" class="h2 font-italic" />
           <Label text="c-bg-black" class="text-center c-white c-bg-black p-y-5" />
           <Label text="c-bg-white" class="text-center c-bg-white p-y-5" />
