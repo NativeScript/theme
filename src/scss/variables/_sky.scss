@@ -5,12 +5,12 @@
  * Sky variable overrides
  **/
 
-// ActionBar
-$ab-background: const(sky);
-$ab-color: const(white);
-
 // Accent
-$focus: const(lemon);
+$accent: const(lemon);
+
+// Complementary
+$complementary: const(sky);
+$complementary-color: const(white);
 
 // Buttons
 $btn-color-inverse: const(charcoal);

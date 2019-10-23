@@ -262,7 +262,7 @@
                 @include button-animations(btn-color-active, btn-color, 10%);
 
                 ActionBar & {
-                    @include button-animations(actionbar, ab-background, 10%, true);
+                    @include button-animations(actionbar, complementary, 10%, true);
                 }
             }
 

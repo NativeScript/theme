@@ -5,12 +5,12 @@
  * Orange variable overrides
  **/
 
-// ActionBar
-$ab-background: const(orange);
-$ab-color: const(white);
-
 // Accent
-$focus: const(brown);
+$accent: const(brown);
+
+// Complementary
+$complementary: const(orange);
+$complementary-color: const(white);
 
 // Buttons
 $btn-color-inverse: const(white);

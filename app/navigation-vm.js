@@ -1,4 +1,4 @@
-import { topmost } from "tns-core-modules/ui/frame";
+import { Frame } from "tns-core-modules/ui/frame";
 import { BaseModel } from "./pages/base";
 import * as application from "tns-core-modules/application";
 import { ObservableArray } from "tns-core-modules/data/observable-array";
@@ -95,7 +95,7 @@ export class NavigationViewModel extends BaseModel {
             return this.openModal();
         }
 
-        topmost().navigate({
+        Frame.topmost().navigate({
             moduleName: `pages/${page.toLowerCase()}`,
             transition: {
                 name: "slide"
@@ -115,7 +115,7 @@ export class NavigationViewModel extends BaseModel {
             moduleName: `pages/${pageName}`,
             clearHistory: true
         };
-        topmost().navigate(navigationEntry);
+        Frame.topmost().navigate(navigationEntry);
 
         this.bindingContext.selectedPage = pageName;
     }

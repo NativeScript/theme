@@ -5,12 +5,12 @@
  * Purple variable overrides
  **/
 
-// ActionBar
-$ab-background: const(purple);
-$ab-color: const(white);
-
 // Accent
-$focus: const(sky);
+$accent: const(sky);
+
+// Complementary
+$complementary: const(purple);
+$complementary-color: const(white);
 
 // Buttons
 $btn-color-inverse: const(white);

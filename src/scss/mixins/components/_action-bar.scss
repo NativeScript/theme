@@ -101,18 +101,18 @@
 @mixin action-bar-skin($selectors, $item-selectors) {
     #{$selectors} {
         @include colorize(
-            $color: ab-color,
-            $background-color: ab-background
+            $color: complementary-color,
+            $background-color: complementary
         );
 
         #{$item-selectors} {
             @include colorize(
-                $color: ab-color
+                $color: complementary-color
             );
 
             #{if($compat, '&-active:active', '&:active, &.-active')} {
                 @include colorize(
-                    $color: ab-color
+                    $color: complementary-color
                 );
             }
 
@@ -126,13 +126,13 @@
             .ns-android & Button,
             .ns-android & .nt-button {
                 @include colorize(
-                    $background-color: ab-background
+                    $background-color: complementary
                 );
             }
         } @else {
             .ns-android & .btn {
                 @include colorize(
-                    $background-color: ab-background
+                    $background-color: complementary
                 );
             }
         }

@@ -5,12 +5,12 @@
  * Ruby variable overrides
  **/
 
-// ActionBar
-$ab-background: const(ruby);
-$ab-color: const(white);
-
 // Accent
-$focus: const(lemon);
+$accent: const(lemon);
+
+// Complementary
+$complementary: const(ruby);
+$complementary-color: const(white);
 
 // Buttons
 $btn-color-inverse: const(charcoal);

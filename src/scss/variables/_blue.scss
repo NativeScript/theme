@@ -5,11 +5,11 @@
  * Blue variable overrides
  **/
 
-// ActionBar
-$ab-background: const(blue);
-$ab-color: const(white);
+// Complementary
+$complementary: const(blue);
+$complementary-color: const(white);
 
 // Accent
-$focus: const(blue);
+$accent: const(blue);
 
 @import '../core/colors/index';

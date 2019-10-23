@@ -59,22 +59,43 @@ $accent: #30bcff !default;
 $background: #fff !default;
 $primary: alternate($background, 85%) !default;
 $secondary: darken($primary, 30%) !default;
-$focus: #30bcff !default;
-$disabled: mix($focus, $background, 40%), !default;
-$border-color: $focus !default;
 
-$ab-color: $primary !default;
-$ab-background: $white !default;
+$background-dark: $charcoal !default;
+$primary-dark: alternate($background-dark, 85%) !default;
+$secondary-dark: darken($primary-dark, 30%) !default;
+
+$complementary: $white !default;
+$complementary-dark: transparent !default;
+
+$complementary-color: alternate($complementary, 100%) !default;
+$complementary-color-dark: transparent !default;
 
 $theme-variant: "nativescript";
 
 $material-colors: () !default;
 
-// Kendo overrides
+// Kendo and compatibility overrides
+
+@if (global_variable_exists('ab-background')) {
+    $complementary: $ab-background;
+}
+
+@if (global_variable_exists('ab-color')) {
+    $complementary-color: $ab-color;
+}
+
+// $focus is an internal variable to abstract the accent from the input
+$focus: null !default;
 
 @if (global_variable_exists('primary-palette-name')) {
     $focus: $primary-palette-name;
+} @else {
+    $focus: $accent;
 }
+
+$accent-dark: transparent !default;
+$disabled: mix($focus, $background, 40%), !default;
+$border-color: $focus !default;
 
 @if (global_variable_exists('secondary-palette-name')) {
     $secondary: $secondary-palette-name;

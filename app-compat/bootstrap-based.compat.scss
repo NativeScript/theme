@@ -7,13 +7,17 @@
 
 $compat: true;
 
-@import '~@nativescript/theme/scss/variables';
-
 // Variables form bootstrap v4 dependency
 @import '~bootstrap/scss/functions', '~bootstrap/scss/variables';
 
-// Import bootstrap map to apply variable mapping
-@import '~@nativescript/theme/scss/bootstrap/map';
+// Map NS theme variables to variables from the bootstrap v4 theme
+
+$background: theme-color("light");
+$background-dark: theme-color("dark");
+
+$accent: theme-color("primary");
+$complementary: theme-color("secondary");
+$error: theme-color("danger");
 
 // Import theme
 @import '~@nativescript/theme/index';

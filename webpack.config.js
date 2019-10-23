@@ -47,9 +47,13 @@ module.exports = smp.wrap((env) => {
         hiddenSourceMap, // --env.hiddenSourceMap
         hmr, // --env.hmr,
         unitTesting, // --env.unitTesting,
-        verbose // --env.verbose
+        verbose, // --env.verbose
+        snapshotInDocker, // --env.snapshotInDocker
+        skipSnapshotTools, // --env.skipSnapshotTools
+        compileSnapshot // --env.compileSnapshot
     } = env;
 
+    const useLibs = compileSnapshot;
     const isAnySourceMapEnabled = !!sourceMap || !!hiddenSourceMap;
     const externals = nsWebpack.getConvertedExternals(env.externals);
     const appFullPath = resolve(projectRoot, appPath);
@@ -126,6 +130,7 @@ module.exports = smp.wrap((env) => {
         devtool: hiddenSourceMap ? "hidden-source-map" : (sourceMap ? "inline-source-map" : "none"),
         optimization: {
             runtimeChunk: "single",
+            noEmitOnErrors: true,
             splitChunks: {
                 cacheGroups: {
                     styles: {
@@ -295,7 +300,10 @@ module.exports = smp.wrap((env) => {
                 "tns-core-modules/bundle-entry-points"
             ],
             projectRoot,
-            webpackConfig: config
+            webpackConfig: config,
+            snapshotInDocker,
+            skipSnapshotTools,
+            useLibs
         }));
     }
 

@@ -2,9 +2,11 @@
 $light-colors: (
     primary: $primary,
     background: $background,
+    secondary: $secondary,
+
     accent: $focus,
-    ab-color: $ab-color,
-    ab-background: $ab-background,
+    complementary: $complementary,
+    complementary-color: $complementary-color,
 
     btn-color: $primary,
     border-color: $border-color
@@ -13,21 +15,21 @@ $light-colors: (
 @if global_variable_exists("theme-type") {
     $light-colors: map-merge($light-colors, (
         accent: get-base-hue($primary-palette-name, 500),
-        ab-background: get-base-hue($secondary-palette-name, 500),
+        complementary: get-base-hue($secondary-palette-name, 500),
         btn-color: map-get($material-light-complimentary, body-bg),
         border-color: rgba(0,0,0,.08)
     ));
 
     $light-colors: map-merge($light-colors, (
         disabled: mix(light(accent), light(background), 40%),
-        ab-color: alternate(light(ab-background))
+        complementary-color: alternate(light(complementary))
     ));
 }
 
 @if global_variable_exists("body-bg") {
     $light-colors: map-merge($light-colors, (
-        ab-background: $card-cap-bg,
-        ab-color: alternate($card-cap-bg, 100%),
+        complementary: $card-cap-bg,
+        complementary-color: alternate($card-cap-bg, 100%),
         border-color: darken($background, 3%),
         btn-color: $secondary
     ));
@@ -35,8 +37,8 @@ $light-colors: (
 
 @if global_variable_exists("bg-color") {
     $light-colors: map-merge($light-colors, (
-        ab-background: $accent,
-        ab-color: alternate($accent, 100%),
+        complementary: $accent,
+        complementary-color: alternate($accent, 100%),
         border-color: rgba(0,0,0,.08),
         btn-color: $base-bg
     ));
@@ -46,7 +48,6 @@ $light-colors: map-merge($light-colors, (
     background-alt-5: darken(light(background), 5%),
     background-alt-10: darken(light(background), 10%),
     background-alt-20: darken(light(background), 20%),
-    secondary: lighten(light(primary), 30%),
     disabled: mix(light(accent), light(background), 40%),
 
     text-color: light(primary),
@@ -66,7 +67,7 @@ $light-colors: map-merge($light-colors, (
 
 $light-colors: map-merge($light-colors, (
     item-active-background: light(background-dark-accent),
-    ab-background-dark: darken(light(ab-background), 5%),
+    complementary-dark: darken(light(complementary), 5%),
     item-active-icon-color: light(item-active-color),
     btn-color-inverse: alternate(light(accent)),
     btn-color-secondary: darken(light(btn-color), 10%)

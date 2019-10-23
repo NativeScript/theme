@@ -220,13 +220,13 @@ A list of the supported CSS variables follows:
 | --color-black | --const-font-size | --light-primary | --dark-primary |
 | --color-white | --const-background-alt-10 | --light-background | --dark-background |
 | --color-grey | --const-btn-color-secondary | --light-accent | --dark-accent |
-| --color-grey-light | --const-btn-color-disabled | --light-ab-color | --dark-background-alt-5 |
-| --color-charcoal | --const-btn-font-size | --light-ab-background | --dark-background-alt-10 |
-| --color-transparent | --const-btn-min-width | --light-background-alt-5 | --dark-background-alt-20 |
-| --color-aqua | --const-btn-height | --light-background-alt-10 | --dark-secondary |
-| --color-blue | --const-btn-padding-x | --light-background-alt-20 | --dark-disabled |
-| --color-brown | --const-btn-padding-y | --light-secondary | --dark-ab-color |
-| --color-forest | --const-btn-margin-x | --light-disabled | --dark-ab-background |
+| --color-grey-light | --const-btn-color-disabled | --light-complementary-color | --dark-complementary-color |
+| --color-charcoal | --const-btn-font-size | --light-complementary | --dark-complementary |
+| --color-transparent | --const-btn-min-width | --light-background-alt-5 | --dark-background-alt-5 |
+| --color-aqua | --const-btn-height | --light-background-alt-10 | --dark-background-alt-10 |
+| --color-blue | --const-btn-padding-x | --light-background-alt-20 | --dark-background-alt-20 |
+| --color-brown | --const-btn-padding-y | --light-secondary | --dark-secondary |
+| --color-forest | --const-btn-margin-x | --light-disabled | --dark-disabled |
 | --color-grey-dark | --const-btn-margin-y | --light-text-color | --dark-text-color |
 | --color-purple | --const-btn-radius | --light-headings-color | --dark-headings-color |
 | --color-lemon | --const-headings-margin-bottom | --light-tab-text-color | --dark-tab-text-color |
@@ -239,7 +239,6 @@ A list of the supported CSS variables follows:
 |  | --const-icon-font-size | --light-item-active-color | --dark-item-active-color |
 |  | --const-icon-font-size-lg | --light-item-active-background | --dark-item-active-background |
 |  |  | --light-btn-color | --dark-btn-color |
-|  |  | --light-ab-background-dark | --dark-ab-background-dark |
 |  |  | --light-item-active-icon-color | --dark-item-active-icon-color |
 |  |  | --light-btn-color-inverse | --dark-btn-color-inverse |
 |  |  | --light-btn-color-secondary | --dark-btn-color-secondary |

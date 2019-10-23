@@ -1,5 +1,5 @@
 import { BaseModel } from "./base";
-import { topmost } from "tns-core-modules/ui/frame";
+import { Frame } from "tns-core-modules/ui/frame";
 
 export class LandingModel extends BaseModel {}
 
@@ -8,7 +8,7 @@ export function navigatingTo({ object: page }) {
 }
 
 export function signIn() {
-    topmost().navigate({
+    Frame.topmost().navigate({
         moduleName: "pages/login-form",
         transition: {
             name: "slide"
@@ -17,7 +17,7 @@ export function signIn() {
 }
 
 export function goBack() {
-    topmost().navigate({
+    Frame.topmost().navigate({
         moduleName: "pages/root",
         clearHistory: true,
         transition: {

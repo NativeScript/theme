@@ -1,8 +1,11 @@
 // Core dark colors
 $dark-colors: (
-    primary: $white,
-    background: $charcoal,
-    accent: $focus,
+    primary: $primary-dark,
+    background: $background-dark,
+    secondary: $secondary-dark,
+
+    accent: lighten($focus, 10%),
+    complementary: if(light(complementary) == #fff, $background-dark, if($complementary-dark != transparent, $complementary-dark, light(complementary))),
 
     btn-color: $white,
     border-color: lighten($focus, 10%)
@@ -10,25 +13,14 @@ $dark-colors: (
 
 @if (global_variable_exists("theme-type")) {
     $dark-colors: map-merge($dark-colors, (
-        accent: get-base-hue($primary-palette-name, 500),
+        accent: lighten(get-base-hue($primary-palette-name, 500), 10%),
+        complementary: get-base-hue($secondary-palette-name, 500),
         btn-color: map-get($material-dark-complimentary, base-bg),
         border-color: rgba(0,0,0,.08)
     ));
 
     $dark-colors: map-merge($dark-colors, (
-        disabled: mix(dark(accent), dark(background), 40%),
-    ));
-}
-
-@if (global_variable_exists("bg-color")) {
-    $dark-colors: map-merge($dark-colors, (
-        background: mix($bg-color, $charcoal, 10%)
-    ));
-
-    $dark-colors: map-merge($dark-colors, (
-        primary: alternate(dark(background), 70%),
-        border-color: rgba(255,255,255,.08),
-        btn-color: $base-bg
+        disabled: mix(dark(accent), dark(background), 40%)
     ));
 }
 
@@ -38,22 +30,37 @@ $dark-colors: (
     ));
 
     $dark-colors: map-merge($dark-colors, (
+        complementary: $card-cap-bg,
         primary: alternate(dark(background), 70%),
         border-color: lighten($background, 3%),
         btn-color: $secondary
     ));
 }
 
+@if (global_variable_exists("bg-color")) {
+    $dark-colors: map-merge($dark-colors, (
+        background: mix($bg-color, $charcoal, 10%)
+    ));
+
+    $dark-colors: map-merge($dark-colors, (
+        complementary: $accent,
+        primary: alternate(dark(background), 70%),
+        border-color: rgba(255,255,255,.08),
+        btn-color: $base-bg
+    ));
+}
+
+$dark-colors: map-merge($dark-colors, (
+    accent: if($accent-dark != transparent, $accent-dark, dark(accent))
+));
+
 $dark-colors: map-merge($dark-colors, (
     background-alt-5: lighten(dark(background), 5%),
     background-alt-10: lighten(dark(background), 10%),
     background-alt-20: lighten(dark(background), 20%),
-    secondary: darken(dark(primary), 30%),
     disabled: mix(dark(accent), dark(background), 40%),
 
-    accent: lighten(dark(accent), 10%),
-    ab-color: mix(light(ab-color), dark(primary), 20%),
-    ab-background: if(light(ab-background) == #fff, dark(background), mix(light(ab-background), dark(background), 50%)),
+    complementary: if($complementary-dark != transparent, $complementary-dark, mix(dark(complementary), dark(background), 50%)),
 
     text-color: dark(primary),
     headings-color: dark(primary),
@@ -72,7 +79,8 @@ $dark-colors: map-merge($dark-colors, (
 
 $dark-colors: map-merge($dark-colors, (
     item-active-background: dark(background-dark-accent),
-    ab-background-dark: darken(dark(ab-background), 5%),
+    complementary-color: if($complementary-color-dark != transparent, $complementary-color-dark, alternate(dark(complementary), 100%)),
+    complementary-dark: darken(dark(complementary), 5%),
     item-active-icon-color: dark(item-active-color),
     btn-color-inverse: alternate(dark(accent)),
     btn-color-secondary: darken(dark(btn-color), 10%)
