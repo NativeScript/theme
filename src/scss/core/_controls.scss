@@ -10,6 +10,12 @@
                 '.nt-label')
     );
 
+
+    @include frame(
+                ('Frame',
+                '.nt-frame')
+    );
+
     @include page(
                 ('Page',
                 '.nt-page')
