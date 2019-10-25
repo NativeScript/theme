@@ -59,16 +59,13 @@
     @include form-fields-skin();
 
     @include input-component-skin(
-                ('NTInput',
-                '.nt-input')
+                ('.nt-input')
     );
 
   @include action-bar-skin(
               ('ActionBar',
-              'NTActionBar',
               '.nt-action-bar'),
-              ('NTIcon',
-              'Label',
+              ('Label',
               'Button',
               '.nt-action-bar__item')
   );

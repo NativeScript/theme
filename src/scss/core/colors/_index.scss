@@ -1,3 +1,20 @@
+// $focus is an internal variable to abstract the accent from the input
+$focus: null !default;
+
+@if (global_variable_exists('primary-palette-name')) {
+    $focus: $primary-palette-name;
+} @else {
+    @if (global_variable_exists('accent')) {
+        $focus: $accent;
+    } @else {
+        $focus: #30bcff;
+    }
+}
+
+$accent-dark: transparent !default;
+$disabled: mix($focus, $background, 40%), !default;
+$border-color: $focus !default;
+
 // Constants
 
 $colors:  (

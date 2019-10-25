@@ -38,7 +38,7 @@
 
 // Contextual colors and backgrounds http://v4-alpha.getbootstrap.com/components/utilities/#contextual-colors-and-backgrounds
 .text-primary {
-  color: $accent;
+  color: light(accent);
 }
 
 .text-danger {
@@ -46,7 +46,7 @@
 }
 
 .bg-primary {
-  background-color: $accent;
+  background-color: light(accent);
   color: $white;
 }
 

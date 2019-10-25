@@ -51,10 +51,6 @@ $enable-gradients:          false !default;
 $enable-transitions:        false !default;
 
 
-// $accent is only used for compatibility with Kendo Material theme.
-// Main accent variable is $focus. However, it again becomes accent in the color map.
-$accent: #30bcff !default;
-
 // Colors
 $background: #fff !default;
 $primary: alternate($background, 85%) !default;
@@ -84,19 +80,6 @@ $material-colors: () !default;
     $complementary-color: $ab-color;
 }
 
-// $focus is an internal variable to abstract the accent from the input
-$focus: null !default;
-
-@if (global_variable_exists('primary-palette-name')) {
-    $focus: $primary-palette-name;
-} @else {
-    $focus: $accent;
-}
-
-$accent-dark: transparent !default;
-$disabled: mix($focus, $background, 40%), !default;
-$border-color: $focus !default;
-
 @if (global_variable_exists('secondary-palette-name')) {
     $secondary: $secondary-palette-name;
 }
@@ -125,14 +108,12 @@ $border-color: $focus !default;
     $theme-variant: "kendo-bootstrap";
 
     $background: $body-bg;
-    $focus: $accent;
 }
 
 @if (global_variable_exists("bg-color")) {
     $theme-variant: "kendo-default";
 
     $background: $bg-color;
-    $focus: $accent;
 }
 
 // Core colors
