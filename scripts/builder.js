@@ -185,7 +185,7 @@ async function createCSSFromSCSS() {
         return filename.indexOf("_") !== 0 && filename.indexOf("app.") !== 0 && filename.indexOf("customized.") !== 0 && filename.indexOf("bootstrap") !== 0 && filename.indexOf("kendo") !== 0;
     });
 
-    return Promise.all(sassFiles.map(sassFile => parseSass(sassFile, sassImportPaths)));
+    return Promise.all(sassFiles.map((sassFile) => parseSass(sassFile, sassImportPaths)));
 }
 
 /**
@@ -193,19 +193,19 @@ async function createCSSFromSCSS() {
  */
 function createJSONFromCSS() {
     const cssFilesPath = "./nativescript-theme-core/css/**/*.css";
-    const cssFiles = glob.sync(cssFilesPath)
+    const cssFiles = glob.sync(cssFilesPath);
 
     const registerModules = [];
-    registerModules.push(`require("@nativescript/core/globals/core");`)
+    registerModules.push("require(\"@nativescript/core/globals/core\");");
 
-    cssFiles.forEach(cssFilePath =>{
+    cssFiles.forEach((cssFilePath) => {
         const cssFileContent = fs.readFileSync(cssFilePath, { encoding: "utf8" });
         const cssFileName = cssFilePath.substring(cssFilePath.lastIndexOf("/"));
         const jsonFileName = cssFileName.replace(".css", ".json");
         const jsonFilePath = `nativescript-theme-core/json${jsonFileName}`;
 
         const ast = parse(cssFileContent, undefined);
-        const jsonContent = JSON.stringify(ast, (k, v) => k === "position" ? undefined : v);
+        const jsonContent = JSON.stringify(ast, (k, v) => (k === "position" ? undefined : v));
         fs.writeFileSync(jsonFilePath, jsonContent, "utf8");
 
 
@@ -254,7 +254,7 @@ function parseSass(sassFile, importPaths) {
                 resolve();
             }
         });
-    })
+    });
 }
 
 // ----------------------------------------------------------------------
