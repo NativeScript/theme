@@ -10,6 +10,7 @@ const sass = require("sass");
 const glob = require("glob");
 const pjs = require("../package.json");
 const babel = require("@babel/core");
+const parse = require("@nativescript/core/css").parse;
 
 // Kill The original folder, so that way it is a clean folder
 if (fs.existsSync("nativescript-theme-core")) {
@@ -18,39 +19,48 @@ if (fs.existsSync("nativescript-theme-core")) {
 fs.mkdirSync("nativescript-theme-core");
 fs.mkdirSync("nativescript-theme-core/css");
 fs.mkdirSync("nativescript-theme-core/scss");
+fs.mkdirSync("nativescript-theme-core/json");
 
 const version = getVersion();
 const versionPlaceholder = "__VERSION__";
 console.log(`Building the Deployment files for v${version}...`);
 
-// Create CSS from SCSS
-createCSSFromSCSS();
+async function createThemeFiles() {
 
-// Copy the SCSS file to the build folder
-copySCSS();
+    // Create CSS from SCSS
+    await createCSSFromSCSS();
 
-// Copy any Fonts
-//copyFonts();
+    // Create JSON from CSS
+    createJSONFromCSS();
 
-createPackageJson();
+    // Copy the SCSS file to the build folder
+    copySCSS();
 
-// Transform imports to commonjs
-const transform = babel.transform(fs.readFileSync("./src/index.js"), {
-    plugins: ["@babel/transform-modules-commonjs"]
-});
+    // Copy any Fonts
+    //copyFonts();
 
-fs.writeFile("./nativescript-theme-core/index.js", transform.code, {}, () => { });
+    createPackageJson();
 
-// Copy typings
-copyFile("./src/index.d.ts", "./nativescript-theme-core/index.d.ts");
+    // Transform imports to commonjs
+    const transform = babel.transform(fs.readFileSync("./src/index.js"), {
+        plugins: ["@babel/transform-modules-commonjs"]
+    });
 
-// Copy our Readme
-copyFile("./README.md", "./nativescript-theme-core/README.md");
-copyFile("./CHANGELOG.md", "./nativescript-theme-core/CHANGELOG.md");
-copyFile("./LICENSE", "./nativescript-theme-core/LICENSE");
+    fs.writeFile("./nativescript-theme-core/index.js", transform.code, {}, () => { });
 
-console.log("Change to the 'nativescript-theme-core' folder and you can now do your `npm publish`");
-// TODO: We could Automatically run "npm publish"
+    // Copy typings
+    copyFile("./src/index.d.ts", "./nativescript-theme-core/index.d.ts");
+
+    // Copy our Readme
+    copyFile("./README.md", "./nativescript-theme-core/README.md");
+    copyFile("./CHANGELOG.md", "./nativescript-theme-core/CHANGELOG.md");
+    copyFile("./LICENSE", "./nativescript-theme-core/LICENSE");
+
+    console.log("Change to the 'nativescript-theme-core' folder and you can now do your `npm publish`");
+    // TODO: We could Automatically run "npm publish"
+}
+
+createThemeFiles();
 
 /**
  * Create package.json from the original one
@@ -161,7 +171,7 @@ function copySCSS() {
 /**
  * Create all the CSS from SCSS files
  */
-function createCSSFromSCSS() {
+async function createCSSFromSCSS() {
 
     const sassFilesPath = "./src/**/*.scss";
     const sassImportPaths = [
@@ -175,14 +185,35 @@ function createCSSFromSCSS() {
         return filename.indexOf("_") !== 0 && filename.indexOf("app.") !== 0 && filename.indexOf("customized.") !== 0 && filename.indexOf("bootstrap") !== 0 && filename.indexOf("kendo") !== 0;
     });
 
+    return Promise.all(sassFiles.map(sassFile => parseSass(sassFile, sassImportPaths)));
+}
 
-    for (let i = 0; i < sassFiles.length; i++) {
-        // We only process open /core. files
-        // if (sassFiles[i].indexOf("/core.") === -1) {
-        //     continue;
-        // }
-        parseSass(sassFiles[i], sassImportPaths);
-    }
+/**
+ * Create all the JSON from CSS files
+ */
+function createJSONFromCSS() {
+    const cssFilesPath = "./nativescript-theme-core/css/**/*.css";
+    const cssFiles = glob.sync(cssFilesPath)
+
+    const registerModules = [];
+    registerModules.push(`require("@nativescript/core/globals/core");`)
+
+    cssFiles.forEach(cssFilePath =>{
+        const cssFileContent = fs.readFileSync(cssFilePath, { encoding: "utf8" });
+        const cssFileName = cssFilePath.substring(cssFilePath.lastIndexOf("/"));
+        const jsonFileName = cssFileName.replace(".css", ".json");
+        const jsonFilePath = `nativescript-theme-core/json${jsonFileName}`;
+
+        const ast = parse(cssFileContent, undefined);
+        const jsonContent = JSON.stringify(ast, (k, v) => k === "position" ? undefined : v);
+        fs.writeFileSync(jsonFilePath, jsonContent, "utf8");
+
+
+        registerModules.push(`global.registerModule("@nativescript/theme/css${cssFileName}", () => { return require("@nativescript/theme/json${jsonFileName}")});`);
+    });
+
+    const registerJsonJsContent = registerModules.join("\n");
+    fs.writeFileSync("nativescript-theme-core/register-json.js", registerJsonJsContent, "utf8");
 }
 
 /**
@@ -191,35 +222,39 @@ function createCSSFromSCSS() {
  * @param importPaths - Other import paths
  */
 function parseSass(sassFile, importPaths) {
-    const sassFileContent = fs.readFileSync(sassFile, { encoding: "utf8" });
-    const offset = sassFile.lastIndexOf("/");
-    const outputFile = `nativescript-theme-core/css${sassFile.substring(offset)}`;
-    const cssFilePath = outputFile.replace(".scss", ".css");
+    return new Promise((resolve, reject) => {
+        const sassFileContent = fs.readFileSync(sassFile, { encoding: "utf8" });
+        const offset = sassFile.lastIndexOf("/");
+        const outputFile = `nativescript-theme-core/css${sassFile.substring(offset)}`;
+        const cssFilePath = outputFile.replace(".scss", ".css");
 
-    // const output = sass.renderSync({
-    sass.render({
-        data: sassFileContent,
-        includePaths: importPaths,
-        outFile: cssFilePath,
-        outputStyle: "compressed"
-    }, (error, result) => {
-        if (error) {
-            console.log(error.status);
-            console.log(error.column);
-            console.log(error.message);
-            console.log(error.line);
-        } else {
-            let css = result.css.toString();
-            // correct version tag
-            css = printVersion(css);
-            // uncomment to debug builds
-            // console.log(css);
-            fs.writeFileSync(cssFilePath, css, "utf8");
+        // const output = sass.renderSync({
+        sass.render({
+            data: sassFileContent,
+            includePaths: importPaths,
+            outFile: cssFilePath,
+            outputStyle: "compressed"
+        }, (error, result) => {
+            if (error) {
+                console.log(error.status);
+                console.log(error.column);
+                console.log(error.message);
+                console.log(error.line);
+                reject(error);
+            } else {
+                let css = result.css.toString();
+                // correct version tag
+                css = printVersion(css);
+                // uncomment to debug builds
+                // console.log(css);
+                fs.writeFileSync(cssFilePath, css, "utf8");
 
-            // if build stats are ever desired
-            // console.log(result.stats);
-        }
-    });
+                // if build stats are ever desired
+                // console.log(result.stats);
+                resolve();
+            }
+        });
+    })
 }
 
 // ----------------------------------------------------------------------
