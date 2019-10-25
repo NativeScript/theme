@@ -313,7 +313,6 @@
         }
 
         @if not $compat {
-            & > NTIcon,
             & > .nt-icon {
                 font-size: const(icon-font-size-lg);
                 vertical-align: center;

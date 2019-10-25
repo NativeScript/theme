@@ -91,7 +91,6 @@
             }
         }
 
-        NTIcon,
         .nt-icon {
             font-size: const(icon-font-size-lg);
             width: 56;
@@ -144,7 +143,6 @@
             }
         }
 
-        NTIcon,
         .nt-icon {
             @include colorize($scale-contrasted-color: accent background 0% 50%);
         }
