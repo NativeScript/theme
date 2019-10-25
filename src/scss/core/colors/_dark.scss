@@ -60,7 +60,7 @@ $dark-colors: map-merge($dark-colors, (
     background-alt-20: lighten(dark(background), 20%),
     disabled: mix(dark(accent), dark(background), 40%),
 
-    complementary: if($complementary-dark != transparent, $complementary-dark, mix(dark(complementary), dark(background), 50%)),
+    complementary: if($complementary-dark != transparent, $complementary-dark, mix(dark(complementary), $black, 90%)),
 
     text-color: dark(primary),
     headings-color: dark(primary),
