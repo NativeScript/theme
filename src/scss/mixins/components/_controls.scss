@@ -102,12 +102,11 @@
         @include colorize(
             $color: primary,
             $background-color: background,
-            $selected-background-color: accent
+            $contrasted-selected-background-color: accent background -20%
         );
 
         .ns-ios & {
             margin: 0 15;
-            @include colorize($color: accent);
         }
     }
 }

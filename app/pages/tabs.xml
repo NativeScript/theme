@@ -9,7 +9,7 @@
         </TabStrip>
 
         <TabContentItem>
-            <TextView text="{{ tab1 }}" class="p-20" editable="false"/>
+            <HtmlView html="{{ tab1 }}" class="p-20" />
         </TabContentItem>
 
         <TabContentItem>

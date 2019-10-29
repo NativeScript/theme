@@ -35,21 +35,22 @@ It does still work with node-sass though.
 ## Usage
 
 The core theme supports light and dark core styling and skins on top of that. To load the core theme styling, just
-load the core CSS (the default skin was added in 2.0.18):
+load the core CSS and its default skin:
 
 ```css
- @import "~@nativescript/theme/css/core.css";
+@import "~@nativescript/theme/css/core.css";
+@import "~@nativescript/theme/css/default.css";
 ```
 
 or alternatively SCSS:
 
 ```scss
 @import "~@nativescript/theme/core";
+@import "~@nativescript/theme/default";
 ```
 
-If you want, you can choose from several different skins. To do that, you can include a second CSS/SCC file just after
-you load the core CSS/SCSS (if you use Theme 2.017 or earlier, you will have to include both files for the styling
-to work.
+If you want, you can choose from several different skins. To do that, you can change the second CSS/SCSS file to the
+preferred skin name:
 
 ```css
 @import "~@nativescript/theme/css/core.css";
