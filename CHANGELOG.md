@@ -1,3 +1,26 @@
+<a name="2.2.0"></a>
+## [2.2.0](https://github.com/NativeScript/theme/compare/v2.1.2...v2.2.0) (2019-10-29)
+
+### Breaking changes
+
+* Separate default core styling again to reduce the core CSS with 20k (breaking)
+
+### Features
+
+* Ship pre-parsed JSON files for all CSS (used with css2json-loader)
+* Return $accent input variable, use $focus as internal abstraction
+* Rename $ab-background and $ab-color to respectively $complementary and $complementary-color, keep backwards compatibility
+* Introduce $...-dark input colors to be able to override the main dark mode colors specifically 
+
+### Fixes
+
+* Stop importing view-common in app, use view instead
+* Add more padding to action items
+* Make the dark complementary color closer to the light one
+* Make HtmlView white in dark mode, as its internal colors are currently not dependent on mode
+* Fix PickerField modal in dark mode
+* Fix SegmentedBar selection colors (it doesn't support changing the color in selected state)
+
 <a name="2.1.2"></a>
 ## [2.1.2](https://github.com/NativeScript/theme/compare/v2.1.1...v2.1.2) (2019-10-16)
 
