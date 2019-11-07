@@ -26,43 +26,42 @@
 // Size
 
 // sass-lint:disable-all
-$font-size: 10 !default;
 $font-sizes: (
   10: (
-    size: $font-size
+    size: $font-size - 2
   ),
   12: (
-    size: $font-size + 2
+    size: $font-size
   ),
   14: (
-    size: $font-size + 4
+    size: $font-size + 2
   ),
   15: (
-    size: $font-size + 5
+    size: $font-size + 3
   ),
   16: (
-    size: $font-size + 6
+    size: $font-size + 4
   ),
   17: (
-    size: $font-size + 7
+    size: $font-size + 5
   ),
   18: (
-    size: $font-size + 8
+    size: $font-size + 6
   ),
   19: (
-    size: $font-size + 9
+    size: $font-size + 7
   ),
   20: (
-    size: $font-size + 10
+    size: $font-size + 8
   ),
   25: (
-    size: $font-size + 15
+    size: $font-size + 13
   ),
   30: (
-    size: $font-size + 20
+    size: $font-size + 18
   ),
   36: (
-    size: $font-size + 26
+    size: $font-size + 24
   )
 ) !default;
 
