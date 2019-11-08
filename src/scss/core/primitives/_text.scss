@@ -26,44 +26,7 @@
 // Size
 
 // sass-lint:disable-all
-$font-sizes: (
-  10: (
-    size: $font-size - 2
-  ),
-  12: (
-    size: $font-size
-  ),
-  14: (
-    size: $font-size + 2
-  ),
-  15: (
-    size: $font-size + 3
-  ),
-  16: (
-    size: $font-size + 4
-  ),
-  17: (
-    size: $font-size + 5
-  ),
-  18: (
-    size: $font-size + 6
-  ),
-  19: (
-    size: $font-size + 7
-  ),
-  20: (
-    size: $font-size + 8
-  ),
-  25: (
-    size: $font-size + 13
-  ),
-  30: (
-    size: $font-size + 18
-  ),
-  36: (
-    size: $font-size + 24
-  )
-) !default;
+$font-sizes: (10, 12, 14, 15, 16, 17, 18, 19, 20, 25, 30, 36) !default;
 
 /**
  * Font size
@@ -71,10 +34,8 @@ $font-sizes: (
  * .t-10{font-size:10}
  * From 10, 12, 14, 15, 16, 17, 18, 19, 20
 **/
-@each $size, $sizes in $font-sizes {
-  $s: map-get($sizes, size);
-
+@each $size in $font-sizes {
   .t-#{$size} {
-    font-size: $s;
+    font-size: $size;
   }
 }
