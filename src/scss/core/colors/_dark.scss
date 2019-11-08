@@ -33,7 +33,7 @@ $dark-colors: (
         complementary: $card-cap-bg,
         primary: alternate(dark(background), 70%),
         border-color: lighten($background, 3%),
-        btn-color: $secondary
+        btn-color: mix($secondary, $charcoal, 30%)
     ));
 }
 
@@ -46,7 +46,7 @@ $dark-colors: (
         complementary: $accent,
         primary: alternate(dark(background), 70%),
         border-color: rgba(255,255,255,.08),
-        btn-color: $base-bg
+        btn-color: mix($base-bg, $charcoal, 10%)
     ));
 }
 
