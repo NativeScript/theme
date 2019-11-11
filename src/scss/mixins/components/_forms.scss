@@ -114,6 +114,10 @@
         }
     }
 
+    TextView[editable=false] {
+        border-width: 0;
+    }
+
     Label,
     DataFormEditorLabel
     {
