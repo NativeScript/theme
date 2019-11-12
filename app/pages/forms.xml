@@ -18,9 +18,11 @@
             </GridLayout>
 
             <TextField hint="TextField.-border" class="-border m-b-10"/>
-            <TextField hint="TextField.-rounded" class="-rounded m-b-10"/>
+            <TextField hint="TextField.-rounded-sm" class="-rounded-sm m-b-10"/>
+            <TextField hint="TextField.-rounded-lg" class="-rounded-lg m-b-10"/>
             <TextField hint="TextField.-border Disabled" class="-border m-b-10" isEnabled="false"/>
-            <TextField hint="TextField.-rounded Disabled" class="-rounded m-b-10" isEnabled="false"/>
+            <TextField hint="TextField.-rounded-sm Disabled" class="-rounded-sm m-b-10" isEnabled="false"/>
+            <TextField hint="TextField.-rounded-lg Disabled" class="-rounded-lg m-b-10" isEnabled="false"/>
 
             <TextView hint="TextView"/>
 
