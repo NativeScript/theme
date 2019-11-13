@@ -191,7 +191,7 @@ Button {
 }
 ```
 
-or alternatively set them both in one go - does the same as the upper example:
+or alternatively set them both in one go - this mixin does the same as the upper example:
 
 ```scss
 Button {
@@ -212,9 +212,9 @@ the accent color according to it.
 
 ## CSS variables
 
-Since 2.0.17 beta, the Theme now exports all its internal variables to CSS ones in the .ns-root and .ns-modal classes.
-This is also done for Kendo based skins. You can use them to inherit your styles from the Theme.
-A list of the supported CSS variables follows:
+The Theme now exports all its internal variables to custom CSS ones in the .ns-root and .ns-modal classes.
+This is also done for Kendo based skins. You can use them to inherit your styles from the Theme, if using CSS.
+A list of the supported custom CSS variables follows:
 
 | Simple Colors | Constants | Light Colors | Dark Colors |
 |---------|---------|---------|---------|

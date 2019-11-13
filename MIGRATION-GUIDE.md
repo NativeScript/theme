@@ -241,7 +241,7 @@ or if you want to support dark mode:
 }
 ```
 
-In addition Theme 2 provides a helper function to do setting both light and dark colors in one go, like this:
+In addition Theme 2 provides a helper mixin to do setting both light and dark colors in one go, like this:
 
 ```scss
 .my-label {
@@ -249,8 +249,8 @@ In addition Theme 2 provides a helper function to do setting both light and dark
 }
 ```
 
-This snippet does the same as the one above it. You can read more about the helper functions later in the 
-[Helper Functions](#helper-functions) part.
+This snippet does the same as the one above it. You can read more about the helper functions and the mixin later in
+the [Helper Functions](#helper-functions) section.
 
 ## Element Selectors
 
@@ -360,6 +360,110 @@ Here is a list of modifiers and where they work:
 
 ## Helper Functions
 
+In Theme 2 there are several functions that can help you cope with the changing of dark/light modes for a single 
+skin. 
+
+### alternate() and scale-alternate()
+
+With these two functions you can alter a color, depending on its contrast - it will lighten it, if it is darker or 
+darken it, if it is lighter. The functions use SASS adjust-color() and scale-color() respectively in order to do so
+and are used like this:
+
+```scss
+.my-label {
+    color: alternate(light(background)); // Default amount is 60% for both lighten/darken
+}
+
+.another-label {
+    color: alternate(light(background), 100%); // Set lighten/darken amount
+}
+
+.third-label {
+    color: alternate(light(background), 100%, 50%); // Set lighten/darken amounts separately
+}
+```
+
+### contrasted() and scale-contrasted()
+
+With these two additional functions, one can alter a color, depending on the contrast of another color - again with 
+adjust-color() and scale-color() respectively. Use like this:
+
+```scss
+.my-label {
+    color: contrasted(dark(accent), dark(background)); // Default amount is 60% for both lighten/darken
+}
+
+.another-label {
+    color: contrasted(dark(accent), dark(background), 100%); // Set lighten/darken amount
+}
+
+.third-label {
+    color: scale-contrasted(dark(accent), dark(background), 100%, 50%); // Set lighten/darken amounts separately
+}
+```
+
+### Usage in colorize()
+
+All 4 of these functions can be used in combination with the aforementioned colorize() mixin to affect both 
+light and dark theme modes. This is done be specifying the function in th beginning of the property name. 
+For instance, if we want to specify lighter accent color for dark backgrounds and darker color for light 
+backgrounds, in addition to setting the background color to light one and dark one depending on the mode, 
+you can do it in one go like this:
+
+```scss
+.my-label {
+    @include colorize(
+        $contrasted-color: accent background 20% 30%, // Call contrasted() function for the color property for light/dark
+        $background-color: background                 // Just set the background-color to light/dark
+    );
+}
+```
+
+Please note that you shouldn't use commas between the values here. Also combine multiple color sets like this, as
+this way the mixin can group them in a single rule instead of several.
+
 ## Mode Change API
 
+Check out [this section in the README](README.md#setting-dark-or-light-mode-from-javascript) for more information.
+
 ## Custom CSS Variables
+
+The Theme now exports all its internal variables to custom CSS ones in the .ns-root and .ns-modal classes.
+This is also done for Kendo based skins. You can use them to inherit your styles from the Theme, if using CSS.
+A list of the supported custom CSS variables follows:
+
+| Simple Colors | Constants | Light Colors | Dark Colors |
+|---------|---------|---------|---------|
+| --color-black | --const-font-size | --light-primary | --dark-primary |
+| --color-white | --const-background-alt-10 | --light-background | --dark-background |
+| --color-grey | --const-btn-color-secondary | --light-accent | --dark-accent |
+| --color-grey-light | --const-btn-color-disabled | --light-complementary-color | --dark-complementary-color |
+| --color-charcoal | --const-btn-font-size | --light-complementary | --dark-complementary |
+| --color-transparent | --const-btn-min-width | --light-background-alt-5 | --dark-background-alt-5 |
+| --color-aqua | --const-btn-height | --light-background-alt-10 | --dark-background-alt-10 |
+| --color-blue | --const-btn-padding-x | --light-background-alt-20 | --dark-background-alt-20 |
+| --color-brown | --const-btn-padding-y | --light-secondary | --dark-secondary |
+| --color-forest | --const-btn-margin-x | --light-disabled | --dark-disabled |
+| --color-grey-dark | --const-btn-margin-y | --light-text-color | --dark-text-color |
+| --color-purple | --const-btn-radius | --light-headings-color | --dark-headings-color |
+| --color-lemon | --const-headings-margin-bottom | --light-tab-text-color | --dark-tab-text-color |
+| --color-lime | --const-headings-font-weight | --light-accent-dark | --dark-accent-dark |
+| --color-orange | --const-border-width | --light-accent-light | --dark-accent-light |
+| --color-ruby | --const-border-radius | --light-accent-transparent | --dark-accent-transparent |
+| --color-sky | --const-border-radius-sm | --light-primary-accent | --dark-primary-accent |
+| --color-error | --const-border-radius-lg | --light-background-accent | --dark-background-accent |
+|  | --const-disabled-opacity | --light-background-dark-accent | --dark-background-dark-accent |
+|  | --const-icon-font-size | --light-item-active-color | --dark-item-active-color |
+|  | --const-icon-font-size-lg | --light-item-active-background | --dark-item-active-background |
+|  |  | --light-btn-color | --dark-btn-color |
+|  |  | --light-item-active-icon-color | --dark-item-active-icon-color |
+|  |  | --light-btn-color-inverse | --dark-btn-color-inverse |
+|  |  | --light-btn-color-secondary | --dark-btn-color-secondary |
+
+Use them like this:
+
+```css
+.my-accented-class {
+    color: var(--light-accent);
+}
+```
