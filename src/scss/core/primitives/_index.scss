@@ -10,8 +10,10 @@
     }
 }
 
+.ns-modal,
 .ns-root {
     @include colorize(
+        $background-color: background,
         $color: primary
     );
 
