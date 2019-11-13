@@ -14,10 +14,10 @@
   "nativescript": {
     "id": "org.nativescript.theme",
     "tns-ios": {
-      "version": "6.2.0-rc-2019-10-21-153440-02"
+      "version": "6.2.0"
     },
     "tns-android": {
-      "version": "6.2.0-rc-2019-10-23-094316-01"
+      "version": "6.2.0"
     }
   },
   "dependencies": {
