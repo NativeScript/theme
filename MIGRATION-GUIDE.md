@@ -254,9 +254,109 @@ This snippet does the same as the one above it. You can read more about the help
 
 ## Element Selectors
 
+Theme 1 was using specific classes that the user had to add on every element in order to get it styled. Theme 2
+takes a very different approach - all elements are styled by default by using Element selectors (like `ActionBar {}` or 
+`RadListView` for instance) and adding classes is not required. This brings us to something you may hit along the 
+way - since all elements are already styled, you may need to override some of their styling. And since NativeScript 
+doesn't support !important, you can do this with a CSS feature called specificity. 
+
 ## CSS Specificity
 
+CSS specificity determines the weight a CSS selector has and if it can override another one. Here is 
+an [excellent article](https://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/) on the 
+subject, but TLDR; it boils down to this table: 
+
+| Selector Type | Specificity
+|---|---
+| Element | 1
+| Class, Pseudo, Attribute | 10
+| ID | 100
+| Inline CSS | 1000
+
+Count every type of selector in your rule and what you get is the weight of this selector over the rest. 
+Also keep in mind that with selectors with the same weight, wins the one further down the stylesheet or 
+in one of the next CSS files loaded. For instance here:
+
+```css
+Label {
+    color: red;
+}
+
+Label {
+    color: green;
+}
+```
+
+wins green because specified later, but here:
+
+```css
+.ns-root Label {
+    color: red;
+}
+
+Label {
+    color: green;
+}
+```
+
+wins red, due to higher specificity of 11. For this reason keep in mind, that in Theme 2 dark styling starts with
+specificity 11 due to its starting `.ns-dark` class.
+
 ## Classes Using Modified BEM
+
+The old Theme 1 classes are gone (except in `compat`), but there are new classes in their place that use a 
+namespaced modified BEM methodology. These are left for the cases in which you want a custom component or for instance 
+Label to look like the original ones. For instance the old `.action-bar` class is now called `.nt-action-bar` and 
+the old `.action-item` is now `.nt-action-bar__item` where `nt-` is the NativeScript Theme namespace. The only 
+difference from a standard [BEM methodology](http://getbem.com/) is that instead of coupling modifiers to the blocks,
+in Theme 2 modifiers are decoupled and start with a dash.
+
+A list of the new blocks follows:
+
+| Blocks and Elements | Compat (Theme 1) class | {N} Elements
+|---|---|---
+| .nt-action-bar | .action-bar | ActionBar
+| .nt-action-bar__item | .action-item | ActionItem 
+| .nt-button | .btn | Button 
+| .nt-label | .label | Label 
+| .nt-page | .page | Page  
+| .nt-activity-indicator | .activity-indicator | ActivityIndicator 
+| .nt-segmented-bar | .segmented-bar | SegmentedBar 
+| .nt-progress | .progress | Progress 
+| .nt-slider | .slider | Slider 
+| .nt-search-bar | .search-bar | SearchBar
+| .nt-switch | .switch | Switch 
+| .nt-tab-view | .tab-view | TabView 
+| .nt-list-view | .list-group | ListView, RadListView
+| .nt-form | .form | A group of form elements 
+| .nt-input | .input-field | A block of a TextField with a Label
+| .nt-drawer | .side-drawer | RadSideDrawer
+| .nt-drawer__header | .sidedrawer-header | RadSideDrawer header area
+| .nt-drawer__header-image | .sidedrawer-header-image | RadSideDrawer header image (user thumb)
+| .nt-drawer__list-item | .sidedrawer-list-item | RadSideDrawer list item
+| .nt-drawer__content | | RadSideDrawer content area
+| .nt-icon | | An icon
+| .nt-bottom-navigation | | BottomNavigation
+| .nt-tab-strip | | TabStrip
+| .nt-tab-strip__item | | TabStripItem 
+| .nt-tab-content__item | | TabContentItem 
+
+Here is a list of modifiers and where they work:
+
+| Modifiers | Compat (Theme 1) class | Elements they Work on | What it Does
+|---|---|---|---
+| .-primary | .btn-primary | Buttons | Specifies a primary (accent colored) button
+| .-outline | .btn-outline | Buttons | Specifies an outlined button
+| .-simple | .btn-simple | Buttons | Specifies a simple (transparent) button 
+| .-active | .btn-active | Buttons | Specifies activated by default button (as if pressed) 
+| .-rounded-sm | .btn-rounded-sm | Buttons, TextFields | Specifies a small border radius for the element (default 4)
+| .-rounded-lg | .btn-rounded-lg / .input-rounded | Buttons, TextFields | Specifies a large border radius for the element (default 50%)
+| .-{skin} | .btn-{skin} | Buttons | Specifies a skin accent colored button - like `.-ruby`, `.-forest`, etc.
+| .-border | .input-border | TextFields | Specifies a TextField with border on all sides
+| .-sides | .input-sides | TextFields | Specifies an .nt-input/.input-field with Label on the left side
+| .-left | .sidedrawer-left | RadSideDrawer header | Aligns RadSideDrawer header left (default center)
+| .-thumb | .thumb | Image in ListView | Specifies that the image should be a small thumbnail 
+| .-separator | | row in ListView | Adds a bottom border to a row
 
 ## Helper Functions
 

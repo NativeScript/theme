@@ -370,11 +370,6 @@
         }
     }
 
-    HtmlView {
-        color: light(primary);
-        background: light(background);
-    }
-
     PropertyEditor:focus DataFormEditorCore {
         @include colorize($contrasted-border-color: accent background 20%);
     }
