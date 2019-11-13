@@ -1,6 +1,6 @@
 {
   "name": "@nativescript/theme",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Telerik NativeScript Core Theme",
   "author": "Telerik <support@telerik.com>",
   "homepage": "https://www.nativescript.org",
@@ -21,17 +21,17 @@
     }
   },
   "dependencies": {
-    "@nativescript/core": "6.2.0",
+    "@nativescript/core": "~6.2.1",
     "@nativescript/theme": "./src",
     "bootstrap": "4.3.1",
-    "nativescript-picker": "2.1.2",
-    "nativescript-datetimepicker": "1.2.1",
+    "nativescript-picker": "~2.1.2",
+    "nativescript-datetimepicker": "~1.2.2",
     "nativescript-themes": "2.0.1",
-    "nativescript-ui-autocomplete": "5.1.1",
-    "nativescript-ui-sidedrawer": "7.0.3",
-    "nativescript-ui-dataform": "5.1.1",
-    "nativescript-ui-listview": "7.1.0",
-    "tns-core-modules": "6.2.0"
+    "nativescript-ui-autocomplete": "~6.0.0",
+    "nativescript-ui-sidedrawer": "~8.0.0",
+    "nativescript-ui-dataform": "~6.0.0",
+    "nativescript-ui-listview": "~8.0.1",
+    "tns-core-modules": "~6.2.1"
   },
   "devDependencies": {
     "@babel/core": "7.6.4",
@@ -41,7 +41,7 @@
     "eslint": "6.4.0",
     "glob": "7.1.4",
     "lazy": "1.0.11",
-    "nativescript-dev-webpack": "1.3.0",
+    "nativescript-dev-webpack": "~1.3.0",
     "resolve-url-loader": "3.1.0",
     "sass": "1.23.0",
     "sass-lint": "1.13.1",
