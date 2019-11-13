@@ -10,7 +10,7 @@
 
 ### Breaking changes
 
-* Separate default core styling again to reduce the core CSS with 20k (breaking)
+* Separate default core styling again to reduce the core CSS with 20k
 
 ### Features
 

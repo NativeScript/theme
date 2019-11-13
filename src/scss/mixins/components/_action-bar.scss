@@ -107,7 +107,8 @@
 
         #{$item-selectors} {
             @include colorize(
-                $color: complementary-color
+                $color: complementary-color,
+                $background-color: transparent
             );
 
             #{if($compat, '&-active:active', '&:active, &.-active')} {
