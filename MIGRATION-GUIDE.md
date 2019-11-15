@@ -1,29 +1,27 @@
 # NativeScript Theme V1 to V2 Migration Guide
 
-The new NativeScript Theme 2 has some breaking changes and this guide is here to help you with the transition process.
+The new NativeScript Theme v2 introduces some breaking changes and this guide is here to help you with the transition process.
 
-There are several key points that are different in Theme 2, so we are going to cover them here one by one.
+There are several key points that are different in NativeScript Theme v2, so we are going to cover them here one by one.
 
-1. To load the Theme now you need to import 2 files instead of just one. [learn more](#import-two-files-instead-of-one)
-1. Theme 2 includes compat styling that uses old Theme 1 classes for styling [learn more](#compat-styling)
+1. Loading Theme v2 now requires import of two files instead of just one. [learn more](#import-two-files-instead-of-one)
+1. Theme v2 includes compat styling support that uses old Theme v1 classes for styling [learn more](#compat-styling)
 1. Still only one file to import if you create a custom skin. [learn more](#create-a-custom-skin-with-one-import)
-1. Load all Theme 2 variables and mixins with just one file. [learn more](#load-all-variables-and-mixins)
-1. Theme 2 is mostly using Element selectors for styling instead of classes. [learn more](#element-selectors)
-1. Theme styling is meant to has lowest possible specificity, but not in dark mode. [learn more](#css-specificity)
+1. Load all Theme v2 variables and mixins with just one file. [learn more](#load-all-variables-and-mixins)
+1. Theme v2 mostly uses Element selectors for styling instead of classes. [learn more](#element-selectors)
+1. Theme v2 styling is meant to have lowest possible specificity, but not in dark mode. [learn more](#css-specificity)
 1. There are still classes, but they are using a modified BEM syntax. [learn more](#classes-using-modified-bem)
 1. There are several helper functions that you can use to style both light & dark modes. [learn more](#helper-functions)
 1. There is a lightweight API to change between light/dark modes. [learn more](#mode-change-api)
-1. Allmost all internal variables are export as custom CSS variables [learn more](#custom-css-variables)
+1. Almost all internal variables are export as custom CSS variables [learn more](#custom-css-variables)
 
 ## Import Two Files Instead of One
 
-Theme 2 is divided in two files - core styling and skin. Core styling is needed for things like initial layout and 
-sizing of NativeScript components, while the skin is defining the colors applied. The skin also exports all internal 
-variables as CSS custom variables on the root view of the app and all modals (respectively .ns-root and .ns-modal classes).
-In addition, there are no separate ios/android files, as there are very little differences between the styling of the
-two platforms and also Theme 2 supports iOS/Android light/dark modes out of the box.
+Theme v2 functionality is divided in two files - core styling and skin. Core styling is needed for things like initial layout and sizing of NativeScript components, while the skin defines the applied colors. The skin also exports all internal 
+variables as CSS custom variables on the root view of the app and all modals (respectively `.ns-root` and `.ns-modal` classes). In addition, there are no separate ios/android files, as there are very few differences between the styling of the
+two platforms; Theme v2 also supports iOS/Android light/dark modes out of the box.
 
-In Theme 1, you loaded the core.android.css/core.ios.css (or scss) depending on the platform, like this:
+In Theme v1, you loaded the core.android.css/core.ios.css (or scss) depending on the platform, like this:
 
 ```css
 @import "~nativescript-theme-core/css/core.android.css";
@@ -34,7 +32,7 @@ or
 @import "~nativescript-theme-core/css/blue.android.css";
 ```
 
-to load the core or blue skins in Android. In Theme 2, you should change these imports to:
+to load the core or blue skins in Android. In Theme v2, you should change these imports to:
 
 ```css
 @import "~@nativescript/theme/css/core.css";
@@ -50,19 +48,19 @@ for the core skin (now called `default`) or
 for the `blue` skin. In addition, as you can see, the theme package is now scoped to @nativescript organization as are
 the core modules.
 
-To load SCSS in Theme 2, the imports are now a bit different:
+To load SCSS in Theme v2, the imports are now a bit different:
 
 ```scss
 @import "~@nativescript/theme/core";
 @import "~@nativescript/theme/blue";
 ```
 
-As you may notice - the files are now in the root of the Theme package as opposed to Theme 1, where they were in an 
+As you may notice - the files are now in the root of the Theme package as opposed to Theme v1, where they were in an 
 scss folder.
 
 ## Compat Styling
 
-If you prefer to use the old classes for styling, you can import `.compat` core theme and skin in order to do so.
+If you prefer to use the old styling mechanism with classes, you can import `.compat` core theme and skin in order to do so.
 
 ```css
 @import "~@nativescript/theme/css/core.compat.css";
@@ -79,14 +77,14 @@ or alternatively in SCSS
 
 ## Create a Custom Skin with One Import
 
-As Theme 1 before it, Theme 2 also allows customization through SCSS variables. However, due to changing its internals to
+As Theme v1 before it, Theme v2 also allows customization through SCSS variables. However, due to changing its internals to
 use maps, you can change the variables only before the rest of the Theme is loaded.
 
 ```scss
 // Colors
 $accent: #369;
 
-// This color was named $ab-background in Theme 1
+// This color was named $ab-background in Theme v1
 $complementary: fuchsia;
 
 // Core styles
@@ -129,7 +127,7 @@ Here is a list of all variables that can be changed.
 
 In addition, several variables are mapped to the Theme variables in order to support Kendo skins or old Theme vars.
 
-| Kendo Default | Kendo Bootstrap | Kendo Material | Theme 1 | Theme 2
+| Kendo Default | Kendo Bootstrap | Kendo Material | Theme v1 | Theme v2
 |---|---|---|---|---
 | $accent | $accent | $primary-palette-name, base hue 500 | $accent | $accent
 | $accent | $card-cap-bg | $secondary-palette-name, base hue 500 | $ab-background | $complementary
@@ -192,9 +190,9 @@ as opposed to
 @import '~nativescript-theme-core/scss/light';
 ```
 
-in Theme 1.
+in Theme v1.
 
-Also different from Theme 1 is the way you will access variables in SCSS - by using special functions that retrieve 
+Also different from Theme v1 is the way you will access variables in SCSS - by using special functions that retrieve 
 the variable from its place in the internal map. There are 3 such function `const()`, `light()` and `dark()`. Const
 function is used to retrieve general variables, like colors or border-radius, for instance. The other two can be used
 to retrieve specific light/dark variable. So this code with Theme 1:
@@ -205,7 +203,7 @@ to retrieve specific light/dark variable. So this code with Theme 1:
 }
 ```
 
-should be done like this in Theme 2:
+should be done like this in Theme v2:
 
 ```scss
 .my-label {
@@ -213,7 +211,7 @@ should be done like this in Theme 2:
 }
 ```
 
-Alternatively, using skin specific colors in Theme 1:
+Alternatively, using skin specific colors in Theme v1:
 
 ```scss
 .my-label {
@@ -241,7 +239,7 @@ or if you want to support dark mode:
 }
 ```
 
-In addition Theme 2 provides a helper mixin to do setting both light and dark colors in one go, like this:
+In addition Theme v2 provides a helper mixin to do setting both light and dark colors in one go, like this:
 
 ```scss
 .my-label {
@@ -254,8 +252,8 @@ the [Helper Functions](#helper-functions) section.
 
 ## Element Selectors
 
-Theme 1 was using specific classes that the user had to add on every element in order to get it styled. Theme 2
-takes a very different approach - all elements are styled by default by using Element selectors (like `ActionBar {}` or 
+Theme v1 was using specific classes that the user had to add on every element in order to get it styled. Theme v2
+takes a very different approach - all elements are styled by default using Element selectors (like `ActionBar {}` or 
 `RadListView` for instance) and adding classes is not required. This brings us to something you may hit along the 
 way - since all elements are already styled, you may need to override some of their styling. And since NativeScript 
 doesn't support !important, you can do this with a CSS feature called specificity. 
@@ -299,21 +297,21 @@ Label {
 }
 ```
 
-wins red, due to higher specificity of 11. For this reason keep in mind, that in Theme 2 dark styling starts with
+wins red, due to higher specificity of 11. For this reason keep in mind, that in Theme v2 dark styling starts with
 specificity 11 due to its starting `.ns-dark` class.
 
 ## Classes Using Modified BEM
 
-The old Theme 1 classes are gone (except in `compat`), but there are new classes in their place that use a 
+The old Theme v1 classes are gone (except in `compat` mode), but there are new classes in their place that use a 
 namespaced modified BEM methodology. These are left for the cases in which you want a custom component or for instance 
 Label to look like the original ones. For instance the old `.action-bar` class is now called `.nt-action-bar` and 
 the old `.action-item` is now `.nt-action-bar__item` where `nt-` is the NativeScript Theme namespace. The only 
 difference from a standard [BEM methodology](http://getbem.com/) is that instead of coupling modifiers to the blocks,
-in Theme 2 modifiers are decoupled and start with a dash.
+in Theme v2 modifiers are decoupled and start with a dash.
 
 A list of the new blocks follows:
 
-| Blocks and Elements | Compat (Theme 1) class | {N} Elements
+| Blocks and Elements | Compat (Theme v1) class | {N} Elements
 |---|---|---
 | .nt-action-bar | .action-bar | ActionBar
 | .nt-action-bar__item | .action-item | ActionItem 
@@ -343,7 +341,7 @@ A list of the new blocks follows:
 
 Here is a list of modifiers and where they work:
 
-| Modifiers | Compat (Theme 1) class | Elements they Work on | What it Does
+| Modifiers | Compat (Theme v1) class | Elements they Work on | What it Does
 |---|---|---|---
 | .-primary | .btn-primary | Buttons | Specifies a primary (accent colored) button
 | .-outline | .btn-outline | Buttons | Specifies an outlined button
@@ -360,7 +358,7 @@ Here is a list of modifiers and where they work:
 
 ## Helper Functions
 
-In Theme 2 there are several functions that can help you cope with the changing of dark/light modes for a single 
+In Theme v2 there are several functions that can help you cope with the changing of dark/light modes for a single 
 skin. 
 
 ### alternate() and scale-alternate()
@@ -405,7 +403,7 @@ adjust-color() and scale-color() respectively. Use like this:
 ### Usage in colorize()
 
 All 4 of these functions can be used in combination with the aforementioned colorize() mixin to affect both 
-light and dark theme modes. This is done be specifying the function in th beginning of the property name. 
+light and dark theme modes. This is done by specifying the function in the beginning of the property name. 
 For instance, if we want to specify lighter accent color for dark backgrounds and darker color for light 
 backgrounds, in addition to setting the background color to light one and dark one depending on the mode, 
 you can do it in one go like this:
@@ -419,8 +417,7 @@ you can do it in one go like this:
 }
 ```
 
-Please note that you shouldn't use commas between the values here. Also combine multiple color sets like this, as
-this way the mixin can group them in a single rule instead of several.
+Please note that you shouldn't use commas between the values here. Also, make sure you combine multiple color sets like this, as in this way the mixin can group them in a single rule instead of several.
 
 ## Mode Change API
 
@@ -428,7 +425,7 @@ Check out [this section in the README](README.md#setting-dark-or-light-mode-from
 
 ## Custom CSS Variables
 
-The Theme now exports all its internal variables to custom CSS ones in the .ns-root and .ns-modal classes.
+The Theme now exports all its internal variables to custom CSS ones in the `.ns-root` and `.ns-modal` classes.
 This is also done for Kendo based skins. You can use them to inherit your styles from the Theme, if using CSS.
 A list of the supported custom CSS variables follows:
 
