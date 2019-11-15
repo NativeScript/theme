@@ -17,8 +17,8 @@ There are several key points that are different in NativeScript Theme v2, so we 
 
 ## Import Two Files Instead of One
 
-Theme v2 functionality is divided in two files - core styling and skin. Core styling is needed for things like initial layout and sizing of NativeScript components, while the skin defines the applied colors. The skin also exports all internal 
-variables as CSS custom variables on the root view of the app and all modals (respectively `.ns-root` and `.ns-modal` classes). In addition, there are no separate ios/android files, as there are very few differences between the styling of the
+Theme v2 functionality is divided in two files - core styling and skin. Core styling is necessary for things like initial layout and sizing of NativeScript components, while the skin defines the applied colors. The skin also exports all internal 
+variables as CSS custom variables on the app root view and all modal dialogs (respectively `.ns-root` and `.ns-modal` classes). In addition, there are no separate ios/android files, as there are very few differences between the styling of the
 two platforms; Theme v2 also supports iOS/Android light/dark modes out of the box.
 
 In Theme v1, you loaded the core.android.css/core.ios.css (or scss) depending on the platform, like this:
@@ -195,7 +195,7 @@ in Theme v1.
 Also different from Theme v1 is the way you will access variables in SCSS - by using special functions that retrieve 
 the variable from its place in the internal map. There are 3 such function `const()`, `light()` and `dark()`. Const
 function is used to retrieve general variables, like colors or border-radius, for instance. The other two can be used
-to retrieve specific light/dark variable. So this code with Theme 1:
+to retrieve specific light/dark variable. So this code with Theme v1:
 
 ```scss
 .my-label {
