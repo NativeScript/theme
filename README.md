@@ -25,6 +25,13 @@ Home of the core NativeScript theme 2.0 beta. The documentation of the beta them
 
 ## Breaking changes
 
+---
+**NOTE**
+
+NativeScript Theme 1.0 to 2.0 migration guide is available [here](MIGRATION-GUIDE.md).
+
+---
+
 * The theme requires 2 files to be loaded - the core theme and a skin on top of it. Read [Usage](#usage) for more info.
 * The theme is now **applied using Element selectors**, if you need the old classes approach - it has moved to
 .compat CSS/SCSS files, e.g. `core.compat.css` and `blue.compat.css`.
