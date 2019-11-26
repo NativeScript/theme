@@ -15,10 +15,6 @@
                 padding: 5;
                 vertical-align: center;
             }
-
-            Image {
-                stretch: aspectFit;
-            }
         }
 
         .thumb#{if($compat, '', ', .-thumb')} {
