@@ -43,7 +43,7 @@
         @return $size / ($size * 0 + 1);
     }
 
-    $value: $size * 15;
+    $value: $size * $font-size;
 
     @return round($value);
 }
@@ -73,28 +73,28 @@
     @return abs($color-brightness) < ($light-color / 1.7);
 }
 
-@function alternate($color, $contrast: 60%, $decontrast: null) {
-    $decontrast: if($decontrast != null, $decontrast, $contrast);
+@function alternate($color, $lighten: 60%, $darken: null) {
+    $darken: if($darken != null, $darken, $lighten);
 
-    @return adjust-color($color, $lightness: if(check-contrast($color), $contrast, -$decontrast));
+    @return adjust-color($color, $lightness: if(check-contrast($color), $lighten, -$darken));
 }
 
-@function scale-alternate($color, $contrast: 60%, $decontrast: null) {
-    $decontrast: if($decontrast != null, $decontrast, $contrast);
+@function scale-alternate($color, $lighten: 60%, $darken: null) {
+    $darken: if($darken != null, $darken, $lighten);
 
-    @return scale-color($color, $lightness: if(check-contrast($color), $contrast, -$decontrast));
+    @return scale-color($color, $lightness: if(check-contrast($color), $lighten, -$darken));
 }
 
-@function contrasted($color, $to-color, $contrast: 60%, $decontrast: null) {
-    $decontrast: if($decontrast != null, $decontrast, $contrast);
+@function contrasted($color, $to-color, $lighten: 60%, $darken: null) {
+    $darken: if($darken != null, $darken, $lighten);
 
-    @return adjust-color($color, $lightness: if(check-contrast($to-color), $contrast, -$decontrast));
+    @return adjust-color($color, $lightness: if(check-contrast($to-color), $lighten, -$darken));
 }
 
-@function scale-contrasted($color, $to-color, $contrast: 60%, $decontrast: null) {
-    $decontrast: if($decontrast != null, $decontrast, $contrast);
+@function scale-contrasted($color, $to-color, $lighten: 60%, $darken: null) {
+    $darken: if($darken != null, $darken, $lighten);
 
-    @return scale-color($color, $lightness: if(check-contrast($to-color), $contrast, -$decontrast));
+    @return scale-color($color, $lightness: if(check-contrast($to-color), $lighten, -$darken));
 }
 
 @function slice($list, $start: 1, $end: length($list)) {

@@ -98,14 +98,18 @@
         #{if($compat,
             ('&.input-rounded',
              '&.input-border'),
-            ('&.-rounded',
+            ('&.-rounded-sm',
+             '&.-rounded-lg',
              '&.-border'))} {
             border-width: const(border-width);
-            border-radius: const(border-radius-sm);
             padding: 12 14;
         }
 
-        #{if($compat, '&.input-rounded', '&.-rounded')} {
+        #{if($compat, '&.input-border', '&.-rounded-sm')} {
+            border-radius: const(border-radius-sm);
+        }
+
+        #{if($compat, '&.input-rounded', '&.-rounded-lg')} {
             border-radius: const(border-radius-lg);
         }
 
@@ -364,11 +368,6 @@
                 $background-color: background-alt-5
             );
         }
-    }
-
-    HtmlView {
-        color: light(primary);
-        background: light(background);
     }
 
     PropertyEditor:focus DataFormEditorCore {
