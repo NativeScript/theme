@@ -7,7 +7,7 @@ There are several key points that are different in NativeScript Theme v2, so we 
 1. Loading Theme v2 now requires import of two files instead of just one. [learn more](#import-two-files-instead-of-one)
 1. Theme v2 includes compat styling support that uses old Theme v1 classes for styling [learn more](#compat-styling)
 1. Still only one file to import if you create a custom skin. [learn more](#create-a-custom-skin-with-one-import)
-1. Load all Theme v2 variables and mixins with just one file. [learn more](#load-all-variables-and-mixins)
+1. Load all Theme v2 variables and mixins with just one file. [learn more](#load-variables-and-mixins)
 1. Theme v2 mostly uses Element selectors for styling instead of classes. [learn more](#element-selectors)
 1. Theme v2 styling is meant to have lowest possible specificity, but not in dark mode. [learn more](#css-specificity)
 1. There are still classes, but they are using a modified BEM syntax. [learn more](#classes-using-modified-bem)
@@ -79,6 +79,9 @@ or alternatively in SCSS
 
 As Theme v1 before it, Theme v2 also allows customization through SCSS variables. However, due to changing its internals to
 use maps, you can change the variables only before the rest of the Theme is loaded.
+
+> Note: When creating a custom skin you don't need to import any other file than `~@nativescript/theme/index` and 
+it should be imported after you make changes to the variables!
 
 ```scss
 // Colors
@@ -166,9 +169,6 @@ $series-f: #d9534f;
 
 @import '~@nativescript/theme/index';
 ```
-
-> Note: When creating a custom skin you don't need to import any other file than `~@nativescript/theme/index` and 
-it should be imported after you make changes to the variables!
 
 ## Load Variables and Mixins
 
