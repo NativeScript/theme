@@ -2,7 +2,7 @@
 [![npm](https://img.shields.io/npm/v/@nativescript/theme.svg)](https://www.npmjs.com/package/@nativescript/theme)
 [![npm](https://img.shields.io/npm/dt/@nativescript/theme.svg?label=npm%20downloads)](https://www.npmjs.com/package/@nativescript/theme)
 
-Home of the core NativeScript theme 2.0 beta. The documentation of the beta theme will live here, until it gets final.
+Home of the core NativeScript Theme 2.0.
 
 - [Breaking Changes](#breaking-changes)
 - [Usage](#usage)
@@ -15,7 +15,6 @@ Home of the core NativeScript theme 2.0 beta. The documentation of the beta them
 - [Kendo UI ThemeBuilder support](#kendo-ui-themebuilder-support)
 - [Theme classes and compatibility](#theme-classes-and-compatibility)
 - [Should I use sass or node-sass](#should-i-use-sass-or-node-sass)
-- [Why Beta](#why-beta)
 - [Screenshots 📸](#screenshots)
 - [Changelog 📝](https://github.com/NativeScript/theme/blob/master/CHANGELOG.md)
 - [Contributing 🍺](#contributing)
@@ -35,7 +34,6 @@ NativeScript Theme 1.0 to 2.0 migration guide is available [here](MIGRATION-GUID
 * The theme requires 2 files to be loaded - the core theme and a skin on top of it. Read [Usage](#usage) for more info.
 * The theme is now **applied using Element selectors**, if you need the old classes approach - it has moved to
 .compat CSS/SCSS files, e.g. `core.compat.css` and `blue.compat.css`.
-* Theme 2.0 beta **requires some JavaScript to be loaded** for **{N} before 6.1** which helps with the styling.
 * Theme 2.0 replaces node-sass with **sass** which is more up to date feature-wise and doesn't have a native dependency.
 It does still work with node-sass though.
 
@@ -92,7 +90,7 @@ initial styling of the components.
 
 ## Usage before NativeScript 6.1
 
-In order to use the 2.0 beta theme before {N} 6.1, you will also need to include a small JS file in your project:
+In order to use Theme 2.0 before {N} 6.1, you will also need to include a small JS file in your project:
 
 ```javascript
 import "@nativescript/theme";
@@ -316,8 +314,6 @@ if you want to use them, you should load them separately, like this:
 @import "~@nativescript/theme/blue.compat";
 ```
 
-There might be bugs with these in the beta, you might want to hold off upgrading if you want to use the old classes.
-
 As of 2.0, the theme now utilizes a simplified BEM approach for the new element classes, that might be needed here or there.
 For instance, the buttons need `.-primary` and `.-outline` modifiers, instead of the old `.btn-primary` and
 `.btn-outline` classes. All element classes (which are not needed by default, except if you want to style a component
@@ -336,17 +332,6 @@ Theme 2.0 is developed using SASS. The NPM package used was sass (formerly dart-
     }
 }
 ```
-
-## Why Beta
-
-* Firstly, we want to gather feedback from the community and create a theme that is useful and if possible - beautiful.
-* Secondly, the theme needs the classes inside the core modules to work properly without loading additional JavaScript
-(this is now released with {N} 6.1).
-* And thirdly - {N} core modules should have a way to propagate OS theme changes inside the app, so that it can act accordingly
-(planned for {N} 6.2).
-
-The theme is relatively stable, try the latest version [![npm](https://img.shields.io/npm/v/@nativescript/theme?label=%20&style=flat-square)](https://www.npmjs.com/package/@nativescript/theme)
-and report if you notice problems.
 
 ## Screenshots
 
