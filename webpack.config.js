@@ -60,7 +60,7 @@ module.exports = smp.wrap((env) => {
     const hasRootLevelScopedModules = nsWebpack.hasRootLevelScopedModules({ projectDir: projectRoot });
     let coreModulesPackageName = "tns-core-modules";
     const alias = {
-        '~': appFullPath
+        "~": appFullPath
     };
 
     if (hasRootLevelScopedModules) {
@@ -116,7 +116,7 @@ module.exports = smp.wrap((env) => {
                 resolve(__dirname, `node_modules/${coreModulesPackageName}`),
                 resolve(__dirname, "node_modules"),
                 `node_modules/${coreModulesPackageName}`,
-                "node_modules",
+                "node_modules"
             ],
             alias,
             // resolve symlinks to symlinked modules

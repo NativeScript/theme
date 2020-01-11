@@ -34,8 +34,9 @@
     "tns-core-modules": "6.3.2"
   },
   "devDependencies": {
-    "@babel/core": "7.6.4",
-    "@babel/plugin-transform-modules-commonjs": "7.6.0",
+    "@babel/core": "7.7.7",
+    "@babel/parser": "7.7.5",
+    "@babel/plugin-transform-modules-commonjs": "7.7.5",
     "babel-eslint": "10.0.3",
     "cache-loader": "4.1.0",
     "eslint": "6.4.0",
