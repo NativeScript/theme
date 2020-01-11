@@ -1,4 +1,6 @@
+import * as appCommon from "tns-core-modules/application/application-common";
 import * as app from "tns-core-modules/application";
+import { removeFromRootViewCssClasses } from "tns-core-modules/css/system-classes";
 import { device, isAndroid, screen } from "tns-core-modules/platform";
 import * as view from "tns-core-modules/ui/core/view";
 import * as frame from "tns-core-modules/ui/frame";
@@ -45,16 +47,22 @@ export class Theme {
 
         const classList = new ClassList(Theme.rootView.className);
 
-        classList
-            .remove(Theme.Light, Theme.Dark)
-            .add(Theme.currentMode);
+        classList.remove(Theme.Light, Theme.Dark);
+
+        if (Theme.currentMode !== Theme.Auto) {
+            removeFromRootViewCssClasses(Theme.Light);
+            removeFromRootViewCssClasses(Theme.Dark);
+            classList.add(Theme.currentMode);
+        }
 
         Theme.rootView.className = classList.get();
     }
 
     static toggleMode(isDark) {
         if (isDark === undefined) {
-            Theme.setMode(Theme.getMode() === Theme.Light ? Theme.Dark : Theme.Light);
+            const mode = Theme.currentMode === Theme.Auto && app.systemAppearance ? `ns-${app.systemAppearance()}` : Theme.getMode();
+
+            Theme.setMode(mode === Theme.Light ? Theme.Dark : Theme.Light);
 
             return;
         }
@@ -71,6 +79,7 @@ export class Theme {
 
 Theme.Light = "ns-light";
 Theme.Dark = "ns-dark";
+Theme.Auto = "auto";
 
 export default Theme;
 
@@ -81,6 +90,16 @@ view.ViewCommon.prototype._setupAsRootView = function() {
     Theme.setMode(Theme.currentMode, this);
 };
 
+// Disable SystemAppearance changes if Theme.currentMode is not auto
+const oldSystemAppearanceChanged = appCommon.systemAppearanceChanged;
+
+if (oldSystemAppearanceChanged) {
+    appCommon.systemAppearanceChanged = function () {
+        if (Theme.currentMode === Theme.Auto) {
+            oldSystemAppearanceChanged.call(this, ...arguments);
+        }
+    };
+}
 
 /* Deprecated root class setters, now available in core modules */
 function updateRootClasses(orientation, root = app.getRootView(), classes = []) {

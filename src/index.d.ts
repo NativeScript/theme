@@ -7,6 +7,7 @@ export class ClassList {
 export class Theme {
     public static Light: string;
     public static Dark: string;
+    public static Auto: string;
 
     public static setMode(mode?: string, root?: any): undefined;
     public static toggleMode(isDark?: boolean): undefined;

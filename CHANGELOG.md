@@ -1,3 +1,11 @@
+<a name="2.3.0"></a>
+## [2.3.0](https://github.com/NativeScript/theme/compare/v2.2.1...v2.3.0) (2020-01-13)
+
+### Features
+
+* Add support for hard changing the mode in {N} 6.2+ (Theme.Light/Theme.Dark/Theme.Auto).
+* toggleMode now takes into account systemAppearance to decide the alternate mode (6.2+).
+
 <a name="2.2.1"></a>
 ## [2.2.1](https://github.com/NativeScript/theme/compare/v2.2.0...v2.2.1) (2019-11-13)
 
