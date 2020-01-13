@@ -21,17 +21,17 @@
     }
   },
   "dependencies": {
-    "@nativescript/core": "6.3.2",
+    "@nativescript/core": "~6.3.2",
     "@nativescript/theme": "./src",
     "bootstrap": "4.3.1",
-    "nativescript-picker": "2.1.2",
-    "nativescript-datetimepicker": "1.2.2",
+    "nativescript-picker": "~2.1.2",
+    "nativescript-datetimepicker": "~1.2.2",
     "nativescript-themes": "2.0.1",
-    "nativescript-ui-autocomplete": "6.0.0",
-    "nativescript-ui-sidedrawer": "8.0.0",
-    "nativescript-ui-dataform": "6.0.0",
-    "nativescript-ui-listview": "8.0.1",
-    "tns-core-modules": "6.3.2"
+    "nativescript-ui-autocomplete": "~6.0.0",
+    "nativescript-ui-sidedrawer": "~8.0.0",
+    "nativescript-ui-dataform": "~6.0.0",
+    "nativescript-ui-listview": "~8.0.1",
+    "tns-core-modules": "~6.3.2"
   },
   "devDependencies": {
     "@babel/core": "7.7.7",
