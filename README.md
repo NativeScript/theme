@@ -123,12 +123,21 @@ Frame it renders.
 ## Setting Dark or Light mode from JavaScript
 
 Setting the theme mode from JavaScript is also much easier now - just import the theme and call Theme.setMode() with
-your preferred mode - either Theme.Light or Theme.dark, like this:
+your preferred mode - either Theme.Light or Theme.Dark, like this:
 
 ```javascript
 import Theme from "@nativescript/theme";
 
 Theme.setMode(Theme.Dark); // Or Theme.Light
+```
+
+Keep in mind that in {N} 6.2 these changes will override the default system mode. To 
+restore it, use Theme.Auto (available since Theme 2.3.0):
+
+```javascript
+import Theme from "@nativescript/theme";
+
+Theme.setMode(Theme.Auto);
 ```
 
 Additionally there is another helper method - toggleMode, which can be used without parameters to just toggle the mode
