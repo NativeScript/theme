@@ -56,6 +56,11 @@
 
     // Forms
 
+    @include form-skin(
+                ('Form',
+                '.nt-form')
+    );
+
     @include form-fields-skin();
 
     @include input-component-skin(
