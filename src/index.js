@@ -73,7 +73,7 @@ export class Theme {
     static getMode() {
         const root = app.getRootView();
 
-        return Theme.currentMode || ((root.className || "").indexOf(Theme.Dark) !== -1 ? Theme.Dark : Theme.Light);
+        return Theme.currentMode || (((root && root.className) || "").indexOf(Theme.Dark) !== -1 ? Theme.Dark : Theme.Light);
     }
 }
 
