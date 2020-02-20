@@ -1,5 +1,12 @@
-<a name="2.3.0"></a>
-## [2.3.0](https://github.com/NativeScript/theme/compare/v2.2.1...v2.3.0) (2020-01-13)
+<a name="2.3.2"></a>
+## [2.3.2](https://github.com/NativeScript/theme/compare/v2.2.1...v2.3.2) (2020-02-20)
+
+### Fixes
+
+* CSS variables output with **node-sass** is causing crashes
+
+<a name="2.3.1"></a>
+## [2.3.1](https://github.com/NativeScript/theme/compare/v2.2.1...v2.3.1) (2020-01-13)
 
 ### Features
 
