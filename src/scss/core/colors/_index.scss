@@ -19,12 +19,12 @@ $border-color: $focus !default;
 
 $colors:  (
     // Core colors
-    black: $black,
-    white: $white,
+    "black": $black,
+    "white": $white,
     grey: $grey,
     grey-light: $grey-background,
     charcoal: $charcoal,
-    transparent: transparent,
+    "transparent": transparent,
 
     // Accents
     aqua: #00caab,
