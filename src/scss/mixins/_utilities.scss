@@ -7,6 +7,11 @@
 // Functions
 
 @function const($const) {
+    // Workarounds for node-sass color bug
+    @if $const == white { $const: "white"; }
+    @if $const == black { $const: "black"; }
+    @if $const == transparent { $const: "transparent"; }
+
     @return map-get($constants, $const);
 }
 
