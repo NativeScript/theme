@@ -101,6 +101,19 @@ if (oldSystemAppearanceChanged) {
     };
 }
 
+// Make sure to substitute systemAppearance method too, as some plugins call it directly
+const oldSystemAppearance = app.systemAppearance;
+
+if (oldSystemAppearance) {
+    app.systemAppearance = function () {
+        if (Theme.currentMode === Theme.Auto) {
+            return oldSystemAppearance.call(this, ...arguments);
+        }
+
+        return Theme.currentMode.substr(3);
+    };
+}
+
 /* Deprecated root class setters, now available in core modules */
 function updateRootClasses(orientation, root = app.getRootView(), classes = []) {
     const classList = new ClassList(root.className);
