@@ -61,18 +61,20 @@
                 '.nt-form')
     );
 
-    @include form-fields-skin();
+    @include form-fields-skin(
+                ('.nt-input')
+    );
 
     @include input-component-skin(
                 ('.nt-input')
     );
 
   @include action-bar-skin(
-              ('ActionBar',
-              '.nt-action-bar'),
-              ('Label',
-              'Button',
-              '.nt-action-bar__item')
+                ('ActionBar',
+                '.nt-action-bar'),
+                ('Label',
+                'Button',
+                '.nt-action-bar__item')
   );
 
 } @else {

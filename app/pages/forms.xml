@@ -1,5 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
       xmlns:actionBar="/action-bar"
+      xmlns:mtf="nativescript-masked-text-field"
       navigatingTo="navigatingTo">
     <actionBar:action-bar actionBarTitle="Forms"/>
     <ScrollView>
@@ -23,6 +24,9 @@
             <TextField hint="TextField.-border Disabled" class="-border m-b-10" isEnabled="false"/>
             <TextField hint="TextField.-rounded-sm Disabled" class="-rounded-sm m-b-10" isEnabled="false"/>
             <TextField hint="TextField.-rounded-lg Disabled" class="-rounded-lg m-b-10" isEnabled="false"/>
+            <mtf:MaskedTextField hint=".nt-input.-border" class="nt-input -border m-b-10" text="" mask="(999) 999-9999" keyboardType="phone"/>
+            <mtf:MaskedTextField hint=".nt-input.-rounded-sm" class="nt-input -rounded-sm m-b-10" text="" mask="(999) 999-9999" keyboardType="phone"/>
+            <mtf:MaskedTextField hint=".nt-input.-rounded-lg" class="nt-input -rounded-lg m-b-10" text="" mask="(999) 999-9999" keyboardType="phone"/>
 
             <TextView hint="TextView"/>
 

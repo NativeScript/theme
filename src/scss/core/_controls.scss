@@ -77,7 +77,9 @@
                 '.nt-form')
     );
 
-    @include form-fields();
+    @include form-fields(
+                ('.nt-input')
+    );
 
     @include input-component(
                 ('.nt-input')

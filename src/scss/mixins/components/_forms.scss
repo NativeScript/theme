@@ -36,12 +36,13 @@
 }
 
 
-@mixin form-fields() {
+@mixin form-fields($selectors: '') {
 
     /* Form Validation styling */
 
     #{if($compat, '.input',
-        ('TextView',
+        ($selectors,
+         'TextView',
          'TextField',
          'PickerField',
          'DatePickerField',
@@ -60,7 +61,8 @@
     /* Form fields */
 
     #{if($compat, '.input',
-        ('TextView',
+        ($selectors,
+         'TextView',
          'TextField',
          'PickerField',
          'DatePickerField',
@@ -75,28 +77,28 @@
         font-size: const(font-size);
         padding: 8 0 4;
         margin: 5 16;
+    }
 
-        #{if($compat,
-            ('&.input-rounded',
-             '&.input-border'),
-            ('&.-rounded-sm',
-             '&.-rounded-lg',
-             '&.-border'))} {
-            border-width: const(border-width);
-            padding: 12 14;
-        }
+    #{if($compat,
+        ('.input-rounded',
+         '.input-border'),
+        ('.-rounded-sm',
+         '.-rounded-lg',
+         '.-border'))} {
+        border-width: const(border-width);
+        padding: 12 14;
+    }
 
-        #{if($compat, '&.input-border', '&.-rounded-sm')} {
-            border-radius: const(border-radius-sm);
-        }
+    #{if($compat, '.input-border', '.-rounded-sm')} {
+        border-radius: const(border-radius-sm);
+    }
 
-        #{if($compat, '&.input-rounded', '&.-rounded-lg')} {
-            border-radius: const(border-radius-lg);
-        }
+    #{if($compat, '.input-rounded', '.-rounded-lg')} {
+        border-radius: const(border-radius-lg);
+    }
 
-        &[isEnabled=false] {
-            opacity: const(disabled-opacity);
-        }
+    [isEnabled=false] {
+        opacity: const(disabled-opacity);
     }
 
     TextView[editable=false] {
@@ -248,6 +250,7 @@
     }
 
     @if $enable-rounded {
+        #{$selectors},
         TextView,
         TextField,
         PickerField,
@@ -275,28 +278,43 @@
 
 
 @mixin input-component($selectors) {
-    #{$selectors} {
-        margin: 10 0;
+    FlexboxLayout#{$selectors},
+    GridLayout#{$selectors},
+    StackLayout#{$selectors} {
+        border-width: 0;
+        border-radius: none;
+        padding: 0;
+    }
 
+    #{$selectors} {
         @at-root DataFormEditorLabel,
-        & #{if($compat, '.label', '> Label')} {
+        #{if($compat, '& .label', '& > .nt-label, & > Label')} {
             font-size: const(font-size);
             color: const(grey-light);
         }
 
         @at-root DataFormEditorLabel,
-        & #{if($compat, '.label', '> Label')},
-        & #{if($compat, '.input', '> TextView, > TextField, > PickerField, > DatePickerField, > TimePickerField, > DateTimePickerFields, > RadAutoCompleteTextView')} {
-            margin: 0 16;
+        #{if($compat,
+            ('& .label',
+             '& .input'),
+            ('& > .nt-label',
+             '& > .nt-input',
+             '& > Label',
+             '& > TextView',
+             '& > TextField',
+             '& > PickerField',
+             '& > DatePickerField',
+             '& > TimePickerField',
+             '& > DateTimePickerFields',
+             '& > RadAutoCompleteTextView'))} {
+            margin: 0;
         }
 
         #{if($compat, '&.input-sides', '&.-sides')} {
-            margin: 0 0 10;
+            margin-bottom: 10;
 
-            #{if($compat, '.label', '> Label')} {
-                margin: 5 16;
-
-                @if $enable-rounded {
+            @if $enable-rounded {
+                #{if($compat, '& > .label', '& > .nt-label, & > Label')} {
                     margin-top: 11;
                 }
             }
@@ -334,12 +352,13 @@
     }
 }
 
-@mixin form-fields-skin() {
+@mixin form-fields-skin($selectors: '') {
 
     /* Form fields */
 
     #{if($compat, '.input',
-        ('TextView',
+        ($selectors,
+         'TextView',
          'TextField',
          'PickerField',
          'DatePickerField',
@@ -469,7 +488,7 @@
 @mixin input-component-skin($selectors) {
     #{$selectors} {
         @at-root DataFormEditorLabel,
-        & #{if($compat, '.label', '> Label')} {
+        #{if($compat, '& .label', '& > .nt-label, & > Label')} {
             @include colorize($contrasted-color: accent background 30%);
         }
     }
