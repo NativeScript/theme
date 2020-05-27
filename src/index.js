@@ -1,9 +1,11 @@
 import * as appCommon from "tns-core-modules/application/application-common";
 import * as app from "tns-core-modules/application";
-import { removeFromRootViewCssClasses } from "tns-core-modules/css/system-classes";
+import { removeFromRootViewCssClasses, removeCssClass } from "tns-core-modules/css/system-classes";
 import { device, isAndroid, screen } from "tns-core-modules/platform";
 import * as view from "tns-core-modules/ui/core/view";
 import * as frame from "tns-core-modules/ui/frame";
+
+const removeClass = removeCssClass || removeFromRootViewCssClasses;
 
 const display = screen.mainScreen;
 const whiteSpaceRegExp = /\s+/;
@@ -50,9 +52,12 @@ export class Theme {
         classList.remove(Theme.Light, Theme.Dark);
 
         if (Theme.currentMode !== Theme.Auto) {
-            removeFromRootViewCssClasses(Theme.Light);
-            removeFromRootViewCssClasses(Theme.Dark);
+            removeClass(Theme.Light);
+            removeClass(Theme.Dark);
             classList.add(Theme.currentMode);
+        } else {
+            // Reset to Auto system theme
+            setTimeout(appCommon.systemAppearanceChanged.bind(this, Theme.rootView, app.systemAppearance()));
         }
 
         Theme.rootView.className = classList.get();

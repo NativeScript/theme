@@ -1,10 +1,10 @@
 import { BaseModel } from "./base";
 import themes from "nativescript-themes";
 import * as application from "tns-core-modules/application";
-import { ClassList } from "@nativescript/theme";
+import { Theme } from "@nativescript/theme";
 
 const currentTheme = {
-    theme: "core.light",
+    theme: "core.auto",
     skin: "",
     css: ""
 };
@@ -45,14 +45,7 @@ export class ThemesModel extends BaseModel {
 
         const themeName = this.getThemeName(currentTheme.theme);
 
-        const rootView = application.getRootView();
-        const classList = new ClassList(rootView.className);
-
-        classList
-            .remove("ns-light", "ns-dark")
-            .add(`ns-${themeName.toLowerCase()}`);
-
-        rootView.className = classList.get();
+        Theme.setMode(Theme[themeName]);
 
         this.set("theme", `${themeName} ${this.getThemeName(currentTheme.skin)}`);
 
@@ -86,10 +79,11 @@ export class ThemesModel extends BaseModel {
 
     getThemeName(cssPath) {
         if (cssPath.indexOf("core.light") > -1) {
-
             return "Light";
         } else if (cssPath.indexOf("core.dark") > -1) {
             return "Dark";
+        } else if (cssPath.indexOf("core.auto") > -1) {
+            return "Auto";
         } else if (cssPath.indexOf("customized") > -1) {
             return "Custom";
         } else if (cssPath.indexOf("bootstrap-based") > -1) {
