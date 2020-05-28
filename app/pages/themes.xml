@@ -2,14 +2,14 @@
   <ScrollView>
     <StackLayout>
       <Label text="{{ 'Active: ' + theme }}" textWrap="true" class="h3 text-center m-10" />
+
+      <FlexboxLayout flexDirection="row" flexWrap="wrap">
+        <Button text="Auto" tap="{{ applyTheme }}" class="-outline m-5" cssName="core.auto" />
+      </FlexboxLayout>
+
       <FlexboxLayout flexDirection="row" flexWrap="wrap">
         <Button text="Light" tap="{{ applyTheme }}" class="-outline m-5" cssName="core.light" />
         <Button text="Dark" tap="{{ applyTheme }}" class="-outline m-5" cssName="core.dark" />
-      </FlexboxLayout>
-
-      <Label class="hr-dark" />
-
-      <FlexboxLayout flexDirection="row" flexWrap="wrap">
         <Button text="Bootstrap" tap="{{ applyTheme }}" class="-outline m-5" cssName="bootstrap-based" />
         <Button text="Custom" tap="{{ applyTheme }}" class="-outline m-5" cssName="customized" />
       </FlexboxLayout>

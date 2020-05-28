@@ -14,14 +14,14 @@
   "nativescript": {
     "id": "org.nativescript.theme",
     "tns-ios": {
-      "version": "6.5.0"
+      "version": "6.5.1"
     },
     "tns-android": {
-      "version": "6.5.0"
+      "version": "6.5.1"
     }
   },
   "dependencies": {
-    "@nativescript/core": "~6.5.1",
+    "@nativescript/core": "~6.5.2",
     "@nativescript/theme": "./src",
     "bootstrap": "4.3.1",
     "nativescript-picker": "~2.1.2",
@@ -32,7 +32,7 @@
     "nativescript-ui-dataform": "~6.0.0",
     "nativescript-ui-listview": "~8.1.2",
     "nativescript-masked-text-field": "~4.0.3",
-    "tns-core-modules": "~6.5.1"
+    "tns-core-modules": "~6.5.2"
   },
   "devDependencies": {
     "@babel/core": "7.7.7",
