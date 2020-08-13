@@ -37,3 +37,6 @@ typings/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+*.tgz
+package-lock.json

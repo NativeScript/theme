@@ -1,16 +1,11 @@
-import * as appCommon from "tns-core-modules/application/application-common";
-import * as app from "tns-core-modules/application";
-import { removeFromRootViewCssClasses, removeCssClass } from "tns-core-modules/css/system-classes";
-import { device, isAndroid, screen } from "tns-core-modules/platform";
-import * as view from "tns-core-modules/ui/core/view";
-import * as frame from "tns-core-modules/ui/frame";
+import { Application, CSSUtils, Device, isAndroid, Screen, View, Frame } from "@nativescript/core";
 
-const removeClass = removeCssClass || removeFromRootViewCssClasses;
+const removeClass = CSSUtils.removeFromRootViewCssClasses;
 
-const display = screen.mainScreen;
+const display = Screen.mainScreen;
 const whiteSpaceRegExp = /\s+/;
 const platformClass = `ns-${isAndroid ? "android" : "ios"}`;
-const sdkVersionClass = device.sdkVersion.replace(".", "-");
+const sdkVersionClass = Device.sdkVersion.replace(".", "-");
 
 let started = false;
 
@@ -39,7 +34,7 @@ export class ClassList {
 }
 
 export class Theme {
-    static setMode(mode, root = app.getRootView()) {
+    static setMode(mode, root = Application.getRootView()) {
         Theme.currentMode = mode;
         Theme.rootView = root;
 
@@ -57,7 +52,7 @@ export class Theme {
             classList.add(Theme.currentMode);
         } else {
             // Reset to Auto system theme
-            setTimeout(appCommon.systemAppearanceChanged.bind(this, Theme.rootView, app.systemAppearance()));
+            setTimeout(appCommon.systemAppearanceChanged.bind(this, Theme.rootView, Application.systemAppearance()));
         }
 
         Theme.rootView.className = classList.get();
@@ -65,7 +60,7 @@ export class Theme {
 
     static toggleMode(isDark) {
         if (isDark === undefined) {
-            const mode = Theme.currentMode === Theme.Auto && app.systemAppearance ? `ns-${app.systemAppearance()}` : Theme.getMode();
+            const mode = Theme.currentMode === Theme.Auto && Application.systemAppearance ? `ns-${Application.systemAppearance()}` : Theme.getMode();
 
             Theme.setMode(mode === Theme.Light ? Theme.Dark : Theme.Light);
 
@@ -76,7 +71,7 @@ export class Theme {
     }
 
     static getMode() {
-        const root = app.getRootView();
+        const root = Application.getRootView();
 
         return Theme.currentMode || (((root && root.className) || "").indexOf(Theme.Dark) !== -1 ? Theme.Dark : Theme.Light);
     }
@@ -89,17 +84,17 @@ Theme.Auto = "auto";
 export default Theme;
 
 // Where the magic happens
-const oldSetupAsRootView = view.ViewCommon.prototype._setupAsRootView;
-view.ViewCommon.prototype._setupAsRootView = function() {
+const oldSetupAsRootView = View._setupAsRootView;
+View._setupAsRootView = function() {
     oldSetupAsRootView.call(this, ...arguments);
     Theme.setMode(Theme.currentMode, this);
 };
 
 // Disable SystemAppearance changes if Theme.currentMode is not auto
-const oldSystemAppearanceChanged = appCommon.systemAppearanceChanged;
+const oldSystemAppearanceChanged = Application.systemAppearanceChanged;
 
 if (oldSystemAppearanceChanged) {
-    appCommon.systemAppearanceChanged = function () {
+  Application.systemAppearanceChanged = function () {
         if (Theme.currentMode === Theme.Auto) {
             oldSystemAppearanceChanged.call(this, ...arguments);
         }
@@ -107,10 +102,10 @@ if (oldSystemAppearanceChanged) {
 }
 
 // Make sure to substitute systemAppearance method too, as some plugins call it directly
-const oldSystemAppearance = app.systemAppearance;
+const oldSystemAppearance = Application.systemAppearance;
 
 if (oldSystemAppearance) {
-    app.systemAppearance = function () {
+  Application.systemAppearance = function () {
         if (Theme.currentMode === Theme.Auto) {
             return oldSystemAppearance.call(this, ...arguments);
         }
@@ -120,7 +115,7 @@ if (oldSystemAppearance) {
 }
 
 /* Deprecated root class setters, now available in core modules */
-function updateRootClasses(orientation, root = app.getRootView(), classes = []) {
+function updateRootClasses(orientation, root = Application.getRootView(), classes = []) {
     const classList = new ClassList(root.className);
 
     classList
@@ -133,10 +128,11 @@ function updateRootClasses(orientation, root = app.getRootView(), classes = []) 
 function handleOrientation({ newValue: orientation }) {
     updateRootClasses(orientation);
 
-    if (view._rootModalViews.length) {
-        const classList = new ClassList(app.getRootView().className);
+    var modalViews = View._getRootModalViews();
+    if (modalViews && modalViews.length) {
+        const classList = new ClassList(Application.getRootView().className);
 
-        view._rootModalViews.forEach((view) => updateRootClasses(orientation, view, classList.add("ns-modal").list));
+        modalViews.forEach((view) => updateRootClasses(orientation, view, classList.add("ns-modal").list));
     }
 }
 
@@ -149,8 +145,8 @@ const rootModalTrap = {
         if (desc && "value" in desc) {
             target[key] = desc.value;
 
-            if (desc.value instanceof frame.Frame) {
-                const classList = new ClassList(app.getRootView().className);
+            if (desc.value instanceof Frame) {
+                const classList = new ClassList(Application.getRootView().className);
 
                 updateRootClasses(getOrientation(), desc.value, classList.add("ns-modal").list);
             }
@@ -160,8 +156,8 @@ const rootModalTrap = {
     }
 };
 
-app.on(app.displayedEvent, () => {
-    const root = app.getRootView();
+Application.on(Application.displayedEvent, () => {
+    const root = Application.getRootView();
 
     // Bail out if no root view or root classes already set (pre 6.1).
     if (!root || root.cssClasses.has("ns-root")) {
@@ -176,15 +172,15 @@ app.on(app.displayedEvent, () => {
     }
 
     // Get notified when a modal is created.
-    view._rootModalViews = new Proxy(view._rootModalViews, rootModalTrap);
+    View._rootModalViews = new Proxy(View._rootModalViews, rootModalTrap);
 
     root.className = new ClassList(root.className)
-        .add("ns-root", platformClass, `ns-${device.deviceType.toLowerCase()}`)
+        .add("ns-root", platformClass, `ns-${Device.deviceType.toLowerCase()}`)
         .get();
 
     if (!started) {
         handleOrientation({ newValue: getOrientation() });
-        app.on(app.orientationChangedEvent, handleOrientation);
+        Application.on(Application.orientationChangedEvent, handleOrientation);
         started = true;
     }
 });
