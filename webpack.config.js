@@ -1,26 +1,25 @@
 const { join, relative, resolve, sep } = require("path");
+const fs = require('fs');
 
 const webpack = require("webpack");
-const nsWebpack = require("nativescript-dev-webpack");
-const nativescriptTarget = require("nativescript-dev-webpack/nativescript-target");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const nsWebpack = require("@nativescript/webpack");
+const nativescriptTarget = require("@nativescript/webpack/nativescript-target");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const { NativeScriptWorkerPlugin } = require("nativescript-worker-loader/NativeScriptWorkerPlugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const hashSalt = Date.now().toString();
-const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 
-const smp = new SpeedMeasurePlugin();
-
-module.exports = smp.wrap((env) => {
+module.exports = env => {
     // Add your custom Activities, Services and other android app components here.
-    const appComponents = [
-        "tns-core-modules/ui/frame",
-        "tns-core-modules/ui/frame/activity"
-    ];
+    const appComponents = env.appComponents || [];
+    appComponents.push(...[
+        "@nativescript/core/ui/frame",
+        "@nativescript/core/ui/frame/activity",
+    ]);
 
-    const platform = env && ((env.android && "android") || (env.ios && "ios"));
+    const platform = env && (env.android && "android" || env.ios && "ios" || env.platform);
     if (!platform) {
         throw new Error("You need to provide a target platform!");
     }
@@ -28,15 +27,18 @@ module.exports = smp.wrap((env) => {
     const platforms = ["ios", "android"];
     const projectRoot = __dirname;
 
+    if (env.platform) {
+        platforms.push(env.platform);
+    }
+
     // Default destination inside platforms/<platform>/...
     const dist = resolve(projectRoot, nsWebpack.getAppPath(platform, projectRoot));
-
-    const appPath = env.forceAppPath || env.appPath || "app";
 
     const {
         // The 'appPath' and 'appResourcesPath' values are fetched from
         // the nsconfig.json configuration file.
-        appResourcesPath = "app/App_Resources",
+        appPath = "src",
+        appResourcesPath = "App_Resources",
 
         // You can provide the following flags when running 'tns run android|ios'
         snapshot, // --env.snapshot
@@ -47,6 +49,7 @@ module.exports = smp.wrap((env) => {
         hiddenSourceMap, // --env.hiddenSourceMap
         hmr, // --env.hmr,
         unitTesting, // --env.unitTesting,
+        testing, // --env.testing
         verbose, // --env.verbose
         snapshotInDocker, // --env.snapshotInDocker
         skipSnapshotTools, // --env.skipSnapshotTools
@@ -56,12 +59,15 @@ module.exports = smp.wrap((env) => {
     const useLibs = compileSnapshot;
     const isAnySourceMapEnabled = !!sourceMap || !!hiddenSourceMap;
     const externals = nsWebpack.getConvertedExternals(env.externals);
-    const appFullPath = resolve(projectRoot, appPath);
+    let appFullPath = resolve(projectRoot, appPath);
+    if (!fs.existsSync(appFullPath)) {
+      // some apps use 'app' directory
+      appFullPath = resolve(projectRoot, 'app');
+    }
     const hasRootLevelScopedModules = nsWebpack.hasRootLevelScopedModules({ projectDir: projectRoot });
     let coreModulesPackageName = "tns-core-modules";
-    const alias = {
-        "~": appFullPath
-    };
+    const alias = env.alias || {};
+    alias['~'] = appFullPath;
 
     if (hasRootLevelScopedModules) {
         coreModulesPackageName = "@nativescript/core";
@@ -69,22 +75,26 @@ module.exports = smp.wrap((env) => {
     }
     const appResourcesFullPath = resolve(projectRoot, appResourcesPath);
 
+    const copyIgnore = { ignore: [`${relative(appPath, appResourcesFullPath)}/**`] };
+
     const entryModule = nsWebpack.getEntryModule(appFullPath, platform);
     const entryPath = `.${sep}${entryModule}.js`;
-    const entries = { bundle: entryPath };
-    const areCoreModulesExternal = Array.isArray(env.externals) && env.externals.some((e) => e.indexOf("tns-core-modules") > -1);
+    const entries = env.entries || {};
+    entries.bundle = entryPath;
 
-    if (platform === "ios" && !areCoreModulesExternal) {
-        entries["tns_modules/tns-core-modules/inspector_modules"] = "inspector_modules";
-    }
+    const areCoreModulesExternal = Array.isArray(env.externals) && env.externals.some(e => e.indexOf("@nativescript") > -1);
+    if (platform === "ios" && !areCoreModulesExternal && !testing) {
+        entries["tns_modules/@nativescript/core/inspector_modules"] = "inspector_modules";
+    };
 
-    const sourceMapFilename = nsWebpack.getSourceMapFilename(hiddenSourceMap, __dirname, dist);
+    let sourceMapFilename = nsWebpack.getSourceMapFilename(hiddenSourceMap, __dirname, dist);
 
     const itemsToClean = [`${dist}/**/*`];
     if (platform === "android") {
         itemsToClean.push(`${join(projectRoot, "platforms", "android", "app", "src", "main", "assets", "snapshots")}`);
         itemsToClean.push(`${join(projectRoot, "platforms", "android", "app", "build", "configurations", "nativescript-android-snapshot")}`);
     }
+
 
     nsWebpack.processAppComponents(appComponents, platform);
     const config = {
@@ -95,7 +105,7 @@ module.exports = smp.wrap((env) => {
             ignored: [
                 appResourcesFullPath,
                 // Don't watch hidden files
-                "**/.*"
+                "**/.*",
             ]
         },
         target: nativescriptTarget,
@@ -111,12 +121,12 @@ module.exports = smp.wrap((env) => {
         },
         resolve: {
             extensions: [".js", ".scss", ".css"],
-            // Resolve {N} system modules from tns-core-modules
+            // Resolve {N} system modules from @nativescript/core
             modules: [
                 resolve(__dirname, `node_modules/${coreModulesPackageName}`),
                 resolve(__dirname, "node_modules"),
                 `node_modules/${coreModulesPackageName}`,
-                "node_modules"
+                "node_modules",
             ],
             alias,
             // resolve symlinks to symlinked modules
@@ -132,32 +142,25 @@ module.exports = smp.wrap((env) => {
             "timers": false,
             "setImmediate": false,
             "fs": "empty",
-            "__dirname": false
+            "__dirname": false,
         },
-        // eslint-disable-next-line no-nested-ternary
         devtool: hiddenSourceMap ? "hidden-source-map" : (sourceMap ? "inline-source-map" : "none"),
         optimization: {
             runtimeChunk: "single",
             noEmitOnErrors: true,
             splitChunks: {
                 cacheGroups: {
-                    styles: {
-                        name: "styles",
-                        test: /\.scss$/,
-                        chunks: "all",
-                        enforce: true
-                    },
                     vendor: {
                         name: "vendor",
                         chunks: "all",
-                        test: (module) => {
-                            const moduleName = module.nameForCondition ? module.nameForCondition() : "";
-                            return (/[\\/]node_modules[\\/]/).test(moduleName) ||
-                                    appComponents.some((comp) => comp === moduleName);
+                        test: (module, chunks) => {
+                            const moduleName = module.nameForCondition ? module.nameForCondition() : '';
+                            return /[\\/]node_modules[\\/]/.test(moduleName) ||
+                                appComponents.some(comp => comp === moduleName);
 
                         },
-                        enforce: true
-                    }
+                        enforce: true,
+                    },
                 }
             },
             minimize: !!uglify,
@@ -174,12 +177,12 @@ module.exports = smp.wrap((env) => {
                         compress: {
                             // The Android SBG has problems parsing the output
                             // when these options are enabled
-                            "collapse_vars": platform !== "android",
-                            sequences: platform !== "android"
+                            'collapse_vars': platform !== "android",
+                            sequences: platform !== "android",
                         }
                     }
                 })
-            ]
+            ],
         },
         module: {
             rules: [
@@ -188,94 +191,66 @@ module.exports = smp.wrap((env) => {
                     use: [
                         // Require all Android app components
                         platform === "android" && {
-                            loader: "nativescript-dev-webpack/android-app-components-loader",
+                            loader: "@nativescript/webpack/helpers/android-app-components-loader",
                             options: { modules: appComponents }
                         },
 
                         {
-                            loader: "nativescript-dev-webpack/bundle-config-loader",
+                            loader: "@nativescript/webpack/bundle-config-loader",
                             options: {
-                                registerModules: /\.(xml|css|js|ts)$/,
                                 loadCss: !snapshot, // load the application css if in debug mode
                                 unitTesting,
                                 appFullPath,
                                 projectRoot,
                                 ignoredFiles: nsWebpack.getUserDefinedEntries(entries, platform)
                             }
-                        }
-                    ].filter((loader) => !!loader)
+                        },
+                    ].filter(loader => !!loader)
                 },
 
                 {
                     test: /\.(js|css|scss|html|xml)$/,
-                    use: [
-                        "cache-loader",
-                        "nativescript-dev-webpack/hmr/hot-loader"
-                    ]
+                    use: "@nativescript/webpack/hmr/hot-loader"
                 },
 
-                {
-                    test: /\.(html|xml)$/,
-                    use: "nativescript-dev-webpack/xml-namespace-loader"
-                },
+                { test: /\.(html|xml)$/, use: "@nativescript/webpack/helpers/xml-namespace-loader" },
 
                 {
                     test: /\.css$/,
-                    use: {
-                        loader: "css-loader",
-                        options: { url: false }
-                    }
+                    use: "@nativescript/webpack/helpers/css2json-loader"
                 },
 
                 {
                     test: /\.scss$/,
                     use: [
-                        {
-                            loader: "css-loader",
-                            options: {
-                                url: false
-                            }
-                        },
-                        {
-                            loader: "sass-loader",
-                            options: {
-                                implementation: require("sass")
-                            }
-                        }
+                        "@nativescript/webpack/helpers/css2json-loader",
+                        "sass-loader"
                     ]
-                }
+                },
             ]
         },
         plugins: [
             // Define useful constants like TNS_WEBPACK
             new webpack.DefinePlugin({
                 "global.TNS_WEBPACK": "true",
-                "process": "global.process"
+                "global.isAndroid": platform === 'android',
+                "global.isIOS": platform === 'ios',
+                "process": "global.process",
             }),
             // Remove all files from the out dir.
-            new CleanWebpackPlugin(itemsToClean, { verbose: !!verbose }),
-            // Copy assets to out dir. Add your own globs as needed.
-            new CopyWebpackPlugin([
-                { from: { glob: "assets/**" } },
-                { from: { glob: "fonts/**" } },
-                { from: { glob: "**/*.jpg" } },
-                { from: { glob: "**/*.png" } }
-            ], {
-                ignore: [
-                    `${relative(appPath, appResourcesFullPath)}/**`,
-                    "assets/fonts/**"
-                ]
+            new CleanWebpackPlugin({ 
+              cleanOnceBeforeBuildPatterns: itemsToClean,
+              verbose: !!verbose
             }),
-            new CopyWebpackPlugin([
-                {
-                    from: {
-                        glob: "assets/fonts/**"
-                    },
-                    to: "fonts/",
-                    flatten: true
-                }
-            ]),
-
+            // Copy assets
+            new CopyWebpackPlugin({
+              patterns: [
+                { from: 'assets/**', noErrorOnMissing: true, globOptions: { dot: false, ...copyIgnore } },
+                { from: 'fonts/**', noErrorOnMissing: true, globOptions: { dot: false, ...copyIgnore } },
+                { from: '**/*.jpg', noErrorOnMissing: true, globOptions: { dot: false, ...copyIgnore } },
+                { from: '**/*.png', noErrorOnMissing: true, globOptions: { dot: false, ...copyIgnore } },
+              ],
+            }),
             new nsWebpack.GenerateNativeScriptEntryPointsPlugin("bundle"),
 
             // For instructions on how to set up workers with webpack
@@ -283,11 +258,11 @@ module.exports = smp.wrap((env) => {
             new NativeScriptWorkerPlugin(),
             new nsWebpack.PlatformFSPlugin({
                 platform,
-                platforms
+                platforms,
             }),
             // Does IPC communication with the {N} CLI to notify events when running in watch mode.
             new nsWebpack.WatchStateLoggerPlugin()
-        ]
+        ],
     };
 
     if (report) {
@@ -296,8 +271,8 @@ module.exports = smp.wrap((env) => {
             analyzerMode: "static",
             openAnalyzer: false,
             generateStatsFile: true,
-            reportFilename: resolve(projectRoot, "report", "report.html"),
-            statsFilename: resolve(projectRoot, "report", "stats.json")
+            reportFilename: resolve(projectRoot, "report", `report.html`),
+            statsFilename: resolve(projectRoot, "report", `stats.json`),
         }));
     }
 
@@ -305,7 +280,7 @@ module.exports = smp.wrap((env) => {
         config.plugins.push(new nsWebpack.NativeScriptSnapshotPlugin({
             chunk: "vendor",
             requireModules: [
-                "tns-core-modules/bundle-entry-points"
+                "@nativescript/core/bundle-entry-points",
             ],
             projectRoot,
             webpackConfig: config,
@@ -319,6 +294,5 @@ module.exports = smp.wrap((env) => {
         config.plugins.push(new webpack.HotModuleReplacementPlugin());
     }
 
-
     return config;
-});
+};

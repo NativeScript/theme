@@ -42,11 +42,12 @@ async function createThemeFiles() {
     createPackageJson();
 
     // Transform imports to commonjs
-    const transform = babel.transform(fs.readFileSync("./src/index.js"), {
-        plugins: ["@babel/transform-modules-commonjs"]
-    });
+    // const transform = babel.transform(fs.readFileSync("./src/index.js"), {
+    //     plugins: ["@babel/transform-modules-commonjs"]
+    // });
 
-    fs.writeFile("./nativescript-theme-core/index.js", transform.code, {}, () => { });
+    // fs.writeFile("./nativescript-theme-core/index.js", transform.code, {}, () => { });
+    copyFile("./src/index.js", "./nativescript-theme-core/index.js");
 
     // Copy typings
     copyFile("./src/index.d.ts", "./nativescript-theme-core/index.d.ts");
@@ -196,7 +197,7 @@ function createJSONFromCSS() {
     const cssFiles = glob.sync(cssFilesPath);
 
     const registerModules = [];
-    registerModules.push("require(\"@nativescript/core/globals/core\");");
+    registerModules.push("require(\"@nativescript/core\");");
 
     cssFiles.forEach((cssFilePath) => {
         const cssFileContent = fs.readFileSync(cssFilePath, { encoding: "utf8" });
