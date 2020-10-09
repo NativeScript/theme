@@ -44,7 +44,7 @@
 }
 
 @function rem-to-dip($size) {
-    @if unit($size) != 'em' or unit($size) != 'rem' {
+    @if unit($size) != 'em' and unit($size) != 'rem' {
         @return $size / ($size * 0 + 1);
     }
 
