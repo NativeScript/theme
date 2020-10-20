@@ -52,7 +52,7 @@ export class Theme {
             classList.add(Theme.currentMode);
         } else {
             // Reset to Auto system theme
-            setTimeout(appCommon.systemAppearanceChanged.bind(this, Theme.rootView, Application.systemAppearance()));
+            setTimeout(Application.systemAppearanceChanged.bind(this, Theme.rootView, Application.systemAppearance()));
         }
 
         Theme.rootView.className = classList.get();
