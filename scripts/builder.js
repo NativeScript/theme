@@ -9,7 +9,6 @@ const fs = require("fs");
 const sass = require("sass");
 const glob = require("glob");
 const pjs = require("../package.json");
-const babel = require("@babel/core");
 const parse = require("@nativescript/core/css").parse;
 
 // Kill The original folder, so that way it is a clean folder
@@ -41,12 +40,6 @@ async function createThemeFiles() {
 
     createPackageJson();
 
-    // Transform imports to commonjs
-    // const transform = babel.transform(fs.readFileSync("./src/index.js"), {
-    //     plugins: ["@babel/transform-modules-commonjs"]
-    // });
-
-    // fs.writeFile("./nativescript-theme-core/index.js", transform.code, {}, () => { });
     copyFile("./src/index.js", "./nativescript-theme-core/index.js");
 
     // Copy typings

@@ -1,6 +1,6 @@
 {
   "name": "@nativescript/theme",
-  "version": "3.0.0",
+  "version": "2.3.4",
   "description": "NativeScript Core Theme",
   "author": "NativeScript <support@nativescript.org>",
   "homepage": "https://www.nativescript.org",
@@ -21,7 +21,7 @@
     }
   },
   "dependencies": {
-    "@nativescript/core": "rc",
+    "@nativescript/core": "latest",
     "@nativescript/theme": "./src",
     "bootstrap": "~4.5.2",
     "nativescript-picker": "~2.1.2",
@@ -34,10 +34,7 @@
     "nativescript-masked-text-field": "~4.0.3"
   },
   "devDependencies": {
-    "@babel/core": "7.7.7",
-    "@babel/parser": "7.7.5",
-    "@babel/plugin-transform-modules-commonjs": "7.7.5",
-    "babel-eslint": "10.0.3",
+    "babel-eslint": "^10.0.3",
     "cache-loader": "4.1.0",
     "eslint": "6.4.0",
     "glob": "7.1.4",
