@@ -1,13 +1,31 @@
-import { Application, CSSUtils, Device, isAndroid, Screen, View, Frame } from "@nativescript/core";
+// This is kinda Hacky, but to retain NS 6 & NS 7 Compatibility we have to use different locations
+// For some of the items.
+const Core = require("@nativescript/core");
 
-const removeClass = CSSUtils.removeFromRootViewCssClasses;
+const isNS6 = Core.CSSUtils == null;
+const Platform = require("@nativescript/core/platform");
 
-const display = Screen.mainScreen;
+// We have to pull these directly to be compatible with NS 6 & NS 7
+const Application = isNS6 ? require("@nativescript/core/application") : Core.Application;
+const removeClass = isNS6 ? require("@nativescript/core/css/system-classes").removeFromRootViewCssClasses : Core.CSSUtils.removeFromRootViewCssClasses;
+const View = isNS6 ?  require("@nativescript/core/ui/core/view").View : Core.View;
+const Frame = isNS6 ? require("@nativescript/core/ui/frame").Frame :  Core.Frame;
+
+const display = Platform.Screen ? Platform.Screen.mainScreen : Platform.screen.mainScreen;
+const Device = Platform.Device ? Platform.Device : Platform.device;
 const whiteSpaceRegExp = /\s+/;
-const platformClass = `ns-${isAndroid ? "android" : "ios"}`;
+const platformClass = `ns-${Platform.isAndroid ? "android" : "ios"}`;
 const sdkVersionClass = Device.sdkVersion.replace(".", "-");
 
 let started = false;
+
+if (Platform.isAndroid) {
+    // Force disabling the system Overriding Theme if on Android
+    // this will then allow our Theme.Dark, Theme.Auto, and Theme.Light to work correctly...
+    Application.on("launch", () => {
+        androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO);
+    });
+}
 
 export class ClassList {
     constructor(className) {
@@ -34,13 +52,33 @@ export class ClassList {
 }
 
 export class Theme {
-    static setMode(mode, root = Application.getRootView()) {
-        Theme.currentMode = mode;
-        Theme.rootView = root;
+    static setMode(mode, root = null) {
 
-        if (!root || !mode) {
+        if (mode !== Theme.Auto && mode !== Theme.Light && mode !== Theme.Dark) {
+            console.error("Invalid Theme in setMode", mode);
             return;
         }
+
+        // Set the current Mode
+        Theme.currentMode = mode;
+
+        // If we come into setMode to change, while something else is waiting to change, ignore the prior change...
+        if (Theme._timer != null) {
+            clearTimeout(Theme._timer);
+            Theme._timer = null;
+        }
+
+        // If we have no root view, then we need to get it -- however there is the possibility the root view
+        // Won't be ready, so we need to throw this off until it is...
+        if (root == null) {
+            root = Application.getRootView();
+            if (root == null) {
+                Theme._timer = setTimeout( () => { Theme.setMode(mode); Theme._timer = null; });
+                return;
+            }
+        }
+
+        Theme.rootView = root;
 
         const classList = new ClassList(Theme.rootView.className);
 
@@ -52,7 +90,7 @@ export class Theme {
             classList.add(Theme.currentMode);
         } else {
             // Reset to Auto system theme
-            setTimeout(Application.systemAppearanceChanged.bind(this, Theme.rootView, Application.systemAppearance()));
+            setTimeout(  Application.systemAppearanceChanged.bind(this, Theme.rootView, Application.systemAppearance()));
         }
 
         Theme.rootView.className = classList.get();
@@ -80,6 +118,7 @@ export class Theme {
 Theme.Light = "ns-light";
 Theme.Dark = "ns-dark";
 Theme.Auto = "auto";
+Theme.currentMode = Theme.Auto;
 
 export default Theme;
 
@@ -94,7 +133,7 @@ View._setupAsRootView = function() {
 const oldSystemAppearanceChanged = Application.systemAppearanceChanged;
 
 if (oldSystemAppearanceChanged) {
-  Application.systemAppearanceChanged = function () {
+    Application.systemAppearanceChanged = function () {
         if (Theme.currentMode === Theme.Auto) {
             oldSystemAppearanceChanged.call(this, ...arguments);
         }
@@ -105,7 +144,7 @@ if (oldSystemAppearanceChanged) {
 const oldSystemAppearance = Application.systemAppearance;
 
 if (oldSystemAppearance) {
-  Application.systemAppearance = function () {
+    Application.systemAppearance = function () {
         if (Theme.currentMode === Theme.Auto) {
             return oldSystemAppearance.call(this, ...arguments);
         }
@@ -128,7 +167,7 @@ function updateRootClasses(orientation, root = Application.getRootView(), classe
 function handleOrientation({ newValue: orientation }) {
     updateRootClasses(orientation);
 
-    var modalViews = View._getRootModalViews();
+    let modalViews = View._getRootModalViews();
     if (modalViews && modalViews.length) {
         const classList = new ClassList(Application.getRootView().className);
 

@@ -1,3 +1,13 @@
+<a name="2.3.4"></a>
+## [2.3.4](https://github.com/NativeScript/theme/compare/v2.3.3...v2.3.4) (2020-12-05)
+
+### Fixes
+
+* setMode should work correctly in all cases
+* Disables system theme so that NS themes can work properly...
+* Theme should work on NS 6 & 7 properly
+
+
 <a name="2.3.3"></a>
 ## [2.3.3](https://github.com/NativeScript/theme/compare/v2.3.2...v2.3.3) (2020-03-17)
 
