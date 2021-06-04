@@ -661,6 +661,11 @@ $palettes: (
 
 );
 
+@if (global_variable_exists("palettes-custom")) {
+    $palettes:map-merge($palettes-custom, $palettes);
+}
+
+
 @function get-base-palette($name) {
   @return map-get( $palettes, $name );
 }
