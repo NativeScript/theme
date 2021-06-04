@@ -206,8 +206,12 @@
     "parserOptions": {
         "ecmaVersion": 6,
         "sourceType": "module",
+        "parser": 'babel-eslint',
         "ecmaFeatures": {
-            "impliedStrict": true
+            "impliedStrict": true,
+            "legacyDecorators": true
         }
     }
+    
+  }
 }
