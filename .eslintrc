@@ -9,6 +9,8 @@
     },
     "extends": "eslint:recommended",
     "rules": {
+        "template-curly-spacing" : "off",
+        "indent" : "off",
         "accessor-pairs": "error",
         "array-bracket-spacing": "error",
         "arrow-body-style": "error",
@@ -190,7 +192,6 @@
         "space-infix-ops": "error",
         "space-unary-ops": "error",
         "strict": "error",
-        "template-curly-spacing": "error",
         "unicode-bom": [
             "error",
             "never"
@@ -206,10 +207,8 @@
     "parserOptions": {
         "ecmaVersion": 6,
         "sourceType": "module",
-        "parser": 'babel-eslint',
         "ecmaFeatures": {
-            "impliedStrict": true,
-            "legacyDecorators": true
+            "impliedStrict": true
         }
     }
 }
