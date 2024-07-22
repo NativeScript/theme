@@ -8,8 +8,9 @@
 }
 
 .bg-primary {
-  @include colorize($background-color: accent);
   color: $white;
+
+  @include colorize($background-color: accent);
 }
 
 .bg-danger {
