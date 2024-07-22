@@ -48,12 +48,8 @@
          'DatePickerField',
          'TimePickerField',
          'RadAutoCompleteTextView'))} {
-        &.ng-valid {
-            margin-bottom: 20;
-        }
 
         &.ng-invalid.ng-dirty {
-            margin-bottom: 0;
             border-color: const(error);
         }
     }
