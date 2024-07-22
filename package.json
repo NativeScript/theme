@@ -41,7 +41,7 @@
     "lazy": "1.0.11",
     "@nativescript/webpack": "~2.1.0",
     "resolve-url-loader": "3.1.1",
-    "sass": "~1.26.3",
+    "sass": "~1.77.8",
     "sass-lint": "~1.13.1",
     "speed-measure-webpack-plugin": "~1.3.1"
   },
