@@ -1,3 +1,15 @@
+<a name="3.1.0"></a>
+## [3.1.0](https://github.com/NativeScript/theme/compare/v2.3.4...v3.1.0) (2024-07-22)
+
+### Features
+
+* add custom palettes to _kendo-palettes
+  
+### Fixes
+
+* remove warnings for new "Mixed Declarations"
+* layout height issue with Angular forms
+  
 <a name="2.3.4"></a>
 ## [2.3.4](https://github.com/NativeScript/theme/compare/v2.3.3...v2.3.4) (2020-12-05)
 

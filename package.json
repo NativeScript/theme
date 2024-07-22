@@ -1,6 +1,6 @@
 {
   "name": "@nativescript/theme",
-  "version": "2.3.4",
+  "version": "3.1.0",
   "description": "NativeScript Core Theme",
   "author": "NativeScript <support@nativescript.org>",
   "homepage": "https://www.nativescript.org",
@@ -25,7 +25,7 @@
     "@nativescript/theme": "./src",
     "bootstrap": "~4.5.2",
     "nativescript-picker": "~2.1.2",
-    "@nativescript/datetimepicker": "rc",
+    "@nativescript/datetimepicker": "~3.0.0",
     "nativescript-themes": "2.0.1",
     "nativescript-ui-autocomplete": "~7.0.0",
     "nativescript-ui-sidedrawer": "~9.0.0",

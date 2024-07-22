@@ -1,41 +1,23 @@
-# NativeScript Theme: Core V2
-[![npm](https://img.shields.io/npm/v/@nativescript/theme.svg)](https://www.npmjs.com/package/@nativescript/theme)
-[![npm](https://img.shields.io/npm/dt/@nativescript/theme.svg?label=npm%20downloads)](https://www.npmjs.com/package/@nativescript/theme)
+# NativeScript Theme
 
-Home of the core NativeScript Theme 2.0.
-
-- [Breaking Changes](#breaking-changes)
-- [Usage](#usage)
-- [Usage before NativeScript 6.1](#usage-before-nativescript-61)
-- [Setting Dark or Light mode](#setting-dark-or-light-mode)
-- [Setting Dark or Light mode from JavaScript](#setting-dark-or-light-mode-from-javascript)
-- [More root classes](#more-root-classes)
-- [Using Theme variables](#using-theme-variables)
-- [CSS variables](#css-variables)
-- [Kendo UI ThemeBuilder support](#kendo-ui-themebuilder-support)
-- [Theme classes and compatibility](#theme-classes-and-compatibility)
-- [Should I use sass or node-sass](#should-i-use-sass-or-node-sass)
-- [Screenshots 📸](#screenshots)
-- [Changelog 📝](https://github.com/NativeScript/theme/blob/master/CHANGELOG.md)
-- [Contributing 🍺](#contributing)
-- [Publishing 📚](#publishing)
-- [Contributors 💖](#awesome-contributors)
-- [License 📋](#license)
-
-## Breaking changes
-
----
-**NOTE**
-
-NativeScript Theme 1.0 to 2.0 migration guide is available [here](MIGRATION-GUIDE.md).
-
----
-
-* The theme requires 2 files to be loaded - the core theme and a skin on top of it. Read [Usage](#usage) for more info.
-* The theme is now **applied using Element selectors**, if you need the old classes approach - it has moved to
-.compat CSS/SCSS files, e.g. `core.compat.css` and `blue.compat.css`.
-* Theme 2.0 replaces node-sass with **sass** which is more up to date feature-wise and doesn't have a native dependency.
-It does still work with node-sass though.
+- [NativeScript Theme](#nativescript-theme)
+  - [Usage](#usage)
+  - [Usage before NativeScript 6.1](#usage-before-nativescript-61)
+  - [Setting Dark or Light mode](#setting-dark-or-light-mode)
+  - [Setting Dark or Light mode from JavaScript](#setting-dark-or-light-mode-from-javascript)
+        - [A note of warning](#a-note-of-warning)
+  - [More root classes](#more-root-classes)
+  - [Using Theme variables](#using-theme-variables)
+  - [CSS variables](#css-variables)
+  - [Kendo UI ThemeBuilder support](#kendo-ui-themebuilder-support)
+  - [Theme classes and compatibility](#theme-classes-and-compatibility)
+  - [Should I use sass or node-sass](#should-i-use-sass-or-node-sass)
+  - [Screenshots](#screenshots)
+  - [Contributing](#contributing)
+  - [Publishing](#publishing)
+  - [Breaking changes](#breaking-changes)
+  - [Awesome Contributors](#awesome-contributors)
+  - [LICENSE](#license)
 
 ## Usage
 
@@ -43,36 +25,36 @@ The core theme supports light and dark core styling and skins on top of that. To
 load the core CSS and its default skin:
 
 ```css
-@import "~@nativescript/theme/css/core.css";
-@import "~@nativescript/theme/css/default.css";
+@import "@nativescript/theme/css/core.css";
+@import "@nativescript/theme/css/default.css";
 ```
 
 or alternatively SCSS:
 
 ```scss
-@import "~@nativescript/theme/core";
-@import "~@nativescript/theme/default";
+@import "@nativescript/theme/core";
+@import "@nativescript/theme/default";
 ```
 
 If you want, you can choose from several different skins. To do that, you can change the second CSS/SCSS file to the
 preferred skin name:
 
 ```css
-@import "~@nativescript/theme/css/core.css";
-@import "~@nativescript/theme/css/blue.css";
+@import "@nativescript/theme/css/core.css";
+@import "@nativescript/theme/css/blue.css";
 ```
 
 or
 
 ```scss
-@import "~@nativescript/theme/core";
-@import "~@nativescript/theme/blue";
+@import "@nativescript/theme/core";
+@import "@nativescript/theme/blue";
 ```
 
 In order to import just the Theme variables in one of your modules, use this:
 
 ```scss
-@import "~@nativescript/theme/scss/variables";
+@import "@nativescript/theme/scss/variables";
 ```
 
 It will import just the variables and mixins, without any additional styling.
@@ -399,6 +381,21 @@ Generate changelog workflow:
 6. Commit package.json and CHANGELOG.md files
 7. Tag
 8. Push
+
+## Breaking changes
+
+---
+**NOTE**
+
+NativeScript Theme 1.0 to 2.0 migration guide is available [here](MIGRATION-GUIDE.md).
+
+---
+
+* The theme requires 2 files to be loaded - the core theme and a skin on top of it. Read [Usage](#usage) for more info.
+* The theme is now **applied using Element selectors**, if you need the old classes approach - it has moved to
+.compat CSS/SCSS files, e.g. `core.compat.css` and `blue.compat.css`.
+* Theme 2.0 replaces node-sass with **sass** which is more up to date feature-wise and doesn't have a native dependency.
+It does still work with node-sass though.
 
 ## Awesome Contributors
 
