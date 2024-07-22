@@ -34,12 +34,12 @@
     "nativescript-masked-text-field": "~4.0.3"
   },
   "devDependencies": {
+    "@nativescript/webpack": "~2.1.0",
     "babel-eslint": "^10.0.3",
     "cache-loader": "4.1.0",
     "eslint": "6.4.0",
     "glob": "7.1.4",
     "lazy": "1.0.11",
-    "@nativescript/webpack": "~2.1.0",
     "resolve-url-loader": "3.1.1",
     "sass": "~1.77.8",
     "sass-lint": "~1.13.1",
