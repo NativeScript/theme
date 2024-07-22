@@ -26,7 +26,9 @@ $root-classes: '.ns-modal', '.ns-root', '.ns-android', '.ns-ios', '.ns-phone', '
         $color: call(get-function($has-enhancer), $args...);
     }
 
-    #{$name}: $color;
+    & {
+        #{$name}: $color;
+    }
 }
 
 @mixin colorize($args...) {

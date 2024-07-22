@@ -12,13 +12,13 @@
 
 .ns-modal,
 .ns-root {
+    font-family: sans-serif;
+    font-size: const(font-size);
+
     @include colorize(
         $background-color: background,
         $color: primary
     );
-
-    font-family: sans-serif;
-    font-size: const(font-size);
 }
 
 .-hidden,

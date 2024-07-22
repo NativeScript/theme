@@ -7,8 +7,9 @@
 .body,
 .body2,
 .footnote {
-    @include colorize($color: secondary);
     font-weight: normal;
+
+    @include colorize($color: secondary);
 }
 
 .h1 {
